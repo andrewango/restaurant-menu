@@ -26,12 +26,12 @@
 
 ### 5.<br>
 **Persona:** Restaurant Cashier<br>
-**Who are they:** A cashier who works at popular takeout restaurant.
-**Their main goal:** Take customer orders quickly and accurately to send to the receipt printer in the kitchen for the chefs to cook.
+**Who are they:** A cashier who works at popular takeout restaurant.<br>
+**Their main goal:** Take customer orders quickly and accurately to send to the receipt printer in the kitchen for the chefs to cook.<br>
 **Their main barrier to achieving this goal:** One problem is that the online ordering system doesn't allow choosing item quantity directly, so the cashier has to repeatedly drag a food item several times to the user list to specify quantity.
 
 ### 6.<br>
 **Persona:** Restaurant Manager<br>
-**Who are they:** A manager of a busy restaurant.
-**Their main goal:** For a given day, wants to number each order, have a way to view each order, and to have a count of the total number of orders.
+**Who are they:** A manager of a busy restaurant.<br>
+**Their main goal:** For a given day, wants to number each order, have a way to view each order, and to have a count of the total number of orders.<br>
 **Their main barrier to achieving this goal:** The online ordering system does not keep track of previous orders. The manager could accomplish this goal manually by counting the receipts, but that takes a really long time. Plus, if there is a customer dispute during the day, the manager must search through the receipt stack again for that customer's order, which can lead to impatience in an already emotionally charged situation.
