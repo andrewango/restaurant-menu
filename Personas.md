@@ -23,3 +23,15 @@
 **Who are they:** An older 65 y/o man loves spicy foods, but tends to have a grumpy attitude when he takes too long to read the menu and find all of the spicy foods on there.<br>
 **Their main goal:** He wants to know what spicy foods the restaurant serves quickly and efficiently without having to look so closely for "spicy" symbols next to food names.<br>
 **Their main barrier to achieving this goal:** He has quite a severe vision problem that makes it difficult for him to read the small "spicy" symbols on menus. The restaurant he enjoys ordering from online only has these "spicy" symbols next to food names on the menu to indicate that they are spicy, so when he gets too grumpy, he gives up and orders from another restaurant.
+
+### 5.<br>
+**Persona:** Restaurant Cashier<br>
+**Who are they:** A cashier who works at popular takeout restaurant.
+**Their main goal:** Take customer orders quickly and accurately to send to the receipt printer in the kitchen for the chefs to cook.
+**Their main barrier to achieving this goal:** One problem is that the online ordering system doesn't allow choosing item quantity directly, so the cashier has to repeatedly drag a food item several times to the user list to specify quantity.
+
+### 6.<br>
+**Persona:** Restaurant Manager<br>
+**Who are they:** A manager of a busy restaurant.
+**Their main goal:** For a given day, wants to number each order, have a way to view each order, and to have a count of the total number of orders.
+**Their main barrier to achieving this goal:** The online ordering system does not keep track of previous orders. The manager could accomplish this goal manually by counting the receipts, but that takes a really long time. Plus, if there is a customer dispute during the day, the manager must search through the receipt stack again for that customer's order, which can lead to impatience in an already emotionally charged situation.
