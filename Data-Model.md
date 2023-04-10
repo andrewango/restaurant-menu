@@ -13,7 +13,7 @@ name: string<br>
 image: string<br>
 description: string<br>
 rating: number<br>
-type: list of strings (e.g. appetizer, entree, dessert)<br>
+type: string (e.g. appetizer, entree, dessert)<br>
 ingredients: list of strings<br>
 popular: boolean<br>
 spicy: boolean<br>

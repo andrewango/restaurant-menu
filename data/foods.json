@@ -1,0 +1,14 @@
+{
+    "FOODS": [
+        {
+            "name": "Name",
+            "image": "URL",
+            "desc": "Description",
+            "rating": 5,
+            "type": "Appetizer",
+            "ingredients": "Ingredients",
+            "popular": true,
+            "spicy": false
+        }
+    ]
+}
