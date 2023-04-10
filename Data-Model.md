@@ -1,18 +1,20 @@
 ## Data Model
 
 ### Domain
+
 Super == Owner<br>
 Admin == Employee<br>
 User == Customer<br>
+
 ### Collections and Interfaces
+
 **1.** Each menu item is an interface FoodProps containing the following props:<br>
 name: string<br>
 image: string<br>
 description: string<br>
-rating: int<br>
+rating: number<br>
 type: list of strings (e.g. appetizer, entree, dessert)<br>
 ingredients: list of strings<br>
-allergens: list of strings<br>
 popular: boolean<br>
 spicy: boolean<br>
 
@@ -23,12 +25,19 @@ Owner can use the edit, add, and remove components to add/remove from the centra
 
 **3.** There is another interface specifically for Owner that extends FoodProps (it has the same props) and has an extra field displaying the food item's total count in all customer lists.<br>
 
-**4.** There is a list of customers. Owner can create/delete/modify from this list.<br>
+**5.** There is a customer interface CustomerProps with the following props:<br>
+name: string<br>
+age: number<br>
+profession: string<br>
+
+**4.** There is an interface for the list of customers CustomerList with the following props:<br>
+customers: CustomerProps[]<br><br>
+Owner can create/delete/modify from this list.<br>
+
 ### Features
+
 **1.** There are 3 buttons to select role: Owner, Employee, or Customer. Only one can be selected at a time.<br>
 
 **2.** The filter box on the website will filter the existing central item list to output only the items matching the criteria. (Not sure about this yet)<br>
 
 **3.** There are filter buttons for each user list. Only one filter can be selected at a time. (Not sure about this yet)
-
-
