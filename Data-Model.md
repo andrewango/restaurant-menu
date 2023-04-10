@@ -25,12 +25,12 @@ Owner can use the edit, add, and remove components to add/remove from the centra
 
 **3.** There is another interface specifically for Owner that extends FoodProps (it has the same props) and has an extra field displaying the food item's total count in all customer lists.<br>
 
-**5.** There is a customer interface CustomerProps with the following props:<br>
+**4.** There is a customer interface CustomerProps with the following props:<br>
 name: string<br>
 age: number<br>
 profession: string<br>
 
-**4.** There is an interface for the list of customers CustomerList with the following props:<br>
+**5.** There is an interface for the list of customers CustomerList with the following props:<br>
 customers: CustomerProps[]<br><br>
 Owner can create/delete/modify from this list.<br>
 
