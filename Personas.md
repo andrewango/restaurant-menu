@@ -13,7 +13,7 @@
 **Their main barrier to achieving this goal:** The restaurant he usually orders from doesn't allow him to specify what kind of meat he wants to add extra of. Rather, it just assumes to add extra portions of the meat that is part of the existing meal, such as adding more beef to a beef and rice dish.
 
 ### 3.<br>
-**Persona:** High School Student aAthlete<br>
+**Persona:** High School Student Athlete<br>
 **Who are they:** An introverted high school student athlete who is a somewhat picky eater and doesn't like a lot of vegetables.<br>
 **Their main goal:** She dislikes phone calls and is always busy with practice, so she wants to be able to order food online to deliver to her practice field and specify from the ingredients which vegetables she would like to exclude from her meal.<br>
 **Their main barrier to achieving this goal:** Her favorite restaurant she orders from doesn't allow her to exclude items from the meal description online, so she always has to call in and tell restaurant staff directly, but sometimes she'll pack her own food to practice just so she doesn't have to call in.
