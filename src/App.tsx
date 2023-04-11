@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { SelectRole } from "./components/SelectRole";
-import { RatingFeature } from "./components/RatingFeature";
+import RatingFeature from "./components/RatingFeature";
 
 function App(): JSX.Element {
     return (
@@ -15,6 +15,7 @@ function App(): JSX.Element {
             </div>
             <hr></hr>
             <RatingFeature></RatingFeature>
+            <hr></hr>
         </>
     );
 }
