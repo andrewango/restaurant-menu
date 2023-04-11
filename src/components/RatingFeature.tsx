@@ -13,6 +13,7 @@ export default function RatingFeature(): JSX.Element {
                             name="star-rating"
                             value={i}
                             onClick={() => setRating(i)}
+                            style={{ display: "none" }}
                         />
                         <GrStar
                             key={i}
