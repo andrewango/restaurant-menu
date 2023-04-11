@@ -6,15 +6,10 @@ function App(): JSX.Element {
         <>
             <div className="App">
                 <header className="App-header">Restaurant Menu</header>
-            </div>
-            <div>
-                <ul>
-                    <li>Gavin Caulfield</li>
-                    <li>Ella Wilkins</li>
-                    <li>Colby Frashure</li>
-                    <li>Sehee Hwang</li>
-                    <li>Andrew Ngo</li>
-                </ul>
+                <p>
+                    Gavin Caulfield, Ella Wilkins, Colby Frashure, Sehee Hwang,
+                    Andrew Ngo
+                </p>
             </div>
         </>
     );
