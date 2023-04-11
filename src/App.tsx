@@ -12,6 +12,8 @@ function App(): JSX.Element {
                     Andrew Ngo
                 </p>
             </div>
+
+            <SelectRole></SelectRole>
         </>
     );
 }
