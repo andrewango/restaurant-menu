@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { SelectRole } from "./components/SelectRole";
 
 function App(): JSX.Element {
     return (
