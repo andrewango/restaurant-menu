@@ -1,11 +1,14 @@
 import React from "react";
 import "./App.css";
+import { SelectRole } from "./components/SelectRole";
 
 function App(): JSX.Element {
     return (
         <>
             <div className="App">
                 <header className="App-header">Restaurant Menu</header>
+                <hr></hr>
+                <SelectRole></SelectRole>
             </div>
             <div>
                 <ul>
