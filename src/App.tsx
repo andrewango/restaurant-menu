@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { SelectRole } from "./components/SelectRole";
+import { RatingFeature } from "./components/RatingFeature";
 
 function App(): JSX.Element {
     return (
@@ -12,6 +13,8 @@ function App(): JSX.Element {
                     Andrew Ngo
                 </p>
             </div>
+            <hr></hr>
+            <RatingFeature></RatingFeature>
         </>
     );
 }
