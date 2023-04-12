@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Heading, Text } from "@chakra-ui/react";
+import { Container, Text } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import RatingFeature from "../components/RatingFeature";
 import NavBar from "../components/NavBar";
@@ -29,6 +29,10 @@ export default function Landing() {
                 </Container>
                 <Container>
                     <NavBar></NavBar>
+                </Container>
+                <Container>
+                    <SelectRole></SelectRole>
+                    <RatingFeature></RatingFeature>
                 </Container>
             </div>
         </>

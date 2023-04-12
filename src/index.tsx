@@ -13,34 +13,32 @@ const colors = {
         700: "#2a69ac"
     }
 };
-const presetCards = [
-    "red.400",
-    "orange",
-    "green",
-    "teal",
-    "blue",
-    "cyan",
-    "purple.400",
-    "purple.800",
-    "pink",
-    "white"
-];
+// const presetCards = [
+//     "red.400",
+//     "orange",
+//     "green",
+//     "teal",
+//     "blue",
+//     "cyan",
+//     "purple.400",
+//     "purple.800",
+//     "pink",
+//     "white"
+// ];
 
-const themeProps = [
-    "Accent",
-    "Background",
-    "Foreground",
-    "UI",
-    "Function",
-    "String",
-    "Operator",
-    "Comment",
-    "Error"
-];
+// const themeProps = [
+//     "Accent",
+//     "Background",
+//     "Foreground",
+//     "UI",
+//     "Function",
+//     "String",
+//     "Operator",
+//     "Comment",
+//     "Error"
+// ];
 const theme = extendTheme({ colors });
 
-//Routing
-import { Link } from "react-router-dom";
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
