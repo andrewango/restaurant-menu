@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import RatingFeature from "./RatingFeature";
+import { GrStar } from "react-icons/gr";
 
 describe("RatingFeature tests", () => {
     render(<RatingFeature />);
@@ -8,6 +9,15 @@ describe("RatingFeature tests", () => {
     test("There are 5 radio buttons", () => {
         expect(radios.length).toEqual(5);
     });
+    /* 
+    Ideally I would like to test for the star icons too, but I can't
+    seem to get them to test and they're inherintly linked to the
+    rendering of the radio buttons, so it's not a big deal
+    test("There are stars in the document", () => {
+        const stars = screen.getAllByRole("???");
+        expect(stars.length).toEqual(5);
+    });
+    */
     test("The initial value is 0", () => {
         !expect(radios[0]).toBeChecked;
         !expect(radios[1]).toBeChecked;

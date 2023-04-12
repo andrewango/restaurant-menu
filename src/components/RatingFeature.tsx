@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { GrStar } from "react-icons/gr";
 export default function RatingFeature(): JSX.Element {
+    /*
+    Renders 5 stars, all initally zero (and gray). Clicking a star fills in
+    that one and all ones before it, making them yellow!
+    Each star has a respective rating from 1-5. The stars operate identically
+    to radio buttons (because they literally are, they're just hidden!)
+    */
     const [rating, setRating] = useState(0);
     return (
         <div>
@@ -16,6 +22,7 @@ export default function RatingFeature(): JSX.Element {
                             style={{ display: "none" }}
                         />
                         <GrStar
+                            data-testid="star-icon"
                             key={i}
                             className="star"
                             size={100}
