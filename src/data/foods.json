@@ -90,7 +90,7 @@
         },
         {
             "name": "Tiramisu",
-            "image": "tiramisu.jpg",
+            "image": "URL",
             "desc": "A classic Italian dessert made with ladyfingers, espresso, mascarpone cheese, and cocoa powder.",
             "rating": 4.5,
             "type": ["Italian", "Dessert"],
@@ -101,6 +101,356 @@
                 "Egg yolks",
                 "Sugar",
                 "Cocoa powder"
+            ],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Baklava",
+            "image": "baklava.jpg",
+            "desc": "A sweet pastry made of layers of phyllo dough filled with chopped nuts and sweetened with syrup or honey.",
+            "rating": 4.2,
+            "type": ["Turkish", "Greek", "Dessert"],
+            "ingredients": [
+                "Phyllo dough",
+                "Pistachios",
+                "Walnuts",
+                "Honey",
+                "Sugar",
+                "Butter"
+            ],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Mochi ice cream",
+            "image": "mochi-ice-cream.jpg",
+            "desc": "A Japanese dessert that consists of small balls of ice cream wrapped in sweet rice dough.",
+            "rating": 4.0,
+            "type": ["Japanese", "Dessert"],
+            "ingredients": [
+                "Ice cream",
+                "Sweet rice dough",
+                "Cornstarch",
+                "Sugar",
+                "Water",
+                "Food coloring"
+            ],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Durian sticky rice",
+            "image": "durian-sticky-rice.jpg",
+            "desc": "A Southeast Asian dessert made with glutinous rice cooked with coconut milk and served with fresh durian.",
+            "rating": 2.5,
+            "type": ["Thai", "Southeast Asian", "Dessert"],
+            "ingredients": [
+                "Glutinous rice",
+                "Coconut milk",
+                "Durian",
+                "Sugar"
+            ],
+            "popular": false,
+            "spicy": false
+        },
+        {
+            "name": "Black licorice ice cream",
+            "image": "black-licorice-ice-cream.jpg",
+            "desc": "An ice cream made with black licorice extract, creating a strong and unique flavor.",
+            "rating": 2.0,
+            "type": ["Dessert"],
+            "ingredients": [
+                "Milk",
+                "Cream",
+                "Sugar",
+                "Egg yolks",
+                "Black licorice extract"
+            ],
+            "popular": false,
+            "spicy": false
+        },
+        {
+            "name": "Wasabi chocolate",
+            "image": "wasabi-chocolate.jpg",
+            "desc": "A type of chocolate infused with wasabi, a spicy Japanese horseradish.",
+            "rating": 3.0,
+            "type": ["Japanese", "Dessert"],
+            "ingredients": ["Chocolate", "Wasabi"],
+            "popular": false,
+            "spicy": true
+        },
+        {
+            "name": "Fried calamari",
+            "image": "fried-calamari.jpg",
+            "desc": "Battered and fried squid served with a dipping sauce.",
+            "rating": 4.0,
+            "type": ["Seafood", "Appetizer"],
+            "ingredients": ["Squid", "Flour", "Egg", "Breadcrumbs"],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Bruschetta",
+            "image": "bruschetta.jpg",
+            "desc": "Toasted bread topped with diced tomatoes, basil, and olive oil.",
+            "rating": 3.5,
+            "type": ["Italian", "Appetizer"],
+            "ingredients": [
+                "Bread",
+                "Tomatoes",
+                "Basil",
+                "Olive oil",
+                "Garlic"
+            ],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Edamame",
+            "image": "edamame.jpg",
+            "desc": "Steamed soybean pods served with salt.",
+            "rating": 3.0,
+            "type": ["Japanese", "Appetizer"],
+            "ingredients": ["Edamame", "Salt"],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Vegan lasagna",
+            "image": "vegan-lasagna.jpg",
+            "desc": "A plant-based version of the classic Italian dish, made with layers of vegan cheese, vegetables, and tomato sauce.",
+            "rating": 4.0,
+            "type": ["Italian", "Entree", "Vegan"],
+            "ingredients": [
+                "Lasagna noodles",
+                "Tomato sauce",
+                "Vegan cheese",
+                "Zucchini",
+                "Spinach",
+                "Mushrooms"
+            ],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Vegan pad thai",
+            "image": "vegan-pad-thai.jpg",
+            "desc": "A Thai stir-fried noodle dish made with rice noodles, tofu, vegetables, and a sweet and savory sauce.",
+            "rating": 4.5,
+            "type": ["Thai", "Entree", "Vegan"],
+            "ingredients": [
+                "Rice noodles",
+                "Tofu",
+                "Bean sprouts",
+                "Carrots",
+                "Green onions",
+                "Peanuts"
+            ],
+            "popular": true,
+            "spicy": true
+        },
+        {
+            "name": "Vegan black bean burger",
+            "image": "vegan-black-bean-burger.jpg",
+            "desc": "A burger patty made with black beans, vegetables, and spices, served on a bun with avocado and salsa.",
+            "rating": 4.0,
+            "type": ["American", "Entree", "Vegan"],
+            "ingredients": [
+                "Black beans",
+                "Breadcrumbs",
+                "Onion",
+                "Garlic",
+                "Cumin",
+                "Avocado",
+                "Salsa"
+            ],
+            "popular": true,
+            "spicy": true
+        },
+        {
+            "name": "Turlu",
+            "image": "turlu.jpg",
+            "desc": "A vegan Turkish dish made with a variety of vegetables cooked in tomato sauce.",
+            "rating": 3.5,
+            "type": ["Turkish", "Entree", "Vegan", "Mediterranean"],
+            "ingredients": [
+                "Eggplants",
+                "Zucchini",
+                "Onions",
+                "Potatoes",
+                "Tomato sauce",
+                "Rice"
+            ],
+            "popular": false,
+            "spicy": false
+        },
+        {
+            "name": "Börek",
+            "image": "borek.jpg",
+            "desc": "A pastry made with phyllo dough filled with vegetables, cheese, or meat.",
+            "rating": 3.0,
+            "type": ["Turkish", "Appetizer", "Mediterranean"],
+            "ingredients": ["Phyllo dough", "Spinach", "Feta cheese", "Onion"],
+            "popular": false,
+            "spicy": false
+        },
+        {
+            "name": "Shakshuka",
+            "image": "shakshuka.jpg",
+            "desc": "A dish of poached eggs in tomato sauce.",
+            "rating": 4.0,
+            "type": ["Israeli", "Entree", "Breakfast", "Mediterranean"],
+            "ingredients": [
+                "Eggs",
+                "Tomatoes",
+                "Onion",
+                "Garlic",
+                "Paprika",
+                "Cumin"
+            ],
+            "popular": false,
+            "spicy": true
+        },
+        {
+            "name": "Paella",
+            "image": "paella.jpg",
+            "desc": "A traditional Spanish dish made with saffron rice, seafood, chicken, and vegetables.",
+            "rating": 4.5,
+            "type": ["Spanish", "Entree", "Seafood"],
+            "ingredients": [
+                "Rice",
+                "Seafood",
+                "Chicken",
+                "Tomatoes",
+                "Bell peppers",
+                "Saffron"
+            ],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Tortilla Española",
+            "image": "tortilla.jpg",
+            "desc": "A Spanish omelette made with potatoes and onions.",
+            "rating": 4.0,
+            "type": ["Spanish", "Entree"],
+            "ingredients": ["Potatoes", "Onions", "Eggs", "Olive oil", "Salt"],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Gazpacho",
+            "image": "gazpacho.jpg",
+            "desc": "A cold soup made with tomatoes, cucumber, peppers, and bread.",
+            "rating": 3.5,
+            "type": ["Spanish", "Appetizer", "Soup"],
+            "ingredients": [
+                "Tomatoes",
+                "Cucumber",
+                "Bell peppers",
+                "Garlic",
+                "Bread",
+                "Olive oil"
+            ],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Boxty",
+            "image": "boxty.jpg",
+            "desc": "A potato pancake made with grated raw potato and mashed potato.",
+            "rating": 4.0,
+            "type": ["Irish", "Appetizer"],
+            "ingredients": [
+                "Potatoes",
+                "Butter",
+                "Flour",
+                "Milk",
+                "Eggs",
+                "Salt"
+            ],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Irish Smoked Salmon",
+            "image": "smoked-salmon.jpg",
+            "desc": "A popular appetizer that is often served on brown bread with cream cheese.",
+            "rating": 4.5,
+            "type": ["Irish", "Appetizer", "Seafood"],
+            "ingredients": ["Salmon", "Salt", "Wood chips"],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Colcannon Bites",
+            "image": "colcannon-bites.jpg",
+            "desc": "Bite-sized balls made from mashed potatoes, kale or cabbage, and bacon.",
+            "rating": 3.5,
+            "type": ["Irish", "Appetizer"],
+            "ingredients": [
+                "Potatoes",
+                "Kale or Cabbage",
+                "Bacon",
+                "Onion",
+                "Egg",
+                "Flour"
+            ],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Tacos al Pastor",
+            "image": "tacos-al-pastor.jpg",
+            "desc": "Marinated pork cooked on a spit and served on small tortillas with onions, pineapple, and cilantro.",
+            "rating": 4.7,
+            "type": ["Mexican", "Entree"],
+            "ingredients": [
+                "Pork shoulder",
+                "Achiote paste",
+                "Pineapple juice",
+                "Garlic",
+                "Onion",
+                "Pineapple",
+                "Cilantro",
+                "Tortillas"
+            ],
+            "popular": true,
+            "spicy": true
+        },
+        {
+            "name": "Koshari",
+            "image": "koshari.jpg",
+            "desc": "A mix of rice, lentils, chickpeas, macaroni, and spicy tomato sauce, topped with caramelized onions and garlic.",
+            "rating": 4.0,
+            "type": ["Egyptian", "Entree"],
+            "ingredients": [
+                "Rice",
+                "Lentils",
+                "Chickpeas",
+                "Macaroni",
+                "Tomato sauce",
+                "Cumin",
+                "Garlic",
+                "Onion"
+            ],
+            "popular": true,
+            "spicy": true
+        },
+        {
+            "name": "Flan",
+            "image": "flan.jpg",
+            "desc": "A creamy, caramel-topped dessert that is similar to a custard.",
+            "rating": 4.5,
+            "type": ["Puerto Rican", "Dessert"],
+            "ingredients": [
+                "Milk",
+                "Eggs",
+                "Sugar",
+                "Vanilla extract",
+                "Lemon zest",
+                "Caramel sauce"
             ],
             "popular": true,
             "spicy": false
