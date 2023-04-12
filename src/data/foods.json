@@ -60,6 +60,50 @@
             ],
             "popular": false,
             "spicy": false
+        },
+        {
+            "name": "Hákarl",
+            "image": "URL",
+            "desc": "A traditional Icelandic dish made from fermented shark meat",
+            "rating": 2.0,
+            "type": ["Icelandic", "Seafood", "Appetizer"],
+            "ingredients": ["Fermented shark meat"],
+            "popular": false,
+            "spicy": false
+        },
+        {
+            "name": "Escamoles",
+            "image": "URL",
+            "desc": "A Mexican dish made from ant larvae harvested from the roots of the agave plant",
+            "rating": 3.5,
+            "type": ["Mexican", "Insect cuisine", "Entree"],
+            "ingredients": [
+                "Ant larvae",
+                "Butter",
+                "Garlic",
+                "Onion",
+                "Cilantro",
+                "Jalapeno peppers"
+            ],
+            "popular": false,
+            "spicy": true
+        },
+        {
+            "name": "Tiramisu",
+            "image": "tiramisu.jpg",
+            "desc": "A classic Italian dessert made with ladyfingers, espresso, mascarpone cheese, and cocoa powder.",
+            "rating": 4.5,
+            "type": ["Italian", "Dessert"],
+            "ingredients": [
+                "Ladyfingers",
+                "Espresso",
+                "Mascarpone cheese",
+                "Egg yolks",
+                "Sugar",
+                "Cocoa powder"
+            ],
+            "popular": true,
+            "spicy": false
         }
     ]
 }
