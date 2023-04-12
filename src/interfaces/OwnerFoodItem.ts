@@ -9,4 +9,5 @@ export interface ownerFoodProps extends foodProps {
     ingredients: string[];
     popular: boolean;
     spicy: boolean;
+    totalCountInUserLists: number;
 }

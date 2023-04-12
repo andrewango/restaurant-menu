@@ -1,5 +1,5 @@
-import { customerProps } from "./Customer";
+import { foodProps } from "./Food";
 
 export interface customerList {
-    customers: customerProps[];
+    foodList: foodProps[];
 }
