@@ -1,34 +1,32 @@
 {
-    "name": "react-typescript-starter",
-    "homepage": "homepage",
+    "name": "restaurant-menu",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
         "@chakra-ui/react": "^2.5.5",
         "@emotion/react": "^11.10.6",
         "@emotion/styled": "^11.10.6",
-        "@testing-library/jest-dom": "^5.16.1",
-        "@testing-library/react": "^12.1.2",
-        "@testing-library/user-event": "^13.5.0",
-        "@types/jest": "^27.4.0",
-        "@types/node": "^16.11.21",
-        "@types/react": "^17.0.38",
-        "@types/react-dom": "^17.0.11",
-        "framer-motion": "^10.11.5",
-        "react": "^17.0.2",
-        "react-bootstrap": "^2.1.1",
-        "react-dom": "^17.0.2",
-        "react-icons": "^4.8.0",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^14.4.3",
+        "@types/jest": "^28.1.8",
+        "@types/node": "^12.20.55",
+        "@types/react": "^18.0.35",
+        "@types/react-dom": "^18.0.11",
+        "framer-motion": "^6.5.1",
+        "react": "^18.2.0",
+        "react-bootstrap": "^2.7.3",
+        "react-dom": "^18.2.0",
+        "react-icons": "^3.11.0",
         "react-router-dom": "^6.10.0",
-        "react-scripts": "5.0.0",
-        "typescript": "^4.5.5",
+        "react-scripts": "5.0.1",
+        "typescript": "^4.9.5",
         "web-vitals": "^2.1.4"
     },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "test:cov": "react-scripts test --coverage --watchAll",
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
@@ -61,7 +59,7 @@
         "eslint-plugin-prettier": "^4.0.0",
         "eslint-plugin-react": "^7.28.0",
         "gh-pages": "^3.2.3",
-        "prettier": "2.5.1",
+        "prettier": "^2.5.1",
         "prettier-eslint": "^13.0.0"
     },
     "jest": {
@@ -72,5 +70,6 @@
             "!src/reportWebVitals.ts",
             "!src/react-app-env.d.ts"
         ]
-    }
+    },
+    "homepage": "https://andrewango.github.io/restaurant-menu/"
 }
