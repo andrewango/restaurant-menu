@@ -15,6 +15,7 @@ function App(): JSX.Element {
             </div>
             <hr></hr>
             <RatingFeature></RatingFeature>
+            <SelectRole></SelectRole>
             <hr></hr>
         </>
     );
