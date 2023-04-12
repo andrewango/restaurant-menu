@@ -2,6 +2,7 @@
     "name": "restaurant-menu",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://andrewango.github.io/restaurant-menu/",
     "dependencies": {
         "@chakra-ui/react": "^2.5.5",
         "@emotion/react": "^11.10.6",
@@ -72,6 +73,5 @@
             "!src/reportWebVitals.ts",
             "!src/react-app-env.d.ts"
         ]
-    },
-    "homepage": "."
+    }
 }
