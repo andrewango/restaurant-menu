@@ -1,13 +1,64 @@
 {
     "FOODS": [
         {
-            "name": "Name",
+            "name": "Pepperoni Pizza",
             "image": "URL",
-            "desc": "Description",
-            "rating": 5,
-            "type": "Appetizer",
-            "ingredients": "Ingredients",
+            "desc": "A delicious pizza topped with cheese and pepperoni",
+            "rating": 4,
+            "type": ["Italian", "Fast Food", "Entree"],
+            "ingredients": ["Dough", "Tomato Sauce", "Cheese", "Pepperoni"],
             "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Cheeseburger",
+            "image": "URL",
+            "desc": "A juicy burger with lettuce, tomato, and cheese",
+            "rating": 4.1,
+            "type": ["American", "Fast Food", "Entree"],
+            "ingredients": ["Beef Patty", "Bun", "Lettuce", "Tomato", "Cheese"],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Spicy Salmon Avocado Sushi",
+            "image": "URL",
+            "desc": "Fresh sushi rolls with spicy salmon and avocado",
+            "rating": 4.6,
+            "type": ["Japanese", "Seafood", "Entree"],
+            "ingredients": ["Rice", "Spicy Salmon", "Avocado", "Nori"],
+            "popular": true,
+            "spicy": true
+        },
+        {
+            "name": "House Salad",
+            "image": "URL",
+            "desc": "Refreshing mixed greens salad with cucumber, grape tomatoes, and italian dressing",
+            "rating": 3.4,
+            "type": ["Salad", "Appetizer"],
+            "ingredients": [
+                "Mixed greens",
+                "Cucumber",
+                "Grape Tomatoes",
+                "Italian Dressing"
+            ],
+            "popular": true,
+            "spicy": false
+        },
+        {
+            "name": "Hawaiian Pizza",
+            "image": "URL",
+            "desc": "A pizza topped with pineapple and ham",
+            "rating": 2.6,
+            "type": ["Italian", "Fast Food", "Entree"],
+            "ingredients": [
+                "Dough",
+                "Tomato Sauce",
+                "Cheese",
+                "Pineapple",
+                "Ham"
+            ],
+            "popular": false,
             "spicy": false
         }
     ]
