@@ -73,5 +73,5 @@
             "!src/react-app-env.d.ts"
         ]
     },
-    "homepage": "https://andrewango.github.io/restaurant-menu/"
+    "homepage": "."
 }
