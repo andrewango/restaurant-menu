@@ -2,7 +2,7 @@
     "FOODS": [
         {
             "name": "Pepperoni Pizza",
-            "image": "URL",
+            "image": "https://live.staticflickr.com/65535/52813368763_7f334652e5_m.jpg",
             "desc": "A delicious pizza topped with cheese and pepperoni",
             "rating": 4,
             "type": ["Italian", "Fast Food", "Entree"],
@@ -12,7 +12,7 @@
         },
         {
             "name": "Cheeseburger",
-            "image": "URL",
+            "image": "https://live.staticflickr.com/65535/52812357442_e349d9cd4d_m.jpg",
             "desc": "A juicy burger with lettuce, tomato, and cheese",
             "rating": 4.1,
             "type": ["American", "Fast Food", "Entree"],
@@ -22,7 +22,7 @@
         },
         {
             "name": "Spicy Salmon Avocado Sushi",
-            "image": "URL",
+            "image": "https://live.staticflickr.com/65535/52813111589_628772aec7_m.jpg",
             "desc": "Fresh sushi rolls with spicy salmon and avocado",
             "rating": 4.6,
             "type": ["Japanese", "Seafood", "Entree"],
@@ -32,7 +32,7 @@
         },
         {
             "name": "House Salad",
-            "image": "URL",
+            "image": "https://live.staticflickr.com/65535/52812357357_9edd9baa22_m.jpg",
             "desc": "Refreshing mixed greens salad with cucumber, grape tomatoes, and italian dressing",
             "rating": 3.4,
             "type": ["Salad", "Appetizer"],
@@ -47,7 +47,7 @@
         },
         {
             "name": "Hawaiian Pizza",
-            "image": "URL",
+            "image": "https://live.staticflickr.com/65535/52813111624_c66677c7f4_m.jpg",
             "desc": "A pizza topped with pineapple and ham",
             "rating": 2.6,
             "type": ["Italian", "Fast Food", "Entree"],
