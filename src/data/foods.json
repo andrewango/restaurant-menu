@@ -123,7 +123,7 @@
             "spicy": false
         },
         {
-            "name": "Mochi ice cream",
+            "name": "Mochi Ice Cream",
             "image": "https://live.staticflickr.com/65535/52813714800_f9ec4a0d46_m.jpg",
             "desc": "A Japanese dessert that consists of small balls of ice cream wrapped in sweet rice dough.",
             "rating": 4.0,
@@ -140,7 +140,7 @@
             "spicy": false
         },
         {
-            "name": "Durian sticky rice",
+            "name": "Durian Sticky Rice",
             "image": "https://live.staticflickr.com/65535/52813714825_1b8b57a405_m.jpg",
             "desc": "A Southeast Asian dessert made with glutinous rice cooked with coconut milk and served with fresh durian.",
             "rating": 2.5,
@@ -155,7 +155,7 @@
             "spicy": false
         },
         {
-            "name": "Black licorice ice cream",
+            "name": "Black Licorice Ice Cream",
             "image": "https://live.staticflickr.com/65535/52813757163_85000190c1_m.jpg",
             "desc": "An ice cream made with black licorice extract, creating a strong and unique flavor.",
             "rating": 2.0,
@@ -171,7 +171,7 @@
             "spicy": false
         },
         {
-            "name": "Wasabi chocolate",
+            "name": "Wasabi Chocolate",
             "image": "https://live.staticflickr.com/65535/52813498159_aff340438f_m.jpg",
             "desc": "A type of chocolate infused with wasabi, a spicy Japanese horseradish.",
             "rating": 3.0,
@@ -181,7 +181,7 @@
             "spicy": true
         },
         {
-            "name": "Fried calamari",
+            "name": "Fried Calamari",
             "image": "https://live.staticflickr.com/65535/52813498309_8ec4331f67_m.jpg",
             "desc": "Battered and fried squid served with a dipping sauce.",
             "rating": 4.0,
@@ -217,7 +217,7 @@
             "spicy": false
         },
         {
-            "name": "Vegan lasagna",
+            "name": "Vegan Lasagna",
             "image": "https://live.staticflickr.com/65535/52813301606_c81b4a7021_m.jpg",
             "desc": "A plant-based version of the classic Italian dish, made with layers of vegan cheese, vegetables, and tomato sauce.",
             "rating": 4.0,
@@ -234,7 +234,7 @@
             "spicy": false
         },
         {
-            "name": "Vegan pad thai",
+            "name": "Vegan Pad Thai",
             "image": "https://live.staticflickr.com/65535/52813307911_a879a4df7b_w.jpg",
             "desc": "A Thai stir-fried noodle dish made with rice noodles, tofu, vegetables, and a sweet and savory sauce.",
             "rating": 4.5,
@@ -251,7 +251,7 @@
             "spicy": true
         },
         {
-            "name": "Vegan black bean burger",
+            "name": "Vegan Black Bean Burger",
             "image": "https://live.staticflickr.com/65535/52813504194_bde784209b_w.jpg",
             "desc": "A burger patty made with black beans, vegetables, and spices, served on a bun with avocado and salsa.",
             "rating": 4.0,
