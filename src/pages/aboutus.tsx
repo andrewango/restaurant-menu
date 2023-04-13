@@ -7,6 +7,7 @@ import {
     AccordionPanel,
     AccordionIcon
 } from "@chakra-ui/react";
+import NavBar from "../components/NavBar";
 
 export default function AboutUs() {
     return (
@@ -22,7 +23,10 @@ export default function AboutUs() {
                     about us
                 </Heading>
             </div>
-            <Accordion textAlign="center">
+            <div>
+                <NavBar></NavBar>
+            </div>
+            <Accordion allowToggle textAlign="center">
                 <AccordionItem>
                     <h2>
                         <AccordionButton>
