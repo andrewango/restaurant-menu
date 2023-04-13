@@ -1,23 +1,19 @@
 import React from "react";
-import "./App.css";
-import { SelectRole } from "./components/SelectRole";
-import RatingFeature from "./components/RatingFeature";
+import Edit from "./pages/edit";
+import Landing from "./pages/landing";
+import Users from "./pages/users";
+import AboutUs from "./pages/aboutus";
+//Routing
+import { Routes, Route } from "react-router-dom";
 
-function App(): JSX.Element {
+// 3. Pass the `theme` prop to the `ChakraProvider`
+export default function App() {
     return (
-        <>
-            <div className="App">
-                <header className="App-header">Restaurant Menu</header>
-                <p>
-                    Gavin Caulfield, Ella Wilkins, Colby Frashure, Sehee Hwang,
-                    Andrew Ngo
-                </p>
-            </div>
-            <hr></hr>
-            <RatingFeature></RatingFeature>
-            <hr></hr>
-        </>
+        <Routes>
+            <Route path="/" element={<Landing />}></Route>
+            <Route path="/users" element={<Users />}></Route>
+            <Route path="/edit" element={<Edit />}></Route>
+            <Route path="/aboutus" element={<AboutUs />}></Route>
+        </Routes>
     );
 }
-
-export default App;

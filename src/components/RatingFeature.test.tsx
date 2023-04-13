@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import RatingFeature from "./RatingFeature";
-import { GrStar } from "react-icons/gr";
 
 describe("RatingFeature tests", () => {
     render(<RatingFeature />);
