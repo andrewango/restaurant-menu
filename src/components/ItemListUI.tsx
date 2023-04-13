@@ -16,6 +16,7 @@ export default function ItemListUI({
         };
     });
 
+    // Maps each food in our list to a box with food details
     return (
         <VStack spacing="3px" mt={100}>
             {foodList.map((food) => {
