@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
     return (
+        // Create red bar that spans the whole page horizontally and has our two navigation links for "menu" and "about us"
         <Box
             as="nav"
             display="flex"

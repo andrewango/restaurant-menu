@@ -4,6 +4,7 @@ import foodData from "../data/foods.json";
 import RatingFeature from "./RatingFeature";
 
 export default function ItemListUI() {
+    // Copies foods from our JSON data to a list
     const foodList = foodData.FOODS.map((food) => {
         return {
             ...food,
@@ -12,6 +13,7 @@ export default function ItemListUI() {
         };
     });
 
+    // Maps each food in our list to a box with food details
     return (
         <VStack spacing="3px" mt={100}>
             {foodList.map((food) => {
