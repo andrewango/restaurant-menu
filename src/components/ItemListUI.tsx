@@ -1,15 +1,18 @@
 import React from "react";
 import { VStack, Box } from "@chakra-ui/react";
-import foodData from "../data/foods.json";
 import RatingFeature from "./RatingFeature";
+import { foodProps } from "../interfaces/Food";
 
-export default function ItemListUI() {
-    // Copies foods from our JSON data to a list
-    const foodList = foodData.FOODS.map((food) => {
+export default function ItemListUI({
+    foodData
+}: {
+    foodData: foodProps[];
+}): JSX.Element {
+    const foodList = foodData.map((foodProps) => {
         return {
-            ...food,
-            type: [...food.type],
-            ingredients: [...food.ingredients]
+            ...foodProps,
+            type: [...foodProps.type],
+            ingredients: [...foodProps.ingredients]
         };
     });
 
