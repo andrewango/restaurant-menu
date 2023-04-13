@@ -19,9 +19,11 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
 }
+/*
 .desc {
     font-family: "Ananda Black", "Apple Chancery", "cursive";
 }
+*/
 .foodtitle {
     font-weight: bold;
     font-family: "Ananda Black", "Apple Chancery", "cursive";
