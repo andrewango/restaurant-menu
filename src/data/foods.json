@@ -63,7 +63,7 @@
         },
         {
             "name": "Hákarl",
-            "image": "URL",
+            "image": "https://live.staticflickr.com/65535/52813498334_1e0fedb8fd_m.jpg",
             "desc": "A traditional Icelandic dish made from fermented shark meat",
             "rating": 2.0,
             "type": ["Icelandic", "Seafood", "Appetizer"],
@@ -73,7 +73,7 @@
         },
         {
             "name": "Escamoles",
-            "image": "URL",
+            "image": "https://live.staticflickr.com/65535/52813498389_e3e693bcd6_m.jpg",
             "desc": "A Mexican dish made from ant larvae harvested from the roots of the agave plant",
             "rating": 3.5,
             "type": ["Mexican", "Insect cuisine", "Entree"],
@@ -90,7 +90,7 @@
         },
         {
             "name": "Tiramisu",
-            "image": "URL",
+            "image": "https://live.staticflickr.com/65535/52813714725_6fd84a80b4_m.jpg",
             "desc": "A classic Italian dessert made with ladyfingers, espresso, mascarpone cheese, and cocoa powder.",
             "rating": 4.5,
             "type": ["Italian", "Dessert"],
@@ -107,7 +107,7 @@
         },
         {
             "name": "Baklava",
-            "image": "baklava.jpg",
+            "image": "https://live.staticflickr.com/65535/52813301711_1bbb49e820_m.jpg",
             "desc": "A sweet pastry made of layers of phyllo dough filled with chopped nuts and sweetened with syrup or honey.",
             "rating": 4.2,
             "type": ["Turkish", "Greek", "Dessert"],
@@ -124,7 +124,7 @@
         },
         {
             "name": "Mochi ice cream",
-            "image": "mochi-ice-cream.jpg",
+            "image": "https://live.staticflickr.com/65535/52813714800_f9ec4a0d46_m.jpg",
             "desc": "A Japanese dessert that consists of small balls of ice cream wrapped in sweet rice dough.",
             "rating": 4.0,
             "type": ["Japanese", "Dessert"],
@@ -141,7 +141,7 @@
         },
         {
             "name": "Durian sticky rice",
-            "image": "durian-sticky-rice.jpg",
+            "image": "https://live.staticflickr.com/65535/52813714825_1b8b57a405_m.jpg",
             "desc": "A Southeast Asian dessert made with glutinous rice cooked with coconut milk and served with fresh durian.",
             "rating": 2.5,
             "type": ["Thai", "Southeast Asian", "Dessert"],
@@ -156,7 +156,7 @@
         },
         {
             "name": "Black licorice ice cream",
-            "image": "black-licorice-ice-cream.jpg",
+            "image": "https://live.staticflickr.com/65535/52813757163_85000190c1_m.jpg",
             "desc": "An ice cream made with black licorice extract, creating a strong and unique flavor.",
             "rating": 2.0,
             "type": ["Dessert"],
@@ -172,7 +172,7 @@
         },
         {
             "name": "Wasabi chocolate",
-            "image": "wasabi-chocolate.jpg",
+            "image": "https://live.staticflickr.com/65535/52813498159_aff340438f_m.jpg",
             "desc": "A type of chocolate infused with wasabi, a spicy Japanese horseradish.",
             "rating": 3.0,
             "type": ["Japanese", "Dessert"],
@@ -182,7 +182,7 @@
         },
         {
             "name": "Fried calamari",
-            "image": "fried-calamari.jpg",
+            "image": "https://live.staticflickr.com/65535/52813498309_8ec4331f67_m.jpg",
             "desc": "Battered and fried squid served with a dipping sauce.",
             "rating": 4.0,
             "type": ["Seafood", "Appetizer"],
@@ -192,7 +192,7 @@
         },
         {
             "name": "Bruschetta",
-            "image": "bruschetta.jpg",
+            "image": "https://live.staticflickr.com/65535/52813714860_003bae1245_m.jpg",
             "desc": "Toasted bread topped with diced tomatoes, basil, and olive oil.",
             "rating": 3.5,
             "type": ["Italian", "Appetizer"],
@@ -208,7 +208,7 @@
         },
         {
             "name": "Edamame",
-            "image": "edamame.jpg",
+            "image": "https://live.staticflickr.com/65535/52813301776_907dee9958_m.jpg",
             "desc": "Steamed soybean pods served with salt.",
             "rating": 3.0,
             "type": ["Japanese", "Appetizer"],
@@ -218,7 +218,7 @@
         },
         {
             "name": "Vegan lasagna",
-            "image": "vegan-lasagna.jpg",
+            "image": "https://live.staticflickr.com/65535/52813301606_c81b4a7021_m.jpg",
             "desc": "A plant-based version of the classic Italian dish, made with layers of vegan cheese, vegetables, and tomato sauce.",
             "rating": 4.0,
             "type": ["Italian", "Entree", "Vegan"],
@@ -235,7 +235,7 @@
         },
         {
             "name": "Vegan pad thai",
-            "image": "vegan-pad-thai.jpg",
+            "image": "https://live.staticflickr.com/65535/52813307911_a879a4df7b_w.jpg",
             "desc": "A Thai stir-fried noodle dish made with rice noodles, tofu, vegetables, and a sweet and savory sauce.",
             "rating": 4.5,
             "type": ["Thai", "Entree", "Vegan"],
@@ -252,7 +252,7 @@
         },
         {
             "name": "Vegan black bean burger",
-            "image": "vegan-black-bean-burger.jpg",
+            "image": "https://live.staticflickr.com/65535/52813504194_bde784209b_w.jpg",
             "desc": "A burger patty made with black beans, vegetables, and spices, served on a bun with avocado and salsa.",
             "rating": 4.0,
             "type": ["American", "Entree", "Vegan"],
@@ -269,8 +269,8 @@
             "spicy": true
         },
         {
-            "name": "Turlu",
-            "image": "turlu.jpg",
+            "name": "Türlü",
+            "image": "https://live.staticflickr.com/65535/52813763428_c3baa5f2f4_w.jpg",
             "desc": "A vegan Turkish dish made with a variety of vegetables cooked in tomato sauce.",
             "rating": 3.5,
             "type": ["Turkish", "Entree", "Vegan", "Mediterranean"],
@@ -287,7 +287,7 @@
         },
         {
             "name": "Börek",
-            "image": "borek.jpg",
+            "image": "https://live.staticflickr.com/65535/52813308106_850ce2ec7c_n.jpg",
             "desc": "A pastry made with phyllo dough filled with vegetables, cheese, or meat.",
             "rating": 3.0,
             "type": ["Turkish", "Appetizer", "Mediterranean"],
@@ -297,7 +297,7 @@
         },
         {
             "name": "Shakshuka",
-            "image": "shakshuka.jpg",
+            "image": "https://live.staticflickr.com/65535/52813307956_8ce7884c9a_w.jpg",
             "desc": "A dish of poached eggs in tomato sauce.",
             "rating": 4.0,
             "type": ["Israeli", "Entree", "Breakfast", "Mediterranean"],
@@ -314,7 +314,7 @@
         },
         {
             "name": "Paella",
-            "image": "paella.jpg",
+            "image": "https://live.staticflickr.com/65535/52812751572_5b24be61d9_w.jpg",
             "desc": "A traditional Spanish dish made with saffron rice, seafood, chicken, and vegetables.",
             "rating": 4.5,
             "type": ["Spanish", "Entree", "Seafood"],
@@ -331,7 +331,7 @@
         },
         {
             "name": "Tortilla Española",
-            "image": "tortilla.jpg",
+            "image": "https://live.staticflickr.com/65535/52813307926_3ce097773a_w.jpg",
             "desc": "A Spanish omelette made with potatoes and onions.",
             "rating": 4.0,
             "type": ["Spanish", "Entree"],
@@ -341,7 +341,7 @@
         },
         {
             "name": "Gazpacho",
-            "image": "gazpacho.jpg",
+            "image": "https://live.staticflickr.com/65535/52813721300_a6b63d62b2_w.jpg",
             "desc": "A cold soup made with tomatoes, cucumber, peppers, and bread.",
             "rating": 3.5,
             "type": ["Spanish", "Appetizer", "Soup"],
@@ -358,7 +358,7 @@
         },
         {
             "name": "Boxty",
-            "image": "boxty.jpg",
+            "image": "https://live.staticflickr.com/65535/52813721375_b98c5b904c_w.jpg",
             "desc": "A potato pancake made with grated raw potato and mashed potato.",
             "rating": 4.0,
             "type": ["Irish", "Appetizer"],
@@ -375,7 +375,7 @@
         },
         {
             "name": "Irish Smoked Salmon",
-            "image": "smoked-salmon.jpg",
+            "image": "https://live.staticflickr.com/65535/52813504309_2bbcd3dc76_w.jpg",
             "desc": "A popular appetizer that is often served on brown bread with cream cheese.",
             "rating": 4.5,
             "type": ["Irish", "Appetizer", "Seafood"],
@@ -384,8 +384,8 @@
             "spicy": false
         },
         {
-            "name": "Colcannon Bites",
-            "image": "colcannon-bites.jpg",
+            "name": "Colcannon Puffs",
+            "image": "https://live.staticflickr.com/65535/52813308066_b69dbcfb10_w.jpg",
             "desc": "Bite-sized balls made from mashed potatoes, kale or cabbage, and bacon.",
             "rating": 3.5,
             "type": ["Irish", "Appetizer"],
@@ -402,7 +402,7 @@
         },
         {
             "name": "Tacos al Pastor",
-            "image": "tacos-al-pastor.jpg",
+            "image": "https://live.staticflickr.com/65535/52813721200_ddde309874_w.jpg",
             "desc": "Marinated pork cooked on a spit and served on small tortillas with onions, pineapple, and cilantro.",
             "rating": 4.7,
             "type": ["Mexican", "Entree"],
@@ -421,7 +421,7 @@
         },
         {
             "name": "Koshari",
-            "image": "koshari.jpg",
+            "image": "https://live.staticflickr.com/65535/52813504299_c7d0172d9d_w.jpg",
             "desc": "A mix of rice, lentils, chickpeas, macaroni, and spicy tomato sauce, topped with caramelized onions and garlic.",
             "rating": 4.0,
             "type": ["Egyptian", "Entree"],
@@ -440,7 +440,7 @@
         },
         {
             "name": "Flan",
-            "image": "flan.jpg",
+            "image": "https://live.staticflickr.com/65535/52813504354_d7b47462ac_w.jpg",
             "desc": "A creamy, caramel-topped dessert that is similar to a custard.",
             "rating": 4.5,
             "type": ["Puerto Rican", "Dessert"],
