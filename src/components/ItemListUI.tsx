@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack, Box } from "@chakra-ui/react";
+import { VStack, Box, Image, Flex } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
 import { foodProps } from "../interfaces/Food";
 
@@ -21,20 +21,30 @@ export default function ItemListUI({
         <VStack spacing="3px" mt={100}>
             {foodList.map((food) => {
                 return (
-                    <Box
+                    <Flex
                         key={food.name}
+                        align="center"
                         w={300}
-                        textAlign="center"
                         borderWidth={2}
                         borderColor="black"
                         borderRadius="md"
                         p={2}
                     >
-                        <b>{food.name}</b>
-                        <br></br>
-                        {food.desc}
-                        <RatingFeature></RatingFeature>
-                    </Box>
+                        <Image
+                            src={food.image}
+                            alt={food.name}
+                            borderRadius="full"
+                            boxSize="100px"
+                            objectFit="cover"
+                            mr={2}
+                        />
+                        <Box key={food.name} w={300} textAlign="center" p={2}>
+                            <b>{food.name}</b>
+                            <br></br>
+                            {food.desc}
+                            <RatingFeature></RatingFeature>
+                        </Box>
+                    </Flex>
                 );
             })}
         </VStack>
