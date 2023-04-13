@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import React, { useState } from "react";
-import { Col, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 import ItemListUI from "./ItemListUI";
