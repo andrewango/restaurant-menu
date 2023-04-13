@@ -84,13 +84,13 @@ export default function Landing() {
                     </Heading>
                 </div>
                 <Container ml={500}>
-                    <ItemListUI></ItemListUI>
+                    <SearchBar></SearchBar>
                 </Container>
                 <br></br>
                 <Container>
                     <SelectRole></SelectRole>
-                    <SearchBar></SearchBar>
                 </Container>
+                <br></br>
             </div>
         </>
     );

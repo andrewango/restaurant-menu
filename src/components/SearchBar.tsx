@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Col, Form } from "react-bootstrap";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
+import ItemListUI from "./ItemListUI";
 
 export function SearchBar(): JSX.Element {
     const foods: foodProps[] = foodList.FOODS;
@@ -37,11 +38,7 @@ export function SearchBar(): JSX.Element {
                 />
             </Form.Group>
             <div>
-                <Col>
-                    {list.map((x: foodProps) => (
-                        <li key={x.name}>{x.name}</li>
-                    ))}
-                </Col>
+                <ItemListUI foodData={list}></ItemListUI>
             </div>
         </div>
     );
