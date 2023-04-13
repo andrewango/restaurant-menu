@@ -1,7 +1,6 @@
 import React from "react";
 import { Heading, Container, Text } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
-import RatingFeature from "../components/RatingFeature";
 import NavBar from "../components/NavBar";
 import ItemListUI from "../components/ItemListUI";
 import { SearchBar } from "../components/SearchBar";
