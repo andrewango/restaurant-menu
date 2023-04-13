@@ -4,6 +4,7 @@ import { SelectRole } from "../components/SelectRole";
 import RatingFeature from "../components/RatingFeature";
 import NavBar from "../components/NavBar";
 import ItemListUI from "../components/ItemListUI";
+import { SearchBar } from "../components/SearchBar";
 
 export default function Landing() {
     return (
@@ -38,7 +39,7 @@ export default function Landing() {
                 <br></br>
                 <Container>
                     <SelectRole></SelectRole>
-                    <RatingFeature></RatingFeature>
+                    <SearchBar></SearchBar>
                 </Container>
             </div>
         </>
