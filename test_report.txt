@@ -337,11 +337,11 @@ All files           |   16.12 |     12.5 |   14.28 |   16.12 |
  src/pages          |       0 |      100 |       0 |       0 |                   
   aboutus.tsx       |       0 |      100 |       0 |       0 | 5                 
   edit.tsx          |       0 |      100 |       0 |       0 | 4                 
-  landing.tsx       |       0 |      100 |       0 |       0 | 9                 
+  landing.tsx       |       0 |      100 |       0 |       0 | 11                
   users.tsx         |       0 |      100 |       0 |       0 | 4                 
 --------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 failed, 7 passed, 8 total
 Snapshots:   0 total
-Time:        4.461 s
+Time:        3.622 s
 Ran all test suites.
