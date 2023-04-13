@@ -321,7 +321,7 @@ All files           |   16.66 |     12.5 |      15 |   16.66 |
  src                |     100 |      100 |     100 |     100 |                   
   App.tsx           |     100 |      100 |     100 |     100 |                   
  src/components     |      16 |     12.5 |   13.33 |      16 |                   
-  ItemListUI.tsx    |       0 |      100 |       0 |       0 | 11-22             
+  ItemListUI.tsx    |       0 |      100 |       0 |       0 | 11-23             
   NavBar.tsx        |       0 |      100 |       0 |       0 | 6                 
   RatingFeature.tsx |      80 |       50 |   66.66 |      80 | 21                
   SearchBar.tsx     |       0 |        0 |       0 |       0 | 9-36              
@@ -335,13 +335,13 @@ All files           |   16.66 |     12.5 |      15 |   16.66 |
   OwnerList.ts      |       0 |        0 |       0 |       0 |                   
   TotalCustomers.ts |       0 |        0 |       0 |       0 |                   
  src/pages          |       0 |      100 |       0 |       0 |                   
-  aboutus.tsx       |       0 |      100 |       0 |       0 | 5                 
+  aboutus.tsx       |       0 |      100 |       0 |       0 | 13                
   edit.tsx          |       0 |      100 |       0 |       0 | 4                 
   landing.tsx       |       0 |      100 |       0 |       0 | 19                
-  users.tsx         |       0 |      100 |       0 |       0 | 4                 
+  users.tsx         |       0 |      100 |       0 |       0 | 5                 
 --------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 failed, 7 passed, 8 total
 Snapshots:   0 total
-Time:        3.09 s
+Time:        3.514 s
 Ran all test suites.
