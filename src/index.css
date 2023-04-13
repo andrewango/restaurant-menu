@@ -11,3 +11,10 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
 }
+.desc {
+    font-family: "Apple Chancery", "cursive";
+}
+.foodtitle {
+    font-weight: bold;
+    font-family: "Apple Chancery", "cursive";
+}

@@ -2,7 +2,6 @@ import React from "react";
 import { VStack, Box } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
 import { foodProps } from "../interfaces/Food";
-
 export default function ItemListUI({
     foodData
 }: {
@@ -15,7 +14,6 @@ export default function ItemListUI({
             ingredients: [...foodProps.ingredients]
         };
     });
-
     // Maps each food in our list to a box with food details
     return (
         <VStack spacing="3px" mt={100}>
@@ -30,9 +28,8 @@ export default function ItemListUI({
                         borderRadius="md"
                         p={2}
                     >
-                        <b>{food.name}</b>
-                        <br></br>
-                        {food.desc}
+                        <div className="foodtitle">{food.name}</div>
+                        <div className="desc">{food.desc}</div>
                         <RatingFeature></RatingFeature>
                     </Box>
                 );
