@@ -1,20 +1,21 @@
 import React from "react";
-import { Container, Text } from "@chakra-ui/react";
+import { Heading, Container, Text } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import RatingFeature from "../components/RatingFeature";
 import NavBar from "../components/NavBar";
+import ItemListUI from "../components/ItemListUI";
 
 export default function Landing() {
     return (
         <>
             <div style={{ padding: 10 }}>
-                <Container>
+                <Container maxW={1000}>
                     <Text
                         my="30px"
-                        mb="0px"
+                        mb="5px"
                         textAlign={"center"}
                         fontWeight="750"
-                        fontSize="50px"
+                        fontSize="70px"
                     >
                         welcome to team 13
                     </Text>
@@ -22,14 +23,19 @@ export default function Landing() {
                         mb={10}
                         textAlign={"center"}
                         fontWeight="450"
-                        fontSize="17px"
+                        fontSize="20px"
                     >
                         enjoy the best food on the planet
                     </Text>
                 </Container>
-                <Container>
-                    <NavBar></NavBar>
+                <NavBar></NavBar>
+                <Container mt={10} ml={400}>
+                    <Heading fontSize="40px">our menu</Heading>
                 </Container>
+                <Container ml={500}>
+                    <ItemListUI></ItemListUI>
+                </Container>
+                <br></br>
                 <Container>
                     <SelectRole></SelectRole>
                     <RatingFeature></RatingFeature>

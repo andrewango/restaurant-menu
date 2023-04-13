@@ -25,7 +25,7 @@ export default function RatingFeature(): JSX.Element {
                             data-testid="star-icon"
                             key={i}
                             className="star"
-                            size={100}
+                            size={20}
                             color={i <= rating ? "#FFDD00" : "#D4D4D4"}
                         />
                     </label>
