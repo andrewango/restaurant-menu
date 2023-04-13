@@ -317,10 +317,11 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------|---------|----------|---------|---------|-------------------
-All files           |   18.51 |     12.5 |   16.66 |   18.51 |                   
+All files           |   16.12 |     12.5 |   14.28 |   16.12 |                   
  src                |     100 |      100 |     100 |     100 |                   
   App.tsx           |     100 |      100 |     100 |     100 |                   
- src/components     |   18.18 |     12.5 |   15.38 |   18.18 |                   
+ src/components     |   15.38 |     12.5 |    12.5 |   15.38 |                   
+  ItemListUI.tsx    |       0 |      100 |       0 |       0 | 7-18              
   NavBar.tsx        |       0 |      100 |       0 |       0 | 6                 
   RatingFeature.tsx |      80 |       50 |   66.66 |      80 | 21                
   SearchBar.tsx     |       0 |        0 |       0 |       0 | 8-42              
@@ -342,5 +343,5 @@ All files           |   18.51 |     12.5 |   16.66 |   18.51 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 failed, 7 passed, 8 total
 Snapshots:   0 total
-Time:        3.679 s
+Time:        4.461 s
 Ran all test suites.
