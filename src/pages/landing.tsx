@@ -10,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import NavBar from "../components/NavBar";
-import ItemListUI from "../components/ItemListUI";
 import { SearchBar } from "../components/SearchBar";
 import { Button } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
