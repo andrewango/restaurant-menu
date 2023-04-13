@@ -22,7 +22,7 @@ export default function ItemListUI({
                     <Flex
                         key={food.name}
                         align="center"
-                        w={300}
+                        w={400}
                         borderWidth={2}
                         borderColor="black"
                         borderRadius="md"
@@ -38,6 +38,7 @@ export default function ItemListUI({
                         />
                         <Box key={food.name} w={300} textAlign="center" p={2}>
                             <div className="foodtitle">{food.name}</div>
+                            <hr></hr>
                             <div className="desc">{food.desc}</div>
                             <hr></hr>
                             <RatingFeature></RatingFeature>
