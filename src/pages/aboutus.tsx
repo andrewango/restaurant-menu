@@ -37,7 +37,8 @@ export default function AboutUs() {
                         </AccordionButton>
                     </h2>
                     <AccordionPanel pb={4}>
-                        <b>Your Name</b> | your desc <br></br>
+                        <b>Colby Frashure</b> | music is my sole personality
+                        trait <br></br>
                         <br></br>
                         <b>Your Name</b> | your desc <br></br>
                         <br></br>
