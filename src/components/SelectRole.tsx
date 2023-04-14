@@ -4,7 +4,6 @@ import styled from "styled-components";
 export function SelectRole(): JSX.Element {
     const [userRole, setUserRole] = useState<string>("Owner");
     const ROLES = ["Owner", "Employee", "User"];
-
     const Select = styled.select`
         margin-left: 5px;
         text-align: center;
@@ -18,7 +17,6 @@ export function SelectRole(): JSX.Element {
         color: inherit;
         background-color: transparent;
     `;
-
     return (
         <div>
             <form>
