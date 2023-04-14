@@ -1,18 +1,8 @@
 import React from "react";
-import {
-    Heading,
-    Container,
-    Text,
-    Stack,
-    Flex,
-    Box,
-    Spacer
-} from "@chakra-ui/react";
+import { Heading, Container, Text, Flex, Box, Spacer } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
-import { Button } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
 import restaurantLogo from "./restaurant-logo.png";
 
 export default function Landing() {
