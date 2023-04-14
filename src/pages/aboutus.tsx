@@ -44,7 +44,7 @@ export default function AboutUs() {
                         <br></br>
                         <b>Your Name</b> | your desc <br></br>
                         <br></br>
-                        <b>Your Name</b> | your desc <br></br>
+                        <b>Gavin Caulfield</b> | stream local orange <br></br>
                         <br></br>
                         <b>Andrew Ngo</b> | i like snow c:
                     </AccordionPanel>
