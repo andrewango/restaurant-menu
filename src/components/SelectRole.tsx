@@ -42,7 +42,7 @@ export function SelectRole(): JSX.Element {
                     ))}
                 </Select>
             </form>
-            {sessionStorage.getItem("user") === "Owner" && <span>Owner</span>}
+            {/* {sessionStorage.getItem("user") === "Owner" && <span>Owner</span>} */}
         </div>
     );
 }
