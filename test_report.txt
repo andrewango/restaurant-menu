@@ -321,11 +321,11 @@ All files           |   16.66 |     12.5 |      15 |   16.66 |
  src                |     100 |      100 |     100 |     100 |                   
   App.tsx           |     100 |      100 |     100 |     100 |                   
  src/components     |      16 |     12.5 |   13.33 |      16 |                   
-  ItemListUI.tsx    |       0 |      100 |       0 |       0 | 11-23             
+  ItemListUI.tsx    |       0 |      100 |       0 |       0 | 10-21             
   NavBar.tsx        |       0 |      100 |       0 |       0 | 6                 
   RatingFeature.tsx |      80 |       50 |   66.66 |      80 | 21                
   SearchBar.tsx     |       0 |        0 |       0 |       0 | 9-36              
-  SelectRole.tsx    |       0 |      100 |       0 |       0 | 5-34              
+  SelectRole.tsx    |       0 |      100 |       0 |       0 | 5-32              
  src/interfaces     |       0 |        0 |       0 |       0 |                   
   Customer.ts       |       0 |        0 |       0 |       0 |                   
   CustomerList.ts   |       0 |        0 |       0 |       0 |                   
@@ -343,5 +343,5 @@ All files           |   16.66 |     12.5 |      15 |   16.66 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 failed, 7 passed, 8 total
 Snapshots:   0 total
-Time:        4.325 s
+Time:        3.604 s
 Ran all test suites.
