@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/restaurant-menu/static/css/main.fd685f4f.css",
-    "main.js": "/restaurant-menu/static/js/main.422f6380.js",
+    "main.js": "/restaurant-menu/static/js/main.de10f818.js",
     "static/js/787.578e6cb3.chunk.js": "/restaurant-menu/static/js/787.578e6cb3.chunk.js",
     "static/media/AnandaBlack.ttf": "/restaurant-menu/static/media/AnandaBlack.eb04dce4c2b321e2ef0a.ttf",
     "static/media/restaurant-logo.png": "/restaurant-menu/static/media/restaurant-logo.116898dc10d088a5021f.png",
     "static/media/ChopinScript.ttf": "/restaurant-menu/static/media/ChopinScript.294d294101e0ae84b924.ttf",
     "index.html": "/restaurant-menu/index.html",
     "main.fd685f4f.css.map": "/restaurant-menu/static/css/main.fd685f4f.css.map",
-    "main.422f6380.js.map": "/restaurant-menu/static/js/main.422f6380.js.map",
+    "main.de10f818.js.map": "/restaurant-menu/static/js/main.de10f818.js.map",
     "787.578e6cb3.chunk.js.map": "/restaurant-menu/static/js/787.578e6cb3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fd685f4f.css",
-    "static/js/main.422f6380.js"
+    "static/js/main.de10f818.js"
   ]
 }
