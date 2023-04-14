@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 export function SelectRole(): JSX.Element {
-    const [userRole, setUserRole] = useState<string>("Owner");
+    const [userRole, setUserRole] = useState<string>("");
     const ROLES = ["Owner", "Employee", "User"];
 
     const Select = styled.select`
@@ -19,12 +19,17 @@ export function SelectRole(): JSX.Element {
         background-color: transparent;
     `;
 
+    function changeRole(key: string) {
+        sessionStorage.setItem("user", key);
+        setUserRole(key);
+    }
+
     return (
         <div>
             <form>
                 <label> Your Role </label>
                 <Select
-                    onChange={(e) => setUserRole(e.target.value)}
+                    onChange={(e) => changeRole(e.target.value)}
                     name={userRole}
                     value={userRole}
                     id={userRole}
@@ -37,6 +42,7 @@ export function SelectRole(): JSX.Element {
                     ))}
                 </Select>
             </form>
+            {sessionStorage.getItem("user") === "Owner" && <span>Owner</span>}
         </div>
     );
 }
