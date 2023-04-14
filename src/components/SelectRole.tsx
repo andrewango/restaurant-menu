@@ -4,7 +4,6 @@ import styled from "styled-components";
 export function SelectRole(): JSX.Element {
     const [userRole, setUserRole] = useState<string>("");
     const ROLES = ["Owner", "Employee", "User"];
-
     const Select = styled.select`
         margin-left: 5px;
         text-align: center;

@@ -31,14 +31,22 @@ export default function AboutUs() {
                     <h2>
                         <AccordionButton>
                             <Box as="span" flex="1" fontWeight="bold">
-                                who we are
+                                meet our team
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>
                     </h2>
                     <AccordionPanel pb={4}>
-                        We&apos;re a team of 5 university students studying
-                        computer science. This website is our CISC275 project!
+                        <b>Colby Frashure</b> | music is my sole personality
+                        trait <br></br>
+                        <br></br>
+                        <b>Your Name</b> | your desc <br></br>
+                        <br></br>
+                        <b>Your Name</b> | your desc <br></br>
+                        <br></br>
+                        <b>Gavin Caulfield</b> | stream local orange <br></br>
+                        <br></br>
+                        <b>Andrew Ngo</b> | i like snow c:
                     </AccordionPanel>
                 </AccordionItem>
 
