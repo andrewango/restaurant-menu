@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { Stack } from "@chakra-ui/react";
 import styled from "styled-components";
+import { Button } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 
 export function SelectRole(): JSX.Element {
     const [userRole, setUserRole] = useState<string>("");
     const ROLES = ["Owner", "Employee", "User"];
+    const [visible, setVisible] = useState<boolean>(false);
     const Select = styled.select`
         margin-left: 5px;
         text-align: center;
@@ -21,6 +25,9 @@ export function SelectRole(): JSX.Element {
     function changeRole(key: string) {
         sessionStorage.setItem("user", key);
         setUserRole(key);
+        sessionStorage.getItem("user") === "Owner"
+            ? setVisible(true)
+            : setVisible(false);
     }
 
     return (
@@ -35,13 +42,40 @@ export function SelectRole(): JSX.Element {
                     key={userRole}
                 >
                     {ROLES.map((role: string) => (
-                        <option value={role} key={role}>
+                        <option value={role} key={role} id={role}>
                             {role}
                         </option>
                     ))}
                 </Select>
+                {visible && (
+                    <Stack
+                        px={10}
+                        py={3}
+                        spacing={3}
+                        direction="column"
+                        textAlign="center"
+                    >
+                        <Button
+                            as={NavLink}
+                            to="/edit"
+                            colorScheme="red"
+                            size="md"
+                            variant="solid"
+                        >
+                            edit foods
+                        </Button>
+                        <Button
+                            as={NavLink}
+                            to="/users"
+                            colorScheme="red"
+                            size="md"
+                            variant="outline"
+                        >
+                            edit users
+                        </Button>
+                    </Stack>
+                )}
             </form>
-            {/* {sessionStorage.getItem("user") === "Owner" && <span>Owner</span>} */}
         </div>
     );
 }

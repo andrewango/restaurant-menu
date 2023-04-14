@@ -43,32 +43,7 @@ export default function Landing() {
                         />
                     </Box>
                     <Spacer></Spacer>
-                    <Stack
-                        px={10}
-                        py={3}
-                        spacing={6}
-                        direction="column"
-                        textAlign="center"
-                    >
-                        <Button
-                            as={NavLink}
-                            to="/edit"
-                            colorScheme="red"
-                            size="md"
-                            variant="solid"
-                        >
-                            edit foods
-                        </Button>
-                        <Button
-                            as={NavLink}
-                            to="/users"
-                            colorScheme="red"
-                            size="md"
-                            variant="outline"
-                        >
-                            edit users
-                        </Button>
-                    </Stack>
+                    <SelectRole></SelectRole>
                 </Flex>
                 <NavBar></NavBar>
                 <div>
@@ -84,10 +59,6 @@ export default function Landing() {
                 </div>
                 <Container ml={500}>
                     <SearchBar></SearchBar>
-                </Container>
-                <br></br>
-                <Container>
-                    <SelectRole></SelectRole>
                 </Container>
                 <br></br>
             </div>
