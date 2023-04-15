@@ -53,7 +53,7 @@ export function SelectRole(): JSX.Element {
                     >
                         <Button
                             as={NavLink}
-                            to="/edit"
+                            to="/EditFood"
                             colorScheme="red"
                             size="md"
                             variant="solid"
@@ -62,7 +62,7 @@ export function SelectRole(): JSX.Element {
                         </Button>
                         <Button
                             as={NavLink}
-                            to="/users"
+                            to="/EditUsers"
                             colorScheme="red"
                             size="md"
                             variant="outline"
@@ -81,7 +81,7 @@ export function SelectRole(): JSX.Element {
                     >
                         <Button
                             as={NavLink}
-                            to="/edit"
+                            to="/EditFood"
                             colorScheme="red"
                             size="md"
                             variant="solid"
