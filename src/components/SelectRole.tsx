@@ -5,7 +5,9 @@ import { Button } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
 export function SelectRole(): JSX.Element {
-    const [userRole, setUserRole] = useState<string>("");
+    const [userRole, setUserRole] = useState<string>(
+        sessionStorage.getItem("user")!
+    );
     const ROLES = ["Owner", "Employee", "User"];
     const Select = styled.select`
         margin-left: 5px;
