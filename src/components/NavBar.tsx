@@ -28,7 +28,7 @@ export default function NavBar() {
                     menu
                 </Box>
             </Link>
-            <Link to="/aboutus">
+            <Link to="/AboutUs">
                 <Box
                     as="span"
                     fontSize="lg"

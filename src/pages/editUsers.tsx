@@ -26,7 +26,7 @@ import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 
-export default function Users() {
+export default function EditUsers() {
     const [customerList, setCustomerList] = useState<userProps[]>([
         {
             name: "Cloud",
@@ -144,7 +144,7 @@ export default function Users() {
                     fontWeight="bold"
                     textAlign="center"
                 >
-                    Edit Users
+                    edit users
                 </Heading>
                 <Spacer></Spacer>
                 <Stack
@@ -157,7 +157,7 @@ export default function Users() {
                 >
                     <Button
                         as={NavLink}
-                        to="/edit"
+                        to="/EditFood"
                         colorScheme="red"
                         size="md"
                         variant="solid"
@@ -166,7 +166,7 @@ export default function Users() {
                     </Button>
                     <Button
                         as={NavLink}
-                        to="/users"
+                        to="/EditUsers"
                         colorScheme="red"
                         size="md"
                         variant="outline"

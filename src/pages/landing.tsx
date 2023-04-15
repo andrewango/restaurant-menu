@@ -52,7 +52,7 @@ export default function Landing() {
                     >
                         <Button
                             as={NavLink}
-                            to="/edit"
+                            to="/EditFood"
                             colorScheme="red"
                             size="md"
                             variant="solid"
@@ -61,7 +61,7 @@ export default function Landing() {
                         </Button>
                         <Button
                             as={NavLink}
-                            to="/users"
+                            to="/EditUsers"
                             colorScheme="red"
                             size="md"
                             variant="outline"

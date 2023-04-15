@@ -1,8 +1,8 @@
 import React from "react";
-import Edit from "./pages/editFood";
-import Landing from "./pages/landing";
-import Users from "./pages/editUsers";
-import AboutUs from "./pages/aboutus";
+import EditFood from "./pages/EditFood";
+import Landing from "./pages/Landing";
+import EditUsers from "./pages/EditUsers";
+import AboutUs from "./pages/AboutUs";
 //Routing
 import { Routes, Route } from "react-router-dom";
 
@@ -11,9 +11,9 @@ export default function App() {
     return (
         <Routes>
             <Route path="/" element={<Landing />}></Route>
-            <Route path="/users" element={<Users />}></Route>
-            <Route path="/edit" element={<Edit />}></Route>
-            <Route path="/aboutus" element={<AboutUs />}></Route>
+            <Route path="/EditUsers" element={<EditUsers />}></Route>
+            <Route path="/EditFood" element={<EditFood />}></Route>
+            <Route path="/AboutUs" element={<AboutUs />}></Route>
         </Routes>
     );
 }
