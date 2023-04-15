@@ -314,34 +314,34 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
---------------------|---------|----------|---------|---------|-------------------
-File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------|---------|----------|---------|---------|-------------------
-All files           |   15.62 |     8.33 |   14.28 |   15.62 |                   
- src                |     100 |      100 |     100 |     100 |                   
-  App.tsx           |     100 |      100 |     100 |     100 |                   
- src/components     |   14.81 |     8.33 |    12.5 |   14.81 |                   
-  ItemListUI.tsx    |       0 |      100 |       0 |       0 | 10-21             
-  NavBar.tsx        |       0 |      100 |       0 |       0 | 6                 
-  RatingFeature.tsx |      80 |       50 |   66.66 |      80 | 21                
-  SearchBar.tsx     |       0 |        0 |       0 |       0 | 9-36              
-  SelectRole.tsx    |       0 |        0 |       0 |       0 | 8-41              
- src/interfaces     |       0 |        0 |       0 |       0 |                   
-  Customer.ts       |       0 |        0 |       0 |       0 |                   
-  CustomerList.ts   |       0 |        0 |       0 |       0 |                   
-  EmployeeList.ts   |       0 |        0 |       0 |       0 |                   
-  Food.ts           |       0 |        0 |       0 |       0 |                   
-  OwnerFoodItem.ts  |       0 |        0 |       0 |       0 |                   
-  OwnerList.ts      |       0 |        0 |       0 |       0 |                   
-  TotalCustomers.ts |       0 |        0 |       0 |       0 |                   
- src/pages          |       0 |      100 |       0 |       0 |                   
-  aboutus.tsx       |       0 |      100 |       0 |       0 | 13                
-  edit.tsx          |       0 |      100 |       0 |       0 | 4                 
-  landing.tsx       |       0 |      100 |       0 |       0 | 9                 
-  users.tsx         |       0 |      100 |       0 |       0 | 5                 
---------------------|---------|----------|---------|---------|-------------------
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |   10.86 |     8.33 |   11.53 |   10.86 |                   
+ src                 |     100 |      100 |     100 |     100 |                   
+  App.tsx            |     100 |      100 |     100 |     100 |                   
+ src/components      |   14.81 |     8.33 |    12.5 |   14.81 |                   
+  ItemListUI.tsx     |       0 |      100 |       0 |       0 | 10-21             
+  NavBar.tsx         |       0 |      100 |       0 |       0 | 6                 
+  RatingFeature.tsx  |      80 |       50 |   66.66 |      80 | 21                
+  SearchBar.tsx      |       0 |        0 |       0 |       0 | 9-36              
+  SelectRole.tsx     |       0 |        0 |       0 |       0 | 8-41              
+ src/interfaces      |       0 |        0 |       0 |       0 |                   
+  CustomerList.ts    |       0 |        0 |       0 |       0 |                   
+  EmployeeList.ts    |       0 |        0 |       0 |       0 |                   
+  Food.ts            |       0 |        0 |       0 |       0 |                   
+  ListOfCustomers.ts |       0 |        0 |       0 |       0 |                   
+  OwnerFoodItem.ts   |       0 |        0 |       0 |       0 |                   
+  OwnerList.ts       |       0 |        0 |       0 |       0 |                   
+  User.ts            |       0 |        0 |       0 |       0 |                   
+ src/pages           |       0 |      100 |       0 |       0 |                   
+  AboutUs.tsx        |       0 |      100 |       0 |       0 | 13                
+  EditFood.tsx       |       0 |      100 |       0 |       0 | 4                 
+  EditUsers.tsx      |       0 |      100 |       0 |       0 | 24-235            
+  Landing.tsx        |       0 |      100 |       0 |       0 | 9                 
+---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 failed, 7 passed, 8 total
 Snapshots:   0 total
-Time:        3.68 s
+Time:        4.471 s
 Ran all test suites.
