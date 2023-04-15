@@ -90,6 +90,22 @@ export default function Users() {
                     ],
                     popular: true,
                     spicy: false
+                },
+                {
+                    name: "Cheeseburger",
+                    image: "https://live.staticflickr.com/65535/52812357442_e349d9cd4d_m.jpg",
+                    desc: "A juicy burger with lettuce, tomato, and cheese",
+                    rating: 4.1,
+                    type: ["American", "Fast Food", "Entree"],
+                    ingredients: [
+                        "Beef Patty",
+                        "Bun",
+                        "Lettuce",
+                        "Tomato",
+                        "Cheese"
+                    ],
+                    popular: true,
+                    spicy: false
                 }
             ],
             role: "Customer"
@@ -221,7 +237,8 @@ export default function Users() {
                                     <Td isNumeric>{customer.orderID}</Td>
                                     <Td>
                                         {customer.order.map(
-                                            (food: foodProps) => food.name
+                                            (food: foodProps) =>
+                                                food.name + ", "
                                         )}
                                     </Td>
                                 </Tr>
