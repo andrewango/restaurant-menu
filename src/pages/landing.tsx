@@ -1,18 +1,8 @@
 import React from "react";
-import {
-    Heading,
-    Container,
-    Text,
-    Stack,
-    Flex,
-    Box,
-    Spacer
-} from "@chakra-ui/react";
+import { Heading, Container, Text, Flex, Box, Spacer } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
-import { Button } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
 import restaurantLogo from "./restaurant-logo.png";
 
 export default function Landing() {
@@ -43,32 +33,7 @@ export default function Landing() {
                         />
                     </Box>
                     <Spacer></Spacer>
-                    <Stack
-                        px={10}
-                        py={3}
-                        spacing={6}
-                        direction="column"
-                        textAlign="center"
-                    >
-                        <Button
-                            as={NavLink}
-                            to="/edit"
-                            colorScheme="red"
-                            size="md"
-                            variant="solid"
-                        >
-                            edit foods
-                        </Button>
-                        <Button
-                            as={NavLink}
-                            to="/users"
-                            colorScheme="red"
-                            size="md"
-                            variant="outline"
-                        >
-                            edit users
-                        </Button>
-                    </Stack>
+                    <SelectRole></SelectRole>
                 </Flex>
                 <NavBar></NavBar>
                 <div>
@@ -84,10 +49,6 @@ export default function Landing() {
                 </div>
                 <Container ml={500}>
                     <SearchBar></SearchBar>
-                </Container>
-                <br></br>
-                <Container>
-                    <SelectRole></SelectRole>
                 </Container>
                 <br></br>
             </div>
