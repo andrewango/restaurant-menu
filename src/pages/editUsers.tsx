@@ -13,13 +13,7 @@ import {
     Flex,
     Box
 } from "@chakra-ui/react";
-import {
-    FormErrorMessage,
-    FormLabel,
-    FormControl,
-    Input,
-    Button
-} from "@chakra-ui/react";
+import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
 
 import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";

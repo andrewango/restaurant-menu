@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Edit() {
+export default function EditFood() {
     return <div>Edit food!!!</div>;
     // Obly super and admin can access this page
     // Set list state to be the user list
