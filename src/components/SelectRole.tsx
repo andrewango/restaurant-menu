@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom";
 export function SelectRole(): JSX.Element {
     const [userRole, setUserRole] = useState<string>("");
     const ROLES = ["Owner", "Employee", "User"];
-    const [visible, setVisible] = useState<boolean>(false);
     const Select = styled.select`
         margin-left: 5px;
         text-align: center;
@@ -25,9 +24,6 @@ export function SelectRole(): JSX.Element {
     function changeRole(key: string) {
         sessionStorage.setItem("user", key);
         setUserRole(key);
-        sessionStorage.getItem("user") === "Owner"
-            ? setVisible(true)
-            : setVisible(false);
     }
 
     return (
@@ -47,7 +43,7 @@ export function SelectRole(): JSX.Element {
                         </option>
                     ))}
                 </Select>
-                {visible && (
+                {sessionStorage.getItem("user") === "Owner" && (
                     <Stack
                         px={10}
                         py={3}
@@ -72,6 +68,25 @@ export function SelectRole(): JSX.Element {
                             variant="outline"
                         >
                             edit users
+                        </Button>
+                    </Stack>
+                )}
+                {sessionStorage.getItem("user") === "Employee" && (
+                    <Stack
+                        px={10}
+                        py={3}
+                        spacing={3}
+                        direction="column"
+                        textAlign="center"
+                    >
+                        <Button
+                            as={NavLink}
+                            to="/edit"
+                            colorScheme="red"
+                            size="md"
+                            variant="solid"
+                        >
+                            edit foods
                         </Button>
                     </Stack>
                 )}
