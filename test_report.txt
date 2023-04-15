@@ -317,15 +317,15 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------|---------|----------|---------|---------|-------------------
-All files           |   15.62 |     12.5 |   14.28 |   15.62 |                   
+All files           |   15.62 |     8.33 |   14.28 |   15.62 |                   
  src                |     100 |      100 |     100 |     100 |                   
   App.tsx           |     100 |      100 |     100 |     100 |                   
- src/components     |   14.81 |     12.5 |    12.5 |   14.81 |                   
+ src/components     |   14.81 |     8.33 |    12.5 |   14.81 |                   
   ItemListUI.tsx    |       0 |      100 |       0 |       0 | 10-21             
   NavBar.tsx        |       0 |      100 |       0 |       0 | 6                 
   RatingFeature.tsx |      80 |       50 |   66.66 |      80 | 21                
   SearchBar.tsx     |       0 |        0 |       0 |       0 | 9-36              
-  SelectRole.tsx    |       0 |      100 |       0 |       0 | 5-38              
+  SelectRole.tsx    |       0 |        0 |       0 |       0 | 8-41              
  src/interfaces     |       0 |        0 |       0 |       0 |                   
   Customer.ts       |       0 |        0 |       0 |       0 |                   
   CustomerList.ts   |       0 |        0 |       0 |       0 |                   
@@ -337,11 +337,11 @@ All files           |   15.62 |     12.5 |   14.28 |   15.62 |
  src/pages          |       0 |      100 |       0 |       0 |                   
   aboutus.tsx       |       0 |      100 |       0 |       0 | 13                
   edit.tsx          |       0 |      100 |       0 |       0 | 4                 
-  landing.tsx       |       0 |      100 |       0 |       0 | 19                
+  landing.tsx       |       0 |      100 |       0 |       0 | 9                 
   users.tsx         |       0 |      100 |       0 |       0 | 5                 
 --------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 failed, 7 passed, 8 total
 Snapshots:   0 total
-Time:        4.431 s
+Time:        3.68 s
 Ran all test suites.
