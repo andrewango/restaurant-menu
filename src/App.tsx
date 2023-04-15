@@ -1,7 +1,7 @@
 import React from "react";
-import Edit from "./pages/edit";
+import Edit from "./pages/editFood";
 import Landing from "./pages/landing";
-import Users from "./pages/users";
+import Users from "./pages/editUsers";
 import AboutUs from "./pages/aboutus";
 //Routing
 import { Routes, Route } from "react-router-dom";

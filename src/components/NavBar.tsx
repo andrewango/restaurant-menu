@@ -1,30 +1,48 @@
 import React from "react";
-import { Flex, Center } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { Box } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
     return (
-        <Flex
-            color="white"
-            bg="red.500"
-            justifyContent="space-around"
-            wrap="wrap"
-            w="60%"
-            mx="auto"
+        // Create red bar that spans the whole page horizontally and has our two navigation links for "menu" and "about us"
+        <Box
+            as="nav"
+            display="flex"
+            justifyContent="center"
+            py={4}
+            bg="red.400"
         >
-            <Center w={200} h={10}>
-                <NavLink to="/" style={{ color: "white", fontWeight: "bold" }}>
+            <Link to="/">
+                <Box
+                    as="span"
+                    fontSize="lg"
+                    fontWeight="bold"
+                    color="white"
+                    px={4}
+                    py={2}
+                    transition="background-color 0.3s ease"
+                    _hover={{ bgColor: "red.600", color: "white" }}
+                    borderRadius="md"
+                    mr={4}
+                >
                     menu
-                </NavLink>
-            </Center>
-            <Center w={200} h={10}>
-                <NavLink
-                    to="/aboutus"
-                    style={{ color: "white", fontWeight: "bold" }}
+                </Box>
+            </Link>
+            <Link to="/aboutus">
+                <Box
+                    as="span"
+                    fontSize="lg"
+                    fontWeight="bold"
+                    color="white"
+                    px={4}
+                    py={2}
+                    transition="background-color 0.3s ease"
+                    _hover={{ bgColor: "red.600", color: "white" }}
+                    borderRadius="md"
                 >
                     about us
-                </NavLink>
-            </Center>
-        </Flex>
+                </Box>
+            </Link>
+        </Box>
     );
 }

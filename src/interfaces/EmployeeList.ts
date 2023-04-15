@@ -1,5 +1,5 @@
 import { foodProps } from "./Food";
 
-export interface OwnerListProps {
+export interface EmployeeListProps {
     foodList: foodProps[];
 }

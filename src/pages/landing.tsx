@@ -1,41 +1,54 @@
 import React from "react";
-import { Heading, Container, Text, Stack } from "@chakra-ui/react";
+import {
+    Heading,
+    Container,
+    Text,
+    Stack,
+    Flex,
+    Box,
+    Spacer
+} from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import NavBar from "../components/NavBar";
-import ItemListUI from "../components/ItemListUI";
 import { SearchBar } from "../components/SearchBar";
 import { Button } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import restaurantLogo from "./restaurant-logo.png";
 
 export default function Landing() {
     return (
         <>
             <div style={{ padding: 10 }}>
-                <Container maxW={1000} position="relative">
-                    <Text
-                        my="30px"
-                        mb="5px"
-                        textAlign={"center"}
-                        fontWeight="750"
-                        fontSize="70px"
-                    >
-                        welcome to team 13
-                    </Text>
-                    <Text
-                        mb={10}
-                        textAlign={"center"}
-                        fontWeight="450"
-                        fontSize="20px"
-                    >
-                        enjoy the best food on the planet
-                    </Text>
-                </Container>
-                <Container ml={1150} position="absolute">
+                <Flex
+                    as="header"
+                    textAlign="center"
+                    px={5}
+                    py={2}
+                    color="black"
+                >
+                    <Box>
+                        <Heading as="h1" fontSize="70px" fontWeight="extrabold">
+                            team 13
+                        </Heading>
+                        <Text fontSize="20px" fontWeight="bold">
+                            good food, good mood.
+                        </Text>
+                    </Box>
+                    <Box position="absolute" ml="43%">
+                        <img
+                            src={restaurantLogo}
+                            alt="restaurant logo"
+                            width="150px"
+                            height="150px"
+                        />
+                    </Box>
+                    <Spacer></Spacer>
                     <Stack
-                        mt={-130}
-                        spacing={4}
+                        px={10}
+                        py={3}
+                        spacing={6}
                         direction="column"
-                        align="center"
+                        textAlign="center"
                     >
                         <Button
                             as={NavLink}
@@ -56,19 +69,27 @@ export default function Landing() {
                             edit users
                         </Button>
                     </Stack>
-                </Container>
+                </Flex>
                 <NavBar></NavBar>
-                <Container mt={10} ml={400}>
-                    <Heading fontSize="40px">our menu</Heading>
-                </Container>
+                <div>
+                    <Heading
+                        as="h2"
+                        display="flex"
+                        justifyContent="center"
+                        py={5}
+                        fontSize="40px"
+                    >
+                        our menu
+                    </Heading>
+                </div>
                 <Container ml={500}>
-                    <ItemListUI></ItemListUI>
+                    <SearchBar></SearchBar>
                 </Container>
                 <br></br>
                 <Container>
                     <SelectRole></SelectRole>
-                    <SearchBar></SearchBar>
                 </Container>
+                <br></br>
             </div>
         </>
     );
