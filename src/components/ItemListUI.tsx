@@ -2,6 +2,7 @@ import React from "react";
 import { VStack, Box, Image, Flex } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
 import { foodProps } from "../interfaces/Food";
+//import { DeliveryDropDown } from "./DeliveryDropDown";
 export default function ItemListUI({
     foodData
 }: {

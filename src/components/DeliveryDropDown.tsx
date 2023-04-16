@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import { Stack } from "@chakra-ui/react";
-import styled from "styled-components";
-import { Button } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
 import { Form } from "react-bootstrap";
 
 export function DeliveryDropDown(): JSX.Element {
@@ -21,6 +17,7 @@ export function DeliveryDropDown(): JSX.Element {
     ];
     return (
         <div>
+            <p className="del-time">Delivery Time:</p>
             <form>
                 <Form.Group controlId="delivery-dropdown">
                     <Form.Select
