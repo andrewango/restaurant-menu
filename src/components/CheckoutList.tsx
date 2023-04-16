@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, VStack } from "@chakra-ui/react";
+import { Card, VStack } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
 import { useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
@@ -19,8 +19,8 @@ export default function CheckoutList(): JSX.Element {
         console.log(name);
     };
     return (
-        <Box border="black">
-            <VStack ref={drop} spacing="3px" mt={100}>
+        <Card ref={drop} border="5px solid black">
+            <VStack spacing="3px" mt={100}>
                 {checkoutList.map((food: foodProps) => (
                     <FoodItem
                         key={food.name}
@@ -31,6 +31,6 @@ export default function CheckoutList(): JSX.Element {
                     ></FoodItem>
                 ))}
             </VStack>
-        </Box>
+        </Card>
     );
 }
