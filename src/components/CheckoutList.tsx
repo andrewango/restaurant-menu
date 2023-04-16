@@ -1,16 +1,26 @@
 import React, { useState } from "react";
-import { VStack } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
-import { useDrag } from "react-dnd";
+import { useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
-import FoodItem from "../components/FoodItem";
+import FoodItem from "./FoodItem";
 
 export default function CheckoutList(): JSX.Element {
     const [checkoutList, setCheckoutList] = useState<foodProps[]>([]);
+    const [{ isOver }, drop] = useDrop(() => ({
+        accept: "foodItem",
+        drop: (item: foodProps) => addFoodToCheckoutList(item.name),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver()
+        })
+    }));
 
+    const addFoodToCheckoutList = (name: string) => {
+        console.log(name);
+    };
     return (
-        <div>
-            <VStack spacing="3px" mt={100}>
+        <Box border="black">
+            <VStack ref={drop} spacing="3px" mt={100}>
                 {checkoutList.map((food: foodProps) => (
                     <FoodItem
                         key={food.name}
@@ -21,6 +31,6 @@ export default function CheckoutList(): JSX.Element {
                     ></FoodItem>
                 ))}
             </VStack>
-        </div>
+        </Box>
     );
 }

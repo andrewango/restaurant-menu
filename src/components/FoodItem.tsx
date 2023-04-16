@@ -24,6 +24,7 @@ export default function FoodItem({
 }): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "foodItem",
+        item: { name: name },
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging()
         })
@@ -45,8 +46,8 @@ export default function FoodItem({
                 maxW={{ base: "100%", sm: "200px" }}
                 borderRadius="full"
                 boxSize="100px"
-                mx={2}
-                my={2}
+                mx={5}
+                my={5}
             />
             <Stack>
                 <CardBody>
