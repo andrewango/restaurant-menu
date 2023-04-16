@@ -5,6 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 const colors = {
     brand: {
@@ -46,7 +48,9 @@ root.render(
     <React.StrictMode>
         <HashRouter>
             <ChakraProvider theme={theme}>
-                <App />
+                <DndProvider backend={HTML5Backend}>
+                    <App />
+                </DndProvider>
             </ChakraProvider>
         </HashRouter>
     </React.StrictMode>
