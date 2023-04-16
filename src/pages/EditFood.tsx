@@ -1,7 +1,6 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
 import { Heading, Stack, Spacer, Flex, Box } from "@chakra-ui/react";
-import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 import { SelectRole } from "../components/SelectRole";
@@ -49,7 +48,8 @@ function EditFood() {
                     <br></br>
                     <p>Your Role : {window.sessionStorage.getItem("user")}</p> */}
                     <br></br>
-                    {sessionStorage.getItem("user") === "Owner" && (
+                    {(sessionStorage.getItem("user") === "Owner" ||
+                        sessionStorage.getItem("user") === null) && (
                         <>
                             <Button
                                 as={NavLink}

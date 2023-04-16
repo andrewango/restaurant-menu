@@ -17,7 +17,7 @@ import foodList from "../data/foods.json";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
-import RatingFeature from "../components/RatingFeature";
+import { Form } from "react-bootstrap";
 
 export default function AddFood() {
     const [foods, setFoods] = useState<foodProps[]>(
@@ -26,10 +26,9 @@ export default function AddFood() {
             : JSON.parse(sessionStorage.getItem("menu")!)
     );
     const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
-    const [food, setFood] = useState<foodProps>();
     const [popular, setPopular] = useState<boolean>(false);
     const [spicy, setSpicy] = useState<boolean>(false);
-    const [form, setForm] = useState<foodProps>({
+    const [food, setFood] = useState<foodProps>({
         name: "",
         image: "",
         desc: "",
@@ -39,33 +38,23 @@ export default function AddFood() {
         popular: popular,
         spicy: spicy
     });
-    const foodsForUI =
-        sessionStorage.getItem("menu") === null
-            ? foodlist
-            : JSON.parse(sessionStorage.getItem("menu")!);
 
-    const { name, image, desc, rating, type, ingredients } = form;
+    const { name, image, desc, rating, type, ingredients } = food;
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setForm({
-            ...form,
+        setFood({
+            ...food,
             [name]: value
-        });
-    };
-
-    const changeBoolean = () => {
-        setForm({
-            ...form,
-            spicy: spicy,
-            popular: popular
         });
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        onSubmit(form);
-        setForm({
+        onSubmit();
+        sessionStorage.setItem("menu", JSON.stringify(foodlist));
+        setFoods(JSON.parse(sessionStorage.getItem("menu")!));
+        setFood({
             name: "",
             image: "",
             desc: "",
@@ -75,23 +64,29 @@ export default function AddFood() {
             popular: false,
             spicy: false
         });
+        const popularCheck = document.getElementById(
+            "popular"
+        ) as HTMLInputElement;
+        const spicyCheck = document.getElementById("spicy") as HTMLInputElement;
+        popularCheck.checked = false;
+        spicyCheck.checked = false;
     };
 
-    const onSubmit = (newfood: foodProps) => {
-        setFood(newfood);
-        if (foodlist) {
-            const copy: foodProps[] = foodlist.map(
-                (food: foodProps): foodProps => ({
-                    ...food,
-                    type: [...food.type],
-                    ingredients: [...food.ingredients]
-                })
-            );
-            const newFoodList: foodProps[] = [...copy, form];
-            setFoodlist(newFoodList);
-        }
-        sessionStorage.setItem("menu", JSON.stringify(foodlist));
-        setFoods(JSON.parse(sessionStorage.getItem("menu")!));
+    const onSubmit = () => {
+        setFood({
+            ...food,
+            spicy: spicy,
+            popular: popular
+        });
+        const copy: foodProps[] = foodlist.map(
+            (food: foodProps): foodProps => ({
+                ...food,
+                type: [...food.type],
+                ingredients: [...food.ingredients]
+            })
+        );
+        const newFoodList: foodProps[] = [...copy, food];
+        setFoodlist(newFoodList);
     };
 
     return (
@@ -161,7 +156,6 @@ export default function AddFood() {
                             >
                                 <form onSubmit={handleSubmit}>
                                     <FormControl
-                                        isRequired
                                         id="name"
                                         width="500px"
                                         px={20}
@@ -169,6 +163,7 @@ export default function AddFood() {
                                         <GridItem colSpan={2}>
                                             <FormLabel>Name:</FormLabel>
                                             <Input
+                                                isRequired
                                                 name="name"
                                                 value={name}
                                                 onChange={onChange}
@@ -178,6 +173,7 @@ export default function AddFood() {
                                         <GridItem colSpan={2}>
                                             <FormLabel>Image Link:</FormLabel>
                                             <Input
+                                                isRequired
                                                 name="image"
                                                 value={image}
                                                 onChange={onChange}
@@ -187,6 +183,7 @@ export default function AddFood() {
                                         <GridItem colSpan={2}>
                                             <FormLabel>Description:</FormLabel>
                                             <Input
+                                                isRequired
                                                 name="desc"
                                                 value={desc}
                                                 onChange={onChange}
@@ -196,6 +193,7 @@ export default function AddFood() {
                                         <GridItem colSpan={2}>
                                             <FormLabel>Rating:</FormLabel>
                                             <Input
+                                                isRequired
                                                 name="rating"
                                                 value={rating}
                                                 onChange={onChange}
@@ -205,6 +203,7 @@ export default function AddFood() {
                                         <GridItem colSpan={2}>
                                             <FormLabel>Type:</FormLabel>
                                             <Input
+                                                isRequired
                                                 name="type"
                                                 value={type}
                                                 onChange={onChange}
@@ -214,6 +213,7 @@ export default function AddFood() {
                                         <GridItem colSpan={2}>
                                             <FormLabel>Ingredients:</FormLabel>
                                             <Input
+                                                isRequired
                                                 name="ingredients"
                                                 value={ingredients}
                                                 onChange={onChange}
@@ -222,11 +222,20 @@ export default function AddFood() {
                                         </GridItem>
                                         <GridItem colSpan={1}>
                                             <FormLabel>Popular</FormLabel>
-                                            <Checkbox
+                                            <Form.Check
                                                 type="checkbox"
                                                 name="popular"
-                                                onChange={() => changeBoolean}
-                                                mb={3}
+                                                id="popular"
+                                                value="popular"
+                                                checked={popular}
+                                                onChange={(
+                                                    event: React.ChangeEvent<HTMLInputElement>
+                                                ) =>
+                                                    setPopular(
+                                                        event.target.checked
+                                                    )
+                                                }
+                                                //mb={3}
                                             />
                                         </GridItem>
                                         <GridItem colSpan={1}>
@@ -234,7 +243,16 @@ export default function AddFood() {
                                             <Checkbox
                                                 type="checkbox"
                                                 name="spicy"
-                                                onChange={() => changeBoolean}
+                                                id="spicy"
+                                                value="spicy"
+                                                checked={spicy}
+                                                onChange={(
+                                                    event: React.ChangeEvent<HTMLInputElement>
+                                                ) =>
+                                                    setSpicy(
+                                                        event.target.checked
+                                                    )
+                                                }
                                                 mb={3}
                                             />
                                         </GridItem>
@@ -247,16 +265,7 @@ export default function AddFood() {
                         </VStack>
                     </GridItem>
                     <GridItem colStart={3} colEnd={6}>
-                        <FoodListAddUI
-                            foodData={
-                                sessionStorage.getItem("menu") === null
-                                    ? foodlist
-                                    : JSON.parse(
-                                          sessionStorage.getItem("menu")!
-                                          // eslint-disable-next-line indent
-                                      )
-                            }
-                        ></FoodListAddUI>
+                        <FoodListAddUI></FoodListAddUI>
                     </GridItem>
                 </Grid>
             </Container>

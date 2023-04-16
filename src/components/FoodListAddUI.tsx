@@ -2,12 +2,13 @@ import React from "react";
 import { VStack, Box, Image, Flex, Grid, SimpleGrid } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
 import { foodProps } from "../interfaces/Food";
-export default function FoodListAddUI({
-    foodData
-}: {
-    foodData: foodProps[];
-}): JSX.Element {
-    const foodList = foodData.map((foodProps) => {
+import foodList from "../data/foods.json";
+export default function FoodListAddUI(): JSX.Element {
+    const foods =
+        sessionStorage.getItem("menu") === null
+            ? foodList.FOODS
+            : JSON.parse(sessionStorage.getItem("menu")!);
+    const foodlist = foods.map((foodProps: foodProps) => {
         return {
             ...foodProps,
             type: [...foodProps.type],
@@ -18,7 +19,7 @@ export default function FoodListAddUI({
     return (
         <VStack spacing="3px" mt={100}>
             <SimpleGrid columns={3} spacingX={410} spacingY={3}>
-                {foodList.map((food, i: number) => {
+                {foodlist.map((food: foodProps, i: number) => {
                     return (
                         <Flex
                             key={food.name}

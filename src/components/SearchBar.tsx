@@ -11,10 +11,7 @@ export function SearchBar(): JSX.Element {
             ? foodList.FOODS
             : JSON.parse(sessionStorage.getItem("menu")!)
     );
-    // const foods: foodProps[] =
-    //     sessionStorage.getItem("menu") === null
-    //         ? foodList.FOODS
-    //         : JSON.parse(sessionStorage.getItem("menu")!);
+
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
     }
