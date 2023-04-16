@@ -1,7 +1,7 @@
 import React from "react";
-import { VStack, Box, Image, Flex } from "@chakra-ui/react";
-import RatingFeature from "./RatingFeature";
+import { VStack } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
+import FoodItem from "./FoodItem";
 export default function ItemListUI({
     foodData
 }: {
@@ -19,31 +19,13 @@ export default function ItemListUI({
         <VStack spacing="3px" mt={100}>
             {foodList.map((food) => {
                 return (
-                    <Flex
+                    <FoodItem
                         key={food.name}
-                        align="center"
-                        w={400}
-                        borderWidth={2}
-                        borderColor="black"
-                        borderRadius="md"
-                        p={2}
-                    >
-                        <Image
-                            src={food.image}
-                            alt={food.name}
-                            borderRadius="full"
-                            boxSize="100px"
-                            objectFit="cover"
-                            mr={2}
-                        />
-                        <Box key={food.name} w={300} textAlign="center" p={2}>
-                            <div className="foodtitle">{food.name}</div>
-                            <hr></hr>
-                            <div className="desc">{food.desc}</div>
-                            <hr></hr>
-                            <RatingFeature></RatingFeature>
-                        </Box>
-                    </Flex>
+                        name={food.name}
+                        image={food.image}
+                        desc={food.desc}
+                        ingredients={food.ingredients}
+                    ></FoodItem>
                 );
             })}
         </VStack>
