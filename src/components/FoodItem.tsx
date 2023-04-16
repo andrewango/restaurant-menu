@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     Image,
     Text,
@@ -34,6 +34,7 @@ export default function FoodItem({
         <Card
             ref={drag}
             key={name}
+            size="sm"
             w="550px"
             direction={{ base: "column", sm: "row" }}
             overflow="hidden"

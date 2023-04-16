@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Card,
     CardHeader,
@@ -14,7 +14,7 @@ import foodList from "../data/foods.json";
 
 export default function CheckoutList(): JSX.Element {
     const [checkoutList, setCheckoutList] = useState<foodProps[]>([]);
-    const [{ isOver }, drop] = useDrop(() => ({
+    const [, drop] = useDrop(() => ({
         accept: "foodItem",
         drop: (item: foodProps) => addFoodToCheckoutList(item.name),
         collect: (monitor) => ({
@@ -27,9 +27,17 @@ export default function CheckoutList(): JSX.Element {
     );
 
     const addFoodToCheckoutList = (name: string) => {
-        const chosenFood = foods.filter((foodItem) => name === foodItem.name);
-        setCheckoutList([...checkoutList, chosenFood[0]]);
+        const chosenFood = foods.find((foodItem) => name === foodItem.name);
+        if (chosenFood) {
+            setCheckoutList((checkoutList) => [...checkoutList, chosenFood]);
+        }
     };
+
+    // Debugging
+    useEffect(() => {
+        console.log(checkoutList);
+    }, [checkoutList]);
+
     return (
         <Card
             h="1000px"
@@ -45,7 +53,9 @@ export default function CheckoutList(): JSX.Element {
             <CardBody textAlign="center">
                 <VStack w="500px" spacing="3px">
                     {checkoutList.map((food: foodProps) => (
-                        <Text key={food.name}>{food.name}</Text>
+                        <Text key={food.name} fontWeight="bold">
+                            {food.name}
+                        </Text>
                     ))}
                 </VStack>
             </CardBody>
