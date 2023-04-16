@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { VStack, Box, Image, Flex, Grid, SimpleGrid } from "@chakra-ui/react";
+import { VStack, Box, Image, Flex, Grid } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
+
 export default function FoodListAddUI(): JSX.Element {
     const foods =
         sessionStorage.getItem("menu") === null
             ? foodList.FOODS
             : JSON.parse(sessionStorage.getItem("menu")!);
+
     const foodlist = foods.map((foodProps: foodProps) => {
         return {
             ...foodProps,
@@ -16,13 +18,13 @@ export default function FoodListAddUI(): JSX.Element {
         };
     });
 
-    const [newFoods, setNewFoods] = useState<foodProps[]>(foodlist);
+    // console.log(`loaded: ${foodlist}`);
 
     // Maps each food in our list to a box with food details
     return (
         <VStack spacing="3px" mt={100} alignItems="flex-start">
             <Grid templateColumns="repeat(3, 1fr)" rowGap={3}>
-                {newFoods.map((food: foodProps) => {
+                {foodlist.map((food: foodProps) => {
                     return (
                         <Flex
                             key={food.name}
@@ -52,6 +54,13 @@ export default function FoodListAddUI(): JSX.Element {
                                 <hr></hr>
                                 <div className="desc">{food.desc}</div>
                                 <hr></hr>
+                                <div className="bool">
+                                    {food.popular && <span>popular</span>}
+                                </div>
+                                <hr></hr>
+                                <div className="bool">
+                                    {food.spicy && <span>spicy</span>}
+                                </div>
                                 <RatingFeature></RatingFeature>
                             </Box>
                         </Flex>

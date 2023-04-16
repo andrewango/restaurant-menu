@@ -6,8 +6,10 @@ import { NavLink } from "react-router-dom";
 
 export function SelectRole(): JSX.Element {
     const [userRole, setUserRole] = useState<string>(
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         sessionStorage.getItem("user")!
     );
+
     const ROLES = ["Owner", "Employee", "User"];
     const Select = styled.select`
         margin-left: 5px;
@@ -26,6 +28,7 @@ export function SelectRole(): JSX.Element {
     function changeRole(key: string) {
         sessionStorage.setItem("user", key);
         setUserRole(key);
+        location.reload();
     }
 
     return (
@@ -45,7 +48,6 @@ export function SelectRole(): JSX.Element {
                         </option>
                     ))}
                 </Select>
-                <span>{sessionStorage.getItem("user")}</span>
                 {(sessionStorage.getItem("user") === "Owner" ||
                     sessionStorage.getItem("user") === null) && (
                     <Stack

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import FoodListAddUI from "../components/FoodListAddUI";
 import {
     Heading,
-    VStack,
     Stack,
     Spacer,
     Flex,
@@ -11,7 +10,8 @@ import {
     Grid,
     GridItem,
     SimpleGrid,
-    Box
+    Divider,
+    Center
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
 import foodList from "../data/foods.json";
@@ -20,15 +20,12 @@ import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 
 export default function AddFood() {
-    const [foods, setFoods] = useState<foodProps[]>(
-        sessionStorage.getItem("menu") === null
+    const foods =
+        JSON.parse(sessionStorage.getItem("menu")!) === null
             ? foodList.FOODS
-            : JSON.parse(sessionStorage.getItem("menu")!)
-    );
+            : JSON.parse(sessionStorage.getItem("menu")!);
     const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
-    const [popular, setPopular] = useState<boolean>(false);
-    const [spicy, setSpicy] = useState<boolean>(false);
-    const [checkedItems, setCheckedItems] = useState([false, false]);
+
     const [food, setFood] = useState<foodProps>({
         name: "",
         image: "",
@@ -36,8 +33,8 @@ export default function AddFood() {
         rating: 0,
         type: [],
         ingredients: [],
-        popular: popular,
-        spicy: spicy
+        popular: false,
+        spicy: false
     });
 
     const { name, image, desc, rating, type, ingredients } = food;
@@ -53,8 +50,7 @@ export default function AddFood() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         onSubmit();
-        sessionStorage.setItem("menu", JSON.stringify(foodlist));
-        //setFoods(JSON.parse(sessionStorage.getItem("menu")!));
+        console.log(sessionStorage.getItem("menu"));
         setFood({
             name: "",
             image: "",
@@ -65,13 +61,6 @@ export default function AddFood() {
             popular: false,
             spicy: false
         });
-        window.location.reload;
-        const popularCheck = document.getElementById(
-            "popular"
-        ) as HTMLInputElement;
-        const spicyCheck = document.getElementById("spicy") as HTMLInputElement;
-        popularCheck.checked = false;
-        spicyCheck.checked = false;
     };
 
     const onSubmit = () => {
@@ -84,6 +73,7 @@ export default function AddFood() {
         );
         const newFoodList: foodProps[] = [...copy, food];
         setFoodlist(newFoodList);
+        sessionStorage.setItem("menu", JSON.stringify(newFoodList));
     };
 
     return (
@@ -133,13 +123,14 @@ export default function AddFood() {
                 <NavBar></NavBar>
             </div>
             <Container maxW="container.x1" p={0}>
+                <br></br>
                 <Grid templateColumns="repeat(10, 1fr)" gap={4}>
-                    <GridItem colStart={2} colEnd={4} h="20">
+                    <GridItem colStart={2} colEnd={4}>
                         <Stack
                             w="full"
                             h="full"
                             p={10}
-                            spacing={10}
+                            spacing={20}
                             alignItems="flex-start"
                         >
                             <Heading size="2xl">Add New Food</Heading>
@@ -150,7 +141,7 @@ export default function AddFood() {
                                 w="full"
                             >
                                 <form onSubmit={handleSubmit}>
-                                    <FormControl id="name" width="300%" px={10}>
+                                    <FormControl id="name" width="300%" px={5}>
                                         <GridItem colSpan={2}>
                                             <FormLabel>Name:</FormLabel>
                                             <Input
@@ -218,7 +209,6 @@ export default function AddFood() {
                                                 name="popular"
                                                 id="popular"
                                                 value="popular"
-                                                checked={popular}
                                                 onChange={(e) => {
                                                     setFood({
                                                         ...food,
@@ -236,7 +226,6 @@ export default function AddFood() {
                                                 name="spicy"
                                                 id="spicy"
                                                 value="spicy"
-                                                checked={spicy}
                                                 onChange={(e) => {
                                                     setFood({
                                                         ...food,
@@ -255,6 +244,7 @@ export default function AddFood() {
                             </SimpleGrid>
                         </Stack>
                     </GridItem>
+
                     <GridItem colStart={5} colEnd={10} h="10">
                         <Heading
                             size="2xl"

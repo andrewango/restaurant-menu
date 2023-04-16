@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Stack, Spacer, Flex, Box } from "@chakra-ui/react";
+import { Heading, Stack, Spacer, Flex, Divider } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
@@ -11,6 +11,7 @@ function EditFood() {
     ) : (
         <a href="/EditFood">Edit Food</a>
     );
+
     return (
         <>
             <Flex wrap="wrap">
@@ -35,7 +36,6 @@ function EditFood() {
                     textAlign="center"
                 >
                     <SelectRole></SelectRole>
-                    <span>{sessionStorage.getItem("user")}</span>
                 </Stack>
             </Flex>
             <div>
@@ -71,7 +71,7 @@ function EditFood() {
                                 </Button>
                                 <br></br>
                                 <br></br>
-                                <hr></hr>
+                                <Divider w="full"></Divider>
                             </div>
                         )}
                     </form>

@@ -18,13 +18,11 @@ import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 
 export default function RemoveFood() {
-    const [foods, setFoods] = useState<foodProps[]>(
-        sessionStorage.getItem("menu") === null
+    const foods =
+        JSON.parse(sessionStorage.getItem("menu")!) === null
             ? foodList.FOODS
-            : JSON.parse(sessionStorage.getItem("menu")!)
-    );
+            : JSON.parse(sessionStorage.getItem("menu")!);
     const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
-    const [name, setName] = useState<string>("");
 
     const handleSubmit = (id: string) => {
         const newFoods: foodProps[] = foodlist.map(
@@ -40,9 +38,8 @@ export default function RemoveFood() {
         if (foodIndex > -1) {
             newFoods.splice(foodIndex, 1);
         }
+        sessionStorage.setItem("menu", JSON.stringify(newFoods));
         setFoodlist(newFoods);
-        sessionStorage.setItem("menu", JSON.stringify(foodlist));
-        window.location.reload;
     };
 
     return (
@@ -104,7 +101,7 @@ export default function RemoveFood() {
                     </Heading>
                     <VStack spacing="3px" mt={100} alignItems="center">
                         <Grid templateColumns="repeat(5, 1fr)" rowGap={3}>
-                            {foodlist.map((food: foodProps) => {
+                            {foods.map((food: foodProps) => {
                                 return (
                                     <Flex
                                         key={food.name}
@@ -146,8 +143,7 @@ export default function RemoveFood() {
                                             px={5}
                                             id={food.name}
                                             onClick={() => {
-                                                setName(food.name);
-                                                handleSubmit(name);
+                                                handleSubmit(food.name);
                                             }}
                                             borderRadius="5px"
                                             fontSize="16px"
