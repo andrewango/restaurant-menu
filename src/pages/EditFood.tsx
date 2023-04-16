@@ -45,7 +45,6 @@ function EditFood() {
                 <div className="container">
                     <br></br>
                     <br></br>
-                    <span>{sessionStorage.getItem("user")}</span>
                     <form>
                         {(sessionStorage.getItem("user") === "Owner" ||
                             sessionStorage.getItem("user") === null) && (

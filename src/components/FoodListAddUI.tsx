@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { VStack, Box, Image, Flex, Grid, SimpleGrid } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
 import { foodProps } from "../interfaces/Food";
@@ -15,16 +15,19 @@ export default function FoodListAddUI(): JSX.Element {
             ingredients: [...foodProps.ingredients]
         };
     });
+
+    const [newFoods, setNewFoods] = useState<foodProps[]>(foodlist);
+
     // Maps each food in our list to a box with food details
     return (
         <VStack spacing="3px" mt={100} alignItems="flex-start">
-            <Grid templateColumns="repeat(3, 1fr)" gap={3}>
-                {foodlist.map((food: foodProps, i: number) => {
+            <Grid templateColumns="repeat(3, 1fr)" rowGap={3}>
+                {newFoods.map((food: foodProps) => {
                     return (
                         <Flex
                             key={food.name}
                             align="center"
-                            w={400}
+                            w="90%"
                             borderWidth={2}
                             borderColor="black"
                             borderRadius="md"
@@ -42,7 +45,8 @@ export default function FoodListAddUI(): JSX.Element {
                                 key={food.name}
                                 w={300}
                                 textAlign="center"
-                                p={2}
+                                p={1}
+                                alignItems="flex-start"
                             >
                                 <div className="foodtitle">{food.name}</div>
                                 <hr></hr>
@@ -54,6 +58,8 @@ export default function FoodListAddUI(): JSX.Element {
                     );
                 })}
             </Grid>
+            <br></br>
+            <br></br>
         </VStack>
     );
 }

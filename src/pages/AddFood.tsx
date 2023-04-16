@@ -54,7 +54,7 @@ export default function AddFood() {
         e.preventDefault();
         onSubmit();
         sessionStorage.setItem("menu", JSON.stringify(foodlist));
-        setFoods(JSON.parse(sessionStorage.getItem("menu")!));
+        //setFoods(JSON.parse(sessionStorage.getItem("menu")!));
         setFood({
             name: "",
             image: "",
@@ -65,6 +65,7 @@ export default function AddFood() {
             popular: false,
             spicy: false
         });
+        window.location.reload;
         const popularCheck = document.getElementById(
             "popular"
         ) as HTMLInputElement;
@@ -97,7 +98,7 @@ export default function AddFood() {
                     fontWeight="bold"
                     textAlign="center"
                 >
-                    edit users
+                    edit foods
                 </Heading>
                 <Spacer></Spacer>
                 <Stack
