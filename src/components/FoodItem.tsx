@@ -34,6 +34,7 @@ export default function FoodItem({
         <Card
             ref={drag}
             key={name}
+            w="550px"
             direction={{ base: "column", sm: "row" }}
             overflow="hidden"
             variant="elevated"

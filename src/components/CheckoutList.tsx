@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import { Card, VStack } from "@chakra-ui/react";
-import RatingFeature from "./RatingFeature";
+import {
+    Card,
+    CardHeader,
+    CardBody,
+    Divider,
+    Heading,
+    VStack,
+    Text
+} from "@chakra-ui/react";
 import { useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
-import FoodItem from "./FoodItem";
+import foodList from "../data/foods.json";
 
 export default function CheckoutList(): JSX.Element {
     const [checkoutList, setCheckoutList] = useState<foodProps[]>([]);
@@ -15,22 +22,33 @@ export default function CheckoutList(): JSX.Element {
         })
     }));
 
+    const foods: foodProps[] = foodList.FOODS.map(
+        (foodItem: foodProps): foodProps => foodItem
+    );
+
     const addFoodToCheckoutList = (name: string) => {
-        console.log(name);
+        const chosenFood = foods.filter((foodItem) => name === foodItem.name);
+        setCheckoutList([...checkoutList, chosenFood[0]]);
     };
     return (
-        <Card ref={drop} border="5px solid black">
-            <VStack spacing="3px" mt={100}>
-                {checkoutList.map((food: foodProps) => (
-                    <FoodItem
-                        key={food.name}
-                        name={food.name}
-                        image={food.image}
-                        desc={food.desc}
-                        ingredients={food.ingredients}
-                    ></FoodItem>
-                ))}
-            </VStack>
+        <Card
+            h="1000px"
+            w="500px"
+            ref={drop}
+            border="2px solid black"
+            textAlign="center"
+        >
+            <CardHeader>
+                <Heading fontWeight="bold">Checkout</Heading>
+            </CardHeader>
+            <Divider></Divider>
+            <CardBody textAlign="center">
+                <VStack w="500px" spacing="3px">
+                    {checkoutList.map((food: foodProps) => (
+                        <Text key={food.name}>{food.name}</Text>
+                    ))}
+                </VStack>
+            </CardBody>
         </Card>
     );
 }

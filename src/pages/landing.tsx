@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Container, Text, Flex, Box, Spacer } from "@chakra-ui/react";
+import { Heading, Text, Flex, Box, Spacer } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
@@ -11,6 +11,7 @@ export default function Landing() {
         <>
             <div style={{ padding: 10 }}>
                 <Flex
+                    className="website-title"
                     as="header"
                     textAlign="center"
                     px={5}
@@ -48,12 +49,14 @@ export default function Landing() {
                         our menu
                     </Heading>
                 </div>
-                <Container ml={500}>
-                    <SearchBar></SearchBar>
-                </Container>
-                <hr></hr>
-                <CheckoutList></CheckoutList>
-                <br></br>
+                <Flex>
+                    <Box flex="1" p="4" ml="100px">
+                        <SearchBar></SearchBar>
+                    </Box>
+                    <Box flex="1" p="4" mt="35px" ml="100px">
+                        <CheckoutList></CheckoutList>
+                    </Box>
+                </Flex>
             </div>
         </>
     );
