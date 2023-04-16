@@ -35,6 +35,7 @@ function EditFood() {
                     textAlign="center"
                 >
                     <SelectRole></SelectRole>
+                    <span>{sessionStorage.getItem("user")}</span>
                 </Stack>
             </Flex>
             <div>
@@ -43,39 +44,38 @@ function EditFood() {
             <div style={{ textAlign: "center" }}>
                 <div className="container">
                     <br></br>
-                    {/* <br></br>
-                    <h1>Edit Foods</h1>
                     <br></br>
-                    <p>Your Role : {window.sessionStorage.getItem("user")}</p> */}
-                    <br></br>
-                    {(sessionStorage.getItem("user") === "Owner" ||
-                        sessionStorage.getItem("user") === null) && (
-                        <>
-                            <Button
-                                as={NavLink}
-                                to="/AddFood"
-                                colorScheme="red"
-                                size="md"
-                                variant="outline"
-                            >
-                                Add New Food
-                            </Button>
-                            <br></br>
-                            <br></br>
-                            <Button
-                                as={NavLink}
-                                to="/RemoveFood"
-                                colorScheme="red"
-                                size="md"
-                                variant="outline"
-                            >
-                                Remove Food
-                            </Button>
-                            <br></br>
-                            <br></br>
-                            <hr></hr>
-                        </>
-                    )}
+                    <span>{sessionStorage.getItem("user")}</span>
+                    <form>
+                        {(sessionStorage.getItem("user") === "Owner" ||
+                            sessionStorage.getItem("user") === null) && (
+                            <div>
+                                <Button
+                                    as={NavLink}
+                                    to="/AddFood"
+                                    colorScheme="red"
+                                    size="md"
+                                    variant="outline"
+                                >
+                                    Add New Food
+                                </Button>
+                                <br></br>
+                                <br></br>
+                                <Button
+                                    as={NavLink}
+                                    to="/RemoveFood"
+                                    colorScheme="red"
+                                    size="md"
+                                    variant="outline"
+                                >
+                                    Remove Food
+                                </Button>
+                                <br></br>
+                                <br></br>
+                                <hr></hr>
+                            </div>
+                        )}
+                    </form>
                 </div>
             </div>
         </>

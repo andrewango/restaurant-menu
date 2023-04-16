@@ -17,8 +17,8 @@ export default function FoodListAddUI(): JSX.Element {
     });
     // Maps each food in our list to a box with food details
     return (
-        <VStack spacing="3px" mt={100}>
-            <SimpleGrid columns={3} spacingX={410} spacingY={3}>
+        <VStack spacing="3px" mt={100} alignItems="flex-start">
+            <Grid templateColumns="repeat(3, 1fr)" gap={3}>
                 {foodlist.map((food: foodProps, i: number) => {
                     return (
                         <Flex
@@ -53,7 +53,7 @@ export default function FoodListAddUI(): JSX.Element {
                         </Flex>
                     );
                 })}
-            </SimpleGrid>
+            </Grid>
         </VStack>
     );
 }

@@ -10,14 +10,14 @@ import {
     Container,
     Grid,
     GridItem,
-    SimpleGrid
+    SimpleGrid,
+    Box
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
 import foodList from "../data/foods.json";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
-import { Form } from "react-bootstrap";
 
 export default function AddFood() {
     const [foods, setFoods] = useState<foodProps[]>(
@@ -28,6 +28,7 @@ export default function AddFood() {
     const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
     const [popular, setPopular] = useState<boolean>(false);
     const [spicy, setSpicy] = useState<boolean>(false);
+    const [checkedItems, setCheckedItems] = useState([false, false]);
     const [food, setFood] = useState<foodProps>({
         name: "",
         image: "",
@@ -73,11 +74,6 @@ export default function AddFood() {
     };
 
     const onSubmit = () => {
-        setFood({
-            ...food,
-            spicy: spicy,
-            popular: popular
-        });
         const copy: foodProps[] = foodlist.map(
             (food: foodProps): foodProps => ({
                 ...food,
@@ -135,19 +131,17 @@ export default function AddFood() {
             <div>
                 <NavBar></NavBar>
             </div>
-            <Container maxW="container.xl" p={0}>
-                <Grid templateColumns="repeat(5, 1fr)" gap={4}>
-                    <GridItem colSpan={2}>
-                        <VStack
+            <Container maxW="container.x1" p={0}>
+                <Grid templateColumns="repeat(10, 1fr)" gap={4}>
+                    <GridItem colStart={2} colEnd={4} h="20">
+                        <Stack
                             w="full"
                             h="full"
                             p={10}
                             spacing={10}
                             alignItems="flex-start"
                         >
-                            <VStack spacing={3} alignItems="flex-start">
-                                <Heading size="2xl">Add New Food</Heading>
-                            </VStack>
+                            <Heading size="2xl">Add New Food</Heading>
                             <SimpleGrid
                                 columns={2}
                                 columnGap={3}
@@ -155,11 +149,7 @@ export default function AddFood() {
                                 w="full"
                             >
                                 <form onSubmit={handleSubmit}>
-                                    <FormControl
-                                        id="name"
-                                        width="500px"
-                                        px={20}
-                                    >
+                                    <FormControl id="name" width="300%" px={10}>
                                         <GridItem colSpan={2}>
                                             <FormLabel>Name:</FormLabel>
                                             <Input
@@ -222,20 +212,20 @@ export default function AddFood() {
                                         </GridItem>
                                         <GridItem colSpan={1}>
                                             <FormLabel>Popular</FormLabel>
-                                            <Form.Check
+                                            <Checkbox
                                                 type="checkbox"
                                                 name="popular"
                                                 id="popular"
                                                 value="popular"
                                                 checked={popular}
-                                                onChange={(
-                                                    event: React.ChangeEvent<HTMLInputElement>
-                                                ) =>
-                                                    setPopular(
-                                                        event.target.checked
-                                                    )
-                                                }
-                                                //mb={3}
+                                                onChange={(e) => {
+                                                    setFood({
+                                                        ...food,
+                                                        popular:
+                                                            e.target.checked
+                                                    });
+                                                }}
+                                                mb={3}
                                             />
                                         </GridItem>
                                         <GridItem colSpan={1}>
@@ -246,29 +236,39 @@ export default function AddFood() {
                                                 id="spicy"
                                                 value="spicy"
                                                 checked={spicy}
-                                                onChange={(
-                                                    event: React.ChangeEvent<HTMLInputElement>
-                                                ) =>
-                                                    setSpicy(
-                                                        event.target.checked
-                                                    )
-                                                }
+                                                onChange={(e) => {
+                                                    setFood({
+                                                        ...food,
+                                                        spicy: e.target.checked
+                                                    });
+                                                }}
                                                 mb={3}
                                             />
                                         </GridItem>
+                                        <br></br>
                                         <Button type="submit">
                                             Add New Food
                                         </Button>
                                     </FormControl>
                                 </form>
                             </SimpleGrid>
-                        </VStack>
+                        </Stack>
                     </GridItem>
-                    <GridItem colStart={3} colEnd={6}>
+                    <GridItem colStart={5} colEnd={10} h="10">
+                        <Heading
+                            size="2xl"
+                            w="full"
+                            h="full"
+                            p={10}
+                            alignItems="flex-start"
+                        >
+                            Menu
+                        </Heading>
                         <FoodListAddUI></FoodListAddUI>
                     </GridItem>
                 </Grid>
             </Container>
+            <></>
             <br></br>
             <hr></hr>
         </div>
