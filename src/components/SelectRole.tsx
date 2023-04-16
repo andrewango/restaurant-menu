@@ -45,7 +45,8 @@ export function SelectRole(): JSX.Element {
                         </option>
                     ))}
                 </Select>
-                {sessionStorage.getItem("user") === "Owner" && (
+                {(sessionStorage.getItem("user") === "Owner" ||
+                    sessionStorage.getItem("user") === null) && (
                     <Stack
                         px={10}
                         py={3}

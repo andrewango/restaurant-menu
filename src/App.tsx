@@ -16,6 +16,7 @@ export default function App() {
             <Route path="/EditFood" element={<EditFood />}></Route>
             <Route path="/AboutUs" element={<AboutUs />}></Route>
             <Route path="/AddFood" element={<AddFood />}></Route>
+            <Route path="/RemoveFood" element={<AddFood />}></Route>
         </Routes>
     );
 }
