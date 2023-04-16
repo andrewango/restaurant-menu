@@ -4,7 +4,6 @@ import { SelectRole } from "../components/SelectRole";
 import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
 import restaurantLogo from "./restaurant-logo.png";
-import CheckoutList from "../components/CheckoutList";
 
 export default function Landing() {
     return (
@@ -50,10 +49,6 @@ export default function Landing() {
                 </div>
                 <Container ml={500}>
                     <SearchBar></SearchBar>
-                </Container>
-                <hr></hr>
-                <Container>
-                    <CheckoutList></CheckoutList>
                 </Container>
                 <br></br>
             </div>
