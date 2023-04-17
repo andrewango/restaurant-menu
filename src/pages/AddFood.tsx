@@ -6,7 +6,6 @@ import {
     Spacer,
     Flex,
     Checkbox,
-    Container,
     Grid,
     GridItem,
     SimpleGrid,

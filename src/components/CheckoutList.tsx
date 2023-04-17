@@ -24,14 +24,8 @@ export default function CheckoutList(): JSX.Element {
 
     const menu = sessionStorage.getItem("menu");
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
-    const foodlist = (() => {
-        try {
-            return JSON.parse(menuToParse);
-        } catch {
-            return foodList.FOODS;
-        }
-    })();
-
+    const foodlist =
+        menuToParse === "" ? foodList.FOODS : JSON.parse(menuToParse);
     const foods: foodProps[] = foodlist.map(
         (foodItem: foodProps): foodProps => foodItem
     );
