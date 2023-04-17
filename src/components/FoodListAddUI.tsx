@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { VStack, Box, Image, Flex, Grid } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
 import { foodProps } from "../interfaces/Food";
@@ -54,13 +54,6 @@ export default function FoodListAddUI(): JSX.Element {
                                 <hr></hr>
                                 <div className="desc">{food.desc}</div>
                                 <hr></hr>
-                                <div className="bool">
-                                    {food.popular && <span>popular</span>}
-                                </div>
-                                <hr></hr>
-                                <div className="bool">
-                                    {food.spicy && <span>spicy</span>}
-                                </div>
                                 <RatingFeature></RatingFeature>
                             </Box>
                         </Flex>
