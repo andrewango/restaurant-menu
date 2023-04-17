@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
 import restaurantLogo from "./restaurant-logo.png";
 import CheckoutList from "../components/CheckoutList";
+import { DeliveryDropDown } from "../components/DeliveryDropDown";
 
 export default function Landing() {
     return (
@@ -55,6 +56,7 @@ export default function Landing() {
                     </Box>
                     <Box flex="1" p="4" mt="35px" ml="100px">
                         <CheckoutList></CheckoutList>
+                        <DeliveryDropDown></DeliveryDropDown>
                     </Box>
                 </Flex>
             </div>
