@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+//import { useEffect } from "react";
 import {
     Card,
     CardHeader,
@@ -24,8 +25,8 @@ export default function CheckoutList(): JSX.Element {
 
     const menu = sessionStorage.getItem("menu");
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
-    const foodlist =
-        menuToParse === "" ? foodList.FOODS : JSON.parse(menuToParse);
+    const foodlist = menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
+
     const foods: foodProps[] = foodlist.map(
         (foodItem: foodProps): foodProps => foodItem
     );
@@ -39,9 +40,9 @@ export default function CheckoutList(): JSX.Element {
     };
 
     // Debugging
-    useEffect(() => {
-        console.log(checkoutList);
-    }, [checkoutList]);
+    //useEffect(() => {
+    //  console.log(checkoutList);
+    //}, [checkoutList]);
 
     const [checkoutID, setCheckoutID] = useState<number>(1);
     return (
