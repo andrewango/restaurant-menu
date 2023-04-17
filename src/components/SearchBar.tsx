@@ -6,7 +6,11 @@ import foodList from "../data/foods.json";
 import ItemListUI from "./ItemListUI";
 
 export function SearchBar(): JSX.Element {
-    const foods: foodProps[] = foodList.FOODS;
+    const temp = sessionStorage.getItem("menu");
+    const foodlist =
+        temp === null || temp === undefined ? foodList.FOODS : JSON.parse(temp);
+    const [foods, setFoods] = useState<foodProps[]>(foodlist);
+
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
     }
@@ -32,6 +36,10 @@ export function SearchBar(): JSX.Element {
                 <Form.Control
                     value={text}
                     onChange={(e) => {
+                        const menu = sessionStorage.getItem("menu");
+                        const menuToParse =
+                            menu !== null && menu !== undefined ? menu : "";
+                        setFoods(JSON.parse(menuToParse));
                         updateName(e as React.ChangeEvent<HTMLInputElement>);
                         setListHelper(e.target.value);
                     }}

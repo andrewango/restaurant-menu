@@ -5,9 +5,11 @@ import { Button } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
 export function SelectRole(): JSX.Element {
-    const [userRole, setUserRole] = useState<string>(
-        sessionStorage.getItem("user")!
-    );
+    const user = sessionStorage.getItem("user");
+    const a = user !== null && user !== undefined ? user : "Owner";
+
+    const [userRole, setUserRole] = useState<string>(a);
+
     const ROLES = ["Owner", "Employee", "User"];
     const Select = styled.select`
         margin-left: 5px;
@@ -26,6 +28,7 @@ export function SelectRole(): JSX.Element {
     function changeRole(key: string) {
         sessionStorage.setItem("user", key);
         setUserRole(key);
+        location.reload();
     }
 
     return (
@@ -45,7 +48,8 @@ export function SelectRole(): JSX.Element {
                         </option>
                     ))}
                 </Select>
-                {sessionStorage.getItem("user") === "Owner" && (
+                {(sessionStorage.getItem("user") === "Owner" ||
+                    sessionStorage.getItem("user") === null) && (
                     <Stack
                         px={10}
                         py={3}

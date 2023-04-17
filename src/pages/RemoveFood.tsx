@@ -1,88 +1,182 @@
-import React from "react";
-import { Component, useState, useRef } from "react";
-import { foodProps } from "../interfaces/Food";
+import React, { useState } from "react";
+import RatingFeature from "../components/RatingFeature";
+import {
+    Heading,
+    VStack,
+    Stack,
+    Spacer,
+    Flex,
+    Container,
+    Grid,
+    Image,
+    Box
+} from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import foodList from "../data/foods.json";
+import { foodProps } from "../interfaces/Food";
+import NavBar from "../components/NavBar";
+import { NavLink } from "react-router-dom";
 
 export default function RemoveFood() {
-    const foods: foodProps[] = foodList.FOODS;
-    const [food, setFood] = useState<foodProps>();
-    //sessionStorage.setItem("foods", JSON.stringify(foods));
-    const foodInputRef = useRef<HTMLInputElement>(null);
+    const menu = sessionStorage.getItem("menu");
+    const menuToParse = menu !== null && menu !== undefined ? menu : "";
+    const foods =
+        JSON.parse(menuToParse) === null
+            ? foodList.FOODS
+            : JSON.parse(menuToParse);
+    const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
 
-    type FoodFormProps = {
-        onSubmit: (form: foodProps) => void;
-    };
-
-    function FoodForm({ onSubmit }: FoodFormProps) {
-        const [form, setForm] = useState({
-            name: "",
-            image: "",
-            desc: "",
-            rating: 0,
-            type: [],
-            ingredients: [],
-            popular: false,
-            spicy: false
-        });
-
-        const { name, image, desc, rating, type, ingredients, popular, spicy } =
-            form;
-
-        const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-            const { name, value } = e.target;
-            setForm({
-                ...form,
-                [name]: value
-            });
-        };
-
-        const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-            e.preventDefault();
-            onSubmit(form);
-            setForm({
-                name: "",
-                image: "",
-                desc: "",
-                rating: 0,
-                type: [],
-                ingredients: [],
-                popular: false,
-                spicy: false
-            });
-        };
-
-        return (
-            <form onSubmit={handleSubmit}>
-                <input name="name" value={name} onChange={onChange} />
-                <input name="image" value={image} onChange={onChange} />
-                <input name="desc" value={desc} onChange={onChange} />
-                <input name="rating" value={rating} onChange={onChange} />
-                <input name="type" value={type} onChange={onChange} />
-                <input
-                    name="ingredients"
-                    value={ingredients}
-                    onChange={onChange}
-                />
-                <button type="submit">등록</button>
-            </form>
+    const handleSubmit = (id: string) => {
+        const newFoods: foodProps[] = foodlist.map(
+            (food: foodProps): foodProps => ({
+                ...food,
+                type: [...food.type],
+                ingredients: [...food.ingredients]
+            })
         );
-    }
-    // Obly super and admin can access this page
-    // Set list state to be the user list
-    // if user is super, add delete edit will update Central state
-    // if user is admin, can only edit will update Central state
-
-    const onSubmit = (form: {
-        name: string;
-        image: string;
-        desc: string;
-        rating: number;
-        type: string[];
-        ingredients: string[];
-        popular: boolean;
-        spicy: boolean;
-    }) => {
-        foods;
+        const foodIndex = newFoods.findIndex(
+            (food: foodProps): boolean => food.name === id
+        );
+        if (foodIndex > -1) {
+            newFoods.splice(foodIndex, 1);
+        }
+        sessionStorage.setItem("menu", JSON.stringify(newFoods));
+        setFoodlist(newFoods);
     };
-    return <FoodForm onSubmit={onSubmit} />;
+
+    return (
+        <div style={{ padding: 10 }}>
+            <Flex wrap="wrap">
+                <Heading
+                    display="flex"
+                    justifyContent="center"
+                    mt={8}
+                    px={10}
+                    fontSize="50px"
+                    fontWeight="bold"
+                    textAlign="center"
+                >
+                    edit foods
+                </Heading>
+                <Spacer></Spacer>
+                <Stack
+                    px={10}
+                    py={3}
+                    mb={5}
+                    spacing={6}
+                    direction="column"
+                    textAlign="center"
+                >
+                    <Button
+                        as={NavLink}
+                        to="/EditFood"
+                        colorScheme="red"
+                        size="md"
+                        variant="solid"
+                    >
+                        edit foods
+                    </Button>
+                    <Button
+                        as={NavLink}
+                        to="/EditUsers"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        edit users
+                    </Button>
+                </Stack>
+            </Flex>
+            <div>
+                <NavBar></NavBar>
+            </div>
+            <Container maxW="container.x1" p={0}>
+                <Box p={10}>
+                    <Heading
+                        size="2xl"
+                        w="full"
+                        h="full"
+                        p={10}
+                        alignItems="center"
+                    >
+                        Menu
+                    </Heading>
+                    <VStack spacing="3px" mt={100} alignItems="center">
+                        <Grid templateColumns="repeat(5, 1fr)" rowGap={3}>
+                            {foods.map((food: foodProps) => {
+                                return (
+                                    <Flex
+                                        key={food.name}
+                                        align="center"
+                                        w="90%"
+                                        borderWidth={2}
+                                        borderColor="black"
+                                        borderRadius="md"
+                                        p={2}
+                                    >
+                                        <Image
+                                            src={food.image}
+                                            alt={food.name}
+                                            borderRadius="full"
+                                            boxSize="100px"
+                                            objectFit="cover"
+                                            mr={2}
+                                        />
+                                        <Box
+                                            key={food.name}
+                                            w={300}
+                                            textAlign="center"
+                                            p={1}
+                                            alignItems="center"
+                                        >
+                                            <div className="foodtitle">
+                                                {food.name}
+                                            </div>
+                                            <hr></hr>
+                                            <div className="desc">
+                                                {food.desc}
+                                            </div>
+                                            <hr></hr>
+                                            <RatingFeature></RatingFeature>
+                                        </Box>
+                                        <Button
+                                            border="1px"
+                                            ml={5}
+                                            px={5}
+                                            id={food.name}
+                                            onClick={() => {
+                                                handleSubmit(food.name);
+                                            }}
+                                            borderRadius="5px"
+                                            fontSize="16px"
+                                            fontWeight="semibold"
+                                            bg="red.500"
+                                            borderColor="red.600"
+                                            color="white"
+                                            _hover={{
+                                                bg: "red.600",
+                                                color: "white"
+                                            }}
+                                            _active={{
+                                                bg: "red.300",
+                                                transform: "scale(0.95)",
+                                                borderColor: "orange"
+                                            }}
+                                        >
+                                            remove
+                                        </Button>
+                                    </Flex>
+                                );
+                            })}
+                        </Grid>
+                        <br></br>
+                        <br></br>
+                    </VStack>
+                </Box>
+            </Container>
+            <></>
+            <br></br>
+            <hr></hr>
+        </div>
+    );
 }

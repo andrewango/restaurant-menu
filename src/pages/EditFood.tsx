@@ -1,11 +1,17 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { Heading, Stack, Spacer, Flex, Box } from "@chakra-ui/react";
-import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
+import { Heading, Stack, Spacer, Flex, Divider } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
+import { SelectRole } from "../components/SelectRole";
 
 function EditFood() {
+    sessionStorage.getItem("user") === "User" ? (
+        <a href="/">Home</a>
+    ) : (
+        <a href="/EditFood">Edit Food</a>
+    );
+
     return (
         <>
             <Flex wrap="wrap">
@@ -29,24 +35,7 @@ function EditFood() {
                     direction="column"
                     textAlign="center"
                 >
-                    <Button
-                        as={NavLink}
-                        to="/EditFood"
-                        colorScheme="red"
-                        size="md"
-                        variant="solid"
-                    >
-                        edit foods
-                    </Button>
-                    <Button
-                        as={NavLink}
-                        to="/EditUsers"
-                        colorScheme="red"
-                        size="md"
-                        variant="outline"
-                    >
-                        edit users
-                    </Button>
+                    <SelectRole></SelectRole>
                 </Stack>
             </Flex>
             <div>
@@ -55,38 +44,37 @@ function EditFood() {
             <div style={{ textAlign: "center" }}>
                 <div className="container">
                     <br></br>
-                    {/* <br></br>
-                    <h1>Edit Foods</h1>
                     <br></br>
-                    <p>Your Role : {window.sessionStorage.getItem("user")}</p> */}
-                    <br></br>
-                    {sessionStorage.getItem("user") === "Owner" && (
-                        <>
-                            <Button
-                                as={NavLink}
-                                to="/AddFood"
-                                colorScheme="red"
-                                size="md"
-                                variant="outline"
-                            >
-                                Add New Food
-                            </Button>
-                            <br></br>
-                        </>
-                    )}
-                    <br></br>
-                    <Button
-                        as={NavLink}
-                        to="/RemoveFood"
-                        colorScheme="red"
-                        size="md"
-                        variant="outline"
-                    >
-                        Remove Food
-                    </Button>
-                    <br></br>
-                    <br></br>
-                    <hr></hr>
+                    <form>
+                        {(sessionStorage.getItem("user") === "Owner" ||
+                            sessionStorage.getItem("user") === null) && (
+                            <div>
+                                <Button
+                                    as={NavLink}
+                                    to="/AddFood"
+                                    colorScheme="red"
+                                    size="md"
+                                    variant="outline"
+                                >
+                                    Add New Food
+                                </Button>
+                                <br></br>
+                                <br></br>
+                                <Button
+                                    as={NavLink}
+                                    to="/RemoveFood"
+                                    colorScheme="red"
+                                    size="md"
+                                    variant="outline"
+                                >
+                                    Remove Food
+                                </Button>
+                                <br></br>
+                                <br></br>
+                                <Divider w="full"></Divider>
+                            </div>
+                        )}
+                    </form>
                 </div>
             </div>
         </>
