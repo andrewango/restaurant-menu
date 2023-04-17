@@ -4,6 +4,20 @@ import styled from "styled-components";
 import { Button } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
+const Select = styled.select`
+    margin-left: 5px;
+    text-align: center;
+    display: inline-block;
+    width: 115px;
+    padding: 3px 0px;
+    font-size: inherit;
+    line-height: inherit;
+    border: 1px solid;
+    border-radius: 10px;
+    color: inherit;
+    background-color: transparent;
+`;
+
 export function SelectRole(): JSX.Element {
     const user = sessionStorage.getItem("user");
     const a = user !== null && user !== undefined ? user : "Owner";
@@ -11,19 +25,6 @@ export function SelectRole(): JSX.Element {
     const [userRole, setUserRole] = useState<string>(a);
 
     const ROLES = ["Owner", "Employee", "User"];
-    const Select = styled.select`
-        margin-left: 5px;
-        text-align: center;
-        display: inline-block;
-        width: 115px;
-        padding: 3px 0px;
-        font-size: inherit;
-        line-height: inherit;
-        border: 1px solid;
-        border-radius: 10px;
-        color: inherit;
-        background-color: transparent;
-    `;
 
     function changeRole(key: string) {
         sessionStorage.setItem("user", key);
