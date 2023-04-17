@@ -9,7 +9,8 @@ import {
     Container,
     Grid,
     GridItem,
-    SimpleGrid
+    SimpleGrid,
+    Box
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
 import foodList from "../data/foods.json";
@@ -122,9 +123,9 @@ export default function AddFood() {
             <div>
                 <NavBar></NavBar>
             </div>
-            <Container maxW="container.x1" p={0}>
+            <Box w="100%" maxW="100vw" overflowX="auto">
                 <br></br>
-                <Grid templateColumns="repeat(10, 1fr)" gap={4}>
+                <Grid templateColumns="repeat(10, minmax(0,1fr))" gap={4}>
                     <GridItem colStart={2} colEnd={4}>
                         <Stack
                             w="full"
@@ -258,10 +259,9 @@ export default function AddFood() {
                         <FoodListAddUI></FoodListAddUI>
                     </GridItem>
                 </Grid>
-            </Container>
+            </Box>
             <></>
             <br></br>
-            <hr></hr>
         </div>
     );
 }
