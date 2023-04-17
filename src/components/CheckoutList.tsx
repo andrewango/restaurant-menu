@@ -22,10 +22,12 @@ export default function CheckoutList(): JSX.Element {
         })
     }));
 
+    const menu = sessionStorage.getItem("menu");
+    const menuToParse = menu !== null && menu !== undefined ? menu : "";
     const foodlist =
-        JSON.parse(sessionStorage.getItem("menu")!) === null
+        JSON.parse(menuToParse) === null
             ? foodList.FOODS
-            : JSON.parse(sessionStorage.getItem("menu")!);
+            : JSON.parse(menuToParse);
 
     const foods: foodProps[] = foodlist.map(
         (foodItem: foodProps): foodProps => foodItem

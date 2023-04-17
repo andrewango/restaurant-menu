@@ -18,10 +18,12 @@ import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 
 export default function RemoveFood() {
+    const menu = sessionStorage.getItem("menu");
+    const menuToParse = menu !== null && menu !== undefined ? menu : "";
     const foods =
-        JSON.parse(sessionStorage.getItem("menu")!) === null
+        JSON.parse(menuToParse) === null
             ? foodList.FOODS
-            : JSON.parse(sessionStorage.getItem("menu")!);
+            : JSON.parse(menuToParse);
     const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
 
     const handleSubmit = (id: string) => {

@@ -5,10 +5,12 @@ import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 
 export default function FoodListAddUI(): JSX.Element {
+    const menu = sessionStorage.getItem("menu");
+    const menuToParse = menu !== null && menu !== undefined ? menu : "";
     const foods =
-        sessionStorage.getItem("menu") === null
+        JSON.parse(menuToParse) === null
             ? foodList.FOODS
-            : JSON.parse(sessionStorage.getItem("menu")!);
+            : JSON.parse(menuToParse);
 
     const foodlist = foods.map((foodProps: foodProps) => {
         return {
