@@ -8,7 +8,8 @@
             "type": ["Italian", "Fast Food", "Entree"],
             "ingredients": ["Dough", "Tomato Sauce", "Cheese", "Pepperoni"],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 10
         },
         {
             "name": "Cheeseburger",
@@ -18,7 +19,8 @@
             "type": ["American", "Fast Food", "Entree"],
             "ingredients": ["Beef Patty", "Bun", "Lettuce", "Tomato", "Cheese"],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 15
         },
         {
             "name": "Spicy Salmon Avocado Sushi",
@@ -28,7 +30,8 @@
             "type": ["Japanese", "Seafood", "Entree"],
             "ingredients": ["Rice", "Spicy Salmon", "Avocado", "Nori"],
             "popular": true,
-            "spicy": true
+            "spicy": true,
+            "price": 4
         },
         {
             "name": "House Salad",
@@ -43,7 +46,8 @@
                 "Italian Dressing"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 3
         },
         {
             "name": "Hawaiian Pizza",
@@ -59,7 +63,8 @@
                 "Ham"
             ],
             "popular": false,
-            "spicy": false
+            "spicy": false,
+            "price": 12
         },
         {
             "name": "Hákarl",
@@ -69,7 +74,8 @@
             "type": ["Icelandic", "Seafood", "Appetizer"],
             "ingredients": ["Fermented shark meat"],
             "popular": false,
-            "spicy": false
+            "spicy": false,
+            "price": 18
         },
         {
             "name": "Escamoles",
@@ -86,7 +92,8 @@
                 "Jalapeno peppers"
             ],
             "popular": false,
-            "spicy": true
+            "spicy": true,
+            "price": 16
         },
         {
             "name": "Tiramisu",
@@ -103,7 +110,8 @@
                 "Cocoa powder"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 8
         },
         {
             "name": "Baklava",
@@ -120,7 +128,8 @@
                 "Butter"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 11
         },
         {
             "name": "Mochi Ice Cream",
@@ -137,7 +146,8 @@
                 "Food coloring"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 8
         },
         {
             "name": "Durian Sticky Rice",
@@ -152,7 +162,8 @@
                 "Sugar"
             ],
             "popular": false,
-            "spicy": false
+            "spicy": false,
+            "price": 7
         },
         {
             "name": "Black Licorice Ice Cream",
@@ -168,7 +179,8 @@
                 "Black licorice extract"
             ],
             "popular": false,
-            "spicy": false
+            "spicy": false,
+            "price": 6
         },
         {
             "name": "Wasabi Chocolate",
@@ -178,7 +190,8 @@
             "type": ["Japanese", "Dessert"],
             "ingredients": ["Chocolate", "Wasabi"],
             "popular": false,
-            "spicy": true
+            "spicy": true,
+            "price": 4
         },
         {
             "name": "Fried Calamari",
@@ -188,7 +201,8 @@
             "type": ["Seafood", "Appetizer"],
             "ingredients": ["Squid", "Flour", "Egg", "Breadcrumbs"],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 12
         },
         {
             "name": "Bruschetta",
@@ -204,7 +218,8 @@
                 "Garlic"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 11
         },
         {
             "name": "Edamame",
@@ -214,7 +229,8 @@
             "type": ["Japanese", "Appetizer"],
             "ingredients": ["Edamame", "Salt"],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 7
         },
         {
             "name": "Vegan Lasagna",
@@ -231,7 +247,8 @@
                 "Mushrooms"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 14
         },
         {
             "name": "Vegan Pad Thai",
@@ -248,7 +265,8 @@
                 "Peanuts"
             ],
             "popular": true,
-            "spicy": true
+            "spicy": true,
+            "price": 15
         },
         {
             "name": "Vegan Black Bean Burger",
@@ -266,7 +284,8 @@
                 "Salsa"
             ],
             "popular": true,
-            "spicy": true
+            "spicy": true,
+            "price": 14
         },
         {
             "name": "Türlü",
@@ -283,7 +302,8 @@
                 "Rice"
             ],
             "popular": false,
-            "spicy": false
+            "spicy": false,
+            "price": 15
         },
         {
             "name": "Börek",
@@ -293,7 +313,8 @@
             "type": ["Turkish", "Appetizer", "Mediterranean"],
             "ingredients": ["Phyllo dough", "Spinach", "Feta cheese", "Onion"],
             "popular": false,
-            "spicy": false
+            "spicy": false,
+            "price": 12
         },
         {
             "name": "Shakshuka",
@@ -310,7 +331,8 @@
                 "Cumin"
             ],
             "popular": false,
-            "spicy": true
+            "spicy": true,
+            "price": 15
         },
         {
             "name": "Paella",
@@ -327,7 +349,8 @@
                 "Saffron"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 23
         },
         {
             "name": "Tortilla Española",
@@ -337,7 +360,8 @@
             "type": ["Spanish", "Entree"],
             "ingredients": ["Potatoes", "Onions", "Eggs", "Olive oil", "Salt"],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 12
         },
         {
             "name": "Gazpacho",
@@ -354,7 +378,8 @@
                 "Olive oil"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 7
         },
         {
             "name": "Boxty",
@@ -371,7 +396,8 @@
                 "Salt"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 11
         },
         {
             "name": "Irish Smoked Salmon",
@@ -381,7 +407,8 @@
             "type": ["Irish", "Appetizer", "Seafood"],
             "ingredients": ["Salmon", "Salt", "Wood chips"],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 16
         },
         {
             "name": "Colcannon Puffs",
@@ -398,7 +425,8 @@
                 "Flour"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 14
         },
         {
             "name": "Tacos al Pastor",
@@ -417,7 +445,8 @@
                 "Tortillas"
             ],
             "popular": true,
-            "spicy": true
+            "spicy": true,
+            "price": 15
         },
         {
             "name": "Koshari",
@@ -436,7 +465,8 @@
                 "Onion"
             ],
             "popular": true,
-            "spicy": true
+            "spicy": true,
+            "price": 13
         },
         {
             "name": "Flan",
@@ -453,7 +483,8 @@
                 "Caramel sauce"
             ],
             "popular": true,
-            "spicy": false
+            "spicy": false,
+            "price": 6
         }
     ]
 }
