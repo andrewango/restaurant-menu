@@ -10,6 +10,10 @@ export function SearchBar(): JSX.Element {
     const foodlist =
         temp === null || temp === undefined ? foodList.FOODS : JSON.parse(temp);
     const [foods, setFoods] = useState<foodProps[]>(foodlist);
+    const temp = sessionStorage.getItem("menu");
+    const foodlist =
+        temp === null || temp === undefined ? foodList.FOODS : JSON.parse(temp);
+    const [foods, setFoods] = useState<foodProps[]>(foodlist);
 
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
