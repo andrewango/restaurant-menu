@@ -18,7 +18,7 @@ export function SearchBar(): JSX.Element {
 
     useEffect(() => {
         setFoods(foodlist);
-    }, [foodlist]);
+    }, []);
 
     function setListHelper(text: string) {
         if (text === "") {
