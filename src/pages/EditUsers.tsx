@@ -39,7 +39,8 @@ export default function EditUsers() {
                         "Pepperoni"
                     ],
                     popular: true,
-                    spicy: false
+                    spicy: false,
+                    price: 10
                 }
             ],
             role: "Customer"
@@ -61,7 +62,8 @@ export default function EditUsers() {
                         "Pepperoni"
                     ],
                     popular: true,
-                    spicy: false
+                    spicy: false,
+                    price: 10
                 }
             ],
             role: "Customer"
@@ -83,7 +85,8 @@ export default function EditUsers() {
                         "Pepperoni"
                     ],
                     popular: true,
-                    spicy: false
+                    spicy: false,
+                    price: 10
                 },
                 {
                     name: "Cheeseburger",
@@ -99,7 +102,8 @@ export default function EditUsers() {
                         "Cheese"
                     ],
                     popular: true,
-                    spicy: false
+                    spicy: false,
+                    price: 15
                 }
             ],
             role: "Customer"
