@@ -25,10 +25,7 @@ export default function CheckoutList(): JSX.Element {
     const menu = sessionStorage.getItem("menu");
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
     const foodlist =
-        JSON.parse(menuToParse) === null
-            ? foodList.FOODS
-            : JSON.parse(menuToParse);
-
+        menuToParse === "" ? foodList.FOODS : JSON.parse(menuToParse);
     const foods: foodProps[] = foodlist.map(
         (foodItem: foodProps): foodProps => foodItem
     );
