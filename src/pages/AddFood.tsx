@@ -35,7 +35,8 @@ export default function AddFood() {
         type: [],
         ingredients: [],
         popular: false,
-        spicy: false
+        spicy: false,
+        price: 0
     });
 
     const { name, image, desc, rating, type, ingredients } = food;
@@ -62,7 +63,8 @@ export default function AddFood() {
             type: [],
             ingredients: [],
             popular: false,
-            spicy: false
+            spicy: false,
+            price: 0
         });
     };
 
