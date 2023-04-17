@@ -46,7 +46,7 @@ FAIL src/App.test.tsx
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
       at Object.<anonymous> (src/components/FoodItem.tsx:12:1)
       at Object.<anonymous> (src/components/ItemListUI.tsx:5:1)
-      at Object.<anonymous> (src/components/SearchBar.tsx:6:1)
+      at Object.<anonymous> (src/components/SearchBar.tsx:5:1)
       at Object.<anonymous> (src/pages/Landing.tsx:5:1)
       at Object.<anonymous> (src/App.tsx:3:1)
       at Object.<anonymous> (src/App.test.tsx:3:1)
@@ -58,19 +58,19 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    5.97 |     1.66 |    6.77 |     6.2 |                   
+All files              |    5.75 |     1.78 |    6.55 |    5.97 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 13                
- src/components        |   10.81 |     2.43 |   11.11 |   11.59 |                   
+ src/components        |   10.52 |      2.7 |   10.81 |   11.26 |                   
   CheckoutList.tsx     |       0 |        0 |       0 |       0 | 16-62             
   DeliveryDropDown.tsx |      80 |      100 |   66.66 |      80 | 24                
   FoodItem.tsx         |       0 |        0 |       0 |       0 | 25-33             
-  FoodListAddUI.tsx    |       0 |        0 |       0 |       0 | 8-30              
+  FoodListAddUI.tsx    |       0 |        0 |       0 |       0 | 8-27              
   ItemListUI.tsx       |       0 |      100 |       0 |       0 | 11-22             
   NavBar.tsx           |       0 |      100 |       0 |       0 | 6                 
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                
-  SearchBar.tsx        |       0 |        0 |       0 |       0 | 9-44              
-  SelectRole.tsx       |       0 |        0 |       0 |       0 | 8-46              
+  SearchBar.tsx        |       0 |        0 |       0 |       0 | 8-48              
+  SelectRole.tsx       |       0 |        0 |       0 |       0 | 7-47              
  src/interfaces        |       0 |        0 |       0 |       0 |                   
   CustomerList.ts      |       0 |        0 |       0 |       0 |                   
   EmployeeList.ts      |       0 |        0 |       0 |       0 |                   
@@ -81,14 +81,14 @@ All files              |    5.97 |     1.66 |    6.77 |     6.2 |
   User.ts              |       0 |        0 |       0 |       0 |                   
  src/pages             |       0 |        0 |       0 |       0 |                   
   AboutUs.tsx          |       0 |      100 |       0 |       0 | 13                
-  AddFood.tsx          |       0 |        0 |       0 |       0 | 21-235            
+  AddFood.tsx          |       0 |        0 |       0 |       0 | 21-240            
   EditFood.tsx         |       0 |        0 |       0 |       0 | 9-15              
   EditUsers.tsx        |       0 |      100 |       0 |       0 | 24-239            
   Landing.tsx          |       0 |      100 |       0 |       0 | 10                
-  RemoveFood.tsx       |       0 |        0 |       0 |       0 | 21-148            
+  RemoveFood.tsx       |       0 |        0 |       0 |       0 | 21-145            
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        5.328 s
+Time:        6.292 s
 Ran all test suites.
