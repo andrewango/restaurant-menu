@@ -22,7 +22,12 @@ export default function CheckoutList(): JSX.Element {
         })
     }));
 
-    const foods: foodProps[] = foodList.FOODS.map(
+    const foodlist =
+        JSON.parse(sessionStorage.getItem("menu")!) === null
+            ? foodList.FOODS
+            : JSON.parse(sessionStorage.getItem("menu")!);
+
+    const foods: foodProps[] = foodlist.map(
         (foodItem: foodProps): foodProps => foodItem
     );
 

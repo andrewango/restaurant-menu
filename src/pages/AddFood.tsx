@@ -9,9 +9,7 @@ import {
     Container,
     Grid,
     GridItem,
-    SimpleGrid,
-    Divider,
-    Center
+    SimpleGrid
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
 import foodList from "../data/foods.json";
@@ -41,9 +39,11 @@ export default function AddFood() {
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
+        const newStr = value.split(",");
+
         setFood({
             ...food,
-            [name]: value
+            [name]: newStr
         });
     };
 
