@@ -20,10 +20,7 @@ import { NavLink } from "react-router-dom";
 export default function AddFood() {
     const menu = sessionStorage.getItem("menu");
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
-    const foods =
-        JSON.parse(menuToParse) === null
-            ? foodList.FOODS
-            : JSON.parse(menuToParse);
+    const foods = menuToParse === "" ? foodList.FOODS : JSON.parse(menuToParse);
 
     const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
 
@@ -42,6 +39,15 @@ export default function AddFood() {
     const { name, image, desc, rating, type, ingredients } = food;
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+
+        setFood({
+            ...food,
+            [name]: value
+        });
+    };
+
+    const onChangeArray = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         const newStr = value.split(",");
 
@@ -193,7 +199,7 @@ export default function AddFood() {
                                                 isRequired
                                                 name="type"
                                                 value={type}
-                                                onChange={onChange}
+                                                onChange={onChangeArray}
                                                 mb={2}
                                             />
                                         </GridItem>
@@ -203,7 +209,7 @@ export default function AddFood() {
                                                 isRequired
                                                 name="ingredients"
                                                 value={ingredients}
-                                                onChange={onChange}
+                                                onChange={onChangeArray}
                                                 mb={2}
                                             />
                                         </GridItem>
