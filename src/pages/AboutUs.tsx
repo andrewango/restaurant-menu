@@ -40,7 +40,7 @@ export default function AboutUs() {
                         <b>Colby Frashure</b> | music is my sole personality
                         trait <br></br>
                         <br></br>
-                        <b>Your Name</b> | your desc <br></br>
+                        <b>Ella Wilkins</b> | slayyyyy cisc275 <br></br>
                         <br></br>
                         <b>Sehee Hwang</b> | Tiger, the perfect animal <br></br>
                         <br></br>
