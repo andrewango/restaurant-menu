@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import ItemListUI from "../components/ItemListUI";
+import FoodListAddUI from "../components/FoodListAddUI";
 import {
     Heading,
-    Table,
-    Thead,
-    Tbody,
-    Tr,
-    Th,
-    Td,
-    TableContainer,
     Stack,
     Spacer,
     Flex,
-    Checkbox
+    Checkbox,
+    Container,
+    Grid,
+    GridItem,
+    SimpleGrid,
+    Divider,
+    Center
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
 import foodList from "../data/foods.json";
@@ -21,47 +20,38 @@ import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 
 export default function AddFood() {
-    const foods: foodProps[] = foodList.FOODS;
+    const foods =
+        JSON.parse(sessionStorage.getItem("menu")!) === null
+            ? foodList.FOODS
+            : JSON.parse(sessionStorage.getItem("menu")!);
     const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
-    const [food, setFood] = useState<foodProps>();
-    const [popular, setPopular] = useState<boolean>(false);
-    const [spicy, setSpicy] = useState<boolean>(false);
-    const [form, setForm] = useState<foodProps>({
+
+    const [food, setFood] = useState<foodProps>({
         name: "",
         image: "",
         desc: "",
         rating: 0,
         type: [],
         ingredients: [],
-        popular: popular,
-        spicy: spicy
+        popular: false,
+        spicy: false
     });
-    type FoodFormProps = {
-        onSubmit: (form: foodProps) => void;
-    };
 
-    const { name, image, desc, rating, type, ingredients } = form;
+    const { name, image, desc, rating, type, ingredients } = food;
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setForm({
-            ...form,
+        setFood({
+            ...food,
             [name]: value
-        });
-    };
-
-    const changeBoolean = () => {
-        setForm({
-            ...form,
-            spicy: spicy,
-            popular: popular
         });
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        onSubmit(form);
-        setForm({
+        onSubmit();
+        console.log(sessionStorage.getItem("menu"));
+        setFood({
             name: "",
             image: "",
             desc: "",
@@ -73,28 +63,17 @@ export default function AddFood() {
         });
     };
 
-    const onSubmit = (form: {
-        name: string;
-        image: string;
-        desc: string;
-        rating: number;
-        type: string[];
-        ingredients: string[];
-        popular: boolean;
-        spicy: boolean;
-    }) => {
-        setFood(form);
-        if (foodlist) {
-            const copy: foodProps[] = foodlist.map(
-                (food: foodProps): foodProps => ({
-                    ...food,
-                    type: [...food.type],
-                    ingredients: [...food.ingredients]
-                })
-            );
-            //const newFoodList: foodProps[] = [...copy, food];
-            setFoodlist(copy);
-        }
+    const onSubmit = () => {
+        const copy: foodProps[] = foodlist.map(
+            (food: foodProps): foodProps => ({
+                ...food,
+                type: [...food.type],
+                ingredients: [...food.ingredients]
+            })
+        );
+        const newFoodList: foodProps[] = [...copy, food];
+        setFoodlist(newFoodList);
+        sessionStorage.setItem("menu", JSON.stringify(newFoodList));
     };
 
     return (
@@ -109,7 +88,7 @@ export default function AddFood() {
                     fontWeight="bold"
                     textAlign="center"
                 >
-                    edit users
+                    edit foods
                 </Heading>
                 <Spacer></Spacer>
                 <Stack
@@ -143,123 +122,146 @@ export default function AddFood() {
             <div>
                 <NavBar></NavBar>
             </div>
-            <form onSubmit={handleSubmit}>
-                <FormControl isRequired id="name" width="500px" px={20} mt={10}>
-                    <FormLabel>New Food:</FormLabel>
-                    <Input name="name" value={name} onChange={onChange} />
-                    <Input
-                        name="image"
-                        value={image}
-                        onChange={onChange}
-                        mt={3}
-                    />
-                    <Input
-                        name="desc"
-                        value={desc}
-                        onChange={onChange}
-                        mt={3}
-                    />
-                    <Input
-                        name="rating"
-                        value={rating}
-                        onChange={onChange}
-                        mt={3}
-                    />
-                    <Input
-                        name="type"
-                        value={type}
-                        onChange={onChange}
-                        mt={3}
-                    />
-                    <Input
-                        name="ingredients"
-                        value={ingredients}
-                        onChange={onChange}
-                        mt={3}
-                    />
-                    <Checkbox
-                        type="checkbox"
-                        name="popular"
-                        onChange={(e) => setSpicy(e.target.checked)}
-                        mt={3}
-                    />
-                    <Checkbox
-                        type="checkbox"
-                        name="spicy"
-                        onChange={(e) => setSpicy(e.target.checked)}
-                        mt={3}
-                    />
-                    <Button type="submit">Add New Food</Button>
-                </FormControl>
-            </form>
+            <Container maxW="container.x1" p={0}>
+                <br></br>
+                <Grid templateColumns="repeat(10, 1fr)" gap={4}>
+                    <GridItem colStart={2} colEnd={4}>
+                        <Stack
+                            w="full"
+                            h="full"
+                            p={10}
+                            spacing={20}
+                            alignItems="flex-start"
+                        >
+                            <Heading size="2xl">Add New Food</Heading>
+                            <SimpleGrid
+                                columns={2}
+                                columnGap={3}
+                                rowGap={6}
+                                w="full"
+                            >
+                                <form onSubmit={handleSubmit}>
+                                    <FormControl id="name" width="300%" px={5}>
+                                        <GridItem colSpan={2}>
+                                            <FormLabel>Name:</FormLabel>
+                                            <Input
+                                                isRequired
+                                                name="name"
+                                                value={name}
+                                                onChange={onChange}
+                                                mb={2}
+                                            />
+                                        </GridItem>
+                                        <GridItem colSpan={2}>
+                                            <FormLabel>Image Link:</FormLabel>
+                                            <Input
+                                                isRequired
+                                                name="image"
+                                                value={image}
+                                                onChange={onChange}
+                                                mb={2}
+                                            />
+                                        </GridItem>
+                                        <GridItem colSpan={2}>
+                                            <FormLabel>Description:</FormLabel>
+                                            <Input
+                                                isRequired
+                                                name="desc"
+                                                value={desc}
+                                                onChange={onChange}
+                                                mb={2}
+                                            />
+                                        </GridItem>
+                                        <GridItem colSpan={2}>
+                                            <FormLabel>Rating:</FormLabel>
+                                            <Input
+                                                isRequired
+                                                name="rating"
+                                                value={rating}
+                                                onChange={onChange}
+                                                mb={2}
+                                            />
+                                        </GridItem>
+                                        <GridItem colSpan={2}>
+                                            <FormLabel>Type:</FormLabel>
+                                            <Input
+                                                isRequired
+                                                name="type"
+                                                value={type}
+                                                onChange={onChange}
+                                                mb={2}
+                                            />
+                                        </GridItem>
+                                        <GridItem colSpan={2}>
+                                            <FormLabel>Ingredients:</FormLabel>
+                                            <Input
+                                                isRequired
+                                                name="ingredients"
+                                                value={ingredients}
+                                                onChange={onChange}
+                                                mb={2}
+                                            />
+                                        </GridItem>
+                                        <GridItem colSpan={1}>
+                                            <FormLabel>Popular</FormLabel>
+                                            <Checkbox
+                                                type="checkbox"
+                                                name="popular"
+                                                id="popular"
+                                                value="popular"
+                                                onChange={(e) => {
+                                                    setFood({
+                                                        ...food,
+                                                        popular:
+                                                            e.target.checked
+                                                    });
+                                                }}
+                                                mb={3}
+                                            />
+                                        </GridItem>
+                                        <GridItem colSpan={1}>
+                                            <FormLabel>Spicy</FormLabel>
+                                            <Checkbox
+                                                type="checkbox"
+                                                name="spicy"
+                                                id="spicy"
+                                                value="spicy"
+                                                onChange={(e) => {
+                                                    setFood({
+                                                        ...food,
+                                                        spicy: e.target.checked
+                                                    });
+                                                }}
+                                                mb={3}
+                                            />
+                                        </GridItem>
+                                        <br></br>
+                                        <Button type="submit">
+                                            Add New Food
+                                        </Button>
+                                    </FormControl>
+                                </form>
+                            </SimpleGrid>
+                        </Stack>
+                    </GridItem>
+
+                    <GridItem colStart={5} colEnd={10} h="10">
+                        <Heading
+                            size="2xl"
+                            w="full"
+                            h="full"
+                            p={10}
+                            alignItems="flex-start"
+                        >
+                            Menu
+                        </Heading>
+                        <FoodListAddUI></FoodListAddUI>
+                    </GridItem>
+                </Grid>
+            </Container>
+            <></>
             <br></br>
-            {/* <Box
-                as="button"
-                type="submit"
-                onClick={onSubmit}
-                id="add-customer"
-                height="40px"
-                lineHeight="2.1"
-                transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
-                border="1px"
-                ml={20}
-                px={10}
-                borderRadius="5px"
-                fontSize="16px"
-                fontWeight="semibold"
-                bg="red.500"
-                borderColor="red.600"
-                color="white"
-                _hover={{ bg: "red.600", color: "white" }}
-                _active={{
-                    bg: "red.300",
-                    transform: "scale(0.95)",
-                    borderColor: "orange"
-                }}
-                _focus={{
-                    boxShadow:
-                        "0 0 2px 2px rgba(255, 30, 0, .50), 0 1px 1px rgba(0, 0, 0, .15)"
-                }}
-            >
-                Add Customer
-            </Box> */}
             <hr></hr>
-            <div>
-                {/* <TableContainer>
-                    <Table variant="simple">
-                        <Thead>
-                            <Tr>
-                                <Th>Name</Th>
-                                <Th>image</Th>
-                                <Th>desc</Th>
-                                <Th>rating</Th>
-                                <Th>type</Th>
-                                <Th>ingredients</Th>
-                                <Th>popular</Th>
-                                <Th>spicy</Th>
-                            </Tr>
-                        </Thead>
-                        <Tbody>
-                            {foodlist.map((food: foodProps) => (
-                                <Tr key={food.name}>
-                                    <Td fontWeight="semibold">{food.name}</Td>
-                                    <Td>{food.image}</Td>
-                                    <Td>{food.desc}</Td>
-                                    <Td>{food.rating}</Td>
-                                    <Td>
-                                        {food.type.map(
-                                            (type: string) => type + ", "
-                                        )}
-                                    </Td>
-                                </Tr>
-                            ))}
-                        </Tbody>
-                    </Table>
-                </TableContainer> */}
-                <div>
-                    <ItemListUI foodData={foodlist}></ItemListUI>
-                </div>
-            </div>
         </div>
     );
 }
