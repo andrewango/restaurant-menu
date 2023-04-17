@@ -20,8 +20,7 @@ import { NavLink } from "react-router-dom";
 export default function AddFood() {
     const menu = sessionStorage.getItem("menu");
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
-    const foods = menuToParse === "" ? foodList.FOODS : JSON.parse(menuToParse);
-
+    const foods = menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
     const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
 
     const [food, setFood] = useState<foodProps>({
