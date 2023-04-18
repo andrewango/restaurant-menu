@@ -12,7 +12,8 @@ export default function ItemListUI({
         return {
             ...foodProps,
             type: [...foodProps.type],
-            ingredients: [...foodProps.ingredients]
+            ingredients: [...foodProps.ingredients],
+            price: foodProps.price
         };
     });
     // Maps each food in our list to a box with food details
@@ -26,6 +27,7 @@ export default function ItemListUI({
                         image={food.image}
                         desc={food.desc}
                         ingredients={food.ingredients}
+                        price={food.price}
                     ></FoodItem>
                 );
             })}
