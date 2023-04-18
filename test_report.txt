@@ -81,7 +81,7 @@ All files              |    5.29 |      1.2 |    6.34 |    5.47 |
   User.ts              |       0 |        0 |       0 |       0 |                   
  src/pages             |       0 |        0 |       0 |       0 |                   
   AboutUs.tsx          |       0 |      100 |       0 |       0 | 13                
-  AddFood.tsx          |       0 |        0 |       0 |       0 | 21-240            
+  AddFood.tsx          |       0 |        0 |       0 |       0 | 21-241            
   EditFood.tsx         |       0 |        0 |       0 |       0 | 9-15              
   EditUsers.tsx        |       0 |      100 |       0 |       0 | 24-239            
   Landing.tsx          |       0 |      100 |       0 |       0 | 11                
@@ -90,5 +90,5 @@ All files              |    5.29 |      1.2 |    6.34 |    5.47 |
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        4.611 s
+Time:        6.652 s
 Ran all test suites.
