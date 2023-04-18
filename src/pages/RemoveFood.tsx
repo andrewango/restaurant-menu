@@ -99,7 +99,7 @@ export default function RemoveFood() {
                         Menu
                     </Heading>
                     <VStack spacing="3px" mt={100} alignItems="center">
-                        <Grid templateColumns="repeat(5, 1fr)" rowGap={3}>
+                        <Grid templateColumns="repeat(3, 1fr)" rowGap={3}>
                             {foods.map((food: foodProps) => {
                                 return (
                                     <Flex
