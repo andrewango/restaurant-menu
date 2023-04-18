@@ -58,10 +58,10 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    5.83 |     1.78 |    6.66 |    6.06 |                   
+All files              |    5.29 |      1.2 |    6.34 |    5.47 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 13                
- src/components        |   10.81 |      2.7 |   11.11 |   11.59 |                   
+ src/components        |    9.09 |     1.56 |   10.25 |    9.63 |                   
   CheckoutList.tsx     |       0 |        0 |       0 |       0 | 17-63             
   DeliveryDropDown.tsx |      80 |      100 |   66.66 |      80 | 24                
   FoodItem.tsx         |       0 |        0 |       0 |       0 | 25-33             
@@ -69,7 +69,7 @@ All files              |    5.83 |     1.78 |    6.66 |    6.06 |
   ItemListUI.tsx       |       0 |      100 |       0 |       0 | 11-22             
   NavBar.tsx           |       0 |      100 |       0 |       0 | 6                 
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                
-  SearchBar.tsx        |       0 |        0 |       0 |       0 | 8-48              
+  SearchBar.tsx        |       0 |        0 |       0 |       0 | 8-103             
   SelectRole.tsx       |       0 |        0 |       0 |       0 | 7-47              
  src/interfaces        |       0 |        0 |       0 |       0 |                   
   CustomerList.ts      |       0 |        0 |       0 |       0 |                   
@@ -90,5 +90,5 @@ All files              |    5.83 |     1.78 |    6.66 |    6.06 |
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        4.622 s
+Time:        4.769 s
 Ran all test suites.
