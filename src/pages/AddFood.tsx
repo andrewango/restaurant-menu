@@ -186,6 +186,7 @@ export default function AddFood() {
                                             <FormLabel>Rating:</FormLabel>
                                             <Input
                                                 isRequired
+                                                type="number"
                                                 name="rating"
                                                 value={rating}
                                                 onChange={onChange}
