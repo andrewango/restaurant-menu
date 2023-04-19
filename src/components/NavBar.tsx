@@ -9,6 +9,9 @@ export default function NavBar() {
             as="nav"
             display="flex"
             justifyContent="center"
+            position="sticky"
+            top={0}
+            zIndex={99999999}
             py={4}
             bg="red.400"
         >
