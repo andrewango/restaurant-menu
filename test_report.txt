@@ -58,18 +58,18 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    4.76 |     1.05 |    5.97 |     4.9 |                   
+All files              |    4.84 |     1.05 |    6.06 |    4.96 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 13                
- src/components        |    7.61 |     1.31 |     9.3 |       8 |                   
-  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 17-63             
-  DeliveryDropDown.tsx |      80 |      100 |   66.66 |      80 | 24                
+ src/components        |    7.84 |     1.31 |    9.52 |    8.16 |                   
+  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 17-61             
+  DeliveryDropDown.tsx |      80 |      100 |   66.66 |      80 | 26                
   FoodItem.tsx         |       0 |        0 |       0 |       0 | 28-36             
   FoodListAddUI.tsx    |       0 |        0 |       0 |       0 | 8-27              
   ItemListUI.tsx       |       0 |      100 |       0 |       0 | 11-24             
   NavBar.tsx           |       0 |      100 |       0 |       0 | 6                 
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                
-  SearchBar.tsx        |       0 |        0 |       0 |       0 | 8-144             
+  SearchBar.tsx        |       0 |        0 |       0 |       0 | 8-150             
   SelectRole.tsx       |       0 |        0 |       0 |       0 | 7-47              
  src/interfaces        |       0 |        0 |       0 |       0 |                   
   CustomerList.ts      |       0 |        0 |       0 |       0 |                   
@@ -84,11 +84,11 @@ All files              |    4.76 |     1.05 |    5.97 |     4.9 |
   AddFood.tsx          |       0 |        0 |       0 |       0 | 21-241            
   EditFood.tsx         |       0 |        0 |       0 |       0 | 9-15              
   EditUsers.tsx        |       0 |      100 |       0 |       0 | 24-239            
-  Landing.tsx          |       0 |      100 |       0 |       0 | 11                
+  Landing.tsx          |       0 |      100 |       0 |       0 | 12                
   RemoveFood.tsx       |       0 |        0 |       0 |       0 | 21-145            
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        6.748 s
+Time:        5.081 s
 Ran all test suites.
