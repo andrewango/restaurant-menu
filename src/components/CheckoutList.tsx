@@ -35,7 +35,6 @@ export default function CheckoutList(): JSX.Element {
         const chosenFood = foods.find((foodItem) => name === foodItem.name);
         if (chosenFood) {
             setCheckoutList((checkoutList) => [...checkoutList, chosenFood]);
-            setCheckoutID((checkoutID) => checkoutID++);
         }
     };
 
@@ -44,13 +43,12 @@ export default function CheckoutList(): JSX.Element {
     //  console.log(checkoutList);
     //}, [checkoutList]);
 
-    const [checkoutID, setCheckoutID] = useState<number>(1);
     return (
         <Card
             h="1000px"
             w="500px"
             ref={drop}
-            border="1px solid black"
+            border="5px solid tomato"
             textAlign="center"
         >
             <CardHeader>
@@ -58,10 +56,10 @@ export default function CheckoutList(): JSX.Element {
             </CardHeader>
             <Divider></Divider>
             <CardBody textAlign="center">
-                <VStack w="500px" spacing="3px">
+                <VStack spacing="5px" w="100%">
                     {checkoutList.map((food: foodProps, index: number) => (
-                        <Text key={index + checkoutID} fontWeight="bold">
-                            {index + checkoutID}. {food.name}
+                        <Text key={index + 1} fontWeight="bold">
+                            {index + 1}. {food.name}
                         </Text>
                     ))}
                 </VStack>
