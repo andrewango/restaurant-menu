@@ -93,7 +93,9 @@ export function SearchBar(): JSX.Element {
     return (
         <div>
             <Form.Group controlId="formCorrectAnswer">
-                <Form.Label>Search for Food</Form.Label>
+                <Form.Label style={{ color: "white" }}>
+                    Search for Food
+                </Form.Label>
                 <Form.Control
                     value={text}
                     onChange={(e) => {
@@ -103,6 +105,7 @@ export function SearchBar(): JSX.Element {
                 />
             </Form.Group>
             <Form.Check
+                style={{ color: "white" }}
                 type="checkbox"
                 id="is-spicy-check"
                 label="Spicy"
@@ -113,6 +116,7 @@ export function SearchBar(): JSX.Element {
                 }}
             />
             <Form.Check
+                style={{ color: "white" }}
                 type="checkbox"
                 id="is-popular-check"
                 label="Popular"
@@ -123,6 +127,7 @@ export function SearchBar(): JSX.Element {
                 }}
             />
             <Form.Check
+                style={{ color: "white" }}
                 type="checkbox"
                 id="is-high2low-check"
                 label="Sort Price: High to Low"
@@ -134,6 +139,7 @@ export function SearchBar(): JSX.Element {
                 }}
             />
             <Form.Check
+                style={{ color: "white" }}
                 type="checkbox"
                 id="is-low2high-check"
                 label="Sort Price: Low to High"
