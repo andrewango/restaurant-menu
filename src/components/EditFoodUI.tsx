@@ -13,8 +13,7 @@ import {
     AccordionItem,
     AccordionButton,
     AccordionIcon,
-    AccordionPanel,
-    Divider
+    AccordionPanel
 } from "@chakra-ui/react";
 import { useDrag } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
