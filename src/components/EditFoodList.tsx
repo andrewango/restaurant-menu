@@ -108,7 +108,11 @@ export default function EditFoodList(): JSX.Element {
                 isDragging: !!monitor.isDragging()
             })
         }));
-        return <Tab ref={drag}>{name}</Tab>;
+        return (
+            <Tab ref={drag} backgroundColor="">
+                {name}
+            </Tab>
+        );
     }
 
     return (
