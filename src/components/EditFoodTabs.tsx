@@ -8,7 +8,8 @@ import {
     GridItem,
     FormLabel,
     Input,
-    Checkbox
+    Checkbox,
+    Grid
 } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
@@ -82,6 +83,7 @@ export default function EditFoodTabs({
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         onSubmit();
+        location.reload();
     };
 
     const onSubmit = () => {
@@ -101,10 +103,10 @@ export default function EditFoodTabs({
     };
     return (
         <TabPanel>
-            <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
-                <form onSubmit={handleSubmit}>
-                    <FormControl id="name" width="200%" px={5}>
-                        <GridItem colSpan={2}>
+            <form onSubmit={handleSubmit}>
+                <SimpleGrid columns={4} columnGap={20} rowGap={3.5} w="full">
+                    <GridItem colSpan={4}>
+                        <FormControl id="name" px={5}>
                             <FormLabel>Name:</FormLabel>
                             <Input
                                 isRequired
@@ -113,8 +115,10 @@ export default function EditFoodTabs({
                                 onChange={onChange}
                                 mb={2}
                             />
-                        </GridItem>
-                        <GridItem colSpan={2}>
+                        </FormControl>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <FormControl id="name" px={5}>
                             <FormLabel>Image Link:</FormLabel>
                             <Input
                                 isRequired
@@ -123,8 +127,10 @@ export default function EditFoodTabs({
                                 onChange={onChange}
                                 mb={2}
                             />
-                        </GridItem>
-                        <GridItem colSpan={2}>
+                        </FormControl>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <FormControl id="name" px={5}>
                             <FormLabel>Description:</FormLabel>
                             <Input
                                 isRequired
@@ -133,8 +139,34 @@ export default function EditFoodTabs({
                                 onChange={onChange}
                                 mb={2}
                             />
-                        </GridItem>
-                        <GridItem colSpan={2}>
+                        </FormControl>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <FormControl id="name" px={5}>
+                            <FormLabel>Type:</FormLabel>
+                            <Input
+                                isRequired
+                                name="type"
+                                value={type}
+                                onChange={onChangeArray}
+                                mb={2}
+                            />
+                        </FormControl>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <FormControl id="name" px={5}>
+                            <FormLabel>Ingredients:</FormLabel>
+                            <Input
+                                isRequired
+                                name="ingredients"
+                                value={ingredients}
+                                onChange={onChangeArray}
+                                mb={2}
+                            />
+                        </FormControl>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <FormControl id="name" px={5}>
                             <FormLabel>Rating:</FormLabel>
                             <Input
                                 isRequired
@@ -144,28 +176,10 @@ export default function EditFoodTabs({
                                 onChange={onChange}
                                 mb={2}
                             />
-                        </GridItem>
-                        <GridItem colSpan={2}>
-                            <FormLabel>Type:</FormLabel>
-                            <Input
-                                isRequired
-                                name="type"
-                                value={type}
-                                onChange={onChangeArray}
-                                mb={2}
-                            />
-                        </GridItem>
-                        <GridItem colSpan={2}>
-                            <FormLabel>Ingredients:</FormLabel>
-                            <Input
-                                isRequired
-                                name="ingredients"
-                                value={ingredients}
-                                onChange={onChangeArray}
-                                mb={2}
-                            />
-                        </GridItem>
-                        <GridItem colSpan={2}>
+                        </FormControl>
+                    </GridItem>
+                    <GridItem colStart={3} colEnd={5}>
+                        <FormControl id="name" px={5}>
                             <FormLabel>Price:</FormLabel>
                             <Input
                                 isRequired
@@ -175,8 +189,10 @@ export default function EditFoodTabs({
                                 onChange={onChange}
                                 mb={2}
                             />
-                        </GridItem>
-                        <GridItem colSpan={1}>
+                        </FormControl>
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                        <FormControl id="name" px={5}>
                             <FormLabel>Popular</FormLabel>
                             <Checkbox
                                 type="checkbox"
@@ -190,10 +206,11 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
-                                isChecked={food.popular}
                             />
-                        </GridItem>
-                        <GridItem colSpan={1}>
+                        </FormControl>
+                    </GridItem>
+                    <GridItem colStart={3} colEnd={5}>
+                        <FormControl id="name" px={5}>
                             <FormLabel>Spicy</FormLabel>
                             <Checkbox
                                 type="checkbox"
@@ -207,14 +224,22 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
-                                isChecked={food.spicy}
                             />
-                        </GridItem>
-                        <br></br>
-                        <Button type="submit">Edit</Button>
-                    </FormControl>
-                </form>
-            </SimpleGrid>
+                        </FormControl>
+                    </GridItem>
+                    <GridItem colSpan={4}>
+                        <Button
+                            size="lg"
+                            w="full"
+                            type="submit"
+                            colorScheme="red"
+                            variant="solid"
+                        >
+                            Edit
+                        </Button>
+                    </GridItem>
+                </SimpleGrid>
+            </form>
         </TabPanel>
     );
 }

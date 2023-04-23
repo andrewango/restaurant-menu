@@ -52,7 +52,8 @@ function EditFood() {
                     <br></br>
                     <br></br>
                     <form>
-                        {sessionStorage.getItem("user") === "Owner" && (
+                        {(sessionStorage.getItem("user") === "Owner" ||
+                            sessionStorage.getItem("user") === null) && (
                             <div>
                                 <Button
                                     as={NavLink}
@@ -76,11 +77,11 @@ function EditFood() {
                                 </Button>
                                 <br></br>
                                 <br></br>
-                                <Divider w="full"></Divider>
                             </div>
                         )}
                     </form>
                 </div>
+                <Divider w="100%"></Divider>
                 <Flex>
                     <Box flex="1" p="4" ml="100px">
                         <EditFoodMenu></EditFoodMenu>

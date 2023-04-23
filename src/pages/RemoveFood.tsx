@@ -9,7 +9,8 @@ import {
     Container,
     Grid,
     Image,
-    Box
+    Box,
+    useMediaQuery
 } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import foodList from "../data/foods.json";
@@ -40,7 +41,18 @@ export default function RemoveFood() {
         sessionStorage.setItem("menu", JSON.stringify(newFoods));
         setFoodlist(newFoods);
     };
-
+    function screenSize() {
+        const [isLargerThan2500] = useMediaQuery("(min-width: 2500px)");
+        const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
+        if (isLargerThan2500) {
+            return "repeat(5, 1fr)";
+        } else if (isLargerThan2000) {
+            return "repeat(4, 1fr)";
+        } else {
+            return "repeat(3, 1fr)";
+        }
+    }
+    console.log(screenSize());
     return (
         <div style={{ padding: 10 }}>
             <Flex wrap="wrap">
@@ -98,8 +110,8 @@ export default function RemoveFood() {
                     >
                         Menu
                     </Heading>
-                    <VStack spacing="3px" mt={100} alignItems="center">
-                        <Grid templateColumns="repeat(3, 1fr)" rowGap={3}>
+                    <VStack spacing="3px" mt={50} alignItems="center">
+                        <Grid templateColumns={screenSize()} rowGap={3}>
                             {foods.map((food: foodProps) => {
                                 return (
                                     <Flex
@@ -118,27 +130,23 @@ export default function RemoveFood() {
                                             boxSize="100px"
                                             objectFit="cover"
                                             mr={2}
+                                            ml={2}
                                         />
                                         <Box
                                             key={food.name}
                                             w={300}
                                             textAlign="center"
-                                            p={1}
+                                            p={5}
                                             alignItems="center"
                                         >
                                             <div className="foodtitle">
                                                 {food.name}
                                             </div>
-                                            <hr></hr>
-                                            <div className="desc">
-                                                {food.desc}
-                                            </div>
-                                            <hr></hr>
-                                            <RatingFeature></RatingFeature>
                                         </Box>
                                         <Button
                                             border="1px"
                                             ml={5}
+                                            mr={3}
                                             px={5}
                                             id={food.name}
                                             onClick={() => {

@@ -132,10 +132,10 @@ export default function AddFood() {
             <div>
                 <NavBar></NavBar>
             </div>
-            <Box w="100%" maxW="100vw" overflowX="auto">
+            <Box w="100%" maxW="100vw">
                 <br></br>
                 <Grid templateColumns="repeat(10, minmax(0,1fr))" gap={4}>
-                    <GridItem colStart={2} colEnd={4}>
+                    <GridItem colStart={2} colEnd={5}>
                         <Stack
                             w="full"
                             h="full"
@@ -144,15 +144,15 @@ export default function AddFood() {
                             alignItems="flex-start"
                         >
                             <Heading size="2xl">Add New Food</Heading>
-                            <SimpleGrid
-                                columns={2}
-                                columnGap={3}
-                                rowGap={6}
-                                w="full"
-                            >
-                                <form onSubmit={handleSubmit}>
-                                    <FormControl id="name" width="300%" px={5}>
-                                        <GridItem colSpan={2}>
+                            <form onSubmit={handleSubmit}>
+                                <SimpleGrid
+                                    columns={4}
+                                    columnGap={20}
+                                    rowGap={6}
+                                    w="full"
+                                >
+                                    <GridItem colSpan={4}>
+                                        <FormControl id="name" px={5}>
                                             <FormLabel>Name:</FormLabel>
                                             <Input
                                                 isRequired
@@ -161,8 +161,10 @@ export default function AddFood() {
                                                 onChange={onChange}
                                                 mb={2}
                                             />
-                                        </GridItem>
-                                        <GridItem colSpan={2}>
+                                        </FormControl>
+                                    </GridItem>
+                                    <GridItem colSpan={4}>
+                                        <FormControl id="name" px={5}>
                                             <FormLabel>Image Link:</FormLabel>
                                             <Input
                                                 isRequired
@@ -171,8 +173,10 @@ export default function AddFood() {
                                                 onChange={onChange}
                                                 mb={2}
                                             />
-                                        </GridItem>
-                                        <GridItem colSpan={2}>
+                                        </FormControl>
+                                    </GridItem>
+                                    <GridItem colSpan={4}>
+                                        <FormControl id="name" px={5}>
                                             <FormLabel>Description:</FormLabel>
                                             <Input
                                                 isRequired
@@ -181,8 +185,34 @@ export default function AddFood() {
                                                 onChange={onChange}
                                                 mb={2}
                                             />
-                                        </GridItem>
-                                        <GridItem colSpan={2}>
+                                        </FormControl>
+                                    </GridItem>
+                                    <GridItem colSpan={4}>
+                                        <FormControl id="name" px={5}>
+                                            <FormLabel>Type:</FormLabel>
+                                            <Input
+                                                isRequired
+                                                name="type"
+                                                value={type}
+                                                onChange={onChangeArray}
+                                                mb={2}
+                                            />
+                                        </FormControl>
+                                    </GridItem>
+                                    <GridItem colSpan={4}>
+                                        <FormControl id="name" px={5}>
+                                            <FormLabel>Ingredients:</FormLabel>
+                                            <Input
+                                                isRequired
+                                                name="ingredients"
+                                                value={ingredients}
+                                                onChange={onChangeArray}
+                                                mb={2}
+                                            />
+                                        </FormControl>
+                                    </GridItem>
+                                    <GridItem colSpan={2}>
+                                        <FormControl id="name" px={5}>
                                             <FormLabel>Rating:</FormLabel>
                                             <Input
                                                 isRequired
@@ -192,28 +222,10 @@ export default function AddFood() {
                                                 onChange={onChange}
                                                 mb={2}
                                             />
-                                        </GridItem>
-                                        <GridItem colSpan={2}>
-                                            <FormLabel>Type:</FormLabel>
-                                            <Input
-                                                isRequired
-                                                name="type"
-                                                value={type}
-                                                onChange={onChangeArray}
-                                                mb={2}
-                                            />
-                                        </GridItem>
-                                        <GridItem colSpan={2}>
-                                            <FormLabel>Ingredients:</FormLabel>
-                                            <Input
-                                                isRequired
-                                                name="ingredients"
-                                                value={ingredients}
-                                                onChange={onChangeArray}
-                                                mb={2}
-                                            />
-                                        </GridItem>
-                                        <GridItem colSpan={2}>
+                                        </FormControl>
+                                    </GridItem>
+                                    <GridItem colStart={3} colEnd={5}>
+                                        <FormControl id="name" px={5}>
                                             <FormLabel>Price:</FormLabel>
                                             <Input
                                                 isRequired
@@ -223,8 +235,10 @@ export default function AddFood() {
                                                 onChange={onChange}
                                                 mb={2}
                                             />
-                                        </GridItem>
-                                        <GridItem colSpan={1}>
+                                        </FormControl>
+                                    </GridItem>
+                                    <GridItem colSpan={2}>
+                                        <FormControl id="name" px={5}>
                                             <FormLabel>Popular</FormLabel>
                                             <Checkbox
                                                 type="checkbox"
@@ -240,8 +254,10 @@ export default function AddFood() {
                                                 }}
                                                 mb={3}
                                             />
-                                        </GridItem>
-                                        <GridItem colSpan={1}>
+                                        </FormControl>
+                                    </GridItem>
+                                    <GridItem colStart={3} colEnd={5}>
+                                        <FormControl id="name" px={5}>
                                             <FormLabel>Spicy</FormLabel>
                                             <Checkbox
                                                 type="checkbox"
@@ -256,14 +272,21 @@ export default function AddFood() {
                                                 }}
                                                 mb={3}
                                             />
-                                        </GridItem>
-                                        <br></br>
-                                        <Button type="submit">
-                                            Add New Food
+                                        </FormControl>
+                                    </GridItem>
+                                    <GridItem colSpan={4}>
+                                        <Button
+                                            size="lg"
+                                            w="full"
+                                            type="submit"
+                                            colorScheme="red"
+                                            variant="solid"
+                                        >
+                                            Add
                                         </Button>
-                                    </FormControl>
-                                </form>
-                            </SimpleGrid>
+                                    </GridItem>
+                                </SimpleGrid>
+                            </form>
                         </Stack>
                     </GridItem>
 

@@ -1,5 +1,12 @@
 import React from "react";
-import { VStack, Box, Image, Flex, Grid } from "@chakra-ui/react";
+import {
+    VStack,
+    Box,
+    Image,
+    Flex,
+    Grid,
+    useMediaQuery
+} from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 
@@ -16,12 +23,26 @@ export default function FoodListAddUI(): JSX.Element {
         };
     });
 
-    // console.log(`loaded: ${foodlist}`);
+    const [isLargerThan800] = useMediaQuery("(min-width: 2000px)");
+
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
 
     // Maps each food in our list to a box with food details
     return (
-        <VStack spacing="3px" mt={100} alignItems="flex-start">
-            <Grid templateColumns="repeat(2, 1fr)" rowGap={3}>
+        <VStack
+            spacing="3px"
+            mt={100}
+            alignItems="flex-start"
+            maxH={window.innerHeight * 0.6}
+            overflowY="scroll"
+        >
+            <Grid
+                templateColumns={
+                    isLargerThan800 ? "repeat(3, 1fr)" : "repeat(2, 1fr)"
+                }
+                rowGap={3}
+            >
                 {foodlist.map((food: foodProps) => {
                     return (
                         <Flex

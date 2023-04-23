@@ -6,7 +6,9 @@ import {
     CardBody,
     Stack,
     Box,
-    VStack
+    VStack,
+    Grid,
+    useMediaQuery
 } from "@chakra-ui/react";
 import { useDrag } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
@@ -78,18 +80,26 @@ export default function EditFoodUI({
             </Card>
         );
     }
+    const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (
-        <Box maxH="500px" overflowY="scroll" mt={100}>
+        <Box maxH={window.innerHeight * 0.6} overflowY="scroll" mt={100}>
             <VStack spacing="3px">
-                {foodList.map((food) => {
-                    return (
-                        <FoodItem
-                            key={food.name}
-                            name={food.name}
-                            image={food.image}
-                        />
-                    );
-                })}
+                <Grid
+                    templateColumns={
+                        isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(1, 1fr)"
+                    }
+                    rowGap={3}
+                >
+                    {foodList.map((food) => {
+                        return (
+                            <FoodItem
+                                key={food.name}
+                                name={food.name}
+                                image={food.image}
+                            />
+                        );
+                    })}
+                </Grid>
             </VStack>
         </Box>
     );

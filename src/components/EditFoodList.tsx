@@ -54,19 +54,24 @@ export default function EditFoodList(): JSX.Element {
         }
     };
 
-    const [tabIndex, setTabIndex] = useState<number>(0);
+    const tab = sessionStorage.getItem("tab");
+    const tabToParse = tab !== null && tab !== undefined ? tab : 0;
+    const [tabIndex, setTabIndex] = useState<number>(
+        tabToParse ? JSON.parse(tabToParse) : 0
+    );
     const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setTabIndex(parseInt(event.target.value, 10));
     };
 
     const handleTabsChange = (index: number) => {
         setTabIndex(index);
+        sessionStorage.setItem("tab", JSON.stringify(index));
     };
 
     return (
         <Card
-            h="1050px"
-            w="90%"
+            h={window.innerHeight * 0.7}
+            w={window.innerWidth * 0.4}
             ref={drop}
             border="1px solid black"
             textAlign="center"
@@ -90,7 +95,7 @@ export default function EditFoodList(): JSX.Element {
                     index={tabIndex}
                     onChange={handleTabsChange}
                 >
-                    <TabList width="100%" overflow="clip">
+                    <TabList width="100%" overflowX="clip">
                         {EditMenuList().map(
                             (food: foodProps, index: number) => (
                                 <Tab key={index}>{food.name}</Tab>
