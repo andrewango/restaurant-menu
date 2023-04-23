@@ -205,6 +205,7 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
+                                isChecked={editPopular}
                             />
                         </FormControl>
                     </GridItem>
@@ -223,6 +224,7 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
+                                isChecked={editSpicy}
                             />
                         </FormControl>
                     </GridItem>
