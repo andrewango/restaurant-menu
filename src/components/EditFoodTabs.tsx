@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
-import { EditFoodMenu } from "./EditFoodMenu";
 
 export default function EditFoodTabs({
     editName,

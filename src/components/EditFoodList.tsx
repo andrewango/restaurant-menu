@@ -9,18 +9,13 @@ import {
     TabList,
     Tabs,
     TabPanels,
-    Tab,
-    IconButton,
-    Icon
+    Tab
 } from "@chakra-ui/react";
+
 import { useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 import EditFoodTabs from "./EditFoodTabs";
-import classes from "./EditFoodList.module.css";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, A11y, Pagination } from "swiper";
 
 export default function EditFoodList(): JSX.Element {
     function EditMenuList() {
@@ -67,8 +62,6 @@ export default function EditFoodList(): JSX.Element {
     const handleTabsChange = (index: number) => {
         setTabIndex(index);
     };
-
-    const [swiper, setSwiper] = useState(null);
 
     return (
         <Card
