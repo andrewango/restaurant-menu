@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { foodProps } from "../interfaces/Food";
 import EditFoodUI from "./EditFoodUI";
 import { MenuList } from "../pages/AddFood";
 
 export function EditFoodMenu(): JSX.Element {
-    const [foods, setFoods] = useState<foodProps[]>(MenuList());
+    const [foods] = useState<foodProps[]>(MenuList());
     const [text, setName] = useState<string>("");
     const [list, setList] = useState<foodProps[]>(foods);
 
@@ -13,15 +13,10 @@ export function EditFoodMenu(): JSX.Element {
         setName(event.target.value);
     }
 
-    useEffect(() => {
-        setFoods(MenuList());
-    }, []);
-
     function setListHelper(text: string) {
         if (text === "") {
             setList(foods);
         } else {
-            console.log(foods);
             setList(
                 foods.filter((x: foodProps): boolean => {
                     return (

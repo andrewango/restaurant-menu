@@ -6,7 +6,7 @@ import AboutUs from "./pages/AboutUs";
 //Routing
 import { Routes, Route } from "react-router-dom";
 import AddFood from "./pages/AddFood";
-import RemoveFood from "./pages/RemoveFood";
+import RemoveFood from "./components/RemoveFood";
 
 // 3. Pass the `theme` prop to the `ChakraProvider`
 export default function App() {
