@@ -127,7 +127,8 @@ export default function EditFoodUI({
                             </b>
                             <>{popular || spicy ? <>&emsp; | &emsp;</> : ""}</>
                             <b>Rating: </b> {rating} <>&emsp;|&emsp;</>
-                            <b>Price: </b> {price} <>$</>
+                            <b>Price: </b> <>$</>
+                            {price}
                         </AccordionPanel>
                     </AccordionItem>
                 </Accordion>
