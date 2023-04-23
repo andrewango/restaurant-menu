@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack, Box, Grid, useMediaQuery } from "@chakra-ui/react";
+import { Box, Grid, useMediaQuery } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
 import FoodItem from "./FoodItem";
 
@@ -16,7 +16,7 @@ export default function ItemListUI({
             price: foodProps.price
         };
     });
-    // Maps each food in our list to a box with food details
+    //Maps each food in our list to a box with food details
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (
         <Box h={window.innerHeight * 0.5} overflowY="scroll" mt={100}>
