@@ -70,13 +70,7 @@ export default function EditFoodList(): JSX.Element {
 
     return (
         <Card
-            h={
-                EditMenuList().length !== 0
-                    ? sessionStorage.getItem("user") === "Employee"
-                        ? window.innerHeight * 0.75
-                        : window.innerHeight * 0.65
-                    : "700px"
-            }
+            h="700px"
             w={window.innerWidth * 0.4}
             ref={drop}
             border="1px solid black"
