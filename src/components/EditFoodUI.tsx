@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { useDrag } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
+import "./Scrollbar.css";
 
 export default function EditFoodUI({
     foodData
