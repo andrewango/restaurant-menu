@@ -50,6 +50,7 @@ export default function AddFoodUI(): JSX.Element {
                             borderColor="black"
                             borderRadius="md"
                             p={1}
+                            overflowX="hidden"
                         >
                             <Accordion allowToggle textAlign="center" w="100%">
                                 <AccordionItem>
