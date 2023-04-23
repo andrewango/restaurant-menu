@@ -65,7 +65,7 @@ All files              |    3.06 |     0.63 |    3.92 |    3.14 |
   EditFoodList.tsx     |       0 |        0 |       0 |       0 | 23-114            
   EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-49              
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 37-220            
-  EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 21-94             
+  EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 22-95             
   FoodItem.tsx         |       0 |        0 |       0 |       0 | 28-36             
   FoodListAddUI.tsx    |       0 |        0 |       0 |       0 | 14-45             
   ItemListUI.tsx       |       0 |        0 |       0 |       0 | 11-30             
@@ -92,5 +92,5 @@ All files              |    3.06 |     0.63 |    3.92 |    3.14 |
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        5.981 s
+Time:        5 s
 Ran all test suites.
