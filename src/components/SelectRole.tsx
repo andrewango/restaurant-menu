@@ -29,7 +29,6 @@ export function SelectRole(): JSX.Element {
     function changeRole(key: string) {
         sessionStorage.setItem("user", key);
         setUserRole(key);
-        location.reload();
     }
 
     return (
