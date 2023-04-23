@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
@@ -16,7 +17,7 @@ export function DeliveryDropDown(): JSX.Element {
         "9:00"
     ];
     return (
-        <div>
+        <Box width="80%">
             <p className="del-time" style={{ color: "white" }}>
                 Delivery Time:
             </p>
@@ -37,6 +38,6 @@ export function DeliveryDropDown(): JSX.Element {
                     </Form.Select>
                 </Form.Group>
             </form>
-        </div>
+        </Box>
     );
 }

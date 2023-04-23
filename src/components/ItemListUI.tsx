@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack, Box } from "@chakra-ui/react";
+import { VStack, Box, Grid, useMediaQuery } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
 import FoodItem from "./FoodItem";
 
@@ -17,9 +17,15 @@ export default function ItemListUI({
         };
     });
     // Maps each food in our list to a box with food details
+    const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (
-        <Box maxH="500px" overflowY="scroll" mt={100}>
-            <VStack spacing="3px">
+        <Box h={window.innerHeight * 0.5} overflowY="scroll" mt={100}>
+            <Grid
+                templateColumns={
+                    isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(1, 1fr)"
+                }
+                rowGap={3}
+            >
                 {foodList.map((food) => {
                     return (
                         <FoodItem
@@ -32,7 +38,7 @@ export default function ItemListUI({
                         />
                     );
                 })}
-            </VStack>
+            </Grid>
         </Box>
     );
 }

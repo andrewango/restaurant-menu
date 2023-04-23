@@ -45,8 +45,8 @@ export default function CheckoutList(): JSX.Element {
 
     return (
         <Card
-            h="1000px"
-            w="500px"
+            h={window.innerHeight * 0.6}
+            w={window.innerWidth * 0.35}
             ref={drop}
             border="5px solid tomato"
             textAlign="center"

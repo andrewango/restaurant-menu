@@ -73,6 +73,9 @@ export default function Landing() {
                         <DeliveryDropDown></DeliveryDropDown>
                     </Box>
                 </Flex>
+                <br></br>
+                <br></br>
+                <br></br>
             </div>
         </>
     );
