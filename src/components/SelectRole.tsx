@@ -43,7 +43,12 @@ export function SelectRole(): JSX.Element {
                     key={userRole}
                 >
                     {ROLES.map((role: string) => (
-                        <option value={role} key={role} id={role}>
+                        <option
+                            style={{ color: "black" }}
+                            value={role}
+                            key={role}
+                            id={role}
+                        >
                             {role}
                         </option>
                     ))}
@@ -71,7 +76,7 @@ export function SelectRole(): JSX.Element {
                             to="/EditUsers"
                             colorScheme="red"
                             size="md"
-                            variant="outline"
+                            variant="solid"
                         >
                             edit users
                         </Button>

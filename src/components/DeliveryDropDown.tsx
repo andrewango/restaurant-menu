@@ -17,7 +17,9 @@ export function DeliveryDropDown(): JSX.Element {
     ];
     return (
         <div>
-            <p className="del-time">Delivery Time:</p>
+            <p className="del-time" style={{ color: "white" }}>
+                Delivery Time:
+            </p>
             <form>
                 <Form.Group controlId="delivery-dropdown">
                     <Form.Select
