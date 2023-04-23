@@ -68,7 +68,7 @@ All files              |    2.89 |     0.56 |    3.57 |    2.99 |
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 37-213            
   EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 27-150            
   FoodItem.tsx         |       0 |        0 |       0 |       0 | 28-36             
-  ItemListUI.tsx       |       0 |        0 |       0 |       0 | 11-30             
+  ItemListUI.tsx       |       0 |        0 |       0 |       0 | 11-31             
   NavBar.tsx           |       0 |      100 |       0 |       0 | 6                 
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                
   SearchBar.tsx        |       0 |        0 |       0 |       0 | 9-154             
@@ -87,10 +87,10 @@ All files              |    2.89 |     0.56 |    3.57 |    2.99 |
   EditFood.tsx         |       0 |        0 |       0 |       0 | 10                
   EditUsers.tsx        |       0 |      100 |       0 |       0 | 24-239            
   Landing.tsx          |       0 |      100 |       0 |       0 | 12                
-  RemoveFood.tsx       |       0 |        0 |       0 |       0 | 27-194            
+  RemoveFood.tsx       |       0 |        0 |       0 |       0 | 27-200            
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        6.408 s
+Time:        5.111 s
 Ran all test suites.
