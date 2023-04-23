@@ -82,7 +82,7 @@ export default function EditFoodUI({
     }
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (
-        <Box maxH={window.innerHeight * 0.6} overflowY="scroll" mt={100}>
+        <Box maxH={window.innerHeight * 0.55} overflowY="scroll" mt={100}>
             <VStack spacing="3px">
                 <Grid
                     templateColumns={
