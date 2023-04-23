@@ -23,10 +23,7 @@ export default function FoodListAddUI(): JSX.Element {
         };
     });
 
-    const [isLargerThan800] = useMediaQuery("(min-width: 2000px)");
-
-    console.log(window.innerWidth);
-    console.log(window.innerHeight);
+    const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     // Maps each food in our list to a box with food details
     return (
@@ -35,11 +32,12 @@ export default function FoodListAddUI(): JSX.Element {
             mt={100}
             alignItems="flex-start"
             maxH={window.innerHeight * 0.6}
+            minH="700px"
             overflowY="scroll"
         >
             <Grid
                 templateColumns={
-                    isLargerThan800 ? "repeat(3, 1fr)" : "repeat(2, 1fr)"
+                    isLargerThan2000 ? "repeat(3, 1fr)" : "repeat(2, 1fr)"
                 }
                 rowGap={3}
             >
