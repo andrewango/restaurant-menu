@@ -12,6 +12,7 @@ import {
 import { useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
+import "./Scrollbar.css";
 
 export default function CheckoutList(): JSX.Element {
     const [checkoutList, setCheckoutList] = useState<foodProps[]>([]);
@@ -55,7 +56,7 @@ export default function CheckoutList(): JSX.Element {
                 <Heading fontWeight="bold">Checkout</Heading>
             </CardHeader>
             <Divider></Divider>
-            <CardBody textAlign="center">
+            <CardBody textAlign="center" overflowY="auto">
                 <VStack spacing="5px" w="100%">
                     {checkoutList.map((food: foodProps, index: number) => (
                         <Text key={index + 1} fontWeight="bold">
