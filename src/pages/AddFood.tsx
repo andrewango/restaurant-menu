@@ -148,7 +148,7 @@ export default function AddFood() {
                                 <SimpleGrid
                                     columns={4}
                                     columnGap={20}
-                                    rowGap={6}
+                                    rowGap={2}
                                     w="full"
                                 >
                                     <GridItem colSpan={4}>

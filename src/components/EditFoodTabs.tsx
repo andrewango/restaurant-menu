@@ -103,7 +103,7 @@ export default function EditFoodTabs({
     return (
         <TabPanel>
             <form onSubmit={handleSubmit}>
-                <SimpleGrid columns={4} columnGap={20} rowGap={3.5} w="full">
+                <SimpleGrid columns={4} columnGap={20} rowGap={2} w="full">
                     <GridItem colSpan={4}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Name:</FormLabel>

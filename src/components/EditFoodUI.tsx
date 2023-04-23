@@ -18,7 +18,7 @@ export default function EditFoodUI({
 }: {
     foodData: foodProps[];
 }): JSX.Element {
-    const foodList = foodData.map((foodProps) => {
+    const foodlist = foodData.map((foodProps) => {
         return {
             ...foodProps,
             type: [...foodProps.type],
@@ -82,15 +82,7 @@ export default function EditFoodUI({
     }
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (
-        <Box
-            h={
-                sessionStorage.getItem("user") === "Employee"
-                    ? window.innerHeight * 0.65
-                    : window.innerHeight * 0.55
-            }
-            overflowY="scroll"
-            mt={100}
-        >
+        <Box h="790px" overflowY="scroll" mt={100}>
             <VStack spacing="3px">
                 <Grid
                     templateColumns={
@@ -98,7 +90,7 @@ export default function EditFoodUI({
                     }
                     rowGap={3}
                 >
-                    {foodList.map((food) => {
+                    {foodlist.map((food) => {
                         return (
                             <FoodItem
                                 key={food.name}
