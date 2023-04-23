@@ -71,7 +71,7 @@ export default function EditFoodList(): JSX.Element {
 
     return (
         <Card
-            h="890px"
+            h="full"
             w={window.innerWidth * 0.4}
             ref={drop}
             border="1px solid black"
