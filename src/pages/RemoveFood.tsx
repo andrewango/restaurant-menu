@@ -132,8 +132,18 @@ export default function RemoveFood() {
                         alignItems="center"
                     >
                         Menu
+                        <Button
+                            as={NavLink}
+                            to="/AddFood"
+                            colorScheme="red"
+                            size="md"
+                            variant="outline"
+                            float="right"
+                        >
+                            Add New Food
+                        </Button>
                     </Heading>
-                    <VStack spacing="3px" mt={50} alignItems="center">
+                    <VStack spacing="3px" mt={50} alignItems="center" ml={10}>
                         <Grid templateColumns={screenSize()} rowGap={3}>
                             {MenuList().map((food: foodProps) => {
                                 return (
