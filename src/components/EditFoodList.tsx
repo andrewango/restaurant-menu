@@ -16,7 +16,6 @@ import { useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 import EditFoodTabs from "./EditFoodTabs";
-import "./Slider.css";
 
 export default function EditFoodList(): JSX.Element {
     function EditMenuList() {
@@ -60,9 +59,6 @@ export default function EditFoodList(): JSX.Element {
     const [tabIndex, setTabIndex] = useState<number>(
         tabToParse ? JSON.parse(tabToParse) : 0
     );
-    const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setTabIndex(parseInt(event.target.value, 10));
-    };
 
     const handleTabsChange = (index: number) => {
         setTabIndex(index);
@@ -82,17 +78,6 @@ export default function EditFoodList(): JSX.Element {
             </CardHeader>
             <Divider></Divider>
             <CardBody textAlign="center">
-                <div className="slidecontainer">
-                    <input
-                        type="range"
-                        min="0"
-                        max={EditMenuList().length - 1}
-                        value={tabIndex}
-                        onChange={handleSliderChange}
-                        className="slider"
-                        hidden={!(EditMenuList().length > 1)}
-                    />
-                </div>
                 <Tabs
                     size="md"
                     isFitted
@@ -100,7 +85,7 @@ export default function EditFoodList(): JSX.Element {
                     index={tabIndex}
                     onChange={handleTabsChange}
                 >
-                    <TabList width="100%" overflowX="clip">
+                    <TabList width="100%" overflowX="auto" overflowY="hidden">
                         {EditMenuList().map(
                             (food: foodProps, index: number) => (
                                 <Tab key={index}>{food.name}</Tab>
