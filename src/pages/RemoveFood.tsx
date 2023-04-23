@@ -16,6 +16,7 @@ import foodList from "../data/foods.json";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
+import { EditMenuList } from "../components/EditFoodList";
 
 export default function RemoveFood() {
     const menu = sessionStorage.getItem("menu");
@@ -39,6 +40,21 @@ export default function RemoveFood() {
         }
         sessionStorage.setItem("menu", JSON.stringify(newFoods));
         setFoodlist(newFoods);
+
+        const newEditFoods: foodProps[] = EditMenuList().map(
+            (food: foodProps): foodProps => ({
+                ...food,
+                type: [...food.type],
+                ingredients: [...food.ingredients]
+            })
+        );
+        const removeFoodIndex = EditMenuList().findIndex(
+            (food: foodProps): boolean => food.name === id
+        );
+        if (removeFoodIndex > -1) {
+            newEditFoods.splice(removeFoodIndex, 1);
+        }
+        sessionStorage.setItem("editFoodList", JSON.stringify(newEditFoods));
     };
     function screenSize() {
         const [isLargerThan2500] = useMediaQuery("(min-width: 2500px)");

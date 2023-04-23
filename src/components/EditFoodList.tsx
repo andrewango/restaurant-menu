@@ -17,13 +17,19 @@ import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 import EditFoodTabs from "./EditFoodTabs";
 
+export function EditMenuList() {
+    const editMenu = sessionStorage.getItem("editFoodList");
+    const editMenuToParse =
+        editMenu !== null && editMenu !== undefined ? editMenu : "";
+    return editMenuToParse ? JSON.parse(editMenuToParse) : [];
+}
 export default function EditFoodList(): JSX.Element {
-    function EditMenuList() {
-        const editMenu = sessionStorage.getItem("editFoodList");
-        const editMenuToParse =
-            editMenu !== null && editMenu !== undefined ? editMenu : "";
-        return editMenuToParse ? JSON.parse(editMenuToParse) : [];
-    }
+    // function EditMenuList() {
+    //     const editMenu = sessionStorage.getItem("editFoodList");
+    //     const editMenuToParse =
+    //         editMenu !== null && editMenu !== undefined ? editMenu : "";
+    //     return editMenuToParse ? JSON.parse(editMenuToParse) : [];
+    // }
     const [, drop] = useDrop(() => ({
         accept: "foodItem",
         drop: (item: foodProps) => addFoodToEditFoodList(item.name),
