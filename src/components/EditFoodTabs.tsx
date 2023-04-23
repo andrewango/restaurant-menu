@@ -197,6 +197,7 @@ export default function EditFoodTabs({
                                 name="popular"
                                 id="popular"
                                 value="popular"
+                                colorScheme="red"
                                 onChange={(e) => {
                                     setFood({
                                         ...food,
@@ -204,7 +205,7 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
-                                isChecked={editPopular}
+                                defaultChecked={editPopular ? true : false}
                             />
                         </FormControl>
                     </GridItem>
@@ -216,6 +217,7 @@ export default function EditFoodTabs({
                                 name="spicy"
                                 id="spicy"
                                 value="spicy"
+                                colorScheme="red"
                                 onChange={(e) => {
                                     setFood({
                                         ...food,
@@ -223,7 +225,7 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
-                                isChecked={editSpicy}
+                                defaultChecked={editSpicy ? true : false}
                             />
                         </FormControl>
                     </GridItem>

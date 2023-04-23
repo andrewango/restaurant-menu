@@ -245,6 +245,7 @@ export default function AddFood() {
                                                 name="popular"
                                                 id="popular"
                                                 value="popular"
+                                                colorScheme="red"
                                                 onChange={(e) => {
                                                     setFood({
                                                         ...food,
@@ -264,6 +265,7 @@ export default function AddFood() {
                                                 name="spicy"
                                                 id="spicy"
                                                 value="spicy"
+                                                colorScheme="red"
                                                 onChange={(e) => {
                                                     setFood({
                                                         ...food,

@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 import ItemListUI from "./ItemListUI";
+import { Checkbox, Stack } from "@chakra-ui/react";
 
 export function SearchBar(): JSX.Element {
     const temp = sessionStorage.getItem("menu");
@@ -104,52 +105,63 @@ export function SearchBar(): JSX.Element {
                     }}
                 />
             </Form.Group>
-            <Form.Check
-                style={{ color: "white" }}
-                type="checkbox"
-                id="is-spicy-check"
-                label="Spicy"
-                checked={spicy}
-                onChange={() => {
-                    setSpicy(!spicy);
-                    setListHelper(text);
-                }}
-            />
-            <Form.Check
-                style={{ color: "white" }}
-                type="checkbox"
-                id="is-popular-check"
-                label="Popular"
-                checked={popular}
-                onChange={() => {
-                    setPopular(!popular);
-                    setListHelper(text);
-                }}
-            />
-            <Form.Check
-                style={{ color: "white" }}
-                type="checkbox"
-                id="is-high2low-check"
-                label="Sort Price: High to Low"
-                checked={high}
-                onChange={() => {
-                    setHigh(!high);
-                    setLow(false);
-                    setListHelper(text);
-                }}
-            />
-            <Form.Check
-                style={{ color: "white" }}
-                type="checkbox"
-                id="is-low2high-check"
-                label="Sort Price: Low to High"
-                checked={low}
-                onChange={() => {
-                    setHigh(false);
-                    setLow(!low);
-                    setListHelper(text);
-                }}
-            />
+            <Stack pl={6} mt={1} spacing={1}>
+                <Checkbox
+                    style={{ color: "white" }}
+                    type="checkbox"
+                    id="is-spicy-check"
+                    checked={spicy}
+                    onChange={() => {
+                        setSpicy(!spicy);
+                        setListHelper(text);
+                    }}
+                    colorScheme="white"
+                >
+                    Spicy
+                </Checkbox>
+                <Checkbox
+                    style={{ color: "white" }}
+                    type="checkbox"
+                    id="is-popular-check"
+                    checked={popular}
+                    onChange={() => {
+                        setPopular(!popular);
+                        setListHelper(text);
+                    }}
+                    colorScheme="white"
+                >
+                    Popular
+                </Checkbox>
+                <Checkbox
+                    style={{ color: "white" }}
+                    type="checkbox"
+                    id="is-high2low-check"
+                    checked={high}
+                    onChange={() => {
+                        setHigh(!high);
+                        setLow(false);
+                        setListHelper(text);
+                    }}
+                    colorScheme="white"
+                >
+                    Sort Price: High to Low
+                </Checkbox>
+                <Checkbox
+                    style={{ color: "white" }}
+                    type="checkbox"
+                    id="is-low2high-check"
+                    checked={low}
+                    onChange={() => {
+                        setHigh(false);
+                        setLow(!low);
+                        setListHelper(text);
+                    }}
+                    colorScheme="white"
+                >
+                    Sort Price: Low to High
+                </Checkbox>
+            </Stack>
+
             <div>
                 <ItemListUI foodData={list}></ItemListUI>
             </div>
