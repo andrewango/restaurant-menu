@@ -13,7 +13,8 @@ import {
     AccordionItem,
     AccordionButton,
     AccordionIcon,
-    AccordionPanel
+    AccordionPanel,
+    Divider
 } from "@chakra-ui/react";
 import { useDrag } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
@@ -111,20 +112,23 @@ export default function EditFoodUI({
                             </AccordionButton>
                         </h2>
                         <AccordionPanel pb={4}>
-                            <b>{desc}</b>
-                            <br></br>
+                            {desc}
+                            <hr></hr>
                             <b>Type: </b> {type.join(", ")}
                             <br></br>
                             <b>Ingredients: </b> {ingredients.join(", ")}
-                            {popular
-                                ? spicy
-                                    ? "Popular, Spicy"
-                                    : "Popular"
-                                : ""}
-                            {!popular && spicy ? "Spicy" : ""}
                             <br></br>
-                            <b>Rate: </b> {rating} <>&emsp;</>
-                            <b>Price: </b> {price} <> $</>
+                            <b>
+                                {popular
+                                    ? spicy
+                                        ? "Popular, Spicy"
+                                        : "Popular"
+                                    : ""}
+                                {!popular && spicy ? "Spicy" : ""}
+                            </b>
+                            <>{popular || spicy ? <>&emsp; | &emsp;</> : ""}</>
+                            <b>Rating: </b> {rating} <>&emsp;|&emsp;</>
+                            <b>Price: </b> {price} <>$</>
                         </AccordionPanel>
                     </AccordionItem>
                 </Accordion>
