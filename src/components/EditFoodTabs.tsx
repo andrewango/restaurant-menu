@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
+import { EditFoodMenu } from "./EditFoodMenu";
 
 export default function EditFoodTabs({
     editName,
@@ -38,6 +39,13 @@ export default function EditFoodTabs({
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
     const foods = menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
     const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
+
+    function EditMenuList() {
+        const editMenu = sessionStorage.getItem("editFoodList");
+        const editMenuToParse =
+            editMenu !== null && editMenu !== undefined ? editMenu : "";
+        return editMenuToParse ? JSON.parse(editMenuToParse) : [];
+    }
 
     const [food, setFood] = useState<foodProps>({
         name: editName,
@@ -83,8 +91,14 @@ export default function EditFoodTabs({
                 return editName === original.name ? food : original;
             }
         );
+        const newEditFoodList: foodProps[] = EditMenuList().map(
+            (original: foodProps): foodProps => {
+                return editName === original.name ? food : original;
+            }
+        );
         setFoodlist(newFoodList);
         sessionStorage.setItem("menu", JSON.stringify(newFoodList));
+        sessionStorage.setItem("editFoodList", JSON.stringify(newEditFoodList));
     };
     return (
         <TabPanel>

@@ -1,6 +1,5 @@
 import React from "react";
 import { VStack, Box, Image, Flex, Grid } from "@chakra-ui/react";
-import RatingFeature from "./RatingFeature";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 
