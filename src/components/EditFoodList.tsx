@@ -16,6 +16,7 @@ import { useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 import EditFoodTabs from "./EditFoodTabs";
+import "./Slider.css";
 
 export default function EditFoodList(): JSX.Element {
     function EditMenuList() {
@@ -76,20 +77,22 @@ export default function EditFoodList(): JSX.Element {
             border="1px solid black"
             textAlign="center"
         >
-            <CardHeader>
+            <CardHeader fontWeight="bold">
                 <Heading fontWeight="bold">Edit Food</Heading>
             </CardHeader>
             <Divider></Divider>
             <CardBody textAlign="center">
-                <input
-                    type="range"
-                    min="0"
-                    max={EditMenuList().length - 1}
-                    value={tabIndex}
-                    onChange={handleSliderChange}
-                    color="red"
-                    hidden={!(EditMenuList().length > 1)}
-                />
+                <div className="slidecontainer">
+                    <input
+                        type="range"
+                        min="0"
+                        max={EditMenuList().length - 1}
+                        value={tabIndex}
+                        onChange={handleSliderChange}
+                        className="slider"
+                        hidden={!(EditMenuList().length > 1)}
+                    />
+                </div>
                 <Tabs
                     size="md"
                     isFitted
