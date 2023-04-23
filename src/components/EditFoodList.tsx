@@ -12,7 +12,7 @@ import {
     Tab
 } from "@chakra-ui/react";
 
-import { useDrop } from "react-dnd";
+import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 import EditFoodTabs from "./EditFoodTabs";
@@ -27,6 +27,17 @@ export default function EditFoodList(): JSX.Element {
     const [, drop] = useDrop(() => ({
         accept: "foodItem",
         drop: (item: foodProps) => addFoodToEditFoodList(item.name),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver()
+        })
+    }));
+
+    const [{ isOver }, removeDrop] = useDrop(() => ({
+        accept: "removeItem",
+        drop: (item: foodProps) => {
+            removeFoodToEditFoodList(item.name);
+            console.log(item);
+        },
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })
@@ -54,6 +65,30 @@ export default function EditFoodList(): JSX.Element {
         }
     };
 
+    const removeFoodToEditFoodList = (name: string) => {
+        const chosenFood = EditMenuList().find(
+            (foodItem: foodProps) => name === foodItem.name
+        );
+        if (chosenFood) {
+            const newFoods: foodProps[] = EditMenuList().map(
+                (food: foodProps): foodProps => ({
+                    ...food,
+                    type: [...food.type],
+                    ingredients: [...food.ingredients]
+                })
+            );
+            const foodIndex = EditMenuList().findIndex(
+                (food: foodProps): boolean => food.name === chosenFood.name
+            );
+            if (foodIndex > -1) {
+                newFoods.splice(foodIndex, 1);
+            }
+            console.log(newFoods);
+            sessionStorage.setItem("editFoodList", JSON.stringify(newFoods));
+            console.log(sessionStorage.getItem("editFoodList"));
+        }
+    };
+
     const tab = sessionStorage.getItem("tab");
     const tabToParse = tab !== null && tab !== undefined ? tab : 0;
     const [tabIndex, setTabIndex] = useState<number>(
@@ -65,6 +100,17 @@ export default function EditFoodList(): JSX.Element {
         sessionStorage.setItem("tab", JSON.stringify(index));
     };
 
+    function FoodItem({ name }: { name: string }): JSX.Element {
+        const [, drag] = useDrag(() => ({
+            type: "removeItem",
+            item: { name: name },
+            collect: (monitor) => ({
+                isDragging: !!monitor.isDragging()
+            })
+        }));
+        return <Tab ref={drag}>{name}</Tab>;
+    }
+
     return (
         <Card
             h="full"
@@ -73,8 +119,14 @@ export default function EditFoodList(): JSX.Element {
             border="1px solid black"
             textAlign="center"
         >
-            <CardHeader fontWeight="bold">
+            <CardHeader
+                fontWeight="bold"
+                alignItems="stretch"
+                ref={removeDrop}
+                backgroundColor={isOver ? "#f56565bf" : ""}
+            >
                 <Heading fontWeight="bold">Edit Food</Heading>
+                <>Drag item here to remove</>
             </CardHeader>
             <Divider></Divider>
             <CardBody textAlign="center">
@@ -88,7 +140,10 @@ export default function EditFoodList(): JSX.Element {
                     <TabList width="100%" overflowX="auto" overflowY="hidden">
                         {EditMenuList().map(
                             (food: foodProps, index: number) => (
-                                <Tab key={index}>{food.name}</Tab>
+                                <FoodItem
+                                    key={index}
+                                    name={food.name}
+                                ></FoodItem>
                             )
                         )}
                     </TabList>
