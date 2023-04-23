@@ -56,10 +56,10 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    3.08 |     0.63 |    3.92 |    3.17 |                   
+All files              |    3.07 |     0.62 |    3.92 |    3.16 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 13                
- src/components        |    4.23 |     0.74 |    5.19 |    4.39 |                   
+ src/components        |    4.21 |     0.73 |    5.19 |    4.37 |                   
   CheckoutList.tsx     |       0 |        0 |       0 |       0 | 17-61             
   DeliveryDropDown.tsx |      80 |      100 |   66.66 |      80 | 26                
   EditFoodList.tsx     |       0 |        0 |       0 |       0 | 22-117            
@@ -92,5 +92,5 @@ All files              |    3.08 |     0.63 |    3.92 |    3.17 |
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        4.924 s
+Time:        4.954 s
 Ran all test suites.
