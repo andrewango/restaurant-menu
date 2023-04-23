@@ -25,6 +25,7 @@ export default function ItemListUI({
                     isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(1, 1fr)"
                 }
                 rowGap={3}
+                columnGap={3}
             >
                 {foodList.map((food) => {
                     return (
