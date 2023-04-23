@@ -82,7 +82,7 @@ function EditFood() {
                         )}
                     </form>
                 </div>
-                <Divider w="100%"></Divider>
+                <Divider></Divider>
                 <Flex>
                     <Box flex="1" p="4" ml="100px">
                         <EditFoodMenu></EditFoodMenu>
