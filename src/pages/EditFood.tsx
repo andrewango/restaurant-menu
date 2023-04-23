@@ -22,7 +22,8 @@ function EditFood() {
                     edit foods
                 </Heading>
                 <Spacer></Spacer>
-                {sessionStorage.getItem("user") === "Owner" && (
+                {(sessionStorage.getItem("user") === "Owner" ||
+                    sessionStorage.getItem("user") === null) && (
                     <div>
                         <Stack
                             px={10}
