@@ -12,7 +12,6 @@ import {
     useMediaQuery
 } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
-import foodList from "../data/foods.json";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
