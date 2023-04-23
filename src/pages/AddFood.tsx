@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FoodListAddUI from "../components/FoodListAddUI";
+import AddFoodUI from "../components/AddFoodUI";
 import {
     Heading,
     Stack,
@@ -304,7 +304,7 @@ export default function AddFood() {
                         >
                             Menu
                         </Heading>
-                        <FoodListAddUI></FoodListAddUI>
+                        <AddFoodUI></AddFoodUI>
                     </GridItem>
                 </Grid>
             </Box>
