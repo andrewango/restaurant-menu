@@ -7,7 +7,8 @@ import {
     Divider,
     Heading,
     VStack,
-    Text
+    Text,
+    useMediaQuery
 } from "@chakra-ui/react";
 import { useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
@@ -39,11 +40,16 @@ export default function CheckoutList(): JSX.Element {
     //useEffect(() => {
     //  console.log(checkoutList);
     //}, [checkoutList]);
+    const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (
         <Card
             h={window.innerHeight * 0.6}
-            w={window.innerWidth * 0.35}
+            w={
+                isLargerThan2000
+                    ? window.innerWidth * 0.35
+                    : window.innerWidth * 0.35
+            }
             ref={drop}
             border="5px solid tomato"
             textAlign="center"
