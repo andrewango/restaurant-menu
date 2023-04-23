@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { foodProps } from "../interfaces/Food";
-import foodList from "../data/foods.json";
 import EditFoodUI from "./EditFoodUI";
+import { MenuList } from "../pages/AddFood";
 
 export function EditFoodMenu(): JSX.Element {
-    const temp = sessionStorage.getItem("menu");
-    const foodlist =
-        temp === null || temp === undefined ? foodList.FOODS : JSON.parse(temp);
-    const [foods, setFoods] = useState<foodProps[]>(foodlist);
+    const [foods, setFoods] = useState<foodProps[]>(MenuList());
     const [text, setName] = useState<string>("");
     const [list, setList] = useState<foodProps[]>(foods);
 
@@ -17,7 +14,7 @@ export function EditFoodMenu(): JSX.Element {
     }
 
     useEffect(() => {
-        setFoods(foodlist);
+        setFoods(MenuList());
     }, []);
 
     function setListHelper(text: string) {

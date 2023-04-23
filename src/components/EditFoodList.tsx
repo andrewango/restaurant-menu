@@ -24,12 +24,6 @@ export function EditMenuList() {
     return editMenuToParse ? JSON.parse(editMenuToParse) : [];
 }
 export default function EditFoodList(): JSX.Element {
-    // function EditMenuList() {
-    //     const editMenu = sessionStorage.getItem("editFoodList");
-    //     const editMenuToParse =
-    //         editMenu !== null && editMenu !== undefined ? editMenu : "";
-    //     return editMenuToParse ? JSON.parse(editMenuToParse) : [];
-    // }
     const [, drop] = useDrop(() => ({
         accept: "foodItem",
         drop: (item: foodProps) => addFoodToEditFoodList(item.name),
