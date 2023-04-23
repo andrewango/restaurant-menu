@@ -8,8 +8,7 @@ import {
     GridItem,
     FormLabel,
     Input,
-    Checkbox,
-    Grid
+    Checkbox
 } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";

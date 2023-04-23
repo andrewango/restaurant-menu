@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import RatingFeature from "../components/RatingFeature";
 import {
     Heading,
     VStack,

@@ -9,7 +9,12 @@ import {
     TabList,
     Tabs,
     TabPanels,
-    Tab
+    Tab,
+    Slider,
+    SliderTrack,
+    SliderFilledTrack,
+    SliderThumb,
+    Box
 } from "@chakra-ui/react";
 
 import { useDrop } from "react-dnd";
@@ -70,7 +75,11 @@ export default function EditFoodList(): JSX.Element {
 
     return (
         <Card
-            h={window.innerHeight * 0.65}
+            h={
+                sessionStorage.getItem("user") === "Employee"
+                    ? window.innerHeight * 0.75
+                    : window.innerHeight * 0.65
+            }
             w={window.innerWidth * 0.4}
             ref={drop}
             border="1px solid black"
@@ -81,12 +90,30 @@ export default function EditFoodList(): JSX.Element {
             </CardHeader>
             <Divider></Divider>
             <CardBody textAlign="center">
+                <Slider
+                    aria-label="slider-ex-4"
+                    max={EditMenuList().length - 1}
+                    min={0}
+                    step={EditMenuList().length}
+                    defaultValue={tabIndex}
+                    onChange={() => handleSliderChange}
+                    hidden={!(EditMenuList().length > 1)}
+                >
+                    <SliderTrack bg="red.100">
+                        <SliderFilledTrack bg="tomato" />
+                    </SliderTrack>
+                    <SliderThumb boxSize={6}>
+                        <Box color="tomato" />
+                    </SliderThumb>
+                </Slider>
                 <input
                     type="range"
                     min="0"
                     max={EditMenuList().length - 1}
                     value={tabIndex}
                     onChange={handleSliderChange}
+                    color="red"
+                    hidden={!(EditMenuList().length > 1)}
                 />
                 <Tabs
                     size="md"
