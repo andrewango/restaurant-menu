@@ -35,16 +35,16 @@ FAIL src/App.test.tsx
 
     SyntaxError: Unexpected token 'export'
 
-      13 | } from "@chakra-ui/react";
-      14 |
-    > 15 | import { useDrag, useDrop } from "react-dnd";
+      14 | } from "@chakra-ui/react";
+      15 |
+    > 16 | import { useDrag, useDrop } from "react-dnd";
          | ^
-      16 | import { foodProps } from "../interfaces/Food";
-      17 | import foodList from "../data/foods.json";
-      18 | import EditFoodTabs from "./EditFoodTabs";
+      17 | import { foodProps } from "../interfaces/Food";
+      18 | import foodList from "../data/foods.json";
+      19 | import EditFoodTabs from "./EditFoodTabs";
 
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
-      at Object.<anonymous> (src/components/EditFoodList.tsx:15:1)
+      at Object.<anonymous> (src/components/EditFoodList.tsx:16:1)
       at Object.<anonymous> (src/pages/EditFood.tsx:6:1)
       at Object.<anonymous> (src/App.tsx:2:1)
       at Object.<anonymous> (src/App.test.tsx:3:1)
@@ -56,17 +56,17 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    2.91 |     0.58 |    3.57 |    3.01 |                   
+All files              |    2.89 |     0.56 |    3.57 |    2.99 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 13                
- src/components        |    4.12 |     0.72 |    4.76 |    4.32 |                   
+ src/components        |    4.08 |      0.7 |    4.76 |    4.27 |                   
   AddFoodUI.tsx        |       0 |        0 |       0 |       0 | 19-44             
-  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 18-58             
+  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 19-64             
   DeliveryDropDown.tsx |      80 |      100 |   66.66 |      80 | 27                
-  EditFoodList.tsx     |       0 |        0 |       0 |       0 | 21-158            
+  EditFoodList.tsx     |       0 |        0 |       0 |       0 | 22-164            
   EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-46              
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 37-213            
-  EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 27-149            
+  EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 27-150            
   FoodItem.tsx         |       0 |        0 |       0 |       0 | 28-36             
   ItemListUI.tsx       |       0 |        0 |       0 |       0 | 11-30             
   NavBar.tsx           |       0 |      100 |       0 |       0 | 6                 
@@ -87,10 +87,10 @@ All files              |    2.91 |     0.58 |    3.57 |    3.01 |
   EditFood.tsx         |       0 |        0 |       0 |       0 | 10                
   EditUsers.tsx        |       0 |      100 |       0 |       0 | 24-239            
   Landing.tsx          |       0 |      100 |       0 |       0 | 12                
-  RemoveFood.tsx       |       0 |        0 |       0 |       0 | 27-184            
+  RemoveFood.tsx       |       0 |        0 |       0 |       0 | 27-194            
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        5.438 s
+Time:        6.408 s
 Ran all test suites.
