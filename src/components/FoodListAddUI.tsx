@@ -22,7 +22,7 @@ export default function FoodListAddUI(): JSX.Element {
     // Maps each food in our list to a box with food details
     return (
         <VStack spacing="3px" mt={100} alignItems="flex-start">
-            <Grid templateColumns="repeat(3, 1fr)" rowGap={3}>
+            <Grid templateColumns="repeat(2, 1fr)" rowGap={3}>
                 {foodlist.map((food: foodProps) => {
                     return (
                         <Flex
@@ -50,10 +50,6 @@ export default function FoodListAddUI(): JSX.Element {
                                 alignItems="flex-start"
                             >
                                 <div className="foodtitle">{food.name}</div>
-                                <hr></hr>
-                                <div className="desc">{food.desc}</div>
-                                <hr></hr>
-                                <RatingFeature></RatingFeature>
                             </Box>
                         </Flex>
                     );

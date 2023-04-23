@@ -35,7 +35,7 @@ export default function AddFood() {
         price: 0
     });
 
-    const { name, image, desc, rating, type, ingredients } = food;
+    const { name, image, desc, rating, type, ingredients, price } = food;
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -210,6 +210,17 @@ export default function AddFood() {
                                                 name="ingredients"
                                                 value={ingredients}
                                                 onChange={onChangeArray}
+                                                mb={2}
+                                            />
+                                        </GridItem>
+                                        <GridItem colSpan={2}>
+                                            <FormLabel>Price:</FormLabel>
+                                            <Input
+                                                isRequired
+                                                type="number"
+                                                name="price"
+                                                value={price}
+                                                onChange={onChange}
                                                 mb={2}
                                             />
                                         </GridItem>

@@ -1,17 +1,12 @@
 import React from "react";
-import { Heading, Stack, Spacer, Flex, Divider } from "@chakra-ui/react";
+import { Heading, Stack, Spacer, Flex, Divider, Box } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
-import { SelectRole } from "../components/SelectRole";
+import EditFoodList from "../components/EditFoodList";
+import { EditFoodMenu } from "../components/EditFoodMenu";
 
 function EditFood() {
-    sessionStorage.getItem("user") === "User" ? (
-        <a href="/">Home</a>
-    ) : (
-        <a href="/EditFood">Edit Food</a>
-    );
-
     return (
         <>
             <Flex wrap="wrap">
@@ -27,16 +22,27 @@ function EditFood() {
                     edit foods
                 </Heading>
                 <Spacer></Spacer>
-                <Stack
-                    px={10}
-                    py={3}
-                    mb={5}
-                    spacing={6}
-                    direction="column"
-                    textAlign="center"
-                >
-                    <SelectRole></SelectRole>
-                </Stack>
+                {sessionStorage.getItem("user") === "Owner" && (
+                    <div>
+                        <Stack
+                            px={10}
+                            py={5}
+                            mb={5}
+                            spacing={6}
+                            textAlign="center"
+                        >
+                            <Button
+                                as={NavLink}
+                                to="/EditUsers"
+                                colorScheme="red"
+                                size="md"
+                                variant="outline"
+                            >
+                                edit users
+                            </Button>
+                        </Stack>
+                    </div>
+                )}
             </Flex>
             <div>
                 <NavBar></NavBar>
@@ -46,8 +52,7 @@ function EditFood() {
                     <br></br>
                     <br></br>
                     <form>
-                        {(sessionStorage.getItem("user") === "Owner" ||
-                            sessionStorage.getItem("user") === null) && (
+                        {sessionStorage.getItem("user") === "Owner" && (
                             <div>
                                 <Button
                                     as={NavLink}
@@ -76,6 +81,14 @@ function EditFood() {
                         )}
                     </form>
                 </div>
+                <Flex>
+                    <Box flex="1" p="4" ml="100px">
+                        <EditFoodMenu></EditFoodMenu>
+                    </Box>
+                    <Box flex="1" p="4" mt="35px" ml="100px">
+                        <EditFoodList></EditFoodList>
+                    </Box>
+                </Flex>
             </div>
         </>
     );
