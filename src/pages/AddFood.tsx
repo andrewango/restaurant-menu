@@ -303,6 +303,16 @@ export default function AddFood() {
                             alignItems="flex-start"
                         >
                             Menu
+                            <Button
+                                as={NavLink}
+                                to="/RemoveFood"
+                                colorScheme="red"
+                                size="md"
+                                variant="outline"
+                                float="right"
+                            >
+                                Remove Food
+                            </Button>
                         </Heading>
                         <AddFoodUI></AddFoodUI>
                     </GridItem>
