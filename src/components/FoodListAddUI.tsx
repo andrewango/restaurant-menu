@@ -24,6 +24,7 @@ export default function FoodListAddUI(): JSX.Element {
     });
 
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
+    const [isLargerThan1000] = useMediaQuery("(min-height: 1000px)");
 
     // Maps each food in our list to a box with food details
     return (
@@ -31,8 +32,7 @@ export default function FoodListAddUI(): JSX.Element {
             spacing="3px"
             mt={100}
             alignItems="flex-start"
-            maxH={window.innerHeight * 0.6}
-            minH="700px"
+            h={isLargerThan1000 ? window.innerHeight * 0.65 : "600px"}
             overflowY="scroll"
         >
             <Grid
