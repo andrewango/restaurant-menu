@@ -8,14 +8,10 @@ import {
     useMediaQuery
 } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
-import foodList from "../data/foods.json";
+import { MenuList } from "../pages/AddFood";
 
 export default function FoodListAddUI(): JSX.Element {
-    const menu = sessionStorage.getItem("menu");
-    const menuToParse = menu !== null && menu !== undefined ? menu : "";
-    const foods = menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
-
-    const foodlist = foods.map((foodProps: foodProps) => {
+    const foodlist = MenuList().map((foodProps: foodProps) => {
         return {
             ...foodProps,
             type: [...foodProps.type],

@@ -11,8 +11,8 @@ import {
 } from "@chakra-ui/react";
 import { useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
-import foodList from "../data/foods.json";
 import "./Scrollbar.css";
+import { MenuList } from "../pages/AddFood";
 
 export default function CheckoutList(): JSX.Element {
     const [checkoutList, setCheckoutList] = useState<foodProps[]>([]);
@@ -24,11 +24,7 @@ export default function CheckoutList(): JSX.Element {
         })
     }));
 
-    const menu = sessionStorage.getItem("menu");
-    const menuToParse = menu !== null && menu !== undefined ? menu : "";
-    const foodlist = menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
-
-    const foods: foodProps[] = foodlist.map(
+    const foods: foodProps[] = MenuList().map(
         (foodItem: foodProps): foodProps => foodItem
     );
 

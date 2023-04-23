@@ -17,11 +17,13 @@ import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 
-export default function AddFood() {
+export function MenuList() {
     const menu = sessionStorage.getItem("menu");
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
-    const foods = menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
-    const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
+    return menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
+}
+export default function AddFood() {
+    const [foodlist, setFoodlist] = useState<foodProps[]>(MenuList());
 
     const [food, setFood] = useState<foodProps>({
         name: "",

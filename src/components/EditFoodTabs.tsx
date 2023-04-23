@@ -10,7 +10,8 @@ import {
     Checkbox
 } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
-import foodList from "../data/foods.json";
+import { EditMenuList } from "./EditFoodList";
+import { MenuList } from "../pages/AddFood";
 
 export default function EditFoodTabs({
     editName,
@@ -33,17 +34,7 @@ export default function EditFoodTabs({
     editSpicy: boolean;
     editPrice: number;
 }): JSX.Element {
-    const menu = sessionStorage.getItem("menu");
-    const menuToParse = menu !== null && menu !== undefined ? menu : "";
-    const foods = menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
-    const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
-
-    function EditMenuList() {
-        const editMenu = sessionStorage.getItem("editFoodList");
-        const editMenuToParse =
-            editMenu !== null && editMenu !== undefined ? editMenu : "";
-        return editMenuToParse ? JSON.parse(editMenuToParse) : [];
-    }
+    const [foodlist, setFoodlist] = useState<foodProps[]>(MenuList());
 
     const [food, setFood] = useState<foodProps>({
         name: editName,

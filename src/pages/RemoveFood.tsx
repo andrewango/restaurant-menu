@@ -17,12 +17,10 @@ import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 import { EditMenuList } from "../components/EditFoodList";
+import { MenuList } from "./AddFood";
 
 export default function RemoveFood() {
-    const menu = sessionStorage.getItem("menu");
-    const menuToParse = menu !== null && menu !== undefined ? menu : "";
-    const foods = menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
-    const [foodlist, setFoodlist] = useState<foodProps[]>(foods);
+    const [foodlist, setFoodlist] = useState<foodProps[]>(MenuList());
 
     const handleSubmit = (id: string) => {
         const newFoods: foodProps[] = foodlist.map(
@@ -127,7 +125,7 @@ export default function RemoveFood() {
                     </Heading>
                     <VStack spacing="3px" mt={50} alignItems="center">
                         <Grid templateColumns={screenSize()} rowGap={3}>
-                            {foods.map((food: foodProps) => {
+                            {MenuList().map((food: foodProps) => {
                                 return (
                                     <Flex
                                         key={food.name}
