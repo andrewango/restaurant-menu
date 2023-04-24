@@ -90,7 +90,6 @@ export default function CheckoutList(): JSX.Element {
     //useEffect(() => {
     //console.log(checkoutList);
     //}, [checkoutList]);
-
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (

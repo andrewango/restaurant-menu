@@ -9,7 +9,12 @@ import {
     Grid,
     Image,
     Box,
-    useMediaQuery
+    useMediaQuery,
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionIcon,
+    AccordionPanel
 } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
@@ -56,12 +61,18 @@ export default function RemoveFood() {
     function screenSize() {
         const [isLargerThan2500] = useMediaQuery("(min-width: 2500px)");
         const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
+        const [isLargerThan1500] = useMediaQuery("(min-width: 1500px)");
+        const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
         if (isLargerThan2500) {
             return "repeat(5, 1fr)";
         } else if (isLargerThan2000) {
             return "repeat(4, 1fr)";
-        } else {
+        } else if (isLargerThan1500) {
             return "repeat(3, 1fr)";
+        } else if (isLargerThan1000) {
+            return "repeat(2, 1fr)";
+        } else {
+            return "repeat(1, 1fr)";
         }
     }
     console.log(screenSize());
@@ -121,8 +132,18 @@ export default function RemoveFood() {
                         alignItems="center"
                     >
                         Menu
+                        <Button
+                            as={NavLink}
+                            to="/AddFood"
+                            colorScheme="red"
+                            size="md"
+                            variant="outline"
+                            float="right"
+                        >
+                            Add New Food
+                        </Button>
                     </Heading>
-                    <VStack spacing="3px" mt={50} alignItems="center">
+                    <VStack spacing="3px" mt={50} alignItems="center" ml={10}>
                         <Grid templateColumns={screenSize()} rowGap={3}>
                             {MenuList().map((food: foodProps) => {
                                 return (
@@ -133,55 +154,104 @@ export default function RemoveFood() {
                                         borderWidth={2}
                                         borderColor="black"
                                         borderRadius="md"
-                                        p={2}
+                                        p={1}
                                     >
-                                        <Image
-                                            src={food.image}
-                                            alt={food.name}
-                                            borderRadius="full"
-                                            boxSize="100px"
-                                            objectFit="cover"
-                                            mr={2}
-                                            ml={2}
-                                        />
-                                        <Box
-                                            key={food.name}
-                                            w={300}
+                                        <Accordion
+                                            allowToggle
                                             textAlign="center"
-                                            p={5}
-                                            alignItems="center"
+                                            w="100%"
                                         >
-                                            <div className="foodtitle">
-                                                {food.name}
-                                            </div>
-                                        </Box>
-                                        <Button
-                                            border="1px"
-                                            ml={5}
-                                            mr={3}
-                                            px={5}
-                                            id={food.name}
-                                            onClick={() => {
-                                                handleSubmit(food.name);
-                                            }}
-                                            borderRadius="5px"
-                                            fontSize="16px"
-                                            fontWeight="semibold"
-                                            bg="red.500"
-                                            borderColor="red.600"
-                                            color="white"
-                                            _hover={{
-                                                bg: "red.600",
-                                                color: "white"
-                                            }}
-                                            _active={{
-                                                bg: "red.300",
-                                                transform: "scale(0.95)",
-                                                borderColor: "orange"
-                                            }}
-                                        >
-                                            remove
-                                        </Button>
+                                            <AccordionItem>
+                                                <h2>
+                                                    <AccordionButton>
+                                                        <Image
+                                                            src={food.image}
+                                                            alt={food.name}
+                                                            borderRadius="full"
+                                                            boxSize="100px"
+                                                            objectFit="cover"
+                                                            mr={2}
+                                                            ml={2}
+                                                        />
+                                                        <Box
+                                                            key={food.name}
+                                                            w={300}
+                                                            textAlign="center"
+                                                            p={5}
+                                                            alignItems="center"
+                                                        >
+                                                            <div className="foodtitle">
+                                                                {food.name}
+                                                            </div>
+                                                        </Box>
+                                                        <Button
+                                                            border="1px"
+                                                            ml={5}
+                                                            mr={3}
+                                                            px={5}
+                                                            id={food.name}
+                                                            onClick={() => {
+                                                                handleSubmit(
+                                                                    food.name
+                                                                );
+                                                            }}
+                                                            borderRadius="5px"
+                                                            fontSize="16px"
+                                                            fontWeight="semibold"
+                                                            bg="red.500"
+                                                            borderColor="red.600"
+                                                            color="white"
+                                                            _hover={{
+                                                                bg: "red.600",
+                                                                color: "white"
+                                                            }}
+                                                            _active={{
+                                                                bg: "red.300",
+                                                                transform:
+                                                                    "scale(0.95)",
+                                                                borderColor:
+                                                                    "orange"
+                                                            }}
+                                                        >
+                                                            remove
+                                                        </Button>
+                                                        <AccordionIcon />
+                                                    </AccordionButton>
+                                                </h2>
+                                                <AccordionPanel pb={4}>
+                                                    {food.desc}
+                                                    <hr></hr>
+                                                    <b>Type: </b>{" "}
+                                                    {food.type.join(", ")}
+                                                    <br></br>
+                                                    <b>Ingredients: </b>{" "}
+                                                    {food.ingredients.join(
+                                                        ", "
+                                                    )}
+                                                    <br></br>
+                                                    <b>
+                                                        {food.popular
+                                                            ? food.spicy
+                                                                ? "Popular, Spicy"
+                                                                : "Popular"
+                                                            : ""}
+                                                        {!food.popular &&
+                                                        food.spicy
+                                                            ? "Spicy"
+                                                            : ""}
+                                                    </b>
+                                                    {(food.popular ||
+                                                        food.spicy) && (
+                                                        <>&emsp; | &emsp;</>
+                                                    )}
+                                                    <b>Rating: </b>{" "}
+                                                    {food.rating}
+                                                    <>&emsp;|&emsp;</>
+                                                    <b>Price: </b> <>$</>
+                                                    {food.price}
+                                                </AccordionPanel>
+                                            </AccordionItem>
+                                        </Accordion>
                                     </Flex>
                                 );
                             })}

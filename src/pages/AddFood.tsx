@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FoodListAddUI from "../components/FoodListAddUI";
+import AddFoodUI from "../components/AddFoodUI";
 import {
     Heading,
     Stack,
@@ -137,7 +137,7 @@ export default function AddFood() {
             <Box w="100%" maxW="100vw">
                 <br></br>
                 <Grid templateColumns="repeat(10, minmax(0,1fr))" gap={4}>
-                    <GridItem colStart={2} colEnd={5}>
+                    <GridItem colStart={1} colEnd={4}>
                         <Stack
                             w="full"
                             h="full"
@@ -294,7 +294,7 @@ export default function AddFood() {
                         </Stack>
                     </GridItem>
 
-                    <GridItem colStart={5} colEnd={10} h="10">
+                    <GridItem colStart={4} colEnd={10} h="10">
                         <Heading
                             size="2xl"
                             w="full"
@@ -303,8 +303,18 @@ export default function AddFood() {
                             alignItems="flex-start"
                         >
                             Menu
+                            <Button
+                                as={NavLink}
+                                to="/RemoveFood"
+                                colorScheme="red"
+                                size="md"
+                                variant="outline"
+                                float="right"
+                            >
+                                Remove Food
+                            </Button>
                         </Heading>
-                        <FoodListAddUI></FoodListAddUI>
+                        <AddFoodUI></AddFoodUI>
                     </GridItem>
                 </Grid>
             </Box>
