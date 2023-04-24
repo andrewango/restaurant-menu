@@ -60,15 +60,15 @@ All files              |    2.74 |     0.55 |     3.3 |    2.85 |
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 13                
  src/components        |    3.79 |     0.68 |     4.3 |       4 |                   
-  AddFoodUI.tsx        |       0 |        0 |       0 |       0 | 19-44             
+  AddFoodUI.tsx        |       0 |        0 |       0 |       0 | 19-45             
   CheckoutList.tsx     |       0 |        0 |       0 |       0 | 22-128            
   DeliveryDropDown.tsx |      80 |      100 |   66.66 |      80 | 27                
-  EditFoodList.tsx     |       0 |        0 |       0 |       0 | 22-164            
+  EditFoodList.tsx     |       0 |        0 |       0 |       0 | 22-169            
   EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-41              
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 37-213            
   EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 27-150            
   FoodItem.tsx         |       0 |        0 |       0 |       0 | 28-36             
-  ItemListUI.tsx       |       0 |        0 |       0 |       0 | 11-31             
+  ItemListUI.tsx       |       0 |        0 |       0 |       0 | 11-36             
   NavBar.tsx           |       0 |      100 |       0 |       0 | 6                 
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                
   SearchBar.tsx        |       0 |        0 |       0 |       0 | 9-154             
@@ -92,5 +92,5 @@ All files              |    2.74 |     0.55 |     3.3 |    2.85 |
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        5.565 s
+Time:        4.937 s
 Ran all test suites.

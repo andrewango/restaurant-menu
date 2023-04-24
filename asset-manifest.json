@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/restaurant-menu/static/css/main.7128c47e.css",
-    "main.js": "/restaurant-menu/static/js/main.8a075741.js",
+    "main.css": "/restaurant-menu/static/css/main.9893f37a.css",
+    "main.js": "/restaurant-menu/static/js/main.1e310e38.js",
     "static/js/787.578e6cb3.chunk.js": "/restaurant-menu/static/js/787.578e6cb3.chunk.js",
     "static/media/background.jpg": "/restaurant-menu/static/media/background.448c295c375386737c6a.jpg",
     "static/media/restaurant-logo.png": "/restaurant-menu/static/media/restaurant-logo.b9b4c5de7b3683414fe4.png",
     "static/media/AnandaBlack.ttf": "/restaurant-menu/static/media/AnandaBlack.eb04dce4c2b321e2ef0a.ttf",
     "static/media/ChopinScript.ttf": "/restaurant-menu/static/media/ChopinScript.294d294101e0ae84b924.ttf",
     "index.html": "/restaurant-menu/index.html",
-    "main.7128c47e.css.map": "/restaurant-menu/static/css/main.7128c47e.css.map",
-    "main.8a075741.js.map": "/restaurant-menu/static/js/main.8a075741.js.map",
+    "main.9893f37a.css.map": "/restaurant-menu/static/css/main.9893f37a.css.map",
+    "main.1e310e38.js.map": "/restaurant-menu/static/js/main.1e310e38.js.map",
     "787.578e6cb3.chunk.js.map": "/restaurant-menu/static/js/787.578e6cb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7128c47e.css",
-    "static/js/main.8a075741.js"
+    "static/css/main.9893f37a.css",
+    "static/js/main.1e310e38.js"
   ]
 }
