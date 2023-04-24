@@ -103,7 +103,7 @@ export default function CheckoutList(): JSX.Element {
                 >
                     <Card
                         h={window.innerHeight * 0.7}
-                        w={window.innerWidth * 0.35}
+                        w={window.innerWidth * 0.4}
                         border="5px solid tomato"
                         textAlign="center"
                     >
