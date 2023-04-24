@@ -1,20 +1,31 @@
 import React from "react";
-import { Heading, Container, Text, Flex, Box, Spacer } from "@chakra-ui/react";
+import { Heading, Text, Flex, Box, Spacer } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
 import restaurantLogo from "./restaurant-logo.png";
+import CheckoutList from "../components/CheckoutList";
+import { DeliveryDropDown } from "../components/DeliveryDropDown";
+import background from "./background.jpg";
 
 export default function Landing() {
     return (
         <>
-            <div style={{ padding: 10 }}>
+            <div
+                style={{
+                    padding: 10,
+                    backgroundImage: `url(${background})`,
+                    backgroundSize: "120%",
+                    backgroundPosition: "center"
+                }}
+            >
                 <Flex
+                    className="website-title"
                     as="header"
                     textAlign="center"
                     px={5}
                     py={2}
-                    color="black"
+                    color="white"
                 >
                     <Box>
                         <Heading as="h1" fontSize="70px" fontWeight="extrabold">
@@ -24,10 +35,15 @@ export default function Landing() {
                             good food, good mood.
                         </Text>
                     </Box>
-                    <Box position="absolute" ml="43%">
+                    <Box
+                        position="absolute"
+                        top="6%"
+                        left="50%"
+                        transform="translate(-50%, -50%)"
+                    >
                         <img
                             src={restaurantLogo}
-                            alt="restaurant logo"
+                            alt="restaurant-logo"
                             width="150px"
                             height="150px"
                         />
@@ -38,6 +54,7 @@ export default function Landing() {
                 <NavBar></NavBar>
                 <div>
                     <Heading
+                        color="white"
                         as="h2"
                         display="flex"
                         justifyContent="center"
@@ -47,9 +64,17 @@ export default function Landing() {
                         our menu
                     </Heading>
                 </div>
-                <Container ml={500}>
-                    <SearchBar></SearchBar>
-                </Container>
+                <Flex>
+                    <Box flex="1" p="4" ml="100px">
+                        <SearchBar></SearchBar>
+                    </Box>
+                    <Box flex="1" p="4" mt="35px" ml="100px">
+                        <CheckoutList></CheckoutList>
+                        <DeliveryDropDown></DeliveryDropDown>
+                    </Box>
+                </Flex>
+                <br></br>
+                <br></br>
                 <br></br>
             </div>
         </>

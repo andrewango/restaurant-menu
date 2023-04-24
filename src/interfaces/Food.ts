@@ -7,4 +7,5 @@ export interface foodProps {
     ingredients: string[];
     popular: boolean;
     spicy: boolean;
+    price: number;
 }

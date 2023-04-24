@@ -5,6 +5,8 @@ import EditUsers from "./pages/EditUsers";
 import AboutUs from "./pages/AboutUs";
 //Routing
 import { Routes, Route } from "react-router-dom";
+import AddFood from "./pages/AddFood";
+import RemoveFood from "./pages/RemoveFood";
 
 // 3. Pass the `theme` prop to the `ChakraProvider`
 export default function App() {
@@ -14,6 +16,8 @@ export default function App() {
             <Route path="/EditUsers" element={<EditUsers />}></Route>
             <Route path="/EditFood" element={<EditFood />}></Route>
             <Route path="/AboutUs" element={<AboutUs />}></Route>
+            <Route path="/AddFood" element={<AddFood />}></Route>
+            <Route path="/RemoveFood" element={<RemoveFood />}></Route>
         </Routes>
     );
 }
