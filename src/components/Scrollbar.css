@@ -6,13 +6,11 @@
 /* Track */
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
-    border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #f56565;
-    border-radius: 10px;
 }
 
 /* Handle on hover */
@@ -21,14 +19,53 @@
 }
 
 ::-webkit-scrollbar:horizontal {
-    height: 8px;
+    height: 10px;
     background-color: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb:horizontal {
     background: #f56565;
-    border-radius: 10px;
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:horizontal:hover {
+    background: #e53e3e;
+}
+
+.section::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+.section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+.section::-webkit-scrollbar-thumb {
+    background: #f56565;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.section::-webkit-scrollbar-thumb:hover {
+    background: #e53e3e;
+}
+
+.section::-webkit-scrollbar:horizontal {
+    height: 8px;
+    background-color: #f1f1f1;
+}
+
+.section::-webkit-scrollbar-track:horizontal {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.section::-webkit-scrollbar-thumb:horizontal {
+    background: #f56565;
+    border-radius: 10px;
+}
+/* Handle on hover */
+.section::-webkit-scrollbar-thumb:horizontal:hover {
     background: #e53e3e;
 }

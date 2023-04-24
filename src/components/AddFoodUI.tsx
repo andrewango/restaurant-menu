@@ -29,6 +29,7 @@ export default function AddFoodUI(): JSX.Element {
             h={isLargerThan1000 ? window.innerHeight * 0.65 : "600px"}
             w="110%"
             overflowY="scroll"
+            className="section"
         >
             <Grid
                 templateColumns={

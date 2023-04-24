@@ -17,7 +17,7 @@ export function DeliveryDropDown(): JSX.Element {
         "9:00"
     ];
     return (
-        <Box width="80%">
+        <Box width="90%">
             <p className="del-time" style={{ color: "white" }}>
                 Delivery Time:
             </p>
