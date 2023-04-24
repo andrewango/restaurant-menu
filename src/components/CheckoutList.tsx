@@ -14,9 +14,15 @@ import { useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import "./Scrollbar.css";
 import { MenuList } from "../pages/AddFood";
+import { GetCurrentUser } from "./SelectRole";
+import { userProps } from "../interfaces/User";
 
 export default function CheckoutList(): JSX.Element {
-    const [checkoutList, setCheckoutList] = useState<foodProps[]>([]);
+    const currentUser: userProps = GetCurrentUser();
+
+    const [checkoutList, setCheckoutList] = useState<foodProps[]>(
+        currentUser.order
+    );
     const [, drop] = useDrop(() => ({
         accept: "foodItem",
         drop: (item: foodProps) => addFoodToCheckoutList(item.name),
@@ -34,6 +40,11 @@ export default function CheckoutList(): JSX.Element {
         if (chosenFood) {
             setCheckoutList((checkoutList) => [...checkoutList, chosenFood]);
         }
+        const usersNewCheckoutList: foodProps[] = checkoutList.map(
+            (food: foodProps) => food
+        );
+        currentUser.order = usersNewCheckoutList;
+        sessionStorage.setItem("user", JSON.stringify(currentUser));
     };
 
     // Debugging

@@ -19,101 +19,17 @@ import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
+import { ListOfCustomers } from "./SelectRole";
 
 export default function AddDeleteUsers(): JSX.Element {
-    const [customerList, setCustomerList] = useState<userProps[]>([
-        {
-            name: "Cloud",
-            orderID: 1,
-            order: [
-                {
-                    name: "Pepperoni Pizza",
-                    image: "https://live.staticflickr.com/65535/52813368763_7f334652e5_m.jpg",
-                    desc: "A delicious pizza topped with cheese and pepperoni",
-                    rating: 4,
-                    type: ["Italian", "Fast Food", "Entree"],
-                    ingredients: [
-                        "Dough",
-                        "Tomato Sauce",
-                        "Cheese",
-                        "Pepperoni"
-                    ],
-                    popular: true,
-                    spicy: false,
-                    price: 10
-                }
-            ],
-            role: "Customer"
-        },
-        {
-            name: "Tifa",
-            orderID: 2,
-            order: [
-                {
-                    name: "Pepperoni Pizza",
-                    image: "https://live.staticflickr.com/65535/52813368763_7f334652e5_m.jpg",
-                    desc: "A delicious pizza topped with cheese and pepperoni",
-                    rating: 4,
-                    type: ["Italian", "Fast Food", "Entree"],
-                    ingredients: [
-                        "Dough",
-                        "Tomato Sauce",
-                        "Cheese",
-                        "Pepperoni"
-                    ],
-                    popular: true,
-                    spicy: false,
-                    price: 10
-                }
-            ],
-            role: "Customer"
-        },
-        {
-            name: "Aerith",
-            orderID: 3,
-            order: [
-                {
-                    name: "Pepperoni Pizza",
-                    image: "https://live.staticflickr.com/65535/52813368763_7f334652e5_m.jpg",
-                    desc: "A delicious pizza topped with cheese and pepperoni",
-                    rating: 4,
-                    type: ["Italian", "Fast Food", "Entree"],
-                    ingredients: [
-                        "Dough",
-                        "Tomato Sauce",
-                        "Cheese",
-                        "Pepperoni"
-                    ],
-                    popular: true,
-                    spicy: false,
-                    price: 10
-                },
-                {
-                    name: "Cheeseburger",
-                    image: "https://live.staticflickr.com/65535/52812357442_e349d9cd4d_m.jpg",
-                    desc: "A juicy burger with lettuce, tomato, and cheese",
-                    rating: 4.1,
-                    type: ["American", "Fast Food", "Entree"],
-                    ingredients: [
-                        "Beef Patty",
-                        "Bun",
-                        "Lettuce",
-                        "Tomato",
-                        "Cheese"
-                    ],
-                    popular: true,
-                    spicy: false,
-                    price: 15
-                }
-            ],
-            role: "Customer"
-        }
-    ]);
-
-    sessionStorage.setItem("customers", JSON.stringify(customerList));
+    const customers = ListOfCustomers();
+    const [customerList, setCustomerList] = useState<userProps[]>(customers);
 
     const [name, setName] = useState<string>("");
-    const [orderID, setOrderID] = useState<number>(4);
+
+    const storageOrderID: string | null = sessionStorage.getItem("orderID");
+    const orderNum: number = storageOrderID ? parseInt(storageOrderID) : 1;
+    const [orderID, setOrderID] = useState<number>(orderNum);
 
     const handleSubmit = () => {
         if (name !== "") {
@@ -125,12 +41,19 @@ export default function AddDeleteUsers(): JSX.Element {
             };
             let newID: number = orderID;
             newID++;
+            // Update incremented order ID when we are on the page
             setOrderID(newID);
+            // Set the ID we were on in case we leave the page
+            sessionStorage.setItem("orderID", newID.toString());
 
             const newUserList: userProps[] = customerList.map(
                 (customer: userProps) => customer
             );
             setCustomerList([...newUserList, newCustomer]);
+            sessionStorage.setItem(
+                "customers",
+                JSON.stringify([...newUserList, newCustomer])
+            );
         }
     };
 

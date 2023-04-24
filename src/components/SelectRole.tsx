@@ -19,35 +19,37 @@ const Select = styled.select`
     background-color: transparent;
 `;
 
-export function SelectRole(): JSX.Element {
-    // Constant values for Owner and Employee
-    const ROLES: userProps[] = [
-        { name: "Owner", orderID: 0, order: [], role: "Owner" },
-        { name: "Employee", orderID: -1, order: [], role: "Employee" }
-    ];
+// Constant values for Owner and Employee
+const ROLES: userProps[] = [
+    { name: "Owner", orderID: 0, order: [], role: "Owner" },
+    { name: "Employee", orderID: -1, order: [], role: "Employee" }
+];
 
-    // Get current user state from our session
+export function GetCurrentUser() {
     const user = sessionStorage.getItem("user");
     const userToParse =
         user !== null && user !== undefined ? user : JSON.stringify(ROLES[0]);
-    const currentUser: userProps = userToParse
-        ? JSON.parse(userToParse)
-        : ROLES[0];
+    return userToParse ? JSON.parse(userToParse) : ROLES[0];
+}
 
-    const [userRole, setUserRole] = useState<userProps>(ROLES[0]);
+// Get our list of customers from EDIT USERS page
+export function ListOfCustomers() {
+    const customers = sessionStorage.getItem("customers");
+    const customersToParse =
+        customers !== null && customers !== undefined ? customers : "";
+    return customersToParse ? JSON.parse(customersToParse) : [];
+}
+
+export function SelectRole(): JSX.Element {
+    // Get current user state from our session
+    const currentUser: userProps = GetCurrentUser();
+
+    const [userRole, setUserRole] = useState<userProps>(currentUser);
 
     // Change role and update session state
     function changeRole(userRole: userProps) {
         sessionStorage.setItem("user", JSON.stringify(userRole));
         setUserRole(userRole);
-    }
-
-    // Get our list of customers from EDIT USERS page
-    function ListOfCustomers() {
-        const customers = sessionStorage.getItem("customers");
-        const customersToParse =
-            customers !== null && customers !== undefined ? customers : "";
-        return customersToParse ? JSON.parse(customersToParse) : [];
     }
 
     const listOfCustomers: userProps[] = ListOfCustomers();
