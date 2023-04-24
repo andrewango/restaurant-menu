@@ -56,21 +56,22 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    2.89 |     0.56 |    3.57 |    2.99 |                   
+All files              |    2.53 |     0.52 |    3.12 |    2.63 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 13                
- src/components        |    4.08 |      0.7 |    4.76 |    4.27 |                   
+ src/components        |     3.4 |     0.63 |       4 |    3.57 |                   
   AddFoodUI.tsx        |       0 |        0 |       0 |       0 | 19-44             
-  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 19-64             
+  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 22-128            
   DeliveryDropDown.tsx |      80 |      100 |   66.66 |      80 | 27                
   EditFoodList.tsx     |       0 |        0 |       0 |       0 | 22-164            
-  EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-46              
+  EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-41              
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 37-213            
   EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 27-150            
   FoodItem.tsx         |       0 |        0 |       0 |       0 | 28-36             
   ItemListUI.tsx       |       0 |        0 |       0 |       0 | 11-31             
   NavBar.tsx           |       0 |      100 |       0 |       0 | 6                 
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                
+  RemoveFood.tsx       |       0 |        0 |       0 |       0 | 21-152            
   SearchBar.tsx        |       0 |        0 |       0 |       0 | 9-154             
   SelectRole.tsx       |       0 |        0 |       0 |       0 | 7-46              
  src/interfaces        |       0 |        0 |       0 |       0 |                   
@@ -92,5 +93,5 @@ All files              |    2.89 |     0.56 |    3.57 |    2.99 |
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        5.515 s
+Time:        5.648 s
 Ran all test suites.
