@@ -34,7 +34,7 @@ export function SelectRole(): JSX.Element {
     return (
         <div>
             <form>
-                <label> Your Role </label>
+                <label> Role </label>
                 <Select
                     onChange={(e) => changeRole(e.target.value)}
                     name={userRole}

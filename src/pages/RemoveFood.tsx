@@ -143,13 +143,7 @@ export default function RemoveFood() {
                             Add New Food
                         </Button>
                     </Heading>
-                    <VStack
-                        spacing="3px"
-                        mt={50}
-                        alignItems="center"
-                        ml={10}
-                        overflowX="hidden"
-                    >
+                    <VStack spacing="3px" mt={50} alignItems="center" ml={10}>
                         <Grid templateColumns={screenSize()} rowGap={3}>
                             {MenuList().map((food: foodProps) => {
                                 return (
