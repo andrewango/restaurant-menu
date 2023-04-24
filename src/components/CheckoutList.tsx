@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+// Uncomment next line for state debugging
 //import { useEffect } from "react";
 import {
     Card,
@@ -62,34 +63,30 @@ export default function CheckoutList(): JSX.Element {
     };
 
     const removeFoodFromCheckoutList = (name: string) => {
-        const chosenFood = checkoutList.find(
-            (foodItem: foodProps) => name === foodItem.name
-        );
-        console.log(chosenFood);
-        if (chosenFood) {
-            const newCheckoutList: foodProps[] = checkoutList.map(
-                (food: foodProps): foodProps => ({
-                    ...food,
-                    type: [...food.type],
-                    ingredients: [...food.ingredients]
-                })
+        setCheckoutList((updatedCheckout) => {
+            const foodToRemoveIndex = updatedCheckout.findIndex(
+                (foodItem: foodProps): boolean => foodItem.name === name
             );
-            const foodIndex = checkoutList.findIndex(
-                (food: foodProps): boolean => food.name === chosenFood.name
-            );
-            if (foodIndex > -1) {
-                newCheckoutList.splice(foodIndex, 1);
+            if (foodToRemoveIndex > -1) {
+                const newCheckoutList: foodProps[] = updatedCheckout.map(
+                    (food: foodProps): foodProps => ({
+                        ...food,
+                        type: [...food.type],
+                        ingredients: [...food.ingredients]
+                    })
+                );
+                newCheckoutList.splice(foodToRemoveIndex, 1);
+                return newCheckoutList;
+            } else {
+                return updatedCheckout;
             }
-            setCheckoutList(newCheckoutList);
-            console.log("new checkout list:" + newCheckoutList);
-            console.log("old checkout list:" + checkoutList);
-        }
+        });
     };
 
     // Debugging
-    useEffect(() => {
-        console.log(checkoutList);
-    }, [checkoutList]);
+    //useEffect(() => {
+    //console.log(checkoutList);
+    //}, [checkoutList]);
 
     return (
         <Card
@@ -100,6 +97,7 @@ export default function CheckoutList(): JSX.Element {
         >
             <CardHeader ref={removeDrop} backgroundColor={isOver ? "red" : ""}>
                 <Heading fontWeight="bold">Checkout</Heading>
+                <Text fontWeight="semibold">Drag here to remove items</Text>
             </CardHeader>
             <Divider></Divider>
             <CardBody ref={addDrop} textAlign="center" overflowY="auto">
