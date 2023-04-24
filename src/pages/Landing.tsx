@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Text, Flex, Box, Spacer } from "@chakra-ui/react";
+import { Heading, Text, Flex, Box, Spacer, VStack } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
@@ -68,10 +68,10 @@ export default function Landing() {
                     <Box flex="1" p="4" ml="100px">
                         <SearchBar></SearchBar>
                     </Box>
-                    <Box flex="1" p="4" mt="35px" ml="100px">
+                    <VStack flex="1" p="4" mt="35px" ml="50px">
                         <CheckoutList></CheckoutList>
                         <DeliveryDropDown></DeliveryDropDown>
-                    </Box>
+                    </VStack>
                 </Flex>
                 <br></br>
                 <br></br>
