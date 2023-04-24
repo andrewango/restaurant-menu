@@ -87,10 +87,10 @@ All files              |    2.89 |     0.56 |    3.57 |    2.99 |
   EditFood.tsx         |       0 |        0 |       0 |       0 | 10                
   EditUsers.tsx        |       0 |      100 |       0 |       0 | 24-239            
   Landing.tsx          |       0 |      100 |       0 |       0 | 12                
-  RemoveFood.tsx       |       0 |        0 |       0 |       0 | 27-200            
+  RemoveFood.tsx       |       0 |        0 |       0 |       0 | 27-194            
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        5.111 s
+Time:        5.515 s
 Ran all test suites.
