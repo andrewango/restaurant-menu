@@ -16,15 +16,20 @@ import {
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import { MenuList } from "../pages/AddFood";
-import { GetCurrentUser } from "./SelectRole";
+import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
 
-export default function CheckoutList(): JSX.Element {
-    const currentUser: userProps = GetCurrentUser();
+function CurrentCheckoutList(): foodProps[] {
+    const checkout: string | null = sessionStorage.getItem("checkout");
+    const checkoutToParse =
+        checkout !== null && checkout !== undefined ? checkout : "";
+    return checkoutToParse ? JSON.parse(checkoutToParse) : [];
+}
 
-    const [checkoutList, setCheckoutList] = useState<foodProps[]>(
-        currentUser.order
-    );
+export default function CheckoutList(): JSX.Element {
+    let currentCheckout: foodProps[] = CurrentCheckoutList();
+    const [checkoutList, setCheckoutList] =
+        useState<foodProps[]>(currentCheckout);
 
     function CheckoutItem({ name }: { name: string }): JSX.Element {
         const [, drag] = useDrag(() => ({
@@ -64,14 +69,26 @@ export default function CheckoutList(): JSX.Element {
     );
 
     const addFoodToCheckoutList = (name: string) => {
-        const chosenFood = foods.find((foodItem) => name === foodItem.name);
+        const chosenFood: foodProps | undefined = foods.find(
+            (foodItem) => name === foodItem.name
+        );
         if (chosenFood) {
             setCheckoutList((checkoutList) => [...checkoutList, chosenFood]);
+
+            currentCheckout = [
+                ...checkoutList.map(
+                    (food: foodProps): foodProps => ({
+                        ...food,
+                        type: [...food.type],
+                        ingredients: [...food.ingredients]
+                    })
+                ),
+                chosenFood
+            ];
         }
-        const usersNewCheckoutList: foodProps[] = checkoutList.map(
-            (food: foodProps) => food
-        );
-        currentUser.order = usersNewCheckoutList;
+        sessionStorage.setItem("checkout", JSON.stringify(currentCheckout));
+        const currentUser: userProps = GetCurrentUser();
+        currentUser.order = CurrentCheckoutList();
         sessionStorage.setItem("user", JSON.stringify(currentUser));
     };
 

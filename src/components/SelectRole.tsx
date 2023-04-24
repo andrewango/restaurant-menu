@@ -50,6 +50,7 @@ export function SelectRole(): JSX.Element {
     function changeRole(userRole: userProps) {
         sessionStorage.setItem("user", JSON.stringify(userRole));
         setUserRole(userRole);
+        sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
     }
 
     const listOfCustomers: userProps[] = ListOfCustomers();

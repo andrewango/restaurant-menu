@@ -19,10 +19,10 @@ import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
-import { ListOfCustomers } from "./SelectRole";
+import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 
 export default function AddDeleteUsers(): JSX.Element {
-    const customers = ListOfCustomers();
+    const customers: userProps[] = ListOfCustomers();
     const [customerList, setCustomerList] = useState<userProps[]>(customers);
 
     const [name, setName] = useState<string>("");
@@ -60,6 +60,20 @@ export default function AddDeleteUsers(): JSX.Element {
     useEffect(() => {
         console.log(customerList);
     }, [customerList]);
+
+    const currentUser: userProps = GetCurrentUser();
+    const userIndex: number = customers.findIndex(
+        (user: userProps) => currentUser.orderID === user.orderID
+    );
+    if (userIndex > -1) {
+        setCustomerList((customerList) =>
+            customers.splice(userIndex, 1, currentUser)
+        );
+        sessionStorage.setItem(
+            "customers",
+            JSON.stringify(customers.splice(userIndex, 1, currentUser))
+        );
+    }
 
     function AddCustomersForm() {
         return (
