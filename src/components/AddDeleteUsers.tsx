@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Heading,
     Table,
@@ -109,26 +109,47 @@ export default function AddDeleteUsers(): JSX.Element {
             role: "Customer"
         }
     ]);
-    const [name, setName] = useState<string>("");
 
+    sessionStorage.setItem("customers", JSON.stringify(customerList));
+
+    const [name, setName] = useState<string>("");
     const [orderID, setOrderID] = useState<number>(4);
 
     const handleSubmit = () => {
-        const newCustomer: userProps = {
-            name: name,
-            orderID: orderID,
-            order: [],
-            role: "Customer"
-        };
-        let newID: number = orderID;
-        newID++;
-        setOrderID(newID);
+        if (name !== "") {
+            const newCustomer: userProps = {
+                name: name,
+                orderID: orderID,
+                order: [],
+                role: "Customer"
+            };
+            let newID: number = orderID;
+            newID++;
+            setOrderID(newID);
 
-        const newUserList: userProps[] = customerList.map(
-            (customer: userProps) => customer
-        );
-        setCustomerList([...newUserList, newCustomer]);
+            const newUserList: userProps[] = customerList.map(
+                (customer: userProps) => customer
+            );
+            setCustomerList([...newUserList, newCustomer]);
+        }
     };
+
+    useEffect(() => {
+        console.log(customerList);
+    }, [customerList]);
+
+    function AddCustomersForm() {
+        return (
+            <FormControl isRequired id="name" width="500px" px={20} mt={10}>
+                <FormLabel>Name:</FormLabel>
+                <Input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </FormControl>
+        );
+    }
 
     return (
         <div style={{ padding: 10 }}>
@@ -176,14 +197,7 @@ export default function AddDeleteUsers(): JSX.Element {
             <div>
                 <NavBar></NavBar>
             </div>
-            <FormControl id="name" width="500px" px={20} mt={10}>
-                <FormLabel>Name:</FormLabel>
-                <Input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-            </FormControl>
+            <AddCustomersForm></AddCustomersForm>
             <br></br>
             <Box
                 as="button"
@@ -228,7 +242,7 @@ export default function AddDeleteUsers(): JSX.Element {
                         </Thead>
                         <Tbody>
                             {customerList.map((customer: userProps) => (
-                                <Tr key={customer.name}>
+                                <Tr key={customer.orderID}>
                                     <Td fontWeight="semibold">
                                         {customer.name}
                                     </Td>
