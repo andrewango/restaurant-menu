@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
     Heading,
     Table,
@@ -19,7 +19,7 @@ import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
-import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
+import { ListOfCustomers } from "./SelectRole";
 
 export default function AddDeleteUsers(): JSX.Element {
     const customers: userProps[] = ListOfCustomers();
