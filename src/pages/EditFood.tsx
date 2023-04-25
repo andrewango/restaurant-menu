@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 import EditFoodList from "../components/EditFoodList";
 import { EditFoodMenu } from "../components/EditFoodMenu";
+import { GetCurrentUser } from "../components/SelectRole";
 
 function EditFood() {
     return (
@@ -53,8 +54,8 @@ function EditFood() {
                     <br></br>
                     <br></br>
                     <form>
-                        {(sessionStorage.getItem("user") === "Owner" ||
-                            sessionStorage.getItem("user") === null) && (
+                        {(GetCurrentUser().role === "Owner" ||
+                            GetCurrentUser().role === null) && (
                             <div>
                                 <Button
                                     as={NavLink}
