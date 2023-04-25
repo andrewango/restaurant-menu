@@ -3,6 +3,8 @@ import { Stack } from "@chakra-ui/react";
 import styled from "styled-components";
 import { Button } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import { userProps } from "../interfaces/User";
+import { CurrentCheckoutList } from "./CheckoutList";
 
 const Select = styled.select`
     margin-left: 5px;
@@ -18,17 +20,55 @@ const Select = styled.select`
     background-color: transparent;
 `;
 
-export function SelectRole(): JSX.Element {
+// Constant values for Owner and Employee
+const ROLES: userProps[] = [
+    { name: "Owner", orderID: 0, order: [], role: "Owner" },
+    { name: "Employee", orderID: -1, order: [], role: "Employee" }
+];
+
+export function GetCurrentUser() {
     const user = sessionStorage.getItem("user");
-    const a = user !== null && user !== undefined ? user : "Owner";
+    const userToParse =
+        user !== null && user !== undefined ? user : JSON.stringify(ROLES[0]);
+    return userToParse ? JSON.parse(userToParse) : ROLES[0];
+}
 
-    const [userRole, setUserRole] = useState<string>(a);
+// Get our list of customers from EDIT USERS page
+export function ListOfCustomers() {
+    const customers = sessionStorage.getItem("customers");
+    const customersToParse =
+        customers !== null && customers !== undefined ? customers : "";
+    return customersToParse ? JSON.parse(customersToParse) : [];
+}
 
-    const ROLES = ["Owner", "Employee", "User"];
+export function SelectRole(): JSX.Element {
+    // Get current user state from our session
+    const currentUser: userProps = GetCurrentUser();
 
-    function changeRole(key: string) {
-        sessionStorage.setItem("user", key);
-        setUserRole(key);
+    const [userRole, setUserRole] = useState<userProps>(currentUser);
+
+    // Change role and update session state
+    function changeRole(userRole: userProps) {
+        setUserRole(userRole);
+        sessionStorage.setItem("user", JSON.stringify(userRole));
+        sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
+        // Manually dispatches an event after we updated "checkout" key for event listeners to fetch
+        window.dispatchEvent(new Event("checkoutUpdated"));
+    }
+
+    const listOfCustomers: userProps[] = ListOfCustomers();
+
+    // Find the selected option (owner, employee, or some user)
+    function findUserInList(name: string) {
+        let foundUser: userProps | undefined = listOfCustomers.find(
+            (user) => name === user.name
+        );
+        if (foundUser) {
+            return foundUser;
+        } else {
+            foundUser = ROLES.find((user) => name === user.name);
+            return foundUser ? foundUser : ROLES[0];
+        }
     }
 
     return (
@@ -36,25 +76,35 @@ export function SelectRole(): JSX.Element {
             <form>
                 <label> Role </label>
                 <Select
-                    onChange={(e) => changeRole(e.target.value)}
-                    name={userRole}
-                    value={userRole}
-                    id={userRole}
-                    key={userRole}
+                    onChange={(e) => changeRole(findUserInList(e.target.value))}
+                    name={userRole.name}
+                    value={userRole.name}
+                    id={userRole.name}
+                    key={userRole.orderID}
                 >
-                    {ROLES.map((role: string) => (
+                    {ROLES.map((user: userProps) => (
                         <option
                             style={{ color: "black" }}
-                            value={role}
-                            key={role}
-                            id={role}
+                            value={user.name}
+                            key={user.orderID}
+                            id={user.name}
                         >
-                            {role}
+                            {user.name}
+                        </option>
+                    ))}
+
+                    {listOfCustomers.map((customer: userProps) => (
+                        <option
+                            style={{ color: "black" }}
+                            value={customer.name}
+                            key={customer.orderID}
+                            id={customer.name}
+                        >
+                            {customer.name}
                         </option>
                     ))}
                 </Select>
-                {(sessionStorage.getItem("user") === "Owner" ||
-                    sessionStorage.getItem("user") === null) && (
+                {(currentUser.role === "Owner" || currentUser === null) && (
                     <Stack
                         px={10}
                         py={3}
@@ -82,7 +132,7 @@ export function SelectRole(): JSX.Element {
                         </Button>
                     </Stack>
                 )}
-                {sessionStorage.getItem("user") === "Employee" && (
+                {currentUser.role === "Employee" && (
                     <Stack
                         px={10}
                         py={3}

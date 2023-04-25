@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // Uncomment next line for state debugging
-//import { useEffect } from "react";
+import { useEffect } from "react";
 import {
     Card,
     CardHeader,
@@ -16,11 +16,41 @@ import {
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import { MenuList } from "../pages/AddFood";
-import "./Scrollbar.css";
+import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
+import { userProps } from "../interfaces/User";
+
+export function CurrentCheckoutList(): foodProps[] {
+    const checkout: string | null = sessionStorage.getItem("checkout");
+    const checkoutToParse =
+        checkout !== null && checkout !== undefined ? checkout : "";
+    return checkoutToParse ? JSON.parse(checkoutToParse) : [];
+}
 
 export default function CheckoutList(): JSX.Element {
-    const [checkoutList, setCheckoutList] = useState<foodProps[]>([]);
+    // Get initial current checkout list
+    const currentCheckout: foodProps[] = CurrentCheckoutList();
+    const [checkoutList, setCheckoutList] =
+        useState<foodProps[]>(currentCheckout);
 
+    // Update the checkout list everytime we change customer role to the customer's order
+    useEffect(() => {
+        const handleStorage = () => {
+            //console.log("handleStorage called");
+            // Get the menu window's "checkout" key from Session Storage
+            const storage: string | null =
+                window.sessionStorage.getItem("checkout");
+            const storageCheckout: foodProps[] = storage
+                ? JSON.parse(storage)
+                : [];
+            setCheckoutList(storageCheckout);
+        };
+        // Event listeners to run handleStorage() if "checkout" key is updated
+        window.addEventListener("checkoutUpdated", handleStorage);
+        return () =>
+            window.removeEventListener("checkoutUpdated", handleStorage);
+    }, []);
+
+    // CheckoutItem
     function CheckoutItem({ name }: { name: string }): JSX.Element {
         const [, drag] = useDrag(() => ({
             type: "removeItem",
@@ -59,9 +89,43 @@ export default function CheckoutList(): JSX.Element {
     );
 
     const addFoodToCheckoutList = (name: string) => {
-        const chosenFood = foods.find((foodItem) => name === foodItem.name);
+        const chosenFood: foodProps | undefined = foods.find(
+            (foodItem) => name === foodItem.name
+        );
         if (chosenFood) {
-            setCheckoutList((checkoutList) => [...checkoutList, chosenFood]);
+            setCheckoutList((checkoutList) => {
+                const newOrder: foodProps[] = [
+                    ...checkoutList.map(
+                        (food: foodProps): foodProps => ({
+                            ...food,
+                            type: [...food.type],
+                            ingredients: [...food.ingredients]
+                        })
+                    ),
+                    chosenFood
+                ];
+                sessionStorage.setItem("checkout", JSON.stringify(newOrder));
+                const listOfCustomers = ListOfCustomers();
+                const currentUser: userProps = GetCurrentUser();
+                const newUser: userProps = {
+                    ...currentUser,
+                    order: newOrder
+                };
+                sessionStorage.setItem("user", JSON.stringify(newUser));
+                const userIndex: number = listOfCustomers.findIndex(
+                    (user: userProps) => newUser.orderID === user.orderID
+                );
+                console.log(userIndex);
+                if (userIndex > -1) {
+                    listOfCustomers.splice(userIndex, 1, newUser);
+                    console.log(listOfCustomers);
+                    sessionStorage.setItem(
+                        "customers",
+                        JSON.stringify(listOfCustomers)
+                    );
+                }
+                return newOrder;
+            });
         }
     };
 

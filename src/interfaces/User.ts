@@ -4,5 +4,5 @@ export interface userProps {
     name: string;
     orderID: number;
     order: foodProps[];
-    role: string;
+    role: "Owner" | "Employee" | "Customer";
 }
