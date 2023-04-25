@@ -32,9 +32,11 @@ export default function CheckoutList(): JSX.Element {
     const [checkoutList, setCheckoutList] =
         useState<foodProps[]>(currentCheckout);
 
+    // Update the checkout list everytime we change customer role to the customer's order
     useEffect(() => {
         const handleStorage = () => {
-            console.log("handleStorage called");
+            //console.log("handleStorage called");
+            // Get the menu window's "checkout" key from Session Storage
             const storage: string | null =
                 window.sessionStorage.getItem("checkout");
             const storageCheckout: foodProps[] = storage
@@ -42,7 +44,7 @@ export default function CheckoutList(): JSX.Element {
                 : [];
             setCheckoutList(storageCheckout);
         };
-
+        // Event listeners to run handleStorage() if "checkout" key is updated
         window.addEventListener("checkoutUpdated", handleStorage);
         return () =>
             window.removeEventListener("checkoutUpdated", handleStorage);

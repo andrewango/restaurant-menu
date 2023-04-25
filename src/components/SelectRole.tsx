@@ -49,12 +49,11 @@ export function SelectRole(): JSX.Element {
 
     // Change role and update session state
     function changeRole(userRole: userProps) {
+        setUserRole(userRole);
         sessionStorage.setItem("user", JSON.stringify(userRole));
         sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
+        // Manually dispatches an event after we updated "checkout" key for event listeners to fetch
         window.dispatchEvent(new Event("checkoutUpdated"));
-        setUserRole(userRole);
-        console.log("current user: " + GetCurrentUser().name);
-        console.log("current user's order: " + CurrentCheckoutList());
     }
 
     const listOfCustomers: userProps[] = ListOfCustomers();
