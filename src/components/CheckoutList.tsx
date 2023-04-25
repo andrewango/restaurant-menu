@@ -32,6 +32,22 @@ export default function CheckoutList(): JSX.Element {
     const [checkoutList, setCheckoutList] =
         useState<foodProps[]>(currentCheckout);
 
+    useEffect(() => {
+        const handleStorage = () => {
+            console.log("handleStorage called");
+            const storage: string | null =
+                window.sessionStorage.getItem("checkout");
+            const storageCheckout: foodProps[] = storage
+                ? JSON.parse(storage)
+                : [];
+            setCheckoutList(storageCheckout);
+        };
+
+        window.addEventListener("checkoutUpdated", handleStorage);
+        return () =>
+            window.removeEventListener("checkoutUpdated", handleStorage);
+    }, []);
+
     // CheckoutItem
     function CheckoutItem({ name }: { name: string }): JSX.Element {
         const [, drag] = useDrag(() => ({

@@ -51,6 +51,7 @@ export function SelectRole(): JSX.Element {
     function changeRole(userRole: userProps) {
         sessionStorage.setItem("user", JSON.stringify(userRole));
         sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
+        window.dispatchEvent(new Event("checkoutUpdated"));
         setUserRole(userRole);
         console.log("current user: " + GetCurrentUser().name);
         console.log("current user's order: " + CurrentCheckoutList());
