@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Button } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { userProps } from "../interfaces/User";
+import { CurrentCheckoutList } from "./CheckoutList";
 
 const Select = styled.select`
     margin-left: 5px;
@@ -49,8 +50,10 @@ export function SelectRole(): JSX.Element {
     // Change role and update session state
     function changeRole(userRole: userProps) {
         sessionStorage.setItem("user", JSON.stringify(userRole));
-        setUserRole(userRole);
         sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
+        setUserRole(userRole);
+        console.log("current user: " + GetCurrentUser().name);
+        console.log("current user's order: " + CurrentCheckoutList());
     }
 
     const listOfCustomers: userProps[] = ListOfCustomers();

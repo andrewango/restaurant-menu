@@ -57,37 +57,6 @@ export default function AddDeleteUsers(): JSX.Element {
         }
     };
 
-    useEffect(() => {
-        console.log(customerList);
-    }, [customerList]);
-
-    const currentUser: userProps = GetCurrentUser();
-    const userIndex: number = customers.findIndex(
-        (user: userProps) => currentUser.orderID === user.orderID
-    );
-    if (userIndex > -1) {
-        setCustomerList((customerList) =>
-            customers.splice(userIndex, 1, currentUser)
-        );
-        sessionStorage.setItem(
-            "customers",
-            JSON.stringify(customers.splice(userIndex, 1, currentUser))
-        );
-    }
-
-    function AddCustomersForm() {
-        return (
-            <FormControl isRequired id="name" width="500px" px={20} mt={10}>
-                <FormLabel>Name:</FormLabel>
-                <Input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-            </FormControl>
-        );
-    }
-
     return (
         <div style={{ padding: 10 }}>
             <Flex wrap="wrap">
@@ -134,7 +103,14 @@ export default function AddDeleteUsers(): JSX.Element {
             <div>
                 <NavBar></NavBar>
             </div>
-            <AddCustomersForm></AddCustomersForm>
+            <FormControl isRequired id="name" width="500px" px={20} mt={10}>
+                <FormLabel>Name:</FormLabel>
+                <Input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </FormControl>
             <br></br>
             <Box
                 as="button"

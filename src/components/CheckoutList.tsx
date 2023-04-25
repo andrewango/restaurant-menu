@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // Uncomment next line for state debugging
-//import { useEffect } from "react";
+import { useEffect } from "react";
 import {
     Card,
     CardHeader,
@@ -19,7 +19,7 @@ import { MenuList } from "../pages/AddFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
 
-function CurrentCheckoutList(): foodProps[] {
+export function CurrentCheckoutList(): foodProps[] {
     const checkout: string | null = sessionStorage.getItem("checkout");
     const checkoutToParse =
         checkout !== null && checkout !== undefined ? checkout : "";
@@ -27,10 +27,12 @@ function CurrentCheckoutList(): foodProps[] {
 }
 
 export default function CheckoutList(): JSX.Element {
-    let currentCheckout: foodProps[] = CurrentCheckoutList();
+    // Get initial current checkout list
+    const currentCheckout: foodProps[] = CurrentCheckoutList();
     const [checkoutList, setCheckoutList] =
         useState<foodProps[]>(currentCheckout);
 
+    // CheckoutItem
     function CheckoutItem({ name }: { name: string }): JSX.Element {
         const [, drag] = useDrag(() => ({
             type: "removeItem",
@@ -73,23 +75,40 @@ export default function CheckoutList(): JSX.Element {
             (foodItem) => name === foodItem.name
         );
         if (chosenFood) {
-            setCheckoutList((checkoutList) => [...checkoutList, chosenFood]);
-
-            currentCheckout = [
-                ...checkoutList.map(
-                    (food: foodProps): foodProps => ({
-                        ...food,
-                        type: [...food.type],
-                        ingredients: [...food.ingredients]
-                    })
-                ),
-                chosenFood
-            ];
+            setCheckoutList((checkoutList) => {
+                const newOrder: foodProps[] = [
+                    ...checkoutList.map(
+                        (food: foodProps): foodProps => ({
+                            ...food,
+                            type: [...food.type],
+                            ingredients: [...food.ingredients]
+                        })
+                    ),
+                    chosenFood
+                ];
+                sessionStorage.setItem("checkout", JSON.stringify(newOrder));
+                const listOfCustomers = ListOfCustomers();
+                const currentUser: userProps = GetCurrentUser();
+                const newUser: userProps = {
+                    ...currentUser,
+                    order: newOrder
+                };
+                sessionStorage.setItem("user", JSON.stringify(newUser));
+                const userIndex: number = listOfCustomers.findIndex(
+                    (user: userProps) => newUser.orderID === user.orderID
+                );
+                console.log(userIndex);
+                if (userIndex > -1) {
+                    listOfCustomers.splice(userIndex, 1, newUser);
+                    console.log(listOfCustomers);
+                    sessionStorage.setItem(
+                        "customers",
+                        JSON.stringify(listOfCustomers)
+                    );
+                }
+                return newOrder;
+            });
         }
-        sessionStorage.setItem("checkout", JSON.stringify(currentCheckout));
-        const currentUser: userProps = GetCurrentUser();
-        currentUser.order = CurrentCheckoutList();
-        sessionStorage.setItem("user", JSON.stringify(currentUser));
     };
 
     const removeFoodFromCheckoutList = (name: string) => {
