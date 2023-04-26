@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Stack, Spacer, Flex, Divider, Box } from "@chakra-ui/react";
+import { Heading, Flex, Divider, Box } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
@@ -22,29 +22,6 @@ function EditFood() {
                 >
                     edit foods
                 </Heading>
-                <Spacer></Spacer>
-                {(sessionStorage.getItem("user") === "Owner" ||
-                    sessionStorage.getItem("user") === null) && (
-                    <div>
-                        <Stack
-                            px={10}
-                            py={5}
-                            mb={5}
-                            spacing={6}
-                            textAlign="center"
-                        >
-                            <Button
-                                as={NavLink}
-                                to="/EditUsers"
-                                colorScheme="red"
-                                size="md"
-                                variant="outline"
-                            >
-                                edit users
-                            </Button>
-                        </Stack>
-                    </div>
-                )}
             </Flex>
             <div>
                 <NavBar></NavBar>

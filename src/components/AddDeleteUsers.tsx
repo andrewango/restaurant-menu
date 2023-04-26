@@ -8,17 +8,14 @@ import {
     Th,
     Td,
     TableContainer,
-    Stack,
-    Spacer,
-    Flex,
-    Box
+    Box,
+    Flex
 } from "@chakra-ui/react";
-import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
+import { FormLabel, FormControl, Input } from "@chakra-ui/react";
 
 import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
-import { NavLink } from "react-router-dom";
 import { ListOfCustomers } from "./SelectRole";
 
 export default function AddDeleteUsers(): JSX.Element {
@@ -71,34 +68,6 @@ export default function AddDeleteUsers(): JSX.Element {
                 >
                     edit users
                 </Heading>
-                <Spacer></Spacer>
-                <Stack
-                    px={10}
-                    py={3}
-                    mb={5}
-                    spacing={6}
-                    direction="column"
-                    textAlign="center"
-                >
-                    <Button
-                        as={NavLink}
-                        to="/EditFood"
-                        colorScheme="red"
-                        size="md"
-                        variant="solid"
-                    >
-                        edit foods
-                    </Button>
-                    <Button
-                        as={NavLink}
-                        to="/EditUsers"
-                        colorScheme="red"
-                        size="md"
-                        variant="outline"
-                    >
-                        edit users
-                    </Button>
-                </Stack>
             </Flex>
             <div>
                 <NavBar></NavBar>
