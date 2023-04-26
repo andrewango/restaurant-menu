@@ -16,6 +16,8 @@ import foodList from "../data/foods.json";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "./NavBar";
 import { NavLink } from "react-router-dom";
+import { userProps } from "../interfaces/User";
+import { ListOfCustomers } from "./SelectRole";
 
 export default function RemoveFood() {
     const menu = sessionStorage.getItem("menu");
@@ -39,6 +41,16 @@ export default function RemoveFood() {
         }
         sessionStorage.setItem("menu", JSON.stringify(newFoods));
         setFoodlist(newFoods);
+        const customers: userProps[] = ListOfCustomers();
+        const newCustomers = customers.map(
+            (customer: userProps): userProps => ({
+                ...customer,
+                order: customer.order.filter(
+                    (food: foodProps): boolean => food.name !== id
+                )
+            })
+        );
+        sessionStorage.setItem("customers", JSON.stringify(newCustomers));
     };
     function screenSize() {
         const [isLargerThan2500] = useMediaQuery("(min-width: 2500px)");
