@@ -92,8 +92,9 @@ export default function FoodItem({
                     <Text
                         fontFamily="DM Serif"
                         fontSize="m"
-                        mt={2}
                         fontWeight="medium"
+                        mb={3}
+                        ml={2}
                     >
                         {rating}
                     </Text>
