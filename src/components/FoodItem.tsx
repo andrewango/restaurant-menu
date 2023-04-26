@@ -89,15 +89,6 @@ export default function FoodItem({
 
                 <CardFooter>
                     <RatingFeature></RatingFeature>
-                    <Text
-                        fontFamily="DM Serif"
-                        fontSize="m"
-                        fontWeight="medium"
-                        mb={3}
-                        ml={2}
-                    >
-                        {rating}
-                    </Text>
                 </CardFooter>
             </Stack>
         </Card>
