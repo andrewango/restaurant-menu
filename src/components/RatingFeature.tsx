@@ -38,6 +38,7 @@ export default function RatingFeature(): JSX.Element {
                 fontWeight="medium"
                 mt={5}
                 ml={2}
+                display={rating ? "block" : "none"}
             >
                 {rating}
             </Text>
