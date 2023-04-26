@@ -42,6 +42,7 @@ export default function ItemListUI({
                             desc={food.desc}
                             ingredients={food.ingredients}
                             price={food.price}
+                            rating={food.rating}
                         />
                     );
                 })}
