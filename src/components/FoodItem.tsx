@@ -17,15 +17,13 @@ export default function FoodItem({
     image,
     desc,
     ingredients,
-    price,
-    rating
+    price
 }: {
     name: string;
     image: string;
     desc: string;
     ingredients: string[];
     price: number;
-    rating: number;
 }): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "foodItem",

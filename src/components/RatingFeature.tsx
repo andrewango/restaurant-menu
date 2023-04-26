@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GrStar } from "react-icons/gr";
+import { Text } from "@chakra-ui/react";
 export default function RatingFeature(): JSX.Element {
     /*
     Renders 5 stars, all initally zero (and gray). Clicking a star fills in
@@ -9,7 +10,7 @@ export default function RatingFeature(): JSX.Element {
     */
     const [rating, setRating] = useState(0);
     return (
-        <div>
+        <div style={{ display: "flex", alignItems: "center" }}>
             {[1, 2, 3, 4, 5].map((star, i) => {
                 i = i + 1;
                 return (
@@ -31,6 +32,15 @@ export default function RatingFeature(): JSX.Element {
                     </label>
                 );
             })}
+            <Text
+                fontFamily="DM Serif"
+                fontSize="m"
+                fontWeight="medium"
+                mt={5}
+                ml={2}
+            >
+                {rating}
+            </Text>
         </div>
     );
 }
