@@ -143,6 +143,29 @@ export default function CheckoutList(): JSX.Element {
                     })
                 );
                 newCheckoutList.splice(foodToRemoveIndex, 1);
+                sessionStorage.setItem(
+                    "checkout",
+                    JSON.stringify(newCheckoutList)
+                );
+                const listOfCustomers = ListOfCustomers();
+                const currentUser: userProps = GetCurrentUser();
+                const newUser: userProps = {
+                    ...currentUser,
+                    order: newCheckoutList
+                };
+                sessionStorage.setItem("user", JSON.stringify(newUser));
+                const userIndex: number = listOfCustomers.findIndex(
+                    (user: userProps) => newUser.orderID === user.orderID
+                );
+                console.log(userIndex);
+                if (userIndex > -1) {
+                    listOfCustomers.splice(userIndex, 1, newUser);
+                    console.log(listOfCustomers);
+                    sessionStorage.setItem(
+                        "customers",
+                        JSON.stringify(listOfCustomers)
+                    );
+                }
                 return newCheckoutList;
             } else {
                 return updatedCheckout;
