@@ -17,13 +17,15 @@ export default function FoodItem({
     image,
     desc,
     ingredients,
-    price
+    price,
+    rating
 }: {
     name: string;
     image: string;
     desc: string;
     ingredients: string[];
     price: number;
+    rating: number;
 }): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "foodItem",
@@ -87,6 +89,14 @@ export default function FoodItem({
 
                 <CardFooter>
                     <RatingFeature></RatingFeature>
+                    <Text
+                        fontFamily="DM Serif"
+                        fontSize="m"
+                        mt={2}
+                        fontWeight="medium"
+                    >
+                        {rating}
+                    </Text>
                 </CardFooter>
             </Stack>
         </Card>

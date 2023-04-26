@@ -129,34 +129,17 @@ export function SearchBar(): JSX.Element {
                 >
                     Popular
                 </Checkbox>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-high2low-check"
-                    checked={high}
+                <Form.Select
+                    value={text}
                     onChange={() => {
-                        setHigh(!high);
-                        setLow(false);
+                        setHigh(text === "high-to-low" ? !high : false);
+                        setLow(text === "low-to-high" ? !low : false);
                         setListHelper(text);
                     }}
-                    colorScheme="white"
                 >
-                    Sort Price: High to Low
-                </Checkbox>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-low2high-check"
-                    checked={low}
-                    onChange={() => {
-                        setHigh(false);
-                        setLow(!low);
-                        setListHelper(text);
-                    }}
-                    colorScheme="white"
-                >
-                    Sort Price: Low to High
-                </Checkbox>
+                    <option value="low-to-high">Sort Price: Low to High</option>
+                    <option value="high-to-low">Sort Price: High to Low</option>
+                </Form.Select>
             </Stack>
 
             <div>
