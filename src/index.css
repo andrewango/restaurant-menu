@@ -29,3 +29,8 @@ code {
     font-family: "Ananda Black", "Apple Chancery", "cursive";
     font-size: x-large;
 }
+
+.delivery {
+    display: flex;
+    flex-direction: row;
+}
