@@ -29,6 +29,7 @@ export default function NavBar() {
             zIndex={99999999}
             py={4}
             bg="red.400"
+            data-testid="bar"
         >
             <Link to="/">
                 <Box
