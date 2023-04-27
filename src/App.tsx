@@ -7,11 +7,13 @@ import AboutUs from "./pages/AboutUs";
 import { Routes, Route } from "react-router-dom";
 import AddFood from "./pages/AddFood";
 import RemoveFood from "./pages/RemoveFood";
+import NavBar from "./components/NavBar";
 
 // 3. Pass the `theme` prop to the `ChakraProvider`
 export default function App() {
     return (
         <Routes>
+            <NavBar></NavBar>
             <Route path="/" element={<Landing />}></Route>
             <Route path="/EditUsers" element={<EditUsers />}></Route>
             <Route path="/EditFood" element={<EditFood />}></Route>
