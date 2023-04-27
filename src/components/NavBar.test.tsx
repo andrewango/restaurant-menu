@@ -1,7 +1,8 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import NavBar from "./NavBar";
 import { BrowserRouter } from "react-router-dom";
+import { SelectRole } from "./SelectRole";
 import userEvent from "@testing-library/user-event";
 
 describe("NavBar tests", () => {
@@ -29,24 +30,38 @@ describe("NavBar tests", () => {
         );
         expect(screen.getByText(/menu/i)).toBeInTheDocument();
     });
-    /*
-    test("Clicking 3 changes time to 3", () => {
-        render(<DeliveryDropDown />);
-        const select = screen.getByRole("combobox");
-        userEvent.selectOptions(select, "3:00");
-        expect(screen.getByText(/3:00/i)).toBeInTheDocument();
+    test("edit foods button is displayed initially", () => {
+        render(
+            <BrowserRouter>
+                <NavBar />
+            </BrowserRouter>
+        );
+        expect(screen.getByText(/edit food/i)).toBeInTheDocument();
     });
-    test("Clicking 9 changes time to 9", () => {
-        render(<DeliveryDropDown />);
-        const select = screen.getByRole("combobox");
-        userEvent.selectOptions(select, "9:00");
-        expect(screen.getByText(/9:00/i)).toBeInTheDocument();
+    test("edit users button is displayed initially", () => {
+        render(
+            <BrowserRouter>
+                <NavBar />
+            </BrowserRouter>
+        );
+        expect(screen.getByText(/edit users/i)).toBeInTheDocument();
     });
-    test("Clicking 5 changes time to 5", () => {
-        render(<DeliveryDropDown />);
-        const select = screen.getByRole("combobox");
-        userEvent.selectOptions(select, "5:00");
-        expect(screen.getByText(/5:00/i)).toBeInTheDocument();
+    test("edit users disapperas when admin is selected", async () => {
+        render(
+            <BrowserRouter>
+                <SelectRole />
+            </BrowserRouter>
+        );
+        expect(screen.getByRole("combobox")).toBeInTheDocument();
+        userEvent.selectOptions(screen.getByRole("combobox"), "Employee");
+        expect(screen.getByText(/Employee/i)).toBeInTheDocument();
+        render(
+            <BrowserRouter>
+                <NavBar />
+            </BrowserRouter>
+        );
+        await waitFor(() => {
+            expect(screen.queryByText(/edit users/i)).not.toBeInTheDocument();
+        });
     });
-    */
 });
