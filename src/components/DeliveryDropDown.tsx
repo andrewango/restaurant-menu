@@ -5,7 +5,7 @@ import { Button } from "@chakra-ui/react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 //import styled from "styled-components";
 export function DeliveryDropDown(): JSX.Element {
-    const [time, changeTime] = useState<string>("");
+    const [time, changeTime] = useState<string>("12:00");
     const TIMES = [
         "12:00",
         "1:00",
@@ -72,7 +72,11 @@ export function DeliveryDropDown(): JSX.Element {
                     _hover={{ bgColor: "red.600", color: "white" }}
                     borderRadius="md"
                     onClick={() =>
-                        alert("Ordered placed! Your delivery time is " + time)
+                        alert(
+                            "Ordered placed! Your delivery time is " +
+                                time +
+                                "!"
+                        )
                     }
                 >
                     Checkout
