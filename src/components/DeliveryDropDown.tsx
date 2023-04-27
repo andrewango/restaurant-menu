@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-
+import { Button } from "react-bootstrap";
 export function DeliveryDropDown(): JSX.Element {
     const [time, changeTime] = useState<string>("");
     const TIMES = [
@@ -18,12 +18,16 @@ export function DeliveryDropDown(): JSX.Element {
     ];
     return (
         <Box width="90%">
-            <p className="del-time" style={{ color: "white" }}>
+            <p
+                className="del-time"
+                style={{ color: "black", textAlign: "left" }}
+            >
                 Delivery Time:
             </p>
             <form>
                 <Form.Group controlId="delivery-dropdown">
                     <Form.Select
+                        style={{ width: "160px" }}
                         onChange={(e) => changeTime(e.target.value)}
                         name={time}
                         value={time}
@@ -38,6 +42,7 @@ export function DeliveryDropDown(): JSX.Element {
                     </Form.Select>
                 </Form.Group>
             </form>
+            <Button>Checkout</Button>
         </Box>
     );
 }
