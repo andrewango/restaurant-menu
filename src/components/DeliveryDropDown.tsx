@@ -24,25 +24,27 @@ export function DeliveryDropDown(): JSX.Element {
             >
                 Delivery Time:
             </p>
-            <form>
-                <Form.Group controlId="delivery-dropdown">
-                    <Form.Select
-                        style={{ width: "160px" }}
-                        onChange={(e) => changeTime(e.target.value)}
-                        name={time}
-                        value={time}
-                        id={time}
-                        key={time}
-                    >
-                        {TIMES.map((time: string) => (
-                            <option value={time} key={time} id={time}>
-                                {time}
-                            </option>
-                        ))}
-                    </Form.Select>
-                </Form.Group>
-            </form>
-            <Button>Checkout</Button>
+            <div className="delivery">
+                <form>
+                    <Form.Group controlId="delivery-dropdown">
+                        <Form.Select
+                            style={{ width: "160px" }}
+                            onChange={(e) => changeTime(e.target.value)}
+                            name={time}
+                            value={time}
+                            id={time}
+                            key={time}
+                        >
+                            {TIMES.map((time: string) => (
+                                <option value={time} key={time} id={time}>
+                                    {time}
+                                </option>
+                            ))}
+                        </Form.Select>
+                    </Form.Group>
+                </form>
+                <Button style={{ marginLeft: "28rem" }}>Checkout</Button>
+            </div>
         </Box>
     );
 }
