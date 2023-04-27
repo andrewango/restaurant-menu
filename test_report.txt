@@ -3,6 +3,7 @@
 > react-scripts test --coverage
 
 PASS src/components/RatingFeature.test.tsx
+PASS src/components/NavBar.test.tsx
 PASS src/components/DeliveryDropDown.test.tsx
 FAIL src/App.test.tsx
   ● Test suite failed to run
@@ -56,10 +57,10 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    2.22 |     0.48 |    2.87 |    2.28 |                   
+All files              |   10.83 |      7.8 |   11.51 |   10.85 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 13                
- src/components        |    2.72 |     0.57 |    3.44 |    2.81 |                   
+ src/components        |   13.26 |     9.24 |   13.79 |   13.38 |                   
   AddDeleteUsers.tsx   |       0 |        0 |       0 |       0 | 22-135            
   AddFoodUI.tsx        |       0 |        0 |       0 |       0 | 19-45             
   CheckoutList.tsx     |       0 |        0 |       0 |       0 | 24-216            
@@ -70,10 +71,10 @@ All files              |    2.22 |     0.48 |    2.87 |    2.28 |
   EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 27-150            
   FoodItem.tsx         |       0 |        0 |       0 |       0 | 28-36             
   ItemListUI.tsx       |       0 |        0 |       0 |       0 | 11-36             
-  NavBar.tsx           |       0 |        0 |       0 |       0 | 8-21              
+  NavBar.tsx           |     100 |      100 |     100 |     100 |                   
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                
   SearchBar.tsx        |       0 |        0 |       0 |       0 | 9-154             
-  SelectRole.tsx       |       0 |        0 |       0 |       0 | 5-93              
+  SelectRole.tsx       |   88.46 |     62.5 |      80 |      88 | 60,63,93          
  src/interfaces        |       0 |        0 |       0 |       0 |                   
   CustomerList.ts      |       0 |        0 |       0 |       0 |                   
   EmployeeList.ts      |       0 |        0 |       0 |       0 |                   
@@ -90,8 +91,8 @@ All files              |    2.22 |     0.48 |    2.87 |    2.28 |
   Landing.tsx          |       0 |      100 |       0 |       0 | 11                
   RemoveFood.tsx       |       0 |        0 |       0 |       0 | 25-151            
 -----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 2 passed, 3 total
-Tests:       12 passed, 12 total
+Test Suites: 1 failed, 3 passed, 4 total
+Tests:       18 passed, 18 total
 Snapshots:   0 total
-Time:        5.542 s
+Time:        8.782 s
 Ran all test suites.
