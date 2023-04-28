@@ -3,6 +3,7 @@
 > react-scripts test --coverage
 
 PASS src/components/RatingFeature.test.tsx
+PASS src/components/SelectRole.test.tsx
 PASS src/components/NavBar.test.tsx
 PASS src/components/DeliveryDropDown.test.tsx
 FAIL src/App.test.tsx
@@ -91,8 +92,8 @@ All files              |    9.94 |      7.3 |   10.38 |    9.97 |
   Landing.tsx          |       0 |      100 |       0 |       0 | 11                
   RemoveFood.tsx       |       0 |        0 |       0 |       0 | 25-151            
 -----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 3 passed, 4 total
-Tests:       18 passed, 18 total
+Test Suites: 1 failed, 4 passed, 5 total
+Tests:       23 passed, 23 total
 Snapshots:   0 total
-Time:        6.393 s
+Time:        7.287 s
 Ran all test suites.
