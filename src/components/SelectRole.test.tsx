@@ -4,7 +4,6 @@ import userEvent from "@testing-library/user-event";
 import { SelectRole } from "./SelectRole";
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "./NavBar";
-import AddDeleteUsers from "./AddDeleteUsers";
 
 describe("SelectRole tests", () => {
     test("SelectRole dropdown is succesfully rendered", () => {
