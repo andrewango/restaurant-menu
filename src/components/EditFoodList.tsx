@@ -147,7 +147,12 @@ export default function EditFoodList(): JSX.Element {
                     index={tabIndex}
                     onChange={handleTabsChange}
                 >
-                    <TabList width="100%" overflowX="auto" overflowY="hidden">
+                    <TabList
+                        width="100%"
+                        overflowX="auto"
+                        overflowY="hidden"
+                        className="section"
+                    >
                         {EditMenuList().map(
                             (food: foodProps, index: number) => (
                                 <FoodItem

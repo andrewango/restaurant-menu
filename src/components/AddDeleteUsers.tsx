@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
     Heading,
     Table,
@@ -8,18 +8,15 @@ import {
     Th,
     Td,
     TableContainer,
-    Stack,
-    Spacer,
-    Flex,
-    Box
+    Box,
+    Flex
 } from "@chakra-ui/react";
-import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
+import { FormLabel, FormControl, Input } from "@chakra-ui/react";
 
 import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
-import { NavLink } from "react-router-dom";
-import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
+import { ListOfCustomers } from "./SelectRole";
 
 export default function AddDeleteUsers(): JSX.Element {
     const customers: userProps[] = ListOfCustomers();
@@ -57,37 +54,6 @@ export default function AddDeleteUsers(): JSX.Element {
         }
     };
 
-    useEffect(() => {
-        console.log(customerList);
-    }, [customerList]);
-
-    const currentUser: userProps = GetCurrentUser();
-    const userIndex: number = customers.findIndex(
-        (user: userProps) => currentUser.orderID === user.orderID
-    );
-    if (userIndex > -1) {
-        setCustomerList((customerList) =>
-            customers.splice(userIndex, 1, currentUser)
-        );
-        sessionStorage.setItem(
-            "customers",
-            JSON.stringify(customers.splice(userIndex, 1, currentUser))
-        );
-    }
-
-    function AddCustomersForm() {
-        return (
-            <FormControl isRequired id="name" width="500px" px={20} mt={10}>
-                <FormLabel>Name:</FormLabel>
-                <Input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-            </FormControl>
-        );
-    }
-
     return (
         <div style={{ padding: 10 }}>
             <Flex wrap="wrap">
@@ -102,39 +68,18 @@ export default function AddDeleteUsers(): JSX.Element {
                 >
                     edit users
                 </Heading>
-                <Spacer></Spacer>
-                <Stack
-                    px={10}
-                    py={3}
-                    mb={5}
-                    spacing={6}
-                    direction="column"
-                    textAlign="center"
-                >
-                    <Button
-                        as={NavLink}
-                        to="/EditFood"
-                        colorScheme="red"
-                        size="md"
-                        variant="solid"
-                    >
-                        edit foods
-                    </Button>
-                    <Button
-                        as={NavLink}
-                        to="/EditUsers"
-                        colorScheme="red"
-                        size="md"
-                        variant="outline"
-                    >
-                        edit users
-                    </Button>
-                </Stack>
             </Flex>
             <div>
                 <NavBar></NavBar>
             </div>
-            <AddCustomersForm></AddCustomersForm>
+            <FormControl isRequired id="name" width="500px" px={20} mt={10}>
+                <FormLabel>Name:</FormLabel>
+                <Input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </FormControl>
             <br></br>
             <Box
                 as="button"

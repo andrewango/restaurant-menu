@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import { Stack } from "@chakra-ui/react";
 import styled from "styled-components";
-import { Button } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
 import { userProps } from "../interfaces/User";
 
 const Select = styled.select`
@@ -48,9 +45,11 @@ export function SelectRole(): JSX.Element {
 
     // Change role and update session state
     function changeRole(userRole: userProps) {
-        sessionStorage.setItem("user", JSON.stringify(userRole));
         setUserRole(userRole);
+        sessionStorage.setItem("user", JSON.stringify(userRole));
         sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
+        // Manually dispatches an event after we updated "checkout" key for event listeners to fetch
+        window.dispatchEvent(new Event("checkoutUpdated"));
     }
 
     const listOfCustomers: userProps[] = ListOfCustomers();
@@ -101,53 +100,6 @@ export function SelectRole(): JSX.Element {
                         </option>
                     ))}
                 </Select>
-                {(currentUser.role === "Owner" || currentUser === null) && (
-                    <Stack
-                        px={10}
-                        py={3}
-                        spacing={3}
-                        direction="column"
-                        textAlign="center"
-                    >
-                        <Button
-                            as={NavLink}
-                            to="/EditFood"
-                            colorScheme="red"
-                            size="md"
-                            variant="solid"
-                        >
-                            edit foods
-                        </Button>
-                        <Button
-                            as={NavLink}
-                            to="/EditUsers"
-                            colorScheme="red"
-                            size="md"
-                            variant="solid"
-                        >
-                            edit users
-                        </Button>
-                    </Stack>
-                )}
-                {currentUser.role === "Employee" && (
-                    <Stack
-                        px={10}
-                        py={3}
-                        spacing={3}
-                        direction="column"
-                        textAlign="center"
-                    >
-                        <Button
-                            as={NavLink}
-                            to="/EditFood"
-                            colorScheme="red"
-                            size="md"
-                            variant="solid"
-                        >
-                            edit foods
-                        </Button>
-                    </Stack>
-                )}
             </form>
         </div>
     );

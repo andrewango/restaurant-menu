@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // Uncomment next line for state debugging
-//import { useEffect } from "react";
+import { useEffect } from "react";
 import {
     Card,
     CardHeader,
@@ -18,8 +18,9 @@ import { foodProps } from "../interfaces/Food";
 import { MenuList } from "../pages/AddFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
+import { DeliveryDropDown } from "./DeliveryDropDown";
 
-function CurrentCheckoutList(): foodProps[] {
+export function CurrentCheckoutList(): foodProps[] {
     const checkout: string | null = sessionStorage.getItem("checkout");
     const checkoutToParse =
         checkout !== null && checkout !== undefined ? checkout : "";
@@ -27,10 +28,30 @@ function CurrentCheckoutList(): foodProps[] {
 }
 
 export default function CheckoutList(): JSX.Element {
-    let currentCheckout: foodProps[] = CurrentCheckoutList();
+    // Get initial current checkout list
+    const currentCheckout: foodProps[] = CurrentCheckoutList();
     const [checkoutList, setCheckoutList] =
         useState<foodProps[]>(currentCheckout);
 
+    // Update the checkout list everytime we change customer role to the customer's order
+    useEffect(() => {
+        const handleStorage = () => {
+            //console.log("handleStorage called");
+            // Get the menu window's "checkout" key from Session Storage
+            const storage: string | null =
+                window.sessionStorage.getItem("checkout");
+            const storageCheckout: foodProps[] = storage
+                ? JSON.parse(storage)
+                : [];
+            setCheckoutList(storageCheckout);
+        };
+        // Event listeners to run handleStorage() if "checkout" key is updated
+        window.addEventListener("checkoutUpdated", handleStorage);
+        return () =>
+            window.removeEventListener("checkoutUpdated", handleStorage);
+    }, []);
+
+    // CheckoutItem
     function CheckoutItem({ name }: { name: string }): JSX.Element {
         const [, drag] = useDrag(() => ({
             type: "removeItem",
@@ -73,23 +94,40 @@ export default function CheckoutList(): JSX.Element {
             (foodItem) => name === foodItem.name
         );
         if (chosenFood) {
-            setCheckoutList((checkoutList) => [...checkoutList, chosenFood]);
-
-            currentCheckout = [
-                ...checkoutList.map(
-                    (food: foodProps): foodProps => ({
-                        ...food,
-                        type: [...food.type],
-                        ingredients: [...food.ingredients]
-                    })
-                ),
-                chosenFood
-            ];
+            setCheckoutList((checkoutList) => {
+                const newOrder: foodProps[] = [
+                    ...checkoutList.map(
+                        (food: foodProps): foodProps => ({
+                            ...food,
+                            type: [...food.type],
+                            ingredients: [...food.ingredients]
+                        })
+                    ),
+                    chosenFood
+                ];
+                sessionStorage.setItem("checkout", JSON.stringify(newOrder));
+                const listOfCustomers = ListOfCustomers();
+                const currentUser: userProps = GetCurrentUser();
+                const newUser: userProps = {
+                    ...currentUser,
+                    order: newOrder
+                };
+                sessionStorage.setItem("user", JSON.stringify(newUser));
+                const userIndex: number = listOfCustomers.findIndex(
+                    (user: userProps) => newUser.orderID === user.orderID
+                );
+                console.log(userIndex);
+                if (userIndex > -1) {
+                    listOfCustomers.splice(userIndex, 1, newUser);
+                    console.log(listOfCustomers);
+                    sessionStorage.setItem(
+                        "customers",
+                        JSON.stringify(listOfCustomers)
+                    );
+                }
+                return newOrder;
+            });
         }
-        sessionStorage.setItem("checkout", JSON.stringify(currentCheckout));
-        const currentUser: userProps = GetCurrentUser();
-        currentUser.order = CurrentCheckoutList();
-        sessionStorage.setItem("user", JSON.stringify(currentUser));
     };
 
     const removeFoodFromCheckoutList = (name: string) => {
@@ -106,6 +144,29 @@ export default function CheckoutList(): JSX.Element {
                     })
                 );
                 newCheckoutList.splice(foodToRemoveIndex, 1);
+                sessionStorage.setItem(
+                    "checkout",
+                    JSON.stringify(newCheckoutList)
+                );
+                const listOfCustomers = ListOfCustomers();
+                const currentUser: userProps = GetCurrentUser();
+                const newUser: userProps = {
+                    ...currentUser,
+                    order: newCheckoutList
+                };
+                sessionStorage.setItem("user", JSON.stringify(newUser));
+                const userIndex: number = listOfCustomers.findIndex(
+                    (user: userProps) => newUser.orderID === user.orderID
+                );
+                console.log(userIndex);
+                if (userIndex > -1) {
+                    listOfCustomers.splice(userIndex, 1, newUser);
+                    console.log(listOfCustomers);
+                    sessionStorage.setItem(
+                        "customers",
+                        JSON.stringify(listOfCustomers)
+                    );
+                }
                 return newCheckoutList;
             } else {
                 return updatedCheckout;
@@ -120,7 +181,7 @@ export default function CheckoutList(): JSX.Element {
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (
-        <Box h="750px" overflowY="scroll" mt={100}>
+        <Box h={window.innerHeight * 0.72} mt={100}>
             <VStack spacing="3px">
                 <Grid
                     templateColumns={
@@ -129,8 +190,8 @@ export default function CheckoutList(): JSX.Element {
                     rowGap={3}
                 >
                     <Card
-                        h={window.innerHeight * 0.6}
-                        w={window.innerWidth * 0.35}
+                        h={window.innerHeight * 0.7}
+                        w={window.innerWidth * 0.4}
                         border="5px solid tomato"
                         textAlign="center"
                     >
@@ -159,6 +220,7 @@ export default function CheckoutList(): JSX.Element {
                                     )
                                 )}
                             </VStack>
+                            <DeliveryDropDown></DeliveryDropDown>
                         </CardBody>
                     </Card>
                 </Grid>

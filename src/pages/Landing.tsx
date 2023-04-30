@@ -5,8 +5,8 @@ import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
 import restaurantLogo from "./restaurant-logo.png";
 import CheckoutList from "../components/CheckoutList";
-import { DeliveryDropDown } from "../components/DeliveryDropDown";
 import background from "./background.jpg";
+import { DeliveryDropDown } from "../components/DeliveryDropDown";
 
 export default function Landing() {
     return (
@@ -58,11 +58,19 @@ export default function Landing() {
                         as="h2"
                         display="flex"
                         justifyContent="center"
-                        py={5}
                         fontSize="40px"
                     >
                         our menu
                     </Heading>
+                    <Text
+                        color="white"
+                        display="flex"
+                        justifyContent="center"
+                        py={2}
+                        fontSize="20px"
+                    >
+                        open 12-9 pm
+                    </Text>
                 </div>
                 <Flex>
                     <Box flex="1" p="4" ml="100px">

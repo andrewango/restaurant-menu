@@ -18,7 +18,7 @@ import { userProps } from "../interfaces/User";
 import { GetCurrentUser } from "./SelectRole";
 //import styled from "styled-components";
 export function DeliveryDropDown(): JSX.Element {
-    const [time, changeTime] = useState<string>("");
+    const [time, changeTime] = useState<string>("12:00");
     const TIMES = [
         "12:00",
         "1:00",
