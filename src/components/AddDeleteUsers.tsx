@@ -31,7 +31,7 @@ export default function AddDeleteUsers(): JSX.Element {
     const orderNum: number = storageOrderID ? parseInt(storageOrderID) : 1;
     const [orderID, setOrderID] = useState<number>(orderNum);
 
-    const handleSubmit = () => {
+    const handleAddSubmit = () => {
         if (name !== "") {
             const newCustomer: userProps = {
                 name: name,
@@ -139,7 +139,7 @@ export default function AddDeleteUsers(): JSX.Element {
             <Box
                 as="button"
                 type="submit"
-                onClick={handleSubmit}
+                onClick={handleAddSubmit}
                 id="add-customer"
                 height="40px"
                 lineHeight="2.1"
