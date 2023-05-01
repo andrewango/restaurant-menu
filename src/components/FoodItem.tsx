@@ -14,18 +14,6 @@ import { useDrag } from "react-dnd";
 import { GetCurrentUser } from "./SelectRole";
 import { userProps } from "../interfaces/User";
 
-const [currentUser, setCurrentUser] = useState<userProps>(GetCurrentUser());
-
-useEffect(() => {
-    const handleStorage = () => {
-        //console.log("handleStorage called");
-        setCurrentUser(GetCurrentUser());
-    };
-    // Event listeners to run handleStorage() if "checkout" key is updated
-    window.addEventListener("checkoutUpdated", handleStorage);
-    return () => window.removeEventListener("checkoutUpdated", handleStorage);
-}, []);
-
 export default function FoodItem({
     name,
     image,
@@ -46,6 +34,18 @@ export default function FoodItem({
             isDragging: !!monitor.isDragging()
         })
     }));
+    const [currentUser, setCurrentUser] = useState<userProps>(GetCurrentUser());
+
+    useEffect(() => {
+        const handleStorage = () => {
+            //console.log("handleStorage called");
+            setCurrentUser(GetCurrentUser());
+        };
+        // Event listeners to run handleStorage() if "checkout" key is updated
+        window.addEventListener("checkoutUpdated", handleStorage);
+        return () =>
+            window.removeEventListener("checkoutUpdated", handleStorage);
+    }, []);
 
     return (
         <Card
@@ -79,11 +79,11 @@ export default function FoodItem({
                     {`$${price}`}
                 </Text>
                 {
-                    //change this
+                    //change this below
                 }
-                {currentUser.role === "Owner" && (
+                {(currentUser.role === "Owner" || currentUser === null) && (
                     <Text className="desc" mt={2}>
-                        {`In ${price} lists.`}
+                        {`In ${price} user lists.`}
                     </Text>
                 )}
             </Box>
