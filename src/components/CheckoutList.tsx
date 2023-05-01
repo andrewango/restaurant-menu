@@ -202,7 +202,7 @@ export default function CheckoutList(): JSX.Element {
                             backgroundColor={isOver ? "red" : ""}
                         >
                             <Heading fontWeight="bold">Checkout</Heading>
-                            <i className="fa fa-trash" aria-hidden="true"></i>
+                            <FontAwesomeIcon icon={faTrash} />
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody
