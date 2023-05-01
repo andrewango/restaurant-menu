@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
     Image,
     Text,
@@ -11,6 +11,20 @@ import {
 } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
 import { useDrag } from "react-dnd";
+import { GetCurrentUser } from "./SelectRole";
+import { userProps } from "../interfaces/User";
+
+const [currentUser, setCurrentUser] = useState<userProps>(GetCurrentUser());
+
+useEffect(() => {
+    const handleStorage = () => {
+        //console.log("handleStorage called");
+        setCurrentUser(GetCurrentUser());
+    };
+    // Event listeners to run handleStorage() if "checkout" key is updated
+    window.addEventListener("checkoutUpdated", handleStorage);
+    return () => window.removeEventListener("checkoutUpdated", handleStorage);
+}, []);
 
 export default function FoodItem({
     name,
@@ -56,6 +70,7 @@ export default function FoodItem({
                     my={5}
                 />
                 <Text
+                    className="desc"
                     fontFamily="DM Serif"
                     fontSize="2xl"
                     mt={2}
@@ -66,14 +81,11 @@ export default function FoodItem({
                 {
                     //change this
                 }
-                <Text
-                    fontFamily="DM Serif"
-                    fontSize="2xl"
-                    mt={2}
-                    fontWeight="medium"
-                >
-                    {`In ${price} lists.`}
-                </Text>
+                {currentUser.role === "Owner" && (
+                    <Text className="desc" mt={2}>
+                        {`In ${price} lists.`}
+                    </Text>
+                )}
             </Box>
             <Stack>
                 <CardBody>
