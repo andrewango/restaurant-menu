@@ -7,6 +7,7 @@ import AboutUs from "./pages/AboutUs";
 import { Routes, Route } from "react-router-dom";
 import AddFood from "./pages/AddFood";
 import RemoveFood from "./pages/RemoveFood";
+import OwnerLanding from "./pages/OwnerLanding";
 
 // 3. Pass the `theme` prop to the `ChakraProvider`
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
             <Route path="/AboutUs" element={<AboutUs />}></Route>
             <Route path="/AddFood" element={<AddFood />}></Route>
             <Route path="/RemoveFood" element={<RemoveFood />}></Route>
+            <Route path="/OwnerLanding" element={<OwnerLanding />}></Route>
         </Routes>
     );
 }

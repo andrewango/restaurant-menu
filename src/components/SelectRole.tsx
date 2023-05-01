@@ -47,9 +47,15 @@ export function SelectRole(): JSX.Element {
     function changeRole(userRole: userProps) {
         setUserRole(userRole);
         sessionStorage.setItem("user", JSON.stringify(userRole));
-        sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
-        // Manually dispatches an event after we updated "checkout" key for event listeners to fetch
-        window.dispatchEvent(new Event("checkoutUpdated"));
+        if (GetCurrentUser().role === "Customer") {
+            sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
+            // Manually dispatches an event after we updated "checkout" key for event listeners to fetch
+            window.dispatchEvent(new Event("checkoutUpdated"));
+        } else if (GetCurrentUser().role === "Employee") {
+            location.hash = "/EditFood";
+        } else {
+            location.hash = "/OwnerLanding";
+        }
     }
 
     const listOfCustomers: userProps[] = ListOfCustomers();
