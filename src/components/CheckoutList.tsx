@@ -202,9 +202,7 @@ export default function CheckoutList(): JSX.Element {
                             backgroundColor={isOver ? "red" : ""}
                         >
                             <Heading fontWeight="bold">Checkout</Heading>
-                            <Text fontWeight="semibold">
-                                Drag here to remove items
-                            </Text>
+                            <i className="fa fa-trash" aria-hidden="true"></i>
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody
