@@ -47,7 +47,6 @@ export default function FoodItem({
     const storageCustomers: userProps[] = customers
         ? JSON.parse(customers)
         : [];
-    console.log(storageCustomers); // we now have an array of userProps
     useEffect(() => {
         const handleStorage = () => {
             //console.log("handleStorage called");
@@ -90,9 +89,6 @@ export default function FoodItem({
                 >
                     {`$${price}`}
                 </Text>
-                {
-                    //change this below
-                }
                 {(currentUser.role === "Owner" || currentUser === null) && (
                     <Text className="desc" mt={2}>
                         {`In ${countOrders(
