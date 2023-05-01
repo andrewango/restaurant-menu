@@ -14,6 +14,14 @@ import { useDrag } from "react-dnd";
 import { GetCurrentUser } from "./SelectRole";
 import { userProps } from "../interfaces/User";
 
+function countOrders(list: userProps[], foodName: string): number {
+    return list.reduce((count, user) => {
+        return (
+            count + user.order.filter((food) => food.name === foodName).length
+        );
+    }, 0);
+}
+
 export default function FoodItem({
     name,
     image,
@@ -87,7 +95,10 @@ export default function FoodItem({
                 }
                 {(currentUser.role === "Owner" || currentUser === null) && (
                     <Text className="desc" mt={2}>
-                        {`In ${price} user lists.`}
+                        {`In ${countOrders(
+                            storageCustomers,
+                            name
+                        )} user lists.`}
                     </Text>
                 )}
             </Box>
