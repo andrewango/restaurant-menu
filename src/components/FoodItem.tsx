@@ -35,7 +35,11 @@ export default function FoodItem({
         })
     }));
     const [currentUser, setCurrentUser] = useState<userProps>(GetCurrentUser());
-
+    const customers: string | null = sessionStorage.getItem("customers");
+    const storageCustomers: userProps[] = customers
+        ? JSON.parse(customers)
+        : [];
+    console.log(storageCustomers); // we now have an array of userProps
     useEffect(() => {
         const handleStorage = () => {
             //console.log("handleStorage called");
