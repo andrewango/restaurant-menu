@@ -13,7 +13,8 @@ import {
     Text,
     Box,
     Grid,
-    useMediaQuery
+    useMediaQuery,
+    Flex
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
@@ -201,8 +202,12 @@ export default function CheckoutList(): JSX.Element {
                             ref={removeDrop}
                             backgroundColor={isOver ? "red" : ""}
                         >
-                            <Heading fontWeight="bold">Checkout</Heading>
-                            <FontAwesomeIcon icon={faTrash} />
+                            <Flex alignItems="center">
+                                <Heading fontWeight="bold" mr={2}>
+                                    Checkout
+                                </Heading>
+                                <FontAwesomeIcon icon={faTrash} size="2x" />
+                            </Flex>
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody
