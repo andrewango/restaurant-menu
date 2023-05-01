@@ -63,6 +63,17 @@ export default function FoodItem({
                 >
                     {`$${price}`}
                 </Text>
+                {
+                    //change this
+                }
+                <Text
+                    fontFamily="DM Serif"
+                    fontSize="2xl"
+                    mt={2}
+                    fontWeight="medium"
+                >
+                    {`In ${price} lists.`}
+                </Text>
             </Box>
             <Stack>
                 <CardBody>
