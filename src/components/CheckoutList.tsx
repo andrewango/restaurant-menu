@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // Uncomment next line for state debugging
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import {
     Card,
     CardHeader,
