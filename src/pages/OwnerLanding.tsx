@@ -78,6 +78,17 @@ export default function OwnerLanding() {
                             Manage User
                         </Text>
                     </Button>
+                    <Button
+                        className="stats"
+                        //backgroundImage={manageUsers}
+                        w={window.innerWidth * 0.4}
+                        h={window.innerHeight * 0.8}
+                        onClick={() => (location.hash = "/UserStats")}
+                    >
+                        <Text className="text" font-weight="bold">
+                            Manage User
+                        </Text>
+                    </Button>
                 </Grid>
             </Center>
             <br></br>
