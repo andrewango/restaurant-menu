@@ -15,6 +15,7 @@ import "./OwnerLanding.css";
 // import background from "./background.jpg";
 // import manageUsers from "./manageUsers.jpg";
 
+<link rel="preload" as="image" href="./background.jpg"></link>;
 export default function OwnerLanding() {
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (

@@ -14,7 +14,7 @@ export default function Landing() {
                 style={{
                     padding: 10,
                     backgroundImage: `url(${background})`,
-                    backgroundSize: "120%",
+                    backgroundSize: "130%",
                     backgroundPosition: "center"
                 }}
             >
