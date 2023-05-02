@@ -193,7 +193,7 @@ export default function CheckoutList(): JSX.Element {
                     rowGap={3}
                 >
                     <Card
-                        h={window.innerHeight * 0.7}
+                        h={window.innerHeight * 0.83}
                         w={window.innerWidth * 0.4}
                         border="5px solid tomato"
                         textAlign="center"
