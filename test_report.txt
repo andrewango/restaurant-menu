@@ -81,7 +81,7 @@ All files              |   10.59 |     7.58 |   11.25 |   10.63 |
  src/components        |   12.64 |     8.85 |   13.13 |   12.76 |                   
   AddDeleteUsers.tsx   |       0 |        0 |       0 |       0 | 22-135            
   AddFoodUI.tsx        |       0 |        0 |       0 |       0 | 19-45             
-  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 24-216            
+  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 27-240            
   DeliveryDropDown.tsx |   66.66 |      100 |      50 |   66.66 | 49,75             
   EditFoodList.tsx     |       0 |        0 |       0 |       0 | 22-169            
   EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-41              
@@ -112,5 +112,5 @@ All files              |   10.59 |     7.58 |   11.25 |   10.63 |
 Test Suites: 2 failed, 3 passed, 5 total
 Tests:       1 failed, 22 passed, 23 total
 Snapshots:   0 total
-Time:        6.726 s
+Time:        7.227 s
 Ran all test suites.
