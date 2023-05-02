@@ -1,19 +1,23 @@
 {
   "files": {
-    "main.css": "/restaurant-menu/static/css/main.d5bd89b3.css",
-    "main.js": "/restaurant-menu/static/js/main.1424c741.js",
+    "main.css": "/restaurant-menu/static/css/main.8e116aba.css",
+    "main.js": "/restaurant-menu/static/js/main.4831aa0b.js",
     "static/js/787.578e6cb3.chunk.js": "/restaurant-menu/static/js/787.578e6cb3.chunk.js",
+    "static/media/manageUsers.jpg": "/restaurant-menu/static/media/manageUsers.96dcfb8d5114cc14eb1e.jpg",
+    "static/media/removeFood.jpg": "/restaurant-menu/static/media/removeFood.f3eee4247e8a2be17ed2.jpg",
     "static/media/background.jpg": "/restaurant-menu/static/media/background.448c295c375386737c6a.jpg",
     "static/media/restaurant-logo.png": "/restaurant-menu/static/media/restaurant-logo.b9b4c5de7b3683414fe4.png",
+    "static/media/addFood.jpg": "/restaurant-menu/static/media/addFood.ad09ed3ac58291d8076c.jpg",
     "static/media/AnandaBlack.ttf": "/restaurant-menu/static/media/AnandaBlack.eb04dce4c2b321e2ef0a.ttf",
+    "static/media/editFood.jpg": "/restaurant-menu/static/media/editFood.ed924356d186bc97007f.jpg",
     "static/media/ChopinScript.ttf": "/restaurant-menu/static/media/ChopinScript.294d294101e0ae84b924.ttf",
     "index.html": "/restaurant-menu/index.html",
-    "main.d5bd89b3.css.map": "/restaurant-menu/static/css/main.d5bd89b3.css.map",
-    "main.1424c741.js.map": "/restaurant-menu/static/js/main.1424c741.js.map",
+    "main.8e116aba.css.map": "/restaurant-menu/static/css/main.8e116aba.css.map",
+    "main.4831aa0b.js.map": "/restaurant-menu/static/js/main.4831aa0b.js.map",
     "787.578e6cb3.chunk.js.map": "/restaurant-menu/static/js/787.578e6cb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5bd89b3.css",
-    "static/js/main.1424c741.js"
+    "static/css/main.8e116aba.css",
+    "static/js/main.4831aa0b.js"
   ]
 }
