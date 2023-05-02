@@ -21,9 +21,17 @@ const Select = styled.select`
 
 // Constant values for Owner and Employee
 const ROLES: userProps[] = [
-    { name: "Owner", orderID: 0, order: [], role: "Owner" },
-    { name: "Employee", orderID: -1, order: [], role: "Employee" }
+    { name: "Owner", orderID: -1, order: [], role: "Owner" },
+    { name: "Employee", orderID: 0, order: [], role: "Employee" }
 ];
+
+const defaultCustomer: userProps = {
+    name: "Customer",
+    orderID: 1,
+    order: [],
+    role: "Customer"
+};
+sessionStorage.setItem("customers", JSON.stringify([defaultCustomer]));
 
 export function GetCurrentUser() {
     const user = sessionStorage.getItem("user");
