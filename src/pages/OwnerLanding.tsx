@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import "./OwnerLanding.css";
+import background from "./background.jpg";
 
 export default function OwnerLanding() {
     return (
@@ -73,6 +74,9 @@ export default function OwnerLanding() {
                     </Button>
                 </Grid>
             </Center>
+            <br></br>
+            <br></br>
+            <br></br>
         </div>
     );
 }

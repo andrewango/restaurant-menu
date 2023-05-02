@@ -1,6 +1,5 @@
 import React from "react";
-import { Heading, Text, Flex, Box, Spacer, Grid } from "@chakra-ui/react";
-import { SelectRole } from "../components/SelectRole";
+import { Heading, Text, Flex, Box, Grid } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
 import restaurantLogo from "./restaurant-logo.png";
@@ -47,8 +46,6 @@ export default function Landing() {
                             height="150px"
                         />
                     </Box>
-                    <Spacer></Spacer>
-                    <SelectRole></SelectRole>
                 </Flex>
                 <NavBar></NavBar>
                 <div>

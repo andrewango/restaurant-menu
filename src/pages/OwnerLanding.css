@@ -1,5 +1,5 @@
 .food {
-    background: url(./background.jpg);
+    background-image: url(./background.jpg);
     background-size: 300%;
     background-position: center;
     opacity: 0.9;
@@ -8,22 +8,22 @@
 }
 .food:hover {
     transform: scale(1.01);
-    background: url(background.jpg);
+    /* background-image: url(background.jpg); */
     background-size: 300%;
     background-position: center;
     opacity: 0.8;
 }
 
 .user {
-    background: url(manageUsers.jpg);
-    background-size: 300%;
+    background-image: url(manageUsers.jpg);
+    background-size: cover;
     background-position: center;
     opacity: 0.9;
     border-radius: 0.5cm;
 }
 .user:hover {
     transform: scale(1.01);
-    background: url(manageUsers.jpg);
+    /* background-image: url(manageUsers.jpg); */
     background-size: 300%;
     background-position: center;
     background-blend-mode: overlay;

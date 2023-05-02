@@ -27,28 +27,46 @@ function EditFood() {
                     {GetCurrentUser().role === "Employee" && (
                         <SelectRole></SelectRole>
                     )}
-                    <Button
-                        as={NavLink}
-                        to="/AddFood"
-                        colorScheme="red"
-                        size="md"
-                        variant="outline"
-                    >
-                        Add Food
-                    </Button>
-                    <Button
-                        as={NavLink}
-                        to="/RemoveFood"
-                        colorScheme="red"
-                        size="md"
-                        variant="outline"
-                    >
-                        Remove Food
-                    </Button>
+                    {GetCurrentUser().role === "Owner" && (
+                        <>
+                            <Button
+                                as={NavLink}
+                                to="/AddFood"
+                                colorScheme="red"
+                                size="md"
+                                variant="outline"
+                            >
+                                Add Food
+                            </Button>
+                            <Button
+                                as={NavLink}
+                                to="/RemoveFood"
+                                colorScheme="red"
+                                size="md"
+                                variant="outline"
+                            >
+                                Remove Food
+                            </Button>
+                        </>
+                    )}
                 </VStack>
             </Flex>
             <div>
-                <NavBar></NavBar>
+                {GetCurrentUser().role === "Employee" ? (
+                    <Box
+                        as="nav"
+                        display="flex"
+                        justifyContent="center"
+                        position="sticky"
+                        top={0}
+                        zIndex={99999999}
+                        py={7}
+                        bg="red.400"
+                        data-testid="bar"
+                    ></Box>
+                ) : (
+                    <NavBar></NavBar>
+                )}
             </div>
             <br></br>
             <div style={{ textAlign: "center" }}>

@@ -1,14 +1,7 @@
 import React from "react";
-import {
-    Text,
-    Grid,
-    Button,
-    Center,
-    Flex,
-    Heading,
-    Box
-} from "@chakra-ui/react";
+import { Text, Grid, Button, Center, Flex, Heading } from "@chakra-ui/react";
 import "./OwnerLanding.css";
+import NavBar from "../components/NavBar";
 
 export default function OwnerLanding() {
     return (
@@ -26,17 +19,7 @@ export default function OwnerLanding() {
                     Manage Foods
                 </Heading>
             </Flex>
-            <Box
-                as="nav"
-                display="flex"
-                justifyContent="center"
-                position="sticky"
-                top={0}
-                zIndex={99999999}
-                py={7}
-                bg="red.400"
-                data-testid="bar"
-            ></Box>
+            <NavBar></NavBar>
             <Center mt={window.innerHeight * 0.03}>
                 <Grid
                     templateColumns={"repeat(3, 1fr)"}
