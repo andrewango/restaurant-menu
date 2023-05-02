@@ -3,7 +3,24 @@
 > react-scripts test --coverage
 
 PASS src/components/RatingFeature.test.tsx
-PASS src/components/SelectRole.test.tsx
+FAIL src/components/SelectRole.test.tsx
+  ● SelectRole tests › There is initially 2 options
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 2
+    Received: 3
+
+      22 |         );
+      23 |         const options = screen.getByRole("combobox") as HTMLSelectElement;
+    > 24 |         expect(options.options.length).toEqual(2);
+         |                                        ^
+      25 |     });
+      26 |     test("SelectRole is initially Owner", () => {
+      27 |         render(
+
+      at Object.<anonymous> (src/components/SelectRole.test.tsx:24:40)
+
 PASS src/components/NavBar.test.tsx
 PASS src/components/DeliveryDropDown.test.tsx
 FAIL src/App.test.tsx
@@ -58,10 +75,10 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    9.65 |     7.14 |      10 |    9.66 |                   
+All files              |   10.59 |     7.58 |   11.25 |   10.63 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 13                
- src/components        |   11.53 |     8.33 |   11.67 |   11.62 |                   
+ src/components        |   12.64 |     8.85 |   13.13 |   12.76 |                   
   AddDeleteUsers.tsx   |       0 |        0 |       0 |       0 | 22-135            
   AddFoodUI.tsx        |       0 |        0 |       0 |       0 | 19-45             
   CheckoutList.tsx     |       0 |        0 |       0 |       0 | 24-216            
@@ -75,7 +92,7 @@ All files              |    9.65 |     7.14 |      10 |    9.66 |
   NavBar.tsx           |     100 |      100 |     100 |     100 |                   
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                
   SearchBar.tsx        |       0 |        0 |       0 |       0 | 9-227             
-  SelectRole.tsx       |   88.46 |     62.5 |      80 |      88 | 60,63,93          
+  SelectRole.tsx       |   96.42 |    68.75 |     100 |   96.29 | 71                
  src/interfaces        |       0 |        0 |       0 |       0 |                   
   CustomerList.ts      |       0 |        0 |       0 |       0 |                   
   EmployeeList.ts      |       0 |        0 |       0 |       0 |                   
@@ -92,8 +109,8 @@ All files              |    9.65 |     7.14 |      10 |    9.66 |
   Landing.tsx          |       0 |      100 |       0 |       0 | 11                
   RemoveFood.tsx       |       0 |        0 |       0 |       0 | 25-151            
 -----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 4 passed, 5 total
-Tests:       23 passed, 23 total
+Test Suites: 2 failed, 3 passed, 5 total
+Tests:       1 failed, 22 passed, 23 total
 Snapshots:   0 total
-Time:        6.918 s
+Time:        6.726 s
 Ran all test suites.
