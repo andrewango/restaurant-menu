@@ -202,8 +202,17 @@ export default function CheckoutList(): JSX.Element {
                             ref={removeDrop}
                             // backgroundColor={isOver ? "red" : ""}
                         >
-                            <Flex alignItems="center">
-                                <Heading fontWeight="bold" mr={2}>
+                            <Flex
+                                alignItems="center"
+                                justifyContent="space-between"
+                            >
+                                <Heading
+                                    fontWeight="bold"
+                                    mr={2}
+                                    flex={1}
+                                    textAlign="center"
+                                    ml="38"
+                                >
                                     Checkout
                                 </Heading>
                                 <FontAwesomeIcon
