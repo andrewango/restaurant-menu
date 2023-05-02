@@ -64,11 +64,9 @@ export default function CheckoutList(): JSX.Element {
             })
         }));
         return (
-            <div ref={removeDrop}>
-                <Text ref={drag} fontWeight="bold">
-                    {name}
-                </Text>
-            </div>
+            <Text ref={drag} fontWeight="bold">
+                {name}
+            </Text>
         );
     }
 
@@ -80,7 +78,7 @@ export default function CheckoutList(): JSX.Element {
         })
     }));
 
-    const [, removeDrop] = useDrop(() => ({
+    const [{ isOver }, removeDrop] = useDrop(() => ({
         accept: "removeItem",
         drop: (item: foodProps) => {
             removeFoodFromCheckoutList(item.name);
@@ -204,9 +202,22 @@ export default function CheckoutList(): JSX.Element {
                             ref={removeDrop}
                             // backgroundColor={isOver ? "red" : ""}
                         >
-                            <Heading fontWeight="bold" mr={2}>
-                                Checkout
-                            </Heading>
+                            <Flex alignItems="center">
+                                <Heading fontWeight="bold" mr={2}>
+                                    Checkout
+                                </Heading>
+                                <FontAwesomeIcon
+                                    icon={faTrash}
+                                    size="3x"
+                                    style={{
+                                        color: isOver ? "red" : "",
+                                        border: "1px solid black",
+                                        borderRadius: "50px",
+                                        padding: "7px",
+                                        boxSizing: "border-box"
+                                    }}
+                                />
+                            </Flex>
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody
@@ -226,19 +237,6 @@ export default function CheckoutList(): JSX.Element {
                             </VStack>
                             <DeliveryDropDown></DeliveryDropDown>
                         </CardBody>
-                        <Flex justifyContent="flex-end" padding={"10px"}>
-                            <FontAwesomeIcon
-                                icon={faTrash}
-                                size="3x"
-                                style={{
-                                    // color: isOver ? "red" : "",
-                                    border: "1px solid black",
-                                    borderRadius: "50px",
-                                    padding: "7px",
-                                    boxSizing: "border-box"
-                                }}
-                            />
-                        </Flex>
                     </Card>
                 </Grid>
             </VStack>
