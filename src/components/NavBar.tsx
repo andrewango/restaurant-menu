@@ -84,7 +84,7 @@ export default function NavBar() {
                         </Box>
                     </Link>
                     {location.hash === "#/EditUsers" && (
-                        <Link to="/EditFood">
+                        <Link to="/ManageFoods">
                             <Box
                                 as="span"
                                 fontSize="lg"
