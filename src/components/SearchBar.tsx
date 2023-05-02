@@ -13,6 +13,9 @@ export function SearchBar(): JSX.Element {
     const [popular, setPopular] = useState<boolean>(false);
     const [high, setHigh] = useState<boolean>(false);
     const [low, setLow] = useState<boolean>(false);
+    const [appetizer, setAppetizer] = useState<boolean>(false);
+    const [entree, setEntree] = useState<boolean>(false);
+    const [dessert, setDessert] = useState<boolean>(false);
 
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
@@ -24,11 +27,11 @@ export function SearchBar(): JSX.Element {
 
     useEffect(() => {
         setListHelper(text);
-    }, [spicy, popular, high, low]);
+    }, [spicy, popular, high, low, appetizer, entree, dessert]);
 
     function checkPrice(foods: foodProps[]) {
         if (!high && !low) {
-            return foods;
+            return checkFoodType(foods);
         }
         const sortedFoods = [...foods].sort((a, b) => {
             if (high) {
@@ -38,48 +41,79 @@ export function SearchBar(): JSX.Element {
             }
             return 0;
         });
-        return sortedFoods;
+        return checkFoodType(sortedFoods);
+    }
+    function checkFoodType(foods: foodProps[]) {
+        if (!appetizer && !entree && !dessert) {
+            return foods;
+        }
+        const resorted = [...foods].filter((x: foodProps): boolean => {
+            const isAppetizer = appetizer && x.type.includes("Appetizer");
+            const isEntree = entree && x.type.includes("Entree");
+            const isDessert = dessert && x.type.includes("Dessert");
+
+            return isAppetizer || isEntree || isDessert;
+        });
+
+        return resorted;
     }
 
     function setListHelper(text: string) {
         if (text === "" && !spicy && !popular) {
             setList(checkPrice(foods));
         } else {
+            text = text.toLowerCase();
             console.log(foods);
             setList(
                 checkPrice(
                     foods.filter((x: foodProps): boolean => {
+                        const name = x.name.toLowerCase();
+                        const desc = x.desc.toLowerCase();
+                        const ingredients = x.ingredients.map((x) =>
+                            x.toLowerCase()
+                        );
+                        const type = x.type.map((y) => y.toLowerCase());
                         if (spicy && popular) {
                             return (
-                                (x.name.includes(text) ||
-                                    x.desc.includes(text) ||
-                                    x.ingredients.includes(text) ||
-                                    x.type.includes(text)) &&
+                                (name.includes(text) ||
+                                    desc.includes(text) ||
+                                    ingredients.find((z) =>
+                                        z.includes(text)
+                                    ) !== undefined ||
+                                    type.find((z) => z.includes(text)) !==
+                                        undefined) &&
                                 x.spicy === true &&
                                 x.popular === true
                             );
                         } else if (spicy) {
                             return (
-                                (x.name.includes(text) ||
-                                    x.desc.includes(text) ||
-                                    x.ingredients.includes(text) ||
-                                    x.type.includes(text)) &&
+                                (name.includes(text) ||
+                                    desc.includes(text) ||
+                                    ingredients.find((z) =>
+                                        z.includes(text)
+                                    ) !== undefined ||
+                                    type.find((z) => z.includes(text)) !==
+                                        undefined) &&
                                 x.spicy === true
                             );
                         } else if (popular) {
                             return (
-                                (x.name.includes(text) ||
-                                    x.desc.includes(text) ||
-                                    x.ingredients.includes(text) ||
-                                    x.type.includes(text)) &&
+                                (name.includes(text) ||
+                                    desc.includes(text) ||
+                                    ingredients.find((z) =>
+                                        z.includes(text)
+                                    ) !== undefined ||
+                                    type.find((z) => z.includes(text)) !==
+                                        undefined) &&
                                 x.popular === true
                             );
                         } else {
                             return (
-                                x.name.includes(text) ||
-                                x.desc.includes(text) ||
-                                x.ingredients.includes(text) ||
-                                x.type.includes(text)
+                                name.includes(text) ||
+                                desc.includes(text) ||
+                                ingredients.find((z) => z.includes(text)) !==
+                                    undefined ||
+                                type.find((z) => z.includes(text)) !== undefined
                             );
                         }
                     })
@@ -156,6 +190,45 @@ export function SearchBar(): JSX.Element {
                     colorScheme="white"
                 >
                     Sort Price: Low to High
+                </Checkbox>
+                <Checkbox
+                    style={{ color: "white" }}
+                    type="checkbox"
+                    id="is-appetizer-check"
+                    checked={appetizer}
+                    onChange={() => {
+                        setAppetizer(!appetizer);
+                        setListHelper(text);
+                    }}
+                    colorScheme="white"
+                >
+                    Appetizers
+                </Checkbox>
+                <Checkbox
+                    style={{ color: "white" }}
+                    type="checkbox"
+                    id="is-entree-check"
+                    checked={entree}
+                    onChange={() => {
+                        setEntree(!entree);
+                        setListHelper(text);
+                    }}
+                    colorScheme="white"
+                >
+                    Entree
+                </Checkbox>
+                <Checkbox
+                    style={{ color: "white" }}
+                    type="checkbox"
+                    id="is-dessert-check"
+                    checked={dessert}
+                    onChange={() => {
+                        setDessert(!dessert);
+                        setListHelper(text);
+                    }}
+                    colorScheme="white"
+                >
+                    Dessert
                 </Checkbox>
             </Stack>
 

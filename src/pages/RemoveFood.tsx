@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import {
     Heading,
     VStack,
-    Stack,
-    Spacer,
     Flex,
     Container,
     Grid,
@@ -78,47 +76,6 @@ export default function RemoveFood() {
     console.log(screenSize());
     return (
         <div style={{ padding: 10 }}>
-            <Flex wrap="wrap">
-                <Heading
-                    display="flex"
-                    justifyContent="center"
-                    mt={8}
-                    px={10}
-                    fontSize="50px"
-                    fontWeight="bold"
-                    textAlign="center"
-                >
-                    edit foods
-                </Heading>
-                <Spacer></Spacer>
-                <Stack
-                    px={10}
-                    py={3}
-                    mb={5}
-                    spacing={6}
-                    direction="column"
-                    textAlign="center"
-                >
-                    <Button
-                        as={NavLink}
-                        to="/EditFood"
-                        colorScheme="red"
-                        size="md"
-                        variant="solid"
-                    >
-                        edit foods
-                    </Button>
-                    <Button
-                        as={NavLink}
-                        to="/EditUsers"
-                        colorScheme="red"
-                        size="md"
-                        variant="outline"
-                    >
-                        edit users
-                    </Button>
-                </Stack>
-            </Flex>
             <div>
                 <NavBar></NavBar>
             </div>

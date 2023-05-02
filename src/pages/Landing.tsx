@@ -1,11 +1,10 @@
 import React from "react";
-import { Heading, Text, Flex, Box, Spacer } from "@chakra-ui/react";
+import { Heading, Text, Flex, Box, Spacer, Grid } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
 import restaurantLogo from "./restaurant-logo.png";
 import CheckoutList from "../components/CheckoutList";
-import { DeliveryDropDown } from "../components/DeliveryDropDown";
 import background from "./background.jpg";
 
 export default function Landing() {
@@ -58,20 +57,27 @@ export default function Landing() {
                         as="h2"
                         display="flex"
                         justifyContent="center"
-                        py={5}
                         fontSize="40px"
                     >
                         our menu
                     </Heading>
+                    <Text
+                        color="white"
+                        display="flex"
+                        justifyContent="center"
+                        py={2}
+                        fontSize="20px"
+                    >
+                        open 12-9 pm
+                    </Text>
                 </div>
                 <Flex>
                     <Box flex="1" p="4" ml="100px">
                         <SearchBar></SearchBar>
                     </Box>
-                    <Box flex="1" p="4" mt="35px" ml="100px">
+                    <Grid flex="1" p="4" mt="35px" ml="100px">
                         <CheckoutList></CheckoutList>
-                        <DeliveryDropDown></DeliveryDropDown>
-                    </Box>
+                    </Grid>
                 </Flex>
                 <br></br>
                 <br></br>
