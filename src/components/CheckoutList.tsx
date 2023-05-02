@@ -202,19 +202,9 @@ export default function CheckoutList(): JSX.Element {
                             ref={removeDrop}
                             // backgroundColor={isOver ? "red" : ""}
                         >
-                            <Flex alignItems="center">
-                                <Heading fontWeight="bold" mr={2}>
-                                    Checkout
-                                </Heading>
-                                <FontAwesomeIcon
-                                    icon={faTrash}
-                                    size="2x"
-                                    style={{
-                                        color: isOver ? "red" : "",
-                                        borderRadius: "5px"
-                                    }}
-                                />
-                            </Flex>
+                            <Heading fontWeight="bold" mr={2}>
+                                Checkout
+                            </Heading>
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody
@@ -234,6 +224,19 @@ export default function CheckoutList(): JSX.Element {
                             </VStack>
                             <DeliveryDropDown></DeliveryDropDown>
                         </CardBody>
+                        <Flex justifyContent="flex-end" padding={"10px"}>
+                            <FontAwesomeIcon
+                                icon={faTrash}
+                                size="3x"
+                                style={{
+                                    color: isOver ? "red" : "",
+                                    border: "1px solid black",
+                                    borderRadius: "50px",
+                                    padding: "7px",
+                                    boxSizing: "border-box"
+                                }}
+                            />
+                        </Flex>
                     </Card>
                 </Grid>
             </VStack>
