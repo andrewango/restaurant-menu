@@ -200,13 +200,20 @@ export default function CheckoutList(): JSX.Element {
                     >
                         <CardHeader
                             ref={removeDrop}
-                            backgroundColor={isOver ? "red" : ""}
+                            // backgroundColor={isOver ? "red" : ""}
                         >
                             <Flex alignItems="center">
                                 <Heading fontWeight="bold" mr={2}>
                                     Checkout
                                 </Heading>
-                                <FontAwesomeIcon icon={faTrash} size="2x" />
+                                <FontAwesomeIcon
+                                    icon={faTrash}
+                                    size="2x"
+                                    style={{
+                                        color: isOver ? "red" : "",
+                                        borderRadius: "5px"
+                                    }}
+                                />
                             </Flex>
                         </CardHeader>
                         <Divider></Divider>
