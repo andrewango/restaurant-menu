@@ -64,9 +64,11 @@ export default function CheckoutList(): JSX.Element {
             })
         }));
         return (
-            <Text ref={drag} fontWeight="bold">
-                {name}
-            </Text>
+            <div ref={removeDrop}>
+                <Text ref={drag} fontWeight="bold">
+                    {name}
+                </Text>
+            </div>
         );
     }
 
@@ -78,7 +80,7 @@ export default function CheckoutList(): JSX.Element {
         })
     }));
 
-    const [{ isOver }, removeDrop] = useDrop(() => ({
+    const [, removeDrop] = useDrop(() => ({
         accept: "removeItem",
         drop: (item: foodProps) => {
             removeFoodFromCheckoutList(item.name);
@@ -229,7 +231,7 @@ export default function CheckoutList(): JSX.Element {
                                 icon={faTrash}
                                 size="3x"
                                 style={{
-                                    color: isOver ? "red" : "",
+                                    // color: isOver ? "red" : "",
                                     border: "1px solid black",
                                     borderRadius: "50px",
                                     padding: "7px",
