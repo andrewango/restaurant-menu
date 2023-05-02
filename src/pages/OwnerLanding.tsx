@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import "./OwnerLanding.css";
-import background from "./background.jpg";
+//import background from "./background.jpg";
 
 export default function OwnerLanding() {
     return (
