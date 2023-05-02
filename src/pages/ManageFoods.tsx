@@ -25,7 +25,7 @@ export default function OwnerLanding() {
                     fontWeight="bold"
                     textAlign="center"
                 >
-                    Manage Foods
+                    Manage Food
                 </Heading>
             </Flex>
             <NavBar></NavBar>

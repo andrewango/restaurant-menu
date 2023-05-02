@@ -101,7 +101,7 @@ export default function AddFood() {
                     fontWeight="bold"
                     textAlign="center"
                 >
-                    add foods
+                    Add Food
                 </Heading>
                 <Spacer></Spacer>
                 <VStack mb="10px">

@@ -66,7 +66,7 @@ export default function AddDeleteUsers(): JSX.Element {
                     fontWeight="bold"
                     textAlign="center"
                 >
-                    edit users
+                    Manage User
                 </Heading>
             </Flex>
             <div>
