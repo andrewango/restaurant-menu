@@ -49,14 +49,14 @@ export default function OwnerLanding() {
             <Center mt={10}>
                 <Grid
                     templateColumns={
-                        isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(2, 1fr)"
+                        isLargerThan2000 ? "repeat(3, 1fr)" : "repeat(3, 1fr)"
                     }
-                    columnGap={window.innerWidth * 0.05}
+                    columnGap={window.innerWidth * 0.03}
                 >
                     <Button
                         className="food"
                         //backgroundImage={background}
-                        w={window.innerWidth * 0.4}
+                        w={window.innerWidth * 0.25}
                         h={window.innerHeight * 0.8}
                         onClick={() => (location.hash = "/ManageFoods")}
                     >
@@ -71,12 +71,23 @@ export default function OwnerLanding() {
                     <Button
                         className="user"
                         //backgroundImage={manageUsers}
-                        w={window.innerWidth * 0.4}
+                        w={window.innerWidth * 0.25}
                         h={window.innerHeight * 0.8}
                         onClick={() => (location.hash = "/EditUsers")}
                     >
                         <Text className="text" font-weight="bold">
                             Manage User
+                        </Text>
+                    </Button>
+                    <Button
+                        className="stats"
+                        //backgroundImage={manageUsers}
+                        w={window.innerWidth * 0.25}
+                        h={window.innerHeight * 0.8}
+                        onClick={() => (location.hash = "/UserStats")}
+                    >
+                        <Text className="text" font-weight="bold">
+                            View Stats
                         </Text>
                     </Button>
                 </Grid>
