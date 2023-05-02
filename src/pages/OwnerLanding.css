@@ -1,32 +1,68 @@
 .food {
-    background-image: url(./background.jpg);
-    background-size: 300%;
-    background-position: center;
+    background: url("./background.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
     opacity: 0.9;
     text-align: center;
-    border-radius: 0.5cm;
+    border-radius: 0.5cm !important;
 }
 .food:hover {
     transform: scale(1.01);
-    /* background-image: url(background.jpg); */
-    background-size: 300%;
+    background-size: cover;
     background-position: center;
     opacity: 0.8;
 }
 
 .user {
-    background-image: url(manageUsers.jpg);
-    background-size: cover;
-    background-position: center;
+    background-image: url("./manageUsers.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
     opacity: 0.9;
-    border-radius: 0.5cm;
+    border-radius: 0.5cm !important;
 }
 .user:hover {
     transform: scale(1.01);
-    /* background-image: url(manageUsers.jpg); */
-    background-size: 300%;
+    background-size: cover;
     background-position: center;
-    background-blend-mode: overlay;
+    opacity: 0.8;
+}
+.add {
+    background-image: url("./addFood.jpg") !important;
+    background-size: cover !important;
+    background-position: 45% !important;
+    opacity: 0.9;
+    border-radius: 0.5cm !important;
+}
+.add:hover {
+    transform: scale(1.01);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+.edit {
+    background-image: url("./editFood.jpg") !important;
+    background-size: cover !important;
+    background-position: 40% !important;
+    opacity: 0.9;
+    border-radius: 0.5cm !important;
+}
+.edit:hover {
+    transform: scale(1.01);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+.remove {
+    background-image: url("./removeFood.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    opacity: 0.9;
+    border-radius: 0.5cm !important;
+}
+.remove:hover {
+    transform: scale(1.01);
+    background-size: cover;
+    background-position: center;
     opacity: 0.8;
 }
 

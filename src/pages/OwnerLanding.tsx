@@ -7,15 +7,18 @@ import {
     Flex,
     Heading,
     Spacer,
-    Box
+    Box,
+    useMediaQuery
 } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import "./OwnerLanding.css";
-//import background from "./background.jpg";
+// import background from "./background.jpg";
+// import manageUsers from "./manageUsers.jpg";
 
 export default function OwnerLanding() {
+    const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (
-        <div>
+        <div style={{ padding: 10 }}>
             <Flex wrap="wrap" textAlign="center" px={5} py={2}>
                 <Heading
                     display="flex"
@@ -42,9 +45,11 @@ export default function OwnerLanding() {
                 bg="red.400"
                 data-testid="bar"
             ></Box>
-            <Center mt={window.innerHeight * 0.03}>
+            <Center mt={10}>
                 <Grid
-                    templateColumns={"repeat(2, 1fr)"}
+                    templateColumns={
+                        isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(2, 1fr)"
+                    }
                     columnGap={window.innerWidth * 0.05}
                 >
                     <Button
@@ -64,6 +69,7 @@ export default function OwnerLanding() {
                     </Button>
                     <Button
                         className="user"
+                        //backgroundImage={manageUsers}
                         w={window.innerWidth * 0.4}
                         h={window.innerHeight * 0.8}
                         onClick={() => (location.hash = "/EditUsers")}

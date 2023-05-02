@@ -18,29 +18,25 @@ const Select = styled.select`
 
 // Constant values for Owner and Employee
 const ROLES: userProps[] = [
-    {
-        name: "Customer",
-        orderID: 1,
-        order: [],
-        role: "Customer"
-    },
     { name: "Owner", orderID: -1, order: [], role: "Owner" },
     { name: "Employee", orderID: 0, order: [], role: "Employee" }
 ];
 
-// const defaultCustomer: userProps = {
-//     name: "Customer",
-//     orderID: 1,
-//     order: [],
-//     role: "Customer"
-// };
-// sessionStorage.setItem("customers", JSON.stringify([defaultCustomer]));
+const defaultCustomer: userProps = {
+    name: "Customer",
+    orderID: 1,
+    order: [],
+    role: "Customer"
+};
+sessionStorage.setItem("customers", JSON.stringify([defaultCustomer]));
 
 export function GetCurrentUser() {
     const user = sessionStorage.getItem("user");
     const userToParse =
-        user !== null && user !== undefined ? user : JSON.stringify(ROLES[0]);
-    return userToParse ? JSON.parse(userToParse) : ROLES[0];
+        user !== null && user !== undefined
+            ? user
+            : JSON.stringify(defaultCustomer);
+    return userToParse ? JSON.parse(userToParse) : defaultCustomer;
 }
 
 // Get our list of customers from EDIT USERS page

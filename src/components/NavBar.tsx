@@ -100,28 +100,29 @@ export default function NavBar() {
                             </Box>
                         </Link>
                     )}
-                    {location.hash === "#/EditFood" ||
+                    {(location.hash === "#/EditFood" ||
                         location.hash === "#/AddFood" ||
-                        (location.hash === "#/RemoveFood" && (
-                            <Link to="/EditUsers">
-                                <Box
-                                    as="span"
-                                    fontSize="lg"
-                                    fontWeight="bold"
-                                    color="white"
-                                    px={4}
-                                    py={2}
-                                    transition="background-color 0.3s ease"
-                                    _hover={{
-                                        bgColor: "red.600",
-                                        color: "white"
-                                    }}
-                                    borderRadius="md"
-                                >
-                                    edit users
-                                </Box>
-                            </Link>
-                        ))}
+                        location.hash === "#/RemoveFood" ||
+                        location.hash === "#/ManageFoods") && (
+                        <Link to="/EditUsers">
+                            <Box
+                                as="span"
+                                fontSize="lg"
+                                fontWeight="bold"
+                                color="white"
+                                px={4}
+                                py={2}
+                                transition="background-color 0.3s ease"
+                                _hover={{
+                                    bgColor: "red.600",
+                                    color: "white"
+                                }}
+                                borderRadius="md"
+                            >
+                                edit users
+                            </Box>
+                        </Link>
+                    )}
                     {console.log("path: " + location.hash)}
                 </>
             )}
