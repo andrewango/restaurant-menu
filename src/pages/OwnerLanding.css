@@ -71,3 +71,12 @@
     font-size: 50px;
     font-weight: bold;
 }
+
+.stats {
+    background: url("./graph.jpeg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 0.5cm !important;
+}
