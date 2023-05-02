@@ -1,15 +1,15 @@
 import React from "react";
-import { Heading, Flex, Divider, Box } from "@chakra-ui/react";
+import { Heading, Flex, Box, Spacer, VStack } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 import EditFoodList from "../components/EditFoodList";
 import { EditFoodMenu } from "../components/EditFoodMenu";
-import { GetCurrentUser } from "../components/SelectRole";
+import { GetCurrentUser, SelectRole } from "../components/SelectRole";
 
 function EditFood() {
     return (
-        <>
+        <div style={{ padding: 10 }}>
             <Flex wrap="wrap">
                 <Heading
                     display="flex"
@@ -22,45 +22,36 @@ function EditFood() {
                 >
                     edit foods
                 </Heading>
+                <Spacer></Spacer>
+                <VStack mb="10px">
+                    {GetCurrentUser().role === "Employee" && (
+                        <SelectRole></SelectRole>
+                    )}
+                    <Button
+                        as={NavLink}
+                        to="/AddFood"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        Add Food
+                    </Button>
+                    <Button
+                        as={NavLink}
+                        to="/RemoveFood"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        Remove Food
+                    </Button>
+                </VStack>
             </Flex>
             <div>
                 <NavBar></NavBar>
             </div>
+            <br></br>
             <div style={{ textAlign: "center" }}>
-                <div className="container">
-                    <br></br>
-                    <br></br>
-                    <form>
-                        {(GetCurrentUser().role === "Owner" ||
-                            GetCurrentUser().role === null) && (
-                            <div>
-                                <Button
-                                    as={NavLink}
-                                    to="/AddFood"
-                                    colorScheme="red"
-                                    size="md"
-                                    variant="outline"
-                                >
-                                    Add New Food
-                                </Button>
-                                <br></br>
-                                <br></br>
-                                <Button
-                                    as={NavLink}
-                                    to="/RemoveFood"
-                                    colorScheme="red"
-                                    size="md"
-                                    variant="outline"
-                                >
-                                    Remove Food
-                                </Button>
-                                <br></br>
-                                <br></br>
-                            </div>
-                        )}
-                    </form>
-                </div>
-                <Divider></Divider>
                 <Flex>
                     <Box flex="1" p="4" ml="100px">
                         <EditFoodMenu></EditFoodMenu>
@@ -70,7 +61,7 @@ function EditFood() {
                     </Box>
                 </Flex>
             </div>
-        </>
+        </div>
     );
 }
 

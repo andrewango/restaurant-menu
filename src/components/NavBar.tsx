@@ -31,40 +31,25 @@ export default function NavBar() {
             bg="red.400"
             data-testid="bar"
         >
-            <Link to="/">
-                <Box
-                    as="span"
-                    fontSize="lg"
-                    fontWeight="bold"
-                    color="white"
-                    px={4}
-                    py={2}
-                    transition="background-color 0.3s ease"
-                    _hover={{ bgColor: "red.600", color: "white" }}
-                    borderRadius="md"
-                    mr={4}
-                >
-                    menu
-                </Box>
-            </Link>
-            <Link to="/AboutUs">
-                <Box
-                    as="span"
-                    fontSize="lg"
-                    fontWeight="bold"
-                    color="white"
-                    px={4}
-                    py={2}
-                    transition="background-color 0.3s ease"
-                    _hover={{ bgColor: "red.600", color: "white" }}
-                    borderRadius="md"
-                >
-                    about us
-                </Box>
-            </Link>
-            {(currentUser.role === "Owner" || currentUser === null) && (
+            {currentUser.role === "Customer" && (
                 <>
-                    <Link to="/EditFood">
+                    <Link to="/">
+                        <Box
+                            as="span"
+                            fontSize="lg"
+                            fontWeight="bold"
+                            color="white"
+                            px={4}
+                            py={2}
+                            transition="background-color 0.3s ease"
+                            _hover={{ bgColor: "red.600", color: "white" }}
+                            borderRadius="md"
+                            mr={4}
+                        >
+                            menu
+                        </Box>
+                    </Link>
+                    <Link to="/AboutUs">
                         <Box
                             as="span"
                             fontSize="lg"
@@ -76,10 +61,14 @@ export default function NavBar() {
                             _hover={{ bgColor: "red.600", color: "white" }}
                             borderRadius="md"
                         >
-                            edit food
+                            about us
                         </Box>
                     </Link>
-                    <Link to="/EditUsers">
+                </>
+            )}
+            {currentUser.role === "Owner" && (
+                <>
+                    <Link to="/OwnerLanding">
                         <Box
                             as="span"
                             fontSize="lg"
@@ -91,9 +80,43 @@ export default function NavBar() {
                             _hover={{ bgColor: "red.600", color: "white" }}
                             borderRadius="md"
                         >
-                            edit users
+                            main
                         </Box>
                     </Link>
+                    {location.hash === "#/EditUsers" ? (
+                        <Link to="/EditFood">
+                            <Box
+                                as="span"
+                                fontSize="lg"
+                                fontWeight="bold"
+                                color="white"
+                                px={4}
+                                py={2}
+                                transition="background-color 0.3s ease"
+                                _hover={{ bgColor: "red.600", color: "white" }}
+                                borderRadius="md"
+                            >
+                                edit food
+                            </Box>
+                        </Link>
+                    ) : (
+                        <Link to="/EditUsers">
+                            <Box
+                                as="span"
+                                fontSize="lg"
+                                fontWeight="bold"
+                                color="white"
+                                px={4}
+                                py={2}
+                                transition="background-color 0.3s ease"
+                                _hover={{ bgColor: "red.600", color: "white" }}
+                                borderRadius="md"
+                            >
+                                edit users
+                            </Box>
+                        </Link>
+                    )}
+                    {console.log("path: " + location.hash)}
                 </>
             )}
             {currentUser.role === "Employee" && (

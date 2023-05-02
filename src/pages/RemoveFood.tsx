@@ -12,7 +12,8 @@ import {
     AccordionItem,
     AccordionButton,
     AccordionIcon,
-    AccordionPanel
+    AccordionPanel,
+    Spacer
 } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
@@ -76,6 +77,40 @@ export default function RemoveFood() {
     console.log(screenSize());
     return (
         <div style={{ padding: 10 }}>
+            <Flex wrap="wrap">
+                <Heading
+                    display="flex"
+                    justifyContent="center"
+                    mt={8}
+                    px={10}
+                    fontSize="50px"
+                    fontWeight="bold"
+                    textAlign="center"
+                >
+                    remove foods
+                </Heading>
+                <Spacer></Spacer>
+                <VStack mb="10px">
+                    <Button
+                        as={NavLink}
+                        to="/AddFood"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        Add Food
+                    </Button>
+                    <Button
+                        as={NavLink}
+                        to="/EditFood"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        Edit Food
+                    </Button>
+                </VStack>
+            </Flex>
             <div>
                 <NavBar></NavBar>
             </div>
@@ -89,25 +124,15 @@ export default function RemoveFood() {
                         alignItems="center"
                     >
                         Menu
-                        <Button
-                            as={NavLink}
-                            to="/AddFood"
-                            colorScheme="red"
-                            size="md"
-                            variant="outline"
-                            float="right"
-                        >
-                            Add New Food
-                        </Button>
                     </Heading>
-                    <VStack spacing="3px" mt={50} alignItems="center" ml={10}>
-                        <Grid templateColumns={screenSize()} rowGap={3}>
+                    <VStack spacing="3px" mt={30} alignItems="center" ml={10}>
+                        <Grid templateColumns={screenSize()} gap={4}>
                             {MenuList().map((food: foodProps) => {
                                 return (
                                     <Flex
                                         key={food.name}
                                         align="center"
-                                        w="90%"
+                                        w="100%"
                                         borderWidth={2}
                                         borderColor="black"
                                         borderRadius="md"
@@ -127,12 +152,12 @@ export default function RemoveFood() {
                                                             borderRadius="full"
                                                             boxSize="100px"
                                                             objectFit="cover"
-                                                            mr={2}
+                                                            //mr={2}
                                                             ml={2}
                                                         />
                                                         <Box
                                                             key={food.name}
-                                                            w={300}
+                                                            w={220}
                                                             textAlign="center"
                                                             p={5}
                                                             alignItems="center"

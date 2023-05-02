@@ -48,6 +48,7 @@ export function SelectRole(): JSX.Element {
         setUserRole(userRole);
         sessionStorage.setItem("user", JSON.stringify(userRole));
         if (GetCurrentUser().role === "Customer") {
+            location.hash = "/";
             sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
             // Manually dispatches an event after we updated "checkout" key for event listeners to fetch
             window.dispatchEvent(new Event("checkoutUpdated"));

@@ -1,0 +1,37 @@
+.food {
+    background: url(./background.jpg);
+    background-size: 300%;
+    background-position: center;
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 0.5cm;
+}
+.food:hover {
+    transform: scale(1.01);
+    background: url(background.jpg);
+    background-size: 300%;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.user {
+    background: url(manageUsers.jpg);
+    background-size: 300%;
+    background-position: center;
+    opacity: 0.9;
+    border-radius: 0.5cm;
+}
+.user:hover {
+    transform: scale(1.01);
+    background: url(manageUsers.jpg);
+    background-size: 300%;
+    background-position: center;
+    background-blend-mode: overlay;
+    opacity: 0.8;
+}
+
+.text {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}

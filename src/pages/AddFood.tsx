@@ -7,7 +7,10 @@ import {
     Grid,
     GridItem,
     SimpleGrid,
-    Box
+    Box,
+    Flex,
+    Spacer,
+    VStack
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
 import foodList from "../data/foods.json";
@@ -88,6 +91,40 @@ export default function AddFood() {
 
     return (
         <div style={{ padding: 10 }}>
+            <Flex wrap="wrap">
+                <Heading
+                    display="flex"
+                    justifyContent="center"
+                    mt={8}
+                    px={10}
+                    fontSize="50px"
+                    fontWeight="bold"
+                    textAlign="center"
+                >
+                    add foods
+                </Heading>
+                <Spacer></Spacer>
+                <VStack mb="10px">
+                    <Button
+                        as={NavLink}
+                        to="/EditFood"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        Edit Food
+                    </Button>
+                    <Button
+                        as={NavLink}
+                        to="/RemoveFood"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        Remove Food
+                    </Button>
+                </VStack>
+            </Flex>
             <div>
                 <NavBar></NavBar>
             </div>
@@ -102,7 +139,7 @@ export default function AddFood() {
                             spacing={20}
                             alignItems="flex-start"
                         >
-                            <Heading size="2xl">Add New Food</Heading>
+                            <Heading size="2xl">New Food</Heading>
                             <form onSubmit={handleSubmit}>
                                 <SimpleGrid
                                     columns={4}
@@ -260,16 +297,6 @@ export default function AddFood() {
                             alignItems="flex-start"
                         >
                             Menu
-                            <Button
-                                as={NavLink}
-                                to="/RemoveFood"
-                                colorScheme="red"
-                                size="md"
-                                variant="outline"
-                                float="right"
-                            >
-                                Remove Food
-                            </Button>
                         </Heading>
                         <AddFoodUI></AddFoodUI>
                     </GridItem>
