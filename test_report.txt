@@ -169,7 +169,7 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    7.38 |     4.56 |    7.18 |    7.57 |                   
+All files              |    7.36 |     4.56 |    7.18 |    7.56 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 15                
  src/components        |    8.98 |     5.44 |    8.75 |    9.28 |                   
@@ -202,11 +202,11 @@ All files              |    7.38 |     4.56 |    7.18 |    7.57 |
   EditUsers.tsx        |       0 |      100 |       0 |       0 | 5                 
   Landing.tsx          |       0 |      100 |       0 |       0 | 11                
   ManageFoods.tsx      |       0 |        0 |       0 |       0 | 15-68             
-  OwnerLanding.tsx     |       0 |        0 |       0 |       0 | 19-75             
+  OwnerLanding.tsx     |       0 |        0 |       0 |       0 | 18-76             
   RemoveFood.tsx       |       0 |        0 |       0 |       0 | 26-176            
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 3 failed, 2 passed, 5 total
 Tests:       3 failed, 20 passed, 23 total
 Snapshots:   0 total
-Time:        9.252 s
+Time:        9.772 s
 Ran all test suites.
