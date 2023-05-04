@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { foodProps } from "../interfaces/Food";
 import ItemListUI from "./ItemListUI";
-import { Checkbox, HStack, Stack, Tag } from "@chakra-ui/react";
+import { Checkbox, HStack } from "@chakra-ui/react";
 import { MenuList } from "../pages/AddFood";
 
 export function SearchBar(): JSX.Element {
