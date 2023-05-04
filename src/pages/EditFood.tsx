@@ -36,16 +36,16 @@ function EditFood() {
                                 size="md"
                                 variant="outline"
                             >
-                                Add Food
+                                Add / Remove
                             </Button>
                             <Button
                                 as={NavLink}
-                                to="/RemoveFood"
+                                to="/UserStats"
                                 colorScheme="red"
                                 size="md"
                                 variant="outline"
                             >
-                                Remove Food
+                                View Stats
                             </Button>
                         </>
                     )}
