@@ -87,7 +87,7 @@ export default function RemoveFood() {
                     fontWeight="bold"
                     textAlign="center"
                 >
-                    remove foods
+                    Remove Food
                 </Heading>
                 <Spacer></Spacer>
                 <VStack mb="10px">

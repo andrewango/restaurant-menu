@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { foodProps } from "../interfaces/Food";
 import ItemListUI from "./ItemListUI";
-import { Checkbox, Stack } from "@chakra-ui/react";
+import { Checkbox, HStack, Stack, Tag } from "@chakra-ui/react";
 import { MenuList } from "../pages/AddFood";
 
 export function SearchBar(): JSX.Element {
@@ -136,7 +136,7 @@ export function SearchBar(): JSX.Element {
                     }}
                 />
             </Form.Group>
-            <Stack pl={6} mt={1} spacing={1}>
+            <HStack pl={6} mt={1} spacing={5}>
                 <Checkbox
                     style={{ color: "white" }}
                     type="checkbox"
@@ -162,34 +162,6 @@ export function SearchBar(): JSX.Element {
                     colorScheme="white"
                 >
                     Popular
-                </Checkbox>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-high2low-check"
-                    checked={high}
-                    onChange={() => {
-                        setHigh(!high);
-                        setLow(false);
-                        setListHelper(text);
-                    }}
-                    colorScheme="white"
-                >
-                    Sort Price: High to Low
-                </Checkbox>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-low2high-check"
-                    checked={low}
-                    onChange={() => {
-                        setHigh(false);
-                        setLow(!low);
-                        setListHelper(text);
-                    }}
-                    colorScheme="white"
-                >
-                    Sort Price: Low to High
                 </Checkbox>
                 <Checkbox
                     style={{ color: "white" }}
@@ -230,7 +202,37 @@ export function SearchBar(): JSX.Element {
                 >
                     Dessert
                 </Checkbox>
-            </Stack>
+            </HStack>
+            <HStack pl={6} mt={1} spacing={1}>
+                <Checkbox
+                    style={{ color: "white" }}
+                    type="checkbox"
+                    id="is-high2low-check"
+                    checked={high}
+                    onChange={() => {
+                        setHigh(!high);
+                        setLow(false);
+                        setListHelper(text);
+                    }}
+                    colorScheme="white"
+                >
+                    Sort Price: High to Low
+                </Checkbox>
+                <Checkbox
+                    style={{ color: "white" }}
+                    type="checkbox"
+                    id="is-low2high-check"
+                    checked={low}
+                    onChange={() => {
+                        setHigh(false);
+                        setLow(!low);
+                        setListHelper(text);
+                    }}
+                    colorScheme="white"
+                >
+                    Sort Price: Low to High
+                </Checkbox>
+            </HStack>
 
             <div>
                 <ItemListUI foodData={list}></ItemListUI>

@@ -20,7 +20,7 @@ function EditFood() {
                     fontWeight="bold"
                     textAlign="center"
                 >
-                    edit foods
+                    Edit Food
                 </Heading>
                 <Spacer></Spacer>
                 <VStack mb="10px">
