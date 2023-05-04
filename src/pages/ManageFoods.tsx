@@ -48,7 +48,7 @@ export default function OwnerLanding() {
                             w={window.innerWidth * 0.2}
                             font-weight="bold"
                         >
-                            Add
+                            Add / Remove
                         </Text>
                     </Button>
                     <Button
@@ -62,13 +62,13 @@ export default function OwnerLanding() {
                         </Text>
                     </Button>
                     <Button
-                        className="remove"
+                        className="stats"
                         w={window.innerWidth * 0.25}
                         h={window.innerHeight * 0.8}
-                        onClick={() => (location.hash = "/RemoveFood")}
+                        onClick={() => (location.hash = "/UserStats")}
                     >
                         <Text className="text" font-weight="bold">
-                            Remove
+                            Stats
                         </Text>
                     </Button>
                 </Grid>

@@ -8,13 +8,17 @@ import {
     Th,
     Td,
     TableContainer,
-    Flex
+    Flex,
+    Spacer,
+    VStack,
+    Button
 } from "@chakra-ui/react";
 
 import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import foodList from "../data/foods.json";
+import { NavLink } from "react-router-dom";
 
 function countOrders(list: userProps[], foodName: string): number {
     return list.reduce((count, user) => {
@@ -49,6 +53,27 @@ export default function UserStats() {
                 >
                     stats
                 </Heading>
+                <Spacer></Spacer>
+                <VStack mb="10px">
+                    <Button
+                        as={NavLink}
+                        to="/AddFood"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        Add / Remove
+                    </Button>
+                    <Button
+                        as={NavLink}
+                        to="/EditFood"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        Edit Food
+                    </Button>
+                </VStack>
             </Flex>
             <div>
                 <NavBar></NavBar>

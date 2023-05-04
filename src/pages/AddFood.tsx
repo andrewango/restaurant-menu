@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import AddFoodUI from "../components/AddFoodUI";
 import {
     Heading,
     Stack,
@@ -17,6 +16,7 @@ import foodList from "../data/foods.json";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
+import RemoveFood from "./RemoveFood";
 
 export function MenuList() {
     const menu = sessionStorage.getItem("menu");
@@ -101,7 +101,7 @@ export default function AddFood() {
                     fontWeight="bold"
                     textAlign="center"
                 >
-                    Add Food
+                    Add / Remove Food
                 </Heading>
                 <Spacer></Spacer>
                 <VStack mb="10px">
@@ -116,12 +116,12 @@ export default function AddFood() {
                     </Button>
                     <Button
                         as={NavLink}
-                        to="/RemoveFood"
+                        to="/UserStats"
                         colorScheme="red"
                         size="md"
                         variant="outline"
                     >
-                        Remove Food
+                        View Stats
                     </Button>
                 </VStack>
             </Flex>
@@ -298,7 +298,7 @@ export default function AddFood() {
                         >
                             Menu
                         </Heading>
-                        <AddFoodUI></AddFoodUI>
+                        <RemoveFood></RemoveFood>
                     </GridItem>
                 </Grid>
             </Box>
