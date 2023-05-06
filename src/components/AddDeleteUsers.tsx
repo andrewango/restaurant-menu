@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+    Image,
     Heading,
     Table,
     Thead,
@@ -17,6 +18,7 @@ import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { ListOfCustomers } from "./SelectRole";
+import Delete from "../assets/DeleteButton.png";
 
 export default function AddDeleteUsers(): JSX.Element {
     const customers: userProps[] = ListOfCustomers();
@@ -54,22 +56,27 @@ export default function AddDeleteUsers(): JSX.Element {
         }
     };
 
-    const handleDeleteDrop = (orderID: number) => {
+    const handleDeleteSubmit = (orderID: number) => {
         // Remove the customer from the customer list
         const customerToRemoveIndex = customerList.findIndex(
             (customer: userProps): boolean => customer.orderID === orderID
         );
         if (customerToRemoveIndex > -1) {
-            const newCustomerList: userProps[] = customerList.map(
-                (customer: userProps) => ({
-                    ...customer,
-                    orderID: orderID === 1 ? 1 : orderID - 1
-                })
-            );
             customerList.splice(customerToRemoveIndex, 1);
-            sessionStorage.setItem(
-                "customers",
-                JSON.stringify(newCustomerList)
+            const newCustomerList: userProps[] = customerList.map(
+                (customer: userProps) => {
+                    if (customer.orderID > orderID) {
+                        return {
+                            ...customer,
+                            orderID:
+                                customer.orderID === 1
+                                    ? 1
+                                    : customer.orderID - 1
+                        };
+                    } else {
+                        return customer;
+                    }
+                }
             );
 
             // Update decremented order ID when we are on the page
@@ -78,13 +85,12 @@ export default function AddDeleteUsers(): JSX.Element {
             sessionStorage.setItem("orderID", orderID.toString());
 
             // Set our new customer list
-            setCustomerList([...newCustomerList]);
+            setCustomerList(newCustomerList);
             sessionStorage.setItem(
                 "customers",
-                JSON.stringify([...newCustomerList])
+                JSON.stringify(newCustomerList)
             );
         }
-        console.log(orderID);
     };
 
     return (
@@ -146,7 +152,7 @@ export default function AddDeleteUsers(): JSX.Element {
             </Box>
             <hr></hr>
             <div>
-                <TableContainer>
+                <TableContainer maxWidth="100%" whiteSpace="normal">
                     <Table variant="simple">
                         <Thead>
                             <Tr>
@@ -159,7 +165,28 @@ export default function AddDeleteUsers(): JSX.Element {
                             {customerList.map((customer: userProps) => {
                                 return (
                                     <Tr key={customer.orderID}>
-                                        <Td fontWeight="semibold">
+                                        <Td fontWeight="semibold" width="10%">
+                                            <Box
+                                                as="button"
+                                                type="submit"
+                                                width="20%"
+                                                height="20%"
+                                                mr={5}
+                                                onClick={() =>
+                                                    handleDeleteSubmit(
+                                                        customer.orderID
+                                                    )
+                                                }
+                                                id="remove-customer"
+                                                _active={{
+                                                    transform: "scale(0.95)"
+                                                }}
+                                            >
+                                                <Image
+                                                    src={Delete}
+                                                    alt="delete-button"
+                                                ></Image>
+                                            </Box>
                                             {customer.name}
                                         </Td>
                                         <Td isNumeric>{customer.orderID}</Td>
