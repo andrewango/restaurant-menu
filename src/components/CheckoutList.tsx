@@ -220,7 +220,6 @@ export default function CheckoutList(): JSX.Element {
                                     )
                                 )}
                             </VStack>
-                            <DeliveryDropDown></DeliveryDropDown>
                         </CardBody>
                     </Card>
                 </Grid>
