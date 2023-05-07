@@ -9,7 +9,8 @@ import {
     Td,
     TableContainer,
     Box,
-    HStack
+    HStack,
+    Center
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input } from "@chakra-ui/react";
 
@@ -30,18 +31,19 @@ export default function AddDeleteUsers(): JSX.Element {
 
     const [searchText, setSearchText] = useState<string>("");
 
+    // If there's a food item input into the search box, then find all customers with that food item ; ELSE if search box is empty, return all the customers.
     const customersWithSearchText: userProps[] = customers.filter(
         (customer: userProps): boolean => {
             return (
                 searchText === "" ||
                 customer.order.some((food: foodProps) =>
-                    food.name.toLowerCase().includes(searchText.toLowerCase())
+                    food.name
+                        .toLowerCase()
+                        .includes(searchText.toLowerCase().trim())
                 )
             );
         }
     );
-
-    console.log(customersWithSearchText);
 
     const handleAddSubmit = () => {
         if (name !== "") {
@@ -70,13 +72,15 @@ export default function AddDeleteUsers(): JSX.Element {
     };
 
     const handleDeleteSubmit = (orderIDToDelete: number) => {
-        // Remove the customer from the customer list
+        // Find the index in the customer list of who we want to delete
         const customerToRemoveIndex = customerList.findIndex(
             (customer: userProps): boolean =>
                 customer.orderID === orderIDToDelete
         );
         if (customerToRemoveIndex > -1) {
+            // Remove the customer from the customer list
             customerList.splice(customerToRemoveIndex, 1);
+            // Decrement the orderIDs accordingly
             const newCustomerList: userProps[] = customerList.map(
                 (customer: userProps) => {
                     if (customer.orderID > orderIDToDelete) {
@@ -109,25 +113,35 @@ export default function AddDeleteUsers(): JSX.Element {
 
     return (
         <div style={{ padding: 10 }}>
-            <HStack>
-                <FormControl isRequired id="name" width="500px" px={20} mt={10}>
-                    <FormLabel>Name:</FormLabel>
-                    <Input
-                        type="text"
-                        placeholder="Customer name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                </FormControl>
-                <FormControl isRequired id="name" width="500px" px={20} mt={10}>
-                    <FormLabel>Search by Item:</FormLabel>
-                    <Input
-                        type="text"
-                        placeholder="Item name"
-                        value={searchText}
-                        onChange={(e) => setSearchText(e.target.value)}
-                    />
-                </FormControl>
+            <HStack maxWidth="100vw">
+                <Center>
+                    <FormControl
+                        isRequired
+                        id="add"
+                        width="800%"
+                        pl={20}
+                        mt={10}
+                    >
+                        <FormLabel>Name:</FormLabel>
+                        <Input
+                            type="text"
+                            placeholder="Customer name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                    </FormControl>
+                    <FormControl id="search" width="1100%" mt={10} ml="28.3vw">
+                        <FormLabel textAlign="center">
+                            Search by Food:
+                        </FormLabel>
+                        <Input
+                            type="text"
+                            placeholder="Food name"
+                            value={searchText}
+                            onChange={(e) => setSearchText(e.target.value)}
+                        />
+                    </FormControl>
+                </Center>
             </HStack>
             <br></br>
             <Box
@@ -178,13 +192,13 @@ export default function AddDeleteUsers(): JSX.Element {
                                         <Tr key={customer.orderID}>
                                             <Td
                                                 fontWeight="semibold"
-                                                width="10%"
+                                                width="30%"
                                             >
                                                 <Box
                                                     as="button"
                                                     type="submit"
-                                                    width="20%"
-                                                    height="20%"
+                                                    width="5%"
+                                                    height="5%"
                                                     mr={5}
                                                     onClick={() =>
                                                         handleDeleteSubmit(
