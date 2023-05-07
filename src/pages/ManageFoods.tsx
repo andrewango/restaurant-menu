@@ -1,18 +1,9 @@
 import React from "react";
-import {
-    Text,
-    Grid,
-    Button,
-    Center,
-    Flex,
-    Heading,
-    useMediaQuery
-} from "@chakra-ui/react";
+import { Text, Grid, Button, Center, Flex, Heading } from "@chakra-ui/react";
 import "./OwnerLanding.css";
 import NavBar from "../components/NavBar";
 
 export default function OwnerLanding() {
-    const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (
         <div style={{ padding: 10 }}>
             <Flex wrap="wrap" textAlign="center" px={5} py={2}>
@@ -30,17 +21,11 @@ export default function OwnerLanding() {
             </Flex>
             <NavBar></NavBar>
             <Center mt={10}>
-                <Grid
-                    templateColumns={
-                        isLargerThan2000 ? "repeat(3, 1fr)" : "repeat(3, 1fr)"
-                    }
-                    columnGap={window.innerWidth * 0.03}
-                >
+                <Grid templateColumns={"repeat(3, 1fr)"} columnGap="3vw">
                     <Button
                         className="add"
-                        //backgroundImage={background}
-                        w={window.innerWidth * 0.25}
-                        h={window.innerHeight * 0.8}
+                        w="25vw"
+                        h="80vh"
                         onClick={() => (location.hash = "/AddFood")}
                     >
                         <Text
@@ -53,8 +38,8 @@ export default function OwnerLanding() {
                     </Button>
                     <Button
                         className="edit"
-                        w={window.innerWidth * 0.25}
-                        h={window.innerHeight * 0.8}
+                        w="25vw"
+                        h="80vh"
                         onClick={() => (location.hash = "/EditFood")}
                     >
                         <Text className="text" font-weight="bold">
@@ -63,8 +48,8 @@ export default function OwnerLanding() {
                     </Button>
                     <Button
                         className="stats"
-                        w={window.innerWidth * 0.25}
-                        h={window.innerHeight * 0.8}
+                        w="25vw"
+                        h="80vh"
                         onClick={() => (location.hash = "/UserStats")}
                     >
                         <Text className="text" font-weight="bold">

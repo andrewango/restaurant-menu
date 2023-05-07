@@ -10,7 +10,6 @@ import {
     Tabs,
     TabPanels,
     Tab,
-    useMediaQuery,
     Flex
 } from "@chakra-ui/react";
 
@@ -118,16 +117,11 @@ export default function EditFoodList(): JSX.Element {
             </Tab>
         );
     }
-    const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (
         <Card
             h="full"
-            w={
-                isLargerThan2000
-                    ? window.innerWidth * 0.4
-                    : window.innerWidth * 0.4
-            }
+            w="40vw"
             ref={drop}
             border="1px solid black"
             textAlign="center"
