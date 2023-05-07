@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // Uncomment next line for state debugging
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import {
     Card,
     CardHeader,
@@ -11,7 +13,8 @@ import {
     Text,
     Box,
     Grid,
-    useMediaQuery
+    useMediaQuery,
+    Flex
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
@@ -189,19 +192,40 @@ export default function CheckoutList(): JSX.Element {
                     rowGap={3}
                 >
                     <Card
-                        h={window.innerHeight * 0.7}
+                        h={window.innerHeight * 0.83}
                         w={window.innerWidth * 0.4}
                         border="5px solid tomato"
                         textAlign="center"
                     >
                         <CardHeader
                             ref={removeDrop}
-                            backgroundColor={isOver ? "red" : ""}
+                            // backgroundColor={isOver ? "red" : ""}
                         >
-                            <Heading fontWeight="bold">Checkout</Heading>
-                            <Text fontWeight="semibold">
-                                Drag here to remove items
-                            </Text>
+                            <Flex
+                                alignItems="center"
+                                justifyContent="space-between"
+                            >
+                                <Heading
+                                    fontWeight="bold"
+                                    mr={2}
+                                    flex={1}
+                                    textAlign="center"
+                                    ml="38"
+                                >
+                                    Checkout
+                                </Heading>
+                                <FontAwesomeIcon
+                                    icon={faTrash}
+                                    size="3x"
+                                    style={{
+                                        color: isOver ? "red" : "",
+                                        border: "1px solid black",
+                                        borderRadius: "50px",
+                                        padding: "7px",
+                                        boxSizing: "border-box"
+                                    }}
+                                />
+                            </Flex>
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody

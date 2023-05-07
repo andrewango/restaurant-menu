@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
     Image,
     Text,
@@ -11,6 +11,16 @@ import {
 } from "@chakra-ui/react";
 import RatingFeature from "./RatingFeature";
 import { useDrag } from "react-dnd";
+import { GetCurrentUser } from "./SelectRole";
+import { userProps } from "../interfaces/User";
+
+function countOrders(list: userProps[], foodName: string): number {
+    return list.reduce((count, user) => {
+        return (
+            count + user.order.filter((food) => food.name === foodName).length
+        );
+    }, 0);
+}
 
 export default function FoodItem({
     name,
@@ -32,6 +42,21 @@ export default function FoodItem({
             isDragging: !!monitor.isDragging()
         })
     }));
+    const [currentUser, setCurrentUser] = useState<userProps>(GetCurrentUser());
+    const customers: string | null = sessionStorage.getItem("customers");
+    const storageCustomers: userProps[] = customers
+        ? JSON.parse(customers)
+        : [];
+    useEffect(() => {
+        const handleStorage = () => {
+            //console.log("handleStorage called");
+            setCurrentUser(GetCurrentUser());
+        };
+        // Event listeners to run handleStorage() if "checkout" key is updated
+        window.addEventListener("checkoutUpdated", handleStorage);
+        return () =>
+            window.removeEventListener("checkoutUpdated", handleStorage);
+    }, []);
 
     return (
         <Card
@@ -56,6 +81,7 @@ export default function FoodItem({
                     my={5}
                 />
                 <Text
+                    className="desc"
                     fontFamily="DM Serif"
                     fontSize="2xl"
                     mt={2}
@@ -63,6 +89,14 @@ export default function FoodItem({
                 >
                     {`$${price}`}
                 </Text>
+                {(currentUser.role === "Owner" || currentUser === null) && (
+                    <Text className="desc" mt={2}>
+                        {`In ${countOrders(
+                            storageCustomers,
+                            name
+                        )} user lists.`}
+                    </Text>
+                )}
             </Box>
             <Stack>
                 <CardBody>

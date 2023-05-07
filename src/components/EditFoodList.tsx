@@ -10,13 +10,16 @@ import {
     Tabs,
     TabPanels,
     Tab,
-    useMediaQuery
+    useMediaQuery,
+    Flex
 } from "@chakra-ui/react";
 
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 import EditFoodTabs from "./EditFoodTabs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export function EditMenuList() {
     const editMenu = sessionStorage.getItem("editFoodList");
@@ -129,14 +132,29 @@ export default function EditFoodList(): JSX.Element {
             border="1px solid black"
             textAlign="center"
         >
-            <CardHeader
-                fontWeight="bold"
-                alignItems="stretch"
-                ref={removeDrop}
-                backgroundColor={isOver ? "#f56565bf" : ""}
-            >
-                <Heading fontWeight="bold">Edit Food</Heading>
-                <>Drag item here to remove</>
+            <CardHeader fontWeight="bold" alignItems="stretch" ref={removeDrop}>
+                <Flex alignItems="center" justifyContent="space-between">
+                    <Heading
+                        fontWeight="bold"
+                        mr={2}
+                        flex={1}
+                        textAlign="center"
+                        ml="38"
+                    >
+                        Edit Food
+                    </Heading>
+                    <FontAwesomeIcon
+                        icon={faTrash}
+                        size="3x"
+                        style={{
+                            color: isOver ? "red" : "",
+                            border: "1px solid black",
+                            borderRadius: "50px",
+                            padding: "7px",
+                            boxSizing: "border-box"
+                        }}
+                    />
+                </Flex>
             </CardHeader>
             <Divider></Divider>
             <CardBody textAlign="center">

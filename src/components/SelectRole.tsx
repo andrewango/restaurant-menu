@@ -18,15 +18,25 @@ const Select = styled.select`
 
 // Constant values for Owner and Employee
 const ROLES: userProps[] = [
-    { name: "Owner", orderID: 0, order: [], role: "Owner" },
-    { name: "Employee", orderID: -1, order: [], role: "Employee" }
+    { name: "Owner", orderID: -1, order: [], role: "Owner" },
+    { name: "Employee", orderID: 0, order: [], role: "Employee" }
 ];
+
+const defaultCustomer: userProps = {
+    name: "Customer",
+    orderID: 1,
+    order: [],
+    role: "Customer"
+};
+sessionStorage.setItem("customers", JSON.stringify([defaultCustomer]));
 
 export function GetCurrentUser() {
     const user = sessionStorage.getItem("user");
     const userToParse =
-        user !== null && user !== undefined ? user : JSON.stringify(ROLES[0]);
-    return userToParse ? JSON.parse(userToParse) : ROLES[0];
+        user !== null && user !== undefined
+            ? user
+            : JSON.stringify(defaultCustomer);
+    return userToParse ? JSON.parse(userToParse) : defaultCustomer;
 }
 
 // Get our list of customers from EDIT USERS page
@@ -47,9 +57,16 @@ export function SelectRole(): JSX.Element {
     function changeRole(userRole: userProps) {
         setUserRole(userRole);
         sessionStorage.setItem("user", JSON.stringify(userRole));
-        sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
-        // Manually dispatches an event after we updated "checkout" key for event listeners to fetch
-        window.dispatchEvent(new Event("checkoutUpdated"));
+        if (GetCurrentUser().role === "Customer") {
+            location.hash = "/";
+            sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
+            // Manually dispatches an event after we updated "checkout" key for event listeners to fetch
+            window.dispatchEvent(new Event("checkoutUpdated"));
+        } else if (GetCurrentUser().role === "Employee") {
+            location.hash = "/EditFood";
+        } else {
+            location.hash = "/OwnerLanding";
+        }
     }
 
     const listOfCustomers: userProps[] = ListOfCustomers();
