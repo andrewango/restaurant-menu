@@ -14,7 +14,12 @@ import {
     Box,
     Grid,
     useMediaQuery,
-    Flex
+    Flex,
+    AccordionItem,
+    AccordionIcon,
+    AccordionButton,
+    AccordionPanel,
+    Accordion
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
@@ -55,7 +60,13 @@ export default function CheckoutList(): JSX.Element {
     }, []);
 
     // CheckoutItem
-    function CheckoutItem({ name }: { name: string }): JSX.Element {
+    function CheckoutItem({
+        name,
+        ingredients
+    }: {
+        name: string;
+        ingredients: string[];
+    }): JSX.Element {
         const [, drag] = useDrag(() => ({
             type: "removeItem",
             item: { name: name },
@@ -64,9 +75,17 @@ export default function CheckoutList(): JSX.Element {
             })
         }));
         return (
-            <Text ref={drag} fontWeight="bold">
-                {name}
-            </Text>
+            <AccordionItem ref={drag}>
+                <h2>
+                    <AccordionButton fontWeight="semibold">
+                        <Box as="span" flex="1" textAlign="left">
+                            {name}
+                        </Box>
+                        <AccordionIcon />
+                    </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>{ingredients.join(", ")}</AccordionPanel>
+            </AccordionItem>
         );
     }
 
@@ -234,16 +253,21 @@ export default function CheckoutList(): JSX.Element {
                             textAlign="center"
                             overflowY="auto"
                         >
-                            <VStack spacing="5px" w="100%">
+                            <Accordion
+                                defaultIndex={[0]}
+                                allowMultiple
+                                allowToggle
+                            >
                                 {checkoutList.map(
                                     (food: foodProps, index: number) => (
                                         <CheckoutItem
                                             key={index + 1}
                                             name={food.name}
+                                            ingredients={food.ingredients}
                                         ></CheckoutItem>
                                     )
                                 )}
-                            </VStack>
+                            </Accordion>
                             <DeliveryDropDown></DeliveryDropDown>
                         </CardBody>
                     </Card>
