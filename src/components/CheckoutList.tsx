@@ -21,7 +21,6 @@ import { foodProps } from "../interfaces/Food";
 import { MenuList } from "../pages/AddFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
-import { DeliveryDropDown } from "./DeliveryDropDown";
 
 export function CurrentCheckoutList(): foodProps[] {
     const checkout: string | null = sessionStorage.getItem("checkout");
@@ -244,7 +243,6 @@ export default function CheckoutList(): JSX.Element {
                                     )
                                 )}
                             </VStack>
-                            <DeliveryDropDown></DeliveryDropDown>
                         </CardBody>
                     </Card>
                 </Grid>
