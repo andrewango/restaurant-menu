@@ -48,7 +48,17 @@ export default function EditFoodTabs({
         price: editPrice
     });
 
-    const { name, image, desc, rating, type, ingredients, price } = food;
+    const {
+        name,
+        image,
+        desc,
+        rating,
+        type,
+        ingredients,
+        price,
+        popular,
+        spicy
+    } = food;
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -90,6 +100,7 @@ export default function EditFoodTabs({
         sessionStorage.setItem("menu", JSON.stringify(newFoodList));
         sessionStorage.setItem("editFoodList", JSON.stringify(newEditFoodList));
     };
+
     return (
         <TabPanel>
             <form onSubmit={handleSubmit}>
@@ -227,6 +238,18 @@ export default function EditFoodTabs({
                             type="submit"
                             colorScheme="red"
                             variant="solid"
+                            isDisabled={
+                                name === editName &&
+                                image === editImage &&
+                                desc === editDesc &&
+                                rating == editRating &&
+                                type.toString() === editType.toString() &&
+                                ingredients.toString() ===
+                                    editIngredients.toString() &&
+                                popular === editPopular &&
+                                spicy === editSpicy &&
+                                price == editPrice
+                            }
                         >
                             Edit
                         </Button>
