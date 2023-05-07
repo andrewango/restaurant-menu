@@ -6,6 +6,7 @@ import restaurantLogo from "./restaurant-logo.png";
 import CheckoutList from "../components/CheckoutList";
 import background from "./background.jpg";
 import { SelectRole } from "../components/SelectRole";
+import { DeliveryDropDown } from "../components/DeliveryDropDown";
 
 export default function Landing() {
     return (
@@ -75,8 +76,9 @@ export default function Landing() {
                     <Box flex="1" p="4" ml="5vw">
                         <SearchBar></SearchBar>
                     </Box>
-                    <Grid overflow="hidden" flex="1" p="4" mt="35px">
+                    <Grid flex="1" p="4" mt="35px" ml="100px">
                         <CheckoutList></CheckoutList>
+                        <DeliveryDropDown></DeliveryDropDown>
                     </Grid>
                 </Grid>
                 <br></br>

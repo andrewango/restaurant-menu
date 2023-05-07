@@ -15,7 +15,7 @@ import {
     Checkbox
 } from "@chakra-ui/react";
 import { userProps } from "../interfaces/User";
-import { GetCurrentUser } from "./SelectRole";
+import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 //import styled from "styled-components";
 export function DeliveryDropDown(): JSX.Element {
     const [time, changeTime] = useState<string>("12:00");
@@ -56,9 +56,19 @@ export function DeliveryDropDown(): JSX.Element {
                 clearedUser.order = [];
                 sessionStorage.setItem("user", JSON.stringify(clearedUser));
 
+                const newCustomers: userProps[] = ListOfCustomers().map(
+                    (customer: userProps) =>
+                        customer.orderID === clearedUser.orderID
+                            ? { ...customer, order: [] }
+                            : customer
+                );
+                sessionStorage.setItem(
+                    "customers",
+                    JSON.stringify(newCustomers)
+                );
+
                 sessionStorage.setItem("checkout", JSON.stringify([]));
                 window.dispatchEvent(new Event("checkoutUpdated"));
-                console.log("Hi");
             }
         }
 
@@ -143,12 +153,16 @@ export function DeliveryDropDown(): JSX.Element {
             width="90%"
             position="relative"
             bottom="0"
-            mb="1%"
-            mr="15%"
+            mt="72%"
+            ml={40}
         >
             <p
                 className="del-time"
-                style={{ color: "black", textAlign: "left" }}
+                style={{
+                    color: "black",
+                    textAlign: "left",
+                    marginBottom: "7px"
+                }}
             >
                 Delivery Time:
             </p>
