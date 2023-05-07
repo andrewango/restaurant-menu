@@ -68,6 +68,7 @@ export default function AddDeleteUsers(): JSX.Element {
                 "customers",
                 JSON.stringify([...newUserList, newCustomer])
             );
+            setName("");
         }
     };
 
