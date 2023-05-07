@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Flex, Box, Spacer, VStack } from "@chakra-ui/react";
+import { Heading, Flex, Box, Spacer, VStack, Grid } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
@@ -70,14 +70,14 @@ function EditFood() {
             </div>
             <br></br>
             <div style={{ textAlign: "center" }}>
-                <Flex>
-                    <Box flex="1" p="4" ml="100px">
+                <Grid templateColumns={"repeat(2, 1fr)"} gap="5vw">
+                    <Box flex="1" p="4" ml="5vw">
                         <EditFoodMenu></EditFoodMenu>
                     </Box>
-                    <Box flex="1" p="4" mt="35px" ml="100px">
+                    <Box flex="1" p="4" mt="35px">
                         <EditFoodList></EditFoodList>
                     </Box>
-                </Flex>
+                </Grid>
             </div>
         </div>
     );
