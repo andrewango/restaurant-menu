@@ -8,7 +8,8 @@ import {
     Th,
     Td,
     TableContainer,
-    Box
+    Box,
+    HStack
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input } from "@chakra-ui/react";
 
@@ -26,6 +27,21 @@ export default function AddDeleteUsers(): JSX.Element {
     const storageOrderID: string | null = sessionStorage.getItem("orderID");
     const orderNum: number = storageOrderID ? parseInt(storageOrderID) : 2;
     const [orderID, setOrderID] = useState<number>(orderNum);
+
+    const [searchText, setSearchText] = useState<string>("");
+
+    const customersWithSearchText: userProps[] = customers.filter(
+        (customer: userProps): boolean => {
+            return (
+                searchText === "" ||
+                customer.order.some((food: foodProps) =>
+                    food.name.toLowerCase().includes(searchText.toLowerCase())
+                )
+            );
+        }
+    );
+
+    console.log(customersWithSearchText);
 
     const handleAddSubmit = () => {
         if (name !== "") {
@@ -93,14 +109,26 @@ export default function AddDeleteUsers(): JSX.Element {
 
     return (
         <div style={{ padding: 10 }}>
-            <FormControl isRequired id="name" width="500px" px={20} mt={10}>
-                <FormLabel>Name:</FormLabel>
-                <Input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-            </FormControl>
+            <HStack>
+                <FormControl isRequired id="name" width="500px" px={20} mt={10}>
+                    <FormLabel>Name:</FormLabel>
+                    <Input
+                        type="text"
+                        placeholder="Customer name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </FormControl>
+                <FormControl isRequired id="name" width="500px" px={20} mt={10}>
+                    <FormLabel>Search by Item:</FormLabel>
+                    <Input
+                        type="text"
+                        placeholder="Item name"
+                        value={searchText}
+                        onChange={(e) => setSearchText(e.target.value)}
+                    />
+                </FormControl>
+            </HStack>
             <br></br>
             <Box
                 as="button"
@@ -144,43 +172,50 @@ export default function AddDeleteUsers(): JSX.Element {
                             </Tr>
                         </Thead>
                         <Tbody>
-                            {customerList.map((customer: userProps) => {
-                                return (
-                                    <Tr key={customer.orderID}>
-                                        <Td fontWeight="semibold" width="10%">
-                                            <Box
-                                                as="button"
-                                                type="submit"
-                                                width="20%"
-                                                height="20%"
-                                                mr={5}
-                                                onClick={() =>
-                                                    handleDeleteSubmit(
-                                                        customer.orderID
-                                                    )
-                                                }
-                                                id="remove-customer"
-                                                _active={{
-                                                    transform: "scale(0.95)"
-                                                }}
+                            {customersWithSearchText.map(
+                                (customer: userProps) => {
+                                    return (
+                                        <Tr key={customer.orderID}>
+                                            <Td
+                                                fontWeight="semibold"
+                                                width="10%"
                                             >
-                                                <Image
-                                                    src={Delete}
-                                                    alt="delete-button"
-                                                ></Image>
-                                            </Box>
-                                            {customer.name}
-                                        </Td>
-                                        <Td isNumeric>{customer.orderID}</Td>
-                                        <Td>
-                                            {customer.order.map(
-                                                (food: foodProps) =>
-                                                    food.name + ", "
-                                            )}
-                                        </Td>
-                                    </Tr>
-                                );
-                            })}
+                                                <Box
+                                                    as="button"
+                                                    type="submit"
+                                                    width="20%"
+                                                    height="20%"
+                                                    mr={5}
+                                                    onClick={() =>
+                                                        handleDeleteSubmit(
+                                                            customer.orderID
+                                                        )
+                                                    }
+                                                    id="remove-customer"
+                                                    _active={{
+                                                        transform: "scale(0.95)"
+                                                    }}
+                                                >
+                                                    <Image
+                                                        src={Delete}
+                                                        alt="delete-button"
+                                                    ></Image>
+                                                </Box>
+                                                {customer.name}
+                                            </Td>
+                                            <Td isNumeric>
+                                                {customer.orderID}
+                                            </Td>
+                                            <Td>
+                                                {customer.order.map(
+                                                    (food: foodProps) =>
+                                                        food.name + ", "
+                                                )}
+                                            </Td>
+                                        </Tr>
+                                    );
+                                }
+                            )}
                         </Tbody>
                     </Table>
                 </TableContainer>
