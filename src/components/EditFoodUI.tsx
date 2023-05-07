@@ -136,6 +136,7 @@ export default function EditFoodUI({
         );
     }
     const [isLargerThan2000] = useMediaQuery("(min-width: 2300px)");
+
     return (
         <Box h="65vh" overflowY="scroll" mt={100} className="section">
             <VStack spacing="3px">
