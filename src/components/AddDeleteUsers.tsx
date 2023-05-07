@@ -56,16 +56,17 @@ export default function AddDeleteUsers(): JSX.Element {
         }
     };
 
-    const handleDeleteSubmit = (orderID: number) => {
+    const handleDeleteSubmit = (orderIDToDelete: number) => {
         // Remove the customer from the customer list
         const customerToRemoveIndex = customerList.findIndex(
-            (customer: userProps): boolean => customer.orderID === orderID
+            (customer: userProps): boolean =>
+                customer.orderID === orderIDToDelete
         );
         if (customerToRemoveIndex > -1) {
             customerList.splice(customerToRemoveIndex, 1);
             const newCustomerList: userProps[] = customerList.map(
                 (customer: userProps) => {
-                    if (customer.orderID > orderID) {
+                    if (customer.orderID > orderIDToDelete) {
                         return {
                             ...customer,
                             orderID:
