@@ -120,7 +120,7 @@ export default function EditFoodList(): JSX.Element {
 
     return (
         <Card
-            h={EditMenuList().length > 0 ? "cover" : "full"}
+            h={EditMenuList().length >= 1 ? "cover" : "full"}
             w="40vw"
             ref={drop}
             border="1px solid black"
