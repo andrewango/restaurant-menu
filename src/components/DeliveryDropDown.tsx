@@ -141,10 +141,10 @@ export function DeliveryDropDown(): JSX.Element {
             id="delivery"
             maxW="sm"
             width="90%"
-            position="absolute"
+            position="relative"
             bottom="0"
-            mb={40}
-            ml={40}
+            mb="1%"
+            mr="15%"
         >
             <p
                 className="del-time"
