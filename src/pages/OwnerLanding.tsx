@@ -76,7 +76,7 @@ export default function OwnerLanding() {
                         onClick={() => (location.hash = "/EditUsers")}
                     >
                         <Text className="text" font-weight="bold">
-                            Manage User
+                            Manage Users
                         </Text>
                     </Button>
                     {/* <Button

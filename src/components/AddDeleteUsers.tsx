@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
     Image,
-    Heading,
     Table,
     Thead,
     Tbody,
@@ -9,14 +8,12 @@ import {
     Th,
     Td,
     TableContainer,
-    Box,
-    Flex
+    Box
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input } from "@chakra-ui/react";
 
 import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";
-import NavBar from "../components/NavBar";
 import { ListOfCustomers } from "./SelectRole";
 import Delete from "../assets/DeleteButton.png";
 
@@ -96,22 +93,6 @@ export default function AddDeleteUsers(): JSX.Element {
 
     return (
         <div style={{ padding: 10 }}>
-            <Flex wrap="wrap">
-                <Heading
-                    display="flex"
-                    justifyContent="center"
-                    mt={8}
-                    px={10}
-                    fontSize="50px"
-                    fontWeight="bold"
-                    textAlign="center"
-                >
-                    Manage User
-                </Heading>
-            </Flex>
-            <div>
-                <NavBar></NavBar>
-            </div>
             <FormControl isRequired id="name" width="500px" px={20} mt={10}>
                 <FormLabel>Name:</FormLabel>
                 <Input
