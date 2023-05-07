@@ -305,12 +305,21 @@ export default function CheckoutList(): JSX.Element {
         });
         setCheckoutList(newCheckout);
         sessionStorage.setItem("checkout", JSON.stringify(newCheckout));
+
+        const currentUser: userProps = GetCurrentUser();
+        const newCustomerList = ListOfCustomers().map((customer: userProps) =>
+            customer.orderID === currentUser.orderID
+                ? { ...customer, order: newCheckout }
+                : customer
+        );
+        sessionStorage.setItem("customers", JSON.stringify(newCustomerList));
     };
 
-    // Debugging
+    // DEBUGGING
     //useEffect(() => {
     //console.log(checkoutList);
     //}, [checkoutList]);
+
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (
