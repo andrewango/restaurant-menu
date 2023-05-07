@@ -63,63 +63,6 @@ export default function CheckoutList(): JSX.Element {
             window.removeEventListener("checkoutUpdated", handleStorage);
     }, []);
 
-    const [editing, setEditing] = useState<boolean>(false);
-    const [text, setText] = useState<string>("");
-
-    const handleEdit = () => {
-        setEditing(true);
-    };
-
-    const handleAccept = () => {
-        setEditing(false);
-    };
-
-    const handleTyping = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setText(e.target.value);
-    };
-
-    // CheckoutItem
-    function CheckoutItem({
-        name,
-        ingredients
-    }: {
-        name: string;
-        ingredients: string[];
-    }): JSX.Element {
-        const [, drag] = useDrag(() => ({
-            type: "removeItem",
-            item: { name: name },
-            collect: (monitor) => ({
-                isDragging: !!monitor.isDragging()
-            })
-        }));
-        return (
-            <AccordionItem ref={drag}>
-                <h2>
-                    <AccordionButton fontWeight="semibold">
-                        <Box as="span" flex="1" textAlign="center" ml={10}>
-                            {name}
-                        </Box>
-                        <AccordionIcon />
-                    </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                    {editing ? (
-                        <FormControl>
-                            <Input
-                                textAlign="center"
-                                value={ingredients.join(", ")}
-                                onChange={handleTyping}
-                            />
-                        </FormControl>
-                    ) : (
-                        ingredients.join(", ")
-                    )}
-                </AccordionPanel>
-            </AccordionItem>
-        );
-    }
-
     const [, addDrop] = useDrop(() => ({
         accept: "foodItem",
         drop: (item: foodProps) => addFoodToCheckoutList(item.name),
@@ -227,6 +170,143 @@ export default function CheckoutList(): JSX.Element {
         });
     };
 
+    // CheckoutItem
+    function CheckoutItem({
+        name,
+        ingredients,
+        onIngredientsUpdate
+    }: {
+        name: string;
+        ingredients: string[];
+        onIngredientsUpdate: (newIngredients: string[]) => void;
+    }): JSX.Element {
+        const [, drag] = useDrag(() => ({
+            type: "removeItem",
+            item: { name: name },
+            collect: (monitor) => ({
+                isDragging: !!monitor.isDragging()
+            })
+        }));
+
+        const [editing, setEditing] = useState<boolean>(false);
+        const [text, setText] = useState<string>(ingredients.join(", "));
+
+        const handleEdit = () => {
+            setEditing(true);
+        };
+
+        function handleAccept() {
+            setEditing(false);
+            const newIngredients: string[] = text
+                .split(",")
+                .map((ingredient: string) => ingredient.trim());
+            onIngredientsUpdate(newIngredients);
+        }
+
+        const handleTyping = (e: React.ChangeEvent<HTMLInputElement>) => {
+            setText(e.target.value);
+        };
+
+        return (
+            <AccordionItem ref={drag}>
+                <h2>
+                    <AccordionButton
+                        fontWeight="semibold"
+                        _expanded={{ bg: "tomato", color: "white" }}
+                    >
+                        <Box as="span" flex="1" textAlign="center" ml={10}>
+                            {name}
+                        </Box>
+                        <AccordionIcon />
+                    </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                    {editing ? (
+                        <>
+                            <FormControl>
+                                <Input
+                                    textAlign="center"
+                                    value={text}
+                                    onChange={handleTyping}
+                                />
+                            </FormControl>
+                            <Button
+                                onClick={handleAccept}
+                                width={70}
+                                height={10}
+                                overflowWrap="break-word"
+                                border="1px"
+                                borderRadius="5px"
+                                fontSize="16px"
+                                fontWeight="semibold"
+                                bg="tomato"
+                                borderColor="red.600"
+                                color="white"
+                                _hover={{
+                                    bg: "red.600",
+                                    color: "white"
+                                }}
+                                _active={{
+                                    bg: "red.300",
+                                    transform: "scale(0.95)",
+                                    borderColor: "orange"
+                                }}
+                            >
+                                Accept
+                            </Button>
+                        </>
+                    ) : (
+                        <>
+                            {ingredients.join(", ")}
+                            <Button
+                                onClick={handleEdit}
+                                width={70}
+                                height={10}
+                                overflowWrap="break-word"
+                                border="1px"
+                                borderRadius="5px"
+                                fontSize="16px"
+                                fontWeight="semibold"
+                                bg="tomato"
+                                borderColor="red.600"
+                                color="white"
+                                _hover={{
+                                    bg: "red.600",
+                                    color: "white"
+                                }}
+                                _active={{
+                                    bg: "red.300",
+                                    transform: "scale(0.95)",
+                                    borderColor: "orange"
+                                }}
+                            >
+                                Edit
+                            </Button>
+                        </>
+                    )}
+                </AccordionPanel>
+            </AccordionItem>
+        );
+    }
+
+    const handleIngredientsUpdate = (
+        foodName: string,
+        newIngredients: string[]
+    ) => {
+        const newCheckout = checkoutList.map((food: foodProps) => {
+            if (food.name === foodName) {
+                return {
+                    ...food,
+                    ingredients: newIngredients
+                };
+            } else {
+                return food;
+            }
+        });
+        setCheckoutList(newCheckout);
+        sessionStorage.setItem("checkout", JSON.stringify(newCheckout));
+    };
+
     // Debugging
     //useEffect(() => {
     //console.log(checkoutList);
@@ -256,63 +336,11 @@ export default function CheckoutList(): JSX.Element {
                                 alignItems="center"
                                 justifyContent="space-between"
                             >
-                                {editing ? (
-                                    <Button
-                                        onClick={handleAccept}
-                                        width={70}
-                                        height={10}
-                                        overflowWrap="break-word"
-                                        border="1px"
-                                        borderRadius="5px"
-                                        fontSize="16px"
-                                        fontWeight="semibold"
-                                        bg="red.500"
-                                        borderColor="red.600"
-                                        color="white"
-                                        _hover={{
-                                            bg: "red.600",
-                                            color: "white"
-                                        }}
-                                        _active={{
-                                            bg: "red.300",
-                                            transform: "scale(0.95)",
-                                            borderColor: "orange"
-                                        }}
-                                    >
-                                        Accept
-                                    </Button>
-                                ) : (
-                                    <Button
-                                        onClick={handleEdit}
-                                        width={70}
-                                        height={10}
-                                        overflowWrap="break-word"
-                                        border="1px"
-                                        borderRadius="5px"
-                                        fontSize="16px"
-                                        fontWeight="semibold"
-                                        bg="red.500"
-                                        borderColor="red.600"
-                                        color="white"
-                                        _hover={{
-                                            bg: "red.600",
-                                            color: "white"
-                                        }}
-                                        _active={{
-                                            bg: "red.300",
-                                            transform: "scale(0.95)",
-                                            borderColor: "orange"
-                                        }}
-                                    >
-                                        Edit
-                                    </Button>
-                                )}
                                 <Heading
                                     fontWeight="bold"
-                                    mr={2}
                                     flex={1}
                                     textAlign="center"
-                                    ml=""
+                                    ml={16}
                                 >
                                     Checkout
                                 </Heading>
@@ -335,17 +363,21 @@ export default function CheckoutList(): JSX.Element {
                             textAlign="center"
                             overflowY="auto"
                         >
-                            <Accordion
-                                defaultIndex={[0]}
-                                allowMultiple
-                                allowToggle
-                            >
+                            <Accordion allowMultiple>
                                 {checkoutList.map(
                                     (food: foodProps, index: number) => (
                                         <CheckoutItem
                                             key={index + 1}
                                             name={food.name}
                                             ingredients={food.ingredients}
+                                            onIngredientsUpdate={(
+                                                newIngredients
+                                            ) =>
+                                                handleIngredientsUpdate(
+                                                    food.name,
+                                                    newIngredients
+                                                )
+                                            }
                                         ></CheckoutItem>
                                     )
                                 )}
