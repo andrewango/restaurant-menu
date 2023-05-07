@@ -14,13 +14,15 @@ import {
     Box,
     Grid,
     useMediaQuery,
-    Flex
+    Flex,
+    CardFooter
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import { MenuList } from "../pages/AddFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
+import { DeliveryDropDown } from "./DeliveryDropDown";
 
 export function CurrentCheckoutList(): foodProps[] {
     const checkout: string | null = sessionStorage.getItem("checkout");
@@ -244,6 +246,9 @@ export default function CheckoutList(): JSX.Element {
                                 )}
                             </VStack>
                         </CardBody>
+                        <CardFooter alignItems="center" justifyContent="center">
+                            <DeliveryDropDown></DeliveryDropDown>
+                        </CardFooter>
                     </Card>
                 </Grid>
             </VStack>
