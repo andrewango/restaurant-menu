@@ -45,7 +45,7 @@ export default function CheckoutList(): JSX.Element {
     const [checkoutList, setCheckoutList] =
         useState<foodProps[]>(currentCheckout);
 
-    // Filter checkout list by search query
+    // Filter checkout list by search query (name, ingredients, description)
     const [searchText, setSearchText] = useState<string>("");
     const searchedFoods: foodProps[] = checkoutList.filter(
         (food: foodProps): boolean => {
@@ -56,6 +56,9 @@ export default function CheckoutList(): JSX.Element {
                     .toLowerCase()
                     .includes(searchText.toLowerCase().trim()) ||
                 food.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase().trim()) ||
+                food.desc
                     .toLowerCase()
                     .includes(searchText.toLowerCase().trim())
             );
@@ -392,16 +395,22 @@ export default function CheckoutList(): JSX.Element {
                                     data-testid="search-checkout"
                                     width="50%"
                                 >
-                                    <FormLabel textAlign="center" fontSize={15}>
-                                        Search by Ingredient:
+                                    <FormLabel
+                                        textAlign="center"
+                                        fontSize={15}
+                                        ml={10}
+                                    >
+                                        Search Food:
                                     </FormLabel>
                                     <Input
                                         type="text"
-                                        placeholder="Ingredient"
+                                        placeholder="Name/Ingredient/Description"
                                         value={searchText}
                                         onChange={(e) =>
                                             setSearchText(e.target.value)
                                         }
+                                        textAlign="center"
+                                        ml={2}
                                     />
                                 </FormControl>
                             </Center>
