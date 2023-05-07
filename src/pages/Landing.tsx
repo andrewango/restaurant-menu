@@ -71,14 +71,14 @@ export default function Landing() {
                         open 12-9 pm
                     </Text>
                 </div>
-                <Flex>
-                    <Box flex="1" p="4" ml="80px" mr="80px">
+                <Grid templateColumns={"repeat(2, 1fr)"} gap="5vw">
+                    <Box flex="1" p="4" ml="5vw">
                         <SearchBar></SearchBar>
                     </Box>
                     <Grid overflow="hidden" flex="1" p="4" mt="35px">
                         <CheckoutList></CheckoutList>
                     </Grid>
-                </Flex>
+                </Grid>
                 <br></br>
                 <br></br>
                 <br></br>
