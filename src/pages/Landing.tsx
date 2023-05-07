@@ -5,8 +5,8 @@ import { SearchBar } from "../components/SearchBar";
 import restaurantLogo from "./restaurant-logo.png";
 import CheckoutList from "../components/CheckoutList";
 import background from "./background.jpg";
-import { DeliveryDropDown } from "../components/DeliveryDropDown";
 import { SelectRole } from "../components/SelectRole";
+import { DeliveryDropDown } from "../components/DeliveryDropDown";
 
 export default function Landing() {
     return (
@@ -73,7 +73,7 @@ export default function Landing() {
                     </Text>
                 </div>
                 <Flex>
-                    <Box flex="1" p="4" ml="100px">
+                    <Box flex="1" p="4" ml="80px" mr="80px">
                         <SearchBar></SearchBar>
                     </Box>
                     <Grid flex="1" p="4" mt="35px" ml="100px">

@@ -31,7 +31,6 @@ import { foodProps } from "../interfaces/Food";
 import { MenuList } from "../pages/AddFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
-import { DeliveryDropDown } from "./DeliveryDropDown";
 
 export function CurrentCheckoutList(): foodProps[] {
     const checkout: string | null = sessionStorage.getItem("checkout");
@@ -345,7 +344,7 @@ export default function CheckoutList(): JSX.Element {
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (
-        <Box h={window.innerHeight * 0.72} mt={100}>
+        <Box h="0.72vh" mt={100}>
             <VStack spacing="3px">
                 <Grid
                     templateColumns={
@@ -354,8 +353,8 @@ export default function CheckoutList(): JSX.Element {
                     rowGap={3}
                 >
                     <Card
-                        h={window.innerHeight * 0.83}
-                        w={window.innerWidth * 0.4}
+                        h="73vh"
+                        w="40vw"
                         border="5px solid tomato"
                         textAlign="center"
                     >

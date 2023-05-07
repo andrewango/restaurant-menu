@@ -48,7 +48,17 @@ export default function EditFoodTabs({
         price: editPrice
     });
 
-    const { name, image, desc, rating, type, ingredients, price } = food;
+    const {
+        name,
+        image,
+        desc,
+        rating,
+        type,
+        ingredients,
+        price,
+        popular,
+        spicy
+    } = food;
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -90,10 +100,11 @@ export default function EditFoodTabs({
         sessionStorage.setItem("menu", JSON.stringify(newFoodList));
         sessionStorage.setItem("editFoodList", JSON.stringify(newEditFoodList));
     };
+
     return (
         <TabPanel>
             <form onSubmit={handleSubmit}>
-                <SimpleGrid columns={4} columnGap={20} rowGap={2} w="full">
+                <SimpleGrid columns={4} columnGap={5} rowGap={2} w="full">
                     <GridItem colSpan={4}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Name:</FormLabel>
@@ -196,7 +207,7 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
-                                defaultChecked={editPopular ? true : false}
+                                defaultChecked={editPopular}
                             />
                         </FormControl>
                     </GridItem>
@@ -216,7 +227,7 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
-                                defaultChecked={editSpicy ? true : false}
+                                defaultChecked={editSpicy}
                             />
                         </FormControl>
                     </GridItem>
@@ -227,6 +238,18 @@ export default function EditFoodTabs({
                             type="submit"
                             colorScheme="red"
                             variant="solid"
+                            isDisabled={
+                                name === editName &&
+                                image === editImage &&
+                                desc === editDesc &&
+                                rating == editRating &&
+                                type.toString() === editType.toString() &&
+                                ingredients.toString() ===
+                                    editIngredients.toString() &&
+                                popular === editPopular &&
+                                spicy === editSpicy &&
+                                price == editPrice
+                            }
                         >
                             Edit
                         </Button>

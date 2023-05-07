@@ -9,7 +9,7 @@ import {
     CardFooter,
     Box
 } from "@chakra-ui/react";
-import RatingFeature from "./RatingFeature";
+import { GrStar } from "react-icons/gr";
 import { useDrag } from "react-dnd";
 import { GetCurrentUser } from "./SelectRole";
 import { userProps } from "../interfaces/User";
@@ -27,13 +27,15 @@ export default function FoodItem({
     image,
     desc,
     ingredients,
-    price
+    price,
+    rating
 }: {
     name: string;
     image: string;
     desc: string;
     ingredients: string[];
     price: number;
+    rating: number;
 }): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "foodItem",
@@ -89,7 +91,7 @@ export default function FoodItem({
                 >
                     {`$${price}`}
                 </Text>
-                {(currentUser.role === "Owner" || currentUser === null) && (
+                {currentUser.role === "Owner" && (
                     <Text className="desc" mt={2}>
                         {`In ${countOrders(
                             storageCustomers,
@@ -120,7 +122,52 @@ export default function FoodItem({
                 </CardBody>
 
                 <CardFooter>
-                    <RatingFeature></RatingFeature>
+                    {[1, 2, 3, 4, 5].map((star, i) => {
+                        i = i + 1;
+                        return (
+                            <div key={i}>
+                                <Box
+                                    overflow="hidden"
+                                    position="absolute"
+                                    zIndex="1"
+                                >
+                                    <GrStar
+                                        data-testid="star-icon"
+                                        key={i}
+                                        className="star"
+                                        size={20}
+                                        color={"#D4D4D4"}
+                                    />
+                                </Box>
+                                <label>
+                                    <Box
+                                        style={
+                                            i - rating < 1 && i - rating > 0
+                                                ? { width: "50%" }
+                                                : { width: "100%" }
+                                        }
+                                        overflow="hidden"
+                                        position="relative"
+                                        zIndex="2"
+                                    >
+                                        <GrStar
+                                            data-testid="star-icon"
+                                            key={i}
+                                            className="star"
+                                            size={20}
+                                            color={
+                                                i <= rating ||
+                                                (i - rating < 1 &&
+                                                    i - rating > 0)
+                                                    ? "#FFDD00"
+                                                    : "transparent"
+                                            }
+                                        />
+                                    </Box>
+                                </label>
+                            </div>
+                        );
+                    })}
                 </CardFooter>
             </Stack>
         </Card>
