@@ -10,7 +10,6 @@ import {
     Divider,
     Heading,
     VStack,
-    Text,
     Box,
     Grid,
     useMediaQuery,
@@ -23,7 +22,8 @@ import {
     Button,
     FormControl,
     FormLabel,
-    Input
+    Input,
+    Center
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
@@ -44,6 +44,23 @@ export default function CheckoutList(): JSX.Element {
     const currentCheckout: foodProps[] = CurrentCheckoutList();
     const [checkoutList, setCheckoutList] =
         useState<foodProps[]>(currentCheckout);
+
+    // Filter checkout list by search query
+    const [searchText, setSearchText] = useState<string>("");
+    const searchedFoods: foodProps[] = checkoutList.filter(
+        (food: foodProps): boolean => {
+            return (
+                searchText === "" ||
+                food.ingredients
+                    .join(", ")
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase().trim()) ||
+                food.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase().trim())
+            );
+        }
+    );
 
     // Update the checkout list everytime we change customer role to the customer's order
     useEffect(() => {
@@ -369,6 +386,25 @@ export default function CheckoutList(): JSX.Element {
                                     }}
                                 />
                             </Flex>
+                            <Center>
+                                <FormControl
+                                    id="search-checkout"
+                                    data-testid="search-checkout"
+                                    width="50%"
+                                >
+                                    <FormLabel textAlign="center" fontSize={15}>
+                                        Search by Ingredient:
+                                    </FormLabel>
+                                    <Input
+                                        type="text"
+                                        placeholder="Ingredient"
+                                        value={searchText}
+                                        onChange={(e) =>
+                                            setSearchText(e.target.value)
+                                        }
+                                    />
+                                </FormControl>
+                            </Center>
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody
@@ -377,7 +413,7 @@ export default function CheckoutList(): JSX.Element {
                             overflowY="auto"
                         >
                             <Accordion allowMultiple>
-                                {checkoutList.map(
+                                {searchedFoods.map(
                                     (food: foodProps, index: number) => (
                                         <CheckoutItem
                                             key={index + 1}
