@@ -220,7 +220,7 @@ export default function CheckoutList(): JSX.Element {
                         <AccordionIcon />
                     </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4}>
+                <AccordionPanel pb={4} position="relative">
                     {editing ? (
                         <>
                             <FormControl>
@@ -232,8 +232,9 @@ export default function CheckoutList(): JSX.Element {
                             </FormControl>
                             <Button
                                 onClick={handleAccept}
+                                mt={3}
                                 width={70}
-                                height={10}
+                                height={8}
                                 overflowWrap="break-word"
                                 border="1px"
                                 borderRadius="5px"
@@ -260,8 +261,11 @@ export default function CheckoutList(): JSX.Element {
                             {ingredients.join(", ")}
                             <Button
                                 onClick={handleEdit}
+                                position="absolute"
+                                top="8%"
+                                right="2%"
                                 width={70}
-                                height={10}
+                                height={8}
                                 overflowWrap="break-word"
                                 border="1px"
                                 borderRadius="5px"
