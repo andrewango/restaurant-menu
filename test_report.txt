@@ -169,15 +169,15 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    7.32 |     4.45 |    6.93 |    7.52 |                   
+All files              |    7.45 |     4.24 |     7.1 |    7.64 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 16                
- src/components        |    8.95 |     5.44 |    8.69 |    9.25 |                   
-  AddDeleteUsers.tsx   |       0 |        0 |       0 |       0 | 22-135            
+ src/components        |    8.97 |     5.14 |    8.78 |    9.23 |                   
+  AddDeleteUsers.tsx   |       0 |        0 |       0 |       0 | 23-227            
   AddFoodUI.tsx        |       0 |        0 |       0 |       0 | 19-45             
-  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 27-240            
+  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 26-239            
   CustomFilters.tsx    |       0 |      100 |       0 |       0 | 4                 
-  DeliveryDropDown.tsx |   66.66 |      100 |      50 |   66.66 | 49,75             
+  DeliveryDropDown.tsx |   36.84 |        0 |   42.85 |   36.84 | 53-68,85,163      
   EditFoodList.tsx     |       0 |        0 |       0 |       0 | 25-187            
   EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-41              
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 37-213            
@@ -200,8 +200,8 @@ All files              |    7.32 |     4.45 |    6.93 |    7.52 |
   AboutUs.tsx          |       0 |      100 |       0 |       0 | 13                
   AddFood.tsx          |       0 |        0 |       0 |       0 | 22-266            
   EditFood.tsx         |       0 |        0 |       0 |       0 | 11                
-  EditUsers.tsx        |       0 |      100 |       0 |       0 | 5                 
-  Landing.tsx          |       0 |      100 |       0 |       0 | 11                
+  EditUsers.tsx        |       0 |      100 |       0 |       0 | 7                 
+  Landing.tsx          |       0 |      100 |       0 |       0 | 12                
   ManageFoods.tsx      |       0 |        0 |       0 |       0 | 15-68             
   OwnerLanding.tsx     |       0 |        0 |       0 |       0 | 18-76             
   RemoveFood.tsx       |       0 |        0 |       0 |       0 | 21-120            
@@ -210,5 +210,5 @@ All files              |    7.32 |     4.45 |    6.93 |    7.52 |
 Test Suites: 3 failed, 2 passed, 5 total
 Tests:       3 failed, 20 passed, 23 total
 Snapshots:   0 total
-Time:        7.067 s
+Time:        7.125 s
 Ran all test suites.
