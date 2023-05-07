@@ -1,0 +1,12 @@
+.tag {
+    size: md;
+    border-radius: 1cm;
+    cursor: pointer;
+}
+.tag:hover {
+    transform: scale(1.05);
+}
+
+.radio:hover {
+    transform: scale(1.01);
+}

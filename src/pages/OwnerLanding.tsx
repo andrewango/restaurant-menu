@@ -12,8 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import "./OwnerLanding.css";
-// import background from "./background.jpg";
-// import manageUsers from "./manageUsers.jpg";
 
 <link rel="preload" as="image" href="./background.jpg"></link>;
 export default function OwnerLanding() {
@@ -51,45 +49,28 @@ export default function OwnerLanding() {
                     templateColumns={
                         isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(2, 1fr)"
                     }
-                    columnGap={window.innerWidth * 0.03}
+                    columnGap="3vw"
                 >
                     <Button
                         className="food"
-                        //backgroundImage={background}
-                        w={window.innerWidth * 0.4}
-                        h={window.innerHeight * 0.8}
+                        w="40vw"
+                        h="80vh"
                         onClick={() => (location.hash = "/ManageFoods")}
                     >
-                        <Text
-                            className="text"
-                            w={window.innerWidth * 0.2}
-                            font-weight="bold"
-                        >
+                        <Text className="text" w="20vw" font-weight="bold">
                             Manage Food
                         </Text>
                     </Button>
                     <Button
                         className="user"
-                        //backgroundImage={manageUsers}
-                        w={window.innerWidth * 0.4}
-                        h={window.innerHeight * 0.8}
+                        w="40vw"
+                        h="80vh"
                         onClick={() => (location.hash = "/EditUsers")}
                     >
                         <Text className="text" font-weight="bold">
                             Manage User
                         </Text>
                     </Button>
-                    {/* <Button
-                        className="stats"
-                        //backgroundImage={manageUsers}
-                        w={window.innerWidth * 0.25}
-                        h={window.innerHeight * 0.8}
-                        onClick={() => (location.hash = "/UserStats")}
-                    >
-                        <Text className="text" font-weight="bold">
-                            View Stats
-                        </Text>
-                    </Button> */}
                 </Grid>
             </Center>
             <br></br>

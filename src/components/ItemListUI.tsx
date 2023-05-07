@@ -19,12 +19,7 @@ export default function ItemListUI({
     //Maps each food in our list to a box with food details
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (
-        <Box
-            h={window.innerHeight * 0.7}
-            overflowY="scroll"
-            mt={50}
-            className="section"
-        >
+        <Box h="70vh" overflowY="scroll" mt={50} className="section">
             <Grid
                 templateColumns={
                     isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(1, 1fr)"

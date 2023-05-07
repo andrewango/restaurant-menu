@@ -89,7 +89,7 @@ export default function FoodItem({
                 >
                     {`$${price}`}
                 </Text>
-                {(currentUser.role === "Owner" || currentUser === null) && (
+                {currentUser.role === "Owner" && (
                     <Text className="desc" mt={2}>
                         {`In ${countOrders(
                             storageCustomers,

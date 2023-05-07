@@ -93,7 +93,7 @@ export default function EditFoodTabs({
     return (
         <TabPanel>
             <form onSubmit={handleSubmit}>
-                <SimpleGrid columns={4} columnGap={20} rowGap={2} w="full">
+                <SimpleGrid columns={4} columnGap={5} rowGap={2} w="full">
                     <GridItem colSpan={4}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Name:</FormLabel>
@@ -196,7 +196,7 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
-                                defaultChecked={editPopular ? true : false}
+                                defaultChecked={editPopular}
                             />
                         </FormControl>
                     </GridItem>
@@ -216,7 +216,7 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
-                                defaultChecked={editSpicy ? true : false}
+                                defaultChecked={editSpicy}
                             />
                         </FormControl>
                     </GridItem>

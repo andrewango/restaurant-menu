@@ -61,19 +61,6 @@ body::after {
     background-position: center;
     opacity: 0.8;
 }
-.remove {
-    background-image: url("./removeFood.jpg") !important;
-    background-size: cover !important;
-    background-position: center !important;
-    opacity: 0.9;
-    border-radius: 0.5cm !important;
-}
-.remove:hover {
-    transform: scale(1.01);
-    background-size: cover;
-    background-position: center;
-    opacity: 0.8;
-}
 
 .text {
     color: white;
