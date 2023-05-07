@@ -23,7 +23,8 @@ import {
     FormControl,
     FormLabel,
     Input,
-    Center
+    Center,
+    CardFooter
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
@@ -431,8 +432,9 @@ export default function CheckoutList(): JSX.Element {
                                     )
                                 )}
                             </Accordion>
-                            <DeliveryDropDown></DeliveryDropDown>
                         </CardBody>
+                        <Divider></Divider>
+                        <CardFooter height={100}></CardFooter>
                     </Card>
                 </Grid>
             </VStack>

@@ -1,8 +1,21 @@
-import { Box } from "@chakra-ui/react";
+import { Box, HStack, StackDivider, useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
+
 import { Button } from "@chakra-ui/react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    Checkbox
+} from "@chakra-ui/react";
+import { userProps } from "../interfaces/User";
+import { GetCurrentUser } from "./SelectRole";
 //import styled from "styled-components";
 export function DeliveryDropDown(): JSX.Element {
     const [time, changeTime] = useState<string>("12:00");
@@ -30,11 +43,116 @@ export function DeliveryDropDown(): JSX.Element {
         transition="background-color 0.3s ease"
     `;
     */
+
+    function CheckoutButton() {
+        const [confirmed, setConfirmed] = useState<boolean>(false);
+        const { isOpen, onOpen, onClose } = useDisclosure();
+
+        // Place order button can only be clicked if customer confirms the order, and clears the current customer's checkout list
+        function handleOpen() {
+            if (confirmed) {
+                onOpen();
+                const clearedUser: userProps = GetCurrentUser();
+                clearedUser.order = [];
+                sessionStorage.setItem("user", JSON.stringify(clearedUser));
+
+                sessionStorage.setItem("checkout", JSON.stringify([]));
+                window.dispatchEvent(new Event("checkoutUpdated"));
+                console.log("Hi");
+            }
+        }
+
+        // Uncheck the confirm checkbox when we close the modal
+        function handleClose() {
+            setConfirmed(!confirmed);
+            onClose();
+        }
+
+        return (
+            <>
+                <div id="confirm-place-order">
+                    <HStack
+                        divider={<StackDivider borderColor="gray.200" />}
+                        spacing="15px"
+                        ml={-80}
+                    >
+                        <Checkbox
+                            style={{ color: "black" }}
+                            type="checkbox"
+                            id="confirm-order-check"
+                            isChecked={confirmed}
+                            onChange={() => {
+                                setConfirmed(!confirmed);
+                            }}
+                            colorScheme="red"
+                        >
+                            Confirm
+                        </Checkbox>
+                        <Button
+                            id="place-order-button"
+                            rightIcon={<AiOutlineShoppingCart />}
+                            bg="red.400"
+                            color="white"
+                            _hover={{ bgColor: "red.600", color: "white" }}
+                            ml={0}
+                            onClick={handleOpen}
+                        >
+                            Place Order
+                        </Button>
+                    </HStack>
+                    <Modal
+                        id="order-placed-popup"
+                        closeOnOverlayClick={false}
+                        isOpen={isOpen}
+                        onClose={handleClose}
+                        size="sm"
+                    >
+                        <ModalOverlay />
+                        <ModalContent textAlign="center">
+                            <ModalHeader>Order placed!</ModalHeader>
+                            <ModalCloseButton />
+                            <ModalBody pb={6}>
+                                Your delivery time is {time}.
+                            </ModalBody>
+
+                            <ModalFooter>
+                                <Button
+                                    bg="red.400"
+                                    color="white"
+                                    mr={3}
+                                    _hover={{
+                                        bgColor: "red.600",
+                                        color: "white"
+                                    }}
+                                    onClick={handleClose}
+                                >
+                                    OK
+                                </Button>
+                            </ModalFooter>
+                        </ModalContent>
+                    </Modal>
+                </div>
+            </>
+        );
+    }
+
     return (
-        <Box width="90%" position="absolute" bottom="0" mb="3">
+        <Box
+            id="delivery"
+            maxW="sm"
+            width="90%"
+            position="absolute"
+            bottom="0"
+            mb={10}
+            ml={40}
+        >
             <p
                 className="del-time"
-                style={{ color: "black", textAlign: "left" }}
+                style={{
+                    color: "black",
+                    textAlign: "left",
+                    marginBottom: "7px"
+                }}
             >
                 Delivery Time:
             </p>
@@ -60,27 +178,7 @@ export function DeliveryDropDown(): JSX.Element {
                         </Form.Select>
                     </Form.Group>
                 </form>
-                <Button
-                    bg="red.400"
-                    as="span"
-                    fontWeight="bold"
-                    color="white"
-                    rightIcon={<AiOutlineShoppingCart />}
-                    px={1}
-                    py={1}
-                    transition="background-color 0.3s ease"
-                    _hover={{ bgColor: "red.600", color: "white" }}
-                    borderRadius="md"
-                    onClick={() =>
-                        alert(
-                            "Ordered placed! Your delivery time is " +
-                                time +
-                                "!"
-                        )
-                    }
-                >
-                    Checkout
-                </Button>
+                <CheckoutButton></CheckoutButton>
             </div>
         </Box>
     );
