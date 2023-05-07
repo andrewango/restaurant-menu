@@ -169,13 +169,13 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    7.29 |     4.01 |     7.1 |    7.47 |                   
+All files              |    6.88 |     3.84 |     6.7 |    7.03 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 16                
- src/components        |    8.23 |     4.36 |    8.33 |    8.45 |                   
+ src/components        |     7.7 |     4.16 |    7.78 |     7.9 |                   
   AddDeleteUsers.tsx   |       0 |        0 |       0 |       0 | 23-227            
-  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 28-241            
-  DeliveryDropDown.tsx |   36.84 |        0 |   42.85 |   36.84 | 53-68,85,163      
+  CheckoutList.tsx     |       0 |        0 |       0 |       0 | 36-434            
+  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 53-78,95,177      
   EditFoodList.tsx     |       0 |        0 |       0 |       0 | 24-181            
   EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-41              
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 37-224            
@@ -200,7 +200,7 @@ All files              |    7.29 |     4.01 |     7.1 |    7.47 |
   AddFood.tsx          |       0 |        0 |       0 |       0 | 22-266            
   EditFood.tsx         |       0 |        0 |       0 |       0 | 11                
   EditUsers.tsx        |       0 |      100 |       0 |       0 | 7                 
-  Landing.tsx          |       0 |      100 |       0 |       0 | 11                
+  Landing.tsx          |       0 |      100 |       0 |       0 | 12                
   ManageFoods.tsx      |       0 |      100 |       0 |       0 | 7-53              
   OwnerLanding.tsx     |       0 |        0 |       0 |       0 | 16-68             
   UserStats.tsx        |       0 |        0 |       0 |       0 | 24-94             
@@ -208,5 +208,5 @@ All files              |    7.29 |     4.01 |     7.1 |    7.47 |
 Test Suites: 3 failed, 2 passed, 5 total
 Tests:       3 failed, 20 passed, 23 total
 Snapshots:   0 total
-Time:        7.121 s
+Time:        9.88 s
 Ran all test suites.
