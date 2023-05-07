@@ -19,7 +19,11 @@ import {
     AccordionIcon,
     AccordionButton,
     AccordionPanel,
-    Accordion
+    Accordion,
+    Button,
+    FormControl,
+    FormLabel,
+    Input
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
@@ -59,6 +63,21 @@ export default function CheckoutList(): JSX.Element {
             window.removeEventListener("checkoutUpdated", handleStorage);
     }, []);
 
+    const [editing, setEditing] = useState<boolean>(false);
+    const [text, setText] = useState<string>("");
+
+    const handleEdit = () => {
+        setEditing(true);
+    };
+
+    const handleAccept = () => {
+        setEditing(false);
+    };
+
+    const handleTyping = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setText(e.target.value);
+    };
+
     // CheckoutItem
     function CheckoutItem({
         name,
@@ -78,13 +97,25 @@ export default function CheckoutList(): JSX.Element {
             <AccordionItem ref={drag}>
                 <h2>
                     <AccordionButton fontWeight="semibold">
-                        <Box as="span" flex="1" textAlign="left">
+                        <Box as="span" flex="1" textAlign="center" ml={10}>
                             {name}
                         </Box>
                         <AccordionIcon />
                     </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4}>{ingredients.join(", ")}</AccordionPanel>
+                <AccordionPanel pb={4}>
+                    {editing ? (
+                        <FormControl>
+                            <Input
+                                textAlign="center"
+                                value={ingredients.join(", ")}
+                                onChange={handleTyping}
+                            />
+                        </FormControl>
+                    ) : (
+                        ingredients.join(", ")
+                    )}
+                </AccordionPanel>
             </AccordionItem>
         );
     }
@@ -225,12 +256,63 @@ export default function CheckoutList(): JSX.Element {
                                 alignItems="center"
                                 justifyContent="space-between"
                             >
+                                {editing ? (
+                                    <Button
+                                        onClick={handleAccept}
+                                        width={70}
+                                        height={10}
+                                        overflowWrap="break-word"
+                                        border="1px"
+                                        borderRadius="5px"
+                                        fontSize="16px"
+                                        fontWeight="semibold"
+                                        bg="red.500"
+                                        borderColor="red.600"
+                                        color="white"
+                                        _hover={{
+                                            bg: "red.600",
+                                            color: "white"
+                                        }}
+                                        _active={{
+                                            bg: "red.300",
+                                            transform: "scale(0.95)",
+                                            borderColor: "orange"
+                                        }}
+                                    >
+                                        Accept
+                                    </Button>
+                                ) : (
+                                    <Button
+                                        onClick={handleEdit}
+                                        width={70}
+                                        height={10}
+                                        overflowWrap="break-word"
+                                        border="1px"
+                                        borderRadius="5px"
+                                        fontSize="16px"
+                                        fontWeight="semibold"
+                                        bg="red.500"
+                                        borderColor="red.600"
+                                        color="white"
+                                        _hover={{
+                                            bg: "red.600",
+                                            color: "white"
+                                        }}
+                                        _active={{
+                                            bg: "red.300",
+                                            transform: "scale(0.95)",
+                                            borderColor: "orange"
+                                        }}
+                                    >
+                                        Edit
+                                    </Button>
+                                )}
                                 <Heading
                                     fontWeight="bold"
                                     mr={2}
                                     flex={1}
                                     textAlign="center"
-                                    ml="38"
+                                    ml=""
                                 >
                                     Checkout
                                 </Heading>
