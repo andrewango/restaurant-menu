@@ -1,7 +1,7 @@
 .tag {
     size: md;
     cursor: pointer;
-    color: white;
+    color: white !important;
 }
 .tag:hover {
     transform: scale(1.05);
