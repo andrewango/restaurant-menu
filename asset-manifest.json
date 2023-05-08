@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/restaurant-menu/static/css/main.9ffc7bb5.css",
-    "main.js": "/restaurant-menu/static/js/main.ae3e4b62.js",
+    "main.css": "/restaurant-menu/static/css/main.44149450.css",
+    "main.js": "/restaurant-menu/static/js/main.c4f8908e.js",
     "static/js/787.578e6cb3.chunk.js": "/restaurant-menu/static/js/787.578e6cb3.chunk.js",
     "static/media/manageUsers.jpg": "/restaurant-menu/static/media/manageUsers.96dcfb8d5114cc14eb1e.jpg",
     "static/media/graph.jpg": "/restaurant-menu/static/media/graph.7e8d91e218720d2b6bad.jpg",
@@ -13,12 +13,12 @@
     "static/media/ChopinScript.ttf": "/restaurant-menu/static/media/ChopinScript.294d294101e0ae84b924.ttf",
     "static/media/DeleteButton.png": "/restaurant-menu/static/media/DeleteButton.7c6432cea5b85f8da102.png",
     "index.html": "/restaurant-menu/index.html",
-    "main.9ffc7bb5.css.map": "/restaurant-menu/static/css/main.9ffc7bb5.css.map",
-    "main.ae3e4b62.js.map": "/restaurant-menu/static/js/main.ae3e4b62.js.map",
+    "main.44149450.css.map": "/restaurant-menu/static/css/main.44149450.css.map",
+    "main.c4f8908e.js.map": "/restaurant-menu/static/js/main.c4f8908e.js.map",
     "787.578e6cb3.chunk.js.map": "/restaurant-menu/static/js/787.578e6cb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ffc7bb5.css",
-    "static/js/main.ae3e4b62.js"
+    "static/css/main.44149450.css",
+    "static/js/main.c4f8908e.js"
   ]
 }
