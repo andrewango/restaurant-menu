@@ -141,9 +141,7 @@ export function SearchBar(): JSX.Element {
     return (
         <div>
             <Form.Group controlId="formCorrectAnswer">
-                <Form.Label style={{ color: "white" }}>
-                    Search for Food
-                </Form.Label>
+                <Form.Label className="filter">Search Menu</Form.Label>
                 <Form.Control
                     value={text}
                     onChange={(e) => {
@@ -153,9 +151,7 @@ export function SearchBar(): JSX.Element {
                 />
             </Form.Group>
             <HStack pl={6} mt={1} spacing={5}>
-                <Box textColor="white" fontWeight="bold">
-                    Filter:{" "}
-                </Box>
+                <Box className="filter">Filter: </Box>
                 <Tag
                     className="tag"
                     backgroundColor={spicy ? "#f56565" : "#f1f1f166"}
@@ -209,9 +205,7 @@ export function SearchBar(): JSX.Element {
             </HStack>
             <RadioGroup>
                 <HStack pl={6} mt={1} spacing={5}>
-                    <Box textColor="white" fontWeight="bold">
-                        Sort By:{" "}
-                    </Box>
+                    <Box className="filter">Sort By: </Box>
                     <Radio
                         colorScheme="red"
                         value="high"
