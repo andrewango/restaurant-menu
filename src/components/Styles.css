@@ -1,18 +1,29 @@
 .tag {
-    size: md;
+    font-size: 1rem !important;
     cursor: pointer;
     color: white !important;
+    font-weight: 600 !important;
 }
 .tag:hover {
     transform: scale(1.05);
 }
 
+.radio {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+}
 .radio:hover {
     transform: scale(1.01);
 }
 
+.filter {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
 .navbtn {
-    font-size: large;
+    font-size: 1.125rem;
     font-weight: bold;
     color: white;
     transition: background-color 0.3s ease;
