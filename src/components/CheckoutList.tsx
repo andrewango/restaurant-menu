@@ -10,11 +10,20 @@ import {
     Divider,
     Heading,
     VStack,
-    Text,
     Box,
     Grid,
     useMediaQuery,
     Flex,
+    AccordionItem,
+    AccordionIcon,
+    AccordionButton,
+    AccordionPanel,
+    Accordion,
+    Button,
+    FormControl,
+    FormLabel,
+    Input,
+    Center,
     CardFooter
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
@@ -22,7 +31,6 @@ import { foodProps } from "../interfaces/Food";
 import { MenuList } from "../pages/AddFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
-import { DeliveryDropDown } from "./DeliveryDropDown";
 
 export function CurrentCheckoutList(): foodProps[] {
     const checkout: string | null = sessionStorage.getItem("checkout");
@@ -36,6 +44,26 @@ export default function CheckoutList(): JSX.Element {
     const currentCheckout: foodProps[] = CurrentCheckoutList();
     const [checkoutList, setCheckoutList] =
         useState<foodProps[]>(currentCheckout);
+
+    // Filter checkout list by search query (name, ingredients, description)
+    const [searchText, setSearchText] = useState<string>("");
+    const searchedFoods: foodProps[] = checkoutList.filter(
+        (food: foodProps): boolean => {
+            return (
+                searchText === "" ||
+                food.ingredients
+                    .join(", ")
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase().trim()) ||
+                food.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase().trim()) ||
+                food.desc
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase().trim())
+            );
+        }
+    );
 
     // Update the checkout list everytime we change customer role to the customer's order
     useEffect(() => {
@@ -54,22 +82,6 @@ export default function CheckoutList(): JSX.Element {
         return () =>
             window.removeEventListener("checkoutUpdated", handleStorage);
     }, []);
-
-    // CheckoutItem
-    function CheckoutItem({ name }: { name: string }): JSX.Element {
-        const [, drag] = useDrag(() => ({
-            type: "removeItem",
-            item: { name: name },
-            collect: (monitor) => ({
-                isDragging: !!monitor.isDragging()
-            })
-        }));
-        return (
-            <Text ref={drag} fontWeight="bold">
-                {name}
-            </Text>
-        );
-    }
 
     const [, addDrop] = useDrop(() => ({
         accept: "foodItem",
@@ -178,10 +190,160 @@ export default function CheckoutList(): JSX.Element {
         });
     };
 
-    // Debugging
+    // CheckoutItem
+    function CheckoutItem({
+        name,
+        ingredients,
+        onIngredientsUpdate
+    }: {
+        name: string;
+        ingredients: string[];
+        onIngredientsUpdate: (newIngredients: string[]) => void;
+    }): JSX.Element {
+        const [, drag] = useDrag(() => ({
+            type: "removeItem",
+            item: { name: name },
+            collect: (monitor) => ({
+                isDragging: !!monitor.isDragging()
+            })
+        }));
+
+        const [editing, setEditing] = useState<boolean>(false);
+        const [text, setText] = useState<string>(ingredients.join(", "));
+
+        const handleEdit = () => {
+            setEditing(true);
+        };
+
+        function handleAccept() {
+            setEditing(false);
+            const newIngredients: string[] = text
+                .split(",")
+                .map((ingredient: string) => ingredient.trim());
+            onIngredientsUpdate(newIngredients);
+        }
+
+        const handleTyping = (e: React.ChangeEvent<HTMLInputElement>) => {
+            setText(e.target.value);
+        };
+
+        return (
+            <AccordionItem ref={drag}>
+                <h2>
+                    <AccordionButton
+                        fontWeight="semibold"
+                        _expanded={{ bg: "tomato", color: "white" }}
+                    >
+                        <Box as="span" flex="1" textAlign="center" ml={10}>
+                            {name}
+                        </Box>
+                        <AccordionIcon />
+                    </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4} position="relative">
+                    {editing ? (
+                        <>
+                            <FormControl>
+                                <Input
+                                    textAlign="center"
+                                    value={text}
+                                    onChange={handleTyping}
+                                />
+                            </FormControl>
+                            <Button
+                                onClick={handleAccept}
+                                mt={3}
+                                width={70}
+                                height={8}
+                                overflowWrap="break-word"
+                                border="1px"
+                                borderRadius="5px"
+                                fontSize="16px"
+                                fontWeight="semibold"
+                                bg="tomato"
+                                borderColor="red.600"
+                                color="white"
+                                _hover={{
+                                    bg: "red.600",
+                                    color: "white"
+                                }}
+                                _active={{
+                                    bg: "red.300",
+                                    transform: "scale(0.95)",
+                                    borderColor: "orange"
+                                }}
+                            >
+                                Accept
+                            </Button>
+                        </>
+                    ) : (
+                        <>
+                            {ingredients.join(", ")}
+                            <Button
+                                onClick={handleEdit}
+                                position="absolute"
+                                top="8%"
+                                right="2%"
+                                width={70}
+                                height={8}
+                                overflowWrap="break-word"
+                                border="1px"
+                                borderRadius="5px"
+                                fontSize="16px"
+                                fontWeight="semibold"
+                                bg="tomato"
+                                borderColor="red.600"
+                                color="white"
+                                _hover={{
+                                    bg: "red.600",
+                                    color: "white"
+                                }}
+                                _active={{
+                                    bg: "red.300",
+                                    transform: "scale(0.95)",
+                                    borderColor: "orange"
+                                }}
+                            >
+                                Edit
+                            </Button>
+                        </>
+                    )}
+                </AccordionPanel>
+            </AccordionItem>
+        );
+    }
+
+    const handleIngredientsUpdate = (
+        foodName: string,
+        newIngredients: string[]
+    ) => {
+        const newCheckout = checkoutList.map((food: foodProps) => {
+            if (food.name === foodName) {
+                return {
+                    ...food,
+                    ingredients: newIngredients
+                };
+            } else {
+                return food;
+            }
+        });
+        setCheckoutList(newCheckout);
+        sessionStorage.setItem("checkout", JSON.stringify(newCheckout));
+
+        const currentUser: userProps = GetCurrentUser();
+        const newCustomerList = ListOfCustomers().map((customer: userProps) =>
+            customer.orderID === currentUser.orderID
+                ? { ...customer, order: newCheckout }
+                : customer
+        );
+        sessionStorage.setItem("customers", JSON.stringify(newCustomerList));
+    };
+
+    // DEBUGGING
     //useEffect(() => {
     //console.log(checkoutList);
     //}, [checkoutList]);
+
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (
@@ -209,10 +371,9 @@ export default function CheckoutList(): JSX.Element {
                             >
                                 <Heading
                                     fontWeight="bold"
-                                    mr={2}
                                     flex={1}
                                     textAlign="center"
-                                    ml="38"
+                                    ml={16}
                                 >
                                     Checkout
                                 </Heading>
@@ -228,6 +389,31 @@ export default function CheckoutList(): JSX.Element {
                                     }}
                                 />
                             </Flex>
+                            <Center>
+                                <FormControl
+                                    id="search-checkout"
+                                    data-testid="search-checkout"
+                                    width="50%"
+                                >
+                                    <FormLabel
+                                        textAlign="center"
+                                        fontSize={15}
+                                        ml={10}
+                                    >
+                                        Search Food:
+                                    </FormLabel>
+                                    <Input
+                                        type="text"
+                                        placeholder="Name/Ingredient/Description"
+                                        value={searchText}
+                                        onChange={(e) =>
+                                            setSearchText(e.target.value)
+                                        }
+                                        textAlign="center"
+                                        ml={2}
+                                    />
+                                </FormControl>
+                            </Center>
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody
@@ -235,20 +421,28 @@ export default function CheckoutList(): JSX.Element {
                             textAlign="center"
                             overflowY="auto"
                         >
-                            <VStack spacing="5px" w="100%">
-                                {checkoutList.map(
+                            <Accordion allowMultiple>
+                                {searchedFoods.map(
                                     (food: foodProps, index: number) => (
                                         <CheckoutItem
                                             key={index + 1}
                                             name={food.name}
+                                            ingredients={food.ingredients}
+                                            onIngredientsUpdate={(
+                                                newIngredients
+                                            ) =>
+                                                handleIngredientsUpdate(
+                                                    food.name,
+                                                    newIngredients
+                                                )
+                                            }
                                         ></CheckoutItem>
                                     )
                                 )}
-                            </VStack>
+                            </Accordion>
                         </CardBody>
-                        <CardFooter alignItems="center" justifyContent="center">
-                            <DeliveryDropDown></DeliveryDropDown>
-                        </CardFooter>
+                        <Divider></Divider>
+                        <CardFooter height={100}></CardFooter>
                     </Card>
                 </Grid>
             </VStack>

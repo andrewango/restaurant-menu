@@ -5,6 +5,7 @@ import { SearchBar } from "../components/SearchBar";
 import restaurantLogo from "./restaurant-logo.png";
 import CheckoutList from "../components/CheckoutList";
 import { SelectRole } from "../components/SelectRole";
+import { DeliveryDropDown } from "../components/DeliveryDropDown";
 import "./CustomerStyles.css";
 
 export default function Landing() {
@@ -42,8 +43,9 @@ export default function Landing() {
                     <Box flex="1" p="4" ml="5vw">
                         <SearchBar></SearchBar>
                     </Box>
-                    <Grid overflow="hidden" flex="1" p="4" mt="35px">
+                    <Grid flex="1" p="4" mt="35px" ml="100px">
                         <CheckoutList></CheckoutList>
+                        <DeliveryDropDown></DeliveryDropDown>
                     </Grid>
                 </Grid>
                 <br></br>
