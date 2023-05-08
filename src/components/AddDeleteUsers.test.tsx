@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { SelectRole } from "./SelectRole";
 import userEvent from "@testing-library/user-event";
 
-describe("NavBar tests", () => {
+describe("AddDeleteUsers tests", () => {
     test("The page is succesfully rendered", () => {
         render(
             <BrowserRouter>
@@ -17,20 +17,29 @@ describe("NavBar tests", () => {
         expect(screen.getByText(/Add Customer/i)).toBeInTheDocument();
     });
     test("Adding a customer updates SelectRole", () => {
+        const sessionStorageMock = {
+            getItem: jest.fn(),
+            setItem: jest.fn(),
+            clear: jest.fn()
+        };
+
+        // Replace the real sessionStorage with the mock version
+        Object.defineProperty(window, "sessionStorage", {
+            value: sessionStorageMock
+        });
+
         render(
             <BrowserRouter>
                 <AddDeleteUsers />
-                <SelectRole />
             </BrowserRouter>
         );
         const textBox = screen.getByRole("textbox");
         userEvent.type(textBox, "Colby");
-        screen.getByRole("button").click();
-        render(
-            <BrowserRouter>
-                <SelectRole />
-            </BrowserRouter>
+        screen.getByText(/Add Customer/i).click();
+
+        expect(sessionStorageMock.setItem).toHaveBeenCalledWith(
+            "customers",
+            JSON.stringify(["Colby"])
         );
-        expect(screen.getByText(/Colby/i)).toBeInTheDocument();
     });
 });
