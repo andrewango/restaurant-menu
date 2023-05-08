@@ -43,7 +43,7 @@ export default function Landing() {
                     <Box flex="1" p="4" ml="5vw">
                         <SearchBar></SearchBar>
                     </Box>
-                    <Grid flex="1" p="4" mt="35px" ml="100px">
+                    <Grid flex="1" p="4" mt="35px">
                         <CheckoutList></CheckoutList>
                         <DeliveryDropDown></DeliveryDropDown>
                     </Grid>

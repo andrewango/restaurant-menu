@@ -1,4 +1,10 @@
-import { Box, HStack, StackDivider, useDisclosure } from "@chakra-ui/react";
+import {
+    Box,
+    HStack,
+    Stack,
+    StackDivider,
+    useDisclosure
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
@@ -147,38 +153,32 @@ export function DeliveryDropDown(): JSX.Element {
     }
 
     return (
-        <Box
-            id="delivery"
-            //className="ddd-box"
-            maxW="sm"
-            width="90%"
-            position="relative"
-            bottom="0"
-            mt="72%"
-            ml={40}
-        >
-            <p className="del-time ddd-text">Delivery Time:</p>
-            <div className="delivery">
-                <form>
-                    <Form.Group controlId="delivery-dropdown">
-                        <Form.Select
-                            className="ddd-select"
-                            onChange={(e) => changeTime(e.target.value)}
-                            name={time}
-                            value={time}
-                            id={time}
-                            key={time}
-                        >
-                            {TIMES.map((time: string) => (
-                                <option value={time} key={time} id={time}>
-                                    {time}
-                                </option>
-                            ))}
-                        </Form.Select>
-                    </Form.Group>
-                </form>
-                <CheckoutButton></CheckoutButton>
-            </div>
-        </Box>
+        <Stack w="35vw" alignItems="center">
+            <Box h="65vh" mt="7.5vh"></Box>
+            <Box id="delivery" className="ddd-box" maxW="sm">
+                <p className="del-time ddd-text">Delivery Time:</p>
+                <div className="delivery">
+                    <form>
+                        <Form.Group controlId="delivery-dropdown">
+                            <Form.Select
+                                className="ddd-select"
+                                onChange={(e) => changeTime(e.target.value)}
+                                name={time}
+                                value={time}
+                                id={time}
+                                key={time}
+                            >
+                                {TIMES.map((time: string) => (
+                                    <option value={time} key={time} id={time}>
+                                        {time}
+                                    </option>
+                                ))}
+                            </Form.Select>
+                        </Form.Group>
+                    </form>
+                    <CheckoutButton></CheckoutButton>
+                </div>
+            </Box>
+        </Stack>
     );
 }
