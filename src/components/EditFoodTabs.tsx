@@ -13,8 +13,8 @@ import { foodProps } from "../interfaces/Food";
 import { EditMenuList } from "./EditFoodList";
 import { MenuList } from "../pages/AddFood";
 import "./EditFoodStyles.css";
-import { userProps } from "../interfaces/User";
-import { ListOfCustomers } from "./SelectRole";
+//import { userProps } from "../interfaces/User";
+//import { ListOfCustomers } from "./SelectRole";
 
 export default function EditFoodTabs({
     editName,
