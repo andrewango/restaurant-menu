@@ -76,14 +76,32 @@ export default function UserStats() {
                     <Table variant="simple">
                         <Thead>
                             <Tr>
-                                <Th>Item</Th>
-                                <Th>Quantity in user carts</Th>
+                                <Th fontWeight="extrabold" fontSize="xl">
+                                    Item - Price
+                                </Th>
+                                <Th fontWeight="extrabold" fontSize="xl">
+                                    Ingredients
+                                </Th>
+                                {/* <Th fontWeight="bold" fontSize="bg">
+                                    Price
+                                </Th> */}
+                                <Th fontWeight="extrabold" fontSize="xl">
+                                    Quantity in user carts
+                                </Th>
                             </Tr>
                         </Thead>
                         <Tbody>
                             {foods.map((food: foodProps) => (
                                 <Tr key={food.name}>
-                                    <Td fontWeight="semibold">{food.name}</Td>
+                                    <Td fontWeight="semibold">
+                                        {food.name + " - $" + food.price}
+                                    </Td>
+                                    <Td fontWeight="semibold">
+                                        {food.ingredients.join(", ")}
+                                    </Td>
+                                    {/* <Td fontWeight="semibold">
+                                        {"$" + food.price}
+                                    </Td> */}
                                     <Td>
                                         {countOrders(
                                             storageCustomers,
