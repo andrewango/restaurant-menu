@@ -220,7 +220,7 @@ All files              |    6.89 |     3.84 |     6.7 |    7.05 |
  src/components        |    7.72 |     4.16 |    7.78 |    7.92 |                   
   AddDeleteUsers.tsx   |       0 |        0 |       0 |       0 | 24-201            
   CheckoutList.tsx     |       0 |        0 |       0 |       0 | 37-382            
-  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 53-78,95,166      
+  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165     
   EditFoodList.tsx     |       0 |        0 |       0 |       0 | 26-165            
   EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-41              
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 38-225            
@@ -253,5 +253,5 @@ All files              |    6.89 |     3.84 |     6.7 |    7.05 |
 Test Suites: 4 failed, 2 passed, 6 total
 Tests:       3 failed, 20 passed, 23 total
 Snapshots:   0 total
-Time:        11.289 s
+Time:        11.237 s
 Ran all test suites.
