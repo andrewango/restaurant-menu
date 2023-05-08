@@ -102,6 +102,31 @@ export default function EditFoodTabs({
         setFoodlist(newFoodList);
         sessionStorage.setItem("menu", JSON.stringify(newFoodList));
         sessionStorage.setItem("editFoodList", JSON.stringify(newEditFoodList));
+
+        // When food is edited, change the food's field in each customer checkout list that has it
+        // First, we map a new customer list with edited field for all customers who have the food item
+        const currentCustomers: userProps[] = ListOfCustomers();
+        const customersWithNewFood: userProps[] = currentCustomers.map(
+            (customer: userProps) => ({
+                ...customer,
+                order: customer.order.map((original: foodProps) => {
+                    if (editName === original.name) {
+                        return food;
+                    } else {
+                        return {
+                            ...original,
+                            type: original.type,
+                            ingredients: original.ingredients
+                        };
+                    }
+                })
+            })
+        );
+        // Next, we update sessionStorage with this new customer list so it can render properly in other components
+        sessionStorage.setItem(
+            "customers",
+            JSON.stringify(customersWithNewFood)
+        );
     };
 
     return (
