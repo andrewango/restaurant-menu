@@ -169,17 +169,17 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    6.88 |     3.84 |     6.7 |    7.03 |                   
+All files              |    6.88 |     3.81 |     6.7 |    7.03 |                   
  src                   |       0 |      100 |       0 |       0 |                   
   App.tsx              |       0 |      100 |       0 |       0 | 16                
- src/components        |     7.7 |     4.16 |    7.78 |     7.9 |                   
+ src/components        |     7.7 |     4.13 |    7.78 |     7.9 |                   
   AddDeleteUsers.tsx   |       0 |        0 |       0 |       0 | 23-227            
   CheckoutList.tsx     |       0 |        0 |       0 |       0 | 36-434            
   DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 53-78,95,177      
   EditFoodList.tsx     |       0 |        0 |       0 |       0 | 24-181            
   EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-41              
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 37-224            
-  EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 27-150            
+  EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 27-151            
   FoodItem.tsx         |       0 |        0 |       0 |       0 | 18-127            
   ItemListUI.tsx       |       0 |        0 |       0 |       0 | 11-31             
   NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 13                
@@ -208,5 +208,5 @@ All files              |    6.88 |     3.84 |     6.7 |    7.03 |
 Test Suites: 3 failed, 2 passed, 5 total
 Tests:       3 failed, 20 passed, 23 total
 Snapshots:   0 total
-Time:        9.88 s
+Time:        6.778 s
 Ran all test suites.
