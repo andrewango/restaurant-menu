@@ -28,7 +28,7 @@ const defaultCustomer: userProps = {
     order: [],
     role: "Customer"
 };
-sessionStorage.setItem("customers", JSON.stringify([defaultCustomer]));
+//sessionStorage.setItem("customers", JSON.stringify([defaultCustomer]));
 
 export function GetCurrentUser() {
     const user = sessionStorage.getItem("user");
@@ -44,7 +44,7 @@ export function ListOfCustomers() {
     const customers = sessionStorage.getItem("customers");
     const customersToParse =
         customers !== null && customers !== undefined ? customers : "";
-    return customersToParse ? JSON.parse(customersToParse) : [];
+    return customersToParse ? JSON.parse(customersToParse) : [defaultCustomer];
 }
 
 export function SelectRole(): JSX.Element {
