@@ -248,10 +248,10 @@ All files              |    6.89 |     3.84 |     6.7 |    7.05 |
   Landing.tsx          |       0 |      100 |       0 |       0 | 12                
   ManageFoods.tsx      |       0 |      100 |       0 |       0 | 8-34              
   OwnerLanding.tsx     |       0 |        0 |       0 |       0 | 17-49             
-  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-85             
+  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-95             
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 4 failed, 2 passed, 6 total
 Tests:       3 failed, 20 passed, 23 total
 Snapshots:   0 total
-Time:        11.237 s
+Time:        8.255 s
 Ran all test suites.
