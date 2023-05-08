@@ -311,7 +311,7 @@ export default function CheckoutList(): JSX.Element {
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (
-        <Box h="0.72vh" mt={100}>
+        <Box h="0.72vh" mt={100} zIndex="1" position="absolute">
             <VStack spacing="3px">
                 <Grid
                     templateColumns={
