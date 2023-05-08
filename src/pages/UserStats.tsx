@@ -19,6 +19,7 @@ import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import foodList from "../data/foods.json";
 import { NavLink } from "react-router-dom";
+import "../components/Styles.css";
 
 function countOrders(list: userProps[], foodName: string): number {
     return list.reduce((count, user) => {
@@ -42,17 +43,7 @@ export default function UserStats() {
     return (
         <div style={{ padding: 10 }}>
             <Flex wrap="wrap">
-                <Heading
-                    display="flex"
-                    justifyContent="center"
-                    mt={8}
-                    px={10}
-                    fontSize="50px"
-                    fontWeight="bold"
-                    textAlign="center"
-                >
-                    stats
-                </Heading>
+                <Heading className="heading">Stats</Heading>
                 <Spacer></Spacer>
                 <VStack mb="10px">
                     <Button

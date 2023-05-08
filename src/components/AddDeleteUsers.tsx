@@ -18,6 +18,7 @@ import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";
 import { ListOfCustomers } from "./SelectRole";
 import Delete from "../assets/DeleteButton.png";
+import "./Styles.css";
 
 export default function AddDeleteUsers(): JSX.Element {
     const customers: userProps[] = ListOfCustomers();
@@ -119,9 +120,8 @@ export default function AddDeleteUsers(): JSX.Element {
                     <FormControl
                         isRequired
                         id="add"
+                        className="edituser-form"
                         width="800%"
-                        pl={20}
-                        mt={10}
                     >
                         <FormLabel>Name:</FormLabel>
                         <Input
@@ -150,28 +150,7 @@ export default function AddDeleteUsers(): JSX.Element {
                 type="submit"
                 onClick={handleAddSubmit}
                 id="add-customer"
-                height="40px"
-                lineHeight="2.1"
-                transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
-                border="1px"
-                ml={20}
-                px={10}
-                borderRadius="5px"
-                fontSize="16px"
-                fontWeight="semibold"
-                bg="red.500"
-                borderColor="red.600"
-                color="white"
-                _hover={{ bg: "red.600", color: "white" }}
-                _active={{
-                    bg: "red.300",
-                    transform: "scale(0.95)",
-                    borderColor: "orange"
-                }}
-                _focus={{
-                    boxShadow:
-                        "0 0 2px 2px rgba(255, 30, 0, .50), 0 1px 1px rgba(0, 0, 0, .15)"
-                }}
+                className="edituser-btn"
             >
                 Add Customer
             </Box>
@@ -198,18 +177,13 @@ export default function AddDeleteUsers(): JSX.Element {
                                                 <Box
                                                     as="button"
                                                     type="submit"
-                                                    width="5%"
-                                                    height="5%"
-                                                    mr={5}
+                                                    className="edituser-remove"
                                                     onClick={() =>
                                                         handleDeleteSubmit(
                                                             customer.orderID
                                                         )
                                                     }
                                                     id="remove-customer"
-                                                    _active={{
-                                                        transform: "scale(0.95)"
-                                                    }}
                                                 >
                                                     <Image
                                                         src={Delete}

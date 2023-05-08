@@ -12,6 +12,7 @@ import {
 import { foodProps } from "../interfaces/Food";
 import { EditMenuList } from "./EditFoodList";
 import { MenuList } from "../pages/AddFood";
+import "./EditFoodStyles.css";
 
 export default function EditFoodTabs({
     editName,
@@ -233,9 +234,10 @@ export default function EditFoodTabs({
                     </GridItem>
                     <GridItem colSpan={4}>
                         <Button
+                            type="submit"
+                            //className="editfood-btn"
                             size="lg"
                             w="full"
-                            type="submit"
                             colorScheme="red"
                             variant="solid"
                             isDisabled={

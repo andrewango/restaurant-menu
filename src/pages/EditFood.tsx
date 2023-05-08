@@ -6,22 +6,13 @@ import { NavLink } from "react-router-dom";
 import EditFoodList from "../components/EditFoodList";
 import { EditFoodMenu } from "../components/EditFoodMenu";
 import { GetCurrentUser, SelectRole } from "../components/SelectRole";
+import "../components/Styles.css";
 
 function EditFood() {
     return (
         <div style={{ padding: 10 }}>
             <Flex wrap="wrap">
-                <Heading
-                    display="flex"
-                    justifyContent="center"
-                    mt={8}
-                    px={10}
-                    fontSize="50px"
-                    fontWeight="bold"
-                    textAlign="center"
-                >
-                    Edit Food
-                </Heading>
+                <Heading className="heading">Edit Food</Heading>
                 <Spacer></Spacer>
                 <VStack mb="10px">
                     {GetCurrentUser().role === "Employee" && (
@@ -53,17 +44,7 @@ function EditFood() {
             </Flex>
             <div>
                 {GetCurrentUser().role === "Employee" ? (
-                    <Box
-                        as="nav"
-                        display="flex"
-                        justifyContent="center"
-                        position="sticky"
-                        top={0}
-                        zIndex={99999999}
-                        py={7}
-                        bg="red.400"
-                        data-testid="bar"
-                    ></Box>
+                    <Box as="nav" className="navbar" py={7}></Box>
                 ) : (
                     <NavBar></NavBar>
                 )}

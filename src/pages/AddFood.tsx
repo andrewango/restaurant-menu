@@ -17,6 +17,7 @@ import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 import RemoveFood from "../components/RemoveFood";
+import "../components/Styles.css";
 
 export function MenuList() {
     const menu = sessionStorage.getItem("menu");
@@ -92,17 +93,7 @@ export default function AddFood() {
     return (
         <div style={{ padding: 10 }}>
             <Flex wrap="wrap">
-                <Heading
-                    display="flex"
-                    justifyContent="center"
-                    mt={8}
-                    px={10}
-                    fontSize="50px"
-                    fontWeight="bold"
-                    textAlign="center"
-                >
-                    Add / Remove Food
-                </Heading>
+                <Heading className="heading">Add / Remove Food</Heading>
                 <Spacer></Spacer>
                 <VStack mb="10px">
                     <Button

@@ -18,6 +18,7 @@ import {
 import { useDrag } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import "./Scrollbar.css";
+import "./EditFoodStyles.css";
 
 export default function EditFoodUI({
     foodData
@@ -65,10 +66,8 @@ export default function EditFoodUI({
             <Card
                 ref={drag}
                 key={name}
-                size="sm"
-                w="550px"
+                className="dragcard"
                 direction={{ base: "column", sm: "row" }}
-                overflow="hidden"
                 variant="elevated"
                 border={isDragging ? "3px solid tomato" : "0px"}
             >
@@ -76,31 +75,21 @@ export default function EditFoodUI({
                     <AccordionItem>
                         <h2>
                             <AccordionButton>
-                                <Box
-                                    display="flex"
-                                    flexDirection="column"
-                                    alignItems="start"
-                                    flex="1"
-                                >
+                                <Box className="drag-box">
                                     <Image
                                         src={image}
                                         alt={name}
-                                        objectFit="cover"
-                                        maxW={{ base: "100%", sm: "200px" }}
-                                        borderRadius="full"
                                         boxSize="100px"
-                                        mx={5}
-                                        my={5}
+                                        maxW={{ base: "100%", sm: "200px" }}
+                                        className="drag-image"
                                     />
                                 </Box>
                                 <Stack>
                                     <CardBody>
                                         <div className="foodTitle">
                                             <Heading
+                                                className="accordion-name"
                                                 fontFamily="Ananda Black"
-                                                display="inline-block"
-                                                marginRight="6"
-                                                textAlign="end"
                                             >
                                                 {name}
                                             </Heading>
