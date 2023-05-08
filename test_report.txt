@@ -230,7 +230,7 @@ All files              |    6.89 |     3.84 |     6.7 |    7.05 |
   NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                
   RemoveFood.tsx       |       0 |        0 |       0 |       0 | 21-105            
-  SearchBar.tsx        |       0 |        0 |       0 |       0 | 17-264            
+  SearchBar.tsx        |       0 |        0 |       0 |       0 | 17-258            
   SelectRole.tsx       |   48.48 |       35 |      50 |      50 | 58-68,76-83,92    
  src/interfaces        |       0 |        0 |       0 |       0 |                   
   CustomerList.ts      |       0 |        0 |       0 |       0 |                   
@@ -253,5 +253,5 @@ All files              |    6.89 |     3.84 |     6.7 |    7.05 |
 Test Suites: 4 failed, 2 passed, 6 total
 Tests:       3 failed, 20 passed, 23 total
 Snapshots:   0 total
-Time:        7.73 s
+Time:        7.565 s
 Ran all test suites.
