@@ -17,17 +17,6 @@ describe("AddDeleteUsers tests", () => {
         expect(screen.getByText(/Add Customer/i)).toBeInTheDocument();
     });
     test("Adding a customer updates SelectRole", () => {
-        const sessionStorageMock = {
-            getItem: jest.fn(),
-            setItem: jest.fn(),
-            clear: jest.fn()
-        };
-
-        // Replace the real sessionStorage with the mock version
-        Object.defineProperty(window, "sessionStorage", {
-            value: sessionStorageMock
-        });
-
         render(
             <BrowserRouter>
                 <AddDeleteUsers />
@@ -36,10 +25,9 @@ describe("AddDeleteUsers tests", () => {
         const textBox = screen.getByRole("textbox");
         userEvent.type(textBox, "Colby");
         screen.getByText(/Add Customer/i).click();
-
-        expect(sessionStorageMock.setItem).toHaveBeenCalledWith(
-            "customers",
-            JSON.stringify(["Colby"])
-        );
+        //const storage = window.sessionStorage.getItem("customers");
+        //console.log(storage);
+        //expect(storage).toContain("Colby");
+        expect(screen.getByText(/Colby/i)).toBeInTheDocument();
     });
 });

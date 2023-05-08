@@ -51,6 +51,8 @@ export default function AddDeleteUsers(): JSX.Element {
                 "customers",
                 JSON.stringify([...newUserList, newCustomer])
             );
+            const storage = window.sessionStorage.getItem("customers");
+            console.log(storage);
         }
     };
 
@@ -77,7 +79,9 @@ export default function AddDeleteUsers(): JSX.Element {
                 <Input
                     type="text"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => {
+                        setName(e.target.value);
+                    }}
                 />
             </FormControl>
             <br></br>
