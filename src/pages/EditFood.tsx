@@ -1,76 +1,66 @@
 import React from "react";
-import { Heading, Flex, Divider, Box } from "@chakra-ui/react";
+import { Heading, Flex, Box, Spacer, VStack, Grid } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 import EditFoodList from "../components/EditFoodList";
 import { EditFoodMenu } from "../components/EditFoodMenu";
-import { GetCurrentUser } from "../components/SelectRole";
+import { GetCurrentUser, SelectRole } from "../components/SelectRole";
+import "../components/Styles.css";
 
 function EditFood() {
     return (
-        <>
+        <div style={{ padding: 10 }}>
             <Flex wrap="wrap">
-                <Heading
-                    display="flex"
-                    justifyContent="center"
-                    mt={8}
-                    px={10}
-                    fontSize="50px"
-                    fontWeight="bold"
-                    textAlign="center"
-                >
-                    edit foods
-                </Heading>
+                <Heading className="heading">Edit Food</Heading>
+                <Spacer></Spacer>
+                <VStack mb="10px">
+                    {GetCurrentUser().role === "Employee" && (
+                        <SelectRole></SelectRole>
+                    )}
+                    {GetCurrentUser().role === "Owner" && (
+                        <>
+                            <Button
+                                as={NavLink}
+                                to="/AddFood"
+                                colorScheme="red"
+                                size="md"
+                                variant="outline"
+                            >
+                                Add / Remove
+                            </Button>
+                            <Button
+                                as={NavLink}
+                                to="/UserStats"
+                                colorScheme="red"
+                                size="md"
+                                variant="outline"
+                            >
+                                View Stats
+                            </Button>
+                        </>
+                    )}
+                </VStack>
             </Flex>
             <div>
-                <NavBar></NavBar>
+                {GetCurrentUser().role === "Employee" ? (
+                    <Box as="nav" className="navbar" py={7}></Box>
+                ) : (
+                    <NavBar></NavBar>
+                )}
             </div>
+            <br></br>
             <div style={{ textAlign: "center" }}>
-                <div className="container">
-                    <br></br>
-                    <br></br>
-                    <form>
-                        {(GetCurrentUser().role === "Owner" ||
-                            GetCurrentUser().role === null) && (
-                            <div>
-                                <Button
-                                    as={NavLink}
-                                    to="/AddFood"
-                                    colorScheme="red"
-                                    size="md"
-                                    variant="outline"
-                                >
-                                    Add New Food
-                                </Button>
-                                <br></br>
-                                <br></br>
-                                <Button
-                                    as={NavLink}
-                                    to="/RemoveFood"
-                                    colorScheme="red"
-                                    size="md"
-                                    variant="outline"
-                                >
-                                    Remove Food
-                                </Button>
-                                <br></br>
-                                <br></br>
-                            </div>
-                        )}
-                    </form>
-                </div>
-                <Divider></Divider>
-                <Flex>
-                    <Box flex="1" p="4" ml="100px">
+                <Grid templateColumns={"repeat(2, 1fr)"} gap="5vw">
+                    <Box flex="1" p="4" ml="5vw">
                         <EditFoodMenu></EditFoodMenu>
                     </Box>
-                    <Box flex="1" p="4" mt="35px" ml="100px">
+                    <Box flex="1" p="4" mt="35px">
                         <EditFoodList></EditFoodList>
                     </Box>
-                </Flex>
+                </Grid>
             </div>
-        </>
+        </div>
     );
 }
 

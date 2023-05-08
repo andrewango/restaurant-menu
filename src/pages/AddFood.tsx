@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import AddFoodUI from "../components/AddFoodUI";
 import {
     Heading,
     Stack,
@@ -7,13 +6,18 @@ import {
     Grid,
     GridItem,
     SimpleGrid,
-    Box
+    Box,
+    Flex,
+    Spacer,
+    VStack
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
 import foodList from "../data/foods.json";
 import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
+import RemoveFood from "../components/RemoveFood";
+import "../components/Styles.css";
 
 export function MenuList() {
     const menu = sessionStorage.getItem("menu");
@@ -88,13 +92,37 @@ export default function AddFood() {
 
     return (
         <div style={{ padding: 10 }}>
+            <Flex wrap="wrap">
+                <Heading className="heading">Add / Remove Food</Heading>
+                <Spacer></Spacer>
+                <VStack mb="10px">
+                    <Button
+                        as={NavLink}
+                        to="/EditFood"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        Edit Food
+                    </Button>
+                    <Button
+                        as={NavLink}
+                        to="/UserStats"
+                        colorScheme="red"
+                        size="md"
+                        variant="outline"
+                    >
+                        View Stats
+                    </Button>
+                </VStack>
+            </Flex>
             <div>
                 <NavBar></NavBar>
             </div>
             <Box w="100%" maxW="100vw">
                 <br></br>
-                <Grid templateColumns="repeat(10, minmax(0,1fr))" gap={4}>
-                    <GridItem colStart={1} colEnd={4}>
+                <Grid templateColumns="repeat(20, minmax(0,1fr))" gap={4}>
+                    <GridItem colStart={1} colEnd={7}>
                         <Stack
                             w="full"
                             h="full"
@@ -102,15 +130,15 @@ export default function AddFood() {
                             spacing={20}
                             alignItems="flex-start"
                         >
-                            <Heading size="2xl">Add New Food</Heading>
+                            <Heading size="2xl">New Food</Heading>
                             <form onSubmit={handleSubmit}>
                                 <SimpleGrid
-                                    columns={4}
-                                    columnGap={20}
+                                    columns={6}
+                                    columnGap={2}
                                     rowGap={2}
                                     w="full"
                                 >
-                                    <GridItem colSpan={4}>
+                                    <GridItem colSpan={6}>
                                         <FormControl id="name" px={5}>
                                             <FormLabel>Name:</FormLabel>
                                             <Input
@@ -122,7 +150,7 @@ export default function AddFood() {
                                             />
                                         </FormControl>
                                     </GridItem>
-                                    <GridItem colSpan={4}>
+                                    <GridItem colSpan={6}>
                                         <FormControl id="name" px={5}>
                                             <FormLabel>Image Link:</FormLabel>
                                             <Input
@@ -134,7 +162,7 @@ export default function AddFood() {
                                             />
                                         </FormControl>
                                     </GridItem>
-                                    <GridItem colSpan={4}>
+                                    <GridItem colSpan={6}>
                                         <FormControl id="name" px={5}>
                                             <FormLabel>Description:</FormLabel>
                                             <Input
@@ -146,7 +174,7 @@ export default function AddFood() {
                                             />
                                         </FormControl>
                                     </GridItem>
-                                    <GridItem colSpan={4}>
+                                    <GridItem colSpan={6}>
                                         <FormControl id="name" px={5}>
                                             <FormLabel>Type:</FormLabel>
                                             <Input
@@ -158,7 +186,7 @@ export default function AddFood() {
                                             />
                                         </FormControl>
                                     </GridItem>
-                                    <GridItem colSpan={4}>
+                                    <GridItem colSpan={6}>
                                         <FormControl id="name" px={5}>
                                             <FormLabel>Ingredients:</FormLabel>
                                             <Input
@@ -170,7 +198,7 @@ export default function AddFood() {
                                             />
                                         </FormControl>
                                     </GridItem>
-                                    <GridItem colSpan={2}>
+                                    <GridItem colSpan={3}>
                                         <FormControl id="name" px={5}>
                                             <FormLabel>Rating:</FormLabel>
                                             <Input
@@ -183,7 +211,7 @@ export default function AddFood() {
                                             />
                                         </FormControl>
                                     </GridItem>
-                                    <GridItem colStart={3} colEnd={5}>
+                                    <GridItem colStart={4} colEnd={7}>
                                         <FormControl id="name" px={5}>
                                             <FormLabel>Price:</FormLabel>
                                             <Input
@@ -196,7 +224,7 @@ export default function AddFood() {
                                             />
                                         </FormControl>
                                     </GridItem>
-                                    <GridItem colSpan={2}>
+                                    <GridItem colSpan={3}>
                                         <FormControl id="name" px={5}>
                                             <FormLabel>Popular</FormLabel>
                                             <Checkbox
@@ -216,7 +244,7 @@ export default function AddFood() {
                                             />
                                         </FormControl>
                                     </GridItem>
-                                    <GridItem colStart={3} colEnd={5}>
+                                    <GridItem colStart={4} colEnd={7}>
                                         <FormControl id="name" px={5}>
                                             <FormLabel>Spicy</FormLabel>
                                             <Checkbox
@@ -235,7 +263,7 @@ export default function AddFood() {
                                             />
                                         </FormControl>
                                     </GridItem>
-                                    <GridItem colSpan={4}>
+                                    <GridItem colSpan={6}>
                                         <Button
                                             size="lg"
                                             w="full"
@@ -251,7 +279,7 @@ export default function AddFood() {
                         </Stack>
                     </GridItem>
 
-                    <GridItem colStart={4} colEnd={10} h="10">
+                    <GridItem colStart={7} colEnd={20} h="10">
                         <Heading
                             size="2xl"
                             w="full"
@@ -260,18 +288,8 @@ export default function AddFood() {
                             alignItems="flex-start"
                         >
                             Menu
-                            <Button
-                                as={NavLink}
-                                to="/RemoveFood"
-                                colorScheme="red"
-                                size="md"
-                                variant="outline"
-                                float="right"
-                            >
-                                Remove Food
-                            </Button>
                         </Heading>
-                        <AddFoodUI></AddFoodUI>
+                        <RemoveFood></RemoveFood>
                     </GridItem>
                 </Grid>
             </Box>

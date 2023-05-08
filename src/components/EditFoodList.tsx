@@ -10,13 +10,17 @@ import {
     Tabs,
     TabPanels,
     Tab,
-    useMediaQuery
+    Flex
 } from "@chakra-ui/react";
 
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import foodList from "../data/foods.json";
 import EditFoodTabs from "./EditFoodTabs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import "./EditFoodStyles.css";
+import "./Styles.css";
 
 export function EditMenuList() {
     const editMenu = sessionStorage.getItem("editFoodList");
@@ -115,28 +119,25 @@ export default function EditFoodList(): JSX.Element {
             </Tab>
         );
     }
-    const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (
         <Card
-            h="full"
-            w={
-                isLargerThan2000
-                    ? window.innerWidth * 0.4
-                    : window.innerWidth * 0.4
-            }
+            h={EditMenuList().length >= 1 ? "cover" : "full"}
+            className="editfood-card"
             ref={drop}
-            border="1px solid black"
-            textAlign="center"
         >
-            <CardHeader
-                fontWeight="bold"
-                alignItems="stretch"
-                ref={removeDrop}
-                backgroundColor={isOver ? "#f56565bf" : ""}
-            >
-                <Heading fontWeight="bold">Edit Food</Heading>
-                <>Drag item here to remove</>
+            <CardHeader fontWeight="bold" alignItems="stretch" ref={removeDrop}>
+                <Flex alignItems="center" justifyContent="space-between">
+                    <Heading className="editfood-card-head">Edit Food</Heading>
+                    <FontAwesomeIcon
+                        icon={faTrash}
+                        className="trashcan"
+                        size="3x"
+                        style={{
+                            color: isOver ? "red" : ""
+                        }}
+                    />
+                </Flex>
             </CardHeader>
             <Divider></Divider>
             <CardBody textAlign="center">
@@ -147,12 +148,7 @@ export default function EditFoodList(): JSX.Element {
                     index={tabIndex}
                     onChange={handleTabsChange}
                 >
-                    <TabList
-                        width="100%"
-                        overflowX="auto"
-                        overflowY="hidden"
-                        className="section"
-                    >
+                    <TabList className="section editfood-tablist">
                         {EditMenuList().map(
                             (food: foodProps, index: number) => (
                                 <FoodItem

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // Uncomment next line for state debugging
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import {
     Card,
     CardHeader,
@@ -8,17 +10,28 @@ import {
     Divider,
     Heading,
     VStack,
-    Text,
     Box,
     Grid,
-    useMediaQuery
+    useMediaQuery,
+    Flex,
+    AccordionItem,
+    AccordionIcon,
+    AccordionButton,
+    AccordionPanel,
+    Accordion,
+    Button,
+    FormControl,
+    FormLabel,
+    Input,
+    Center,
+    CardFooter
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import { MenuList } from "../pages/AddFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
-import { DeliveryDropDown } from "./DeliveryDropDown";
+import "./Styles.css";
 
 export function CurrentCheckoutList(): foodProps[] {
     const checkout: string | null = sessionStorage.getItem("checkout");
@@ -32,6 +45,26 @@ export default function CheckoutList(): JSX.Element {
     const currentCheckout: foodProps[] = CurrentCheckoutList();
     const [checkoutList, setCheckoutList] =
         useState<foodProps[]>(currentCheckout);
+
+    // Filter checkout list by search query (name, ingredients, description)
+    const [searchText, setSearchText] = useState<string>("");
+    const searchedFoods: foodProps[] = checkoutList.filter(
+        (food: foodProps): boolean => {
+            return (
+                searchText === "" ||
+                food.ingredients
+                    .join(", ")
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase().trim()) ||
+                food.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase().trim()) ||
+                food.desc
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase().trim())
+            );
+        }
+    );
 
     // Update the checkout list everytime we change customer role to the customer's order
     useEffect(() => {
@@ -50,22 +83,6 @@ export default function CheckoutList(): JSX.Element {
         return () =>
             window.removeEventListener("checkoutUpdated", handleStorage);
     }, []);
-
-    // CheckoutItem
-    function CheckoutItem({ name }: { name: string }): JSX.Element {
-        const [, drag] = useDrag(() => ({
-            type: "removeItem",
-            item: { name: name },
-            collect: (monitor) => ({
-                isDragging: !!monitor.isDragging()
-            })
-        }));
-        return (
-            <Text ref={drag} fontWeight="bold">
-                {name}
-            </Text>
-        );
-    }
 
     const [, addDrop] = useDrop(() => ({
         accept: "foodItem",
@@ -174,14 +191,127 @@ export default function CheckoutList(): JSX.Element {
         });
     };
 
-    // Debugging
+    // CheckoutItem
+    function CheckoutItem({
+        name,
+        ingredients,
+        onIngredientsUpdate
+    }: {
+        name: string;
+        ingredients: string[];
+        onIngredientsUpdate: (newIngredients: string[]) => void;
+    }): JSX.Element {
+        const [, drag] = useDrag(() => ({
+            type: "removeItem",
+            item: { name: name },
+            collect: (monitor) => ({
+                isDragging: !!monitor.isDragging()
+            })
+        }));
+
+        const [editing, setEditing] = useState<boolean>(false);
+        const [text, setText] = useState<string>(ingredients.join(", "));
+
+        const handleEdit = () => {
+            setEditing(true);
+        };
+
+        function handleAccept() {
+            setEditing(false);
+            const newIngredients: string[] = text
+                .split(",")
+                .map((ingredient: string) => ingredient.trim());
+            onIngredientsUpdate(newIngredients);
+        }
+
+        const handleTyping = (e: React.ChangeEvent<HTMLInputElement>) => {
+            setText(e.target.value);
+        };
+
+        return (
+            <AccordionItem ref={drag}>
+                <h2>
+                    <AccordionButton
+                        fontWeight="semibold"
+                        _expanded={{ bg: "tomato", color: "white" }}
+                    >
+                        <Box as="span" flex="1" textAlign="center" ml={10}>
+                            {name}
+                        </Box>
+                        <AccordionIcon />
+                    </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4} position="relative">
+                    {editing ? (
+                        <>
+                            <FormControl>
+                                <Input
+                                    textAlign="center"
+                                    value={text}
+                                    onChange={handleTyping}
+                                />
+                            </FormControl>
+                            <Button
+                                onClick={handleAccept}
+                                className="checkout-accept"
+                            >
+                                Accept
+                            </Button>
+                        </>
+                    ) : (
+                        <>
+                            {ingredients.join(", ")}
+                            <Button
+                                onClick={handleEdit}
+                                className="checkout-edit"
+                                position="absolute"
+                                top="8%"
+                                right="2%"
+                            >
+                                Edit
+                            </Button>
+                        </>
+                    )}
+                </AccordionPanel>
+            </AccordionItem>
+        );
+    }
+
+    const handleIngredientsUpdate = (
+        foodName: string,
+        newIngredients: string[]
+    ) => {
+        const newCheckout = checkoutList.map((food: foodProps) => {
+            if (food.name === foodName) {
+                return {
+                    ...food,
+                    ingredients: newIngredients
+                };
+            } else {
+                return food;
+            }
+        });
+        setCheckoutList(newCheckout);
+        sessionStorage.setItem("checkout", JSON.stringify(newCheckout));
+
+        const currentUser: userProps = GetCurrentUser();
+        const newCustomerList = ListOfCustomers().map((customer: userProps) =>
+            customer.orderID === currentUser.orderID
+                ? { ...customer, order: newCheckout }
+                : customer
+        );
+        sessionStorage.setItem("customers", JSON.stringify(newCustomerList));
+    };
+
+    // DEBUGGING
     //useEffect(() => {
     //console.log(checkoutList);
     //}, [checkoutList]);
+
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (
-        <Box h={window.innerHeight * 0.72} mt={100}>
+        <Box h="0.72vh" mt={100} zIndex="1" position="absolute">
             <VStack spacing="3px">
                 <Grid
                     templateColumns={
@@ -189,20 +319,49 @@ export default function CheckoutList(): JSX.Element {
                     }
                     rowGap={3}
                 >
-                    <Card
-                        h={window.innerHeight * 0.7}
-                        w={window.innerWidth * 0.4}
-                        border="5px solid tomato"
-                        textAlign="center"
-                    >
-                        <CardHeader
-                            ref={removeDrop}
-                            backgroundColor={isOver ? "red" : ""}
-                        >
-                            <Heading fontWeight="bold">Checkout</Heading>
-                            <Text fontWeight="semibold">
-                                Drag here to remove items
-                            </Text>
+                    <Card className="checkout-card">
+                        <CardHeader ref={removeDrop}>
+                            <Flex
+                                alignItems="center"
+                                justifyContent="space-between"
+                            >
+                                <Heading className="checkout-card-head">
+                                    Checkout
+                                </Heading>
+                                <FontAwesomeIcon
+                                    icon={faTrash}
+                                    className="trashcan"
+                                    size="3x"
+                                    style={{
+                                        color: isOver ? "red" : ""
+                                    }}
+                                />
+                            </Flex>
+                            <Center>
+                                <FormControl
+                                    id="search-checkout"
+                                    data-testid="search-checkout"
+                                    width="50%"
+                                >
+                                    <FormLabel
+                                        textAlign="center"
+                                        fontSize={15}
+                                        ml={10}
+                                    >
+                                        Search Food:
+                                    </FormLabel>
+                                    <Input
+                                        type="text"
+                                        placeholder="Name/Ingredient/Description"
+                                        value={searchText}
+                                        onChange={(e) =>
+                                            setSearchText(e.target.value)
+                                        }
+                                        textAlign="center"
+                                        ml={2}
+                                    />
+                                </FormControl>
+                            </Center>
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody
@@ -210,18 +369,28 @@ export default function CheckoutList(): JSX.Element {
                             textAlign="center"
                             overflowY="auto"
                         >
-                            <VStack spacing="5px" w="100%">
-                                {checkoutList.map(
+                            <Accordion allowMultiple>
+                                {searchedFoods.map(
                                     (food: foodProps, index: number) => (
                                         <CheckoutItem
                                             key={index + 1}
                                             name={food.name}
+                                            ingredients={food.ingredients}
+                                            onIngredientsUpdate={(
+                                                newIngredients
+                                            ) =>
+                                                handleIngredientsUpdate(
+                                                    food.name,
+                                                    newIngredients
+                                                )
+                                            }
                                         ></CheckoutItem>
                                     )
                                 )}
-                            </VStack>
-                            <DeliveryDropDown></DeliveryDropDown>
+                            </Accordion>
                         </CardBody>
+                        <Divider></Divider>
+                        <CardFooter height={100}></CardFooter>
                     </Card>
                 </Grid>
             </VStack>
