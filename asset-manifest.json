@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/restaurant-menu/static/css/main.052ad171.css",
+    "main.css": "/restaurant-menu/static/css/main.078cd1b8.css",
     "main.js": "/restaurant-menu/static/js/main.87dd4b1f.js",
     "static/js/787.578e6cb3.chunk.js": "/restaurant-menu/static/js/787.578e6cb3.chunk.js",
     "static/media/manageUsers.jpg": "/restaurant-menu/static/media/manageUsers.96dcfb8d5114cc14eb1e.jpg",
@@ -13,12 +13,12 @@
     "static/media/ChopinScript.ttf": "/restaurant-menu/static/media/ChopinScript.294d294101e0ae84b924.ttf",
     "static/media/DeleteButton.png": "/restaurant-menu/static/media/DeleteButton.7c6432cea5b85f8da102.png",
     "index.html": "/restaurant-menu/index.html",
-    "main.052ad171.css.map": "/restaurant-menu/static/css/main.052ad171.css.map",
+    "main.078cd1b8.css.map": "/restaurant-menu/static/css/main.078cd1b8.css.map",
     "main.87dd4b1f.js.map": "/restaurant-menu/static/js/main.87dd4b1f.js.map",
     "787.578e6cb3.chunk.js.map": "/restaurant-menu/static/js/787.578e6cb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.052ad171.css",
+    "static/css/main.078cd1b8.css",
     "static/js/main.87dd4b1f.js"
   ]
 }
