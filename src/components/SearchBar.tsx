@@ -11,7 +11,7 @@ import {
     TagLabel
 } from "@chakra-ui/react";
 import { MenuList } from "../pages/AddFood";
-import "./SearchBar.css";
+import "./Styles.css";
 
 export function SearchBar(): JSX.Element {
     const [foods, setFoods] = useState<foodProps[]>(MenuList());
@@ -158,7 +158,6 @@ export function SearchBar(): JSX.Element {
                 </Box>
                 <Tag
                     className="tag"
-                    textColor="white"
                     backgroundColor={spicy ? "#f56565" : "#f1f1f166"}
                     onClick={() => {
                         setSpicy(!spicy);
@@ -169,7 +168,6 @@ export function SearchBar(): JSX.Element {
                 </Tag>
                 <Tag
                     className="tag"
-                    textColor="white"
                     backgroundColor={popular ? "#f56565" : "#f1f1f166"}
                     onClick={() => {
                         setPopular(!popular);
@@ -180,7 +178,6 @@ export function SearchBar(): JSX.Element {
                 </Tag>
                 <Tag
                     className="tag"
-                    textColor="white"
                     backgroundColor={appetizer ? "#f56565" : "#f1f1f166"}
                     onClick={() => {
                         setAppetizer(!appetizer);
@@ -191,7 +188,6 @@ export function SearchBar(): JSX.Element {
                 </Tag>
                 <Tag
                     className="tag"
-                    textColor="white"
                     backgroundColor={entree ? "#f56565" : "#f1f1f166"}
                     onClick={() => {
                         setEntree(!entree);
@@ -202,7 +198,6 @@ export function SearchBar(): JSX.Element {
                 </Tag>
                 <Tag
                     className="tag"
-                    textColor="white"
                     backgroundColor={dessert ? "#f56565" : "#f1f1f166"}
                     onClick={() => {
                         setDessert(!dessert);
