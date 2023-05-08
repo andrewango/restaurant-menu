@@ -13,6 +13,7 @@ import { GrStar } from "react-icons/gr";
 import { useDrag } from "react-dnd";
 import { GetCurrentUser } from "./SelectRole";
 import { userProps } from "../interfaces/User";
+import "./EditFoodStyles.css";
 
 function countOrders(list: userProps[], foodName: string): number {
     return list.reduce((count, user) => {
@@ -64,10 +65,9 @@ export default function FoodItem({
         <Card
             ref={drag}
             key={name}
+            className="dragcard"
             size="sm"
-            w="550px"
             direction={{ base: "column", sm: "row" }}
-            overflow="hidden"
             variant="elevated"
             border={isDragging ? "3px solid tomato" : "0px"}
         >
@@ -75,20 +75,11 @@ export default function FoodItem({
                 <Image
                     src={image}
                     alt={name}
-                    objectFit="cover"
+                    className="drag-image"
                     maxW={{ base: "100%", sm: "200px" }}
-                    borderRadius="full"
                     boxSize="100px"
-                    mx={5}
-                    my={5}
                 />
-                <Text
-                    className="desc"
-                    fontFamily="DM Serif"
-                    fontSize="2xl"
-                    mt={2}
-                    fontWeight="medium"
-                >
+                <Text className="desc price" fontFamily="DM Serif">
                     {`$${price}`}
                 </Text>
                 {currentUser.role === "Owner" && (
@@ -126,11 +117,7 @@ export default function FoodItem({
                         i = i + 1;
                         return (
                             <div key={i}>
-                                <Box
-                                    overflow="hidden"
-                                    position="absolute"
-                                    zIndex="1"
-                                >
+                                <Box className="base-box">
                                     <GrStar
                                         data-testid="star-icon"
                                         key={i}
@@ -146,9 +133,7 @@ export default function FoodItem({
                                                 ? { width: "50%" }
                                                 : { width: "100%" }
                                         }
-                                        overflow="hidden"
-                                        position="relative"
-                                        zIndex="2"
+                                        className="star-box"
                                     >
                                         <GrStar
                                             data-testid="star-icon"

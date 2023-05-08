@@ -31,6 +31,7 @@ import { foodProps } from "../interfaces/Food";
 import { MenuList } from "../pages/AddFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
+import "./Styles.css";
 
 export function CurrentCheckoutList(): foodProps[] {
     const checkout: string | null = sessionStorage.getItem("checkout");
@@ -252,26 +253,7 @@ export default function CheckoutList(): JSX.Element {
                             </FormControl>
                             <Button
                                 onClick={handleAccept}
-                                mt={3}
-                                width={70}
-                                height={8}
-                                overflowWrap="break-word"
-                                border="1px"
-                                borderRadius="5px"
-                                fontSize="16px"
-                                fontWeight="semibold"
-                                bg="tomato"
-                                borderColor="red.600"
-                                color="white"
-                                _hover={{
-                                    bg: "red.600",
-                                    color: "white"
-                                }}
-                                _active={{
-                                    bg: "red.300",
-                                    transform: "scale(0.95)",
-                                    borderColor: "orange"
-                                }}
+                                className="checkout-accept"
                             >
                                 Accept
                             </Button>
@@ -281,28 +263,10 @@ export default function CheckoutList(): JSX.Element {
                             {ingredients.join(", ")}
                             <Button
                                 onClick={handleEdit}
+                                className="checkout-edit"
                                 position="absolute"
                                 top="8%"
                                 right="2%"
-                                width={70}
-                                height={8}
-                                overflowWrap="break-word"
-                                border="1px"
-                                borderRadius="5px"
-                                fontSize="16px"
-                                fontWeight="semibold"
-                                bg="tomato"
-                                borderColor="red.600"
-                                color="white"
-                                _hover={{
-                                    bg: "red.600",
-                                    color: "white"
-                                }}
-                                _active={{
-                                    bg: "red.300",
-                                    transform: "scale(0.95)",
-                                    borderColor: "orange"
-                                }}
                             >
                                 Edit
                             </Button>
@@ -355,37 +319,21 @@ export default function CheckoutList(): JSX.Element {
                     }
                     rowGap={3}
                 >
-                    <Card
-                        h="73vh"
-                        w="40vw"
-                        border="5px solid tomato"
-                        textAlign="center"
-                    >
-                        <CardHeader
-                            ref={removeDrop}
-                            // backgroundColor={isOver ? "red" : ""}
-                        >
+                    <Card className="checkout-card">
+                        <CardHeader ref={removeDrop}>
                             <Flex
                                 alignItems="center"
                                 justifyContent="space-between"
                             >
-                                <Heading
-                                    fontWeight="bold"
-                                    flex={1}
-                                    textAlign="center"
-                                    ml={16}
-                                >
+                                <Heading className="checkout-card-head">
                                     Checkout
                                 </Heading>
                                 <FontAwesomeIcon
                                     icon={faTrash}
+                                    className="trashcan"
                                     size="3x"
                                     style={{
-                                        color: isOver ? "red" : "",
-                                        border: "1px solid black",
-                                        borderRadius: "50px",
-                                        padding: "7px",
-                                        boxSizing: "border-box"
+                                        color: isOver ? "red" : ""
                                     }}
                                 />
                             </Flex>

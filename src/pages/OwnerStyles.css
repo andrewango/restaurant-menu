@@ -15,8 +15,8 @@ body::after {
     opacity: 0.9;
     text-align: center;
     border-radius: 0.5cm !important;
-    width: 40vw;
-    height: 80vh;
+    width: 40vw !important;
+    height: 80vh !important;
 }
 .food:hover {
     transform: scale(1.01);
@@ -32,8 +32,8 @@ body::after {
     opacity: 0.9;
     text-align: center;
     border-radius: 0.5cm !important;
-    width: 40vw;
-    height: 80vh;
+    width: 40vw !important;
+    height: 80vh !important;
 }
 .user:hover {
     transform: scale(1.01);
@@ -48,8 +48,8 @@ body::after {
     opacity: 0.9;
     text-align: center;
     border-radius: 0.5cm !important;
-    width: 25vw;
-    height: 80vh;
+    width: 25vw !important;
+    height: 80vh !important;
 }
 .add:hover {
     transform: scale(1.01);
@@ -64,8 +64,8 @@ body::after {
     opacity: 0.9;
     text-align: center;
     border-radius: 0.5cm !important;
-    width: 25vw;
-    height: 80vh;
+    width: 25vw !important;
+    height: 80vh !important;
 }
 .edit:hover {
     transform: scale(1.01);
@@ -88,8 +88,8 @@ body::after {
     opacity: 0.9;
     text-align: center;
     border-radius: 0.5cm !important;
-    width: 25vw;
-    height: 80vh;
+    width: 25vw !important;
+    height: 80vh !important;
 }
 
 .stats:hover {

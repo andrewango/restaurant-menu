@@ -19,6 +19,8 @@ import foodList from "../data/foods.json";
 import EditFoodTabs from "./EditFoodTabs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import "./EditFoodStyles.css";
+import "./Styles.css";
 
 export function EditMenuList() {
     const editMenu = sessionStorage.getItem("editFoodList");
@@ -121,31 +123,18 @@ export default function EditFoodList(): JSX.Element {
     return (
         <Card
             h={EditMenuList().length >= 1 ? "cover" : "full"}
-            w="40vw"
+            className="editfood-card"
             ref={drop}
-            border="1px solid black"
-            textAlign="center"
         >
             <CardHeader fontWeight="bold" alignItems="stretch" ref={removeDrop}>
                 <Flex alignItems="center" justifyContent="space-between">
-                    <Heading
-                        fontWeight="bold"
-                        mr={2}
-                        flex={1}
-                        textAlign="center"
-                        ml="38"
-                    >
-                        Edit Food
-                    </Heading>
+                    <Heading className="editfood-card-head">Edit Food</Heading>
                     <FontAwesomeIcon
                         icon={faTrash}
+                        className="trashcan"
                         size="3x"
                         style={{
-                            color: isOver ? "red" : "",
-                            border: "1px solid black",
-                            borderRadius: "50px",
-                            padding: "7px",
-                            boxSizing: "border-box"
+                            color: isOver ? "red" : ""
                         }}
                     />
                 </Flex>
@@ -159,12 +148,7 @@ export default function EditFoodList(): JSX.Element {
                     index={tabIndex}
                     onChange={handleTabsChange}
                 >
-                    <TabList
-                        width="100%"
-                        overflowX="auto"
-                        overflowY="hidden"
-                        className="section"
-                    >
+                    <TabList className="section editfood-tablist">
                         {EditMenuList().map(
                             (food: foodProps, index: number) => (
                                 <FoodItem

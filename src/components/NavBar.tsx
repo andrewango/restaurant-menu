@@ -46,7 +46,7 @@ export default function NavBar() {
                     {location.hash === "#/EditUsers" && (
                         <Link to="/ManageFoods">
                             <Box className="navbtn" as="span">
-                                edit food
+                                manage food
                             </Box>
                         </Link>
                     )}
@@ -56,7 +56,7 @@ export default function NavBar() {
                         location.hash === "#/ManageFoods") && (
                         <Link to="/EditUsers">
                             <Box className="navbtn" as="span">
-                                edit users
+                                manage users
                             </Box>
                         </Link>
                     )}

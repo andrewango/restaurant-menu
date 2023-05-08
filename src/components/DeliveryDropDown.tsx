@@ -157,24 +157,12 @@ export function DeliveryDropDown(): JSX.Element {
             mt="72%"
             ml={40}
         >
-            <p
-                className="del-time"
-                style={{
-                    color: "black",
-                    textAlign: "left",
-                    marginBottom: "7px"
-                }}
-            >
-                Delivery Time:
-            </p>
+            <p className="del-time ddd-text">Delivery Time:</p>
             <div className="delivery">
                 <form>
                     <Form.Group controlId="delivery-dropdown">
                         <Form.Select
-                            style={{
-                                width: "160px",
-                                marginRight: "380px"
-                            }}
+                            className="ddd-select"
                             onChange={(e) => changeTime(e.target.value)}
                             name={time}
                             value={time}
