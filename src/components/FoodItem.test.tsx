@@ -27,7 +27,7 @@ describe("FoodItem tests", () => {
                     image="test.jpg"
                     desc="test desc"
                     ingredients={["ing1", "ing2"]}
-                    price={10}
+                    price={5}
                     rating={3}
                 />
             </DndProvider>
@@ -41,14 +41,31 @@ describe("FoodItem tests", () => {
             <DndProvider backend={HTML5Backend}>
                 <FoodItem
                     name="test"
-                    image={desc}
-                    desc="test desc"
+                    image="test.jpg"
+                    desc={desc}
                     ingredients={["ing1", "ing2"]}
-                    price={10}
+                    price={5}
                     rating={3}
                 />
             </DndProvider>
         );
         expect(getByText(desc)).toBeInTheDocument;
+    });
+
+    test("displays the correct price", () => {
+        const price = 5;
+        const { getByText } = render(
+            <DndProvider backend={HTML5Backend}>
+                <FoodItem
+                    name="test"
+                    image="test.jpg"
+                    desc="test desc"
+                    ingredients={["ing1", "ing2"]}
+                    price={price}
+                    rating={3}
+                />
+            </DndProvider>
+        );
+        expect(getByText("$${price}")).toBeInTheDocument;
     });
 });
