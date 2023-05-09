@@ -81,5 +81,9 @@
             "!src/reportWebVitals.ts",
             "!src/react-app-env.d.ts"
         ]
-    }
+    },
+    "resetMocks": false,
+    "setupFiles": [
+        "jest-localstorage-mock"
+    ]
 }

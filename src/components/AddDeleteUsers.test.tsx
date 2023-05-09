@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import AddDeleteUsers from "./AddDeleteUsers";
 import { BrowserRouter } from "react-router-dom";
-import { SelectRole } from "./SelectRole";
+//import { SelectRole } from "./SelectRole";
 import userEvent from "@testing-library/user-event";
 
 describe("AddDeleteUsers tests", () => {
@@ -12,8 +12,7 @@ describe("AddDeleteUsers tests", () => {
                 <AddDeleteUsers />
             </BrowserRouter>
         );
-        expect(screen.getByRole("textbox")).toBeInTheDocument();
-        expect(screen.getByRole("button")).toBeInTheDocument();
+        expect(screen.getByText(/Name:/i)).toBeInTheDocument();
         expect(screen.getByText(/Add Customer/i)).toBeInTheDocument();
     });
     test("Adding a customer updates SelectRole", () => {
@@ -22,12 +21,12 @@ describe("AddDeleteUsers tests", () => {
                 <AddDeleteUsers />
             </BrowserRouter>
         );
-        const textBox = screen.getByRole("textbox");
+        const textBox = screen.getByText(/Name:/i);
         userEvent.type(textBox, "Colby");
         screen.getByText(/Add Customer/i).click();
-        //const storage = window.sessionStorage.getItem("customers");
-        //console.log(storage);
-        //expect(storage).toContain("Colby");
+        const storage = sessionStorage.getItem("customers");
+        console.log(storage);
+        expect(storage).toContain("Colby");
         expect(screen.getByText(/Colby/i)).toBeInTheDocument();
     });
 });
