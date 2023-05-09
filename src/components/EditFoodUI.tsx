@@ -42,8 +42,7 @@ export default function EditFoodUI({
         ingredients,
         popular,
         spicy,
-        price,
-        quantity
+        price
     }: {
         name: string;
         image: string;
