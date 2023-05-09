@@ -6,7 +6,6 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import MatchMediaMock from "jest-matchmedia-mock";
-import { Container } from "react-bootstrap";
 export {};
 new MatchMediaMock();
 
@@ -34,7 +33,7 @@ export const renderWithProviders = (ui: ReactElement) => {
 
 describe("Add and Delete Users tests", () => {
     test("The Food searchbar is succesfully rendered", () => {
-        renderWithProviders(<AddDeleteUsers></AddDeleteUsers>);
+        render(<AddDeleteUsers></AddDeleteUsers>);
         const searchbarLabel = screen.getByPlaceholderText("Food name");
         expect(searchbarLabel).toBeInTheDocument();
     });
@@ -65,6 +64,18 @@ describe("Add and Delete Users tests", () => {
     test("The increasing counter works", () => {
         render(<AddDeleteUsers />);
         expect(screen.queryByText(/2/i)).toBeInTheDocument();
+    });
+    test("Deleting works", () => {
+        render(<AddDeleteUsers />);
+        const deleteButton = screen.getAllByTestId("remove-customer");
+        fireEvent.click(deleteButton[1]);
+        expect(screen.queryByText(/Gavin/i)).not.toBeInTheDocument();
+    });
+    test("Deleting works", () => {
+        render(<AddDeleteUsers />);
+        const deleteButton = screen.getAllByTestId("remove-customer");
+        fireEvent.click(deleteButton[1]);
+        expect(screen.queryByText(/Gavin/i)).not.toBeInTheDocument();
     });
     test("Deleting works", () => {
         render(<AddDeleteUsers />);
