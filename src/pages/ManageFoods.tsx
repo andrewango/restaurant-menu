@@ -6,7 +6,7 @@ import "../components/Styles.css";
 
 export default function OwnerLanding() {
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-testid="manage-foods-page">
             <Flex wrap="wrap" textAlign="center" px={5} py={2}>
                 <Heading className="heading">Manage Food</Heading>
             </Flex>

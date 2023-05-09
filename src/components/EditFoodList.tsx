@@ -173,6 +173,7 @@ export default function EditFoodList(): JSX.Element {
                                     editPopular={food.popular}
                                     editSpicy={food.spicy}
                                     editPrice={food.price}
+                                    editQuantity={food.quantity}
                                 ></EditFoodTabs>
                             )
                         )}

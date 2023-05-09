@@ -110,39 +110,93 @@ export default function CheckoutList(): JSX.Element {
         const chosenFood: foodProps | undefined = foods.find(
             (foodItem) => name === foodItem.name
         );
+
         if (chosenFood) {
             setCheckoutList((checkoutList) => {
-                const newOrder: foodProps[] = [
-                    ...checkoutList.map(
-                        (food: foodProps): foodProps => ({
-                            ...food,
-                            type: [...food.type],
-                            ingredients: [...food.ingredients]
-                        })
-                    ),
-                    chosenFood
-                ];
-                sessionStorage.setItem("checkout", JSON.stringify(newOrder));
+                const existingFoodIndex = checkoutList.findIndex(
+                    (food) => food.name === name
+                );
+
+                if (existingFoodIndex !== -1) {
+                    // If the same food already exists in the checkout list, increase its quantity
+                    const updatedCheckoutList = [...checkoutList];
+                    updatedCheckoutList[existingFoodIndex].quantity += 1;
+
+                    sessionStorage.setItem(
+                        "checkout",
+                        JSON.stringify(updatedCheckoutList)
+                    );
+
+                    const listOfCustomers = ListOfCustomers();
+                    const currentUser: userProps = GetCurrentUser();
+                    // Update the quantity in the current user's order
+                    const updatedOrder = currentUser.order.map((food) => {
+                        if (food.name === name) {
+                            return {
+                                ...food,
+                                quantity: food.quantity + 1
+                            };
+                        }
+                        return food;
+                    });
+
+                    const newUser: userProps = {
+                        ...currentUser,
+                        order: updatedOrder
+                    };
+
+                    sessionStorage.setItem("user", JSON.stringify(newUser));
+
+                    const userIndex: number = listOfCustomers.findIndex(
+                        (user: userProps) => newUser.orderID === user.orderID
+                    );
+
+                    if (userIndex > -1) {
+                        listOfCustomers.splice(userIndex, 1, newUser);
+                        sessionStorage.setItem(
+                            "customers",
+                            JSON.stringify(listOfCustomers)
+                        );
+                    }
+
+                    return updatedCheckoutList;
+                }
+
+                // If the food doesn't exist in the checkout list, add it with quantity 1
+                const newFoodItem = {
+                    ...chosenFood,
+                    quantity: 1
+                };
+
+                const updatedCheckoutList = [...checkoutList, newFoodItem];
+
+                sessionStorage.setItem(
+                    "checkout",
+                    JSON.stringify(updatedCheckoutList)
+                );
+
                 const listOfCustomers = ListOfCustomers();
                 const currentUser: userProps = GetCurrentUser();
                 const newUser: userProps = {
                     ...currentUser,
-                    order: newOrder
+                    order: [...currentUser.order, newFoodItem]
                 };
+
                 sessionStorage.setItem("user", JSON.stringify(newUser));
+
                 const userIndex: number = listOfCustomers.findIndex(
                     (user: userProps) => newUser.orderID === user.orderID
                 );
-                console.log(userIndex);
+
                 if (userIndex > -1) {
                     listOfCustomers.splice(userIndex, 1, newUser);
-                    console.log(listOfCustomers);
                     sessionStorage.setItem(
                         "customers",
                         JSON.stringify(listOfCustomers)
                     );
                 }
-                return newOrder;
+
+                return updatedCheckoutList;
             });
         }
     };
@@ -192,15 +246,35 @@ export default function CheckoutList(): JSX.Element {
     };
 
     // CheckoutItem
+
     function CheckoutItem({
         name,
         ingredients,
+        quantity,
         onIngredientsUpdate
     }: {
         name: string;
         ingredients: string[];
+        quantity: number;
         onIngredientsUpdate: (newIngredients: string[]) => void;
     }): JSX.Element {
+        const handleMinusClick = (name: string, quantity: number) => {
+            if (quantity === 1) {
+                removeFoodFromCheckoutList(name);
+            } else {
+                const existingFoodIndex = checkoutList.findIndex(
+                    (food) => food.name === name
+                );
+                const updatedCheckoutList = [...checkoutList];
+                updatedCheckoutList[existingFoodIndex].quantity -= 1;
+                setCheckoutList(updatedCheckoutList);
+                sessionStorage.setItem(
+                    "checkout",
+                    JSON.stringify(updatedCheckoutList)
+                );
+                console.log(checkoutList);
+            }
+        };
         const [, drag] = useDrag(() => ({
             type: "removeItem",
             item: { name: name },
@@ -238,6 +312,7 @@ export default function CheckoutList(): JSX.Element {
                         <Box as="span" flex="1" textAlign="center" ml={10}>
                             {name}
                         </Box>
+                        <Box>{quantity}</Box>
                         <AccordionIcon />
                     </AccordionButton>
                 </h2>
@@ -272,6 +347,34 @@ export default function CheckoutList(): JSX.Element {
                             </Button>
                         </>
                     )}
+                    <Button
+                        onClick={() => addFoodToCheckoutList(name)}
+                        className="checkout-button"
+                        style={{
+                            fontSize: "0.8rem",
+                            padding: "0.2rem 0.4rem",
+                            position: "absolute",
+                            top: "50%",
+                            left: "5px",
+                            transform: "translateY(-50%)"
+                        }}
+                    >
+                        +
+                    </Button>
+                    <Button
+                        onClick={() => handleMinusClick(name, quantity)}
+                        className="checkout-button"
+                        style={{
+                            fontSize: "0.8rem",
+                            padding: "0.2rem 0.4rem",
+                            position: "absolute",
+                            top: "50%",
+                            left: "35px",
+                            transform: "translateY(-50%)"
+                        }}
+                    >
+                        -
+                    </Button>
                 </AccordionPanel>
             </AccordionItem>
         );
@@ -372,7 +475,7 @@ export default function CheckoutList(): JSX.Element {
                             textAlign="center"
                             overflowY="auto"
                         >
-                            <Accordion allowMultiple>
+                            <Accordion allowMultiple={false}>
                                 {searchedFoods.map(
                                     (food: foodProps, index: number) => (
                                         <CheckoutItem
@@ -387,6 +490,7 @@ export default function CheckoutList(): JSX.Element {
                                                     newIngredients
                                                 )
                                             }
+                                            quantity={food.quantity}
                                         ></CheckoutItem>
                                     )
                                 )}

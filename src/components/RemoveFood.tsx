@@ -16,6 +16,8 @@ import { Button } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
 import { EditMenuList } from "./EditFoodList";
 import { MenuList } from "../pages/AddFood";
+import { userProps } from "../interfaces/User";
+import { ListOfCustomers } from "./SelectRole";
 
 export default function RemoveFood() {
     const [foodlist, setFoodlist] = useState<foodProps[]>(MenuList());
@@ -51,6 +53,29 @@ export default function RemoveFood() {
             newEditFoods.splice(removeFoodIndex, 1);
         }
         sessionStorage.setItem("editFoodList", JSON.stringify(newEditFoods));
+
+        // When food is removed, remove all instances of the food in each customer checkout list that has it
+        // First, we map a new customer list with new checkout lists without that food for all customers who have the food item
+        const currentCustomers: userProps[] = ListOfCustomers();
+        const copy: userProps[] = currentCustomers.map(
+            (customer: userProps) => ({
+                ...customer,
+                order: customer.order
+            })
+        );
+        const customersWithNewFood: userProps[] = copy.map(
+            (customer: userProps) => ({
+                ...customer,
+                order: customer.order.filter((original: foodProps): boolean => {
+                    return original.name !== id;
+                })
+            })
+        );
+        // Next, we update sessionStorage with this new customer list so it can render properly in other components
+        sessionStorage.setItem(
+            "customers",
+            JSON.stringify(customersWithNewFood)
+        );
     };
 
     const [isLargerThan2500] = useMediaQuery("(min-width: 2500px)");
@@ -64,6 +89,7 @@ export default function RemoveFood() {
             mt={100}
             // //h={isLargerThan1000 ? window.innerHeight * 0.65 : "600px"}
             className="section remove-stack"
+            data-testid="remove-food-page"
         >
             <Grid
                 templateColumns={

@@ -36,7 +36,8 @@ export default function AddFood() {
         ingredients: [],
         popular: false,
         spicy: false,
-        price: 0
+        price: 0,
+        quantity: 0
     });
 
     const { name, image, desc, rating, type, ingredients, price } = food;
@@ -73,7 +74,8 @@ export default function AddFood() {
             ingredients: [],
             popular: false,
             spicy: false,
-            price: 0
+            price: 0,
+            quantity: 0
         });
     };
 
@@ -91,7 +93,7 @@ export default function AddFood() {
     };
 
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-testid="add-food-page">
             <Flex wrap="wrap">
                 <Heading className="heading">Add / Remove Food</Heading>
                 <Spacer></Spacer>

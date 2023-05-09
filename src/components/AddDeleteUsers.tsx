@@ -184,6 +184,7 @@ export default function AddDeleteUsers(): JSX.Element {
                                                         )
                                                     }
                                                     id="remove-customer"
+                                                    data-testid="remove-customer"
                                                 >
                                                     <Image
                                                         src={Delete}
@@ -198,7 +199,12 @@ export default function AddDeleteUsers(): JSX.Element {
                                             <Td>
                                                 {customer.order.map(
                                                     (food: foodProps) =>
-                                                        food.name + ", "
+                                                        food.quantity > 1
+                                                            ? food.name +
+                                                              ": " +
+                                                              food.quantity +
+                                                              ", "
+                                                            : food.name + ", "
                                                 )}
                                             </Td>
                                         </Tr>

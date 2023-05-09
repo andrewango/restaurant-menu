@@ -6,7 +6,7 @@ import "../components/Styles.css";
 
 export default function EditUsers() {
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-testid="edit-users-page">
             <Flex wrap="wrap">
                 <Heading className="heading">Manage Users</Heading>
             </Flex>
