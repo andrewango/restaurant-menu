@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/SearchBar.test.tsx (12.821 s)
+PASS src/components/SearchBar.test.tsx (15.221 s)
   ● Console
 
     console.log
@@ -1834,6 +1834,7 @@ FAIL src/components/AddDeleteUsers.test.tsx
       at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
       at Object.<anonymous> (src/components/AddDeleteUsers.test.tsx:83:19)
 
+PASS src/components/EditFoodUI.test.tsx
 PASS src/components/RatingFeature.test.tsx
 FAIL src/components/SelectRole.test.tsx
   ● SelectRole tests › There is initially 2 options
@@ -2105,17 +2106,17 @@ PASS src/components/DeliveryDropDown.test.tsx
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                              
 -----------------------|---------|----------|---------|---------|------------------------------------------------
-All files              |   44.88 |    41.95 |   38.07 |   45.08 |                                                
+All files              |   46.69 |     45.1 |   41.11 |   46.72 |                                                
  src                   |     100 |      100 |     100 |     100 |                                                
   App.tsx              |     100 |      100 |     100 |     100 |                                                
- src/components        |   45.96 |    43.93 |   39.41 |    46.2 |                                                
+ src/components        |   47.98 |    47.34 |   42.94 |   48.04 |                                                
   AddDeleteUsers.tsx   |   90.24 |       50 |   76.92 |   90.24 | 41,89,142,202                                  
   CheckoutList.tsx     |   25.51 |    16.66 |      25 |   24.21 | 53,75-79,89,98,110-145,151-231,284-303,358-382 
   DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                  
   EditFoodList.tsx     |       0 |        0 |       0 |       0 | 26-165                                         
   EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-41                                           
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 40-252                                         
-  EditFoodUI.tsx       |       0 |        0 |       0 |       0 | 28-140                                         
+  EditFoodUI.tsx       |     100 |    56.25 |     100 |     100 | 72-111,116-135                                 
   FoodItem.tsx         |   77.77 |       80 |      60 |   76.47 | 19-21,56                                       
   ItemListUI.tsx       |     100 |       50 |     100 |     100 | 26                                             
   NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                             
@@ -2142,8 +2143,8 @@ All files              |   44.88 |    41.95 |   38.07 |   45.08 |
   UserStats.tsx        |       0 |        0 |       0 |       0 | 25-95                                          
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 
-Test Suites: 3 failed, 4 passed, 7 total
-Tests:       5 failed, 45 passed, 50 total
+Test Suites: 3 failed, 5 passed, 8 total
+Tests:       5 failed, 50 passed, 55 total
 Snapshots:   0 total
-Time:        22.3 s
+Time:        27.3 s
 Ran all test suites.
