@@ -63,6 +63,7 @@ export default function FoodItem({
 
     return (
         <Card
+            data-testid={name}
             ref={drag}
             key={name}
             className="dragcard"

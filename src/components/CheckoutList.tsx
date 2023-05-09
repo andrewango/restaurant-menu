@@ -314,13 +314,14 @@ export default function CheckoutList(): JSX.Element {
         <Box h="0.72vh" mt={100} zIndex="1" position="absolute">
             <VStack spacing="3px">
                 <Grid
+                    data-testid="checkout-list"
                     templateColumns={
                         isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(1, 1fr)"
                     }
                     rowGap={3}
                 >
                     <Card className="checkout-card">
-                        <CardHeader ref={removeDrop}>
+                        <CardHeader>
                             <Flex
                                 alignItems="center"
                                 justifyContent="space-between"
@@ -329,6 +330,8 @@ export default function CheckoutList(): JSX.Element {
                                     Checkout
                                 </Heading>
                                 <FontAwesomeIcon
+                                    data-testid="checkout-trash"
+                                    ref={removeDrop}
                                     icon={faTrash}
                                     className="trashcan"
                                     size="3x"
