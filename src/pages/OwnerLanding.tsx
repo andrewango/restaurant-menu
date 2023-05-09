@@ -18,7 +18,7 @@ import "../components/Styles.css";
 export default function OwnerLanding() {
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-testid="owner-landing-page">
             <Flex wrap="wrap" textAlign="center" px={5} py={2}>
                 <Heading className="heading">
                     Ristorante Della Squadra 13

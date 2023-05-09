@@ -91,7 +91,7 @@ export default function AddFood() {
     };
 
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-testid="add-food-page">
             <Flex wrap="wrap">
                 <Heading className="heading">Add / Remove Food</Heading>
                 <Spacer></Spacer>
