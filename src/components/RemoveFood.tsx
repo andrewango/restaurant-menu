@@ -89,6 +89,7 @@ export default function RemoveFood() {
             mt={100}
             // //h={isLargerThan1000 ? window.innerHeight * 0.65 : "600px"}
             className="section remove-stack"
+            data-testid="remove-food-page"
         >
             <Grid
                 templateColumns={
