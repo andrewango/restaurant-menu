@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/SearchBar.test.tsx (9.771 s)
+PASS src/components/SearchBar.test.tsx (12.366 s)
   ● Console
 
     console.log
@@ -1796,6 +1796,43 @@ PASS src/components/SearchBar.test.tsx (9.771 s)
       ]
 
       at setListHelper (src/components/SearchBar.tsx:82:21)
+
+FAIL src/components/AddDeleteUsers.test.tsx
+  ● Add and Delete Users tests › Deleting works
+
+    Unable to fire a "click" event - please provide a DOM element.
+
+      75 |         render(<AddDeleteUsers />);
+      76 |         const deleteButton = screen.getAllByTestId("remove-customer");
+    > 77 |         fireEvent.click(deleteButton[1]);
+         |                   ^
+      78 |         expect(screen.queryByText(/Gavin/i)).not.toBeInTheDocument();
+      79 |     });
+      80 |     test("Deleting works", () => {
+
+      at createEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:27:11)
+      at Function.createEvent.<computed> [as click] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:106:38)
+      at Function.fireEvent.<computed> [as click] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:68)
+      at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/components/AddDeleteUsers.test.tsx:77:19)
+
+  ● Add and Delete Users tests › Deleting works
+
+    Unable to fire a "click" event - please provide a DOM element.
+
+      81 |         render(<AddDeleteUsers />);
+      82 |         const deleteButton = screen.getAllByTestId("remove-customer");
+    > 83 |         fireEvent.click(deleteButton[1]);
+         |                   ^
+      84 |         expect(screen.queryByText(/Gavin/i)).not.toBeInTheDocument();
+      85 |     });
+      86 | });
+
+      at createEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:27:11)
+      at Function.createEvent.<computed> [as click] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:106:38)
+      at Function.fireEvent.<computed> [as click] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:68)
+      at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/components/AddDeleteUsers.test.tsx:83:19)
 
 PASS src/components/RatingFeature.test.tsx
 FAIL src/components/SelectRole.test.tsx
@@ -2065,15 +2102,14 @@ FAIL src/components/NavBar.test.tsx
       at Object.<anonymous> (src/components/NavBar.test.tsx:47:23)
 
 PASS src/components/DeliveryDropDown.test.tsx
-PASS src/components/AddDeleteUsers.test.tsx
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                              
 -----------------------|---------|----------|---------|---------|------------------------------------------------
-All files              |   40.65 |    39.16 |   35.05 |   40.74 |                                                
+All files              |   45.52 |    41.95 |   38.65 |   45.73 |                                                
  src                   |     100 |      100 |     100 |     100 |                                                
   App.tsx              |     100 |      100 |     100 |     100 |                                                
- src/components        |   41.23 |     40.9 |   35.92 |   41.35 |                                                
-  AddDeleteUsers.tsx   |    31.7 |    14.28 |   23.07 |    31.7 | 41,50-72,78-109,131-142,182-201                
+ src/components        |   46.69 |    43.93 |   40.11 |   46.96 |                                                
+  AddDeleteUsers.tsx   |   90.24 |       50 |   76.92 |   90.24 | 41,89,142,202                                  
   CheckoutList.tsx     |   25.51 |    16.66 |      25 |   24.21 | 53,75-79,89,98,110-145,151-231,284-303,358-382 
   DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                  
   EditFoodList.tsx     |       0 |        0 |       0 |       0 | 26-165                                         
@@ -2086,7 +2122,7 @@ All files              |   40.65 |    39.16 |   35.05 |   40.74 |
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                             
   RemoveFood.tsx       |   30.43 |    57.14 |      25 |   30.43 | 24-53,106                                      
   SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                       
-  SelectRole.tsx       |   46.87 |       30 |      50 |   48.38 | 58-68,76-83,92                                 
+  SelectRole.tsx       |   46.87 |       45 |      50 |   48.38 | 58-68,76-83,92                                 
  src/interfaces        |       0 |        0 |       0 |       0 |                                                
   CustomerList.ts      |       0 |        0 |       0 |       0 |                                                
   EmployeeList.ts      |       0 |        0 |       0 |       0 |                                                
@@ -2106,8 +2142,8 @@ All files              |   40.65 |    39.16 |   35.05 |   40.74 |
   UserStats.tsx        |       0 |        0 |       0 |       0 | 25-95                                          
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 
-Test Suites: 2 failed, 5 passed, 7 total
-Tests:       3 failed, 39 passed, 42 total
+Test Suites: 3 failed, 4 passed, 7 total
+Tests:       5 failed, 45 passed, 50 total
 Snapshots:   0 total
-Time:        16.848 s
+Time:        21.518 s
 Ran all test suites.
