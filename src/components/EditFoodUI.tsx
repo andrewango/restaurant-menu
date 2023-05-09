@@ -42,7 +42,8 @@ export default function EditFoodUI({
         ingredients,
         popular,
         spicy,
-        price
+        price,
+        quantity
     }: {
         name: string;
         image: string;
@@ -53,6 +54,7 @@ export default function EditFoodUI({
         popular: boolean;
         spicy: boolean;
         price: number;
+        quantity: number;
     }): JSX.Element {
         const [{ isDragging }, drag] = useDrag(() => ({
             type: "foodItem",
@@ -149,6 +151,7 @@ export default function EditFoodUI({
                                 popular={food.popular}
                                 spicy={food.spicy}
                                 price={food.price}
+                                quantity={food.quantity}
                             />
                         );
                     })}
