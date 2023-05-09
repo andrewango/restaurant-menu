@@ -68,4 +68,25 @@ describe("FoodItem tests", () => {
         );
         expect(getByText(`$${price}`)).toBeInTheDocument();
     });
+
+    test("displays the correct food rating", () => {
+        const rating = 3;
+        const { getAllByTestId } = render(
+            <DndProvider backend={HTML5Backend}>
+                <FoodItem
+                    name="test"
+                    image="test.jpg"
+                    desc="test desc"
+                    ingredients={["ing1", "ing2"]}
+                    price={5}
+                    rating={rating}
+                />
+            </DndProvider>
+        );
+        const starIcons = getAllByTestId("star-icon");
+        expect(
+            starIcons.filter((icon) => icon.style.color === "rgb(255, 221, 0)")
+                .length
+        ).toBe(rating);
+    });
 });
