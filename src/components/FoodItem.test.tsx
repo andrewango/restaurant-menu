@@ -66,6 +66,6 @@ describe("FoodItem tests", () => {
                 />
             </DndProvider>
         );
-        expect(getByText("$${price}")).toBeInTheDocument;
+        expect(getByText(`$${price}`)).toBeInTheDocument();
     });
 });
