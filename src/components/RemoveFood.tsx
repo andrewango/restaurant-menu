@@ -57,7 +57,13 @@ export default function RemoveFood() {
         // When food is removed, remove all instances of the food in each customer checkout list that has it
         // First, we map a new customer list with new checkout lists without that food for all customers who have the food item
         const currentCustomers: userProps[] = ListOfCustomers();
-        const customersWithNewFood: userProps[] = currentCustomers.map(
+        const copy: userProps[] = currentCustomers.map(
+            (customer: userProps) => ({
+                ...customer,
+                order: customer.order
+            })
+        );
+        const customersWithNewFood: userProps[] = copy.map(
             (customer: userProps) => ({
                 ...customer,
                 order: customer.order.filter((original: foodProps): boolean => {
