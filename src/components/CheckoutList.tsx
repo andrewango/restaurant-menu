@@ -229,7 +229,7 @@ export default function CheckoutList(): JSX.Element {
         };
 
         return (
-            <AccordionItem ref={drag}>
+            <AccordionItem data-testid={name + " - Checkout Item"} ref={drag}>
                 <h2>
                     <AccordionButton
                         fontWeight="semibold"
@@ -314,7 +314,6 @@ export default function CheckoutList(): JSX.Element {
         <Box h="0.72vh" mt={100} zIndex="1" position="absolute">
             <VStack spacing="3px">
                 <Grid
-                    data-testid="checkout-list"
                     templateColumns={
                         isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(1, 1fr)"
                     }
@@ -368,6 +367,7 @@ export default function CheckoutList(): JSX.Element {
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody
+                            data-testid="checkout-list"
                             ref={addDrop}
                             textAlign="center"
                             overflowY="auto"

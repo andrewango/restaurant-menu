@@ -47,13 +47,42 @@ describe("CheckoutList tests", () => {
         );
 
         expect(screen.queryByText(/Pepperoni Pizza/i)).toBeInTheDocument();
-
         const foodItem = screen.getByTestId("Pepperoni Pizza");
-        const checkoutList = screen.getByTestId("checkout-list-header");
-
+        const checkoutList = screen.getByTestId("checkout-list");
         fireEvent.dragStart(foodItem);
         fireEvent.drop(checkoutList);
+        expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
 
-        expect(screen.queryByText(/Pepperoni Pizza/i)).not.toBeInTheDocument();
+        const foodItemInCheckoutList = screen.getByTestId(
+            "Pepperoni Pizza - Checkout Item"
+        );
+        const trash = screen.getByTestId("checkout-trash");
+        fireEvent.dragStart(foodItemInCheckoutList);
+        fireEvent.drop(trash);
+    });
+
+    test("The customer is able to delete items from their checkout list", () => {
+        renderWithProviders(
+            <>
+                <CheckoutList></CheckoutList>
+                <SearchBar></SearchBar>
+            </>
+        );
+        // Drag the item to our checkout list
+        expect(screen.queryByText(/Pepperoni Pizza/i)).toBeInTheDocument();
+        const foodItem = screen.getByTestId("Pepperoni Pizza");
+        const checkoutList = screen.getByTestId("checkout-list");
+        fireEvent.dragStart(foodItem);
+        fireEvent.drop(checkoutList);
+        expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
+
+        // Remove the item by dragging it to trash can
+        const foodItemInCheckoutList = screen.getByTestId(
+            "Pepperoni Pizza - Checkout Item"
+        );
+        const trash = screen.getByTestId("checkout-trash");
+        fireEvent.dragStart(foodItemInCheckoutList);
+        fireEvent.drop(trash);
+        expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
     });
 });
