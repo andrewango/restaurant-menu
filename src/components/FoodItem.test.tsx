@@ -51,21 +51,4 @@ describe("FoodItem tests", () => {
         );
         expect(getByText(desc)).toBeInTheDocument;
     });
-
-    test("displays the correct ingredients", () => {
-        const ingredients = ["ing1", "ing2"];
-        const { getByText } = render(
-            <DndProvider backend={HTML5Backend}>
-                <FoodItem
-                    name="test"
-                    image="test.jpg"
-                    desc="test desc"
-                    ingredients={ingredients}
-                    price={10}
-                    rating={3}
-                />
-            </DndProvider>
-        );
-        /* expect(getByText(ingredients)).toBeInTheDocument; */
-    });
 });
