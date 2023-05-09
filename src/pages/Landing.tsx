@@ -11,7 +11,7 @@ import "./CustomerStyles.css";
 export default function Landing() {
     return (
         <>
-            <div className="background">
+            <div className="background" data-testid="landing-page">
                 <Flex className="website-title title" as="header">
                     <Box>
                         <Heading as="h1" fontSize="70px" fontWeight="extrabold">

@@ -41,7 +41,7 @@ export default function UserStats() {
         (foodItem: foodProps): foodProps => foodItem
     );
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-tesid="user-stats-page">
             <Flex wrap="wrap">
                 <Heading className="heading">Stats</Heading>
                 <Spacer></Spacer>

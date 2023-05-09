@@ -1,9 +1,9 @@
 import React, { ReactElement, ReactNode } from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
-import { HashRouter } from "react-router-dom";
-import { DndProvider } from "react-dnd";
+import { MemoryRouter } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import MatchMediaMock from "jest-matchmedia-mock";
 
@@ -19,20 +19,51 @@ const colors = {
 
 const theme = extendTheme({ colors });
 
-export const renderWithProviders = (ui: ReactElement) => {
+export const renderWithProviders = (ui: ReactElement, page: string) => {
     const Wrapper = ({ children }: { children: ReactNode }) => (
-        <HashRouter>
+        <MemoryRouter initialEntries={[page]}>
             <ChakraProvider theme={theme}>
                 <DndProvider backend={HTML5Backend}>{children}</DndProvider>
             </ChakraProvider>
-        </HashRouter>
+        </MemoryRouter>
     );
 
     return render(ui, { wrapper: Wrapper });
 };
 
-test("renders the team member names somewhere", () => {
-    renderWithProviders(<App />);
-    const linkElement = screen.getByText(/about us/i);
-    expect(linkElement).toBeInTheDocument();
+describe("App", () => {
+    test("renders Landing page", () => {
+        renderWithProviders(<App />, "/");
+        expect(screen.getByTestId("landing-page")).toBeInTheDocument();
+    });
+
+    test("renders EditUsers page", () => {
+        renderWithProviders(<App />, "/EditUsers");
+        expect(screen.getByTestId("edit-users-page")).toBeInTheDocument();
+    });
+
+    test("renders AboutUs page", () => {
+        renderWithProviders(<App />, "/AboutUs");
+        expect(screen.getByTestId("about-us-page")).toBeInTheDocument();
+    });
+
+    test("renders AddFood page", () => {
+        renderWithProviders(<App />, "/AddFood");
+        expect(screen.getByTestId("add-food-page")).toBeInTheDocument();
+    });
+
+    test("renders RemoveFood page", () => {
+        renderWithProviders(<App />, "/RemoveFood");
+        expect(screen.getByTestId("remove-food-page")).toBeInTheDocument();
+    });
+
+    test("renders OwnerLanding page", () => {
+        renderWithProviders(<App />, "/OwnerLanding");
+        expect(screen.getByTestId("owner-landing-page")).toBeInTheDocument();
+    });
+
+    test("renders ManageFoods page", () => {
+        renderWithProviders(<App />, "/ManageFoods");
+        expect(screen.getByTestId("manage-foods-page")).toBeInTheDocument();
+    });
 });
