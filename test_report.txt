@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/SearchBar.test.tsx (9.805 s)
+PASS src/components/SearchBar.test.tsx (12.821 s)
   ● Console
 
     console.log
@@ -2105,10 +2105,10 @@ PASS src/components/DeliveryDropDown.test.tsx
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                              
 -----------------------|---------|----------|---------|---------|------------------------------------------------
-All files              |   45.07 |    41.95 |   38.26 |   45.26 |                                                
+All files              |   44.88 |    41.95 |   38.07 |   45.08 |                                                
  src                   |     100 |      100 |     100 |     100 |                                                
   App.tsx              |     100 |      100 |     100 |     100 |                                                
- src/components        |   46.17 |    43.93 |   39.64 |   46.42 |                                                
+ src/components        |   45.96 |    43.93 |   39.41 |    46.2 |                                                
   AddDeleteUsers.tsx   |   90.24 |       50 |   76.92 |   90.24 | 41,89,142,202                                  
   CheckoutList.tsx     |   25.51 |    16.66 |      25 |   24.21 | 53,75-79,89,98,110-145,151-231,284-303,358-382 
   DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                  
@@ -2120,7 +2120,7 @@ All files              |   45.07 |    41.95 |   38.26 |   45.26 |
   ItemListUI.tsx       |     100 |       50 |     100 |     100 | 26                                             
   NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                             
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                             
-  RemoveFood.tsx       |      25 |    57.14 |      20 |      25 | 26-69,125                                      
+  RemoveFood.tsx       |   23.33 |    57.14 |   18.18 |   23.33 | 26-75,131                                      
   SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                       
   SelectRole.tsx       |   46.87 |       45 |      50 |   48.38 | 58-68,76-83,92                                 
  src/interfaces        |       0 |        0 |       0 |       0 |                                                
@@ -2145,5 +2145,5 @@ All files              |   45.07 |    41.95 |   38.26 |   45.26 |
 Test Suites: 3 failed, 4 passed, 7 total
 Tests:       5 failed, 45 passed, 50 total
 Snapshots:   0 total
-Time:        17.12 s
+Time:        22.3 s
 Ran all test suites.
