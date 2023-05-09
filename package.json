@@ -19,6 +19,7 @@
         "@types/react-dom": "^18.0.11",
         "fortawesome": "^0.0.1-security",
         "framer-motion": "^6.5.1",
+        "jest-matchmedia-mock": "^1.1.0",
         "react": "^18.2.0",
         "react-bootstrap": "^2.7.3",
         "react-dnd": "^16.0.1",
@@ -78,6 +79,9 @@
             "!src/index.tsx",
             "!src/reportWebVitals.ts",
             "!src/react-app-env.d.ts"
+        ],
+        "transformIgnorePatterns": [
+            "/node_modules/(?!react-dnd|core-dnd|@react-dnd|dnd-core|react-dnd-html5-backend)"
         ]
     }
 }
