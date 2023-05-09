@@ -1,6 +1,37 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import FoodItem from "./FoodItem";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-describe("FoodItem tests", () => {});
+describe("FoodItem tests", () => {
+    render(
+        <DndProvider backend={HTML5Backend}>
+            <FoodItem
+                name="test"
+                image="test.jpg"
+                desc="test desc"
+                ingredients={["ing1", "ing2"]}
+                price={5}
+                rating={2}
+            />
+        </DndProvider>
+    );
+
+    test("displays the correct food name", () => {
+        const name = "test name";
+        const { getByText } = render(
+            <DndProvider backend={HTML5Backend}>
+                <FoodItem
+                    name={name}
+                    image="test.jpg"
+                    desc="test desc"
+                    ingredients={[]}
+                    price={10}
+                    rating={3}
+                />
+            </DndProvider>
+        );
+        expect(getByText(name)).toBeInTheDocument();
+    });
+});
