@@ -184,6 +184,7 @@ export default function AddDeleteUsers(): JSX.Element {
                                                         )
                                                     }
                                                     id="remove-customer"
+                                                    data-testid="remove-customer"
                                                 >
                                                     <Image
                                                         src={Delete}
