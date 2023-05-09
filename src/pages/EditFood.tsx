@@ -10,7 +10,7 @@ import "../components/Styles.css";
 
 function EditFood() {
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-testid="owner-landing-page">
             <Flex wrap="wrap">
                 <Heading className="heading">Edit Food</Heading>
                 <Spacer></Spacer>

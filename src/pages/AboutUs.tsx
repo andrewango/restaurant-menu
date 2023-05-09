@@ -12,7 +12,7 @@ import "./CustomerStyles.css";
 
 export default function AboutUs() {
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-testid="about-us-page">
             <div>
                 <Heading className="aboutus">about us</Heading>
             </div>

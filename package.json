@@ -19,6 +19,7 @@
         "@types/react-dom": "^18.0.11",
         "fortawesome": "^0.0.1-security",
         "framer-motion": "^6.5.1",
+        "jest-localstorage-mock": "^2.4.26",
         "jest-matchmedia-mock": "^1.1.0",
         "react": "^18.2.0",
         "react-bootstrap": "^2.7.3",
@@ -69,6 +70,7 @@
         "eslint-plugin-prettier": "^4.0.0",
         "eslint-plugin-react": "^7.28.0",
         "gh-pages": "^3.2.3",
+        "mock-local-storage": "^1.1.23",
         "prettier": "^2.8.7",
         "prettier-eslint": "^13.0.0"
     },
@@ -83,5 +85,9 @@
         "transformIgnorePatterns": [
             "/node_modules/(?!react-dnd|core-dnd|@react-dnd|dnd-core|react-dnd-html5-backend)"
         ]
-    }
+    },
+    "resetMocks": false,
+    "setupFiles": [
+        "jest-localstorage-mock"
+    ]
 }
