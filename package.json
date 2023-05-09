@@ -81,6 +81,9 @@
             "!src/index.tsx",
             "!src/reportWebVitals.ts",
             "!src/react-app-env.d.ts"
+        ],
+        "transformIgnorePatterns": [
+            "/node_modules/(?!react-dnd|core-dnd|@react-dnd|dnd-core|react-dnd-html5-backend)"
         ]
     },
     "resetMocks": false,

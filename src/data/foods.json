@@ -2,7 +2,7 @@
     "FOODS": [
         {
             "name": "Pepperoni Pizza",
-            "image": "https://live.staticflickr.com/65535/52813368763_7f334652e5_m.jpg",
+            "image": "https://media.istockphoto.com/id/938742222/photo/cheesy-pepperoni-pizza.jpg?s=170667a&w=0&k=20&c=iNZpvQkg4H-Xe77n8ZP782eOIgvoM71EqS7n6Ra3NyE=",
             "desc": "A delicious pizza topped with cheese and pepperoni",
             "rating": 4,
             "type": ["Italian", "Fast Food", "Entree"],

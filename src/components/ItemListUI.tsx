@@ -21,6 +21,7 @@ export default function ItemListUI({
     return (
         <Box h="70vh" overflowY="scroll" mt={50} className="section">
             <Grid
+                data-testid="menu"
                 templateColumns={
                     isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(1, 1fr)"
                 }

@@ -139,12 +139,11 @@ export function SearchBar(): JSX.Element {
     }
 
     return (
-        <div>
+        <div data-testid={"searchbar"}>
             <Form.Group controlId="formCorrectAnswer">
-                <Form.Label style={{ color: "white" }}>
-                    Search for Food
-                </Form.Label>
+                <Form.Label className="filter">Search Menu</Form.Label>
                 <Form.Control
+                    data-testid={"search-input"}
                     value={text}
                     onChange={(e) => {
                         updateName(e as React.ChangeEvent<HTMLInputElement>);
@@ -153,9 +152,7 @@ export function SearchBar(): JSX.Element {
                 />
             </Form.Group>
             <HStack pl={6} mt={1} spacing={5}>
-                <Box textColor="white" fontWeight="bold">
-                    Filter:{" "}
-                </Box>
+                <Box className="filter">Filter: </Box>
                 <Tag
                     className="tag"
                     backgroundColor={spicy ? "#f56565" : "#f1f1f166"}
@@ -164,7 +161,7 @@ export function SearchBar(): JSX.Element {
                         setListHelper(text);
                     }}
                 >
-                    <TagLabel>Spicy</TagLabel>
+                    <TagLabel data-testid="spicy-filter-button">Spicy</TagLabel>
                 </Tag>
                 <Tag
                     className="tag"
@@ -174,7 +171,9 @@ export function SearchBar(): JSX.Element {
                         setListHelper(text);
                     }}
                 >
-                    <TagLabel>Popular</TagLabel>
+                    <TagLabel data-testid="popular-filter-button">
+                        Popular
+                    </TagLabel>
                 </Tag>
                 <Tag
                     className="tag"
@@ -184,7 +183,9 @@ export function SearchBar(): JSX.Element {
                         setListHelper(text);
                     }}
                 >
-                    <TagLabel>Appetizers</TagLabel>
+                    <TagLabel data-testid="appetizer-filter-button">
+                        Appetizers
+                    </TagLabel>
                 </Tag>
                 <Tag
                     className="tag"
@@ -194,7 +195,9 @@ export function SearchBar(): JSX.Element {
                         setListHelper(text);
                     }}
                 >
-                    <TagLabel>Entree</TagLabel>
+                    <TagLabel data-testid="entree-filter-button">
+                        Entree
+                    </TagLabel>
                 </Tag>
                 <Tag
                     className="tag"
@@ -204,15 +207,16 @@ export function SearchBar(): JSX.Element {
                         setListHelper(text);
                     }}
                 >
-                    <TagLabel>Dessert</TagLabel>
+                    <TagLabel data-testid="dessert-filter-button">
+                        Dessert
+                    </TagLabel>
                 </Tag>
             </HStack>
             <RadioGroup>
                 <HStack pl={6} mt={1} spacing={5}>
-                    <Box textColor="white" fontWeight="bold">
-                        Sort By:{" "}
-                    </Box>
+                    <Box className="filter">Sort By: </Box>
                     <Radio
+                        data-testid="pricehightolow-filter-button"
                         colorScheme="red"
                         value="high"
                         textColor="white"
@@ -233,6 +237,7 @@ export function SearchBar(): JSX.Element {
                         </Box>
                     </Radio>
                     <Radio
+                        data-testid="pricelowtohigh-filter-button"
                         colorScheme="red"
                         value="low"
                         textColor="white"
@@ -253,6 +258,7 @@ export function SearchBar(): JSX.Element {
                         </Box>
                     </Radio>
                     <Radio
+                        data-testid="rating-filter-button"
                         colorScheme="red"
                         value="rating"
                         textColor="white"
