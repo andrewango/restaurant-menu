@@ -70,6 +70,7 @@ export default function EditFoodUI({
                 direction={{ base: "column", sm: "row" }}
                 variant="elevated"
                 border={isDragging ? "3px solid tomato" : "0px"}
+                data-testid="card"
             >
                 <Accordion allowToggle textAlign="center" w="100%">
                     <AccordionItem>
