@@ -1,12 +1,12 @@
 import React, { ReactElement, ReactNode } from "react";
-import { render } from "@testing-library/react";
-import AddNewFood from "./AddNewFood";
+import { render, screen } from "@testing-library/react";
+import ManageFoods from "./ManageFoods";
+import MatchMediaMock from "jest-matchmedia-mock";
 import { HashRouter } from "react-router-dom";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-import MatchMediaMock from "jest-matchmedia-mock";
-export {};
+
 new MatchMediaMock();
 
 const colors = {
