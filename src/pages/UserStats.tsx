@@ -24,7 +24,13 @@ import "../components/Styles.css";
 function countOrders(list: userProps[], foodName: string): number {
     return list.reduce((count, user) => {
         return (
-            count + user.order.filter((food) => food.name === foodName).length
+            count +
+            user.order.reduce((foodCount, food) => {
+                if (food.name === foodName) {
+                    return foodCount + food.quantity;
+                }
+                return foodCount;
+            }, 0)
         );
     }, 0);
 }
