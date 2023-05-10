@@ -2,7 +2,7 @@ import React from "react";
 import { Heading, Text, Flex, Box, Grid, Spacer } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
-import restaurantLogo from "./restaurant-logo.png";
+import restaurantLogo from "../assets/restaurant-logo.png";
 import CheckoutList from "../components/CheckoutList";
 import { SelectRole } from "../components/SelectRole";
 import { DeliveryDropDown } from "../components/DeliveryDropDown";

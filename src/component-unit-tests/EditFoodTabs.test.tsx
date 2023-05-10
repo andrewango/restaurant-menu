@@ -5,7 +5,7 @@ import { DndProvider } from "react-dnd";
 import { HashRouter } from "react-router-dom";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import MatchMediaMock from "jest-matchmedia-mock";
-import EditFoodTabs from "./EditFoodTabs";
+import EditFoodTabs from "../components/EditFoodTabs";
 
 new MatchMediaMock();
 

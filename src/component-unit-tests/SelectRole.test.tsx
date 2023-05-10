@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { SelectRole } from "./SelectRole";
+import { SelectRole } from "../components/SelectRole";
 import { BrowserRouter } from "react-router-dom";
-import NavBar from "./NavBar";
+import NavBar from "../components/NavBar";
 
 describe("SelectRole tests", () => {
     test("SelectRole dropdown is succesfully rendered", () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
-import RemoveFood from "./RemoveFood";
+import RemoveFood from "../components/RemoveFood";
 import { BrowserRouter } from "react-router-dom";
 import MatchMediaMock from "jest-matchmedia-mock";
 

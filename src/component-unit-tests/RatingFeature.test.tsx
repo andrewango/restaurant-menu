@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import RatingFeature from "./RatingFeature";
+import RatingFeature from "../components/RatingFeature";
 
 describe("RatingFeature tests", () => {
     render(<RatingFeature />);
