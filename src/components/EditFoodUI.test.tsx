@@ -33,6 +33,7 @@ export const renderWithProviders = (ui: ReactElement) => {
 describe("EditFoodUI", () => {
     const mockFoodData = [
         {
+            quantity: 1,
             name: "Pizza",
             image: "pizza.jpg",
             desc: "Delicious pizza",
@@ -44,6 +45,7 @@ describe("EditFoodUI", () => {
             price: 10.99
         },
         {
+            quantity: 1,
             name: "Burger",
             image: "burger.jpg",
             desc: "Juicy burger",

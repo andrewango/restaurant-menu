@@ -53,6 +53,7 @@ export default function EditFoodUI({
         popular: boolean;
         spicy: boolean;
         price: number;
+        quantity: number;
     }): JSX.Element {
         const [{ isDragging }, drag] = useDrag(() => ({
             type: "foodItem",
@@ -128,7 +129,7 @@ export default function EditFoodUI({
     const [isLargerThan2000] = useMediaQuery("(min-width: 2300px)");
 
     return (
-        <Box h="65vh" overflowY="scroll" mt={100} className="section">
+        <Box h="65vh" overflowY="scroll" mt={70} className="section">
             <VStack spacing="3px">
                 <Grid
                     templateColumns={
@@ -150,6 +151,7 @@ export default function EditFoodUI({
                                 popular={food.popular}
                                 spicy={food.spicy}
                                 price={food.price}
+                                quantity={food.quantity}
                             />
                         );
                     })}

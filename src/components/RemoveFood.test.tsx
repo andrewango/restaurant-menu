@@ -8,6 +8,7 @@ new MatchMediaMock();
 sessionStorage.clear();
 const mockMenu = [
     {
+        quantity: 1,
         name: "Pizza",
         image: "pizza.jpg",
         desc: "Delicious pizza",
