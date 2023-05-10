@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/EditFoodMenu.test.tsx (13.04 s)
+PASS src/components/EditFoodMenu.test.tsx (13.67 s)
   ● Console
 
     console.log
@@ -1797,7 +1797,7 @@ PASS src/components/EditFoodMenu.test.tsx (13.04 s)
 
       at setListHelper (src/components/EditFoodMenu.tsx:82:21)
 
-PASS src/components/SearchBar.test.tsx (7.902 s)
+PASS src/components/SearchBar.test.tsx (8.279 s)
   ● Console
 
     console.log
@@ -3591,11 +3591,398 @@ PASS src/components/SearchBar.test.tsx (7.902 s)
       ]
 
       at setListHelper (src/components/SearchBar.tsx:82:21)
+
+PASS src/components/CheckoutList.test.tsx
+  ● Console
+
+    console.log
+      0
+
+      at src/components/CheckoutList.tsx:229:25
+
+    console.log
+      [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
+
+      at src/components/CheckoutList.tsx:232:29
+
+    console.log
+      0
+
+      at src/components/CheckoutList.tsx:229:25
+
+    console.log
+      [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
+
+      at src/components/CheckoutList.tsx:232:29
+
+    console.log
+      0
+
+      at src/components/CheckoutList.tsx:229:25
+
+    console.log
+      [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
+
+      at src/components/CheckoutList.tsx:232:29
+
+    console.log
+      0
+
+      at src/components/CheckoutList.tsx:229:25
+
+    console.log
+      [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
+
+      at src/components/CheckoutList.tsx:232:29
 
 PASS src/components/FoodItem.test.tsx
 PASS src/components/EditFoodUI.test.tsx
 PASS src/components/EditFoodList.test.tsx
-PASS src/components/ItemListUI.test.tsx
+FAIL src/components/ItemListUI.test.tsx
+  ● ItemListUI Tests › Maps each food in the list to a food item component
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="food-item"]
+
+    Ignored nodes: comments, script, style
+    [36m<body[39m
+      [33mclass[39m=[32m"chakra-ui-light"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"section css-rkcw0p"[39m
+          [33mdata-testid[39m=[32m"item-list-box"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"css-18u6e8q"[39m
+            [33mdata-testid[39m=[32m"menu"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"chakra-card dragcard css-mcyr23"[39m
+              [33mdata-testid[39m=[32m"Pizza"[39m
+              [33mdraggable[39m=[32m"true"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"css-dvxtzn"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"Pizza"[39m
+                  [33mclass[39m=[32m"drag-image css-1fx8nuu"[39m
+                  [33msrc[39m=[32m"pizza.jpg"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"chakra-text desc price css-rnfcb0"[39m
+                [36m>[39m
+                  [0m$10.99[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"chakra-stack css-n21gh5"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"chakra-card__body css-1idwstw"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"foodTitle"[39m
+                  [36m>[39m
+                    [36m<h2[39m
+                      [33mclass[39m=[32m"chakra-heading css-1dalxjy"[39m
+                    [36m>[39m
+                      [0mPizza[0m
+                    [36m</h2>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"desc"[39m
+                  [36m>[39m
+                    [36m<p[39m
+                      [33mclass[39m=[32m"chakra-text css-jvs47b"[39m
+                    [36m>[39m
+                      [0mA delicious pizza[0m
+                    [36m</p>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"ingredients"[39m
+                  [36m>[39m
+                    [0mIngredients: Tomato sauce, Cheese, Pepperoni[0m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"chakra-card__footer css-1a7q9t8"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"base-box css-0"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33mclass[39m=[32m"star"[39m
+                        [33mcolor[39m=[32m"#D4D4D4"[39m
+                        [33mdata-testid[39m=[32m"star-icon"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                        [33mheight[39m=[32m"20"[39m
+                        [33msize[39m=[32m"20"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-width[39m=[32m"0"[39m
+                        [33mstyle[39m=[32m"color: rgb(212, 212, 212);"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"20"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<polygon[39m
+                          [33mfill-rule[39m=[32m"evenodd"[39m
+                          [33mpoints[39m=[32m"12 16.667 5 22 8 14 2 9.5 9.5 9.5 12 2 14.5 9.5 22 9.5 16 14 19 22"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                    [36m</div>[39m
+                    [36m<label>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"star-box css-0"[39m
+                        [33mstyle[39m=[32m"width: 100%;"[39m
+                      [36m>[39m
+                        [36m<svg[39m
+                          [33mclass[39m=[32m"star"[39m
+                          [33mcolor[39m=[32m"#FFDD00"[39m
+                          [33mdata-testid[39m=[32m"star-icon"[39m
+                          [33mfill[39m=[32m"currentColor"[39m
+                          [33mheight[39m=[32m"20"[39m
+                          [33msize[39m=[32m"20"[39m
+                          [33mstroke[39m=[32m"currentColor"[39m
+                          [33mstroke-width[39m=[32m"0"[39m
+                          [33mstyle[39m=[32m"color: rgb(255, 221, 0);"[39m
+                          [33mviewBox[39m=[32m"0 0 24 24"[39m
+                          [33mwidth[39m=[32m"20"[39m
+                          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                        [36m>[39m
+                          [36m<polygon[39m
+                            [33mfill-rule[39m=[32m"evenodd"[39m
+                            [33mpoints[39m=[32m"12 16.667 5 22 8 14 2 9.5 9.5 9.5 12 2 14.5 9.5 22 9.5 16 14 19 22"[39m
+                          [36m/>[39m
+                        [36m</svg>[39m
+                      [36m</div>[39m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"base-box css-0"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33mclass[39m=[32m"star"[39m
+                        [33mcolor[39m=[32m"#D4D4D4"[39m
+                        [33mdata-testid[39m=[32m"star-icon"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                        [33mheight[39m=[32m"20"[39m
+                        [33msize[39m=[32m"20"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-width[39m=[32m"0"[39m
+                        [33mstyle[39m=[32m"color: rgb(212, 212, 212);"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"20"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<polygon[39m
+                          [33mfill-rule[39m=[32m"evenodd"[39m
+                          [33mpoints[39m=[32m"12 16.667 5 22 8 14 2 9.5 9.5 9.5 12 2 14.5 9.5 22 9.5 16 14 19 22"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                    [36m</div>[39m
+                    [36m<label>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"star-box css-0"[39m
+                        [33mstyle[39m=[32m"width: 100%;"[39m
+                      [36m>[39m
+                        [36m<svg[39m
+                          [33mclass[39m=[32m"star"[39m
+                          [33mcolor[39m=[32m"#FFDD00"[39m
+                          [33mdata-testid[39m=[32m"star-icon"[39m
+                          [33mfill[39m=[32m"currentColor"[39m
+                          [33mheight[39m=[32m"20"[39m
+                          [33msize[39m=[32m"20"[39m
+                          [33mstroke[39m=[32m"currentColor"[39m
+                          [33mstroke-width[39m=[...
+
+      74 |     test("Maps each food in the list to a food item component", () => {
+      75 |         renderWithProviders(<ItemListUI foodData={foodData} />);
+    > 76 |         const foodItems = screen.getAllByTestId("food-item");
+         |                                  ^
+      77 |         expect(foodItems[0]).toHaveTextContent("Pizza");
+      78 |         expect(foodItems[1]).toHaveTextContent("Burger");
+      79 |     });
+
+      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at getAllByTestId (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:109:15)
+      at Object.<anonymous> (src/components/ItemListUI.test.tsx:76:34)
+
+  ● ItemListUI Tests › Render correct number of food based on menu size
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="food-item"]
+
+    Ignored nodes: comments, script, style
+    [36m<body[39m
+      [33mclass[39m=[32m"chakra-ui-light"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"section css-rkcw0p"[39m
+          [33mdata-testid[39m=[32m"item-list-box"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"css-18u6e8q"[39m
+            [33mdata-testid[39m=[32m"menu"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"chakra-card dragcard css-mcyr23"[39m
+              [33mdata-testid[39m=[32m"Pizza"[39m
+              [33mdraggable[39m=[32m"true"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"css-dvxtzn"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"Pizza"[39m
+                  [33mclass[39m=[32m"drag-image css-1fx8nuu"[39m
+                  [33msrc[39m=[32m"pizza.jpg"[39m
+                [36m/>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"chakra-text desc price css-rnfcb0"[39m
+                [36m>[39m
+                  [0m$10.99[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"chakra-stack css-n21gh5"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"chakra-card__body css-1idwstw"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"foodTitle"[39m
+                  [36m>[39m
+                    [36m<h2[39m
+                      [33mclass[39m=[32m"chakra-heading css-1dalxjy"[39m
+                    [36m>[39m
+                      [0mPizza[0m
+                    [36m</h2>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"desc"[39m
+                  [36m>[39m
+                    [36m<p[39m
+                      [33mclass[39m=[32m"chakra-text css-jvs47b"[39m
+                    [36m>[39m
+                      [0mA delicious pizza[0m
+                    [36m</p>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"ingredients"[39m
+                  [36m>[39m
+                    [0mIngredients: Tomato sauce, Cheese, Pepperoni[0m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"chakra-card__footer css-1a7q9t8"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"base-box css-0"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33mclass[39m=[32m"star"[39m
+                        [33mcolor[39m=[32m"#D4D4D4"[39m
+                        [33mdata-testid[39m=[32m"star-icon"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                        [33mheight[39m=[32m"20"[39m
+                        [33msize[39m=[32m"20"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-width[39m=[32m"0"[39m
+                        [33mstyle[39m=[32m"color: rgb(212, 212, 212);"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"20"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<polygon[39m
+                          [33mfill-rule[39m=[32m"evenodd"[39m
+                          [33mpoints[39m=[32m"12 16.667 5 22 8 14 2 9.5 9.5 9.5 12 2 14.5 9.5 22 9.5 16 14 19 22"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                    [36m</div>[39m
+                    [36m<label>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"star-box css-0"[39m
+                        [33mstyle[39m=[32m"width: 100%;"[39m
+                      [36m>[39m
+                        [36m<svg[39m
+                          [33mclass[39m=[32m"star"[39m
+                          [33mcolor[39m=[32m"#FFDD00"[39m
+                          [33mdata-testid[39m=[32m"star-icon"[39m
+                          [33mfill[39m=[32m"currentColor"[39m
+                          [33mheight[39m=[32m"20"[39m
+                          [33msize[39m=[32m"20"[39m
+                          [33mstroke[39m=[32m"currentColor"[39m
+                          [33mstroke-width[39m=[32m"0"[39m
+                          [33mstyle[39m=[32m"color: rgb(255, 221, 0);"[39m
+                          [33mviewBox[39m=[32m"0 0 24 24"[39m
+                          [33mwidth[39m=[32m"20"[39m
+                          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                        [36m>[39m
+                          [36m<polygon[39m
+                            [33mfill-rule[39m=[32m"evenodd"[39m
+                            [33mpoints[39m=[32m"12 16.667 5 22 8 14 2 9.5 9.5 9.5 12 2 14.5 9.5 22 9.5 16 14 19 22"[39m
+                          [36m/>[39m
+                        [36m</svg>[39m
+                      [36m</div>[39m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"base-box css-0"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33mclass[39m=[32m"star"[39m
+                        [33mcolor[39m=[32m"#D4D4D4"[39m
+                        [33mdata-testid[39m=[32m"star-icon"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                        [33mheight[39m=[32m"20"[39m
+                        [33msize[39m=[32m"20"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-width[39m=[32m"0"[39m
+                        [33mstyle[39m=[32m"color: rgb(212, 212, 212);"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"20"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<polygon[39m
+                          [33mfill-rule[39m=[32m"evenodd"[39m
+                          [33mpoints[39m=[32m"12 16.667 5 22 8 14 2 9.5 9.5 9.5 12 2 14.5 9.5 22 9.5 16 14 19 22"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                    [36m</div>[39m
+                    [36m<label>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"star-box css-0"[39m
+                        [33mstyle[39m=[32m"width: 100%;"[39m
+                      [36m>[39m
+                        [36m<svg[39m
+                          [33mclass[39m=[32m"star"[39m
+                          [33mcolor[39m=[32m"#FFDD00"[39m
+                          [33mdata-testid[39m=[32m"star-icon"[39m
+                          [33mfill[39m=[32m"currentColor"[39m
+                          [33mheight[39m=[32m"20"[39m
+                          [33msize[39m=[32m"20"[39m
+                          [33mstroke[39m=[32m"currentColor"[39m
+                          [33mstroke-width[39m=[...
+
+      88 |     test("Render correct number of food based on menu size", () => {
+      89 |         renderWithProviders(<ItemListUI foodData={foodData} />);
+    > 90 |         const foodItems = screen.getAllByTestId("food-item");
+         |                                  ^
+      91 |         expect(foodItems.length).toEqual(2);
+      92 |     });
+      93 | });
+
+      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at getAllByTestId (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:109:15)
+      at Object.<anonymous> (src/components/ItemListUI.test.tsx:90:34)
+
 PASS src/components/AddDeleteUsers.test.tsx
 PASS src/components/SelectRole.test.tsx
 PASS src/components/RatingFeature.test.tsx
@@ -4108,49 +4495,49 @@ FAIL src/components/EditFoodTabs.test.tsx
       at Object.<anonymous> (src/components/EditFoodTabs.test.tsx:35:9)
 
 PASS src/components/DeliveryDropDown.test.tsx
------------------------|---------|----------|---------|---------|------------------------------------------------
-File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                              
------------------------|---------|----------|---------|---------|------------------------------------------------
-All files              |   60.25 |    61.17 |   54.34 |   59.96 |                                                
- src                   |     100 |      100 |     100 |     100 |                                                
-  App.tsx              |     100 |      100 |     100 |     100 |                                                
- src/components        |   61.69 |    63.96 |   55.92 |   61.41 |                                                
-  AddDeleteUsers.tsx   |   90.24 |    43.75 |   76.92 |   90.24 | 41,89,142,202                                  
-  AddNewFood.tsx       |    42.3 |      100 |   22.22 |    42.3 | 38-40,47-50,57-72,76-85,192-211                
-  CheckoutList.tsx     |   18.65 |     12.5 |   20.93 |   17.55 | 53,75-79,89,98,110-196,202-376,398-417,472-496 
-  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                  
-  EditFoodList.tsx     |   52.94 |       50 |   54.54 |   51.06 | 34,43-44,60-69,74-93,104-105                   
-  EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                       
-  EditFoodTabs.tsx     |      32 |    69.23 |   11.11 |      32 | 70-72,79-82,89-91,95-107,238-258               
-  EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 73,137                                         
-  FoodItem.tsx         |   77.77 |       80 |      60 |   76.47 | 19-21,56                                       
-  ItemListUI.tsx       |     100 |       50 |     100 |     100 | 32                                             
-  NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                             
-  RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                             
-  RemoveFood.tsx       |   87.09 |    65.21 |   72.72 |   87.09 | 43,50,53,70                                    
-  SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                       
-  SelectRole.tsx       |   46.87 |       45 |      50 |   48.38 | 58-68,76-83,92                                 
- src/interfaces        |       0 |        0 |       0 |       0 |                                                
-  CustomerList.ts      |       0 |        0 |       0 |       0 |                                                
-  EmployeeList.ts      |       0 |        0 |       0 |       0 |                                                
-  Food.ts              |       0 |        0 |       0 |       0 |                                                
-  ListOfCustomers.ts   |       0 |        0 |       0 |       0 |                                                
-  OwnerFoodItem.ts     |       0 |        0 |       0 |       0 |                                                
-  OwnerList.ts         |       0 |        0 |       0 |       0 |                                                
-  User.ts              |       0 |        0 |       0 |       0 |                                                
- src/pages             |   28.57 |     5.55 |   33.33 |   28.57 |                                                
-  AboutUs.tsx          |     100 |      100 |     100 |     100 |                                                
-  AddFood.tsx          |     100 |      100 |     100 |     100 |                                                
-  EditFood.tsx         |       0 |        0 |       0 |       0 | 12                                             
-  EditUsers.tsx        |     100 |      100 |     100 |     100 |                                                
-  Landing.tsx          |     100 |      100 |     100 |     100 |                                                
-  ManageFoods.tsx      |      25 |      100 |      25 |      25 | 18-34                                          
-  OwnerLanding.tsx     |      60 |       50 |   33.33 |      60 | 39-47                                          
-  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-98                                          
------------------------|---------|----------|---------|---------|------------------------------------------------
+-----------------------|---------|----------|---------|---------|-----------------------------------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                             
+-----------------------|---------|----------|---------|---------|-----------------------------------------------
+All files              |   73.99 |    66.22 |   64.78 |    73.8 |                                               
+ src                   |     100 |      100 |     100 |     100 |                                               
+  App.tsx              |     100 |      100 |     100 |     100 |                                               
+ src/components        |    76.1 |    69.27 |   67.29 |   75.95 |                                               
+  AddDeleteUsers.tsx   |   90.24 |    43.75 |   76.92 |   90.24 | 41,89,142,213                                 
+  AddNewFood.tsx       |    42.3 |      100 |   22.22 |    42.3 | 38-40,47-50,57-72,76-85,192-211               
+  CheckoutList.tsx     |   82.08 |     52.5 |   76.74 |   81.67 | 75-79,139,240,260,301-309,313,400-419,476,501 
+  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                 
+  EditFoodList.tsx     |   52.94 |       50 |   54.54 |   51.06 | 34,43-44,60-69,74-93,104-105                  
+  EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                      
+  EditFoodTabs.tsx     |      32 |    69.23 |   11.11 |      32 | 70-72,79-82,89-91,95-107,238-258              
+  EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 73,137                                        
+  FoodItem.tsx         |   77.77 |    86.66 |      60 |   76.47 | 19-21,56                                      
+  ItemListUI.tsx       |     100 |       50 |     100 |     100 | 32                                            
+  NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                            
+  RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                            
+  RemoveFood.tsx       |   87.09 |    65.21 |   72.72 |   87.09 | 43,50,53,70                                   
+  SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                      
+  SelectRole.tsx       |   46.87 |       55 |      50 |   48.38 | 58-68,76-83,93                                
+ src/interfaces        |       0 |        0 |       0 |       0 |                                               
+  CustomerList.ts      |       0 |        0 |       0 |       0 |                                               
+  EmployeeList.ts      |       0 |        0 |       0 |       0 |                                               
+  Food.ts              |       0 |        0 |       0 |       0 |                                               
+  ListOfCustomers.ts   |       0 |        0 |       0 |       0 |                                               
+  OwnerFoodItem.ts     |       0 |        0 |       0 |       0 |                                               
+  OwnerList.ts         |       0 |        0 |       0 |       0 |                                               
+  User.ts              |       0 |        0 |       0 |       0 |                                               
+ src/pages             |   28.57 |     5.55 |   33.33 |   28.57 |                                               
+  AboutUs.tsx          |     100 |      100 |     100 |     100 |                                               
+  AddFood.tsx          |     100 |      100 |     100 |     100 |                                               
+  EditFood.tsx         |       0 |        0 |       0 |       0 | 12                                            
+  EditUsers.tsx        |     100 |      100 |     100 |     100 |                                               
+  Landing.tsx          |     100 |      100 |     100 |     100 |                                               
+  ManageFoods.tsx      |      25 |      100 |      25 |      25 | 18-34                                         
+  OwnerLanding.tsx     |      60 |       50 |   33.33 |      60 | 39-47                                         
+  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-98                                         
+-----------------------|---------|----------|---------|---------|-----------------------------------------------
 
-Test Suites: 1 failed, 13 passed, 14 total
-Tests:       1 failed, 83 passed, 84 total
+Test Suites: 2 failed, 13 passed, 15 total
+Tests:       3 failed, 86 passed, 89 total
 Snapshots:   0 total
-Time:        34.642 s
+Time:        40.425 s
 Ran all test suites.
