@@ -89,6 +89,7 @@ export function SelectRole(): JSX.Element {
             <form>
                 <label> Role </label>
                 <Select
+                    data-testid="role-select"
                     onChange={(e) => changeRole(findUserInList(e.target.value))}
                     name={userRole.name}
                     value={userRole.name}
@@ -97,6 +98,7 @@ export function SelectRole(): JSX.Element {
                 >
                     {ROLES.map((user: userProps) => (
                         <option
+                            data-testid={user.name}
                             style={{ color: "black" }}
                             value={user.name}
                             key={user.orderID}
@@ -108,6 +110,7 @@ export function SelectRole(): JSX.Element {
 
                     {listOfCustomers.map((customer: userProps) => (
                         <option
+                            data-testid={customer.name + " " + customer.orderID}
                             style={{ color: "black" }}
                             value={customer.name}
                             key={customer.orderID}

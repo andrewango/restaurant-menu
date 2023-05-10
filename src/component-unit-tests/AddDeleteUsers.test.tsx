@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import AddDeleteUsers from "./AddDeleteUsers";
+import AddDeleteUsers from "../components/AddDeleteUsers";
 import { HashRouter } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { DndProvider } from "react-dnd";

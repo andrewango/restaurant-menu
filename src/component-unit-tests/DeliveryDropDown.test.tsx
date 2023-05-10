@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { DeliveryDropDown } from "./DeliveryDropDown";
+import { DeliveryDropDown } from "../components/DeliveryDropDown";
 import userEvent from "@testing-library/user-event";
 
 describe("RatingFeature tests", () => {

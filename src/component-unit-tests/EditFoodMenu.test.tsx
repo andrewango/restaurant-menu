@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { EditFoodMenu } from "./EditFoodMenu";
+import { EditFoodMenu } from "../components/EditFoodMenu";
 import { HashRouter } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { DndProvider } from "react-dnd";
