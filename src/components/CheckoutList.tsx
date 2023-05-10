@@ -129,7 +129,6 @@ export default function CheckoutList(): JSX.Element {
 
                     const listOfCustomers = ListOfCustomers();
                     const currentUser: userProps = GetCurrentUser();
-                    // Update the quantity in the current user's order
                     const updatedOrder = currentUser.order.map((food) => {
                         if (food.name === name) {
                             return {
@@ -161,8 +160,6 @@ export default function CheckoutList(): JSX.Element {
 
                     return updatedCheckoutList;
                 }
-
-                // If the food doesn't exist in the checkout list, add it with quantity 1
                 const newFoodItem = {
                     ...chosenFood,
                     quantity: 1
