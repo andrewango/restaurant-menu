@@ -1,6 +1,5 @@
 import React, { ReactElement, ReactNode } from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/react";
 import EditFoodList from "./EditFoodList";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { DndProvider } from "react-dnd";
@@ -95,5 +94,17 @@ describe("EditFoodList Tests", () => {
         renderWithProviders(<EditFoodList />);
         const pizza = screen.getByText(/Pizza/i);
         expect(pizza).toBeInTheDocument();
+    });
+    test("There are multiple tabs, 1 per item", () => {
+        sessionStorage.setItem("editFoodList", JSON.stringify(mockFoodData2));
+        renderWithProviders(<EditFoodList />);
+        expect(screen.getByText("Pizza")).toBeInTheDocument();
+        expect(screen.getByText("Burger")).toBeInTheDocument();
+    });
+    test("Items removed from sessionStorage are removed from list", () => {
+        sessionStorage.setItem("editFoodList", JSON.stringify(mockFoodData));
+        sessionStorage.removeItem("editFoodList");
+        renderWithProviders(<EditFoodList />);
+        expect(screen.queryByText("Pizza")).not.toBeInTheDocument();
     });
 });
