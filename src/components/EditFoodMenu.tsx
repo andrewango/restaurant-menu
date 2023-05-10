@@ -280,7 +280,7 @@ export function EditFoodMenu(): JSX.Element {
                     </Radio>
                 </HStack>
             </RadioGroup>
-            <div>
+            <div data-testid="edit-food-central">
                 <EditFoodUI foodData={list}></EditFoodUI>
             </div>
         </div>

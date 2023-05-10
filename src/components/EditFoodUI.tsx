@@ -73,7 +73,12 @@ export default function EditFoodUI({
                 border={isDragging ? "3px solid tomato" : "0px"}
                 data-testid="card"
             >
-                <Accordion allowToggle textAlign="center" w="100%">
+                <Accordion
+                    data-testid={name}
+                    allowToggle
+                    textAlign="center"
+                    w="100%"
+                >
                     <AccordionItem>
                         <h2>
                             <AccordionButton>

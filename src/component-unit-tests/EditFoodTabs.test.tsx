@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from "react";
-import { fireEvent, render } from "@testing-library/react";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { ChakraProvider, TabPanels, Tabs, extendTheme } from "@chakra-ui/react";
 import { DndProvider } from "react-dnd";
 import { HashRouter } from "react-router-dom";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -63,174 +63,315 @@ const args: {
 describe("EditFoodTabs tests", () => {
     test("Renders name form", () => {
         const { getByLabelText } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
+            <Tabs>
+                <TabPanels>
+                    <EditFoodTabs
+                        {...args}
+                        editType={args.editType}
+                        editIngredients={args.editIngredients}
+                    />
+                </TabPanels>
+            </Tabs>
         );
         expect(getByLabelText(/Name/i)).toBeInTheDocument();
     });
 
     test("Renders image link form", () => {
         const { getByLabelText } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
+            <Tabs>
+                <TabPanels>
+                    <EditFoodTabs
+                        {...args}
+                        editType={args.editType}
+                        editIngredients={args.editIngredients}
+                    />
+                </TabPanels>
+            </Tabs>
         );
         expect(getByLabelText(/Image Link/i)).toBeInTheDocument();
     });
 
     test("Renders description form", () => {
         const { getByLabelText } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
+            <Tabs>
+                <TabPanels>
+                    <EditFoodTabs
+                        {...args}
+                        editType={args.editType}
+                        editIngredients={args.editIngredients}
+                    />
+                </TabPanels>
+            </Tabs>
         );
         expect(getByLabelText(/Description/i)).toBeInTheDocument();
     });
 
     test("Renders type form", () => {
         const { getByLabelText } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
+            <Tabs>
+                <TabPanels>
+                    <EditFoodTabs
+                        {...args}
+                        editType={args.editType}
+                        editIngredients={args.editIngredients}
+                    />
+                </TabPanels>
+            </Tabs>
         );
         expect(getByLabelText(/Type/i)).toBeInTheDocument();
     });
 
     test("Renders ingredients form", () => {
         const { getByLabelText } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
+            <Tabs>
+                <TabPanels>
+                    <EditFoodTabs
+                        {...args}
+                        editType={args.editType}
+                        editIngredients={args.editIngredients}
+                    />
+                </TabPanels>
+            </Tabs>
         );
         expect(getByLabelText(/Ingredients/i)).toBeInTheDocument();
     });
 
     test("Renders rating form", () => {
         const { getByLabelText } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
+            <Tabs>
+                <TabPanels>
+                    <EditFoodTabs
+                        {...args}
+                        editType={args.editType}
+                        editIngredients={args.editIngredients}
+                    />
+                </TabPanels>
+            </Tabs>
         );
         expect(getByLabelText(/Rating/i)).toBeInTheDocument();
     });
 
     test("Renders price form", () => {
         const { getByLabelText } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
+            <Tabs>
+                <TabPanels>
+                    <EditFoodTabs
+                        {...args}
+                        editType={args.editType}
+                        editIngredients={args.editIngredients}
+                    />
+                </TabPanels>
+            </Tabs>
         );
         expect(getByLabelText(/Price/i)).toBeInTheDocument();
     });
 
     test("Renders popular checkbox", () => {
         const { getByLabelText } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
+            <Tabs>
+                <TabPanels>
+                    <EditFoodTabs
+                        {...args}
+                        editType={args.editType}
+                        editIngredients={args.editIngredients}
+                    />
+                </TabPanels>
+            </Tabs>
         );
         expect(getByLabelText(/Popular/i)).toBeInTheDocument();
     });
 
     test("Renders spicy checkbox", () => {
         const { getByLabelText } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
+            <Tabs>
+                <TabPanels>
+                    <EditFoodTabs
+                        {...args}
+                        editType={args.editType}
+                        editIngredients={args.editIngredients}
+                    />
+                </TabPanels>
+            </Tabs>
         );
         expect(getByLabelText(/Spicy/i)).toBeInTheDocument();
     });
 
     test("Renders edit button", () => {
         const { getByRole } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
+            <Tabs>
+                <TabPanels>
+                    <EditFoodTabs
+                        {...args}
+                        editType={args.editType}
+                        editIngredients={args.editIngredients}
+                    />
+                </TabPanels>
+            </Tabs>
         );
         expect(getByRole("button", { name: /Edit/i })).toBeInTheDocument();
     });
 
-    test("Submits the form with the entered values", () => {
-        const { getByLabelText, getByRole } = renderWithProviders(
-            <EditFoodTabs
-                {...args}
-                editType={args.editType}
-                editIngredients={args.editIngredients}
-            />
-        );
-        fireEvent.change(getByLabelText(/Name/i), {
-            target: { value: "New food" }
+    test("Owner/Employee is able to drag and drop an item to create a new tab", () => {
+        renderWithProviders(<EditFood></EditFood>);
+        // Drag and drop food item to make new tab
+        expect(
+            screen.queryByText(/Black Licorice Ice Cream/i)
+        ).toBeInTheDocument();
+        const foodItem = screen.getByTestId("Black Licorice Ice Cream");
+        const editFoodList = screen.getByTestId("edit-food-list");
+        fireEvent.dragStart(foodItem);
+        fireEvent.drop(editFoodList);
+        expect(editFoodList).toHaveTextContent(/Black Licorice Ice Cream/i);
+    });
+
+    test("Originally, the edit button is disabled when the user doesn't make any changes to the selected food item", () => {
+        renderWithProviders(<EditFood></EditFood>);
+        // Drag and drop food item to make new tab
+        expect(
+            screen.queryByText(/Black Licorice Ice Cream/i)
+        ).toBeInTheDocument();
+        const foodItem = screen.getByTestId("Black Licorice Ice Cream");
+        const editFoodList = screen.getByTestId("edit-food-list");
+        fireEvent.dragStart(foodItem);
+        fireEvent.drop(editFoodList);
+        expect(editFoodList).toHaveTextContent(/Black Licorice Ice Cream/i);
+
+        // Check if edit button is disabled
+        const editButton = screen.getByTestId("edit-submit");
+        expect(editButton).toBeDisabled();
+    });
+
+    test("Owner/Employee is able to switch tabs", async () => {
+        renderWithProviders(<EditFood></EditFood>);
+        // Drag and drop 2 food items to make 2 new tabs
+        expect(
+            screen.queryByText(/Black Licorice Ice Cream/i)
+        ).toBeInTheDocument();
+        expect(screen.queryByText(/Pepperoni Pizza/i)).toBeInTheDocument();
+        const foodItem1 = screen.getByTestId("Black Licorice Ice Cream");
+        const foodItem2 = screen.getByTestId("Pepperoni Pizza");
+        const editFoodList = screen.getByTestId("edit-food-list");
+        fireEvent.dragStart(foodItem1);
+        fireEvent.drop(editFoodList);
+        fireEvent.dragStart(foodItem2);
+        fireEvent.drop(editFoodList);
+        expect(editFoodList).toHaveTextContent(/Black Licorice Ice Cream/i);
+        expect(editFoodList).toHaveTextContent(/Pepperoni Pizza/i);
+        // Make sure we're on the first tab
+        const tab1 = screen
+            .getByTestId("tab-select")
+            .querySelector("#tabs-\\:r13\\:--tab-0");
+        if (tab1 !== null) {
+            expect(tab1.getAttribute("aria-selected")).toBe("true");
+        }
+
+        // Switching tabs
+        const tab2 = screen
+            .getByTestId("tab-select")
+            .querySelector("#tabs-\\:r13\\:--tab-1");
+        console.log(tab2);
+        if (tab2 !== null) {
+            fireEvent.click(tab2);
+            expect(tab2.getAttribute("aria-selected")).toBe("true");
+        }
+
+        if (tab1 !== null) {
+            fireEvent.click(tab1);
+            expect(tab1.getAttribute("aria-selected")).toBe("true");
+        }
+    });
+
+    test("Submits the form with the entered values and it changes the edit food item list", async () => {
+        renderWithProviders(<EditFood />);
+        // Drag and drop food item to make new tab
+        expect(
+            screen.queryByText(/Black Licorice Ice Cream/i)
+        ).toBeInTheDocument();
+        const foodItem = screen.getByTestId("Black Licorice Ice Cream");
+        const editFoodList = screen.getByTestId("edit-food-list");
+        fireEvent.dragStart(foodItem);
+        fireEvent.drop(editFoodList);
+        expect(editFoodList).toHaveTextContent(/Black Licorice Ice Cream/i);
+
+        fireEvent.change(screen.getByTestId("edit-name-form"), {
+            target: { value: args.editName }
         });
-        fireEvent.change(getByLabelText(/Image Link/i), {
-            target: { value: "https://example.com/image.jpg" }
+        fireEvent.change(screen.getByTestId("edit-image-form"), {
+            target: { value: args.editImage }
         });
-        fireEvent.change(getByLabelText(/Description/i), {
-            target: { value: "This is a new food." }
+        fireEvent.change(screen.getByTestId("edit-desc-form"), {
+            target: { value: args.editDesc }
         });
-        fireEvent.change(getByLabelText(/Type/i), {
-            target: { value: "italian, pizza" }
+        fireEvent.change(screen.getByTestId("edit-type-form"), {
+            target: { value: args.editType }
         });
-        fireEvent.change(getByLabelText(/Ingredients/i), {
-            target: { value: "cheese, tomato, basil" }
+        fireEvent.change(screen.getByTestId("edit-ingredients-form"), {
+            target: { value: args.editIngredients }
         });
-        fireEvent.change(getByLabelText(/Rating/i), { target: { value: "4" } });
-        fireEvent.change(getByLabelText(/Price/i), {
-            target: { value: "10.99" }
+        fireEvent.change(screen.getByTestId("edit-rating-form"), {
+            target: { value: args.editRating }
         });
-        fireEvent.click(getByLabelText(/Popular/i));
-        fireEvent.click(getByLabelText(/Spicy/i));
-        fireEvent.submit(getByRole("button", { name: /Edit/i }));
+        fireEvent.change(screen.getByTestId("edit-price-form"), {
+            target: { value: args.editPrice }
+        });
+        fireEvent.click(screen.getByTestId("edit-popular-checkbox"));
+        fireEvent.submit(await screen.findByTestId("edit-submit"));
+
+        await waitFor(() => {
+            expect(editFoodList).not.toHaveTextContent(
+                /Black Licorice Ice Cream/i
+            );
+            expect(editFoodList).toHaveTextContent(/Marshmallows/i);
+            const editFoodCentral = screen.getByTestId("edit-food-central");
+            expect(editFoodCentral).not.toHaveTextContent(
+                /Black Licorice Ice Cream/i
+            );
+            expect(editFoodCentral).toHaveTextContent(/Marshmallows/);
+        });
     });
 
     test("Items submitted are added to sessionStorage", () => {
-        const { getByLabelText, getByRole } = renderWithProviders(<EditFood />);
-        fireEvent.change(getByLabelText(/Name/i), {
+        const { getByRole } = renderWithProviders(<EditFood />);
+        // Drag and drop food item to make new tab
+        expect(
+            screen.queryByText(/Black Licorice Ice Cream/i)
+        ).toBeInTheDocument();
+        const foodItem = screen.getByTestId("Black Licorice Ice Cream");
+        const editFoodList = screen.getByTestId("edit-food-list");
+        fireEvent.dragStart(foodItem);
+        fireEvent.drop(editFoodList);
+        expect(editFoodList).toHaveTextContent(/Black Licorice Ice Cream/i);
+
+        fireEvent.change(screen.getByTestId("edit-name-form"), {
             target: { value: args.editName }
         });
-        fireEvent.change(getByLabelText(/Image Link/i), {
+        fireEvent.change(screen.getByTestId("edit-image-form"), {
             target: { value: args.editImage }
         });
-        fireEvent.change(getByLabelText(/Description/i), {
+        fireEvent.change(screen.getByTestId("edit-desc-form"), {
             target: { value: args.editDesc }
         });
-        fireEvent.change(getByLabelText(/Type/i), {
+        fireEvent.change(screen.getByTestId("edit-type-form"), {
             target: { value: args.editType }
         });
-        fireEvent.change(getByLabelText(/Ingredients/i), {
+        fireEvent.change(screen.getByTestId("edit-ingredients-form"), {
             target: { value: args.editIngredients }
         });
-        fireEvent.change(getByLabelText(/Rating/i), {
+        fireEvent.change(screen.getByTestId("edit-rating-form"), {
             target: { value: args.editRating }
         });
-        fireEvent.change(getByLabelText(/Price/i), {
+        fireEvent.change(screen.getByTestId("edit-price-form"), {
             target: { value: args.editPrice }
         });
-        fireEvent.click(getByLabelText(/Popular/i));
+        fireEvent.click(screen.getByTestId("edit-popular-checkbox"));
         fireEvent.submit(getByRole("button", { name: /Edit/i }));
-        const menu = sessionStorage.getItem("menu");
-        const editFoodList = sessionStorage.getItem("editFoodList");
-        expect(menu).toContain("2"); // Nothing else is this price!
-        expect(editFoodList).toContain("2"); // Nothing else is this price!
+
+        const menuInSessionStorage = sessionStorage.getItem("menu");
+        const editFoodListInSessionStorage =
+            sessionStorage.getItem("editFoodList");
+        expect(menuInSessionStorage).toContain("2"); // Nothing else is this price!
+        expect(menuInSessionStorage).toContain("Marshmallows"); // Nothing else is this name!
+        expect(editFoodListInSessionStorage).toContain("2"); // Nothing else is this price!
+        expect(editFoodListInSessionStorage).toContain("Marshmallows"); // Nothing else is this name!
     });
 });

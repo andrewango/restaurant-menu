@@ -133,13 +133,14 @@ export default function EditFoodTabs({
     };
 
     return (
-        <TabPanel>
+        <TabPanel data-testid={name + " Tab Panel"}>
             <form onSubmit={handleSubmit}>
                 <SimpleGrid columns={4} columnGap={5} rowGap={2} w="full">
                     <GridItem colSpan={4}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Name:</FormLabel>
                             <Input
+                                data-testid="edit-name-form"
                                 isRequired
                                 name="name"
                                 value={name}
@@ -149,9 +150,10 @@ export default function EditFoodTabs({
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={4}>
-                        <FormControl id="name" px={5}>
+                        <FormControl id="image" px={5}>
                             <FormLabel>Image Link:</FormLabel>
                             <Input
+                                data-testid="edit-image-form"
                                 isRequired
                                 name="image"
                                 value={image}
@@ -161,9 +163,10 @@ export default function EditFoodTabs({
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={4}>
-                        <FormControl id="name" px={5}>
+                        <FormControl id="desc" px={5}>
                             <FormLabel>Description:</FormLabel>
                             <Input
+                                data-testid="edit-desc-form"
                                 isRequired
                                 name="desc"
                                 value={desc}
@@ -173,9 +176,10 @@ export default function EditFoodTabs({
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={4}>
-                        <FormControl id="name" px={5}>
+                        <FormControl id="type" px={5}>
                             <FormLabel>Type:</FormLabel>
                             <Input
+                                data-testid="edit-type-form"
                                 isRequired
                                 name="type"
                                 value={type}
@@ -185,9 +189,10 @@ export default function EditFoodTabs({
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={4}>
-                        <FormControl id="name" px={5}>
+                        <FormControl id="ingredients" px={5}>
                             <FormLabel>Ingredients:</FormLabel>
                             <Input
+                                data-testid="edit-ingredients-form"
                                 isRequired
                                 name="ingredients"
                                 value={ingredients}
@@ -197,9 +202,10 @@ export default function EditFoodTabs({
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={2}>
-                        <FormControl id="name" px={5}>
+                        <FormControl id="rating" px={5}>
                             <FormLabel>Rating:</FormLabel>
                             <Input
+                                data-testid="edit-rating-form"
                                 isRequired
                                 type="number"
                                 min="0"
@@ -212,9 +218,10 @@ export default function EditFoodTabs({
                         </FormControl>
                     </GridItem>
                     <GridItem colStart={3} colEnd={5}>
-                        <FormControl id="name" px={5}>
+                        <FormControl id="price" px={5}>
                             <FormLabel>Price:</FormLabel>
                             <Input
+                                data-testid="edit-price-form"
                                 isRequired
                                 type="number"
                                 min="0"
@@ -226,9 +233,10 @@ export default function EditFoodTabs({
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={2}>
-                        <FormControl id="name" px={5}>
+                        <FormControl id="popular" px={5}>
                             <FormLabel>Popular</FormLabel>
                             <Checkbox
+                                data-testid="edit-popular-checkbox"
                                 type="checkbox"
                                 name="popular"
                                 id="popular"
@@ -246,9 +254,10 @@ export default function EditFoodTabs({
                         </FormControl>
                     </GridItem>
                     <GridItem colStart={3} colEnd={5}>
-                        <FormControl id="name" px={5}>
+                        <FormControl id="spicy" px={5}>
                             <FormLabel>Spicy</FormLabel>
                             <Checkbox
+                                data-testid="edit-spicy-checkbox"
                                 type="checkbox"
                                 name="spicy"
                                 id="spicy"
@@ -267,6 +276,7 @@ export default function EditFoodTabs({
                     </GridItem>
                     <GridItem colSpan={4}>
                         <Button
+                            data-testid="edit-submit"
                             type="submit"
                             //className="editfood-btn"
                             size="lg"
