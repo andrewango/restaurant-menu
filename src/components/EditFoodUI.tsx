@@ -132,6 +132,7 @@ export default function EditFoodUI({
         <Box h="65vh" overflowY="scroll" mt={70} className="section">
             <VStack spacing="3px">
                 <Grid
+                    data-testid="edit-menu"
                     templateColumns={
                         isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(1, 1fr)"
                     }

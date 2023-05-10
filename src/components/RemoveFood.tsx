@@ -15,7 +15,7 @@ import {
 import { Button } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
 import { EditMenuList } from "./EditFoodList";
-import { MenuList } from "../pages/AddFood";
+import { MenuList } from "./AddNewFood";
 import { userProps } from "../interfaces/User";
 import { ListOfCustomers } from "./SelectRole";
 
