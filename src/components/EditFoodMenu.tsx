@@ -139,7 +139,7 @@ export function EditFoodMenu(): JSX.Element {
     }
 
     return (
-        <div data-testid={"searchbar"}>
+        <div data-testid={"editfoodmenu"}>
             <Form.Group controlId="formCorrectAnswer">
                 <Form.Label className="edit-filter">Search Menu</Form.Label>
                 <Form.Control
