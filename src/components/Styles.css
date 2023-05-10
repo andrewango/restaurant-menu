@@ -190,6 +190,9 @@
     border-color: #ff6347;
 }
 .checkout-edit {
+    position: absolute !important;
+    top: 8%;
+    right: 2%;
     width: 4.375rem !important;
     height: 2rem !important;
     overflow-wrap: break-word;
@@ -209,6 +212,15 @@
     transform: scale(0.95);
     border-color: #ff6347;
 }
+.checkout-quantity {
+    box-sizing: 10px;
+    padding: 0.2rem 0.4rem;
+    position: absolute !important;
+    top: 40%;
+    left: 5px;
+    transform: translateY(-50%);
+}
+
 .checkout-card {
     height: 73vh !important;
     width: 40vw !important;
