@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/component-unit-tests/EditFoodMenu.test.tsx (11.803 s)
+PASS src/component-unit-tests/EditFoodMenu.test.tsx (16.069 s)
   ● Console
 
     console.log
@@ -1797,7 +1797,7 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (11.803 s)
 
       at setListHelper (src/components/EditFoodMenu.tsx:82:21)
 
-PASS src/component-unit-tests/SearchBar.test.tsx (7.248 s)
+PASS src/component-unit-tests/SearchBar.test.tsx (10.268 s)
   ● Console
 
     console.log
@@ -3592,48 +3592,469 @@ PASS src/component-unit-tests/SearchBar.test.tsx (7.248 s)
 
       at setListHelper (src/components/SearchBar.tsx:82:21)
 
-PASS src/component-unit-tests/CheckoutList.test.tsx
+FAIL src/component-unit-tests/CheckoutList.test.tsx (5.516 s)
   ● Console
 
     console.log
       0
 
-      at src/components/CheckoutList.tsx:229:25
+      at src/components/CheckoutList.tsx:233:25
 
     console.log
       [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
 
-      at src/components/CheckoutList.tsx:232:29
+      at src/components/CheckoutList.tsx:236:29
 
     console.log
       0
 
-      at src/components/CheckoutList.tsx:229:25
+      at src/components/CheckoutList.tsx:233:25
 
     console.log
       [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
 
-      at src/components/CheckoutList.tsx:232:29
+      at src/components/CheckoutList.tsx:236:29
 
-    console.log
-      0
+  ● CheckoutList tests › Customer can increment the quantity of the item after dragging it
 
-      at src/components/CheckoutList.tsx:229:25
+    TestingLibraryElementError: Unable to find an element by: [data-testid="increment-button"]
 
-    console.log
-      [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
+    Ignored nodes: comments, script, style
+    [36m<body[39m
+      [33mclass[39m=[32m"chakra-ui-light"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"background"[39m
+          [33mdata-testid[39m=[32m"landing-page"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"website-title title css-k008qs"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-0"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"chakra-heading css-1yud1sb"[39m
+              [36m>[39m
+                [0mteam 13[0m
+              [36m</h1>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"chakra-text css-1vpdv9u"[39m
+              [36m>[39m
+                [0mgood food, good mood.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"title-box css-0"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"restaurant-logo"[39m
+                [33mheight[39m=[32m"150px"[39m
+                [33msrc[39m=[32m"restaurant-logo.png"[39m
+                [33mwidth[39m=[32m"150px"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-17xejub"[39m
+            [36m/>[39m
+            [36m<div>[39m
+              [36m<form>[39m
+                [36m<label>[39m
+                  [0m Role [0m
+                [36m</label>[39m
+                [36m<select[39m
+                  [33mclass[39m=[32m"sc-beqWaB bEYCSg"[39m
+                  [33mdata-testid[39m=[32m"role-select"[39m
+                  [33mid[39m=[32m"Customer"[39m
+                  [33mname[39m=[32m"Customer"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Owner"[39m
+                    [33mid[39m=[32m"Owner"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Owner"[39m
+                  [36m>[39m
+                    [0mOwner[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Employee"[39m
+                    [33mid[39m=[32m"Employee"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Employee"[39m
+                  [36m>[39m
+                    [0mEmployee[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Customer 1"[39m
+                    [33mid[39m=[32m"Customer"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Customer"[39m
+                  [36m>[39m
+                    [0mCustomer[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</form>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<nav[39m
+            [33mclass[39m=[32m"navbar css-zke1y"[39m
+            [33mdata-testid[39m=[32m"bar"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mhref[39m=[32m"#/"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"navbtn css-2lzsxm"[39m
+              [36m>[39m
+                [0mmenu[0m
+              [36m</span>[39m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=[32m"#/AboutUs"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"navbtn css-0"[39m
+              [36m>[39m
+                [0mabout us[0m
+              [36m</span>[39m
+            [36m</a>[39m
+          [36m</nav>[39m
+          [36m<div>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"chakra-heading body-heading css-1dklj6k"[39m
+            [36m>[39m
+              [0mour menu[0m
+            [36m</h2>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"chakra-text body-text css-0"[39m
+            [36m>[39m
+              [0mopen 12-9 pm[0m
+            [36m</p>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"css-v9g40c"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-nkki96"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mdata-testid[39m=[32m"searchbar"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"filter form-label"[39m
+                    [33mfor[39m=[32m"formCorrectAnswer"[39m
+                  [36m>[39m
+                    [0mSearch Menu[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"search-input"[39m
+                    [33mid[39m=[32m"formCorrectAnswer"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"chakra-stack css-1a353lp"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"filter css-0"[39m
+                  [36m>[39m
+                    [0mFilter: [0m
+                  [36m</div>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"spicy-filter-button"[39m
+                    [36m>[39m
+                      [0mSpicy[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"popular-filter-button"[39m
+                    [36m>[39m
+                      [0mPopular[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"appetizer-filter-button"[39m
+                    [36m>[39m
+                      [0mAppetizers[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"entree-filter-button"[39m
+                    [36m>[39m
+                      [0mEntree[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"dessert-filter-button"[39m
+                    [36m>[39m
+                      [0mDessert[0m...
 
-      at src/components/CheckoutList.tsx:232:29
+      104 |         // Check if item quantity increments
+      105 |         let quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
+    > 106 |         const incrementButton = screen.getByTestId("increment-button");
+          |                                        ^
+      107 |         fireEvent.click(incrementButton);
+      108 |         await waitFor(() => {
+      109 |             quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
 
-    console.log
-      0
+      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at getByTestId (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:106:40)
 
-      at src/components/CheckoutList.tsx:229:25
+  ● CheckoutList tests › Customer can decrement the quantity of the item after dragging it
 
-    console.log
-      [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
+    TestingLibraryElementError: Found multiple elements with the text: /Pepperoni Pizza/i
 
-      at src/components/CheckoutList.tsx:232:29
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<h2[39m
+      [33mclass[39m=[32m"chakra-heading css-1dalxjy"[39m
+    [36m>[39m
+      [0mPepperoni Pizza[0m
+    [36m</h2>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<span[39m
+      [33mclass[39m=[32m"css-r9y281"[39m
+    [36m>[39m
+      [0mPepperoni Pizza[0m
+    [36m</span>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body[39m
+      [33mclass[39m=[32m"chakra-ui-light"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"background"[39m
+          [33mdata-testid[39m=[32m"landing-page"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"website-title title css-k008qs"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-0"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"chakra-heading css-1yud1sb"[39m
+              [36m>[39m
+                [0mteam 13[0m
+              [36m</h1>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"chakra-text css-1vpdv9u"[39m
+              [36m>[39m
+                [0mgood food, good mood.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"title-box css-0"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"restaurant-logo"[39m
+                [33mheight[39m=[32m"150px"[39m
+                [33msrc[39m=[32m"restaurant-logo.png"[39m
+                [33mwidth[39m=[32m"150px"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-17xejub"[39m
+            [36m/>[39m
+            [36m<div>[39m
+              [36m<form>[39m
+                [36m<label>[39m
+                  [0m Role [0m
+                [36m</label>[39m
+                [36m<select[39m
+                  [33mclass[39m=[32m"sc-beqWaB bEYCSg"[39m
+                  [33mdata-testid[39m=[32m"role-select"[39m
+                  [33mid[39m=[32m"Customer"[39m
+                  [33mname[39m=[32m"Customer"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Owner"[39m
+                    [33mid[39m=[32m"Owner"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Owner"[39m
+                  [36m>[39m
+                    [0mOwner[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Employee"[39m
+                    [33mid[39m=[32m"Employee"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Employee"[39m
+                  [36m>[39m
+                    [0mEmployee[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Customer 1"[39m
+                    [33mid[39m=[32m"Customer"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Customer"[39m
+                  [36m>[39m
+                    [0mCustomer[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</form>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<nav[39m
+            [33mclass[39m=[32m"navbar css-zke1y"[39m
+            [33mdata-testid[39m=[32m"bar"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mhref[39m=[32m"#/"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"navbtn css-2lzsxm"[39m
+              [36m>[39m
+                [0mmenu[0m
+              [36m</span>[39m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=[32m"#/AboutUs"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"navbtn css-0"[39m
+              [36m>[39m
+                [0mabout us[0m
+              [36m</span>[39m
+            [36m</a>[39m
+          [36m</nav>[39m
+          [36m<div>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"chakra-heading body-heading css-1dklj6k"[39m
+            [36m>[39m
+              [0mour menu[0m
+            [36m</h2>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"chakra-text body-text css-0"[39m
+            [36m>[39m
+              [0mopen 12-9 pm[0m
+            [36m</p>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"css-v9g40c"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-nkki96"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mdata-testid[39m=[32m"searchbar"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"filter form-label"[39m
+                    [33mfor[39m=[32m"formCorrectAnswer"[39m
+                  [36m>[39m
+                    [0mSearch Menu[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"search-input"[39m
+                    [33mid[39m=[32m"formCorrectAnswer"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"chakra-stack css-1a353lp"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"filter css-0"[39m
+                  [36m>[39m
+                    [0mFilter: [0m
+                  [36m</div>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"spicy-filter-button"[39m
+                    [36m>[39m
+                      [0mSpicy[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"popular-filter-button"[39m
+                    [36m>[39m
+                      [0mPopular[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"appetizer-filter-button"[39m
+                    [36m>[39m
+                      [0mAppetizers[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"entree-filter-button"[39m
+                    [36m>[39m
+                      [0mEntree[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"dessert-filter-button"[39m
+                    [36m>[39m
+                      [0mDessert[0m...
+
+      128 |         );
+      129 |         // Drag the item to our checkout list
+    > 130 |         expect(screen.queryByText(/Pepperoni Pizza/i)).toBeInTheDocument();
+          |                       ^
+      131 |         const foodItem = screen.getByTestId("Pepperoni Pizza");
+      132 |         const checkoutList = screen.getByTestId("checkout-list");
+      133 |         fireEvent.dragStart(foodItem);
+
+      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at queryByText (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:130:23)
 
 PASS src/component-unit-tests/FoodItem.test.tsx
 PASS src/component-unit-tests/EditFoodUI.test.tsx
@@ -4589,49 +5010,49 @@ FAIL src/component-unit-tests/EditFoodTabs.test.tsx
       at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:35:9)
 
 PASS src/component-unit-tests/DeliveryDropDown.test.tsx
------------------------|---------|----------|---------|---------|-----------------------------------------------
-File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                             
------------------------|---------|----------|---------|---------|-----------------------------------------------
-All files              |   73.99 |    66.22 |   64.78 |    73.8 |                                               
- src                   |     100 |      100 |     100 |     100 |                                               
-  App.tsx              |     100 |      100 |     100 |     100 |                                               
- src/components        |    76.1 |    69.27 |   67.29 |   75.95 |                                               
-  AddDeleteUsers.tsx   |   90.24 |    43.75 |   76.92 |   90.24 | 41,89,142,213                                 
-  AddNewFood.tsx       |    42.3 |      100 |   22.22 |    42.3 | 38-40,47-50,57-72,76-85,192-211               
-  CheckoutList.tsx     |   82.08 |     52.5 |   76.74 |   81.67 | 75-79,139,240,260,301-309,313,400-419,476,501 
-  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                 
-  EditFoodList.tsx     |   52.94 |       50 |   54.54 |   51.06 | 34,43-44,60-69,74-93,104-105                  
-  EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                      
-  EditFoodTabs.tsx     |      32 |    69.23 |   11.11 |      32 | 70-72,79-82,89-91,95-107,238-258              
-  EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 73,137                                        
-  FoodItem.tsx         |   77.77 |    86.66 |      60 |   76.47 | 19-21,56                                      
-  ItemListUI.tsx       |     100 |       50 |     100 |     100 | 32                                            
-  NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                            
-  RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                            
-  RemoveFood.tsx       |   87.09 |    65.21 |   72.72 |   87.09 | 43,50,53,70                                   
-  SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                      
-  SelectRole.tsx       |   46.87 |       55 |      50 |   48.38 | 58-68,76-83,93                                
- src/interfaces        |       0 |        0 |       0 |       0 |                                               
-  CustomerList.ts      |       0 |        0 |       0 |       0 |                                               
-  EmployeeList.ts      |       0 |        0 |       0 |       0 |                                               
-  Food.ts              |       0 |        0 |       0 |       0 |                                               
-  ListOfCustomers.ts   |       0 |        0 |       0 |       0 |                                               
-  OwnerFoodItem.ts     |       0 |        0 |       0 |       0 |                                               
-  OwnerList.ts         |       0 |        0 |       0 |       0 |                                               
-  User.ts              |       0 |        0 |       0 |       0 |                                               
- src/pages             |   28.57 |     5.55 |   33.33 |   28.57 |                                               
-  AboutUs.tsx          |     100 |      100 |     100 |     100 |                                               
-  AddFood.tsx          |     100 |      100 |     100 |     100 |                                               
-  EditFood.tsx         |       0 |        0 |       0 |       0 | 12                                            
-  EditUsers.tsx        |     100 |      100 |     100 |     100 |                                               
-  Landing.tsx          |     100 |      100 |     100 |     100 |                                               
-  ManageFoods.tsx      |      25 |      100 |      25 |      25 | 18-34                                         
-  OwnerLanding.tsx     |      60 |       50 |   33.33 |      60 | 39-47                                         
-  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-98                                         
------------------------|---------|----------|---------|---------|-----------------------------------------------
+-----------------------|---------|----------|---------|---------|-------------------------------------------------------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                 
+-----------------------|---------|----------|---------|---------|-------------------------------------------------------------------
+All files              |   68.65 |    65.07 |    61.3 |   68.36 |                                                                   
+ src                   |     100 |      100 |     100 |     100 |                                                                   
+  App.tsx              |     100 |      100 |     100 |     100 |                                                                   
+ src/components        |    70.5 |    68.05 |    63.5 |   70.24 |                                                                   
+  AddDeleteUsers.tsx   |   90.24 |    43.75 |   76.92 |   90.24 | 41,89,142,213                                                     
+  AddNewFood.tsx       |    42.3 |      100 |   22.22 |    42.3 | 38-40,47-50,57-72,76-85,192-211                                   
+  CheckoutList.tsx     |   57.46 |    42.85 |   58.13 |   56.48 | 79-83,121,126-165,244,263-287,305-313,317,370-376,392-411,468,493 
+  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                                     
+  EditFoodList.tsx     |   52.94 |       50 |   54.54 |   51.06 | 34,43-44,60-69,74-93,104-105                                      
+  EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                                          
+  EditFoodTabs.tsx     |      32 |    69.23 |   11.11 |      32 | 70-72,79-82,89-91,95-107,238-258                                  
+  EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 73,137                                                            
+  FoodItem.tsx         |   77.77 |    86.66 |      60 |   76.47 | 19-21,56                                                          
+  ItemListUI.tsx       |     100 |       50 |     100 |     100 | 32                                                                
+  NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                                                
+  RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                                                
+  RemoveFood.tsx       |   87.09 |    65.21 |   72.72 |   87.09 | 43,50,53,70                                                       
+  SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                                          
+  SelectRole.tsx       |   46.87 |       55 |      50 |   48.38 | 58-68,76-83,93                                                    
+ src/interfaces        |       0 |        0 |       0 |       0 |                                                                   
+  CustomerList.ts      |       0 |        0 |       0 |       0 |                                                                   
+  EmployeeList.ts      |       0 |        0 |       0 |       0 |                                                                   
+  Food.ts              |       0 |        0 |       0 |       0 |                                                                   
+  ListOfCustomers.ts   |       0 |        0 |       0 |       0 |                                                                   
+  OwnerFoodItem.ts     |       0 |        0 |       0 |       0 |                                                                   
+  OwnerList.ts         |       0 |        0 |       0 |       0 |                                                                   
+  User.ts              |       0 |        0 |       0 |       0 |                                                                   
+ src/pages             |   28.57 |     5.55 |   33.33 |   28.57 |                                                                   
+  AboutUs.tsx          |     100 |      100 |     100 |     100 |                                                                   
+  AddFood.tsx          |     100 |      100 |     100 |     100 |                                                                   
+  EditFood.tsx         |       0 |        0 |       0 |       0 | 12                                                                
+  EditUsers.tsx        |     100 |      100 |     100 |     100 |                                                                   
+  Landing.tsx          |     100 |      100 |     100 |     100 |                                                                   
+  ManageFoods.tsx      |      25 |      100 |      25 |      25 | 18-34                                                             
+  OwnerLanding.tsx     |      60 |       50 |   33.33 |      60 | 39-47                                                             
+  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-98                                                             
+-----------------------|---------|----------|---------|---------|-------------------------------------------------------------------
 
-Test Suites: 3 failed, 12 passed, 15 total
-Tests:       5 failed, 84 passed, 89 total
+Test Suites: 4 failed, 11 passed, 15 total
+Tests:       7 failed, 82 passed, 89 total
 Snapshots:   0 total
-Time:        35.37 s
+Time:        48.405 s
 Ran all test suites.
