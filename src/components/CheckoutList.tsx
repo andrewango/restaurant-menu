@@ -482,7 +482,7 @@ export default function CheckoutList(): JSX.Element {
                             textAlign="center"
                             overflowY="auto"
                         >
-                            <Accordion allowMultiple={false}>
+                            <Accordion allowToggle allowMultiple>
                                 {searchedFoods.map(
                                     (food: foodProps, index: number) => (
                                         <CheckoutItem
