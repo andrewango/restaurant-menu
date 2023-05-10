@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/EditFoodMenu.test.tsx (11.336 s)
+PASS src/components/EditFoodMenu.test.tsx (13.04 s)
   ● Console
 
     console.log
@@ -1797,7 +1797,7 @@ PASS src/components/EditFoodMenu.test.tsx (11.336 s)
 
       at setListHelper (src/components/EditFoodMenu.tsx:82:21)
 
-PASS src/components/SearchBar.test.tsx (6.459 s)
+PASS src/components/SearchBar.test.tsx (7.902 s)
   ● Console
 
     console.log
@@ -4111,23 +4111,23 @@ PASS src/components/DeliveryDropDown.test.tsx
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                              
 -----------------------|---------|----------|---------|---------|------------------------------------------------
-All files              |   60.19 |    61.22 |   54.34 |    59.9 |                                                
+All files              |   60.25 |    61.17 |   54.34 |   59.96 |                                                
  src                   |     100 |      100 |     100 |     100 |                                                
   App.tsx              |     100 |      100 |     100 |     100 |                                                
- src/components        |   61.62 |    64.04 |   55.92 |   61.35 |                                                
+ src/components        |   61.69 |    63.96 |   55.92 |   61.41 |                                                
   AddDeleteUsers.tsx   |   90.24 |    43.75 |   76.92 |   90.24 | 41,89,142,202                                  
   AddNewFood.tsx       |    42.3 |      100 |   22.22 |    42.3 | 38-40,47-50,57-72,76-85,192-211                
   CheckoutList.tsx     |   18.65 |     12.5 |   20.93 |   17.55 | 53,75-79,89,98,110-196,202-376,398-417,472-496 
   DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                  
   EditFoodList.tsx     |   52.94 |       50 |   54.54 |   51.06 | 34,43-44,60-69,74-93,104-105                   
   EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                       
-  EditFoodTabs.tsx     |      32 |    69.23 |   11.11 |      32 | 70-72,79-82,89-91,95-107,235-255               
+  EditFoodTabs.tsx     |      32 |    69.23 |   11.11 |      32 | 70-72,79-82,89-91,95-107,238-258               
   EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 73,137                                         
   FoodItem.tsx         |   77.77 |       80 |      60 |   76.47 | 19-21,56                                       
   ItemListUI.tsx       |     100 |       50 |     100 |     100 | 32                                             
   NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                             
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                             
-  RemoveFood.tsx       |   86.66 |    66.66 |   72.72 |   86.66 | 43,50,53,70                                    
+  RemoveFood.tsx       |   87.09 |    65.21 |   72.72 |   87.09 | 43,50,53,70                                    
   SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                       
   SelectRole.tsx       |   46.87 |       45 |      50 |   48.38 | 58-68,76-83,92                                 
  src/interfaces        |       0 |        0 |       0 |       0 |                                                
@@ -4146,11 +4146,11 @@ All files              |   60.19 |    61.22 |   54.34 |    59.9 |
   Landing.tsx          |     100 |      100 |     100 |     100 |                                                
   ManageFoods.tsx      |      25 |      100 |      25 |      25 | 18-34                                          
   OwnerLanding.tsx     |      60 |       50 |   33.33 |      60 | 39-47                                          
-  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-101                                         
+  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-98                                          
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 
 Test Suites: 1 failed, 13 passed, 14 total
 Tests:       1 failed, 83 passed, 84 total
 Snapshots:   0 total
-Time:        29.755 s
+Time:        34.642 s
 Ran all test suites.
