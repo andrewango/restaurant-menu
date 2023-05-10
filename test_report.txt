@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/SearchBar.test.tsx (13.259 s)
+PASS src/components/SearchBar.test.tsx (9.969 s)
   ● Console
 
     console.log
@@ -1797,6 +1797,7 @@ PASS src/components/SearchBar.test.tsx (13.259 s)
 
       at setListHelper (src/components/SearchBar.tsx:82:21)
 
+PASS src/components/FoodItem.test.tsx
 PASS src/components/EditFoodUI.test.tsx
 FAIL src/components/AddDeleteUsers.test.tsx
   ● Add and Delete Users tests › Deleting works
@@ -2308,8 +2309,8 @@ All files              |    41.8 |    37.02 |   38.59 |    41.8 |
   UserStats.tsx        |       0 |        0 |       0 |       0 | 25-95                                          
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 
-Test Suites: 4 failed, 6 passed, 10 total
-Tests:       6 failed, 59 passed, 65 total
+Test Suites: 4 failed, 7 passed, 11 total
+Tests:       6 failed, 64 passed, 70 total
 Snapshots:   0 total
-Time:        25.899 s
+Time:        20.614 s
 Ran all test suites.
