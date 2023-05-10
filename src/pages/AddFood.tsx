@@ -1,97 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     Heading,
-    Stack,
-    Checkbox,
     Grid,
     GridItem,
-    SimpleGrid,
     Box,
     Flex,
     Spacer,
     VStack
 } from "@chakra-ui/react";
-import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
-import foodList from "../data/foods.json";
-import { foodProps } from "../interfaces/Food";
+import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 import RemoveFood from "../components/RemoveFood";
 import "../components/Styles.css";
+import AddNewFood from "../components/AddNewFood";
 
-export function MenuList() {
-    const menu = sessionStorage.getItem("menu");
-    const menuToParse = menu !== null && menu !== undefined ? menu : "";
-    return menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
-}
 export default function AddFood() {
-    const [foodlist, setFoodlist] = useState<foodProps[]>(MenuList());
-
-    const [food, setFood] = useState<foodProps>({
-        name: "",
-        image: "",
-        desc: "",
-        rating: 0,
-        type: [],
-        ingredients: [],
-        popular: false,
-        spicy: false,
-        price: 0,
-        quantity: 0
-    });
-
-    const { name, image, desc, rating, type, ingredients, price } = food;
-
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-
-        setFood({
-            ...food,
-            [name]: value
-        });
-    };
-
-    const onChangeArray = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        const newStr = value.split(",");
-
-        setFood({
-            ...food,
-            [name]: newStr
-        });
-    };
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        onSubmit();
-        console.log(sessionStorage.getItem("menu"));
-        setFood({
-            name: "",
-            image: "",
-            desc: "",
-            rating: 0,
-            type: [],
-            ingredients: [],
-            popular: false,
-            spicy: false,
-            price: 0,
-            quantity: 0
-        });
-    };
-
-    const onSubmit = () => {
-        const copy: foodProps[] = foodlist.map(
-            (food: foodProps): foodProps => ({
-                ...food,
-                type: [...food.type],
-                ingredients: [...food.ingredients]
-            })
-        );
-        const newFoodList: foodProps[] = [...copy, food];
-        setFoodlist(newFoodList);
-        sessionStorage.setItem("menu", JSON.stringify(newFoodList));
-    };
-
     return (
         <div style={{ padding: 10 }} data-testid="add-food-page">
             <Flex wrap="wrap">
@@ -125,7 +49,8 @@ export default function AddFood() {
                 <br></br>
                 <Grid templateColumns="repeat(20, minmax(0,1fr))" gap={4}>
                     <GridItem colStart={1} colEnd={7}>
-                        <Stack
+                        <AddNewFood></AddNewFood>
+                        {/* <Stack
                             w="full"
                             h="full"
                             p={10}
@@ -278,7 +203,7 @@ export default function AddFood() {
                                     </GridItem>
                                 </SimpleGrid>
                             </form>
-                        </Stack>
+                        </Stack> */}
                     </GridItem>
 
                     <GridItem colStart={7} colEnd={20} h="10">
