@@ -7,8 +7,7 @@ import {
     Flex,
     Heading,
     Spacer,
-    Box,
-    useMediaQuery
+    Box
 } from "@chakra-ui/react";
 import { SelectRole } from "../components/SelectRole";
 import "./OwnerStyles.css";
@@ -16,7 +15,6 @@ import "../components/Styles.css";
 
 <link rel="preload" as="image" href="./background.jpg"></link>;
 export default function OwnerLanding() {
-    const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
     return (
         <div style={{ padding: 10 }} data-testid="owner-landing-page">
             <Flex wrap="wrap" textAlign="center" px={5} py={2}>
@@ -28,12 +26,7 @@ export default function OwnerLanding() {
             </Flex>
             <Box as="nav" className="navbar" py={7}></Box>
             <Center mt={10}>
-                <Grid
-                    templateColumns={
-                        isLargerThan2000 ? "repeat(2, 1fr)" : "repeat(2, 1fr)"
-                    }
-                    columnGap="3vw"
-                >
+                <Grid templateColumns={"repeat(2, 1fr)"} columnGap="3vw">
                     <Button
                         className="food"
                         onClick={() => (location.hash = "/ManageFoods")}
