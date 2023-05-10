@@ -213,12 +213,15 @@
     border-color: #ff6347;
 }
 .checkout-quantity {
-    box-sizing: 10px;
     padding: 0.2rem 0.4rem;
-    position: absolute !important;
+    position: relative !important;
     top: 40%;
-    left: 5px;
+    left: -15px;
     transform: translateY(-50%);
+}
+.checkout-edit-box {
+    width: 90%;
+    overflow-wrap: break-word;
 }
 
 .checkout-card {
