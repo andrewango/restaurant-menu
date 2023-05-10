@@ -10,7 +10,7 @@ import {
     Tag,
     TagLabel
 } from "@chakra-ui/react";
-import { MenuList } from "../pages/AddFood";
+import { MenuList } from "./AddNewFood";
 import "./Styles.css";
 
 export function EditFoodMenu(): JSX.Element {
@@ -139,7 +139,7 @@ export function EditFoodMenu(): JSX.Element {
     }
 
     return (
-        <div data-testid={"searchbar"}>
+        <div data-testid={"editfoodmenu"}>
             <Form.Group controlId="formCorrectAnswer">
                 <Form.Label className="edit-filter">Search Menu</Form.Label>
                 <Form.Control

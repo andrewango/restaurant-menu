@@ -28,7 +28,7 @@ import {
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
-import { MenuList } from "../pages/AddFood";
+import { MenuList } from "./AddNewFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
 import "./Styles.css";

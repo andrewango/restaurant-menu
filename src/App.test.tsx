@@ -52,11 +52,6 @@ describe("App", () => {
         expect(screen.getByTestId("add-food-page")).toBeInTheDocument();
     });
 
-    test("renders RemoveFood page", () => {
-        renderWithProviders(<App />, "/RemoveFood");
-        expect(screen.getByTestId("remove-food-page")).toBeInTheDocument();
-    });
-
     test("renders OwnerLanding page", () => {
         renderWithProviders(<App />, "/OwnerLanding");
         expect(screen.getByTestId("owner-landing-page")).toBeInTheDocument();

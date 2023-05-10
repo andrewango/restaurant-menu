@@ -30,23 +30,23 @@ describe("NavBar tests", () => {
         );
         expect(screen.getByText(/menu/i)).toBeInTheDocument();
     });
-    test("edit foods button is displayed initially", () => {
+    test("edit foods button is not displayed for user", () => {
         render(
             <BrowserRouter>
                 <NavBar />
             </BrowserRouter>
         );
-        expect(screen.getByText(/edit food/i)).toBeInTheDocument();
+        expect(screen.queryByText(/edit food/i)).not.toBeInTheDocument();
     });
-    test("edit users button is displayed initially", () => {
+    test("edit users button is not displayed for user", () => {
         render(
             <BrowserRouter>
                 <NavBar />
             </BrowserRouter>
         );
-        expect(screen.getByText(/edit users/i)).toBeInTheDocument();
+        expect(screen.queryByText(/edit users/i)).not.toBeInTheDocument();
     });
-    test("edit users disapperas when admin is selected", async () => {
+    test("manage users disapperas when admin is selected", async () => {
         render(
             <BrowserRouter>
                 <SelectRole />
@@ -61,7 +61,7 @@ describe("NavBar tests", () => {
             </BrowserRouter>
         );
         await waitFor(() => {
-            expect(screen.queryByText(/edit users/i)).not.toBeInTheDocument();
+            expect(screen.queryByText(/manage users/i)).not.toBeInTheDocument();
         });
     });
 });
