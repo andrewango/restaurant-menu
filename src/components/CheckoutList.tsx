@@ -309,7 +309,7 @@ export default function CheckoutList(): JSX.Element {
                         <Box as="span" flex="1" textAlign="center" ml={10}>
                             {name}
                         </Box>
-                        <Box>{quantity}</Box>
+                        <Box data-testid={name + " - Quantity"}>{quantity}</Box>
                         <AccordionIcon />
                     </AccordionButton>
                 </h2>
@@ -345,6 +345,7 @@ export default function CheckoutList(): JSX.Element {
                         </>
                     )}
                     <Button
+                        data-testid="increment-button"
                         onClick={() => addFoodToCheckoutList(name)}
                         className="checkout-button"
                         style={{
@@ -359,6 +360,7 @@ export default function CheckoutList(): JSX.Element {
                         +
                     </Button>
                     <Button
+                        data-testid="decrement-button"
                         onClick={() => handleMinusClick(name, quantity)}
                         className="checkout-button"
                         style={{

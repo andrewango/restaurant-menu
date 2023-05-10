@@ -157,7 +157,7 @@ export default function AddDeleteUsers(): JSX.Element {
             <hr></hr>
             <div>
                 <TableContainer maxWidth="100%" whiteSpace="normal">
-                    <Table variant="simple">
+                    <Table data-testid="edit-users-table" variant="simple">
                         <Thead>
                             <Tr>
                                 <Th>Name</Th>
@@ -169,7 +169,13 @@ export default function AddDeleteUsers(): JSX.Element {
                             {customersWithSearchText.map(
                                 (customer: userProps) => {
                                     return (
-                                        <Tr key={customer.orderID}>
+                                        <Tr
+                                            data-testid={
+                                                "Edit User - " +
+                                                customer.orderID
+                                            }
+                                            key={customer.orderID}
+                                        >
                                             <Td
                                                 fontWeight="semibold"
                                                 width="30%"
@@ -196,7 +202,12 @@ export default function AddDeleteUsers(): JSX.Element {
                                             <Td isNumeric>
                                                 {customer.orderID}
                                             </Td>
-                                            <Td>
+                                            <Td
+                                                data-testid={
+                                                    "Edit User Checkout List - " +
+                                                    customer.orderID
+                                                }
+                                            >
                                                 {customer.order.map(
                                                     (food: foodProps) =>
                                                         food.quantity > 1

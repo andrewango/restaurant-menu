@@ -71,7 +71,6 @@ export default function FoodItem({
             direction={{ base: "column", sm: "row" }}
             variant="elevated"
             border={isDragging ? "3px solid tomato" : "0px"}
-            data-testid="food-item"
         >
             <Box display="flex" flexDirection="column" alignItems="center">
                 <Image
