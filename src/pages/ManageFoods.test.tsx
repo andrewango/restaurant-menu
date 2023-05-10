@@ -54,7 +54,7 @@ describe("ManageFoods tests", () => {
         expect(screen.getByText("Edit")).toBeInTheDocument();
     });
 
-    test("clicking the 'edit' button navigates to the AddFood page", () => {
+    test("clicking the 'edit' button navigates to the EditFood page", () => {
         renderWithProviders(<ManageFoods />);
         const addButton = screen.getByText("Edit");
         addButton.click();
