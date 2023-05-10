@@ -314,7 +314,7 @@ export default function CheckoutList(): JSX.Element {
         };
 
         return (
-            <AccordionItem ref={drag}>
+            <AccordionItem data-testid={name + " - Checkout Item"} ref={drag}>
                 <h2>
                     <AccordionButton
                         fontWeight="semibold"
@@ -323,7 +323,7 @@ export default function CheckoutList(): JSX.Element {
                         <Box as="span" flex="1" textAlign="center" ml={10}>
                             {name}
                         </Box>
-                        <Box>{quantity}</Box>
+                        <Box data-testid={name + " - Quantity"}>{quantity}</Box>
                         <AccordionIcon />
                     </AccordionButton>
                 </h2>
@@ -359,6 +359,7 @@ export default function CheckoutList(): JSX.Element {
                         </>
                     )}
                     <Button
+                        data-testid="increment-button"
                         onClick={() => addFoodToCheckoutList(name)}
                         className="checkout-button"
                         style={{
@@ -373,6 +374,7 @@ export default function CheckoutList(): JSX.Element {
                         +
                     </Button>
                     <Button
+                        data-testid="decrement-button"
                         onClick={() => handleMinusClick(name, quantity)}
                         className="checkout-button"
                         style={{
@@ -434,7 +436,7 @@ export default function CheckoutList(): JSX.Element {
                     rowGap={3}
                 >
                     <Card className="checkout-card">
-                        <CardHeader ref={removeDrop}>
+                        <CardHeader>
                             <Flex
                                 alignItems="center"
                                 justifyContent="space-between"
@@ -443,6 +445,8 @@ export default function CheckoutList(): JSX.Element {
                                     Checkout
                                 </Heading>
                                 <FontAwesomeIcon
+                                    data-testid="checkout-trash"
+                                    ref={removeDrop}
                                     icon={faTrash}
                                     className="trashcan"
                                     size="3x"
@@ -479,6 +483,7 @@ export default function CheckoutList(): JSX.Element {
                         </CardHeader>
                         <Divider></Divider>
                         <CardBody
+                            data-testid="checkout-list"
                             ref={addDrop}
                             textAlign="center"
                             overflowY="auto"
