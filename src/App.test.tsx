@@ -48,7 +48,7 @@ describe("App", () => {
     });
 
     test("renders AddFood page", () => {
-        renderWithProviders(<App />, "/AddFood");
+        renderWithProviders(<App />, "/AddRemoveFood");
         expect(screen.getByTestId("add-food-page")).toBeInTheDocument();
     });
 
