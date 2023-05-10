@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactNode } from "react";
-import { render, fireEvent, screen, getByText } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import AddNewFood from "./AddNewFood";
 import { HashRouter } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
@@ -34,32 +34,6 @@ afterEach(() => {
     sessionStorage.clear();
 });
 describe("AddNewFood", () => {
-    const foodData = [
-        {
-            quantity: 1,
-            name: "Pizza",
-            image: "pizza.jpg",
-            desc: "A delicious pizza",
-            rating: 4.5,
-            type: ["Italian"],
-            ingredients: ["Tomato sauce", "Cheese", "Pepperoni"],
-            popular: true,
-            spicy: false,
-            price: 10.99
-        },
-        {
-            quantity: 1,
-            name: "Burger",
-            image: "burger.jpg",
-            desc: "A tasty burger",
-            rating: 4.2,
-            type: ["American"],
-            ingredients: ["Beef patty", "Cheese", "Lettuce", "Tomato"],
-            popular: false,
-            spicy: true,
-            price: 8.99
-        }
-    ];
     test("Renders name form", () => {
         const { getByLabelText } = renderWithProviders(<AddNewFood />);
         expect(getByLabelText(/Name/i)).toBeInTheDocument();
