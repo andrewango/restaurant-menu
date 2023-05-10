@@ -46,4 +46,9 @@ describe("ManageFoods tests", () => {
         renderWithProviders(<ManageFoods></ManageFoods>);
         expect(screen.getByText("Edit")).toBeInTheDocument();
     });
+
+    test("render Stats button", () => {
+        renderWithProviders(<ManageFoods></ManageFoods>);
+        expect(screen.getByText("Stats")).toBeInTheDocument();
+    });
 });
