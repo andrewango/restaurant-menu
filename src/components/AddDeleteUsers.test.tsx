@@ -71,16 +71,4 @@ describe("Add and Delete Users tests", () => {
         fireEvent.click(deleteButton[1]);
         expect(screen.queryByText(/Gavin/i)).not.toBeInTheDocument();
     });
-    test("Deleting works", () => {
-        render(<AddDeleteUsers />);
-        const deleteButton = screen.getAllByTestId("remove-customer");
-        fireEvent.click(deleteButton[1]);
-        expect(screen.queryByText(/Gavin/i)).not.toBeInTheDocument();
-    });
-    test("Deleting works", () => {
-        render(<AddDeleteUsers />);
-        const deleteButton = screen.getAllByTestId("remove-customer");
-        fireEvent.click(deleteButton[1]);
-        expect(screen.queryByText(/Gavin/i)).not.toBeInTheDocument();
-    });
 });
