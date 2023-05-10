@@ -48,7 +48,7 @@ export default function UserStats() {
                 <VStack mb="10px">
                     <Button
                         as={NavLink}
-                        to="/AddFood"
+                        to="/AddRemoveFood"
                         colorScheme="red"
                         size="md"
                         variant="outline"
