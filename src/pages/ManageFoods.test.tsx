@@ -46,7 +46,7 @@ describe("ManageFoods tests", () => {
         renderWithProviders(<ManageFoods />);
         const addButton = screen.getByText("Add / Remove");
         addButton.click();
-        expect(window.location.hash).toBe("#/AddFood");
+        expect(window.location.hash).toBe("#/AddRemoveFood");
     });
 
     test("render edit button", () => {
