@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/SearchBar.test.tsx (12.564 s)
+PASS src/components/SearchBar.test.tsx (10.86 s)
   ● Console
 
     console.log
@@ -1835,6 +1835,7 @@ FAIL src/components/AddDeleteUsers.test.tsx
       at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
       at Object.<anonymous> (src/components/AddDeleteUsers.test.tsx:83:19)
 
+PASS src/components/ItemListUI.test.tsx
 PASS src/components/RatingFeature.test.tsx
 FAIL src/components/SelectRole.test.tsx
   ● SelectRole tests › There is initially 2 options
@@ -2182,7 +2183,7 @@ All files              |    48.2 |    46.28 |   43.34 |   48.26 |
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 42-255                                         
   EditFoodUI.tsx       |     100 |    56.25 |     100 |     100 | 73-112,117-136                                 
   FoodItem.tsx         |   77.77 |       80 |      60 |   76.47 | 19-21,56                                       
-  ItemListUI.tsx       |     100 |       50 |     100 |     100 | 26                                             
+  ItemListUI.tsx       |     100 |       50 |     100 |     100 | 32                                             
   NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                             
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                             
   RemoveFood.tsx       |   86.66 |    66.66 |   72.72 |   86.66 | 43,50,53,70                                    
@@ -2207,8 +2208,8 @@ All files              |    48.2 |    46.28 |   43.34 |   48.26 |
   UserStats.tsx        |       0 |        0 |       0 |       0 | 25-95                                          
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 
-Test Suites: 3 failed, 6 passed, 9 total
-Tests:       5 failed, 55 passed, 60 total
+Test Suites: 3 failed, 7 passed, 10 total
+Tests:       5 failed, 60 passed, 65 total
 Snapshots:   0 total
-Time:        24.206 s
+Time:        21.98 s
 Ran all test suites.
