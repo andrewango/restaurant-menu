@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/SearchBar.test.tsx (15.221 s)
+PASS src/components/SearchBar.test.tsx (12.564 s)
   ● Console
 
     console.log
@@ -1797,6 +1797,7 @@ PASS src/components/SearchBar.test.tsx (15.221 s)
 
       at setListHelper (src/components/SearchBar.tsx:82:21)
 
+PASS src/components/EditFoodUI.test.tsx
 FAIL src/components/AddDeleteUsers.test.tsx
   ● Add and Delete Users tests › Deleting works
 
@@ -1834,7 +1835,6 @@ FAIL src/components/AddDeleteUsers.test.tsx
       at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
       at Object.<anonymous> (src/components/AddDeleteUsers.test.tsx:83:19)
 
-PASS src/components/EditFoodUI.test.tsx
 PASS src/components/RatingFeature.test.tsx
 FAIL src/components/SelectRole.test.tsx
   ● SelectRole tests › There is initially 2 options
@@ -1853,6 +1853,70 @@ FAIL src/components/SelectRole.test.tsx
       27 |         render(
 
       at Object.<anonymous> (src/components/SelectRole.test.tsx:24:40)
+
+PASS src/components/RemoveFood.test.tsx
+  ● Console
+
+    console.error
+      Warning: validateDOMNesting(...): <button> cannot appear as a descendant of <button>.
+          at button
+          at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@emotion/react/dist/emotion-element-b63ca7c6.cjs.dev.js:43:23
+          at ChakraComponent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/system/dist/index.js:228:71)
+          at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/button/dist/index.js:120:17
+          at button
+          at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@emotion/react/dist/emotion-element-b63ca7c6.cjs.dev.js:43:23
+          at ChakraComponent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/system/dist/index.js:228:71)
+          at AccordionButton2 (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/accordion/dist/index.js:293:32)
+          at h2
+          at div
+          at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@emotion/react/dist/emotion-element-b63ca7c6.cjs.dev.js:43:23
+          at ChakraComponent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/system/dist/index.js:228:71)
+          at AccordionItem2 (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/accordion/dist/index.js:358:13)
+          at div
+          at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@emotion/react/dist/emotion-element-b63ca7c6.cjs.dev.js:43:23
+          at ChakraComponent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/system/dist/index.js:228:71)
+          at Accordion2 (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/accordion/dist/index.js:266:69)
+          at div
+          at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@emotion/react/dist/emotion-element-b63ca7c6.cjs.dev.js:43:23
+          at ChakraComponent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/system/dist/index.js:228:71)
+          at Flex2 (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/layout/dist/index.js:307:11)
+          at div
+          at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@emotion/react/dist/emotion-element-b63ca7c6.cjs.dev.js:43:23
+          at ChakraComponent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/system/dist/index.js:228:71)
+          at Grid2 (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/layout/dist/index.js:327:5)
+          at div
+          at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@emotion/react/dist/emotion-element-b63ca7c6.cjs.dev.js:43:23
+          at ChakraComponent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/system/dist/index.js:228:71)
+          at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/layout/dist/index.js:763:5
+          at VStack
+          at RemoveFood (/home/runner/work/restaurant-menu/restaurant-menu/src/components/RemoveFood.tsx:23:45)
+          at Router (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-router/lib/components.tsx:311:13)
+          at BrowserRouter (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-router-dom/index.tsx:297:3)
+
+      24 | describe("RemoveFood Tests", () => {
+      25 |     test("Renders the RemoveFood component", () => {
+    > 26 |         render(
+         |               ^
+      27 |             <BrowserRouter>
+      28 |                 <RemoveFood />
+      29 |             </BrowserRouter>
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10849:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10930:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:22187:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26593:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26568:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (src/components/RemoveFood.test.tsx:26:15)
 
 PASS src/App.test.tsx
   ● Console
@@ -2106,22 +2170,22 @@ PASS src/components/DeliveryDropDown.test.tsx
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                              
 -----------------------|---------|----------|---------|---------|------------------------------------------------
-All files              |   46.69 |     45.1 |   41.11 |   46.72 |                                                
+All files              |    48.2 |    46.28 |   43.34 |   48.26 |                                                
  src                   |     100 |      100 |     100 |     100 |                                                
   App.tsx              |     100 |      100 |     100 |     100 |                                                
- src/components        |   47.98 |    47.34 |   42.94 |   48.04 |                                                
-  AddDeleteUsers.tsx   |   90.24 |       50 |   76.92 |   90.24 | 41,89,142,202                                  
-  CheckoutList.tsx     |   25.51 |    16.66 |      25 |   24.21 | 53,75-79,89,98,110-145,151-231,284-303,358-382 
+ src/components        |   49.57 |    47.44 |   45.45 |   49.67 |                                                
+  AddDeleteUsers.tsx   |   90.24 |    43.75 |   76.92 |   90.24 | 41,89,142,202                                  
+  CheckoutList.tsx     |   19.53 |    13.15 |   21.42 |    18.4 | 53,75-79,89,98,110-196,202-362,384-403,458-482 
   DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                  
-  EditFoodList.tsx     |       0 |        0 |       0 |       0 | 26-165                                         
+  EditFoodList.tsx     |    5.88 |       10 |    4.54 |    6.38 | 32-165                                         
   EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-41                                           
-  EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 40-252                                         
-  EditFoodUI.tsx       |     100 |    56.25 |     100 |     100 | 72-111,116-135                                 
+  EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 42-255                                         
+  EditFoodUI.tsx       |     100 |    56.25 |     100 |     100 | 73-112,117-136                                 
   FoodItem.tsx         |   77.77 |       80 |      60 |   76.47 | 19-21,56                                       
   ItemListUI.tsx       |     100 |       50 |     100 |     100 | 26                                             
   NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                             
   RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                             
-  RemoveFood.tsx       |   23.33 |    57.14 |   18.18 |   23.33 | 26-75,131                                      
+  RemoveFood.tsx       |   86.66 |    66.66 |   72.72 |   86.66 | 43,50,53,70                                    
   SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                       
   SelectRole.tsx       |   46.87 |       45 |      50 |   48.38 | 58-68,76-83,92                                 
  src/interfaces        |       0 |        0 |       0 |       0 |                                                
@@ -2132,9 +2196,9 @@ All files              |   46.69 |     45.1 |   41.11 |   46.72 |
   OwnerFoodItem.ts     |       0 |        0 |       0 |       0 |                                                
   OwnerList.ts         |       0 |        0 |       0 |       0 |                                                
   User.ts              |       0 |        0 |       0 |       0 |                                                
- src/pages             |   34.61 |    18.18 |   26.92 |   34.61 |                                                
+ src/pages             |   34.61 |    31.81 |   26.92 |   34.61 |                                                
   AboutUs.tsx          |     100 |      100 |     100 |     100 |                                                
-  AddFood.tsx          |   40.74 |       50 |   22.22 |   40.74 | 45-47,54-57,64-67,81-90,237-257                
+  AddFood.tsx          |   40.74 |      100 |   22.22 |   40.74 | 46-48,55-58,65-68,83-92,239-259                
   EditFood.tsx         |       0 |        0 |       0 |       0 | 12                                             
   EditUsers.tsx        |     100 |      100 |     100 |     100 |                                                
   Landing.tsx          |     100 |      100 |     100 |     100 |                                                
@@ -2143,8 +2207,8 @@ All files              |   46.69 |     45.1 |   41.11 |   46.72 |
   UserStats.tsx        |       0 |        0 |       0 |       0 | 25-95                                          
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 
-Test Suites: 3 failed, 5 passed, 8 total
-Tests:       5 failed, 50 passed, 55 total
+Test Suites: 3 failed, 6 passed, 9 total
+Tests:       5 failed, 55 passed, 60 total
 Snapshots:   0 total
-Time:        27.3 s
+Time:        24.206 s
 Ran all test suites.
