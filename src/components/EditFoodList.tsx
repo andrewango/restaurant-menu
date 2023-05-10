@@ -136,6 +136,7 @@ export default function EditFoodList(): JSX.Element {
                         style={{
                             color: isOver ? "red" : ""
                         }}
+                        data-testid="trash-icon"
                     />
                 </Flex>
             </CardHeader>
