@@ -82,9 +82,6 @@ export default function UserStats() {
                                 <Th fontWeight="extrabold" fontSize="xl">
                                     Ingredients
                                 </Th>
-                                {/* <Th fontWeight="bold" fontSize="bg">
-                                    Price
-                                </Th> */}
                                 <Th fontWeight="extrabold" fontSize="xl">
                                     Quantity in user carts
                                 </Th>
@@ -99,9 +96,6 @@ export default function UserStats() {
                                     <Td fontWeight="semibold">
                                         {food.ingredients.join(", ")}
                                     </Td>
-                                    {/* <Td fontWeight="semibold">
-                                        {"$" + food.price}
-                                    </Td> */}
                                     <Td>
                                         {countOrders(
                                             storageCustomers,

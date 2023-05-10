@@ -202,6 +202,8 @@ export default function EditFoodTabs({
                             <Input
                                 isRequired
                                 type="number"
+                                min="0"
+                                max="5"
                                 name="rating"
                                 value={rating}
                                 onChange={onChange}
@@ -215,6 +217,7 @@ export default function EditFoodTabs({
                             <Input
                                 isRequired
                                 type="number"
+                                min="0"
                                 name="price"
                                 value={price}
                                 onChange={onChange}

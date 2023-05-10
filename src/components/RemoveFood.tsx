@@ -81,13 +81,13 @@ export default function RemoveFood() {
     const [isLargerThan2500] = useMediaQuery("(min-width: 2500px)");
     const [isLargerThan2200] = useMediaQuery("(min-width: 2200px)");
     const [isLargerThan1500] = useMediaQuery("(min-width: 1500px)");
-    //const [isLargerThan1000] = useMediaQuery("(min-height: 1000px)");
+    const [isHigherThan1200] = useMediaQuery("(min-height: 1200px)");
 
     return (
         <VStack
             spacing="3px"
             mt={100}
-            // //h={isLargerThan1000 ? window.innerHeight * 0.65 : "600px"}
+            h={isHigherThan1200 ? "65vh" : "660px"}
             className="section remove-stack"
             data-testid="remove-food-page"
         >
