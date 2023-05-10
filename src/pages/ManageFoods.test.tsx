@@ -42,6 +42,13 @@ describe("ManageFoods tests", () => {
         expect(screen.getByText("Add / Remove")).toBeInTheDocument();
     });
 
+    test("clicking the 'Add / Remove' button navigates to the AddFood page", () => {
+        renderWithProviders(<ManageFoods />);
+        const addButton = screen.getByText("Add / Remove");
+        addButton.click();
+        expect(window.location.hash).toBe("#/AddFood");
+    });
+
     test("render edit button", () => {
         renderWithProviders(<ManageFoods></ManageFoods>);
         expect(screen.getByText("Edit")).toBeInTheDocument();
