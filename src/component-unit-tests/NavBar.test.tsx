@@ -30,21 +30,21 @@ describe("NavBar tests", () => {
         );
         expect(screen.getByText(/menu/i)).toBeInTheDocument();
     });
-    test("edit foods button is displayed initially", () => {
+    test("edit foods button should not be displayed initially", () => {
         render(
             <BrowserRouter>
                 <NavBar />
             </BrowserRouter>
         );
-        expect(screen.getByText(/edit food/i)).toBeInTheDocument();
+        expect(screen.queryByText(/edit food/i)).not.toBeInTheDocument();
     });
-    test("edit users button is displayed initially", () => {
+    test("edit users button should not be displayed initially", () => {
         render(
             <BrowserRouter>
                 <NavBar />
             </BrowserRouter>
         );
-        expect(screen.getByText(/manage users/i)).toBeInTheDocument();
+        expect(screen.queryByText(/manage users/i)).not.toBeInTheDocument();
     });
     test("edit users disapperas when admin is selected", async () => {
         render(

@@ -367,12 +367,14 @@ export default function CheckoutList(): JSX.Element {
                             isAttached
                         >
                             <IconButton
+                                data-testid="increment-button"
                                 onClick={() => addFoodToCheckoutList(name)}
                                 className="checkout-button"
                                 aria-label="Increase quantity"
                                 icon={<Icon as={AddIcon} fontSize="11px" />}
                             ></IconButton>
                             <IconButton
+                                data-testid="decrement-button"
                                 onClick={() => handleMinusClick(name, quantity)}
                                 className="checkout-button"
                                 aria-label="Decrease quantity"

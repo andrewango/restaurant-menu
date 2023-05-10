@@ -92,7 +92,7 @@ export default function FoodItem({
                     </Text>
                 )}
             </Box>
-            <Stack>
+            <Stack data-testid="food-item">
                 <CardBody>
                     <div className="foodTitle">
                         <Heading
