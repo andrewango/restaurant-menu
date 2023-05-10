@@ -36,4 +36,9 @@ describe("ManageFoods tests", () => {
         renderWithProviders(<ManageFoods />);
         expect(screen.getByText("Manage Food")).toBeInTheDocument();
     });
+
+    test("render add/remove button", () => {
+        renderWithProviders(<ManageFoods></ManageFoods>);
+        expect(screen.getByText("Add / Remove")).toBeInTheDocument();
+    });
 });
