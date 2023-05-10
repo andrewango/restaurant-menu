@@ -30,3 +30,10 @@ export const renderWithProviders = (ui: ReactElement) => {
 
     return render(ui, { wrapper: Wrapper });
 };
+
+describe("ManageFoods tests", () => {
+    test("renders the 'Manage Food' heading", () => {
+        renderWithProviders(<ManageFoods />);
+        expect(screen.getByText("Manage Food")).toBeInTheDocument();
+    });
+});
