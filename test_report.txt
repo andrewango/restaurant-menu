@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/component-unit-tests/EditFoodMenu.test.tsx (17.124 s)
+PASS src/component-unit-tests/EditFoodMenu.test.tsx (11.055 s)
   ● Console
 
     console.log
@@ -1797,7 +1797,7 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (17.124 s)
 
       at setListHelper (src/components/EditFoodMenu.tsx:82:21)
 
-PASS src/component-unit-tests/SearchBar.test.tsx (10.813 s)
+PASS src/component-unit-tests/SearchBar.test.tsx (6.598 s)
   ● Console
 
     console.log
@@ -3592,9 +3592,199 @@ PASS src/component-unit-tests/SearchBar.test.tsx (10.813 s)
 
       at setListHelper (src/components/SearchBar.tsx:82:21)
 
-PASS src/component-unit-tests/CheckoutList.test.tsx (5.72 s)
+PASS src/component-unit-tests/CheckoutList.test.tsx
   ● Console
 
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      31 |     );
+      32 |
+    > 33 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      34 | };
+      35 |
+      36 | describe("CheckoutList tests", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:38:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      31 |     );
+      32 |
+    > 33 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      34 | };
+      35 |
+      36 | describe("CheckoutList tests", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:38:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      31 |     );
+      32 |
+    > 33 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      34 | };
+      35 |
+      36 | describe("CheckoutList tests", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:43:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      31 |     );
+      32 |
+    > 33 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      34 | };
+      35 |
+      36 | describe("CheckoutList tests", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:43:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      52 |         const checkoutList = screen.getByTestId("checkout-list");
+      53 |         fireEvent.dragStart(foodItem);
+    > 54 |         fireEvent.drop(checkoutList);
+         |                   ^
+      55 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
+      56 |
+      57 |         const foodItemInCheckoutList = screen.getByTestId(
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:54:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      52 |         const checkoutList = screen.getByTestId("checkout-list");
+      53 |         fireEvent.dragStart(foodItem);
+    > 54 |         fireEvent.drop(checkoutList);
+         |                   ^
+      55 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
+      56 |
+      57 |         const foodItemInCheckoutList = screen.getByTestId(
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:54:19)
+
     console.log
       0
 
@@ -3605,6 +3795,200 @@ PASS src/component-unit-tests/CheckoutList.test.tsx (5.72 s)
 
       at src/components/CheckoutList.tsx:236:29
 
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      60 |         const trash = screen.getByTestId("checkout-trash");
+      61 |         fireEvent.dragStart(foodItemInCheckoutList);
+    > 62 |         fireEvent.drop(trash);
+         |                   ^
+      63 |     });
+      64 |
+      65 |     test("The customer is able to delete items from their checkout list", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:62:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      60 |         const trash = screen.getByTestId("checkout-trash");
+      61 |         fireEvent.dragStart(foodItemInCheckoutList);
+    > 62 |         fireEvent.drop(trash);
+         |                   ^
+      63 |     });
+      64 |
+      65 |     test("The customer is able to delete items from their checkout list", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:62:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      31 |     );
+      32 |
+    > 33 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      34 | };
+      35 |
+      36 | describe("CheckoutList tests", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:66:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      31 |     );
+      32 |
+    > 33 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      34 | };
+      35 |
+      36 | describe("CheckoutList tests", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:66:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      75 |         const checkoutList = screen.getByTestId("checkout-list");
+      76 |         fireEvent.dragStart(foodItem);
+    > 77 |         fireEvent.drop(checkoutList);
+         |                   ^
+      78 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
+      79 |
+      80 |         // Remove the item by dragging it to trash can
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:77:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      75 |         const checkoutList = screen.getByTestId("checkout-list");
+      76 |         fireEvent.dragStart(foodItem);
+    > 77 |         fireEvent.drop(checkoutList);
+         |                   ^
+      78 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
+      79 |
+      80 |         // Remove the item by dragging it to trash can
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:77:19)
+
     console.log
       0
 
@@ -3615,6 +3999,233 @@ PASS src/component-unit-tests/CheckoutList.test.tsx (5.72 s)
 
       at src/components/CheckoutList.tsx:236:29
 
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      84 |         const trash = screen.getByTestId("checkout-trash");
+      85 |         fireEvent.dragStart(foodItemInCheckoutList);
+    > 86 |         fireEvent.drop(trash);
+         |                   ^
+      87 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
+      88 |     });
+      89 |
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:86:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      84 |         const trash = screen.getByTestId("checkout-trash");
+      85 |         fireEvent.dragStart(foodItemInCheckoutList);
+    > 86 |         fireEvent.drop(trash);
+         |                   ^
+      87 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
+      88 |     });
+      89 |
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:86:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      31 |     );
+      32 |
+    > 33 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      34 | };
+      35 |
+      36 | describe("CheckoutList tests", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:91:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      31 |     );
+      32 |
+    > 33 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      34 | };
+      35 |
+      36 | describe("CheckoutList tests", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:91:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+       99 |         const checkoutList = screen.getByTestId("checkout-list");
+      100 |         fireEvent.dragStart(foodItem);
+    > 101 |         fireEvent.drop(checkoutList);
+          |                   ^
+      102 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
+      103 |
+      104 |         // Check if item quantity increments
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:101:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+       99 |         const checkoutList = screen.getByTestId("checkout-list");
+      100 |         fireEvent.dragStart(foodItem);
+    > 101 |         fireEvent.drop(checkoutList);
+          |                   ^
+      102 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
+      103 |
+      104 |         // Check if item quantity increments
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:101:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      105 |         let quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
+      106 |         const incrementButton = screen.getByTestId("increment-button");
+    > 107 |         fireEvent.click(incrementButton);
+          |                   ^
+      108 |         await waitFor(() => {
+      109 |             quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
+      110 |             expect(quantity).toHaveTextContent("2");
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as click] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:107:19)
+
     console.log
       0
 
@@ -3625,6 +4236,266 @@ PASS src/component-unit-tests/CheckoutList.test.tsx (5.72 s)
 
       at src/components/CheckoutList.tsx:236:29
 
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      117 |         const trash = screen.getByTestId("checkout-trash");
+      118 |         fireEvent.dragStart(foodItemInCheckoutList);
+    > 119 |         fireEvent.drop(trash);
+          |                   ^
+      120 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
+      121 |     });
+      122 |
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:119:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      117 |         const trash = screen.getByTestId("checkout-trash");
+      118 |         fireEvent.dragStart(foodItemInCheckoutList);
+    > 119 |         fireEvent.drop(trash);
+          |                   ^
+      120 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
+      121 |     });
+      122 |
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:119:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      31 |     );
+      32 |
+    > 33 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      34 | };
+      35 |
+      36 | describe("CheckoutList tests", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:124:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      31 |     );
+      32 |
+    > 33 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      34 | };
+      35 |
+      36 | describe("CheckoutList tests", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:124:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      132 |         const checkoutList = screen.getByTestId("checkout-list");
+      133 |         fireEvent.dragStart(foodItem);
+    > 134 |         fireEvent.drop(checkoutList);
+          |                   ^
+      135 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
+      136 |
+      137 |         // Check if item quantity increments
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:134:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      132 |         const checkoutList = screen.getByTestId("checkout-list");
+      133 |         fireEvent.dragStart(foodItem);
+    > 134 |         fireEvent.drop(checkoutList);
+          |                   ^
+      135 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
+      136 |
+      137 |         // Check if item quantity increments
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:134:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      138 |         let quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
+      139 |         const incrementButton = screen.getByTestId("increment-button");
+    > 140 |         fireEvent.click(incrementButton);
+          |                   ^
+      141 |         await waitFor(() => {
+      142 |             quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
+      143 |             expect(quantity).toHaveTextContent("2");
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as click] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:140:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      146 |         // Check if item quantity decrements
+      147 |         const decrementButton = screen.getByTestId("decrement-button");
+    > 148 |         fireEvent.click(decrementButton);
+          |                   ^
+      149 |         await waitFor(() => {
+      150 |             quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
+      151 |             expect(quantity).toHaveTextContent("1");
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as click] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:148:19)
+
     console.log
       0
 
@@ -3634,6 +4505,72 @@ PASS src/component-unit-tests/CheckoutList.test.tsx (5.72 s)
       [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
 
       at src/components/CheckoutList.tsx:236:29
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      158 |         const trash = screen.getByTestId("checkout-trash");
+      159 |         fireEvent.dragStart(foodItemInCheckoutList);
+    > 160 |         fireEvent.drop(trash);
+          |                   ^
+      161 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
+      162 |     });
+      163 | });
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:160:19)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      158 |         const trash = screen.getByTestId("checkout-trash");
+      159 |         fireEvent.dragStart(foodItemInCheckoutList);
+    > 160 |         fireEvent.drop(trash);
+          |                   ^
+      161 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
+      162 |     });
+      163 | });
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:160:19)
 
 PASS src/component-unit-tests/AddNewFood.test.tsx
   ● Console
@@ -3921,7 +4858,7 @@ PASS src/component-unit-tests/RemoveFood.test.tsx
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
       at Object.<anonymous> (src/component-unit-tests/RemoveFood.test.tsx:26:15)
 
-FAIL src/pages/ManageFoods.test.tsx
+PASS src/pages/ManageFoods.test.tsx
   ● Console
 
     console.error
@@ -3985,26 +4922,71 @@ FAIL src/pages/ManageFoods.test.tsx
       at renderWithProviders (src/pages/ManageFoods.test.tsx:31:18)
       at Object.<anonymous> (src/pages/ManageFoods.test.tsx:36:9)
 
-  ● ManageFoods tests › clicking the 'Add / Remove' button navigates to the AddFood page
-
-    expect(received).toBe(expected) // Object.is equality
-
-    Expected: "#/AddFood"
-    Received: "#/AddRemoveFood"
-
-      47 |         const addButton = screen.getByText("Add / Remove");
-      48 |         addButton.click();
-    > 49 |         expect(window.location.hash).toBe("#/AddFood");
-         |                                      ^
-      50 |     });
-      51 |
-      52 |     test("render edit button", () => {
-
-      at Object.<anonymous> (src/pages/ManageFoods.test.tsx:49:38)
-
 PASS src/component-unit-tests/NavBar.test.tsx
 PASS src/App.test.tsx
   ● Console
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      29 |     );
+      30 |
+    > 31 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      32 | };
+      33 |
+      34 | describe("App", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/App.test.tsx:31:18)
+      at Object.<anonymous> (src/App.test.tsx:36:9)
+
+    console.warn
+      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+
+      29 |     );
+      30 |
+    > 31 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      32 | };
+      33 |
+      34 | describe("App", () => {
+
+      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
+      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
+      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
+      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/App.test.tsx:31:18)
+      at Object.<anonymous> (src/App.test.tsx:36:9)
 
     console.error
       Warning: validateDOMNesting(...): <button> cannot appear as a descendant of <button>.
@@ -4488,8 +5470,8 @@ All files              |   76.09 |     66.4 |   67.82 |   75.94 |
   UserStats.tsx        |       0 |        0 |       0 |       0 | 25-98                                         
 -----------------------|---------|----------|---------|---------|-----------------------------------------------
 
-Test Suites: 2 failed, 15 passed, 17 total
-Tests:       2 failed, 106 passed, 108 total
+Test Suites: 1 failed, 16 passed, 17 total
+Tests:       1 failed, 107 passed, 108 total
 Snapshots:   0 total
-Time:        54.816 s
+Time:        35.802 s
 Ran all test suites.
