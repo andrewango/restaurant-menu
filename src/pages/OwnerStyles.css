@@ -4,12 +4,13 @@ body::after {
     height: 0;
     overflow: hidden;
     z-index: -1;
-    content: url("./manageUsers.jpg") url("./background.jpg")
-        url("./addFood.jpg") url("./editFood.jpg") url("./graph.jpg");
+    content: url("../assets/manageUsers.jpg") url("../assets/background.jpg")
+        url("../assets/addFood.jpg") url("../assets/editFood.jpg")
+        url("../assets/graph.jpg");
 }
 
 .food {
-    background: url("./background.jpg") !important;
+    background: url("../assets/background.jpg") !important;
     background-size: cover !important;
     background-position: center !important;
     opacity: 0.9;
@@ -26,7 +27,7 @@ body::after {
 }
 
 .user {
-    background-image: url("./manageUsers.jpg") !important;
+    background-image: url("../assets/manageUsers.jpg") !important;
     background-size: cover !important;
     background-position: center !important;
     opacity: 0.9;
@@ -42,7 +43,7 @@ body::after {
     opacity: 0.8;
 }
 .add {
-    background-image: url("./addFood.jpg") !important;
+    background-image: url("../assets/addFood.jpg") !important;
     background-size: cover !important;
     background-position: 45% !important;
     opacity: 0.9;
@@ -58,7 +59,7 @@ body::after {
     opacity: 0.8;
 }
 .edit {
-    background-image: url("./editFood.jpg") !important;
+    background-image: url("../assets/editFood.jpg") !important;
     background-size: cover !important;
     background-position: 40% !important;
     opacity: 0.9;
@@ -82,7 +83,7 @@ body::after {
 }
 
 .stats {
-    background: url("./graph.jpg") !important;
+    background: url("../assets/graph.jpg") !important;
     background-size: cover !important;
     background-position: center !important;
     opacity: 0.9;

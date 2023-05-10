@@ -5,8 +5,8 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import MatchMediaMock from "jest-matchmedia-mock";
-import CheckoutList from "./CheckoutList";
-import { SearchBar } from "./SearchBar";
+import CheckoutList from "../components/CheckoutList";
+import { SearchBar } from "../components/SearchBar";
 import Landing from "../pages/Landing";
 
 new MatchMediaMock();

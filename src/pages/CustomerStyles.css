@@ -1,6 +1,6 @@
 .background {
     padding: 10px;
-    background: url("./background.jpg");
+    background: url("../assets/background.jpg");
     background-size: 130%;
     background-position: center;
 }

@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { SearchBar } from "./SearchBar";
+import { SearchBar } from "../components/SearchBar";
 import { HashRouter } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { DndProvider } from "react-dnd";

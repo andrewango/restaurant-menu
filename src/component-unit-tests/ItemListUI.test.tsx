@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from "react";
 import { render, screen } from "@testing-library/react";
-import ItemListUI from "./ItemListUI";
+import ItemListUI from "../components/ItemListUI";
 import MatchMediaMock from "jest-matchmedia-mock";
 import { HashRouter } from "react-router-dom";
 import { HTML5Backend } from "react-dnd-html5-backend";
