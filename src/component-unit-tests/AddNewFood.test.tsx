@@ -30,10 +30,12 @@ export const renderWithProviders = (ui: ReactElement) => {
 
     return render(ui, { wrapper: Wrapper });
 };
+
 afterEach(() => {
     sessionStorage.clear();
 });
-describe("AddNewFood", () => {
+
+describe("AddNewFood tests", () => {
     test("Renders name form", () => {
         const { getByLabelText } = renderWithProviders(<AddNewFood />);
         expect(getByLabelText(/Name/i)).toBeInTheDocument();

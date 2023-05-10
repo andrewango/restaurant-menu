@@ -91,7 +91,7 @@ export default function AddNewFood() {
             <form onSubmit={handleSubmit}>
                 <SimpleGrid columns={6} columnGap={2} rowGap={2} w="full">
                     <GridItem colSpan={6}>
-                        <FormControl id="name" px={5}>
+                        <FormControl data-testid="name-input" id="name" px={5}>
                             <FormLabel>Name:</FormLabel>
                             <Input
                                 isRequired
@@ -103,7 +103,7 @@ export default function AddNewFood() {
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={6}>
-                        <FormControl id="name" px={5}>
+                        <FormControl data-testid="image-input" id="name" px={5}>
                             <FormLabel>Image Link:</FormLabel>
                             <Input
                                 isRequired
@@ -115,7 +115,7 @@ export default function AddNewFood() {
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={6}>
-                        <FormControl id="name" px={5}>
+                        <FormControl data-testid="desc-input" id="name" px={5}>
                             <FormLabel>Description:</FormLabel>
                             <Input
                                 isRequired
@@ -127,7 +127,7 @@ export default function AddNewFood() {
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={6}>
-                        <FormControl id="name" px={5}>
+                        <FormControl data-testid="type-input" id="name" px={5}>
                             <FormLabel>Type:</FormLabel>
                             <Input
                                 isRequired
@@ -139,7 +139,11 @@ export default function AddNewFood() {
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={6}>
-                        <FormControl id="name" px={5}>
+                        <FormControl
+                            data-testid="ingredients-input"
+                            id="name"
+                            px={5}
+                        >
                             <FormLabel>Ingredients:</FormLabel>
                             <Input
                                 isRequired
@@ -151,7 +155,11 @@ export default function AddNewFood() {
                         </FormControl>
                     </GridItem>
                     <GridItem colSpan={3}>
-                        <FormControl id="name" px={5}>
+                        <FormControl
+                            data-testid="rating-input"
+                            id="name"
+                            px={5}
+                        >
                             <FormLabel>Rating:</FormLabel>
                             <Input
                                 isRequired
@@ -166,7 +174,7 @@ export default function AddNewFood() {
                         </FormControl>
                     </GridItem>
                     <GridItem colStart={4} colEnd={7}>
-                        <FormControl id="name" px={5}>
+                        <FormControl data-testid="price-input" id="name" px={5}>
                             <FormLabel>Price:</FormLabel>
                             <Input
                                 isRequired
@@ -183,6 +191,7 @@ export default function AddNewFood() {
                         <FormControl id="name" px={5}>
                             <FormLabel>Popular</FormLabel>
                             <Checkbox
+                                data-testid="popular-checkbox"
                                 type="checkbox"
                                 name="popular"
                                 id="popular"
@@ -202,6 +211,7 @@ export default function AddNewFood() {
                         <FormControl id="name" px={5}>
                             <FormLabel>Spicy</FormLabel>
                             <Checkbox
+                                data-testid="spicy-checkbox"
                                 type="checkbox"
                                 name="spicy"
                                 id="spicy"

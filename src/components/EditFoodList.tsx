@@ -122,6 +122,7 @@ export default function EditFoodList(): JSX.Element {
 
     return (
         <Card
+            data-testid="edit-food-list"
             h={EditMenuList().length >= 1 ? "cover" : "full"}
             className="editfood-card"
             ref={drop}
@@ -149,7 +150,10 @@ export default function EditFoodList(): JSX.Element {
                     index={tabIndex}
                     onChange={handleTabsChange}
                 >
-                    <TabList className="section editfood-tablist">
+                    <TabList
+                        data-testid="tab-select"
+                        className="section editfood-tablist"
+                    >
                         {EditMenuList().map(
                             (food: foodProps, index: number) => (
                                 <FoodItem
