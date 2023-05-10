@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/SearchBar.test.tsx (9.969 s)
+PASS src/components/SearchBar.test.tsx (10.96 s)
   ● Console
 
     console.log
@@ -2272,7 +2272,7 @@ PASS src/components/DeliveryDropDown.test.tsx
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                              
 -----------------------|---------|----------|---------|---------|------------------------------------------------
-All files              |    41.8 |    37.02 |   38.59 |    41.8 |                                                
+All files              |   41.66 |    36.82 |   38.59 |   41.66 |                                                
  src                   |     100 |      100 |     100 |     100 |                                                
   App.tsx              |     100 |      100 |     100 |     100 |                                                
  src/components        |   42.36 |    37.35 |    39.8 |   42.38 |                                                
@@ -2298,7 +2298,7 @@ All files              |    41.8 |    37.02 |   38.59 |    41.8 |
   OwnerFoodItem.ts     |       0 |        0 |       0 |       0 |                                                
   OwnerList.ts         |       0 |        0 |       0 |       0 |                                                
   User.ts              |       0 |        0 |       0 |       0 |                                                
- src/pages             |   34.61 |    31.81 |   26.92 |   34.61 |                                                
+ src/pages             |   33.33 |    29.16 |   26.92 |   33.33 |                                                
   AboutUs.tsx          |     100 |      100 |     100 |     100 |                                                
   AddFood.tsx          |   40.74 |      100 |   22.22 |   40.74 | 46-48,55-58,65-68,83-92,239-259                
   EditFood.tsx         |       0 |        0 |       0 |       0 | 12                                             
@@ -2306,11 +2306,11 @@ All files              |    41.8 |    37.02 |   38.59 |    41.8 |
   Landing.tsx          |     100 |      100 |     100 |     100 |                                                
   ManageFoods.tsx      |      25 |      100 |      25 |      25 | 18-34                                          
   OwnerLanding.tsx     |      60 |       50 |   33.33 |      60 | 41-49                                          
-  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-95                                          
+  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-101                                         
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 
 Test Suites: 4 failed, 7 passed, 11 total
 Tests:       6 failed, 64 passed, 70 total
 Snapshots:   0 total
-Time:        20.614 s
+Time:        22.149 s
 Ran all test suites.
