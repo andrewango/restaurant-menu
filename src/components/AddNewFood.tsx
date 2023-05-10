@@ -1,70 +1,38 @@
 import React, { useState } from "react";
 import {
-    TabPanel,
-    FormControl,
-    SimpleGrid,
-    Button,
+    Heading,
+    Stack,
+    Checkbox,
     GridItem,
-    FormLabel,
-    Input,
-    Checkbox
+    SimpleGrid
 } from "@chakra-ui/react";
+import { FormLabel, FormControl, Input, Button } from "@chakra-ui/react";
+import foodList from "../data/foods.json";
 import { foodProps } from "../interfaces/Food";
-import { EditMenuList } from "./EditFoodList";
-import { MenuList } from "./AddNewFood";
-import "./EditFoodStyles.css";
-//import { userProps } from "../interfaces/User";
-//import { ListOfCustomers } from "./SelectRole";
+import "./Styles.css";
 
-export default function EditFoodTabs({
-    editName,
-    editImage,
-    editDesc,
-    editRating,
-    editType,
-    editIngredients,
-    editPopular,
-    editSpicy,
-    editPrice,
-    editQuantity
-}: {
-    editName: string;
-    editImage: string;
-    editDesc: string;
-    editRating: number;
-    editType: string[];
-    editIngredients: string[];
-    editPopular: boolean;
-    editSpicy: boolean;
-    editPrice: number;
-    editQuantity: number;
-}): JSX.Element {
+export function MenuList() {
+    const menu = sessionStorage.getItem("menu");
+    const menuToParse = menu !== null && menu !== undefined ? menu : "";
+    return menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
+}
+export default function AddNewFood() {
     const [foodlist, setFoodlist] = useState<foodProps[]>(MenuList());
 
     const [food, setFood] = useState<foodProps>({
-        name: editName,
-        image: editImage,
-        desc: editDesc,
-        rating: editRating,
-        type: editType,
-        ingredients: editIngredients,
-        popular: editPopular,
-        spicy: editSpicy,
-        price: editPrice,
-        quantity: editQuantity
+        name: "",
+        image: "",
+        desc: "",
+        rating: 0,
+        type: [],
+        ingredients: [],
+        popular: false,
+        spicy: false,
+        price: 0,
+        quantity: 0
     });
 
-    const {
-        name,
-        image,
-        desc,
-        rating,
-        type,
-        ingredients,
-        price,
-        popular,
-        spicy
-    } = food;
+    const { name, image, desc, rating, type, ingredients, price } = food;
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -88,55 +56,41 @@ export default function EditFoodTabs({
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         onSubmit();
+        // console.log("menu" + sessionStorage.getItem("menu"));
+        // setFood({
+        //     name: "",s
+        //     image: "",
+        //     desc: "",
+        //     rating: 0,
+        //     type: [],
+        //     ingredients: [],
+        //     popular: false,
+        //     spicy: false,
+        //     price: 0,
+        //     quantity: 0
+        // });
         location.reload();
     };
 
     const onSubmit = () => {
-        const newFoodList: foodProps[] = foodlist.map(
-            (original: foodProps): foodProps => {
-                return editName === original.name ? food : original;
-            }
+        const copy: foodProps[] = foodlist.map(
+            (food: foodProps): foodProps => ({
+                ...food,
+                type: [...food.type],
+                ingredients: [...food.ingredients]
+            })
         );
-        const newEditFoodList: foodProps[] = EditMenuList().map(
-            (original: foodProps): foodProps => {
-                return editName === original.name ? food : original;
-            }
-        );
+        const newFoodList: foodProps[] = [...copy, food];
         setFoodlist(newFoodList);
         sessionStorage.setItem("menu", JSON.stringify(newFoodList));
-        sessionStorage.setItem("editFoodList", JSON.stringify(newEditFoodList));
-
-        // // When food is edited, change the food's field in each customer checkout list that has it
-        // // First, we map a new customer list with edited field for all customers who have the food item
-        // const currentCustomers: userProps[] = ListOfCustomers();
-        // const customersWithNewFood: userProps[] = currentCustomers.map(
-        //     (customer: userProps) => ({
-        //         ...customer,
-        //         order: customer.order.map((original: foodProps) => {
-        //             if (editName === original.name) {
-        //                 return food;
-        //             } else {
-        //                 return {
-        //                     ...original,
-        //                     type: original.type,
-        //                     ingredients: original.ingredients
-        //                 };
-        //             }
-        //         })
-        //     })
-        // );
-        // // Next, we update sessionStorage with this new customer list so it can render properly in other components
-        // sessionStorage.setItem(
-        //     "customers",
-        //     JSON.stringify(customersWithNewFood)
-        // );
     };
 
     return (
-        <TabPanel>
+        <Stack w="full" h="full" p={10} spacing={20} alignItems="flex-start">
+            <Heading size="2xl">New Food</Heading>
             <form onSubmit={handleSubmit}>
-                <SimpleGrid columns={4} columnGap={5} rowGap={2} w="full">
-                    <GridItem colSpan={4}>
+                <SimpleGrid columns={6} columnGap={2} rowGap={2} w="full">
+                    <GridItem colSpan={6}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Name:</FormLabel>
                             <Input
@@ -148,7 +102,7 @@ export default function EditFoodTabs({
                             />
                         </FormControl>
                     </GridItem>
-                    <GridItem colSpan={4}>
+                    <GridItem colSpan={6}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Image Link:</FormLabel>
                             <Input
@@ -160,7 +114,7 @@ export default function EditFoodTabs({
                             />
                         </FormControl>
                     </GridItem>
-                    <GridItem colSpan={4}>
+                    <GridItem colSpan={6}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Description:</FormLabel>
                             <Input
@@ -172,7 +126,7 @@ export default function EditFoodTabs({
                             />
                         </FormControl>
                     </GridItem>
-                    <GridItem colSpan={4}>
+                    <GridItem colSpan={6}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Type:</FormLabel>
                             <Input
@@ -184,7 +138,7 @@ export default function EditFoodTabs({
                             />
                         </FormControl>
                     </GridItem>
-                    <GridItem colSpan={4}>
+                    <GridItem colSpan={6}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Ingredients:</FormLabel>
                             <Input
@@ -196,7 +150,7 @@ export default function EditFoodTabs({
                             />
                         </FormControl>
                     </GridItem>
-                    <GridItem colSpan={2}>
+                    <GridItem colSpan={3}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Rating:</FormLabel>
                             <Input
@@ -211,7 +165,7 @@ export default function EditFoodTabs({
                             />
                         </FormControl>
                     </GridItem>
-                    <GridItem colStart={3} colEnd={5}>
+                    <GridItem colStart={4} colEnd={7}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Price:</FormLabel>
                             <Input
@@ -225,7 +179,7 @@ export default function EditFoodTabs({
                             />
                         </FormControl>
                     </GridItem>
-                    <GridItem colSpan={2}>
+                    <GridItem colSpan={3}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Popular</FormLabel>
                             <Checkbox
@@ -241,11 +195,10 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
-                                defaultChecked={editPopular}
                             />
                         </FormControl>
                     </GridItem>
-                    <GridItem colStart={3} colEnd={5}>
+                    <GridItem colStart={4} colEnd={7}>
                         <FormControl id="name" px={5}>
                             <FormLabel>Spicy</FormLabel>
                             <Checkbox
@@ -261,36 +214,22 @@ export default function EditFoodTabs({
                                     });
                                 }}
                                 mb={3}
-                                defaultChecked={editSpicy}
                             />
                         </FormControl>
                     </GridItem>
-                    <GridItem colSpan={4}>
+                    <GridItem colSpan={6}>
                         <Button
-                            type="submit"
-                            //className="editfood-btn"
                             size="lg"
                             w="full"
+                            type="submit"
                             colorScheme="red"
                             variant="solid"
-                            isDisabled={
-                                name === editName &&
-                                image === editImage &&
-                                desc === editDesc &&
-                                rating == editRating &&
-                                type.toString() === editType.toString() &&
-                                ingredients.toString() ===
-                                    editIngredients.toString() &&
-                                popular === editPopular &&
-                                spicy === editSpicy &&
-                                price == editPrice
-                            }
                         >
-                            Edit
+                            Add
                         </Button>
                     </GridItem>
                 </SimpleGrid>
             </form>
-        </TabPanel>
+        </Stack>
     );
 }

@@ -10,7 +10,7 @@ import {
     Tag,
     TagLabel
 } from "@chakra-ui/react";
-import { MenuList } from "../pages/AddFood";
+import { MenuList } from "./AddNewFood";
 import "./Styles.css";
 
 export function SearchBar(): JSX.Element {

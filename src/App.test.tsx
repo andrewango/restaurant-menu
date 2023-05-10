@@ -48,13 +48,8 @@ describe("App", () => {
     });
 
     test("renders AddFood page", () => {
-        renderWithProviders(<App />, "/AddFood");
+        renderWithProviders(<App />, "/AddRemoveFood");
         expect(screen.getByTestId("add-food-page")).toBeInTheDocument();
-    });
-
-    test("renders RemoveFood page", () => {
-        renderWithProviders(<App />, "/RemoveFood");
-        expect(screen.getByTestId("remove-food-page")).toBeInTheDocument();
     });
 
     test("renders OwnerLanding page", () => {

@@ -51,7 +51,7 @@ export default function NavBar() {
                         </Link>
                     )}
                     {(location.hash === "#/EditFood" ||
-                        location.hash === "#/AddFood" ||
+                        location.hash === "#/AddRemoveFood" ||
                         location.hash === "#/UserStats" ||
                         location.hash === "#/ManageFoods") && (
                         <Link to="/EditUsers">

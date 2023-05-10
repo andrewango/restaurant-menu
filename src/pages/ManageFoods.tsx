@@ -15,7 +15,7 @@ export default function OwnerLanding() {
                 <Grid templateColumns={"repeat(3, 1fr)"} columnGap="3vw">
                     <Button
                         className="add"
-                        onClick={() => (location.hash = "/AddFood")}
+                        onClick={() => (location.hash = "/AddRemoveFood")}
                     >
                         <Text className="text" font-weight="bold">
                             Add / Remove

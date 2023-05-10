@@ -14,22 +14,22 @@ describe("SelectRole tests", () => {
         );
         expect(screen.getByRole("combobox")).toBeInTheDocument();
     });
-    test("There is initially 2 options", () => {
+    test("There is initially 3 options", () => {
         render(
             <BrowserRouter>
                 <SelectRole />
             </BrowserRouter>
         );
         const options = screen.getByRole("combobox") as HTMLSelectElement;
-        expect(options.options.length).toEqual(2);
+        expect(options.options.length).toEqual(3);
     });
-    test("SelectRole is initially Owner", () => {
+    test("SelectRole is initially Customer", () => {
         render(
             <BrowserRouter>
                 <SelectRole />
             </BrowserRouter>
         );
-        expect(screen.getByText(/Owner/i)).toBeInTheDocument();
+        expect(screen.getByText(/Customer/i)).toBeInTheDocument();
     });
     test("Can select Employee", () => {
         render(
