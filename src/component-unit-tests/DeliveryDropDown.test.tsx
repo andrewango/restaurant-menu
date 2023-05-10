@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { DeliveryDropDown } from "../components/DeliveryDropDown";
 import userEvent from "@testing-library/user-event";
 
-describe("RatingFeature tests", () => {
+describe("DeliveryDropdown tests", () => {
     test("The dropdown is succesfully rendered", () => {
         render(<DeliveryDropDown />);
         expect(screen.getByRole("combobox")).toBeInTheDocument();

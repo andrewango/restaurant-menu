@@ -31,7 +31,7 @@ export const renderWithProviders = (ui: ReactElement) => {
     return render(ui, { wrapper: Wrapper });
 };
 
-describe("SearchBar tests", () => {
+describe("EditFoodMenu tests", () => {
     test("The Searchbar is succesfully rendered", () => {
         renderWithProviders(<EditFoodMenu></EditFoodMenu>);
         expect(screen.getByTestId("editfoodmenu")).toBeInTheDocument();
