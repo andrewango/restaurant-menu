@@ -24,13 +24,17 @@ import {
     FormLabel,
     Input,
     Center,
-    CardFooter
+    CardFooter,
+    ButtonGroup,
+    IconButton,
+    Icon
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import { MenuList } from "./AddNewFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
+import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import "./Styles.css";
 
 export function CurrentCheckoutList(): foodProps[] {
@@ -350,42 +354,32 @@ export default function CheckoutList(): JSX.Element {
                             <Button
                                 onClick={handleEdit}
                                 className="checkout-edit"
-                                position="absolute"
-                                top="8%"
-                                right="2%"
                             >
                                 Edit
                             </Button>
                         </>
                     )}
-                    <Button
-                        onClick={() => addFoodToCheckoutList(name)}
-                        className="checkout-button"
-                        style={{
-                            fontSize: "0.8rem",
-                            padding: "0.2rem 0.4rem",
-                            position: "absolute",
-                            top: "50%",
-                            left: "5px",
-                            transform: "translateY(-50%)"
-                        }}
-                    >
-                        +
-                    </Button>
-                    <Button
-                        onClick={() => handleMinusClick(name, quantity)}
-                        className="checkout-button"
-                        style={{
-                            fontSize: "0.8rem",
-                            padding: "0.2rem 0.4rem",
-                            position: "absolute",
-                            top: "50%",
-                            left: "35px",
-                            transform: "translateY(-50%)"
-                        }}
-                    >
-                        -
-                    </Button>
+                    {}
+                    {!editing && (
+                        <ButtonGroup
+                            className="checkout-quantity"
+                            size="sm"
+                            isAttached
+                        >
+                            <IconButton
+                                onClick={() => addFoodToCheckoutList(name)}
+                                className="checkout-button"
+                                aria-label="Increase quantity"
+                                icon={<Icon as={AddIcon} fontSize="11px" />}
+                            ></IconButton>
+                            <IconButton
+                                onClick={() => handleMinusClick(name, quantity)}
+                                className="checkout-button"
+                                aria-label="Decrease quantity"
+                                icon={<Icon as={MinusIcon} fontSize="11px" />}
+                            ></IconButton>
+                        </ButtonGroup>
+                    )}
                 </AccordionPanel>
             </AccordionItem>
         );
