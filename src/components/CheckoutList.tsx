@@ -350,37 +350,57 @@ export default function CheckoutList(): JSX.Element {
                         </>
                     ) : (
                         <>
-                            {ingredients.join(", ")}
-                            <Button
-                                onClick={handleEdit}
-                                className="checkout-edit"
-                            >
-                                Edit
-                            </Button>
+                            <Flex padding={0.5}>
+                                <Box>
+                                    <ButtonGroup
+                                        className="checkout-quantity"
+                                        size="sm"
+                                        isAttached
+                                    >
+                                        <IconButton
+                                            data-testid="increment-button"
+                                            onClick={() =>
+                                                addFoodToCheckoutList(name)
+                                            }
+                                            className="checkout-button"
+                                            aria-label="Increase quantity"
+                                            icon={
+                                                <Icon
+                                                    as={AddIcon}
+                                                    fontSize="11px"
+                                                />
+                                            }
+                                        ></IconButton>
+                                        <IconButton
+                                            data-testid="decrement-button"
+                                            onClick={() =>
+                                                handleMinusClick(name, quantity)
+                                            }
+                                            className="checkout-button"
+                                            aria-label="Decrease quantity"
+                                            icon={
+                                                <Icon
+                                                    as={MinusIcon}
+                                                    fontSize="11px"
+                                                />
+                                            }
+                                        ></IconButton>
+                                    </ButtonGroup>
+                                </Box>
+
+                                <Box className="checkout-edit-box">
+                                    {ingredients.join(", ")}
+                                </Box>
+                                <Box width="90px">
+                                    <Button
+                                        onClick={handleEdit}
+                                        className="checkout-edit"
+                                    >
+                                        Edit
+                                    </Button>
+                                </Box>
+                            </Flex>
                         </>
-                    )}
-                    {}
-                    {!editing && (
-                        <ButtonGroup
-                            className="checkout-quantity"
-                            size="sm"
-                            isAttached
-                        >
-                            <IconButton
-                                data-testid="increment-button"
-                                onClick={() => addFoodToCheckoutList(name)}
-                                className="checkout-button"
-                                aria-label="Increase quantity"
-                                icon={<Icon as={AddIcon} fontSize="11px" />}
-                            ></IconButton>
-                            <IconButton
-                                data-testid="decrement-button"
-                                onClick={() => handleMinusClick(name, quantity)}
-                                className="checkout-button"
-                                aria-label="Decrease quantity"
-                                icon={<Icon as={MinusIcon} fontSize="11px" />}
-                            ></IconButton>
-                        </ButtonGroup>
                     )}
                 </AccordionPanel>
             </AccordionItem>
