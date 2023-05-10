@@ -65,4 +65,11 @@ describe("ManageFoods tests", () => {
         renderWithProviders(<ManageFoods></ManageFoods>);
         expect(screen.getByText("Stats")).toBeInTheDocument();
     });
+
+    test("clicking the 'Stats' button navigates to the UserStats page", () => {
+        renderWithProviders(<ManageFoods />);
+        const addButton = screen.getByText("Stats");
+        addButton.click();
+        expect(window.location.hash).toBe("#/UserStats");
+    });
 });
