@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/EditFoodMenu.test.tsx (13.67 s)
+PASS src/component-unit-tests/EditFoodMenu.test.tsx (11.803 s)
   ● Console
 
     console.log
@@ -1797,7 +1797,7 @@ PASS src/components/EditFoodMenu.test.tsx (13.67 s)
 
       at setListHelper (src/components/EditFoodMenu.tsx:82:21)
 
-PASS src/components/SearchBar.test.tsx (8.279 s)
+PASS src/component-unit-tests/SearchBar.test.tsx (7.248 s)
   ● Console
 
     console.log
@@ -3592,7 +3592,7 @@ PASS src/components/SearchBar.test.tsx (8.279 s)
 
       at setListHelper (src/components/SearchBar.tsx:82:21)
 
-PASS src/components/CheckoutList.test.tsx
+PASS src/component-unit-tests/CheckoutList.test.tsx
   ● Console
 
     console.log
@@ -3635,10 +3635,10 @@ PASS src/components/CheckoutList.test.tsx
 
       at src/components/CheckoutList.tsx:232:29
 
-PASS src/components/FoodItem.test.tsx
-PASS src/components/EditFoodUI.test.tsx
-PASS src/components/EditFoodList.test.tsx
-FAIL src/components/ItemListUI.test.tsx
+PASS src/component-unit-tests/FoodItem.test.tsx
+PASS src/component-unit-tests/EditFoodUI.test.tsx
+PASS src/component-unit-tests/EditFoodList.test.tsx
+FAIL src/component-unit-tests/ItemListUI.test.tsx
   ● ItemListUI Tests › Maps each food in the list to a food item component
 
     TestingLibraryElementError: Unable to find an element by: [data-testid="food-item"]
@@ -3809,7 +3809,7 @@ FAIL src/components/ItemListUI.test.tsx
       at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
       at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
       at getAllByTestId (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:109:15)
-      at Object.<anonymous> (src/components/ItemListUI.test.tsx:76:34)
+      at Object.<anonymous> (src/component-unit-tests/ItemListUI.test.tsx:76:34)
 
   ● ItemListUI Tests › Render correct number of food based on menu size
 
@@ -3981,12 +3981,12 @@ FAIL src/components/ItemListUI.test.tsx
       at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
       at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
       at getAllByTestId (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:109:15)
-      at Object.<anonymous> (src/components/ItemListUI.test.tsx:90:34)
+      at Object.<anonymous> (src/component-unit-tests/ItemListUI.test.tsx:90:34)
 
-PASS src/components/AddDeleteUsers.test.tsx
-PASS src/components/SelectRole.test.tsx
-PASS src/components/RatingFeature.test.tsx
-PASS src/components/RemoveFood.test.tsx
+PASS src/component-unit-tests/AddDeleteUsers.test.tsx
+PASS src/component-unit-tests/SelectRole.test.tsx
+PASS src/component-unit-tests/RatingFeature.test.tsx
+PASS src/component-unit-tests/RemoveFood.test.tsx
   ● Console
 
     console.error
@@ -4048,9 +4048,103 @@ PASS src/components/RemoveFood.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at Object.<anonymous> (src/components/RemoveFood.test.tsx:26:15)
+      at Object.<anonymous> (src/component-unit-tests/RemoveFood.test.tsx:26:15)
 
-PASS src/components/NavBar.test.tsx
+FAIL src/component-unit-tests/NavBar.test.tsx
+  ● NavBar tests › edit foods button is displayed initially
+
+    TestingLibraryElementError: Unable to find an element with the text: /edit food/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<nav[39m
+          [33mclass[39m=[32m"navbar css-mz9qt7"[39m
+          [33mdata-testid[39m=[32m"bar"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"navbtn css-15ro776"[39m
+            [36m>[39m
+              [0mmenu[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"/AboutUs"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"navbtn css-0"[39m
+            [36m>[39m
+              [0mabout us[0m
+            [36m</span>[39m
+          [36m</a>[39m
+        [36m</nav>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      37 |             </BrowserRouter>
+      38 |         );
+    > 39 |         expect(screen.getByText(/edit food/i)).toBeInTheDocument();
+         |                       ^
+      40 |     });
+      41 |     test("edit users button is displayed initially", () => {
+      42 |         render(
+
+      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at getByText (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (src/component-unit-tests/NavBar.test.tsx:39:23)
+
+  ● NavBar tests › edit users button is displayed initially
+
+    TestingLibraryElementError: Unable to find an element with the text: /manage users/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<nav[39m
+          [33mclass[39m=[32m"navbar css-mz9qt7"[39m
+          [33mdata-testid[39m=[32m"bar"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"navbtn css-15ro776"[39m
+            [36m>[39m
+              [0mmenu[0m
+            [36m</span>[39m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mhref[39m=[32m"/AboutUs"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"navbtn css-0"[39m
+            [36m>[39m
+              [0mabout us[0m
+            [36m</span>[39m
+          [36m</a>[39m
+        [36m</nav>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      45 |             </BrowserRouter>
+      46 |         );
+    > 47 |         expect(screen.getByText(/manage users/i)).toBeInTheDocument();
+         |                       ^
+      48 |     });
+      49 |     test("edit users disapperas when admin is selected", async () => {
+      50 |         render(
+
+      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at getByText (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (src/component-unit-tests/NavBar.test.tsx:47:23)
+
 PASS src/App.test.tsx
   ● Console
 
@@ -4204,7 +4298,7 @@ PASS src/App.test.tsx
       at renderWithProviders (src/App.test.tsx:31:18)
       at Object.<anonymous> (src/App.test.tsx:56:9)
 
-FAIL src/components/EditFoodTabs.test.tsx
+FAIL src/component-unit-tests/EditFoodTabs.test.tsx
   ● Console
 
     console.error
@@ -4227,8 +4321,8 @@ FAIL src/components/EditFoodTabs.test.tsx
           at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at renderWithProviders (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.test.tsx:31:18)
-          at Object.<anonymous> (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.test.tsx:35:9)
+          at renderWithProviders (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:31:18)
+          at Object.<anonymous> (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:35:9)
           at Promise.then.completed (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/utils.js:316:10)
@@ -4265,8 +4359,8 @@ FAIL src/components/EditFoodTabs.test.tsx
           at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at renderWithProviders (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.test.tsx:31:18)
-          at Object.<anonymous> (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.test.tsx:35:9)
+          at renderWithProviders (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:31:18)
+          at Object.<anonymous> (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:35:9)
           at Promise.then.completed (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/utils.js:316:10)
@@ -4307,8 +4401,8 @@ FAIL src/components/EditFoodTabs.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/components/EditFoodTabs.test.tsx:31:18)
-      at Object.<anonymous> (src/components/EditFoodTabs.test.tsx:35:9)
+      at renderWithProviders (src/component-unit-tests/EditFoodTabs.test.tsx:31:18)
+      at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:35:9)
 
     console.error
       Error: Uncaught [ContextError: useTabsContext: `context` is undefined. Seems you forgot to wrap all tabs components within <Tabs />]
@@ -4331,8 +4425,8 @@ FAIL src/components/EditFoodTabs.test.tsx
           at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at renderWithProviders (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.test.tsx:31:18)
-          at Object.<anonymous> (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.test.tsx:35:9)
+          at renderWithProviders (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:31:18)
+          at Object.<anonymous> (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:35:9)
           at Promise.then.completed (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/utils.js:316:10)
@@ -4370,8 +4464,8 @@ FAIL src/components/EditFoodTabs.test.tsx
           at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at renderWithProviders (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.test.tsx:31:18)
-          at Object.<anonymous> (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.test.tsx:35:9)
+          at renderWithProviders (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:31:18)
+          at Object.<anonymous> (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:35:9)
           at Promise.then.completed (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/utils.js:316:10)
@@ -4413,8 +4507,8 @@ FAIL src/components/EditFoodTabs.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/components/EditFoodTabs.test.tsx:31:18)
-      at Object.<anonymous> (src/components/EditFoodTabs.test.tsx:35:9)
+      at renderWithProviders (src/component-unit-tests/EditFoodTabs.test.tsx:31:18)
+      at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:35:9)
 
     console.error
       The above error occurred in the <TabPanel> component:
@@ -4430,7 +4524,7 @@ FAIL src/components/EditFoodTabs.test.tsx
           at ChakraProvider2 (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/react/dist/index.js:83:5)
           at Router (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-router/lib/components.tsx:311:13)
           at HashRouter (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-router-dom/index.tsx:335:30)
-          at Wrapper (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.test.tsx:23:24)
+          at Wrapper (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:23:24)
       
       Consider adding an error boundary to your tree to customize error handling behavior.
       Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -4460,8 +4554,8 @@ FAIL src/components/EditFoodTabs.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/components/EditFoodTabs.test.tsx:31:18)
-      at Object.<anonymous> (src/components/EditFoodTabs.test.tsx:35:9)
+      at renderWithProviders (src/component-unit-tests/EditFoodTabs.test.tsx:31:18)
+      at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:35:9)
 
   ● Edit Food Tab tests › Succesful component render
 
@@ -4491,10 +4585,10 @@ FAIL src/components/EditFoodTabs.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/components/EditFoodTabs.test.tsx:31:18)
-      at Object.<anonymous> (src/components/EditFoodTabs.test.tsx:35:9)
+      at renderWithProviders (src/component-unit-tests/EditFoodTabs.test.tsx:31:18)
+      at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:35:9)
 
-PASS src/components/DeliveryDropDown.test.tsx
+PASS src/component-unit-tests/DeliveryDropDown.test.tsx
 -----------------------|---------|----------|---------|---------|-----------------------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                             
 -----------------------|---------|----------|---------|---------|-----------------------------------------------
@@ -4536,8 +4630,8 @@ All files              |   73.99 |    66.22 |   64.78 |    73.8 |
   UserStats.tsx        |       0 |        0 |       0 |       0 | 25-98                                         
 -----------------------|---------|----------|---------|---------|-----------------------------------------------
 
-Test Suites: 2 failed, 13 passed, 15 total
-Tests:       3 failed, 86 passed, 89 total
+Test Suites: 3 failed, 12 passed, 15 total
+Tests:       5 failed, 84 passed, 89 total
 Snapshots:   0 total
-Time:        40.425 s
+Time:        35.37 s
 Ran all test suites.
