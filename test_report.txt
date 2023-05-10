@@ -2,7 +2,7 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/components/SearchBar.test.tsx (10.86 s)
+PASS src/components/SearchBar.test.tsx (13.259 s)
   ● Console
 
     console.log
@@ -1919,7 +1919,7 @@ PASS src/components/RemoveFood.test.tsx
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
       at Object.<anonymous> (src/components/RemoveFood.test.tsx:26:15)
 
-PASS src/App.test.tsx
+FAIL src/App.test.tsx
   ● Console
 
     console.error
@@ -2008,6 +2008,36 @@ PASS src/App.test.tsx
       at renderWithProviders (src/App.test.tsx:31:18)
       at Object.<anonymous> (src/App.test.tsx:51:9)
 
+    console.warn
+      No routes matched location "/RemoveFood"
+
+      29 |     );
+      30 |
+    > 31 |     return render(ui, { wrapper: Wrapper });
+         |                  ^
+      32 | };
+      33 |
+      34 | describe("App", () => {
+
+      at Object.warning [as UNSAFE_warning] (node_modules/@remix-run/router/history.ts:487:49)
+      at useRoutes (node_modules/react-router/lib/hooks.tsx:388:5)
+      at Routes (node_modules/react-router/lib/components.tsx:404:10)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+      at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:20074:13)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21587:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at renderWithProviders (src/App.test.tsx:31:18)
+      at Object.<anonymous> (src/App.test.tsx:56:9)
+
     console.error
       Warning: Invalid DOM property `font-weight`. Did you mean `fontWeight`?
           at p
@@ -2071,6 +2101,76 @@ PASS src/App.test.tsx
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
       at renderWithProviders (src/App.test.tsx:31:18)
       at Object.<anonymous> (src/App.test.tsx:61:9)
+
+  ● App › renders RemoveFood page
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="remove-food-page"]
+
+    Ignored nodes: comments, script, style
+    [36m<body[39m
+      [33mclass[39m=[32m"chakra-ui-light"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<span[39m
+          [33mhidden[39m=[32m""[39m
+          [33mid[39m=[32m"__chakra_env"[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"chakra-portal"[39m
+      [36m>[39m
+        [36m<ul[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mid[39m=[32m"chakra-toast-manager-top"[39m
+          [33mrole[39m=[32m"region"[39m
+          [33mstyle[39m=[32m"position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"[39m
+        [36m/>[39m
+        [36m<ul[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mid[39m=[32m"chakra-toast-manager-top-left"[39m
+          [33mrole[39m=[32m"region"[39m
+          [33mstyle[39m=[32m"position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"[39m
+        [36m/>[39m
+        [36m<ul[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mid[39m=[32m"chakra-toast-manager-top-right"[39m
+          [33mrole[39m=[32m"region"[39m
+          [33mstyle[39m=[32m"position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"[39m
+        [36m/>[39m
+        [36m<ul[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mid[39m=[32m"chakra-toast-manager-bottom-left"[39m
+          [33mrole[39m=[32m"region"[39m
+          [33mstyle[39m=[32m"position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"[39m
+        [36m/>[39m
+        [36m<ul[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mid[39m=[32m"chakra-toast-manager-bottom"[39m
+          [33mrole[39m=[32m"region"[39m
+          [33mstyle[39m=[32m"position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"[39m
+        [36m/>[39m
+        [36m<ul[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mid[39m=[32m"chakra-toast-manager-bottom-right"[39m
+          [33mrole[39m=[32m"region"[39m
+          [33mstyle[39m=[32m"position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      55 |     test("renders RemoveFood page", () => {
+      56 |         renderWithProviders(<App />, "/RemoveFood");
+    > 57 |         expect(screen.getByTestId("remove-food-page")).toBeInTheDocument();
+         |                       ^
+      58 |     });
+      59 |
+      60 |     test("renders OwnerLanding page", () => {
+
+      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at getByTestId (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (src/App.test.tsx:57:23)
 
 FAIL src/components/NavBar.test.tsx
   ● NavBar tests › edit foods button is displayed initially
@@ -2171,15 +2271,15 @@ PASS src/components/DeliveryDropDown.test.tsx
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                              
 -----------------------|---------|----------|---------|---------|------------------------------------------------
-All files              |    48.2 |    46.28 |   43.34 |   48.26 |                                                
+All files              |    41.8 |    37.02 |   38.59 |    41.8 |                                                
  src                   |     100 |      100 |     100 |     100 |                                                
   App.tsx              |     100 |      100 |     100 |     100 |                                                
- src/components        |   49.57 |    47.44 |   45.45 |   49.67 |                                                
+ src/components        |   42.36 |    37.35 |    39.8 |   42.38 |                                                
   AddDeleteUsers.tsx   |   90.24 |    43.75 |   76.92 |   90.24 | 41,89,142,202                                  
   CheckoutList.tsx     |   19.53 |    13.15 |   21.42 |    18.4 | 53,75-79,89,98,110-196,202-362,384-403,458-482 
   DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                  
   EditFoodList.tsx     |    5.88 |       10 |    4.54 |    6.38 | 32-165                                         
-  EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 8-41                                           
+  EditFoodMenu.tsx     |       0 |        0 |       0 |       0 | 17-270                                         
   EditFoodTabs.tsx     |       0 |        0 |       0 |       0 | 42-255                                         
   EditFoodUI.tsx       |     100 |    56.25 |     100 |     100 | 73-112,117-136                                 
   FoodItem.tsx         |   77.77 |       80 |      60 |   76.47 | 19-21,56                                       
@@ -2208,8 +2308,8 @@ All files              |    48.2 |    46.28 |   43.34 |   48.26 |
   UserStats.tsx        |       0 |        0 |       0 |       0 | 25-95                                          
 -----------------------|---------|----------|---------|---------|------------------------------------------------
 
-Test Suites: 3 failed, 7 passed, 10 total
-Tests:       5 failed, 60 passed, 65 total
+Test Suites: 4 failed, 6 passed, 10 total
+Tests:       6 failed, 59 passed, 65 total
 Snapshots:   0 total
-Time:        21.98 s
+Time:        25.899 s
 Ran all test suites.
