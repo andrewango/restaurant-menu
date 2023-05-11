@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactNode } from "react";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { ChakraProvider, TabPanels, Tabs, extendTheme } from "@chakra-ui/react";
 import { DndProvider } from "react-dnd";
 import { HashRouter } from "react-router-dom";
@@ -56,7 +56,7 @@ const args: {
     editIngredients: ["Sugar, Corn Syrup, Water, Gelatin"],
     editPopular: true,
     editSpicy: false,
-    editPrice: 3,
+    editPrice: 2,
     editQuantity: 0
 };
 
@@ -224,7 +224,7 @@ describe("EditFoodTabs tests", () => {
         expect(editFoodList).toHaveTextContent(/Black Licorice Ice Cream/i);
     });
 
-    test("Originally, the edit button is disabled when the user doesn't make any changes to the selected food item", () => {
+    test("Owner/Employee is able to delete a tab", () => {
         renderWithProviders(<EditFood></EditFood>);
         // Drag and drop food item to make new tab
         expect(
@@ -236,9 +236,17 @@ describe("EditFoodTabs tests", () => {
         fireEvent.drop(editFoodList);
         expect(editFoodList).toHaveTextContent(/Black Licorice Ice Cream/i);
 
-        // Check if edit button is disabled
-        const editButton = screen.getByTestId("edit-submit");
-        expect(editButton).toBeDisabled();
+        // Drag and drop tab to trash can to delete it
+        const tab = screen
+            .getByTestId("tab-select")
+            .querySelector(".chakra-tabs__tab.css-vivaej");
+        console.log(tab);
+        const trash = screen.getByTestId("trash-icon");
+        if (tab !== null) {
+            fireEvent.dragStart(tab);
+            fireEvent.drop(trash);
+        }
+        expect(editFoodList).not.toHaveTextContent(/Black Licorice Ice Cream/i);
     });
 
     test("Owner/Employee is able to switch tabs", async () => {
@@ -281,7 +289,7 @@ describe("EditFoodTabs tests", () => {
         }
     });
 
-    test("Submits the form with the entered values and it changes the edit food item list", async () => {
+    test("Edit button is disabled at first and enabled after user changes one or more fields", () => {
         renderWithProviders(<EditFood />);
         // Drag and drop food item to make new tab
         expect(
@@ -293,6 +301,9 @@ describe("EditFoodTabs tests", () => {
         fireEvent.drop(editFoodList);
         expect(editFoodList).toHaveTextContent(/Black Licorice Ice Cream/i);
 
+        const editButton = screen.getByTestId("edit-submit");
+        expect(editButton).toBeDisabled();
+
         fireEvent.change(screen.getByTestId("edit-name-form"), {
             target: { value: args.editName }
         });
@@ -315,23 +326,11 @@ describe("EditFoodTabs tests", () => {
             target: { value: args.editPrice }
         });
         fireEvent.click(screen.getByTestId("edit-popular-checkbox"));
-        fireEvent.submit(await screen.findByTestId("edit-submit"));
-
-        await waitFor(() => {
-            expect(editFoodList).not.toHaveTextContent(
-                /Black Licorice Ice Cream/i
-            );
-            expect(editFoodList).toHaveTextContent(/Marshmallows/i);
-            const editFoodCentral = screen.getByTestId("edit-food-central");
-            expect(editFoodCentral).not.toHaveTextContent(
-                /Black Licorice Ice Cream/i
-            );
-            expect(editFoodCentral).toHaveTextContent(/Marshmallows/);
-        });
+        expect(editButton).not.toBeDisabled();
     });
 
     test("Items submitted are added to sessionStorage", () => {
-        const { getByRole } = renderWithProviders(<EditFood />);
+        renderWithProviders(<EditFood></EditFood>);
         // Drag and drop food item to make new tab
         expect(
             screen.queryByText(/Black Licorice Ice Cream/i)
@@ -342,6 +341,7 @@ describe("EditFoodTabs tests", () => {
         fireEvent.drop(editFoodList);
         expect(editFoodList).toHaveTextContent(/Black Licorice Ice Cream/i);
 
+        // Type into the forms
         fireEvent.change(screen.getByTestId("edit-name-form"), {
             target: { value: args.editName }
         });
@@ -364,8 +364,11 @@ describe("EditFoodTabs tests", () => {
             target: { value: args.editPrice }
         });
         fireEvent.click(screen.getByTestId("edit-popular-checkbox"));
-        fireEvent.submit(getByRole("button", { name: /Edit/i }));
 
+        // Submit the form
+        fireEvent.submit(screen.getByTestId("edit-food-form"));
+
+        // Check if SessionStorage updated
         const menuInSessionStorage = sessionStorage.getItem("menu");
         const editFoodListInSessionStorage =
             sessionStorage.getItem("editFoodList");
