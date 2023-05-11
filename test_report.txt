@@ -2,12 +2,12 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.891 s)
+PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.847 s)
   ● Console
 
     console.log
       <ref *1> HTMLButtonElement {
-        '__reactFiber$86j9i5gpoe2': <ref *2> FiberNode {
+        '__reactFiber$x4kjofbvs4': <ref *2> FiberNode {
           tag: 5,
           key: null,
           elementType: 'button',
@@ -172,7 +172,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.891 s)
           _debugNeedsRemount: false,
           _debugHookTypes: null
         },
-        '__reactProps$86j9i5gpoe2': {
+        '__reactProps$x4kjofbvs4': {
           'data-theme': undefined,
           children: 'Black Licorice Ice Cream',
           type: 'button',
@@ -327,7 +327,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.891 s)
       at Function.submit (node_modules/@testing-library/react/dist/fire-event.js:18:52)
       at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:369:19)
 
-PASS src/component-unit-tests/EditFoodMenu.test.tsx (8.672 s)
+PASS src/component-unit-tests/EditFoodMenu.test.tsx (10.735 s)
   ● Console
 
     console.log
@@ -2122,7 +2122,7 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (8.672 s)
 
       at setListHelper (src/components/EditFoodMenu.tsx:82:21)
 
-PASS src/component-unit-tests/SearchBar.test.tsx (7.229 s)
+PASS src/component-unit-tests/SearchBar.test.tsx (8.87 s)
   ● Console
 
     console.log
@@ -3917,7 +3917,7 @@ PASS src/component-unit-tests/SearchBar.test.tsx (7.229 s)
 
       at setListHelper (src/components/SearchBar.tsx:82:21)
 
-PASS src/component-unit-tests/CheckoutList.test.tsx
+PASS src/component-unit-tests/CheckoutList.test.tsx (5.303 s)
   ● Console
 
     console.warn
@@ -5508,5 +5508,5 @@ All files              |   82.36 |    69.51 |   75.21 |   82.17 |
 Test Suites: 17 passed, 17 total
 Tests:       122 passed, 122 total
 Snapshots:   0 total
-Time:        42.912 s
+Time:        52.764 s
 Ran all test suites.
