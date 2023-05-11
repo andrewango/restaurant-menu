@@ -127,10 +127,11 @@ export default function EditFoodList(): JSX.Element {
             className="editfood-card"
             ref={drop}
         >
-            <CardHeader fontWeight="bold" alignItems="stretch" ref={removeDrop}>
+            <CardHeader fontWeight="bold" alignItems="stretch">
                 <Flex alignItems="center" justifyContent="space-between">
                     <Heading className="editfood-card-head">Edit Food</Heading>
                     <FontAwesomeIcon
+                        ref={removeDrop}
                         icon={faTrash}
                         className="trashcan"
                         size="3x"

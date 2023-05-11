@@ -134,7 +134,7 @@ export default function EditFoodTabs({
 
     return (
         <TabPanel data-testid={name + " Tab Panel"}>
-            <form onSubmit={handleSubmit}>
+            <form data-testid="edit-food-form" onSubmit={handleSubmit}>
                 <SimpleGrid columns={4} columnGap={5} rowGap={2} w="full">
                     <GridItem colSpan={4}>
                         <FormControl id="name" px={5}>
