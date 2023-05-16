@@ -121,55 +121,24 @@ export default function CheckoutList(): JSX.Element {
                     (food) => food.name === name
                 );
 
-                if (existingFoodIndex !== -1) {
-                    // If the same food already exists in the checkout list, increase its quantity
-                    const updatedCheckoutList = [...checkoutList];
-                    updatedCheckoutList[existingFoodIndex].quantity += 1;
-
-                    sessionStorage.setItem(
-                        "checkout",
-                        JSON.stringify(updatedCheckoutList)
-                    );
-
-                    const listOfCustomers = ListOfCustomers();
-                    const currentUser: userProps = GetCurrentUser();
-                    const updatedOrder = currentUser.order.map((food) => {
-                        if (food.name === name) {
-                            return {
-                                ...food,
-                                quantity: food.quantity + 1
-                            };
-                        }
-                        return food;
-                    });
-
-                    const newUser: userProps = {
-                        ...currentUser,
-                        order: updatedOrder
-                    };
-
-                    sessionStorage.setItem("user", JSON.stringify(newUser));
-
-                    const userIndex: number = listOfCustomers.findIndex(
-                        (user: userProps) => newUser.orderID === user.orderID
-                    );
-
-                    if (userIndex > -1) {
-                        listOfCustomers.splice(userIndex, 1, newUser);
-                        sessionStorage.setItem(
-                            "customers",
-                            JSON.stringify(listOfCustomers)
-                        );
-                    }
-
-                    return updatedCheckoutList;
-                }
                 const newFoodItem = {
                     ...chosenFood,
                     quantity: 1
                 };
-
                 const updatedCheckoutList = [...checkoutList, newFoodItem];
+
+                // If the same food already exists in the checkout list, increase its quantity
+                if (existingFoodIndex !== -1) {
+                    updatedCheckoutList[existingFoodIndex].quantity += 1;
+                    const indices = updatedCheckoutList
+                        .map((food, index) => (food.name === name ? index : -1))
+                        .filter((food) => food !== -1);
+
+                    indices.forEach((index) => {
+                        updatedCheckoutList[index].quantity =
+                            updatedCheckoutList[existingFoodIndex].quantity;
+                    });
+                }
 
                 sessionStorage.setItem(
                     "checkout",
@@ -180,7 +149,7 @@ export default function CheckoutList(): JSX.Element {
                 const currentUser: userProps = GetCurrentUser();
                 const newUser: userProps = {
                     ...currentUser,
-                    order: [...currentUser.order, newFoodItem]
+                    order: updatedCheckoutList
                 };
 
                 sessionStorage.setItem("user", JSON.stringify(newUser));
@@ -216,6 +185,15 @@ export default function CheckoutList(): JSX.Element {
                     })
                 );
                 newCheckoutList.splice(foodToRemoveIndex, 1);
+
+                const indices = newCheckoutList
+                    .map((food, index) => (food.name === name ? index : -1))
+                    .filter((food) => food !== -1);
+
+                indices.forEach((index) => {
+                    newCheckoutList[index].quantity -= 1;
+                });
+
                 sessionStorage.setItem(
                     "checkout",
                     JSON.stringify(newCheckoutList)
@@ -352,7 +330,7 @@ export default function CheckoutList(): JSX.Element {
                         <>
                             <Flex padding={0.5}>
                                 <Box>
-                                    <ButtonGroup
+                                    {/* <ButtonGroup
                                         className="checkout-quantity"
                                         size="sm"
                                         isAttached
@@ -385,7 +363,7 @@ export default function CheckoutList(): JSX.Element {
                                                 />
                                             }
                                         ></IconButton>
-                                    </ButtonGroup>
+                                    </ButtonGroup> */}
                                 </Box>
 
                                 <Box className="checkout-edit-box">
