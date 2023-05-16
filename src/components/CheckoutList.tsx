@@ -123,8 +123,11 @@ export default function CheckoutList(): JSX.Element {
 
                 const newFoodItem = {
                     ...chosenFood,
+                    ingredients: chosenFood.ingredients,
+                    type: chosenFood.type,
                     quantity: 1
                 };
+
                 const updatedCheckoutList = [...checkoutList, newFoodItem];
 
                 // If the same food already exists in the checkout list, increase its quantity
@@ -305,7 +308,6 @@ export default function CheckoutList(): JSX.Element {
                         <Box as="span" flex="1" textAlign="center" ml={10}>
                             {name}
                         </Box>
-                        <Box data-testid={name + " - Quantity"}>{quantity}</Box>
                         <AccordionIcon />
                     </AccordionButton>
                 </h2>
