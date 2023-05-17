@@ -27,7 +27,7 @@ function countOrders(list: userProps[], foodName: string): number {
             count +
             user.order.reduce((foodCount, food) => {
                 if (food.name === foodName) {
-                    return foodCount + food.quantity;
+                    return (foodCount += 1);
                 }
                 return foodCount;
             }, 0)

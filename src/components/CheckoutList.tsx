@@ -24,17 +24,13 @@ import {
     FormLabel,
     Input,
     Center,
-    CardFooter,
-    ButtonGroup,
-    IconButton,
-    Icon
+    CardFooter
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import { MenuList } from "./AddNewFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
-import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import "./Styles.css";
 
 export function CurrentCheckoutList(): foodProps[] {
@@ -99,7 +95,7 @@ export default function CheckoutList(): JSX.Element {
     const [{ isOver }, removeDrop] = useDrop(() => ({
         accept: "removeItem",
         drop: (item: foodProps) => {
-            removeFoodFromCheckoutList(item.name);
+            removeFoodFromCheckoutList(item.name, item.id);
         },
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
@@ -117,59 +113,32 @@ export default function CheckoutList(): JSX.Element {
 
         if (chosenFood) {
             setCheckoutList((checkoutList) => {
-                const existingFoodIndex = checkoutList.findIndex(
-                    (food) => food.name === name
-                );
-
-                if (existingFoodIndex !== -1) {
-                    // If the same food already exists in the checkout list, increase its quantity
-                    const updatedCheckoutList = [...checkoutList];
-                    updatedCheckoutList[existingFoodIndex].quantity += 1;
-
-                    sessionStorage.setItem(
-                        "checkout",
-                        JSON.stringify(updatedCheckoutList)
-                    );
-
-                    const listOfCustomers = ListOfCustomers();
-                    const currentUser: userProps = GetCurrentUser();
-                    const updatedOrder = currentUser.order.map((food) => {
-                        if (food.name === name) {
-                            return {
-                                ...food,
-                                quantity: food.quantity + 1
-                            };
-                        }
-                        return food;
-                    });
-
-                    const newUser: userProps = {
-                        ...currentUser,
-                        order: updatedOrder
-                    };
-
-                    sessionStorage.setItem("user", JSON.stringify(newUser));
-
-                    const userIndex: number = listOfCustomers.findIndex(
-                        (user: userProps) => newUser.orderID === user.orderID
-                    );
-
-                    if (userIndex > -1) {
-                        listOfCustomers.splice(userIndex, 1, newUser);
-                        sessionStorage.setItem(
-                            "customers",
-                            JSON.stringify(listOfCustomers)
-                        );
-                    }
-
-                    return updatedCheckoutList;
-                }
                 const newFoodItem = {
                     ...chosenFood,
-                    quantity: 1
+                    ingredients: chosenFood.ingredients,
+                    type: chosenFood.type,
+                    quantity: 1,
+                    id:
+                        checkoutList.length > 0
+                            ? checkoutList[checkoutList.length - 1].id + 1
+                            : 1
                 };
 
-                const updatedCheckoutList = [...checkoutList, newFoodItem];
+                const updatedCheckoutList: foodProps[] = [
+                    ...checkoutList.map((food: foodProps) => {
+                        return {
+                            ...food,
+                            ingredients: [...food.ingredients],
+                            type: [...food.type],
+                            quantity:
+                                food.name === name
+                                    ? food.quantity + 1
+                                    : food.quantity,
+                            id: food.id
+                        };
+                    }),
+                    newFoodItem
+                ];
 
                 sessionStorage.setItem(
                     "checkout",
@@ -180,7 +149,7 @@ export default function CheckoutList(): JSX.Element {
                 const currentUser: userProps = GetCurrentUser();
                 const newUser: userProps = {
                     ...currentUser,
-                    order: [...currentUser.order, newFoodItem]
+                    order: updatedCheckoutList
                 };
 
                 sessionStorage.setItem("user", JSON.stringify(newUser));
@@ -202,20 +171,26 @@ export default function CheckoutList(): JSX.Element {
         }
     };
 
-    const removeFoodFromCheckoutList = (name: string) => {
+    const removeFoodFromCheckoutList = (name: string, toRemoveId: number) => {
         setCheckoutList((updatedCheckout) => {
             const foodToRemoveIndex = updatedCheckout.findIndex(
-                (foodItem: foodProps): boolean => foodItem.name === name
+                (foodItem: foodProps): boolean => foodItem.id === toRemoveId
             );
             if (foodToRemoveIndex > -1) {
                 const newCheckoutList: foodProps[] = updatedCheckout.map(
                     (food: foodProps): foodProps => ({
                         ...food,
                         type: [...food.type],
-                        ingredients: [...food.ingredients]
+                        ingredients: [...food.ingredients],
+                        quantity:
+                            food.name === name
+                                ? food.quantity - 1
+                                : food.quantity,
+                        id: food.id > toRemoveId ? food.id - 1 : food.id
                     })
                 );
                 newCheckoutList.splice(foodToRemoveIndex, 1);
+
                 sessionStorage.setItem(
                     "checkout",
                     JSON.stringify(newCheckoutList)
@@ -230,10 +205,8 @@ export default function CheckoutList(): JSX.Element {
                 const userIndex: number = listOfCustomers.findIndex(
                     (user: userProps) => newUser.orderID === user.orderID
                 );
-                console.log(userIndex);
                 if (userIndex > -1) {
                     listOfCustomers.splice(userIndex, 1, newUser);
-                    console.log(listOfCustomers);
                     sessionStorage.setItem(
                         "customers",
                         JSON.stringify(listOfCustomers)
@@ -249,50 +222,20 @@ export default function CheckoutList(): JSX.Element {
     // CheckoutItem
 
     function CheckoutItem({
+        id,
         name,
         ingredients,
-        quantity,
         onIngredientsUpdate
     }: {
+        id: number;
         name: string;
         ingredients: string[];
         quantity: number;
         onIngredientsUpdate: (newIngredients: string[]) => void;
     }): JSX.Element {
-        const handleMinusClick = (name: string, quantity: number) => {
-            if (quantity === 1) {
-                removeFoodFromCheckoutList(name);
-            } else {
-                const existingFoodIndex = checkoutList.findIndex(
-                    (food) => food.name === name
-                );
-                const updatedCheckoutList = [...checkoutList];
-                updatedCheckoutList[existingFoodIndex].quantity -= 1;
-                setCheckoutList(updatedCheckoutList);
-                sessionStorage.setItem(
-                    "checkout",
-                    JSON.stringify(updatedCheckoutList)
-                );
-                const currentUser: userProps = GetCurrentUser();
-                const newUser: userProps = {
-                    ...currentUser,
-                    order: updatedCheckoutList
-                };
-                sessionStorage.setItem("user", JSON.stringify(newUser));
-                const userId = newUser.orderID;
-                const newCustomerList = ListOfCustomers().map(
-                    (customer: userProps) =>
-                        customer.orderID === userId ? { ...newUser } : customer
-                );
-                sessionStorage.setItem(
-                    "customers",
-                    JSON.stringify(newCustomerList)
-                );
-            }
-        };
         const [, drag] = useDrag(() => ({
             type: "removeItem",
-            item: { name: name },
+            item: { name: name, id: id },
             collect: (monitor) => ({
                 isDragging: !!monitor.isDragging()
             })
@@ -325,9 +268,8 @@ export default function CheckoutList(): JSX.Element {
                         _expanded={{ bg: "tomato", color: "white" }}
                     >
                         <Box as="span" flex="1" textAlign="center" ml={10}>
-                            {name}
+                            {`(${id}) ${name}`}
                         </Box>
-                        <Box data-testid={name + " - Quantity"}>{quantity}</Box>
                         <AccordionIcon />
                     </AccordionButton>
                 </h2>
@@ -351,43 +293,6 @@ export default function CheckoutList(): JSX.Element {
                     ) : (
                         <>
                             <Flex padding={0.5}>
-                                <Box>
-                                    <ButtonGroup
-                                        className="checkout-quantity"
-                                        size="sm"
-                                        isAttached
-                                    >
-                                        <IconButton
-                                            data-testid="increment-button"
-                                            onClick={() =>
-                                                addFoodToCheckoutList(name)
-                                            }
-                                            className="checkout-button"
-                                            aria-label="Increase quantity"
-                                            icon={
-                                                <Icon
-                                                    as={AddIcon}
-                                                    fontSize="11px"
-                                                />
-                                            }
-                                        ></IconButton>
-                                        <IconButton
-                                            data-testid="decrement-button"
-                                            onClick={() =>
-                                                handleMinusClick(name, quantity)
-                                            }
-                                            className="checkout-button"
-                                            aria-label="Decrease quantity"
-                                            icon={
-                                                <Icon
-                                                    as={MinusIcon}
-                                                    fontSize="11px"
-                                                />
-                                            }
-                                        ></IconButton>
-                                    </ButtonGroup>
-                                </Box>
-
                                 <Box className="checkout-edit-box">
                                     {ingredients.join(", ")}
                                 </Box>
@@ -408,11 +313,11 @@ export default function CheckoutList(): JSX.Element {
     }
 
     const handleIngredientsUpdate = (
-        foodName: string,
+        foodId: number,
         newIngredients: string[]
     ) => {
         const newCheckout = checkoutList.map((food: foodProps) => {
-            if (food.name === foodName) {
+            if (food.id === foodId) {
                 return {
                     ...food,
                     ingredients: newIngredients
@@ -502,7 +407,7 @@ export default function CheckoutList(): JSX.Element {
                             textAlign="center"
                             overflowY="auto"
                         >
-                            <Accordion allowToggle allowMultiple>
+                            <Accordion allowMultiple>
                                 {searchedFoods.map(
                                     (food: foodProps, index: number) => (
                                         <CheckoutItem
@@ -513,11 +418,12 @@ export default function CheckoutList(): JSX.Element {
                                                 newIngredients
                                             ) =>
                                                 handleIngredientsUpdate(
-                                                    food.name,
+                                                    food.id,
                                                     newIngredients
                                                 )
                                             }
                                             quantity={food.quantity}
+                                            id={food.id}
                                         ></CheckoutItem>
                                     )
                                 )}

@@ -42,7 +42,8 @@ describe("EditFoodUI", () => {
             ingredients: ["Tomato sauce", "Cheese", "Pepperoni"],
             popular: true,
             spicy: false,
-            price: 10.99
+            price: 10.99,
+            id: 1
         },
         {
             quantity: 1,
@@ -54,7 +55,8 @@ describe("EditFoodUI", () => {
             ingredients: ["Beef patty", "Lettuce", "Tomato"],
             popular: true,
             spicy: true,
-            price: 8.99
+            price: 8.99,
+            id: 2
         }
     ];
     test("Succesful component render", () => {
