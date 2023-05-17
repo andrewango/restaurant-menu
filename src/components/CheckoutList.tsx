@@ -95,7 +95,7 @@ export default function CheckoutList(): JSX.Element {
     const [{ isOver }, removeDrop] = useDrop(() => ({
         accept: "removeItem",
         drop: (item: foodProps) => {
-            removeFoodFromCheckoutList(item.name);
+            removeFoodFromCheckoutList(item.name, item.id);
         },
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
@@ -171,10 +171,10 @@ export default function CheckoutList(): JSX.Element {
         }
     };
 
-    const removeFoodFromCheckoutList = (name: string) => {
+    const removeFoodFromCheckoutList = (name: string, toRemoveId: number) => {
         setCheckoutList((updatedCheckout) => {
             const foodToRemoveIndex = updatedCheckout.findIndex(
-                (foodItem: foodProps): boolean => foodItem.name === name
+                (foodItem: foodProps): boolean => foodItem.id === toRemoveId
             );
             if (foodToRemoveIndex > -1) {
                 const newCheckoutList: foodProps[] = updatedCheckout.map(
@@ -186,7 +186,7 @@ export default function CheckoutList(): JSX.Element {
                             food.name === name
                                 ? food.quantity - 1
                                 : food.quantity,
-                        id: food.id - 1
+                        id: food.id > toRemoveId ? food.id - 1 : food.id
                     })
                 );
                 newCheckoutList.splice(foodToRemoveIndex, 1);
@@ -205,10 +205,8 @@ export default function CheckoutList(): JSX.Element {
                 const userIndex: number = listOfCustomers.findIndex(
                     (user: userProps) => newUser.orderID === user.orderID
                 );
-                console.log(userIndex);
                 if (userIndex > -1) {
                     listOfCustomers.splice(userIndex, 1, newUser);
-                    console.log(listOfCustomers);
                     sessionStorage.setItem(
                         "customers",
                         JSON.stringify(listOfCustomers)
@@ -237,7 +235,7 @@ export default function CheckoutList(): JSX.Element {
     }): JSX.Element {
         const [, drag] = useDrag(() => ({
             type: "removeItem",
-            item: { name: name },
+            item: { name: name, id: id },
             collect: (monitor) => ({
                 isDragging: !!monitor.isDragging()
             })
@@ -409,7 +407,7 @@ export default function CheckoutList(): JSX.Element {
                             textAlign="center"
                             overflowY="auto"
                         >
-                            <Accordion allowToggle allowMultiple>
+                            <Accordion allowMultiple>
                                 {searchedFoods.map(
                                     (food: foodProps, index: number) => (
                                         <CheckoutItem

@@ -85,10 +85,10 @@ export default function FoodItem({
                 </Text>
                 {currentUser.role === "Owner" && (
                     <Text className="desc" mt={2}>
-                        {`In ${countOrders(
+                        {`${countOrders(
                             storageCustomers,
                             name
-                        )} user lists.`}
+                        )} in user lists.`}
                     </Text>
                 )}
             </Box>
