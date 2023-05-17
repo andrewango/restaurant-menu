@@ -43,7 +43,8 @@ describe("ItemListUI Tests", () => {
             ingredients: ["Tomato sauce", "Cheese", "Pepperoni"],
             popular: true,
             spicy: false,
-            price: 10.99
+            price: 10.99,
+            id: 1
         },
         {
             quantity: 1,
@@ -55,7 +56,8 @@ describe("ItemListUI Tests", () => {
             ingredients: ["Beef patty", "Cheese", "Lettuce", "Tomato"],
             popular: false,
             spicy: true,
-            price: 8.99
+            price: 8.99,
+            id: 2
         }
     ];
 

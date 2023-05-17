@@ -29,7 +29,8 @@ export default function AddNewFood() {
         popular: false,
         spicy: false,
         price: 0,
-        quantity: 0
+        quantity: 0,
+        id: 1
     });
 
     const { name, image, desc, rating, type, ingredients, price } = food;

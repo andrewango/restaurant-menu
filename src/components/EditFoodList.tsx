@@ -180,6 +180,7 @@ export default function EditFoodList(): JSX.Element {
                                     editSpicy={food.spicy}
                                     editPrice={food.price}
                                     editQuantity={food.quantity}
+                                    editId={food.id}
                                 ></EditFoodTabs>
                             )
                         )}

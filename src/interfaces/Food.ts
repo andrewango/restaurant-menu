@@ -1,4 +1,5 @@
 export interface foodProps {
+    id: number;
     quantity: number;
     name: string;
     image: string;

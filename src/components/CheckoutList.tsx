@@ -24,17 +24,13 @@ import {
     FormLabel,
     Input,
     Center,
-    CardFooter,
-    ButtonGroup,
-    IconButton,
-    Icon
+    CardFooter
 } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { foodProps } from "../interfaces/Food";
 import { MenuList } from "./AddNewFood";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
-import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import "./Styles.css";
 
 export function CurrentCheckoutList(): foodProps[] {
@@ -117,31 +113,32 @@ export default function CheckoutList(): JSX.Element {
 
         if (chosenFood) {
             setCheckoutList((checkoutList) => {
-                const existingFoodIndex = checkoutList.findIndex(
-                    (food) => food.name === name
-                );
-
                 const newFoodItem = {
                     ...chosenFood,
                     ingredients: chosenFood.ingredients,
                     type: chosenFood.type,
-                    quantity: 1
+                    quantity: 1,
+                    id:
+                        checkoutList.length > 0
+                            ? checkoutList[checkoutList.length - 1].id + 1
+                            : 1
                 };
 
-                const updatedCheckoutList = [...checkoutList, newFoodItem];
-
-                // If the same food already exists in the checkout list, increase its quantity
-                if (existingFoodIndex !== -1) {
-                    updatedCheckoutList[existingFoodIndex].quantity += 1;
-                    const indices = updatedCheckoutList
-                        .map((food, index) => (food.name === name ? index : -1))
-                        .filter((food) => food !== -1);
-
-                    indices.forEach((index) => {
-                        updatedCheckoutList[index].quantity =
-                            updatedCheckoutList[existingFoodIndex].quantity;
-                    });
-                }
+                const updatedCheckoutList: foodProps[] = [
+                    ...checkoutList.map((food: foodProps) => {
+                        return {
+                            ...food,
+                            ingredients: [...food.ingredients],
+                            type: [...food.type],
+                            quantity:
+                                food.name === name
+                                    ? food.quantity + 1
+                                    : food.quantity,
+                            id: food.id
+                        };
+                    }),
+                    newFoodItem
+                ];
 
                 sessionStorage.setItem(
                     "checkout",
@@ -184,18 +181,15 @@ export default function CheckoutList(): JSX.Element {
                     (food: foodProps): foodProps => ({
                         ...food,
                         type: [...food.type],
-                        ingredients: [...food.ingredients]
+                        ingredients: [...food.ingredients],
+                        quantity:
+                            food.name === name
+                                ? food.quantity - 1
+                                : food.quantity,
+                        id: food.id - 1
                     })
                 );
                 newCheckoutList.splice(foodToRemoveIndex, 1);
-
-                const indices = newCheckoutList
-                    .map((food, index) => (food.name === name ? index : -1))
-                    .filter((food) => food !== -1);
-
-                indices.forEach((index) => {
-                    newCheckoutList[index].quantity -= 1;
-                });
 
                 sessionStorage.setItem(
                     "checkout",
@@ -230,47 +224,17 @@ export default function CheckoutList(): JSX.Element {
     // CheckoutItem
 
     function CheckoutItem({
+        id,
         name,
         ingredients,
-        quantity,
         onIngredientsUpdate
     }: {
+        id: number;
         name: string;
         ingredients: string[];
         quantity: number;
         onIngredientsUpdate: (newIngredients: string[]) => void;
     }): JSX.Element {
-        const handleMinusClick = (name: string, quantity: number) => {
-            if (quantity === 1) {
-                removeFoodFromCheckoutList(name);
-            } else {
-                const existingFoodIndex = checkoutList.findIndex(
-                    (food) => food.name === name
-                );
-                const updatedCheckoutList = [...checkoutList];
-                updatedCheckoutList[existingFoodIndex].quantity -= 1;
-                setCheckoutList(updatedCheckoutList);
-                sessionStorage.setItem(
-                    "checkout",
-                    JSON.stringify(updatedCheckoutList)
-                );
-                const currentUser: userProps = GetCurrentUser();
-                const newUser: userProps = {
-                    ...currentUser,
-                    order: updatedCheckoutList
-                };
-                sessionStorage.setItem("user", JSON.stringify(newUser));
-                const userId = newUser.orderID;
-                const newCustomerList = ListOfCustomers().map(
-                    (customer: userProps) =>
-                        customer.orderID === userId ? { ...newUser } : customer
-                );
-                sessionStorage.setItem(
-                    "customers",
-                    JSON.stringify(newCustomerList)
-                );
-            }
-        };
         const [, drag] = useDrag(() => ({
             type: "removeItem",
             item: { name: name },
@@ -306,7 +270,7 @@ export default function CheckoutList(): JSX.Element {
                         _expanded={{ bg: "tomato", color: "white" }}
                     >
                         <Box as="span" flex="1" textAlign="center" ml={10}>
-                            {name}
+                            {`(${id}) ${name}`}
                         </Box>
                         <AccordionIcon />
                     </AccordionButton>
@@ -331,43 +295,6 @@ export default function CheckoutList(): JSX.Element {
                     ) : (
                         <>
                             <Flex padding={0.5}>
-                                <Box>
-                                    {/* <ButtonGroup
-                                        className="checkout-quantity"
-                                        size="sm"
-                                        isAttached
-                                    >
-                                        <IconButton
-                                            data-testid="increment-button"
-                                            onClick={() =>
-                                                addFoodToCheckoutList(name)
-                                            }
-                                            className="checkout-button"
-                                            aria-label="Increase quantity"
-                                            icon={
-                                                <Icon
-                                                    as={AddIcon}
-                                                    fontSize="11px"
-                                                />
-                                            }
-                                        ></IconButton>
-                                        <IconButton
-                                            data-testid="decrement-button"
-                                            onClick={() =>
-                                                handleMinusClick(name, quantity)
-                                            }
-                                            className="checkout-button"
-                                            aria-label="Decrease quantity"
-                                            icon={
-                                                <Icon
-                                                    as={MinusIcon}
-                                                    fontSize="11px"
-                                                />
-                                            }
-                                        ></IconButton>
-                                    </ButtonGroup> */}
-                                </Box>
-
                                 <Box className="checkout-edit-box">
                                     {ingredients.join(", ")}
                                 </Box>
@@ -388,11 +315,11 @@ export default function CheckoutList(): JSX.Element {
     }
 
     const handleIngredientsUpdate = (
-        foodName: string,
+        foodId: number,
         newIngredients: string[]
     ) => {
         const newCheckout = checkoutList.map((food: foodProps) => {
-            if (food.name === foodName) {
+            if (food.id === foodId) {
                 return {
                     ...food,
                     ingredients: newIngredients
@@ -493,11 +420,12 @@ export default function CheckoutList(): JSX.Element {
                                                 newIngredients
                                             ) =>
                                                 handleIngredientsUpdate(
-                                                    food.name,
+                                                    food.id,
                                                     newIngredients
                                                 )
                                             }
                                             quantity={food.quantity}
+                                            id={food.id}
                                         ></CheckoutItem>
                                     )
                                 )}

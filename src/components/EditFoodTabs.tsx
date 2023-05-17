@@ -26,7 +26,8 @@ export default function EditFoodTabs({
     editPopular,
     editSpicy,
     editPrice,
-    editQuantity
+    editQuantity,
+    editId
 }: {
     editName: string;
     editImage: string;
@@ -38,6 +39,7 @@ export default function EditFoodTabs({
     editSpicy: boolean;
     editPrice: number;
     editQuantity: number;
+    editId: number;
 }): JSX.Element {
     const [foodlist, setFoodlist] = useState<foodProps[]>(MenuList());
 
@@ -51,7 +53,8 @@ export default function EditFoodTabs({
         popular: editPopular,
         spicy: editSpicy,
         price: editPrice,
-        quantity: editQuantity
+        quantity: editQuantity,
+        id: editId
     });
 
     const {

@@ -47,6 +47,7 @@ const args: {
     editSpicy: boolean;
     editPrice: number;
     editQuantity: number;
+    editId: number;
 } = {
     editName: "Marshmallow",
     editImage: "Marshmallows",
@@ -57,7 +58,8 @@ const args: {
     editPopular: true,
     editSpicy: false,
     editPrice: 2,
-    editQuantity: 0
+    editQuantity: 0,
+    editId: 1
 };
 
 describe("EditFoodTabs tests", () => {
