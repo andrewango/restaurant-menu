@@ -2,12 +2,12 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.847 s)
+PASS src/component-unit-tests/EditFoodTabs.test.tsx (13.52 s)
   ● Console
 
     console.log
       <ref *1> HTMLButtonElement {
-        '__reactFiber$x4kjofbvs4': <ref *2> FiberNode {
+        '__reactFiber$vkmk2tkmt5n': <ref *2> FiberNode {
           tag: 5,
           key: null,
           elementType: 'button',
@@ -172,7 +172,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.847 s)
           _debugNeedsRemount: false,
           _debugHookTypes: null
         },
-        '__reactProps$x4kjofbvs4': {
+        '__reactProps$vkmk2tkmt5n': {
           'data-theme': undefined,
           children: 'Black Licorice Ice Cream',
           type: 'button',
@@ -196,7 +196,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.847 s)
         [Symbol(SameObject caches)]: [Object: null prototype] { dataset: DOMStringMap {} }
       }
 
-      at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:243:17)
+      at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:245:17)
 
     console.log
       []
@@ -219,7 +219,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.847 s)
     console.log
       null
 
-      at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:280:17)
+      at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:282:17)
 
     console.error
       Error: Not implemented: navigation (except hash changes)
@@ -228,7 +228,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.847 s)
           at exports.navigate (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/window/navigation.js:54:3)
           at LocationImpl.reload (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:236:5)
           at Location.reload (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/generated/Location.js:99:36)
-          at handleSubmit (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.tsx:91:18)
+          at handleSubmit (/home/runner/work/restaurant-menu/restaurant-menu/src/components/EditFoodTabs.tsx:94:18)
           at HTMLUnknownElement.callCallback (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
           at HTMLUnknownElement.callTheUserObjectsOperation (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
           at innerInvokeEventListeners (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
@@ -265,7 +265,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.847 s)
           at fireEvent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
           at Function.fireEvent.<computed> [as submit] (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
           at Function.submit (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@testing-library/react/dist/fire-event.js:18:52)
-          at Object.<anonymous> (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:369:19)
+          at Object.<anonymous> (/home/runner/work/restaurant-menu/restaurant-menu/src/component-unit-tests/EditFoodTabs.test.tsx:371:19)
           at Promise.then.completed (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/utils.js:316:10)
@@ -274,13 +274,13 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.847 s)
           at _runTestsForDescribeBlock (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/run.js:66:9)
           at _runTestsForDescribeBlock (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/run.js:60:9) undefined
 
-      89 |         e.preventDefault();
-      90 |         onSubmit();
-    > 91 |         location.reload();
+      92 |         e.preventDefault();
+      93 |         onSubmit();
+    > 94 |         location.reload();
          |                  ^
-      92 |     };
-      93 |
-      94 |     const onSubmit = () => {
+      95 |     };
+      96 |
+      97 |     const onSubmit = () => {
 
       at VirtualConsole.<anonymous> (node_modules/jsdom/lib/jsdom/virtual-console.js:29:45)
       at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
@@ -288,7 +288,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.847 s)
       at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:54:3)
       at LocationImpl.reload (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:236:5)
       at Location.reload (node_modules/jsdom/lib/jsdom/living/generated/Location.js:99:36)
-      at handleSubmit (src/components/EditFoodTabs.tsx:91:18)
+      at handleSubmit (src/components/EditFoodTabs.tsx:94:18)
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:4164:14)
       at HTMLUnknownElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
       at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
@@ -325,9 +325,9 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.847 s)
       at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
       at Function.fireEvent.<computed> [as submit] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
       at Function.submit (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:369:19)
+      at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:371:19)
 
-PASS src/component-unit-tests/EditFoodMenu.test.tsx (10.735 s)
+PASS src/component-unit-tests/EditFoodMenu.test.tsx (13.756 s)
   ● Console
 
     console.log
@@ -2122,7 +2122,7 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (10.735 s)
 
       at setListHelper (src/components/EditFoodMenu.tsx:82:21)
 
-PASS src/component-unit-tests/SearchBar.test.tsx (8.87 s)
+PASS src/component-unit-tests/SearchBar.test.tsx (11.524 s)
   ● Console
 
     console.log
@@ -3917,985 +3917,447 @@ PASS src/component-unit-tests/SearchBar.test.tsx (8.87 s)
 
       at setListHelper (src/components/SearchBar.tsx:82:21)
 
-PASS src/component-unit-tests/CheckoutList.test.tsx (5.303 s)
-  ● Console
+FAIL src/component-unit-tests/CheckoutList.test.tsx (6.138 s)
+  ● CheckoutList tests › Customer can increment the quantity of the item after dragging it
 
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+    TestingLibraryElementError: Unable to find an element by: [data-testid="Pepperoni Pizza - Quantity"]
 
-      31 |     );
-      32 |
-    > 33 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      34 | };
-      35 |
-      36 | describe("CheckoutList tests", () => {
+    Ignored nodes: comments, script, style
+    [36m<body[39m
+      [33mclass[39m=[32m"chakra-ui-light"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"background"[39m
+          [33mdata-testid[39m=[32m"landing-page"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"website-title title css-k008qs"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-0"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"chakra-heading css-1yud1sb"[39m
+              [36m>[39m
+                [0mteam 13[0m
+              [36m</h1>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"chakra-text css-1vpdv9u"[39m
+              [36m>[39m
+                [0mgood food, good mood.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"title-box css-0"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"restaurant-logo"[39m
+                [33mheight[39m=[32m"150px"[39m
+                [33msrc[39m=[32m"restaurant-logo.png"[39m
+                [33mwidth[39m=[32m"150px"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-17xejub"[39m
+            [36m/>[39m
+            [36m<div>[39m
+              [36m<form>[39m
+                [36m<label>[39m
+                  [0m Role [0m
+                [36m</label>[39m
+                [36m<select[39m
+                  [33mclass[39m=[32m"sc-beqWaB bEYCSg"[39m
+                  [33mdata-testid[39m=[32m"role-select"[39m
+                  [33mid[39m=[32m"Customer"[39m
+                  [33mname[39m=[32m"Customer"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Owner"[39m
+                    [33mid[39m=[32m"Owner"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Owner"[39m
+                  [36m>[39m
+                    [0mOwner[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Employee"[39m
+                    [33mid[39m=[32m"Employee"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Employee"[39m
+                  [36m>[39m
+                    [0mEmployee[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Customer 1"[39m
+                    [33mid[39m=[32m"Customer"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Customer"[39m
+                  [36m>[39m
+                    [0mCustomer[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</form>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<nav[39m
+            [33mclass[39m=[32m"navbar css-zke1y"[39m
+            [33mdata-testid[39m=[32m"bar"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mhref[39m=[32m"#/"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"navbtn css-2lzsxm"[39m
+              [36m>[39m
+                [0mmenu[0m
+              [36m</span>[39m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=[32m"#/AboutUs"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"navbtn css-0"[39m
+              [36m>[39m
+                [0mabout us[0m
+              [36m</span>[39m
+            [36m</a>[39m
+          [36m</nav>[39m
+          [36m<div>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"chakra-heading body-heading css-1dklj6k"[39m
+            [36m>[39m
+              [0mour menu[0m
+            [36m</h2>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"chakra-text body-text css-0"[39m
+            [36m>[39m
+              [0mopen 12-9 pm[0m
+            [36m</p>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"css-v9g40c"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-nkki96"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mdata-testid[39m=[32m"searchbar"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"filter form-label"[39m
+                    [33mfor[39m=[32m"formCorrectAnswer"[39m
+                  [36m>[39m
+                    [0mSearch Menu[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"search-input"[39m
+                    [33mid[39m=[32m"formCorrectAnswer"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"chakra-stack css-1a353lp"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"filter css-0"[39m
+                  [36m>[39m
+                    [0mFilter: [0m
+                  [36m</div>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"spicy-filter-button"[39m
+                    [36m>[39m
+                      [0mSpicy[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"popular-filter-button"[39m
+                    [36m>[39m
+                      [0mPopular[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"appetizer-filter-button"[39m
+                    [36m>[39m
+                      [0mAppetizers[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"entree-filter-button"[39m
+                    [36m>[39m
+                      [0mEntree[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"dessert-filter-button"[39m
+                    [36m>[39m
+                      [0mDessert[0m...
 
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:38:9)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      31 |     );
-      32 |
-    > 33 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      34 | };
-      35 |
-      36 | describe("CheckoutList tests", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:38:9)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      31 |     );
-      32 |
-    > 33 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      34 | };
-      35 |
-      36 | describe("CheckoutList tests", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:43:9)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      31 |     );
-      32 |
-    > 33 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      34 | };
-      35 |
-      36 | describe("CheckoutList tests", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:43:9)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      52 |         const checkoutList = screen.getByTestId("checkout-list");
-      53 |         fireEvent.dragStart(foodItem);
-    > 54 |         fireEvent.drop(checkoutList);
-         |                   ^
-      55 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
-      56 |
-      57 |         const foodItemInCheckoutList = screen.getByTestId(
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:54:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      52 |         const checkoutList = screen.getByTestId("checkout-list");
-      53 |         fireEvent.dragStart(foodItem);
-    > 54 |         fireEvent.drop(checkoutList);
-         |                   ^
-      55 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
-      56 |
-      57 |         const foodItemInCheckoutList = screen.getByTestId(
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:54:19)
-
-    console.log
-      0
-
-      at src/components/CheckoutList.tsx:233:25
-
-    console.log
-      [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
-
-      at src/components/CheckoutList.tsx:236:29
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      60 |         const trash = screen.getByTestId("checkout-trash");
-      61 |         fireEvent.dragStart(foodItemInCheckoutList);
-    > 62 |         fireEvent.drop(trash);
-         |                   ^
-      63 |     });
-      64 |
-      65 |     test("The customer is able to delete items from their checkout list", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:62:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      60 |         const trash = screen.getByTestId("checkout-trash");
-      61 |         fireEvent.dragStart(foodItemInCheckoutList);
-    > 62 |         fireEvent.drop(trash);
-         |                   ^
-      63 |     });
-      64 |
-      65 |     test("The customer is able to delete items from their checkout list", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:62:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      31 |     );
-      32 |
-    > 33 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      34 | };
-      35 |
-      36 | describe("CheckoutList tests", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:66:9)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      31 |     );
-      32 |
-    > 33 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      34 | };
-      35 |
-      36 | describe("CheckoutList tests", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:66:9)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      75 |         const checkoutList = screen.getByTestId("checkout-list");
-      76 |         fireEvent.dragStart(foodItem);
-    > 77 |         fireEvent.drop(checkoutList);
-         |                   ^
-      78 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
-      79 |
-      80 |         // Remove the item by dragging it to trash can
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:77:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      75 |         const checkoutList = screen.getByTestId("checkout-list");
-      76 |         fireEvent.dragStart(foodItem);
-    > 77 |         fireEvent.drop(checkoutList);
-         |                   ^
-      78 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
-      79 |
-      80 |         // Remove the item by dragging it to trash can
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:77:19)
-
-    console.log
-      0
-
-      at src/components/CheckoutList.tsx:233:25
-
-    console.log
-      [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
-
-      at src/components/CheckoutList.tsx:236:29
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      84 |         const trash = screen.getByTestId("checkout-trash");
-      85 |         fireEvent.dragStart(foodItemInCheckoutList);
-    > 86 |         fireEvent.drop(trash);
-         |                   ^
-      87 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
-      88 |     });
-      89 |
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:86:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      84 |         const trash = screen.getByTestId("checkout-trash");
-      85 |         fireEvent.dragStart(foodItemInCheckoutList);
-    > 86 |         fireEvent.drop(trash);
-         |                   ^
-      87 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
-      88 |     });
-      89 |
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:86:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      31 |     );
-      32 |
-    > 33 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      34 | };
-      35 |
-      36 | describe("CheckoutList tests", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:91:9)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      31 |     );
-      32 |
-    > 33 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      34 | };
-      35 |
-      36 | describe("CheckoutList tests", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:91:9)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-       99 |         const checkoutList = screen.getByTestId("checkout-list");
-      100 |         fireEvent.dragStart(foodItem);
-    > 101 |         fireEvent.drop(checkoutList);
-          |                   ^
-      102 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
       103 |
       104 |         // Check if item quantity increments
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:101:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-       99 |         const checkoutList = screen.getByTestId("checkout-list");
-      100 |         fireEvent.dragStart(foodItem);
-    > 101 |         fireEvent.drop(checkoutList);
-          |                   ^
-      102 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
-      103 |
-      104 |         // Check if item quantity increments
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:101:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      105 |         let quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
+    > 105 |         let quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
+          |                               ^
       106 |         const incrementButton = screen.getByTestId("increment-button");
-    > 107 |         fireEvent.click(incrementButton);
-          |                   ^
+      107 |         fireEvent.click(incrementButton);
       108 |         await waitFor(() => {
-      109 |             quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
-      110 |             expect(quantity).toHaveTextContent("2");
 
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as click] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:107:19)
+      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at getByTestId (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:105:31)
 
-    console.log
-      0
+  ● CheckoutList tests › Customer can decrement the quantity of the item after dragging it
 
-      at src/components/CheckoutList.tsx:233:25
+    TestingLibraryElementError: Found multiple elements with the text: /Pepperoni Pizza/i
 
-    console.log
-      [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
+    Here are the matching elements:
 
-      at src/components/CheckoutList.tsx:236:29
+    Ignored nodes: comments, script, style
+    [36m<h2[39m
+      [33mclass[39m=[32m"chakra-heading css-1dalxjy"[39m
+    [36m>[39m
+      [0mPepperoni Pizza[0m
+    [36m</h2>[39m
 
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+    Ignored nodes: comments, script, style
+    [36m<span[39m
+      [33mclass[39m=[32m"css-r9y281"[39m
+    [36m>[39m
+      [0m(1) Pepperoni Pizza[0m
+    [36m</span>[39m
 
-      117 |         const trash = screen.getByTestId("checkout-trash");
-      118 |         fireEvent.dragStart(foodItemInCheckoutList);
-    > 119 |         fireEvent.drop(trash);
-          |                   ^
-      120 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
-      121 |     });
-      122 |
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
 
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:119:19)
+    Ignored nodes: comments, script, style
+    [36m<body[39m
+      [33mclass[39m=[32m"chakra-ui-light"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"background"[39m
+          [33mdata-testid[39m=[32m"landing-page"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"website-title title css-k008qs"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-0"[39m
+            [36m>[39m
+              [36m<h1[39m
+                [33mclass[39m=[32m"chakra-heading css-1yud1sb"[39m
+              [36m>[39m
+                [0mteam 13[0m
+              [36m</h1>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"chakra-text css-1vpdv9u"[39m
+              [36m>[39m
+                [0mgood food, good mood.[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"title-box css-0"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"restaurant-logo"[39m
+                [33mheight[39m=[32m"150px"[39m
+                [33msrc[39m=[32m"restaurant-logo.png"[39m
+                [33mwidth[39m=[32m"150px"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-17xejub"[39m
+            [36m/>[39m
+            [36m<div>[39m
+              [36m<form>[39m
+                [36m<label>[39m
+                  [0m Role [0m
+                [36m</label>[39m
+                [36m<select[39m
+                  [33mclass[39m=[32m"sc-beqWaB bEYCSg"[39m
+                  [33mdata-testid[39m=[32m"role-select"[39m
+                  [33mid[39m=[32m"Customer"[39m
+                  [33mname[39m=[32m"Customer"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Owner"[39m
+                    [33mid[39m=[32m"Owner"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Owner"[39m
+                  [36m>[39m
+                    [0mOwner[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Employee"[39m
+                    [33mid[39m=[32m"Employee"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Employee"[39m
+                  [36m>[39m
+                    [0mEmployee[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mdata-testid[39m=[32m"Customer 1"[39m
+                    [33mid[39m=[32m"Customer"[39m
+                    [33mstyle[39m=[32m"color: black;"[39m
+                    [33mvalue[39m=[32m"Customer"[39m
+                  [36m>[39m
+                    [0mCustomer[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</form>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<nav[39m
+            [33mclass[39m=[32m"navbar css-zke1y"[39m
+            [33mdata-testid[39m=[32m"bar"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mhref[39m=[32m"#/"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"navbtn css-2lzsxm"[39m
+              [36m>[39m
+                [0mmenu[0m
+              [36m</span>[39m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=[32m"#/AboutUs"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"navbtn css-0"[39m
+              [36m>[39m
+                [0mabout us[0m
+              [36m</span>[39m
+            [36m</a>[39m
+          [36m</nav>[39m
+          [36m<div>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"chakra-heading body-heading css-1dklj6k"[39m
+            [36m>[39m
+              [0mour menu[0m
+            [36m</h2>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"chakra-text body-text css-0"[39m
+            [36m>[39m
+              [0mopen 12-9 pm[0m
+            [36m</p>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"css-v9g40c"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-nkki96"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mdata-testid[39m=[32m"searchbar"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"filter form-label"[39m
+                    [33mfor[39m=[32m"formCorrectAnswer"[39m
+                  [36m>[39m
+                    [0mSearch Menu[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mdata-testid[39m=[32m"search-input"[39m
+                    [33mid[39m=[32m"formCorrectAnswer"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"chakra-stack css-1a353lp"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"filter css-0"[39m
+                  [36m>[39m
+                    [0mFilter: [0m
+                  [36m</div>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"spicy-filter-button"[39m
+                    [36m>[39m
+                      [0mSpicy[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"popular-filter-button"[39m
+                    [36m>[39m
+                      [0mPopular[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"appetizer-filter-button"[39m
+                    [36m>[39m
+                      [0mAppetizers[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"entree-filter-button"[39m
+                    [36m>[39m
+                      [0mEntree[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"tag css-owrcz"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"css-1ny2kle"[39m
+                      [33mdata-testid[39m=[32m"dessert-filter-button"[39m
+                    [36m>[39m
+                      [0mDessert[0m...
 
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      117 |         const trash = screen.getByTestId("checkout-trash");
-      118 |         fireEvent.dragStart(foodItemInCheckoutList);
-    > 119 |         fireEvent.drop(trash);
-          |                   ^
-      120 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
-      121 |     });
-      122 |
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:119:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      31 |     );
-      32 |
-    > 33 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      34 | };
-      35 |
-      36 | describe("CheckoutList tests", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:124:9)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      31 |     );
-      32 |
-    > 33 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      34 | };
-      35 |
-      36 | describe("CheckoutList tests", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/component-unit-tests/CheckoutList.test.tsx:33:18)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:124:9)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
+      128 |         );
+      129 |         // Drag the item to our checkout list
+    > 130 |         expect(screen.queryByText(/Pepperoni Pizza/i)).toBeInTheDocument();
+          |                       ^
+      131 |         const foodItem = screen.getByTestId("Pepperoni Pizza");
       132 |         const checkoutList = screen.getByTestId("checkout-list");
       133 |         fireEvent.dragStart(foodItem);
-    > 134 |         fireEvent.drop(checkoutList);
-          |                   ^
-      135 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
-      136 |
-      137 |         // Check if item quantity increments
 
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:134:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      132 |         const checkoutList = screen.getByTestId("checkout-list");
-      133 |         fireEvent.dragStart(foodItem);
-    > 134 |         fireEvent.drop(checkoutList);
-          |                   ^
-      135 |         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
-      136 |
-      137 |         // Check if item quantity increments
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:134:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      138 |         let quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
-      139 |         const incrementButton = screen.getByTestId("increment-button");
-    > 140 |         fireEvent.click(incrementButton);
-          |                   ^
-      141 |         await waitFor(() => {
-      142 |             quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
-      143 |             expect(quantity).toHaveTextContent("2");
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as click] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:140:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      146 |         // Check if item quantity decrements
-      147 |         const decrementButton = screen.getByTestId("decrement-button");
-    > 148 |         fireEvent.click(decrementButton);
-          |                   ^
-      149 |         await waitFor(() => {
-      150 |             quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
-      151 |             expect(quantity).toHaveTextContent("1");
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as click] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.click (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:148:19)
-
-    console.log
-      0
-
-      at src/components/CheckoutList.tsx:233:25
-
-    console.log
-      [ { name: 'Customer', orderID: 1, order: [], role: 'Customer' } ]
-
-      at src/components/CheckoutList.tsx:236:29
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      158 |         const trash = screen.getByTestId("checkout-trash");
-      159 |         fireEvent.dragStart(foodItemInCheckoutList);
-    > 160 |         fireEvent.drop(trash);
-          |                   ^
-      161 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
-      162 |     });
-      163 | });
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:160:19)
-
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      158 |         const trash = screen.getByTestId("checkout-trash");
-      159 |         fireEvent.dragStart(foodItemInCheckoutList);
-    > 160 |         fireEvent.drop(trash);
-          |                   ^
-      161 |         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
-      162 |     });
-      163 | });
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26085:20)
-      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:78:28)
-      at fireEvent (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:12:35)
-      at Function.fireEvent.<computed> [as drop] (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/events.js:110:36)
-      at Function.drop (node_modules/@testing-library/react/dist/fire-event.js:18:52)
-      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:160:19)
+      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at queryByText (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (src/component-unit-tests/CheckoutList.test.tsx:130:23)
 
 PASS src/component-unit-tests/AddNewFood.test.tsx
   ● Console
@@ -4907,7 +4369,7 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
           at exports.navigate (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/window/navigation.js:54:3)
           at LocationImpl.reload (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:236:5)
           at Location.reload (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/generated/Location.js:99:36)
-          at handleSubmit (/home/runner/work/restaurant-menu/restaurant-menu/src/components/AddNewFood.tsx:72:18)
+          at handleSubmit (/home/runner/work/restaurant-menu/restaurant-menu/src/components/AddNewFood.tsx:73:18)
           at HTMLUnknownElement.callCallback (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
           at HTMLUnknownElement.callTheUserObjectsOperation (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
           at innerInvokeEventListeners (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
@@ -4953,13 +4415,13 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
           at _runTestsForDescribeBlock (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/run.js:66:9)
           at _runTestsForDescribeBlock (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/run.js:60:9) undefined
 
-      70 |         //     quantity: 0
-      71 |         // });
-    > 72 |         location.reload();
+      71 |         //     quantity: 0
+      72 |         // });
+    > 73 |         location.reload();
          |                  ^
-      73 |     };
-      74 |
-      75 |     const onSubmit = () => {
+      74 |     };
+      75 |
+      76 |     const onSubmit = () => {
 
       at VirtualConsole.<anonymous> (node_modules/jsdom/lib/jsdom/virtual-console.js:29:45)
       at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
@@ -4967,7 +4429,7 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
       at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:54:3)
       at LocationImpl.reload (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:236:5)
       at Location.reload (node_modules/jsdom/lib/jsdom/living/generated/Location.js:99:36)
-      at handleSubmit (src/components/AddNewFood.tsx:72:18)
+      at handleSubmit (src/components/AddNewFood.tsx:73:18)
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:4164:14)
       at HTMLUnknownElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
       at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
@@ -5013,7 +4475,7 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
           at exports.navigate (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/window/navigation.js:54:3)
           at LocationImpl.reload (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:236:5)
           at Location.reload (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/generated/Location.js:99:36)
-          at handleSubmit (/home/runner/work/restaurant-menu/restaurant-menu/src/components/AddNewFood.tsx:72:18)
+          at handleSubmit (/home/runner/work/restaurant-menu/restaurant-menu/src/components/AddNewFood.tsx:73:18)
           at HTMLUnknownElement.callCallback (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
           at HTMLUnknownElement.callTheUserObjectsOperation (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
           at innerInvokeEventListeners (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
@@ -5059,13 +4521,13 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
           at _runTestsForDescribeBlock (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/run.js:66:9)
           at _runTestsForDescribeBlock (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/run.js:60:9) undefined
 
-      70 |         //     quantity: 0
-      71 |         // });
-    > 72 |         location.reload();
+      71 |         //     quantity: 0
+      72 |         // });
+    > 73 |         location.reload();
          |                  ^
-      73 |     };
-      74 |
-      75 |     const onSubmit = () => {
+      74 |     };
+      75 |
+      76 |     const onSubmit = () => {
 
       at VirtualConsole.<anonymous> (node_modules/jsdom/lib/jsdom/virtual-console.js:29:45)
       at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
@@ -5073,7 +4535,7 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
       at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:54:3)
       at LocationImpl.reload (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:236:5)
       at Location.reload (node_modules/jsdom/lib/jsdom/living/generated/Location.js:99:36)
-      at handleSubmit (src/components/AddNewFood.tsx:72:18)
+      at handleSubmit (src/components/AddNewFood.tsx:73:18)
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:4164:14)
       at HTMLUnknownElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
       at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
@@ -5112,11 +4574,181 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
       at Function.submit (node_modules/@testing-library/react/dist/fire-event.js:18:52)
       at Object.<anonymous> (src/component-unit-tests/AddNewFood.test.tsx:131:19)
 
-PASS src/component-unit-tests/FoodItem.test.tsx
 PASS src/component-unit-tests/EditFoodUI.test.tsx
+PASS src/component-unit-tests/FoodItem.test.tsx
 PASS src/component-unit-tests/EditFoodList.test.tsx
 PASS src/component-unit-tests/ItemListUI.test.tsx
 PASS src/component-unit-tests/AddDeleteUsers.test.tsx
+  ● Console
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
+
+    console.log
+      []
+
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
+
 PASS src/component-unit-tests/SelectRole.test.tsx
 PASS src/component-unit-tests/RatingFeature.test.tsx
 PASS src/component-unit-tests/RemoveFood.test.tsx
@@ -5251,67 +4883,17 @@ PASS src/component-unit-tests/NavBar.test.tsx
 PASS src/App.test.tsx
   ● Console
 
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
+    console.log
+      []
 
-      29 |     );
-      30 |
-    > 31 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      32 | };
-      33 |
-      34 | describe("App", () => {
+      at map (src/components/AddDeleteUsers.tsx:174:45)
+          at Array.map (<anonymous>)
 
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/App.test.tsx:31:18)
-      at Object.<anonymous> (src/App.test.tsx:36:9)
+    console.log
+      []
 
-    console.warn
-      If 'allowMultiple' is passed, 'allowToggle' will be ignored. Either remove 'allowToggle' or 'allowMultiple' depending on whether you want multiple accordions visible or not
-
-      29 |     );
-      30 |
-    > 31 |     return render(ui, { wrapper: Wrapper });
-         |                  ^
-      32 | };
-      33 |
-      34 | describe("App", () => {
-
-      at warn (node_modules/@chakra-ui/shared-utils/dist/index.js:44:13)
-      at allowMultipleAndAllowToggleWarning (node_modules/@chakra-ui/accordion/dist/index.js:245:32)
-      at useAccordion (node_modules/@chakra-ui/accordion/dist/index.js:78:3)
-      at Accordion2 (node_modules/@chakra-ui/accordion/dist/index.js:269:50)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:16305:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:19226:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:21636:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:27426:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26560:12)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26466:5)
-      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26434:7)
-      at performConcurrentWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:25738:74)
-      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
-      at act (node_modules/react/cjs/react.development.js:2582:11)
-      at node_modules/@testing-library/react/dist/act-compat.js:63:25
-      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
-      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at renderWithProviders (src/App.test.tsx:31:18)
-      at Object.<anonymous> (src/App.test.tsx:36:9)
+      at map (src/components/AddDeleteUsers.tsx:191:45)
+          at Array.map (<anonymous>)
 
     console.error
       Warning: validateDOMNesting(...): <button> cannot appear as a descendant of <button>.
@@ -5464,49 +5046,49 @@ PASS src/App.test.tsx
       at Object.<anonymous> (src/App.test.tsx:56:9)
 
 PASS src/component-unit-tests/DeliveryDropDown.test.tsx
------------------------|---------|----------|---------|---------|-----------------------------------------------
-File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                             
------------------------|---------|----------|---------|---------|-----------------------------------------------
-All files              |   82.36 |    69.51 |   75.21 |   82.17 |                                               
- src                   |     100 |      100 |     100 |     100 |                                               
-  App.tsx              |     100 |      100 |     100 |     100 |                                               
- src/components        |   84.23 |    71.78 |   76.77 |   84.08 |                                               
-  AddDeleteUsers.tsx   |   90.24 |    43.75 |   76.92 |   90.24 | 41,89,142,213                                 
-  AddNewFood.tsx       |   80.76 |      100 |   66.66 |   80.76 | 47-50,201-221                                 
-  CheckoutList.tsx     |   82.08 |     52.5 |   76.74 |   81.67 | 79-83,143,244,264,305-313,317,414-433,490,515 
-  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                                 
-  EditFoodList.tsx     |   96.07 |       70 |   95.45 |   95.74 | 104-105                                       
-  EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                      
-  EditFoodTabs.tsx     |      96 |     92.3 |   88.88 |      96 | 267                                           
-  EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 73,142                                        
-  FoodItem.tsx         |   77.77 |    86.66 |      60 |   76.47 | 19-21,56                                      
-  ItemListUI.tsx       |     100 |       50 |     100 |     100 | 32                                            
-  NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                            
-  RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                            
-  RemoveFood.tsx       |   87.09 |    65.21 |   72.72 |   87.09 | 43,50,53,70                                   
-  SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                      
-  SelectRole.tsx       |   46.87 |       55 |      50 |   48.38 | 58-68,76-83,93                                
- src/interfaces        |       0 |        0 |       0 |       0 |                                               
-  CustomerList.ts      |       0 |        0 |       0 |       0 |                                               
-  EmployeeList.ts      |       0 |        0 |       0 |       0 |                                               
-  Food.ts              |       0 |        0 |       0 |       0 |                                               
-  ListOfCustomers.ts   |       0 |        0 |       0 |       0 |                                               
-  OwnerFoodItem.ts     |       0 |        0 |       0 |       0 |                                               
-  OwnerList.ts         |       0 |        0 |       0 |       0 |                                               
-  User.ts              |       0 |        0 |       0 |       0 |                                               
- src/pages             |   40.74 |    18.75 |   55.55 |   40.74 |                                               
-  AboutUs.tsx          |     100 |      100 |     100 |     100 |                                               
-  AddFood.tsx          |     100 |      100 |     100 |     100 |                                               
-  EditFood.tsx         |     100 |       50 |     100 |     100 | 18-46                                         
-  EditUsers.tsx        |     100 |      100 |     100 |     100 |                                               
-  Landing.tsx          |     100 |      100 |     100 |     100 |                                               
-  ManageFoods.tsx      |     100 |      100 |     100 |     100 |                                               
-  OwnerLanding.tsx     |      50 |      100 |   33.33 |      50 | 32-40                                         
-  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-98                                         
------------------------|---------|----------|---------|---------|-----------------------------------------------
+-----------------------|---------|----------|---------|---------|-------------------------------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                         
+-----------------------|---------|----------|---------|---------|-------------------------------------------
+All files              |   80.81 |    68.71 |      73 |   80.58 |                                           
+ src                   |     100 |      100 |     100 |     100 |                                           
+  App.tsx              |     100 |      100 |     100 |     100 |                                           
+ src/components        |    82.7 |    70.94 |   74.39 |   82.51 |                                           
+  AddDeleteUsers.tsx   |   82.35 |    38.88 |    62.5 |   82.35 | 41,89,142,172,178-186,234                 
+  AddNewFood.tsx       |   80.76 |      100 |   66.66 |   80.76 | 48-51,202-222                             
+  CheckoutList.tsx     |   75.78 |    47.36 |   69.44 |      75 | 75-79,129,217,248-256,260,319-338,395,420 
+  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                             
+  EditFoodList.tsx     |   96.07 |       70 |   95.45 |   95.74 | 104-105                                   
+  EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                  
+  EditFoodTabs.tsx     |      96 |     92.3 |   88.88 |      96 | 270                                       
+  EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 74,143                                    
+  FoodItem.tsx         |   77.77 |    86.66 |      60 |   76.47 | 19-21,56                                  
+  ItemListUI.tsx       |     100 |       50 |     100 |     100 | 32                                        
+  NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                        
+  RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                        
+  RemoveFood.tsx       |   87.09 |    65.21 |   72.72 |   87.09 | 43,50,53,70                               
+  SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122                  
+  SelectRole.tsx       |   46.87 |       55 |      50 |   48.38 | 58-68,76-83,93                            
+ src/interfaces        |       0 |        0 |       0 |       0 |                                           
+  CustomerList.ts      |       0 |        0 |       0 |       0 |                                           
+  EmployeeList.ts      |       0 |        0 |       0 |       0 |                                           
+  Food.ts              |       0 |        0 |       0 |       0 |                                           
+  ListOfCustomers.ts   |       0 |        0 |       0 |       0 |                                           
+  OwnerFoodItem.ts     |       0 |        0 |       0 |       0 |                                           
+  OwnerList.ts         |       0 |        0 |       0 |       0 |                                           
+  User.ts              |       0 |        0 |       0 |       0 |                                           
+ src/pages             |   40.74 |    18.75 |   55.55 |   40.74 |                                           
+  AboutUs.tsx          |     100 |      100 |     100 |     100 |                                           
+  AddFood.tsx          |     100 |      100 |     100 |     100 |                                           
+  EditFood.tsx         |     100 |       50 |     100 |     100 | 18-46                                     
+  EditUsers.tsx        |     100 |      100 |     100 |     100 |                                           
+  Landing.tsx          |     100 |      100 |     100 |     100 |                                           
+  ManageFoods.tsx      |     100 |      100 |     100 |     100 |                                           
+  OwnerLanding.tsx     |      50 |      100 |   33.33 |      50 | 32-40                                     
+  UserStats.tsx        |       0 |        0 |       0 |       0 | 25-98                                     
+-----------------------|---------|----------|---------|---------|-------------------------------------------
 
-Test Suites: 17 passed, 17 total
-Tests:       122 passed, 122 total
+Test Suites: 1 failed, 16 passed, 17 total
+Tests:       2 failed, 120 passed, 122 total
 Snapshots:   0 total
-Time:        52.764 s
+Time:        65.868 s
 Ran all test suites.
