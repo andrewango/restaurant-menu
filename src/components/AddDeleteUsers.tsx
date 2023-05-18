@@ -172,25 +172,30 @@ export default function AddDeleteUsers(): JSX.Element {
                         </Thead>
                         <Tbody>
                             {customersWithSearchText.map(
+                                // Make a new array of the each customer's order with the quantity of each food item in their order
                                 (customer: userProps) => {
                                     const displayOrder: foodProps[] =
                                         customer.order.reduce(
                                             (
-                                                acc: foodProps[],
+                                                newOrderToDisplay: foodProps[],
                                                 foodItem: foodProps
                                             ) => {
                                                 const existingItemIndex =
-                                                    acc.findIndex(
+                                                    newOrderToDisplay.findIndex(
                                                         (
                                                             existingItem: foodProps
                                                         ) =>
                                                             existingItem.name ===
                                                             foodItem.name
                                                     );
+                                                // If item is not already in the order to display, then add it
                                                 if (existingItemIndex === -1) {
-                                                    return [...acc, foodItem];
+                                                    return [
+                                                        ...newOrderToDisplay,
+                                                        foodItem
+                                                    ];
                                                 }
-                                                return acc;
+                                                return newOrderToDisplay;
                                             },
                                             []
                                         );
@@ -235,12 +240,15 @@ export default function AddDeleteUsers(): JSX.Element {
                                                     customer.orderID
                                                 }
                                             >
-                                                {displayOrder.map(
-                                                    (food: foodProps) =>
-                                                        food.quantity > 1
-                                                            ? `${food.name}: ${food.quantity}, `
-                                                            : `${food.name}, `
-                                                )}
+                                                {
+                                                    // If the quantity is greater than 1, show quantity, BUT if it's 1, then just show the name to avoid repetitiveness
+                                                    displayOrder.map(
+                                                        (food: foodProps) =>
+                                                            food.quantity > 1
+                                                                ? `${food.name}: ${food.quantity}, `
+                                                                : `${food.name}, `
+                                                    )
+                                                }
                                             </Td>
                                         </Tr>
                                     );

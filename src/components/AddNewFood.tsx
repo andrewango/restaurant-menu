@@ -62,22 +62,10 @@ export default function AddNewFood() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         onSubmit();
-        // console.log("menu" + sessionStorage.getItem("menu"));
-        // setFood({
-        //     name: "",s
-        //     image: "",
-        //     desc: "",
-        //     rating: 0,
-        //     type: [],
-        //     ingredients: [],
-        //     popular: false,
-        //     spicy: false,
-        //     price: 0,
-        //     quantity: 0
-        // });
         location.reload();
     };
 
+    // When submitting the form, add the new food to the menu list (THIS IS AN IMMUTABLE IMPLEMENTATION)
     const onSubmit = () => {
         const copy: foodProps[] = foodlist.map(
             (food: foodProps): foodProps => ({
@@ -92,6 +80,7 @@ export default function AddNewFood() {
     };
 
     return (
+        // Render our form
         <Stack w="full" h="full" p={10} spacing={20} alignItems="flex-start">
             <Heading size="2xl">New Food</Heading>
             <form onSubmit={handleSubmit}>
