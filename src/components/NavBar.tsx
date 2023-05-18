@@ -6,7 +6,7 @@ import { userProps } from "../interfaces/User";
 import "./Styles.css";
 
 /**
- * Component representing the navigation bar feature.
+ * Component representing the navigation bar feature with links based on the current user's role.
  * @returns JSX element representing the navigation bar.
  */
 
