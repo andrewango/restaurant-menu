@@ -15,6 +15,13 @@ import { GetCurrentUser } from "./SelectRole";
 import { userProps } from "../interfaces/User";
 import "./EditFoodStyles.css";
 
+/**
+ * Counts the number of orders for a specific food item.
+ * @param list - List of users.
+ * @param foodName - Name of the food item to count orders for.
+ * @returns The number of orders for the specified food item.
+ */
+
 function countOrders(list: userProps[], foodName: string): number {
     return list.reduce((count, user) => {
         return (
@@ -22,6 +29,17 @@ function countOrders(list: userProps[], foodName: string): number {
         );
     }, 0);
 }
+
+/**
+ * Component represents a food item card in the application.
+ * @param name - name of food item.
+ * @param image - image url for food item.
+ * @param desc - description of food item.
+ * @param ingredients - ingredients of food item.
+ * @param price - price of food item.
+ * @param rating - rating of food item.
+ * @returns JSX element representing the food item
+ */
 
 export default function FoodItem({
     name,
