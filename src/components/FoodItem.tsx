@@ -15,6 +15,13 @@ import { GetCurrentUser } from "./SelectRole";
 import { userProps } from "../interfaces/User";
 import "./EditFoodStyles.css";
 
+/**
+ * Counts the number of orders for a specific food item.
+ * @param list - List of users.
+ * @param foodName - Name of the food item to count orders for.
+ * @returns The number of orders for the specified food item.
+ */
+
 function countOrders(list: userProps[], foodName: string): number {
     return list.reduce((count, user) => {
         return (
