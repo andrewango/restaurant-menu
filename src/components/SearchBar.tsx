@@ -13,6 +13,11 @@ import {
 import { MenuList } from "./AddNewFood";
 import "./Styles.css";
 
+/**
+ * Component representing the search bar while checking sorting.
+ * @returns JSX.Element representing the search bar component
+ */
+
 export function SearchBar(): JSX.Element {
     const [foods, setFoods] = useState<foodProps[]>(MenuList());
     const [text, setName] = useState<string>("");
@@ -27,6 +32,10 @@ export function SearchBar(): JSX.Element {
     const [dessert, setDessert] = useState<boolean>(false);
     const [sort, setSort] = useState<string>("");
 
+    /**
+     * Updates the name based on the input event.
+     * @param event - The input event containing the updated value.
+     */
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
     }
@@ -39,6 +48,11 @@ export function SearchBar(): JSX.Element {
         setListHelper(text);
     }, [spicy, popular, high, low, rating, appetizer, entree, dessert]);
 
+    /**
+     * Sorts the given food array based on the given filter.
+     * @param foods - array of food items.
+     * @returns sorted array of food items
+     */
     function checkSorting(foods: foodProps[]) {
         if (!high && !low && !rating) {
             return checkFoodType(foods);
@@ -59,6 +73,11 @@ export function SearchBar(): JSX.Element {
         return checkFoodType(sortedFoods);
     }
 
+    /**
+     * Filters the food items based on selected food types (appetizer, entree, dessert).
+     * @param foods - array of food items.
+     * @returns array of food items sorted by type.
+     */
     function checkFoodType(foods: foodProps[]) {
         if (!appetizer && !entree && !dessert) {
             return foods;
@@ -74,6 +93,10 @@ export function SearchBar(): JSX.Element {
         return resorted;
     }
 
+    /**
+     * Helper function used to update the list of food items based on the provided search text and filter options.
+     * @param text - search text input from user
+     */
     function setListHelper(text: string) {
         if (text === "" && !spicy && !popular) {
             setList(checkSorting(foods));
