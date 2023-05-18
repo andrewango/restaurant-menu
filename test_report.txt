@@ -2,12 +2,12 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.939 s)
+PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.998 s)
   ● Console
 
     console.log
       <ref *1> HTMLButtonElement {
-        '__reactFiber$q38ckx5ym8': <ref *2> FiberNode {
+        '__reactFiber$ex51o4dkxq5': <ref *2> FiberNode {
           tag: 5,
           key: null,
           elementType: 'button',
@@ -172,7 +172,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.939 s)
           _debugNeedsRemount: false,
           _debugHookTypes: null
         },
-        '__reactProps$q38ckx5ym8': {
+        '__reactProps$ex51o4dkxq5': {
           'data-theme': undefined,
           children: 'Black Licorice Ice Cream',
           type: 'button',
@@ -327,7 +327,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.939 s)
       at Function.submit (node_modules/@testing-library/react/dist/fire-event.js:18:52)
       at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:371:19)
 
-PASS src/component-unit-tests/EditFoodMenu.test.tsx (8.873 s)
+PASS src/component-unit-tests/EditFoodMenu.test.tsx (9.139 s)
   ● Console
 
     console.log
@@ -2122,7 +2122,7 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (8.873 s)
 
       at setListHelper (src/components/EditFoodMenu.tsx:86:21)
 
-PASS src/component-unit-tests/SearchBar.test.tsx (7.203 s)
+PASS src/component-unit-tests/SearchBar.test.tsx (7.832 s)
   ● Console
 
     console.log
@@ -2571,7 +2571,7 @@ PASS src/component-unit-tests/SearchBar.test.tsx (7.203 s)
         }
       ]
 
-      at setListHelper (src/components/SearchBar.tsx:82:21)
+      at setListHelper (src/components/SearchBar.tsx:105:21)
 
     console.log
       [
@@ -3019,7 +3019,7 @@ PASS src/component-unit-tests/SearchBar.test.tsx (7.203 s)
         }
       ]
 
-      at setListHelper (src/components/SearchBar.tsx:82:21)
+      at setListHelper (src/components/SearchBar.tsx:105:21)
 
     console.log
       [
@@ -3467,7 +3467,7 @@ PASS src/component-unit-tests/SearchBar.test.tsx (7.203 s)
         }
       ]
 
-      at setListHelper (src/components/SearchBar.tsx:82:21)
+      at setListHelper (src/components/SearchBar.tsx:105:21)
 
     console.log
       [
@@ -3915,7 +3915,7 @@ PASS src/component-unit-tests/SearchBar.test.tsx (7.203 s)
         }
       ]
 
-      at setListHelper (src/components/SearchBar.tsx:82:21)
+      at setListHelper (src/components/SearchBar.tsx:105:21)
 
 PASS src/component-unit-tests/AddNewFood.test.tsx
   ● Console
@@ -4175,7 +4175,7 @@ PASS src/component-unit-tests/RemoveFood.test.tsx
           at ChakraComponent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/system/dist/index.js:228:71)
           at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/layout/dist/index.js:763:5
           at VStack
-          at RemoveFood (/home/runner/work/restaurant-menu/restaurant-menu/src/components/RemoveFood.tsx:23:45)
+          at RemoveFood (/home/runner/work/restaurant-menu/restaurant-menu/src/components/RemoveFood.tsx:28:45)
           at Router (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-router/lib/components.tsx:311:13)
           at BrowserRouter (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-router-dom/index.tsx:297:3)
 
@@ -4304,7 +4304,7 @@ PASS src/App.test.tsx
           at ChakraComponent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/system/dist/index.js:228:71)
           at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/layout/dist/index.js:763:5
           at VStack
-          at RemoveFood (/home/runner/work/restaurant-menu/restaurant-menu/src/components/RemoveFood.tsx:23:45)
+          at RemoveFood (/home/runner/work/restaurant-menu/restaurant-menu/src/components/RemoveFood.tsx:28:45)
           at div
           at /home/runner/work/restaurant-menu/restaurant-menu/node_modules/@emotion/react/dist/emotion-element-b63ca7c6.cjs.dev.js:43:23
           at ChakraComponent (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/@chakra-ui/system/dist/index.js:228:71)
@@ -4438,13 +4438,13 @@ All files              |   80.37 |    69.51 |   73.12 |   80.13 |
   EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 59,97-103,113-115,124-126             
   EditFoodTabs.tsx     |      96 |     92.3 |   88.88 |      96 | 273                                   
   EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 76,146                                
-  FoodItem.tsx         |   77.77 |    86.66 |      60 |   76.47 | 19-21,56                              
-  ItemListUI.tsx       |     100 |       50 |     100 |     100 | 32                                    
-  NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                    
-  RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 21                                    
-  RemoveFood.tsx       |   78.37 |    65.21 |   61.53 |   78.37 | 43,50,53,70,74-79                     
-  SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122              
-  SelectRole.tsx       |   46.87 |       55 |      50 |   48.38 | 58-68,76-83,93                        
+  FoodItem.tsx         |   77.77 |    86.66 |      60 |   76.47 | 26-28,74                              
+  ItemListUI.tsx       |     100 |       50 |     100 |     100 | 37                                    
+  NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 19                                    
+  RatingFeature.tsx    |      80 |       50 |   66.66 |      80 | 20                                    
+  RemoveFood.tsx       |   78.37 |    65.21 |   61.53 |   78.37 | 52,59,62,79,83-88                     
+  SearchBar.tsx        |    91.3 |     82.5 |      80 |    91.2 | 71,116-122,132-134,143-145            
+  SelectRole.tsx       |   46.87 |       55 |      50 |   48.38 | 73-83,95-102,112                      
  src/interfaces        |       0 |        0 |       0 |       0 |                                       
   CustomerList.ts      |       0 |        0 |       0 |       0 |                                       
   EmployeeList.ts      |       0 |        0 |       0 |       0 |                                       
@@ -4467,5 +4467,5 @@ All files              |   80.37 |    69.51 |   73.12 |   80.13 |
 Test Suites: 17 passed, 17 total
 Tests:       122 passed, 122 total
 Snapshots:   0 total
-Time:        43.191 s
+Time:        45.249 s
 Ran all test suites.
