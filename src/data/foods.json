@@ -2,7 +2,7 @@
     "FOODS": [
         {
             "name": "Pepperoni Pizza",
-            "image": "https://media.istockphoto.com/id/938742222/photo/cheesy-pepperoni-pizza.jpg?s=170667a&w=0&k=20&c=iNZpvQkg4H-Xe77n8ZP782eOIgvoM71EqS7n6Ra3NyE=",
+            "image": "https://www.simplyrecipes.com/thmb/I4razizFmeF8ua2jwuD0Pq4XpP8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-4-82c60893fcad4ade906a8a9f59b8da9d.jpg",
             "desc": "A delicious pizza topped with cheese and pepperoni",
             "rating": 4,
             "type": ["Italian", "Fast Food", "Entree"],
@@ -115,7 +115,7 @@
         },
         {
             "name": "Baklava",
-            "image": "https://live.staticflickr.com/65535/52813301711_1bbb49e820_m.jpg",
+            "image": "https://www.onceuponachef.com/images/2021/08/Baklava-1200x1471.jpg",
             "desc": "A sweet pastry made of layers of phyllo dough filled with chopped nuts and sweetened with syrup or honey.",
             "rating": 4.2,
             "type": ["Turkish", "Greek", "Dessert"],
@@ -167,7 +167,7 @@
         },
         {
             "name": "Black Licorice Ice Cream",
-            "image": "https://live.staticflickr.com/65535/52813757163_85000190c1_m.jpg",
+            "image": "https://icecreamfromscratch.com/wp-content/uploads/2022/10/Black-Licorice-Ice-Cream-1.2-720x720.jpg",
             "desc": "An ice cream made with black licorice extract, creating a strong and unique flavor.",
             "rating": 2.0,
             "type": ["Dessert"],
