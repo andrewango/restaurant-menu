@@ -30,6 +30,10 @@ const defaultCustomer: userProps = {
 };
 //sessionStorage.setItem("customers", JSON.stringify([defaultCustomer]));
 
+/**
+ * Gets current user from session storage.
+ * @returns current user object
+ */
 export function GetCurrentUser() {
     const user = sessionStorage.getItem("user");
     const userToParse =
