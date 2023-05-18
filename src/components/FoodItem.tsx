@@ -30,6 +30,17 @@ function countOrders(list: userProps[], foodName: string): number {
     }, 0);
 }
 
+/**
+ * Component representing a food item.
+ * @param name - name of food item.
+ * @param image - image url for food item.
+ * @param desc - description of food item.
+ * @param ingredients - ingreditends of food item.
+ * @param price - price of food item.
+ * @param rating - rating of food item.
+ * @returns JSX element representing the food item
+ */
+
 export default function FoodItem({
     name,
     image,
