@@ -63,14 +63,35 @@ export default function RemoveFood() {
                 order: customer.order
             })
         );
+
         const customersWithNewFood: userProps[] = copy.map(
-            (customer: userProps) => ({
-                ...customer,
-                order: customer.order.filter((original: foodProps): boolean => {
-                    return original.name !== id;
-                })
-            })
+            (customer: userProps) => {
+                const filteredOrder = customer.order.filter(
+                    (food: foodProps) => food.name !== id
+                );
+
+                const mappedOrder = filteredOrder.map((food: foodProps) => {
+                    const newIndex = filteredOrder.findIndex(
+                        (item: foodProps) => item.id === food.id
+                    );
+                    const updatedId = newIndex + 1;
+
+                    return {
+                        ...food,
+                        ingredients: [...food.ingredients],
+                        type: [...food.type],
+                        quantity: food.quantity,
+                        id: updatedId
+                    };
+                });
+
+                return {
+                    ...customer,
+                    order: mappedOrder
+                };
+            }
         );
+
         // Next, we update sessionStorage with this new customer list so it can render properly in other components
         sessionStorage.setItem(
             "customers",
