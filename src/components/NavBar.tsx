@@ -5,6 +5,11 @@ import { GetCurrentUser } from "./SelectRole";
 import { userProps } from "../interfaces/User";
 import "./Styles.css";
 
+/**
+ * Component representing the navigation bar feature.
+ * @returns JSX element representing the navigation bar.
+ */
+
 export default function NavBar() {
     const [currentUser, setCurrentUser] = useState<userProps>(GetCurrentUser());
 
