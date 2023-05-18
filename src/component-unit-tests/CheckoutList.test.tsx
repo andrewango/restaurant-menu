@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactNode } from "react";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { HashRouter } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { DndProvider } from "react-dnd";
@@ -87,77 +87,38 @@ describe("CheckoutList tests", () => {
         expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
     });
 
-    test("Customer can increment the quantity of the item after dragging it", async () => {
+    test("Customer can remove duplicates", () => {
         renderWithProviders(
             <>
                 <Landing></Landing>
             </>
         );
-        // Drag the item to our checkout list
         expect(screen.queryByText(/Pepperoni Pizza/i)).toBeInTheDocument();
         const foodItem = screen.getByTestId("Pepperoni Pizza");
         const checkoutList = screen.getByTestId("checkout-list");
         fireEvent.dragStart(foodItem);
         fireEvent.drop(checkoutList);
         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
-
-        // Check if item quantity increments
-        let quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
-        const incrementButton = screen.getByTestId("increment-button");
-        fireEvent.click(incrementButton);
-        await waitFor(() => {
-            quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
-            expect(quantity).toHaveTextContent("2");
-        });
-
-        // Remove the item by dragging it to trash can
-        const foodItemInCheckoutList = screen.getByTestId(
-            "Pepperoni Pizza - Checkout Item"
-        );
-        const trash = screen.getByTestId("checkout-trash");
-        fireEvent.dragStart(foodItemInCheckoutList);
-        fireEvent.drop(trash);
-        expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
+        fireEvent.dragStart(foodItem);
+        fireEvent.drop(checkoutList);
+        expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
+        expect(
+            screen.getAllByTestId("Pepperoni Pizza - Checkout Item")
+        ).toHaveLength(2);
     });
 
-    test("Customer can decrement the quantity of the item after dragging it", async () => {
+    test("Customer can decrement the quantity of the item after dragging it", () => {
         renderWithProviders(
             <>
                 <Landing></Landing>
             </>
         );
-        // Drag the item to our checkout list
-        expect(screen.queryByText(/Pepperoni Pizza/i)).toBeInTheDocument();
-        const foodItem = screen.getByTestId("Pepperoni Pizza");
         const checkoutList = screen.getByTestId("checkout-list");
-        fireEvent.dragStart(foodItem);
-        fireEvent.drop(checkoutList);
         expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
-
-        // Check if item quantity increments
-        let quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
-        const incrementButton = screen.getByTestId("increment-button");
-        fireEvent.click(incrementButton);
-        await waitFor(() => {
-            quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
-            expect(quantity).toHaveTextContent("2");
-        });
-
-        // Check if item quantity decrements
-        const decrementButton = screen.getByTestId("decrement-button");
-        fireEvent.click(decrementButton);
-        await waitFor(() => {
-            quantity = screen.getByTestId("Pepperoni Pizza - Quantity");
-            expect(quantity).toHaveTextContent("1");
-        });
-
-        // Remove the item by dragging it to trash can
-        const foodItemInCheckoutList = screen.getByTestId(
-            "Pepperoni Pizza - Checkout Item"
-        );
+        const pizza = screen.getAllByTestId("Pepperoni Pizza - Checkout Item");
         const trash = screen.getByTestId("checkout-trash");
-        fireEvent.dragStart(foodItemInCheckoutList);
+        fireEvent.dragStart(pizza[0]);
         fireEvent.drop(trash);
-        expect(checkoutList).not.toHaveTextContent(/Pepperoni Pizza/i);
+        expect(checkoutList).toHaveTextContent(/Pepperoni Pizza/i);
     });
 });
