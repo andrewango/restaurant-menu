@@ -168,6 +168,27 @@ export default function AddDeleteUsers(): JSX.Element {
                         <Tbody>
                             {customersWithSearchText.map(
                                 (customer: userProps) => {
+                                    const indices = customer.order.map(
+                                        (food: foodProps, index) => index
+                                    );
+                                    console.log(indices);
+                                    const displayOrder: foodProps[] = [];
+                                    indices.forEach((index) => {
+                                        const foodIndex =
+                                            displayOrder.findIndex(
+                                                (
+                                                    foodItem: foodProps
+                                                ): boolean =>
+                                                    customer.order[index]
+                                                        .name === foodItem.name
+                                            );
+                                        if (foodIndex === -1) {
+                                            displayOrder.push(
+                                                customer.order[index]
+                                            );
+                                        }
+                                    });
+                                    console.log(displayOrder);
                                     return (
                                         <Tr
                                             data-testid={
@@ -208,7 +229,7 @@ export default function AddDeleteUsers(): JSX.Element {
                                                     customer.orderID
                                                 }
                                             >
-                                                {customer.order.map(
+                                                {displayOrder.map(
                                                     (food: foodProps) =>
                                                         food.quantity > 1
                                                             ? food.name +
