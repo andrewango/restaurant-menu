@@ -22,12 +22,14 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./EditFoodStyles.css";
 import "./Styles.css";
 
+// HELPER FUNCTION TO RETRIEVE EDIT MENU LIST (DIFFERENT FROM CENTRAL ITEM LIST)
 export function EditMenuList() {
     const editMenu = sessionStorage.getItem("editFoodList");
     const editMenuToParse =
         editMenu !== null && editMenu !== undefined ? editMenu : "";
     return editMenuToParse ? JSON.parse(editMenuToParse) : [];
 }
+
 export default function EditFoodList(): JSX.Element {
     const [, drop] = useDrop(() => ({
         accept: "foodItem",
@@ -37,6 +39,7 @@ export default function EditFoodList(): JSX.Element {
         })
     }));
 
+    // DROP STATE TO REMOVE FOOD TAB
     const [{ isOver }, removeDrop] = useDrop(() => ({
         accept: "removeItem",
         drop: (item: foodProps) => {
@@ -48,6 +51,7 @@ export default function EditFoodList(): JSX.Element {
         })
     }));
 
+    // GET THE CENTRAL MENU ITEM LIST
     const menu = sessionStorage.getItem("menu");
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
     const foodlist = menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
@@ -56,6 +60,7 @@ export default function EditFoodList(): JSX.Element {
         (foodItem: foodProps): foodProps => foodItem
     );
 
+    // ADDING A FOOD TAB
     const addFoodToEditFoodList = (name: string) => {
         const chosenFood = foods.find((foodItem) => name === foodItem.name);
         if (
@@ -70,6 +75,7 @@ export default function EditFoodList(): JSX.Element {
         }
     };
 
+    // REMOVING A FOOD TAB
     const removeFoodToEditFoodList = (name: string) => {
         const chosenFood = EditMenuList().find(
             (foodItem: foodProps) => name === foodItem.name
@@ -94,6 +100,7 @@ export default function EditFoodList(): JSX.Element {
         }
     };
 
+    // KEEP STATE FOR WHICH FOOD TAB WE'RE CURRENTLY ON
     const tab = sessionStorage.getItem("tab");
     const tabToParse = tab !== null && tab !== undefined ? tab : 0;
     const [tabIndex, setTabIndex] = useState<number>(

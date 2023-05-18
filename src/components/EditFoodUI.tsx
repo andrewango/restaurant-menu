@@ -56,6 +56,7 @@ export default function EditFoodUI({
         quantity: number;
         id: number;
     }): JSX.Element {
+        // DRAG STATE FOR DRAGGING FOOD IN MENU LIST TO THE EDIT BOX TO CREATE A NEW FOOD TAB
         const [{ isDragging }, drag] = useDrag(() => ({
             type: "foodItem",
             item: { name: name },
@@ -64,6 +65,7 @@ export default function EditFoodUI({
             })
         }));
 
+        // RENDER A FOOD ITEM IN THE MENU AS A CARD WITH A TOGGLE TO DISPLAY FOOD INFO
         return (
             <Card
                 ref={drag}
@@ -134,6 +136,7 @@ export default function EditFoodUI({
     }
     const [isLargerThan2000] = useMediaQuery("(min-width: 2300px)");
 
+    // RENDER ALL OF OUR FOODS IN THE MENU IN A VERTICAL STACK
     return (
         <Box h="65vh" overflowY="scroll" mt={70} className="section">
             <VStack spacing="3px">

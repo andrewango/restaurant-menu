@@ -14,6 +14,7 @@ import { MenuList } from "./AddNewFood";
 import "./Styles.css";
 
 export function EditFoodMenu(): JSX.Element {
+    // States for our central menu display, input forms, and filters
     const [foods, setFoods] = useState<foodProps[]>(MenuList());
     const [text, setName] = useState<string>("");
     const [list, setList] = useState<foodProps[]>(foods);
@@ -39,6 +40,7 @@ export function EditFoodMenu(): JSX.Element {
         setListHelper(text);
     }, [spicy, popular, high, low, rating, appetizer, entree, dessert]);
 
+    // Sorting the prices
     function checkSorting(foods: foodProps[]) {
         if (!high && !low && !rating) {
             return checkFoodType(foods);
@@ -59,6 +61,7 @@ export function EditFoodMenu(): JSX.Element {
         return checkFoodType(sortedFoods);
     }
 
+    // Filters for food type
     function checkFoodType(foods: foodProps[]) {
         if (!appetizer && !entree && !dessert) {
             return foods;
@@ -74,6 +77,7 @@ export function EditFoodMenu(): JSX.Element {
         return resorted;
     }
 
+    // FUNCTION TO FILTER OUR LIST ACCORDING TO THE FILTER STATES
     function setListHelper(text: string) {
         if (text === "" && !spicy && !popular) {
             setList(checkSorting(foods));
@@ -138,6 +142,8 @@ export function EditFoodMenu(): JSX.Element {
         }
     }
 
+    // RENDER OUR CENTRAL MENU LIST ACCORDING TO APPLIED SEARCH QUERIES AND FILTERS
+    // ALSO RENDERS OUR SEARCH BOX AND FILTER TAGS/RADIO BUTTONS
     return (
         <div data-testid={"editfoodmenu"}>
             <Form.Group controlId="formCorrectAnswer">

@@ -11,12 +11,16 @@ import foodList from "../data/foods.json";
 import { foodProps } from "../interfaces/Food";
 import "./Styles.css";
 
+// THIS HELPER FUNCTION RETRIEVES THE CURRENT MENU LIST FROM SESSIONSTORAGE
 export function MenuList() {
     const menu = sessionStorage.getItem("menu");
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
     return menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
 }
+
+// THIS FUNCTION HANDLES THE FUNCTIONALITY AND RENDERS THE COMPONENT FOR ADDING NEW FOODS TO THE MENU LIST
 export default function AddNewFood() {
+    // Declare our variables
     const [foodlist, setFoodlist] = useState<foodProps[]>(MenuList());
 
     const [food, setFood] = useState<foodProps>({
@@ -35,6 +39,7 @@ export default function AddNewFood() {
 
     const { name, image, desc, rating, type, ingredients, price } = food;
 
+    // Our onChange functions for the input forms
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
 
@@ -57,22 +62,10 @@ export default function AddNewFood() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         onSubmit();
-        // console.log("menu" + sessionStorage.getItem("menu"));
-        // setFood({
-        //     name: "",s
-        //     image: "",
-        //     desc: "",
-        //     rating: 0,
-        //     type: [],
-        //     ingredients: [],
-        //     popular: false,
-        //     spicy: false,
-        //     price: 0,
-        //     quantity: 0
-        // });
         location.reload();
     };
 
+    // When submitting the form, add the new food to the menu list (THIS IS AN IMMUTABLE IMPLEMENTATION)
     const onSubmit = () => {
         const copy: foodProps[] = foodlist.map(
             (food: foodProps): foodProps => ({
@@ -87,6 +80,7 @@ export default function AddNewFood() {
     };
 
     return (
+        // Render our form
         <Stack w="full" h="full" p={10} spacing={20} alignItems="flex-start">
             <Heading size="2xl">New Food</Heading>
             <form onSubmit={handleSubmit}>

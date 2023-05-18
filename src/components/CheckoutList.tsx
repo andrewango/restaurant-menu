@@ -33,6 +33,7 @@ import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 import { userProps } from "../interfaces/User";
 import "./Styles.css";
 
+// HELPER FUNCTION TO RETRIEVE THE CURRENT USER'S CHECKOUT LIST FROM SESSIONSTORAGE
 export function CurrentCheckoutList(): foodProps[] {
     const checkout: string | null = sessionStorage.getItem("checkout");
     const checkoutToParse =
@@ -40,6 +41,7 @@ export function CurrentCheckoutList(): foodProps[] {
     return checkoutToParse ? JSON.parse(checkoutToParse) : [];
 }
 
+// RENDERS THE CHECKOUTLIST ON THE MAIN PAGE AND UPDATES STATE ACROSS ROUTING ACCORDINGLY
 export default function CheckoutList(): JSX.Element {
     // Get initial current checkout list
     const currentCheckout: foodProps[] = CurrentCheckoutList();
@@ -69,7 +71,6 @@ export default function CheckoutList(): JSX.Element {
     // Update the checkout list everytime we change customer role to the customer's order
     useEffect(() => {
         const handleStorage = () => {
-            //console.log("handleStorage called");
             // Get the menu window's "checkout" key from Session Storage
             const storage: string | null =
                 window.sessionStorage.getItem("checkout");
@@ -78,12 +79,13 @@ export default function CheckoutList(): JSX.Element {
                 : [];
             setCheckoutList(storageCheckout);
         };
-        // Event listeners to run handleStorage() if "checkout" key is updated
+        // Event listeners to run handleStorage() if "checkout" key is updated, which means that user role was changed
         window.addEventListener("checkoutUpdated", handleStorage);
         return () =>
             window.removeEventListener("checkoutUpdated", handleStorage);
     }, []);
 
+    // DROP STATE FOR ADDING FOOD FROM THE MENU TO THE CHECKOUT LIST
     const [, addDrop] = useDrop(() => ({
         accept: "foodItem",
         drop: (item: foodProps) => addFoodToCheckoutList(item.name),
@@ -92,6 +94,7 @@ export default function CheckoutList(): JSX.Element {
         })
     }));
 
+    // DROP STATE FOR REMOVING FOOD FROM CHECKOUT LIST BY DRAGGING TO TRASH CAN ICON
     const [{ isOver }, removeDrop] = useDrop(() => ({
         accept: "removeItem",
         drop: (item: foodProps) => {
@@ -102,21 +105,25 @@ export default function CheckoutList(): JSX.Element {
         })
     }));
 
+    // Create a new copy of the menu list to avoid mutation
     const foods: foodProps[] = MenuList().map(
         (foodItem: foodProps): foodProps => foodItem
     );
 
+    // THIS FUNCTION HANDLES ADDING THE FOOD TO THE CHECKOUTLIST STATE WHEN WE DRAG IT FROM THE MENU AND DROP IT INTO THE CHECKOUT BOX
     const addFoodToCheckoutList = (name: string) => {
         const chosenFood: foodProps | undefined = foods.find(
             (foodItem) => name === foodItem.name
         );
 
+        // Check if the food to add is in the menu list (error handling)
         if (chosenFood) {
             setCheckoutList((checkoutList) => {
+                // Create a copy of the chosen food with correct item ID to add to the checkout list (IMMUTABLE IMPLEMENTATION)
                 const newFoodItem = {
                     ...chosenFood,
-                    ingredients: chosenFood.ingredients,
-                    type: chosenFood.type,
+                    ingredients: [...chosenFood.ingredients],
+                    type: [...chosenFood.type],
                     quantity: 1,
                     id:
                         checkoutList.length > 0
@@ -124,6 +131,8 @@ export default function CheckoutList(): JSX.Element {
                             : 1
                 };
 
+                // Create a copy of our original checkout list with the new food item
+                // and updated quantities if chosen food is a duplicate (IMMUTABLE IMPLEMENTATION)
                 const updatedCheckoutList: foodProps[] = [
                     ...checkoutList.map((food: foodProps) => {
                         return {
@@ -140,6 +149,7 @@ export default function CheckoutList(): JSX.Element {
                     newFoodItem
                 ];
 
+                //  Update our SessionStorage states
                 sessionStorage.setItem(
                     "checkout",
                     JSON.stringify(updatedCheckoutList)
@@ -171,11 +181,14 @@ export default function CheckoutList(): JSX.Element {
         }
     };
 
+    // THIS FUNCTION HANDLES REMOVING FOOD FROM CHECKOUT STATE WHEN WE DRAG THE FOOD IN THE CHECKOUT LIST TO THE TRASH ICON ICON TO DELETE IT
     const removeFoodFromCheckoutList = (name: string, toRemoveId: number) => {
         setCheckoutList((updatedCheckout) => {
+            // Find the existing food's index in the user's checkout list by its unique ID
             const foodToRemoveIndex = updatedCheckout.findIndex(
                 (foodItem: foodProps): boolean => foodItem.id === toRemoveId
             );
+            // If it's in the checkout list, then create a copy of the original list that doesn't have it
             if (foodToRemoveIndex > -1) {
                 const newCheckoutList: foodProps[] = updatedCheckout.map(
                     (food: foodProps): foodProps => ({
@@ -191,6 +204,7 @@ export default function CheckoutList(): JSX.Element {
                 );
                 newCheckoutList.splice(foodToRemoveIndex, 1);
 
+                // Set our SessionStorage states
                 sessionStorage.setItem(
                     "checkout",
                     JSON.stringify(newCheckoutList)
@@ -219,8 +233,7 @@ export default function CheckoutList(): JSX.Element {
         });
     };
 
-    // CheckoutItem
-
+    // FUNCTION TO RENDER OUR CHECKOUT ITEM AND ITS "EDIT INGREDIENTS" FORM
     function CheckoutItem({
         id,
         name,
@@ -233,6 +246,7 @@ export default function CheckoutList(): JSX.Element {
         quantity: number;
         onIngredientsUpdate: (newIngredients: string[]) => void;
     }): JSX.Element {
+        // DRAGGING STATE
         const [, drag] = useDrag(() => ({
             type: "removeItem",
             item: { name: name, id: id },
@@ -241,6 +255,7 @@ export default function CheckoutList(): JSX.Element {
             })
         }));
 
+        // States for the input form
         const [editing, setEditing] = useState<boolean>(false);
         const [text, setText] = useState<string>(ingredients.join(", "));
 
@@ -248,6 +263,7 @@ export default function CheckoutList(): JSX.Element {
             setEditing(true);
         };
 
+        // Update the ingredients when we input the form for the unique food item
         function handleAccept() {
             setEditing(false);
             const newIngredients: string[] = text
@@ -260,6 +276,7 @@ export default function CheckoutList(): JSX.Element {
             setText(e.target.value);
         };
 
+        // Render our checkout item with the form component in it
         return (
             <AccordionItem data-testid={name + " - Checkout Item"} ref={drag}>
                 <h2>
@@ -312,6 +329,7 @@ export default function CheckoutList(): JSX.Element {
         );
     }
 
+    // FUNCTION TO UPDATE THE CHECKOUT LIST WHEN WE SUBMIT THE EDIT INGREDIENTS FORM
     const handleIngredientsUpdate = (
         foodId: number,
         newIngredients: string[]
@@ -343,6 +361,7 @@ export default function CheckoutList(): JSX.Element {
     //console.log(checkoutList);
     //}, [checkoutList]);
 
+    // RENDER OUR CHECKOUT LIST AND ITS SEARCH BAR
     const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (

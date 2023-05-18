@@ -94,6 +94,7 @@ export default function EditFoodTabs({
         location.reload();
     };
 
+    // Change the food fields in the menu list when we submit the forms to edit it
     const onSubmit = () => {
         const newFoodList: foodProps[] = foodlist.map(
             (original: foodProps): foodProps => {
@@ -109,6 +110,7 @@ export default function EditFoodTabs({
         sessionStorage.setItem("menu", JSON.stringify(newFoodList));
         sessionStorage.setItem("editFoodList", JSON.stringify(newEditFoodList));
 
+        // BELOW FUNCTIONALITY IS NOT REQUIRED, BUT KEPT IN CASE WE WOULD LIKE TO IMPLEMENT
         // // When food is edited, change the food's field in each customer checkout list that has it
         // // First, we map a new customer list with edited field for all customers who have the food item
         // const currentCustomers: userProps[] = ListOfCustomers();
@@ -135,6 +137,7 @@ export default function EditFoodTabs({
         // );
     };
 
+    // RENDER OUR CURRENT FOOD TAB WITH ITS FORMS. THESE FORMS WILL INITIALLY HAVE THE FOOD'S CURRENT FIELDS IN THE INPUTS FOR THE EMPLOYEE/OWNER TO EDIT.
     return (
         <TabPanel data-testid={name + " Tab Panel"}>
             <form data-testid="edit-food-form" onSubmit={handleSubmit}>

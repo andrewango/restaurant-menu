@@ -24,6 +24,7 @@ import { userProps } from "../interfaces/User";
 import { GetCurrentUser, ListOfCustomers } from "./SelectRole";
 //import styled from "styled-components";
 export function DeliveryDropDown(): JSX.Element {
+    // Our time state and possible times
     const [time, changeTime] = useState<string>("12:00");
     const TIMES = [
         "12:00",
@@ -37,18 +38,6 @@ export function DeliveryDropDown(): JSX.Element {
         "8:00",
         "9:00"
     ];
-    /*
-    const Button = styled.button`
-        background-color: #ef5350;
-        color: white;
-        font-size: 20px;
-        padding: 10px 60px;
-        border-radius: 5px;
-        margin: 10px 0px;
-        cursor: pointer;
-        transition="background-color 0.3s ease"
-    `;
-    */
 
     function CheckoutButton() {
         const [confirmed, setConfirmed] = useState<boolean>(false);
@@ -116,6 +105,10 @@ export function DeliveryDropDown(): JSX.Element {
                             Place Order
                         </Button>
                     </HStack>
+                    {
+                        // The Modal is the pop up that shows when we click Place Order. The customer must respond to it
+                        // by clicking OK to make sure they read it, which will reset the confirmed checkbox to FALSE.
+                    }
                     <Modal
                         id="order-placed-popup"
                         closeOnOverlayClick={false}
@@ -152,6 +145,7 @@ export function DeliveryDropDown(): JSX.Element {
         );
     }
 
+    // Render the dropdown select for the times and the Place Order button and its confirmation checkbox
     return (
         <Stack w="35vw" alignItems="center">
             <Box h="65vh" mt="7.5vh"></Box>
