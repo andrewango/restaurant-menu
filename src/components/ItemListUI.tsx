@@ -3,6 +3,11 @@ import { Box, Grid, useMediaQuery } from "@chakra-ui/react";
 import { foodProps } from "../interfaces/Food";
 import FoodItem from "./FoodItem";
 
+/**
+ * Component representing a list of food items
+ * @param foodData - array of food items.
+ * @returns JSX element representing the list of food items
+ */
 export default function ItemListUI({
     foodData
 }: {
