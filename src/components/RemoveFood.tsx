@@ -19,9 +19,18 @@ import { MenuList } from "./AddNewFood";
 import { userProps } from "../interfaces/User";
 import { ListOfCustomers } from "./SelectRole";
 
+/**
+ * Component representing the remove food page.
+ * @returns JSX element representing the remove food page.
+ */
+
 export default function RemoveFood() {
     const [foodlist, setFoodlist] = useState<foodProps[]>(MenuList());
 
+    /**
+     * Handles when sbmissions are made to remove a food item from the menu.
+     * @param id - id of the food item being removed.
+     */
     const handleSubmit = (id: string) => {
         const newFoods: foodProps[] = foodlist.map(
             (food: foodProps): foodProps => ({
