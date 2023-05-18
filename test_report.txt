@@ -2,12 +2,12 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.724 s)
+PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.925 s)
   ● Console
 
     console.log
       <ref *1> HTMLButtonElement {
-        '__reactFiber$jip5ntneuo': <ref *2> FiberNode {
+        '__reactFiber$7cdmyuo61z5': <ref *2> FiberNode {
           tag: 5,
           key: null,
           elementType: 'button',
@@ -172,7 +172,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.724 s)
           _debugNeedsRemount: false,
           _debugHookTypes: null
         },
-        '__reactProps$jip5ntneuo': {
+        '__reactProps$7cdmyuo61z5': {
           'data-theme': undefined,
           children: 'Black Licorice Ice Cream',
           type: 'button',
@@ -201,19 +201,19 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.724 s)
     console.log
       []
 
-      at removeFoodToEditFoodList (src/components/EditFoodList.tsx:91:21)
+      at removeFoodToEditFoodList (src/components/EditFoodList.tsx:97:21)
           at Array.forEach (<anonymous>)
 
     console.log
       []
 
-      at removeFoodToEditFoodList (src/components/EditFoodList.tsx:93:21)
+      at removeFoodToEditFoodList (src/components/EditFoodList.tsx:99:21)
           at Array.forEach (<anonymous>)
 
     console.log
       { name: 'Black Licorice Ice Cream' }
 
-      at Object.drop (src/components/EditFoodList.tsx:44:21)
+      at Object.drop (src/components/EditFoodList.tsx:47:21)
           at Array.forEach (<anonymous>)
 
     console.log
@@ -280,7 +280,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.724 s)
          |                  ^
       95 |     };
       96 |
-      97 |     const onSubmit = () => {
+      97 |     // Change the food fields in the menu list when we submit the forms to edit it
 
       at VirtualConsole.<anonymous> (node_modules/jsdom/lib/jsdom/virtual-console.js:29:45)
       at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
@@ -327,7 +327,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.724 s)
       at Function.submit (node_modules/@testing-library/react/dist/fire-event.js:18:52)
       at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:371:19)
 
-PASS src/component-unit-tests/EditFoodMenu.test.tsx (10.813 s)
+PASS src/component-unit-tests/EditFoodMenu.test.tsx (8.787 s)
   ● Console
 
     console.log
@@ -776,7 +776,7 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (10.813 s)
         }
       ]
 
-      at setListHelper (src/components/EditFoodMenu.tsx:82:21)
+      at setListHelper (src/components/EditFoodMenu.tsx:86:21)
 
     console.log
       [
@@ -1224,7 +1224,7 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (10.813 s)
         }
       ]
 
-      at setListHelper (src/components/EditFoodMenu.tsx:82:21)
+      at setListHelper (src/components/EditFoodMenu.tsx:86:21)
 
     console.log
       [
@@ -1672,7 +1672,7 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (10.813 s)
         }
       ]
 
-      at setListHelper (src/components/EditFoodMenu.tsx:82:21)
+      at setListHelper (src/components/EditFoodMenu.tsx:86:21)
 
     console.log
       [
@@ -2120,9 +2120,9 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (10.813 s)
         }
       ]
 
-      at setListHelper (src/components/EditFoodMenu.tsx:82:21)
+      at setListHelper (src/components/EditFoodMenu.tsx:86:21)
 
-PASS src/component-unit-tests/SearchBar.test.tsx (8.665 s)
+PASS src/component-unit-tests/SearchBar.test.tsx (7.379 s)
   ● Console
 
     console.log
@@ -3927,7 +3927,7 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
           at exports.navigate (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/window/navigation.js:54:3)
           at LocationImpl.reload (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:236:5)
           at Location.reload (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/generated/Location.js:99:36)
-          at handleSubmit (/home/runner/work/restaurant-menu/restaurant-menu/src/components/AddNewFood.tsx:73:18)
+          at handleSubmit (/home/runner/work/restaurant-menu/restaurant-menu/src/components/AddNewFood.tsx:65:18)
           at HTMLUnknownElement.callCallback (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
           at HTMLUnknownElement.callTheUserObjectsOperation (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
           at innerInvokeEventListeners (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
@@ -3973,13 +3973,13 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
           at _runTestsForDescribeBlock (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/run.js:66:9)
           at _runTestsForDescribeBlock (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/run.js:60:9) undefined
 
-      71 |         //     quantity: 0
-      72 |         // });
-    > 73 |         location.reload();
+      63 |         e.preventDefault();
+      64 |         onSubmit();
+    > 65 |         location.reload();
          |                  ^
-      74 |     };
-      75 |
-      76 |     const onSubmit = () => {
+      66 |     };
+      67 |
+      68 |     // When submitting the form, add the new food to the menu list (THIS IS AN IMMUTABLE IMPLEMENTATION)
 
       at VirtualConsole.<anonymous> (node_modules/jsdom/lib/jsdom/virtual-console.js:29:45)
       at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
@@ -3987,7 +3987,7 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
       at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:54:3)
       at LocationImpl.reload (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:236:5)
       at Location.reload (node_modules/jsdom/lib/jsdom/living/generated/Location.js:99:36)
-      at handleSubmit (src/components/AddNewFood.tsx:73:18)
+      at handleSubmit (src/components/AddNewFood.tsx:65:18)
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:4164:14)
       at HTMLUnknownElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
       at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
@@ -4033,7 +4033,7 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
           at exports.navigate (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/window/navigation.js:54:3)
           at LocationImpl.reload (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:236:5)
           at Location.reload (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/generated/Location.js:99:36)
-          at handleSubmit (/home/runner/work/restaurant-menu/restaurant-menu/src/components/AddNewFood.tsx:73:18)
+          at handleSubmit (/home/runner/work/restaurant-menu/restaurant-menu/src/components/AddNewFood.tsx:65:18)
           at HTMLUnknownElement.callCallback (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
           at HTMLUnknownElement.callTheUserObjectsOperation (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
           at innerInvokeEventListeners (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
@@ -4079,13 +4079,13 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
           at _runTestsForDescribeBlock (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/run.js:66:9)
           at _runTestsForDescribeBlock (/home/runner/work/restaurant-menu/restaurant-menu/node_modules/jest-circus/build/run.js:60:9) undefined
 
-      71 |         //     quantity: 0
-      72 |         // });
-    > 73 |         location.reload();
+      63 |         e.preventDefault();
+      64 |         onSubmit();
+    > 65 |         location.reload();
          |                  ^
-      74 |     };
-      75 |
-      76 |     const onSubmit = () => {
+      66 |     };
+      67 |
+      68 |     // When submitting the form, add the new food to the menu list (THIS IS AN IMMUTABLE IMPLEMENTATION)
 
       at VirtualConsole.<anonymous> (node_modules/jsdom/lib/jsdom/virtual-console.js:29:45)
       at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
@@ -4093,7 +4093,7 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
       at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:54:3)
       at LocationImpl.reload (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:236:5)
       at Location.reload (node_modules/jsdom/lib/jsdom/living/generated/Location.js:99:36)
-      at handleSubmit (src/components/AddNewFood.tsx:73:18)
+      at handleSubmit (src/components/AddNewFood.tsx:65:18)
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:4164:14)
       at HTMLUnknownElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
       at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
@@ -4138,176 +4138,6 @@ PASS src/component-unit-tests/FoodItem.test.tsx
 PASS src/component-unit-tests/EditFoodList.test.tsx
 PASS src/component-unit-tests/ItemListUI.test.tsx
 PASS src/component-unit-tests/AddDeleteUsers.test.tsx
-  ● Console
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
-
 PASS src/component-unit-tests/SelectRole.test.tsx
 PASS src/component-unit-tests/RatingFeature.test.tsx
 PASS src/component-unit-tests/RemoveFood.test.tsx
@@ -4441,18 +4271,6 @@ PASS src/pages/ManageFoods.test.tsx
 PASS src/component-unit-tests/NavBar.test.tsx
 PASS src/App.test.tsx
   ● Console
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:174:45)
-          at Array.map (<anonymous>)
-
-    console.log
-      []
-
-      at map (src/components/AddDeleteUsers.tsx:191:45)
-          at Array.map (<anonymous>)
 
     console.error
       Warning: validateDOMNesting(...): <button> cannot appear as a descendant of <button>.
@@ -4608,18 +4426,18 @@ PASS src/component-unit-tests/DeliveryDropDown.test.tsx
 -----------------------|---------|----------|---------|---------|---------------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                     
 -----------------------|---------|----------|---------|---------|---------------------------------------
-All files              |   80.98 |    69.51 |   73.45 |   80.76 |                                       
+All files              |   80.85 |    69.51 |   73.77 |   80.62 |                                       
  src                   |     100 |      100 |     100 |     100 |                                       
   App.tsx              |     100 |      100 |     100 |     100 |                                       
- src/components        |   82.88 |    71.78 |   74.87 |   82.69 |                                       
-  AddDeleteUsers.tsx   |   82.35 |    38.88 |    62.5 |   82.35 | 41,89,142,172,178-186,234             
-  AddNewFood.tsx       |   80.76 |      100 |   66.66 |   80.76 | 48-51,202-222                         
-  CheckoutList.tsx     |   76.84 |    55.26 |   72.22 |   76.08 | 75-79,217,248-256,260,319-338,395,420 
-  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 59-84,101,165                         
-  EditFoodList.tsx     |   96.07 |       70 |   95.45 |   95.74 | 104-105                               
-  EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 57,93-99,109-111,120-122              
-  EditFoodTabs.tsx     |      96 |     92.3 |   88.88 |      96 | 270                                   
-  EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 74,143                                
+ src/components        |   82.76 |    71.78 |   75.24 |   82.56 |                                       
+  AddDeleteUsers.tsx   |   80.85 |    38.88 |   66.66 |   80.85 | 42,93,147,184-198,247                 
+  AddNewFood.tsx       |   80.76 |      100 |   66.66 |   80.76 | 53-56,196-216                         
+  CheckoutList.tsx     |   76.84 |    55.26 |   72.22 |   76.08 | 76-80,231,263-272,276,337-356,414,439 
+  DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 48-73,90,159                          
+  EditFoodList.tsx     |   96.07 |       70 |   95.45 |   95.74 | 111-112                               
+  EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 59,97-103,113-115,124-126             
+  EditFoodTabs.tsx     |      96 |     92.3 |   88.88 |      96 | 273                                   
+  EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 76,146                                
   FoodItem.tsx         |   77.77 |    86.66 |      60 |   76.47 | 19-21,56                              
   ItemListUI.tsx       |     100 |       50 |     100 |     100 | 32                                    
   NavBar.tsx           |    87.5 |    27.27 |      75 |    87.5 | 14                                    
@@ -4649,5 +4467,5 @@ All files              |   80.98 |    69.51 |   73.45 |   80.76 |
 Test Suites: 17 passed, 17 total
 Tests:       122 passed, 122 total
 Snapshots:   0 total
-Time:        51.578 s
+Time:        43.536 s
 Ran all test suites.
