@@ -43,7 +43,10 @@ export function GetCurrentUser() {
     return userToParse ? JSON.parse(userToParse) : defaultCustomer;
 }
 
-// Get our list of customers from EDIT USERS page
+/**
+ * Get our array of customers from EDIT USERS page.
+ * @returns array of customers from session storage OR default customer array.
+ */
 export function ListOfCustomers() {
     const customers = sessionStorage.getItem("customers");
     const customersToParse =
@@ -51,13 +54,21 @@ export function ListOfCustomers() {
     return customersToParse ? JSON.parse(customersToParse) : [defaultCustomer];
 }
 
+/**
+ * Component that  renders a dropdown menu that allows users to select different roles.
+ * @returns The JSX element representing the role selection component.
+ */
+
 export function SelectRole(): JSX.Element {
     // Get current user state from our session
     const currentUser: userProps = GetCurrentUser();
 
     const [userRole, setUserRole] = useState<userProps>(currentUser);
 
-    // Change role and update session state
+    /**
+     * Changes user role and update session state
+     * @param userRole - new role to set
+     */
     function changeRole(userRole: userProps) {
         setUserRole(userRole);
         sessionStorage.setItem("user", JSON.stringify(userRole));
@@ -75,7 +86,11 @@ export function SelectRole(): JSX.Element {
 
     const listOfCustomers: userProps[] = ListOfCustomers();
 
-    // Find the selected option (owner, employee, or some user)
+    /**
+     * Find the selected option (owner, employee, or some user) based on given name.
+     * @param name - name of the user to find.
+     * @returns the found user or a fallback role.
+     */
     function findUserInList(name: string) {
         let foundUser: userProps | undefined = listOfCustomers.find(
             (user) => name === user.name
