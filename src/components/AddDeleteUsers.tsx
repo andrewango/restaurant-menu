@@ -13,14 +13,15 @@ import {
     Center
 } from "@chakra-ui/react";
 import { FormLabel, FormControl, Input } from "@chakra-ui/react";
-
 import { userProps } from "../interfaces/User";
 import { foodProps } from "../interfaces/Food";
 import { ListOfCustomers } from "./SelectRole";
 import Delete from "../assets/DeleteButton.png";
 import "./Styles.css";
 
+// THIS COMPONENT PROVIDES FUNCTIONALITY AND RENDERS THE TABLE FOR ADDING AND DELETING CUSTOMERS FROM THE CUSTOMER LIST
 export default function AddDeleteUsers(): JSX.Element {
+    // Declare our state variables for current customer list, current order ID, and for the search bar
     const customers: userProps[] = ListOfCustomers();
     const [customerList, setCustomerList] = useState<userProps[]>(customers);
 
@@ -32,7 +33,7 @@ export default function AddDeleteUsers(): JSX.Element {
 
     const [searchText, setSearchText] = useState<string>("");
 
-    // If there's a food item input into the search box, then find all customers with that food item ; ELSE if search box is empty, return all the customers.
+    // If there's a food item input into the search box, then find all customers with that food item; ELSE if search box is empty, return all the customers.
     const customersWithSearchText: userProps[] = customers.filter(
         (customer: userProps): boolean => {
             return (
@@ -46,7 +47,9 @@ export default function AddDeleteUsers(): JSX.Element {
         }
     );
 
+    // When we submit the add customer button, this function will add a new customer to the customer list with a new order ID.
     const handleAddSubmit = () => {
+        // Only run this if the input form is non-empty
         if (name !== "") {
             const newCustomer: userProps = {
                 name: name,
@@ -73,6 +76,7 @@ export default function AddDeleteUsers(): JSX.Element {
         }
     };
 
+    // When we click the trash icon to delete a customer, the customer will be removed from the customer list and the order IDs of all other customers will adjust.
     const handleDeleteSubmit = (orderIDToDelete: number) => {
         // Find the index in the customer list of who we want to delete
         const customerToRemoveIndex = customerList.findIndex(
@@ -113,6 +117,7 @@ export default function AddDeleteUsers(): JSX.Element {
         }
     };
 
+    // Return our table of customers
     return (
         <div style={{ padding: 10 }}>
             <HStack maxWidth="100vw">
@@ -168,27 +173,28 @@ export default function AddDeleteUsers(): JSX.Element {
                         <Tbody>
                             {customersWithSearchText.map(
                                 (customer: userProps) => {
-                                    const indices = customer.order.map(
-                                        (food: foodProps, index) => index
-                                    );
-                                    console.log(indices);
-                                    const displayOrder: foodProps[] = [];
-                                    indices.forEach((index) => {
-                                        const foodIndex =
-                                            displayOrder.findIndex(
-                                                (
-                                                    foodItem: foodProps
-                                                ): boolean =>
-                                                    customer.order[index]
-                                                        .name === foodItem.name
-                                            );
-                                        if (foodIndex === -1) {
-                                            displayOrder.push(
-                                                customer.order[index]
-                                            );
-                                        }
-                                    });
-                                    console.log(displayOrder);
+                                    const displayOrder: foodProps[] =
+                                        customer.order.reduce(
+                                            (
+                                                acc: foodProps[],
+                                                foodItem: foodProps
+                                            ) => {
+                                                const existingItemIndex =
+                                                    acc.findIndex(
+                                                        (
+                                                            existingItem: foodProps
+                                                        ) =>
+                                                            existingItem.name ===
+                                                            foodItem.name
+                                                    );
+                                                if (existingItemIndex === -1) {
+                                                    return [...acc, foodItem];
+                                                }
+                                                return acc;
+                                            },
+                                            []
+                                        );
+
                                     return (
                                         <Tr
                                             data-testid={
@@ -216,7 +222,7 @@ export default function AddDeleteUsers(): JSX.Element {
                                                     <Image
                                                         src={Delete}
                                                         alt="delete-button"
-                                                    ></Image>
+                                                    />
                                                 </Box>
                                                 {customer.name}
                                             </Td>
@@ -232,11 +238,8 @@ export default function AddDeleteUsers(): JSX.Element {
                                                 {displayOrder.map(
                                                     (food: foodProps) =>
                                                         food.quantity > 1
-                                                            ? food.name +
-                                                              ": " +
-                                                              food.quantity +
-                                                              ", "
-                                                            : food.name + ", "
+                                                            ? `${food.name}: ${food.quantity}, `
+                                                            : `${food.name}, `
                                                 )}
                                             </Td>
                                         </Tr>

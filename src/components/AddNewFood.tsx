@@ -11,12 +11,16 @@ import foodList from "../data/foods.json";
 import { foodProps } from "../interfaces/Food";
 import "./Styles.css";
 
+// THIS HELPER FUNCTION RETRIEVES THE CURRENT MENU LIST FROM SESSIONSTORAGE
 export function MenuList() {
     const menu = sessionStorage.getItem("menu");
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
     return menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
 }
+
+// THIS FUNCTION HANDLES THE FUNCTIONALITY AND RENDERS THE COMPONENT FOR ADDING NEW FOODS TO THE MENU LIST
 export default function AddNewFood() {
+    // Declare our variables
     const [foodlist, setFoodlist] = useState<foodProps[]>(MenuList());
 
     const [food, setFood] = useState<foodProps>({
@@ -35,6 +39,7 @@ export default function AddNewFood() {
 
     const { name, image, desc, rating, type, ingredients, price } = food;
 
+    // Our onChange functions for the input forms
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
 
