@@ -206,7 +206,7 @@
         },
         {
             "name": "Bruschetta",
-            "image": "https://live.staticflickr.com/65535/52813714860_003bae1245_m.jpg",
+            "image": "https://www.shugarysweets.com/wp-content/uploads/2019/06/bruschetta-recipe.jpg",
             "desc": "Toasted bread topped with diced tomatoes, basil, and olive oil.",
             "rating": 3.5,
             "type": ["Italian", "Appetizer"],
@@ -223,7 +223,7 @@
         },
         {
             "name": "Edamame",
-            "image": "https://live.staticflickr.com/65535/52813301776_907dee9958_m.jpg",
+            "image": "https://peasandcrayons.com/wp-content/uploads/2018/02/quick-easy-spicy-sambal-edamame-recipe-2.jpg",
             "desc": "Steamed soybean pods served with salt.",
             "rating": 3.0,
             "type": ["Japanese", "Appetizer"],
@@ -234,7 +234,7 @@
         },
         {
             "name": "Vegan Lasagna",
-            "image": "https://live.staticflickr.com/65535/52813301606_c81b4a7021_m.jpg",
+            "image": "https://www.worldofvegan.com/wp-content/uploads/2020/11/Vegan-Lasagna-With-Tofu-Ricotta-Featured.jpeg",
             "desc": "A plant-based version of the classic Italian dish, made with layers of vegan cheese, vegetables, and tomato sauce.",
             "rating": 4.0,
             "type": ["Italian", "Entree", "Vegan"],
