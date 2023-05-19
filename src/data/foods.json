@@ -354,7 +354,7 @@
         },
         {
             "name": "Tortilla Española",
-            "image": "https://live.staticflickr.com/65535/52813307926_3ce097773a_w.jpg",
+            "image": "https://www.mediterraneanliving.com/wp-content/uploads/2016/10/Tortilla-Espanola-purchased610x410.jpg",
             "desc": "A Spanish omelette made with potatoes and onions.",
             "rating": 4.0,
             "type": ["Spanish", "Entree"],
@@ -365,7 +365,7 @@
         },
         {
             "name": "Gazpacho",
-            "image": "https://live.staticflickr.com/65535/52813721300_a6b63d62b2_w.jpg",
+            "image": "https://www.recipetineats.com/wp-content/uploads/2023/01/Gazpacho_3.jpg",
             "desc": "A cold soup made with tomatoes, cucumber, peppers, and bread.",
             "rating": 3.5,
             "type": ["Spanish", "Appetizer", "Soup"],
@@ -383,7 +383,7 @@
         },
         {
             "name": "Boxty",
-            "image": "https://live.staticflickr.com/65535/52813721375_b98c5b904c_w.jpg",
+            "image": "https://berrymaple.com/wp-content/uploads/2020/03/irish-pancakes-boxty-5.jpg",
             "desc": "A potato pancake made with grated raw potato and mashed potato.",
             "rating": 4.0,
             "type": ["Irish", "Appetizer"],
