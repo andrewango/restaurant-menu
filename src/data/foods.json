@@ -401,7 +401,7 @@
         },
         {
             "name": "Irish Smoked Salmon",
-            "image": "https://live.staticflickr.com/65535/52813504309_2bbcd3dc76_w.jpg",
+            "image": "https://cook.fnr.sndimg.com/content/dam/images/cook/fullset/2015/3/4/0/CCBAB507_Irish-Boxty-Pancakes-recipe_s4x3.jpg.rend.hgtvcom.616.462.suffix/1425488850016.jpeg",
             "desc": "A popular appetizer that is often served on brown bread with cream cheese.",
             "rating": 4.5,
             "type": ["Irish", "Appetizer", "Seafood"],
@@ -412,7 +412,7 @@
         },
         {
             "name": "Colcannon Puffs",
-            "image": "https://live.staticflickr.com/65535/52813308066_b69dbcfb10_w.jpg",
+            "image": "https://whisk-res.cloudinary.com/image/upload/g_auto,g_auto,c_fill,q_60,f_auto,h_600,w_800/v1638129402/v3/user-recipes/xuxdgthylmpglo21yn3u.jpg",
             "desc": "Bite-sized balls made from mashed potatoes, kale or cabbage, and bacon.",
             "rating": 3.5,
             "type": ["Irish", "Appetizer"],
@@ -430,7 +430,7 @@
         },
         {
             "name": "Tacos al Pastor",
-            "image": "https://live.staticflickr.com/65535/52813721200_ddde309874_w.jpg",
+            "image": "https://www.culinaryhill.com/wp-content/uploads/2022/12/Tacos-al-Pastor-Culinary-Hill-1200x800-1.jpg",
             "desc": "Marinated pork cooked on a spit and served on small tortillas with onions, pineapple, and cilantro.",
             "rating": 4.7,
             "type": ["Mexican", "Entree"],
