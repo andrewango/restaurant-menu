@@ -307,7 +307,7 @@
         },
         {
             "name": "Börek",
-            "image": "https://live.staticflickr.com/65535/52813308106_850ce2ec7c_n.jpg",
+            "image": "https://iadsb.tmgrup.com.tr/473666/0/0/0/0/800/477?u=https://idsb.tmgrup.com.tr/2018/01/25/1516906112316.jpg",
             "desc": "A pastry made with phyllo dough filled with vegetables, cheese, or meat.",
             "rating": 3.0,
             "type": ["Turkish", "Appetizer", "Mediterranean"],
@@ -318,7 +318,7 @@
         },
         {
             "name": "Shakshuka",
-            "image": "https://live.staticflickr.com/65535/52813307956_8ce7884c9a_w.jpg",
+            "image": "https://assets.epicurious.com/photos/63ea6ba855007bc33c26ba0b/4:3/w_4862,h_3647,c_limit/Shakshuka_RECIPE_020923_47096.jpg",
             "desc": "A dish of poached eggs in tomato sauce.",
             "rating": 4.0,
             "type": ["Israeli", "Entree", "Breakfast", "Mediterranean"],
@@ -336,7 +336,7 @@
         },
         {
             "name": "Paella",
-            "image": "https://live.staticflickr.com/65535/52812751572_5b24be61d9_w.jpg",
+            "image": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2012/07/paella-9174.jpg",
             "desc": "A traditional Spanish dish made with saffron rice, seafood, chicken, and vegetables.",
             "rating": 4.5,
             "type": ["Spanish", "Entree", "Seafood"],
