@@ -35,7 +35,7 @@
         },
         {
             "name": "House Salad",
-            "image": "https://live.staticflickr.com/65535/52812357357_9edd9baa22_m.jpg",
+            "image": "https://easygoodideas.com/wp-content/uploads/2021/09/Simple-House-Salad-13.jpg",
             "desc": "Refreshing mixed greens salad with cucumber, grape tomatoes, and italian dressing",
             "rating": 3.4,
             "type": ["Salad", "Appetizer"],
@@ -51,7 +51,7 @@
         },
         {
             "name": "Hawaiian Pizza",
-            "image": "https://live.staticflickr.com/65535/52813111624_c66677c7f4_m.jpg",
+            "image": "https://sallysbakingaddiction.com/wp-content/uploads/2014/08/It-doesnt-get-much-better-than-Homemade-Hawaiian-Pizza.-Tropical-paradise-for-dinner-2.jpg",
             "desc": "A pizza topped with pineapple and ham",
             "rating": 2.6,
             "type": ["Italian", "Fast Food", "Entree"],
@@ -68,7 +68,7 @@
         },
         {
             "name": "Hákarl",
-            "image": "https://live.staticflickr.com/65535/52813498334_1e0fedb8fd_m.jpg",
+            "image": "https://cdn.tasteatlas.com//Images/DishRestaurants/7b116144197747dbbd2f1ebbb95d990a.jpg?width=800&height=513",
             "desc": "A traditional Icelandic dish made from fermented shark meat",
             "rating": 2.0,
             "type": ["Icelandic", "Seafood", "Appetizer"],
