@@ -450,7 +450,7 @@
         },
         {
             "name": "Koshari",
-            "image": "https://live.staticflickr.com/65535/52813504299_c7d0172d9d_w.jpg",
+            "image": "https://res.cloudinary.com/hksqkdlah/image/upload/SFS_Koshari_029_q60klq.jpg",
             "desc": "A mix of rice, lentils, chickpeas, macaroni, and spicy tomato sauce, topped with caramelized onions and garlic.",
             "rating": 4.0,
             "type": ["Egyptian", "Entree"],
@@ -470,7 +470,7 @@
         },
         {
             "name": "Flan",
-            "image": "https://live.staticflickr.com/65535/52813504354_d7b47462ac_w.jpg",
+            "image": "https://www.themagicalslowcooker.com/wp-content/uploads/2021/07/flan-1-4-500x500.jpg",
             "desc": "A creamy, caramel-topped dessert that is similar to a custard.",
             "rating": 4.5,
             "type": ["Puerto Rican", "Dessert"],
