@@ -79,7 +79,7 @@
         },
         {
             "name": "Escamoles",
-            "image": "https://live.staticflickr.com/65535/52813498389_e3e693bcd6_m.jpg",
+            "image": "https://eatyourworld.com/images/staff_food_entries/escamoles.jpg",
             "desc": "A Mexican dish made from ant larvae harvested from the roots of the agave plant",
             "rating": 3.5,
             "type": ["Mexican", "Insect cuisine", "Entree"],
@@ -97,7 +97,7 @@
         },
         {
             "name": "Tiramisu",
-            "image": "https://live.staticflickr.com/65535/52813714725_6fd84a80b4_m.jpg",
+            "image": "https://i.shgcdn.com/269063bf-d72d-41dd-b848-9b30657696e6/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
             "desc": "A classic Italian dessert made with ladyfingers, espresso, mascarpone cheese, and cocoa powder.",
             "rating": 4.5,
             "type": ["Italian", "Dessert"],
@@ -133,7 +133,7 @@
         },
         {
             "name": "Mochi Ice Cream",
-            "image": "https://live.staticflickr.com/65535/52813714800_f9ec4a0d46_m.jpg",
+            "image": "https://www.justonecookbook.com/wp-content/uploads/2020/08/Mochi-Ice-Cream-8680-I.jpg",
             "desc": "A Japanese dessert that consists of small balls of ice cream wrapped in sweet rice dough.",
             "rating": 4.0,
             "type": ["Japanese", "Dessert"],
