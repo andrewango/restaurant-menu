@@ -13,7 +13,7 @@
         },
         {
             "name": "Cheeseburger",
-            "image": "https://live.staticflickr.com/65535/52812357442_e349d9cd4d_m.jpg",
+            "image": "https://groundbeefrecipes.com/wp-content/uploads/double-bacon-cheeseburger-recipe-6-500x375.jpg",
             "desc": "A juicy burger with lettuce, tomato, and cheese",
             "rating": 4.1,
             "type": ["American", "Fast Food", "Entree"],
@@ -24,7 +24,7 @@
         },
         {
             "name": "Spicy Salmon Avocado Sushi",
-            "image": "https://live.staticflickr.com/65535/52813111589_628772aec7_m.jpg",
+            "image": "https://data.thefeedfeed.com/recommended/posts-8414709.jpg",
             "desc": "Fresh sushi rolls with spicy salmon and avocado",
             "rating": 4.6,
             "type": ["Japanese", "Seafood", "Entree"],
@@ -35,7 +35,7 @@
         },
         {
             "name": "House Salad",
-            "image": "https://live.staticflickr.com/65535/52812357357_9edd9baa22_m.jpg",
+            "image": "https://easygoodideas.com/wp-content/uploads/2021/09/Simple-House-Salad-13.jpg",
             "desc": "Refreshing mixed greens salad with cucumber, grape tomatoes, and italian dressing",
             "rating": 3.4,
             "type": ["Salad", "Appetizer"],
@@ -51,7 +51,7 @@
         },
         {
             "name": "Hawaiian Pizza",
-            "image": "https://live.staticflickr.com/65535/52813111624_c66677c7f4_m.jpg",
+            "image": "https://sallysbakingaddiction.com/wp-content/uploads/2014/08/It-doesnt-get-much-better-than-Homemade-Hawaiian-Pizza.-Tropical-paradise-for-dinner-2.jpg",
             "desc": "A pizza topped with pineapple and ham",
             "rating": 2.6,
             "type": ["Italian", "Fast Food", "Entree"],
@@ -68,7 +68,7 @@
         },
         {
             "name": "Hákarl",
-            "image": "https://live.staticflickr.com/65535/52813498334_1e0fedb8fd_m.jpg",
+            "image": "https://cdn.tasteatlas.com//Images/DishRestaurants/7b116144197747dbbd2f1ebbb95d990a.jpg?width=800&height=513",
             "desc": "A traditional Icelandic dish made from fermented shark meat",
             "rating": 2.0,
             "type": ["Icelandic", "Seafood", "Appetizer"],
@@ -79,7 +79,7 @@
         },
         {
             "name": "Escamoles",
-            "image": "https://live.staticflickr.com/65535/52813498389_e3e693bcd6_m.jpg",
+            "image": "https://eatyourworld.com/images/staff_food_entries/escamoles.jpg",
             "desc": "A Mexican dish made from ant larvae harvested from the roots of the agave plant",
             "rating": 3.5,
             "type": ["Mexican", "Insect cuisine", "Entree"],
@@ -97,7 +97,7 @@
         },
         {
             "name": "Tiramisu",
-            "image": "https://live.staticflickr.com/65535/52813714725_6fd84a80b4_m.jpg",
+            "image": "https://i.shgcdn.com/269063bf-d72d-41dd-b848-9b30657696e6/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
             "desc": "A classic Italian dessert made with ladyfingers, espresso, mascarpone cheese, and cocoa powder.",
             "rating": 4.5,
             "type": ["Italian", "Dessert"],
@@ -133,7 +133,7 @@
         },
         {
             "name": "Mochi Ice Cream",
-            "image": "https://live.staticflickr.com/65535/52813714800_f9ec4a0d46_m.jpg",
+            "image": "https://www.justonecookbook.com/wp-content/uploads/2020/08/Mochi-Ice-Cream-8680-I.jpg",
             "desc": "A Japanese dessert that consists of small balls of ice cream wrapped in sweet rice dough.",
             "rating": 4.0,
             "type": ["Japanese", "Dessert"],
@@ -151,7 +151,7 @@
         },
         {
             "name": "Durian Sticky Rice",
-            "image": "https://live.staticflickr.com/65535/52813714825_1b8b57a405_m.jpg",
+            "image": "https://hot-thai-kitchen.com/wp-content/uploads/2017/07/Durian-sticky-rice-sm.jpg",
             "desc": "A Southeast Asian dessert made with glutinous rice cooked with coconut milk and served with fresh durian.",
             "rating": 2.5,
             "type": ["Thai", "Southeast Asian", "Dessert"],
@@ -184,7 +184,7 @@
         },
         {
             "name": "Wasabi Chocolate",
-            "image": "https://live.staticflickr.com/65535/52813498159_aff340438f_m.jpg",
+            "image": "https://i.ebayimg.com/images/g/WAMAAOSw9xxkKB1l/s-l1600.jpg",
             "desc": "A type of chocolate infused with wasabi, a spicy Japanese horseradish.",
             "rating": 3.0,
             "type": ["Japanese", "Dessert"],
@@ -195,7 +195,7 @@
         },
         {
             "name": "Fried Calamari",
-            "image": "https://live.staticflickr.com/65535/52813498309_8ec4331f67_m.jpg",
+            "image": "https://www.seriouseats.com/thmb/RLHQFr_lp9-HTIWBikzVwu4M17s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__11__20201125-fried-calamari-vicky-wasik-10-9cee3a081e96476b89e29b331d30be61.jpg",
             "desc": "Battered and fried squid served with a dipping sauce.",
             "rating": 4.0,
             "type": ["Seafood", "Appetizer"],
@@ -206,7 +206,7 @@
         },
         {
             "name": "Bruschetta",
-            "image": "https://live.staticflickr.com/65535/52813714860_003bae1245_m.jpg",
+            "image": "https://www.shugarysweets.com/wp-content/uploads/2019/06/bruschetta-recipe.jpg",
             "desc": "Toasted bread topped with diced tomatoes, basil, and olive oil.",
             "rating": 3.5,
             "type": ["Italian", "Appetizer"],
@@ -223,7 +223,7 @@
         },
         {
             "name": "Edamame",
-            "image": "https://live.staticflickr.com/65535/52813301776_907dee9958_m.jpg",
+            "image": "https://peasandcrayons.com/wp-content/uploads/2018/02/quick-easy-spicy-sambal-edamame-recipe-2.jpg",
             "desc": "Steamed soybean pods served with salt.",
             "rating": 3.0,
             "type": ["Japanese", "Appetizer"],
@@ -234,7 +234,7 @@
         },
         {
             "name": "Vegan Lasagna",
-            "image": "https://live.staticflickr.com/65535/52813301606_c81b4a7021_m.jpg",
+            "image": "https://www.worldofvegan.com/wp-content/uploads/2020/11/Vegan-Lasagna-With-Tofu-Ricotta-Featured.jpeg",
             "desc": "A plant-based version of the classic Italian dish, made with layers of vegan cheese, vegetables, and tomato sauce.",
             "rating": 4.0,
             "type": ["Italian", "Entree", "Vegan"],
@@ -252,7 +252,7 @@
         },
         {
             "name": "Vegan Pad Thai",
-            "image": "https://live.staticflickr.com/65535/52813307911_a879a4df7b_w.jpg",
+            "image": "https://pinchofyum.com/wp-content/uploads/Vegetarian-Pad-Thai-Recipe.jpg",
             "desc": "A Thai stir-fried noodle dish made with rice noodles, tofu, vegetables, and a sweet and savory sauce.",
             "rating": 4.5,
             "type": ["Thai", "Entree", "Vegan"],
@@ -270,7 +270,7 @@
         },
         {
             "name": "Vegan Black Bean Burger",
-            "image": "https://live.staticflickr.com/65535/52813504194_bde784209b_w.jpg",
+            "image": "https://www.jessicagavin.com/wp-content/uploads/2018/05/vegan-black-bean-burgers-5-1200.jpg",
             "desc": "A burger patty made with black beans, vegetables, and spices, served on a bun with avocado and salsa.",
             "rating": 4.0,
             "type": ["American", "Entree", "Vegan"],
@@ -289,7 +289,7 @@
         },
         {
             "name": "Türlü",
-            "image": "https://live.staticflickr.com/65535/52813763428_c3baa5f2f4_w.jpg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/%D0%A2%D1%83%D1%80%D0%BB%D0%B8%D1%82%D0%B0%D0%B2%D0%B0_%D0%B2%D0%BE_%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D0%BD%D0%B0%2C_%D1%80%D0%B0%D1%87%D0%BD%D0%BE_%D0%B8%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%D0%BD%D0%B0_%D0%B7%D0%B5%D0%BC%D1%98%D0%B5%D0%BD%D0%B0_%D1%82%D0%B0%D0%B2%D0%B0._01.jpg/1200px-%D0%A2%D1%83%D1%80%D0%BB%D0%B8%D1%82%D0%B0%D0%B2%D0%B0_%D0%B2%D0%BE_%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D0%BD%D0%B0%2C_%D1%80%D0%B0%D1%87%D0%BD%D0%BE_%D0%B8%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%D0%BD%D0%B0_%D0%B7%D0%B5%D0%BC%D1%98%D0%B5%D0%BD%D0%B0_%D1%82%D0%B0%D0%B2%D0%B0._01.jpg",
             "desc": "A vegan Turkish dish made with a variety of vegetables cooked in tomato sauce.",
             "rating": 3.5,
             "type": ["Turkish", "Entree", "Vegan", "Mediterranean"],
@@ -307,7 +307,7 @@
         },
         {
             "name": "Börek",
-            "image": "https://live.staticflickr.com/65535/52813308106_850ce2ec7c_n.jpg",
+            "image": "https://iadsb.tmgrup.com.tr/473666/0/0/0/0/800/477?u=https://idsb.tmgrup.com.tr/2018/01/25/1516906112316.jpg",
             "desc": "A pastry made with phyllo dough filled with vegetables, cheese, or meat.",
             "rating": 3.0,
             "type": ["Turkish", "Appetizer", "Mediterranean"],
@@ -318,7 +318,7 @@
         },
         {
             "name": "Shakshuka",
-            "image": "https://live.staticflickr.com/65535/52813307956_8ce7884c9a_w.jpg",
+            "image": "https://assets.epicurious.com/photos/63ea6ba855007bc33c26ba0b/4:3/w_4862,h_3647,c_limit/Shakshuka_RECIPE_020923_47096.jpg",
             "desc": "A dish of poached eggs in tomato sauce.",
             "rating": 4.0,
             "type": ["Israeli", "Entree", "Breakfast", "Mediterranean"],
@@ -336,7 +336,7 @@
         },
         {
             "name": "Paella",
-            "image": "https://live.staticflickr.com/65535/52812751572_5b24be61d9_w.jpg",
+            "image": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2012/07/paella-9174.jpg",
             "desc": "A traditional Spanish dish made with saffron rice, seafood, chicken, and vegetables.",
             "rating": 4.5,
             "type": ["Spanish", "Entree", "Seafood"],
@@ -354,7 +354,7 @@
         },
         {
             "name": "Tortilla Española",
-            "image": "https://live.staticflickr.com/65535/52813307926_3ce097773a_w.jpg",
+            "image": "https://www.mediterraneanliving.com/wp-content/uploads/2016/10/Tortilla-Espanola-purchased610x410.jpg",
             "desc": "A Spanish omelette made with potatoes and onions.",
             "rating": 4.0,
             "type": ["Spanish", "Entree"],
@@ -365,7 +365,7 @@
         },
         {
             "name": "Gazpacho",
-            "image": "https://live.staticflickr.com/65535/52813721300_a6b63d62b2_w.jpg",
+            "image": "https://www.recipetineats.com/wp-content/uploads/2023/01/Gazpacho_3.jpg",
             "desc": "A cold soup made with tomatoes, cucumber, peppers, and bread.",
             "rating": 3.5,
             "type": ["Spanish", "Appetizer", "Soup"],
@@ -383,7 +383,7 @@
         },
         {
             "name": "Boxty",
-            "image": "https://live.staticflickr.com/65535/52813721375_b98c5b904c_w.jpg",
+            "image": "https://berrymaple.com/wp-content/uploads/2020/03/irish-pancakes-boxty-5.jpg",
             "desc": "A potato pancake made with grated raw potato and mashed potato.",
             "rating": 4.0,
             "type": ["Irish", "Appetizer"],
@@ -401,7 +401,7 @@
         },
         {
             "name": "Irish Smoked Salmon",
-            "image": "https://live.staticflickr.com/65535/52813504309_2bbcd3dc76_w.jpg",
+            "image": "https://cook.fnr.sndimg.com/content/dam/images/cook/fullset/2015/3/4/0/CCBAB507_Irish-Boxty-Pancakes-recipe_s4x3.jpg.rend.hgtvcom.616.462.suffix/1425488850016.jpeg",
             "desc": "A popular appetizer that is often served on brown bread with cream cheese.",
             "rating": 4.5,
             "type": ["Irish", "Appetizer", "Seafood"],
@@ -412,7 +412,7 @@
         },
         {
             "name": "Colcannon Puffs",
-            "image": "https://live.staticflickr.com/65535/52813308066_b69dbcfb10_w.jpg",
+            "image": "https://whisk-res.cloudinary.com/image/upload/g_auto,g_auto,c_fill,q_60,f_auto,h_600,w_800/v1638129402/v3/user-recipes/xuxdgthylmpglo21yn3u.jpg",
             "desc": "Bite-sized balls made from mashed potatoes, kale or cabbage, and bacon.",
             "rating": 3.5,
             "type": ["Irish", "Appetizer"],
@@ -430,7 +430,7 @@
         },
         {
             "name": "Tacos al Pastor",
-            "image": "https://live.staticflickr.com/65535/52813721200_ddde309874_w.jpg",
+            "image": "https://www.culinaryhill.com/wp-content/uploads/2022/12/Tacos-al-Pastor-Culinary-Hill-1200x800-1.jpg",
             "desc": "Marinated pork cooked on a spit and served on small tortillas with onions, pineapple, and cilantro.",
             "rating": 4.7,
             "type": ["Mexican", "Entree"],
@@ -450,7 +450,7 @@
         },
         {
             "name": "Koshari",
-            "image": "https://live.staticflickr.com/65535/52813504299_c7d0172d9d_w.jpg",
+            "image": "https://res.cloudinary.com/hksqkdlah/image/upload/SFS_Koshari_029_q60klq.jpg",
             "desc": "A mix of rice, lentils, chickpeas, macaroni, and spicy tomato sauce, topped with caramelized onions and garlic.",
             "rating": 4.0,
             "type": ["Egyptian", "Entree"],
@@ -470,7 +470,7 @@
         },
         {
             "name": "Flan",
-            "image": "https://live.staticflickr.com/65535/52813504354_d7b47462ac_w.jpg",
+            "image": "https://www.themagicalslowcooker.com/wp-content/uploads/2021/07/flan-1-4-500x500.jpg",
             "desc": "A creamy, caramel-topped dessert that is similar to a custard.",
             "rating": 4.5,
             "type": ["Puerto Rican", "Dessert"],
