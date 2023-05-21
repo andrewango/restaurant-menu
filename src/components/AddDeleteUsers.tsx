@@ -25,7 +25,11 @@ export default function AddDeleteUsers(): JSX.Element {
     const [name, setName] = useState<string>("");
 
     const storageOrderID: string | null = sessionStorage.getItem("orderID");
-    const orderNum: number = storageOrderID ? parseInt(storageOrderID) : 2;
+    const orderNum: number = storageOrderID
+        ? parseInt(storageOrderID)
+        : customers.length > 0
+        ? 2
+        : 1;
     const [orderID, setOrderID] = useState<number>(orderNum);
 
     const handleSubmit = () => {
