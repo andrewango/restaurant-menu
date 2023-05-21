@@ -31,7 +31,7 @@ export default function OwnerLanding() {
                         className="food"
                         onClick={() => (location.hash = "/ManageFoods")}
                     >
-                        <Text className="text" w="20vw" font-weight="bold">
+                        <Text className="text" font-weight="bold">
                             Manage Food
                         </Text>
                     </Button>
