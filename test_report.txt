@@ -2,12 +2,12 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.97 s)
+PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.846 s)
   ● Console
 
     console.log
       <ref *1> HTMLButtonElement {
-        '__reactFiber$a1m1hfcf6l6': <ref *2> FiberNode {
+        '__reactFiber$vcahzrnjrqh': <ref *2> FiberNode {
           tag: 5,
           key: null,
           elementType: 'button',
@@ -172,7 +172,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.97 s)
           _debugNeedsRemount: false,
           _debugHookTypes: null
         },
-        '__reactProps$a1m1hfcf6l6': {
+        '__reactProps$vcahzrnjrqh': {
           'data-theme': undefined,
           children: 'Black Licorice Ice Cream',
           type: 'button',
@@ -327,7 +327,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (8.97 s)
       at Function.submit (node_modules/@testing-library/react/dist/fire-event.js:18:52)
       at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:371:19)
 
-PASS src/component-unit-tests/EditFoodMenu.test.tsx (8.744 s)
+PASS src/component-unit-tests/EditFoodMenu.test.tsx (8.839 s)
   ● Console
 
     console.log
@@ -2122,7 +2122,7 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (8.744 s)
 
       at setListHelper (src/components/EditFoodMenu.tsx:86:21)
 
-PASS src/component-unit-tests/SearchBar.test.tsx (7.186 s)
+PASS src/component-unit-tests/SearchBar.test.tsx (7.175 s)
   ● Console
 
     console.log
@@ -4467,5 +4467,5 @@ All files              |   80.33 |    69.41 |   73.12 |    80.1 |
 Test Suites: 17 passed, 17 total
 Tests:       122 passed, 122 total
 Snapshots:   0 total
-Time:        42.955 s
+Time:        42.753 s
 Ran all test suites.
