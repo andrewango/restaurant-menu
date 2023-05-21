@@ -27,12 +27,17 @@ export default function AddDeleteUsers(): JSX.Element {
 
     const [name, setName] = useState<string>("");
 
+    // If there are no customers, then make the order num be 1
     const storageOrderID: string | null = sessionStorage.getItem("orderID");
-    const orderNum: number = storageOrderID
-        ? parseInt(storageOrderID)
-        : customers.length > 0
-        ? 2
-        : 1;
+
+    let orderNum: number;
+    if (storageOrderID) {
+        orderNum = parseInt(storageOrderID);
+    } else if (customers.length > 0) {
+        orderNum = 2;
+    } else {
+        orderNum = 1;
+    }
     const [orderID, setOrderID] = useState<number>(orderNum);
 
     const [searchText, setSearchText] = useState<string>("");
