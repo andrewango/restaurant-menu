@@ -373,7 +373,7 @@ export default function CheckoutList(): JSX.Element {
                     }
                     rowGap={3}
                 >
-                    <Card className="checkout-card">
+                    <Card className="checkout-card" minW="540px">
                         <CardHeader>
                             <Flex
                                 alignItems="center"

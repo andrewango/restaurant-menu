@@ -148,7 +148,7 @@ export function DeliveryDropDown(): JSX.Element {
     // Render the dropdown select for the times and the Place Order button and its confirmation checkbox
     return (
         <Stack w="35vw" alignItems="center">
-            <Box h="65vh" mt="7.5vh"></Box>
+            <Box h="63.5vh" mt="7.5vh"></Box>
             <Box id="delivery" className="ddd-box" maxW="sm">
                 <p className="del-time ddd-text">Delivery Time:</p>
                 <div className="delivery">

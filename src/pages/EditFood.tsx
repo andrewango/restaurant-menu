@@ -51,7 +51,12 @@ function EditFood() {
             </div>
             <br></br>
             <div style={{ textAlign: "center" }}>
-                <Grid templateColumns={"repeat(2, 1fr)"} gap="5vw">
+                <Grid
+                    templateColumns={"repeat(2, 1fr)"}
+                    gap="5vw"
+                    maxW="100vw"
+                    overflowX="auto"
+                >
                     <Box flex="1" p="4" ml="5vw">
                         <EditFoodMenu></EditFoodMenu>
                     </Box>
