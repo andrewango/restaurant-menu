@@ -8,20 +8,13 @@ import {
     AccordionIcon
 } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
+import "./CustomerStyles.css";
 
 export default function AboutUs() {
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-testid="about-us-page">
             <div>
-                <Heading
-                    display="flex"
-                    justifyContent="center"
-                    py={5}
-                    fontSize="50px"
-                    fontWeight="bold"
-                >
-                    about us
-                </Heading>
+                <Heading className="aboutus">about us</Heading>
             </div>
             <div>
                 <NavBar></NavBar>

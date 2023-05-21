@@ -2,8 +2,21 @@ import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { foodProps } from "../interfaces/Food";
 import ItemListUI from "./ItemListUI";
-import { Checkbox, HStack } from "@chakra-ui/react";
-import { MenuList } from "../pages/AddFood";
+import {
+    Box,
+    HStack,
+    Radio,
+    RadioGroup,
+    Tag,
+    TagLabel
+} from "@chakra-ui/react";
+import { MenuList } from "./AddNewFood";
+import "./Styles.css";
+
+/**
+ * Component representing the search bar while checking sorting.
+ * @returns JSX.Element representing the search bar component
+ */
 
 export function SearchBar(): JSX.Element {
     const [foods, setFoods] = useState<foodProps[]>(MenuList());
@@ -13,10 +26,16 @@ export function SearchBar(): JSX.Element {
     const [popular, setPopular] = useState<boolean>(false);
     const [high, setHigh] = useState<boolean>(false);
     const [low, setLow] = useState<boolean>(false);
+    const [rating, setRating] = useState<boolean>(false);
     const [appetizer, setAppetizer] = useState<boolean>(false);
     const [entree, setEntree] = useState<boolean>(false);
     const [dessert, setDessert] = useState<boolean>(false);
+    const [sort, setSort] = useState<string>("");
 
+    /**
+     * Updates the name based on the input event.
+     * @param event - The input event containing the updated value.
+     */
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
     }
@@ -27,11 +46,21 @@ export function SearchBar(): JSX.Element {
 
     useEffect(() => {
         setListHelper(text);
-    }, [spicy, popular, high, low, appetizer, entree, dessert]);
+    }, [spicy, popular, high, low, rating, appetizer, entree, dessert]);
 
-    function checkPrice(foods: foodProps[]) {
-        if (!high && !low) {
+    /**
+     * Sorts the given food array based on the given filter.
+     * @param foods - array of food items.
+     * @returns sorted array of food items
+     */
+    function checkSorting(foods: foodProps[]) {
+        if (!high && !low && !rating) {
             return checkFoodType(foods);
+        } else if (rating) {
+            const sortedFoods = [...foods].sort((a, b) => {
+                return a.rating < b.rating ? 1 : -1;
+            });
+            return checkFoodType(sortedFoods);
         }
         const sortedFoods = [...foods].sort((a, b) => {
             if (high) {
@@ -43,6 +72,12 @@ export function SearchBar(): JSX.Element {
         });
         return checkFoodType(sortedFoods);
     }
+
+    /**
+     * Filters the food items based on selected food types (appetizer, entree, dessert).
+     * @param foods - array of food items.
+     * @returns array of food items sorted by type.
+     */
     function checkFoodType(foods: foodProps[]) {
         if (!appetizer && !entree && !dessert) {
             return foods;
@@ -58,14 +93,18 @@ export function SearchBar(): JSX.Element {
         return resorted;
     }
 
+    /**
+     * Helper function used to update the list of food items based on the provided search text and filter options.
+     * @param text - search text input from user
+     */
     function setListHelper(text: string) {
         if (text === "" && !spicy && !popular) {
-            setList(checkPrice(foods));
+            setList(checkSorting(foods));
         } else {
             text = text.toLowerCase();
             console.log(foods);
             setList(
-                checkPrice(
+                checkSorting(
                     foods.filter((x: foodProps): boolean => {
                         const name = x.name.toLowerCase();
                         const desc = x.desc.toLowerCase();
@@ -123,12 +162,11 @@ export function SearchBar(): JSX.Element {
     }
 
     return (
-        <div>
+        <div data-testid={"searchbar"}>
             <Form.Group controlId="formCorrectAnswer">
-                <Form.Label style={{ color: "white" }}>
-                    Search for Food
-                </Form.Label>
+                <Form.Label className="filter">Search Menu</Form.Label>
                 <Form.Control
+                    data-testid={"search-input"}
                     value={text}
                     onChange={(e) => {
                         updateName(e as React.ChangeEvent<HTMLInputElement>);
@@ -137,102 +175,134 @@ export function SearchBar(): JSX.Element {
                 />
             </Form.Group>
             <HStack pl={6} mt={1} spacing={5}>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-spicy-check"
-                    checked={spicy}
-                    onChange={() => {
+                <Box className="filter">Filter: </Box>
+                <Tag
+                    className="tag"
+                    backgroundColor={spicy ? "#f56565" : "#f1f1f166"}
+                    onClick={() => {
                         setSpicy(!spicy);
                         setListHelper(text);
                     }}
-                    colorScheme="white"
                 >
-                    Spicy
-                </Checkbox>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-popular-check"
-                    checked={popular}
-                    onChange={() => {
+                    <TagLabel data-testid="spicy-filter-button">Spicy</TagLabel>
+                </Tag>
+                <Tag
+                    className="tag"
+                    backgroundColor={popular ? "#f56565" : "#f1f1f166"}
+                    onClick={() => {
                         setPopular(!popular);
                         setListHelper(text);
                     }}
-                    colorScheme="white"
                 >
-                    Popular
-                </Checkbox>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-appetizer-check"
-                    checked={appetizer}
-                    onChange={() => {
+                    <TagLabel data-testid="popular-filter-button">
+                        Popular
+                    </TagLabel>
+                </Tag>
+                <Tag
+                    className="tag"
+                    backgroundColor={appetizer ? "#f56565" : "#f1f1f166"}
+                    onClick={() => {
                         setAppetizer(!appetizer);
                         setListHelper(text);
                     }}
-                    colorScheme="white"
                 >
-                    Appetizers
-                </Checkbox>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-entree-check"
-                    checked={entree}
-                    onChange={() => {
+                    <TagLabel data-testid="appetizer-filter-button">
+                        Appetizers
+                    </TagLabel>
+                </Tag>
+                <Tag
+                    className="tag"
+                    backgroundColor={entree ? "#f56565" : "#f1f1f166"}
+                    onClick={() => {
                         setEntree(!entree);
                         setListHelper(text);
                     }}
-                    colorScheme="white"
                 >
-                    Entree
-                </Checkbox>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-dessert-check"
-                    checked={dessert}
-                    onChange={() => {
+                    <TagLabel data-testid="entree-filter-button">
+                        Entree
+                    </TagLabel>
+                </Tag>
+                <Tag
+                    className="tag"
+                    backgroundColor={dessert ? "#f56565" : "#f1f1f166"}
+                    onClick={() => {
                         setDessert(!dessert);
                         setListHelper(text);
                     }}
-                    colorScheme="white"
                 >
-                    Dessert
-                </Checkbox>
+                    <TagLabel data-testid="dessert-filter-button">
+                        Dessert
+                    </TagLabel>
+                </Tag>
             </HStack>
-            <HStack pl={6} mt={1} spacing={1}>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-high2low-check"
-                    checked={high}
-                    onChange={() => {
-                        setHigh(!high);
-                        setLow(false);
-                        setListHelper(text);
-                    }}
-                    colorScheme="white"
-                >
-                    Sort Price: High to Low
-                </Checkbox>
-                <Checkbox
-                    style={{ color: "white" }}
-                    type="checkbox"
-                    id="is-low2high-check"
-                    checked={low}
-                    onChange={() => {
-                        setHigh(false);
-                        setLow(!low);
-                        setListHelper(text);
-                    }}
-                    colorScheme="white"
-                >
-                    Sort Price: Low to High
-                </Checkbox>
-            </HStack>
+            <RadioGroup>
+                <HStack pl={6} mt={1} spacing={5}>
+                    <Box className="filter">Sort By: </Box>
+                    <Radio
+                        data-testid="pricehightolow-filter-button"
+                        colorScheme="red"
+                        value="high"
+                        textColor="white"
+                        onChange={() => {
+                            setHigh(true);
+                            setLow(false);
+                            setRating(false);
+                            setListHelper(text);
+                            setSort("high");
+                        }}
+                        hidden
+                    >
+                        <Box
+                            color={sort === "high" ? "white" : "#f1f1f199"}
+                            className="radio"
+                        >
+                            Price: High to Low
+                        </Box>
+                    </Radio>
+                    <Radio
+                        data-testid="pricelowtohigh-filter-button"
+                        colorScheme="red"
+                        value="low"
+                        textColor="white"
+                        onChange={() => {
+                            setHigh(false);
+                            setLow(true);
+                            setRating(false);
+                            setListHelper(text);
+                            setSort("low");
+                        }}
+                        hidden
+                    >
+                        <Box
+                            color={sort === "low" ? "white" : "#f1f1f199"}
+                            className="radio"
+                        >
+                            Price: Low to High
+                        </Box>
+                    </Radio>
+                    <Radio
+                        data-testid="rating-filter-button"
+                        colorScheme="red"
+                        value="rating"
+                        textColor="white"
+                        onChange={() => {
+                            setHigh(false);
+                            setLow(false);
+                            setRating(true);
+                            setListHelper(text);
+                            setSort("rating");
+                        }}
+                        hidden
+                    >
+                        <Box
+                            color={sort === "rating" ? "white" : "#f1f1f199"}
+                            className="radio"
+                        >
+                            Rating
+                        </Box>
+                    </Radio>
+                </HStack>
+            </RadioGroup>
 
             <div>
                 <ItemListUI foodData={list}></ItemListUI>

@@ -1,0 +1,65 @@
+.dragcard {
+    size: 24rem !important;
+    width: 550px;
+    overflow: hidden;
+}
+
+.editfood-card {
+    width: 40vw;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: black !important;
+    text-align: center;
+}
+.editfood-card-head {
+    font-weight: bold;
+    margin-right: 0.5rem;
+    flex: 0.25rem;
+    text-align: center;
+    margin-left: 38px;
+}
+.editfood-tablist {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.editfood-btn {
+    width: 100% !important;
+    background: #e53e3e !important;
+    color: white;
+}
+
+.drag-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0.25rem;
+}
+.drag-image {
+    object-fit: cover;
+    border-radius: 100%;
+    margin: 1.25rem;
+}
+.accordion-name {
+    display: inline-block;
+    margin-right: 1.5rem;
+    text-align: end;
+}
+
+.price {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.base-box {
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+
+.star-box {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}

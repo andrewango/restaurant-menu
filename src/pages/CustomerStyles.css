@@ -1,0 +1,45 @@
+.background {
+    padding: 10px;
+    background: url("../assets/background.jpg");
+    background-size: 130%;
+    background-position: center;
+}
+
+.title {
+    text-align: center;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
+}
+.title-box {
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.body-heading {
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+.body-text {
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 20px;
+}
+
+.aboutus {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    font-size: 50px;
+    font-weight: bold;
+}

@@ -28,8 +28,12 @@ const defaultCustomer: userProps = {
     order: [],
     role: "Customer"
 };
-sessionStorage.setItem("customers", JSON.stringify([defaultCustomer]));
+//sessionStorage.setItem("customers", JSON.stringify([defaultCustomer]));
 
+/**
+ * Gets current user from session storage.
+ * @returns current user object
+ */
 export function GetCurrentUser() {
     const user = sessionStorage.getItem("user");
     const userToParse =
@@ -39,13 +43,21 @@ export function GetCurrentUser() {
     return userToParse ? JSON.parse(userToParse) : defaultCustomer;
 }
 
-// Get our list of customers from EDIT USERS page
+/**
+ * Get our array of customers from EDIT USERS page.
+ * @returns array of customers from session storage OR default customer array.
+ */
 export function ListOfCustomers() {
     const customers = sessionStorage.getItem("customers");
     const customersToParse =
         customers !== null && customers !== undefined ? customers : "";
-    return customersToParse ? JSON.parse(customersToParse) : [];
+    return customersToParse ? JSON.parse(customersToParse) : [defaultCustomer];
 }
+
+/**
+ * Component that  renders a dropdown menu that allows users to select different roles.
+ * @returns The JSX element representing the role selection component.
+ */
 
 export function SelectRole(): JSX.Element {
     // Get current user state from our session
@@ -53,7 +65,10 @@ export function SelectRole(): JSX.Element {
 
     const [userRole, setUserRole] = useState<userProps>(currentUser);
 
-    // Change role and update session state
+    /**
+     * Changes user role and update session state
+     * @param userRole - new role to set
+     */
     function changeRole(userRole: userProps) {
         setUserRole(userRole);
         sessionStorage.setItem("user", JSON.stringify(userRole));
@@ -71,7 +86,11 @@ export function SelectRole(): JSX.Element {
 
     const listOfCustomers: userProps[] = ListOfCustomers();
 
-    // Find the selected option (owner, employee, or some user)
+    /**
+     * Find the selected option (owner, employee, or some user) based on given name.
+     * @param name - name of the user to find.
+     * @returns the found user or a fallback role.
+     */
     function findUserInList(name: string) {
         let foundUser: userProps | undefined = listOfCustomers.find(
             (user) => name === user.name
@@ -89,6 +108,7 @@ export function SelectRole(): JSX.Element {
             <form>
                 <label> Role </label>
                 <Select
+                    data-testid="role-select"
                     onChange={(e) => changeRole(findUserInList(e.target.value))}
                     name={userRole.name}
                     value={userRole.name}
@@ -97,6 +117,7 @@ export function SelectRole(): JSX.Element {
                 >
                     {ROLES.map((user: userProps) => (
                         <option
+                            data-testid={user.name}
                             style={{ color: "black" }}
                             value={user.name}
                             key={user.orderID}
@@ -108,6 +129,7 @@ export function SelectRole(): JSX.Element {
 
                     {listOfCustomers.map((customer: userProps) => (
                         <option
+                            data-testid={customer.name + " " + customer.orderID}
                             style={{ color: "black" }}
                             value={customer.name}
                             key={customer.orderID}

@@ -19,11 +19,18 @@ import { foodProps } from "../interfaces/Food";
 import NavBar from "../components/NavBar";
 import foodList from "../data/foods.json";
 import { NavLink } from "react-router-dom";
+import "../components/Styles.css";
 
 function countOrders(list: userProps[], foodName: string): number {
     return list.reduce((count, user) => {
         return (
-            count + user.order.filter((food) => food.name === foodName).length
+            count +
+            user.order.reduce((foodCount, food) => {
+                if (food.name === foodName) {
+                    return (foodCount += 1);
+                }
+                return foodCount;
+            }, 0)
         );
     }, 0);
 }
@@ -40,24 +47,14 @@ export default function UserStats() {
         (foodItem: foodProps): foodProps => foodItem
     );
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-tesid="user-stats-page">
             <Flex wrap="wrap">
-                <Heading
-                    display="flex"
-                    justifyContent="center"
-                    mt={8}
-                    px={10}
-                    fontSize="50px"
-                    fontWeight="bold"
-                    textAlign="center"
-                >
-                    stats
-                </Heading>
+                <Heading className="heading">Stats</Heading>
                 <Spacer></Spacer>
                 <VStack mb="10px">
                     <Button
                         as={NavLink}
-                        to="/AddFood"
+                        to="/AddRemoveFood"
                         colorScheme="red"
                         size="md"
                         variant="outline"
@@ -85,14 +82,26 @@ export default function UserStats() {
                     <Table variant="simple">
                         <Thead>
                             <Tr>
-                                <Th>Item</Th>
-                                <Th>Quantity in user carts</Th>
+                                <Th fontWeight="extrabold" fontSize="xl">
+                                    Item - Price
+                                </Th>
+                                <Th fontWeight="extrabold" fontSize="xl">
+                                    Ingredients
+                                </Th>
+                                <Th fontWeight="extrabold" fontSize="xl">
+                                    Quantity in user carts
+                                </Th>
                             </Tr>
                         </Thead>
                         <Tbody>
                             {foods.map((food: foodProps) => (
                                 <Tr key={food.name}>
-                                    <Td fontWeight="semibold">{food.name}</Td>
+                                    <Td fontWeight="semibold">
+                                        {food.name + " - $" + food.price}
+                                    </Td>
+                                    <Td fontWeight="semibold">
+                                        {food.ingredients.join(", ")}
+                                    </Td>
                                     <Td>
                                         {countOrders(
                                             storageCustomers,

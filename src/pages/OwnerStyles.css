@@ -1,0 +1,101 @@
+body::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url("../assets/manageUsers.jpg") url("../assets/background.jpg")
+        url("../assets/addFood.jpg") url("../assets/editFood.jpg")
+        url("../assets/graph.jpg");
+}
+
+.food {
+    background: url("../assets/background.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 0.5cm !important;
+    width: 40vw !important;
+    height: 80vh !important;
+}
+.food:hover {
+    transform: scale(1.01);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.user {
+    background-image: url("../assets/manageUsers.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 0.5cm !important;
+    width: 40vw !important;
+    height: 80vh !important;
+}
+.user:hover {
+    transform: scale(1.01);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+.add {
+    background-image: url("../assets/addFood.jpg") !important;
+    background-size: cover !important;
+    background-position: 45% !important;
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 0.5cm !important;
+    width: 25vw !important;
+    height: 80vh !important;
+}
+.add:hover {
+    transform: scale(1.01);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+.edit {
+    background-image: url("../assets/editFood.jpg") !important;
+    background-size: cover !important;
+    background-position: 40% !important;
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 0.5cm !important;
+    width: 25vw !important;
+    height: 80vh !important;
+}
+.edit:hover {
+    transform: scale(1.01);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.text {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.stats {
+    background: url("../assets/graph.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 0.5cm !important;
+    width: 25vw !important;
+    height: 80vh !important;
+}
+
+.stats:hover {
+    transform: scale(1.01);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}

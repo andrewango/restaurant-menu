@@ -1,27 +1,18 @@
 import React from "react";
-import { Heading, Flex, Box, Spacer, VStack } from "@chakra-ui/react";
+import { Heading, Flex, Box, Spacer, VStack, Grid } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
 import EditFoodList from "../components/EditFoodList";
 import { EditFoodMenu } from "../components/EditFoodMenu";
 import { GetCurrentUser, SelectRole } from "../components/SelectRole";
+import "../components/Styles.css";
 
 function EditFood() {
     return (
-        <div style={{ padding: 10 }}>
+        <div style={{ padding: 10 }} data-testid="owner-landing-page">
             <Flex wrap="wrap">
-                <Heading
-                    display="flex"
-                    justifyContent="center"
-                    mt={8}
-                    px={10}
-                    fontSize="50px"
-                    fontWeight="bold"
-                    textAlign="center"
-                >
-                    Edit Food
-                </Heading>
+                <Heading className="heading">Edit Food</Heading>
                 <Spacer></Spacer>
                 <VStack mb="10px">
                     {GetCurrentUser().role === "Employee" && (
@@ -31,7 +22,7 @@ function EditFood() {
                         <>
                             <Button
                                 as={NavLink}
-                                to="/AddFood"
+                                to="/AddRemoveFood"
                                 colorScheme="red"
                                 size="md"
                                 variant="outline"
@@ -53,31 +44,21 @@ function EditFood() {
             </Flex>
             <div>
                 {GetCurrentUser().role === "Employee" ? (
-                    <Box
-                        as="nav"
-                        display="flex"
-                        justifyContent="center"
-                        position="sticky"
-                        top={0}
-                        zIndex={99999999}
-                        py={7}
-                        bg="red.400"
-                        data-testid="bar"
-                    ></Box>
+                    <Box as="nav" className="navbar" py={7}></Box>
                 ) : (
                     <NavBar></NavBar>
                 )}
             </div>
             <br></br>
             <div style={{ textAlign: "center" }}>
-                <Flex>
-                    <Box flex="1" p="4" ml="100px">
+                <Grid templateColumns={"repeat(2, 1fr)"} gap="5vw">
+                    <Box flex="1" p="4" ml="5vw">
                         <EditFoodMenu></EditFoodMenu>
                     </Box>
-                    <Box flex="1" p="4" mt="35px" ml="100px">
+                    <Box flex="1" p="4" mt="35px">
                         <EditFoodList></EditFoodList>
                     </Box>
-                </Flex>
+                </Grid>
             </div>
         </div>
     );

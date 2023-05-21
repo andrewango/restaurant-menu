@@ -10,7 +10,6 @@ import {
     Tabs,
     TabPanels,
     Tab,
-    useMediaQuery,
     Flex
 } from "@chakra-ui/react";
 
@@ -20,13 +19,17 @@ import foodList from "../data/foods.json";
 import EditFoodTabs from "./EditFoodTabs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import "./EditFoodStyles.css";
+import "./Styles.css";
 
+// HELPER FUNCTION TO RETRIEVE EDIT MENU LIST (DIFFERENT FROM CENTRAL ITEM LIST)
 export function EditMenuList() {
     const editMenu = sessionStorage.getItem("editFoodList");
     const editMenuToParse =
         editMenu !== null && editMenu !== undefined ? editMenu : "";
     return editMenuToParse ? JSON.parse(editMenuToParse) : [];
 }
+
 export default function EditFoodList(): JSX.Element {
     const [, drop] = useDrop(() => ({
         accept: "foodItem",
@@ -36,6 +39,7 @@ export default function EditFoodList(): JSX.Element {
         })
     }));
 
+    // DROP STATE TO REMOVE FOOD TAB
     const [{ isOver }, removeDrop] = useDrop(() => ({
         accept: "removeItem",
         drop: (item: foodProps) => {
@@ -47,6 +51,7 @@ export default function EditFoodList(): JSX.Element {
         })
     }));
 
+    // GET THE CENTRAL MENU ITEM LIST
     const menu = sessionStorage.getItem("menu");
     const menuToParse = menu !== null && menu !== undefined ? menu : "";
     const foodlist = menuToParse ? JSON.parse(menuToParse) : foodList.FOODS;
@@ -55,6 +60,7 @@ export default function EditFoodList(): JSX.Element {
         (foodItem: foodProps): foodProps => foodItem
     );
 
+    // ADDING A FOOD TAB
     const addFoodToEditFoodList = (name: string) => {
         const chosenFood = foods.find((foodItem) => name === foodItem.name);
         if (
@@ -69,6 +75,7 @@ export default function EditFoodList(): JSX.Element {
         }
     };
 
+    // REMOVING A FOOD TAB
     const removeFoodToEditFoodList = (name: string) => {
         const chosenFood = EditMenuList().find(
             (foodItem: foodProps) => name === foodItem.name
@@ -93,6 +100,7 @@ export default function EditFoodList(): JSX.Element {
         }
     };
 
+    // KEEP STATE FOR WHICH FOOD TAB WE'RE CURRENTLY ON
     const tab = sessionStorage.getItem("tab");
     const tabToParse = tab !== null && tab !== undefined ? tab : 0;
     const [tabIndex, setTabIndex] = useState<number>(
@@ -118,41 +126,26 @@ export default function EditFoodList(): JSX.Element {
             </Tab>
         );
     }
-    const [isLargerThan2000] = useMediaQuery("(min-width: 2000px)");
 
     return (
         <Card
-            h="full"
-            w={
-                isLargerThan2000
-                    ? window.innerWidth * 0.4
-                    : window.innerWidth * 0.4
-            }
+            data-testid="edit-food-list"
+            h={EditMenuList().length >= 1 ? "cover" : "full"}
+            className="editfood-card"
             ref={drop}
-            border="1px solid black"
-            textAlign="center"
         >
-            <CardHeader fontWeight="bold" alignItems="stretch" ref={removeDrop}>
+            <CardHeader fontWeight="bold" alignItems="stretch">
                 <Flex alignItems="center" justifyContent="space-between">
-                    <Heading
-                        fontWeight="bold"
-                        mr={2}
-                        flex={1}
-                        textAlign="center"
-                        ml="38"
-                    >
-                        Edit Food
-                    </Heading>
+                    <Heading className="editfood-card-head">Edit Food</Heading>
                     <FontAwesomeIcon
+                        ref={removeDrop}
                         icon={faTrash}
+                        className="trashcan"
                         size="3x"
                         style={{
-                            color: isOver ? "red" : "",
-                            border: "1px solid black",
-                            borderRadius: "50px",
-                            padding: "7px",
-                            boxSizing: "border-box"
+                            color: isOver ? "red" : ""
                         }}
+                        data-testid="trash-icon"
                     />
                 </Flex>
             </CardHeader>
@@ -166,10 +159,8 @@ export default function EditFoodList(): JSX.Element {
                     onChange={handleTabsChange}
                 >
                     <TabList
-                        width="100%"
-                        overflowX="auto"
-                        overflowY="hidden"
-                        className="section"
+                        data-testid="tab-select"
+                        className="section editfood-tablist"
                     >
                         {EditMenuList().map(
                             (food: foodProps, index: number) => (
@@ -195,6 +186,8 @@ export default function EditFoodList(): JSX.Element {
                                     editPopular={food.popular}
                                     editSpicy={food.spicy}
                                     editPrice={food.price}
+                                    editQuantity={food.quantity}
+                                    editId={food.id}
                                 ></EditFoodTabs>
                             )
                         )}
