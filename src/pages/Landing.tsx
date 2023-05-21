@@ -39,11 +39,16 @@ export default function Landing() {
                     </Heading>
                     <Text className="body-text">open 12-9 pm</Text>
                 </div>
-                <Grid templateColumns={"repeat(2, 1fr)"} gap="5vw">
+                <Grid
+                    templateColumns={"repeat(2, 1fr)"}
+                    gap="5vw"
+                    maxW="100vw"
+                    overflowX="auto"
+                >
                     <Box flex="1" p="4" ml="5vw">
                         <SearchBar></SearchBar>
                     </Box>
-                    <Grid flex="1" p="4" mt="35px">
+                    <Grid flex="1" p="4" mt="35px" position="relative">
                         <CheckoutList></CheckoutList>
                         <DeliveryDropDown></DeliveryDropDown>
                     </Grid>
