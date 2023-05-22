@@ -214,6 +214,7 @@ export default function EditFoodTabs({
                                 data-testid="edit-rating-form"
                                 isRequired
                                 type="number"
+                                step="0.1"
                                 min="0"
                                 max="5"
                                 name="rating"
@@ -231,6 +232,7 @@ export default function EditFoodTabs({
                                 isRequired
                                 type="number"
                                 min="0"
+                                step="0.1"
                                 name="price"
                                 value={price}
                                 onChange={onChange}
