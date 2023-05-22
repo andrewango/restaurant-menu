@@ -183,6 +183,7 @@ export default function AddNewFood() {
                                 isRequired
                                 type="number"
                                 min="0"
+                                step="0.1"
                                 name="price"
                                 value={price}
                                 onChange={onChange}
