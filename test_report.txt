@@ -2,12 +2,12 @@
 > restaurant-menu@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.976 s)
+PASS src/component-unit-tests/EditFoodTabs.test.tsx (12.436 s)
   ● Console
 
     console.log
       <ref *1> HTMLButtonElement {
-        '__reactFiber$ylg20frmxx8': <ref *2> FiberNode {
+        '__reactFiber$c0eiupu04t': <ref *2> FiberNode {
           tag: 5,
           key: null,
           elementType: 'button',
@@ -172,7 +172,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.976 s)
           _debugNeedsRemount: false,
           _debugHookTypes: null
         },
-        '__reactProps$ylg20frmxx8': {
+        '__reactProps$c0eiupu04t': {
           'data-theme': undefined,
           children: 'Black Licorice Ice Cream',
           type: 'button',
@@ -327,7 +327,7 @@ PASS src/component-unit-tests/EditFoodTabs.test.tsx (10.976 s)
       at Function.submit (node_modules/@testing-library/react/dist/fire-event.js:18:52)
       at Object.<anonymous> (src/component-unit-tests/EditFoodTabs.test.tsx:371:19)
 
-PASS src/component-unit-tests/EditFoodMenu.test.tsx (10.961 s)
+PASS src/component-unit-tests/EditFoodMenu.test.tsx (13.049 s)
   ● Console
 
     console.log
@@ -2122,7 +2122,7 @@ PASS src/component-unit-tests/EditFoodMenu.test.tsx (10.961 s)
 
       at setListHelper (src/components/EditFoodMenu.tsx:86:21)
 
-PASS src/component-unit-tests/SearchBar.test.tsx (8.887 s)
+PASS src/component-unit-tests/SearchBar.test.tsx (10.816 s)
   ● Console
 
     console.log
@@ -4132,7 +4132,7 @@ PASS src/component-unit-tests/AddNewFood.test.tsx
       at Function.submit (node_modules/@testing-library/react/dist/fire-event.js:18:52)
       at Object.<anonymous> (src/component-unit-tests/AddNewFood.test.tsx:131:19)
 
-PASS src/component-unit-tests/CheckoutList.test.tsx (5.041 s)
+PASS src/component-unit-tests/CheckoutList.test.tsx (5.736 s)
 PASS src/component-unit-tests/EditFoodUI.test.tsx
 PASS src/component-unit-tests/FoodItem.test.tsx
 PASS src/component-unit-tests/EditFoodList.test.tsx
@@ -4430,12 +4430,12 @@ All files              |    80.3 |    69.51 |   73.12 |   80.06 |
   App.tsx              |     100 |      100 |     100 |     100 |                                       
  src/components        |   82.15 |    71.78 |   74.51 |   81.94 |                                       
   AddDeleteUsers.tsx   |   80.39 |       40 |   66.66 |   80.39 | 39,51,102,156,193-207,256             
-  AddNewFood.tsx       |   80.76 |      100 |   66.66 |   80.76 | 53-56,203-223                         
+  AddNewFood.tsx       |   80.76 |      100 |   66.66 |   80.76 | 53-56,205-225                         
   CheckoutList.tsx     |   76.84 |    55.26 |   72.22 |   76.08 | 76-80,231,263-272,276,337-356,414,439 
   DeliveryDropDown.tsx |   33.33 |        0 |    37.5 |   33.33 | 48-73,90,159                          
   EditFoodList.tsx     |   96.07 |       70 |   95.45 |   95.74 | 111-112                               
   EditFoodMenu.tsx     |    91.3 |     82.5 |      80 |    91.2 | 59,97-103,113-115,124-126             
-  EditFoodTabs.tsx     |      96 |     92.3 |   88.88 |      96 | 273                                   
+  EditFoodTabs.tsx     |      96 |     92.3 |   88.88 |      96 | 275                                   
   EditFoodUI.tsx       |     100 |     87.5 |     100 |     100 | 76,146                                
   FoodItem.tsx         |   77.77 |    86.66 |      60 |   76.47 | 26-28,74                              
   ItemListUI.tsx       |     100 |       50 |     100 |     100 | 37                                    
@@ -4466,5 +4466,5 @@ All files              |    80.3 |    69.51 |   73.12 |   80.06 |
 Test Suites: 17 passed, 17 total
 Tests:       122 passed, 122 total
 Snapshots:   0 total
-Time:        53.221 s
+Time:        61.805 s
 Ran all test suites.
