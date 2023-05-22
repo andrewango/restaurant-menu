@@ -131,6 +131,7 @@ export default function EditFoodList(): JSX.Element {
         <Card
             data-testid="edit-food-list"
             h={EditMenuList().length >= 1 ? "cover" : "full"}
+            minW="500px"
             className="editfood-card"
             ref={drop}
         >

@@ -77,6 +77,7 @@ export function SelectRole(): JSX.Element {
             sessionStorage.setItem("checkout", JSON.stringify(userRole.order));
             // Manually dispatches an event after we updated "checkout" key for event listeners to fetch
             window.dispatchEvent(new Event("checkoutUpdated"));
+            window.dispatchEvent(new Event("searchBarUpdated"));
         } else if (GetCurrentUser().role === "Employee") {
             location.hash = "/EditFood";
         } else {

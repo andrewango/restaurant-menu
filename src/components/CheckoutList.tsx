@@ -78,6 +78,7 @@ export default function CheckoutList(): JSX.Element {
                 ? JSON.parse(storage)
                 : [];
             setCheckoutList(storageCheckout);
+            setSearchText("");
         };
         // Event listeners to run handleStorage() if "checkout" key is updated, which means that user role was changed
         window.addEventListener("checkoutUpdated", handleStorage);

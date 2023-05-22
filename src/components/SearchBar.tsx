@@ -161,6 +161,28 @@ export function SearchBar(): JSX.Element {
         }
     }
 
+    useEffect(() => {
+        const handleSearchBar = () => {
+            // Reset the searchbar
+            setFoods(MenuList());
+            setName("");
+            setList(foods);
+            setSpicy(false);
+            setPopular(false);
+            setHigh(false);
+            setLow(false);
+            setRating(false);
+            setAppetizer(false);
+            setEntree(false);
+            setDessert(false);
+            setSort("");
+        };
+        // Event listeners to run handleSearchBar() if user role was changed
+        window.addEventListener("searchBarUpdated", handleSearchBar);
+        return () =>
+            window.removeEventListener("searchBarUpdated", handleSearchBar);
+    }, []);
+
     return (
         <div data-testid={"searchbar"}>
             <Form.Group controlId="formCorrectAnswer">
