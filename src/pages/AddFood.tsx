@@ -1,13 +1,5 @@
 import React from "react";
-import {
-    Heading,
-    Grid,
-    GridItem,
-    Box,
-    Flex,
-    Spacer,
-    VStack
-} from "@chakra-ui/react";
+import { Heading, Box, Flex, Spacer, VStack } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import NavBar from "../components/NavBar";
 import { NavLink } from "react-router-dom";
@@ -47,28 +39,29 @@ export default function AddFood() {
             </div>
             <Box w="100%" maxW="100vw">
                 <br></br>
-                <Grid
-                    templateColumns="repeat(20, minmax(0,1fr))"
+                <Flex
+                    //templateColumns={"repeat(20, 1fr)"}
                     gap={4}
                     mb={5}
+                    maxW="100vw"
+                    overflowX="auto"
                 >
-                    <GridItem colStart={1} colEnd={7}>
+                    <Box flex="1" p="4" maxW="540px">
                         <AddNewFood></AddNewFood>
-                    </GridItem>
+                    </Box>
 
-                    <GridItem colStart={7} colEnd={20} h="10">
+                    <Box flex="1" p="4">
                         <Heading
                             size="2xl"
                             w="full"
-                            h="full"
                             p={10}
                             alignItems="flex-start"
                         >
                             Menu
                         </Heading>
                         <RemoveFood></RemoveFood>
-                    </GridItem>
-                </Grid>
+                    </Box>
+                </Flex>
             </Box>
             <></>
             <br></br>

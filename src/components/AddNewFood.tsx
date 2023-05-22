@@ -81,7 +81,14 @@ export default function AddNewFood() {
 
     return (
         // Render our form
-        <Stack w="full" h="full" p={10} spacing={20} alignItems="flex-start">
+        <Stack
+            minW="400px"
+            w="full"
+            h="full"
+            p={10}
+            spacing={20}
+            alignItems="flex-start"
+        >
             <Heading size="2xl">New Food</Heading>
             <form onSubmit={handleSubmit}>
                 <SimpleGrid columns={6} columnGap={2} rowGap={2} w="full">
