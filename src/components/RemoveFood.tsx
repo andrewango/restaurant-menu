@@ -111,7 +111,6 @@ export default function RemoveFood() {
     const [isLargerThan2500] = useMediaQuery("(min-width: 2500px)");
     const [isLargerThan2200] = useMediaQuery("(min-width: 2200px)");
     const [isLargerThan1500] = useMediaQuery("(min-width: 1500px)");
-    //const [isHigherThan1200] = useMediaQuery("(min-height: 1200px)");
 
     return (
         <VStack
