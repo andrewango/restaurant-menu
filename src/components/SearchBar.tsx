@@ -161,6 +161,28 @@ export function SearchBar(): JSX.Element {
         }
     }
 
+    useEffect(() => {
+        const handleSearchBar = () => {
+            // Get the menu window's "checkout" key from Session Storage
+            setFoods(MenuList());
+            setName("");
+            setList(foods);
+            setSpicy(false);
+            setPopular(false);
+            setHigh(false);
+            setLow(false);
+            setRating(false);
+            setAppetizer(false);
+            setEntree(false);
+            setDessert(false);
+            setSort("");
+        };
+        // Event listeners to run handleStorage() if "checkout" key is updated, which means that user role was changed
+        window.addEventListener("searchBarUpdated", handleSearchBar);
+        return () =>
+            window.removeEventListener("searchBarUpdated", handleSearchBar);
+    }, []);
+
     return (
         <div data-testid={"searchbar"}>
             <Form.Group controlId="formCorrectAnswer">
